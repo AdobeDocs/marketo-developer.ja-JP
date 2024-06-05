@@ -1,17 +1,17 @@
 ---
-title: 「はじめに」
-description: Marketo API の概要
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: はじめに
+description: Marketo EngageAPI の概要
+exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
+source-git-commit: 82bea1ab3d0d83a8867bb7efefb828ce2d92747c
 workflow-type: tm+mt
-source-wordcount: '1242'
-ht-degree: 0%
+source-wordcount: '1246'
+ht-degree: 1%
 
 ---
 
-
 # はじめに
 
-Marketoは、マーケターが見込み客や顧客に対してパーソナライズされたマルチチャネルプログラムやキャンペーンを管理できるようにする、マーケティング自動処理プラットフォームです。 Marketo プラットフォームは、統合ポイントを使用して拡張できます。 以下に、コアエンティティとその関係を示します。
+Marketo Engageは、マーケターが見込み客や顧客に対してパーソナライズされたマルチチャネルプログラムやキャンペーンを管理できるようにするマーケティング自動処理プラットフォームです。 Marketo Engageプラットフォームは、統合ポイントを使用して拡張できます。 以下に、コアエンティティとその関係を示します。
 
 ネイティブ同期が有効な場合、REST API を介して使用できないオブジェクトは、会社、オポチュニティ、オポチュニティの役割、販売担当者です
 
