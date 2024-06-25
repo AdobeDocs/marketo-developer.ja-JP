@@ -1,22 +1,22 @@
 ---
-title: "PhoneGap"
-feature: "Mobile Marketing"
-description: 「モバイルデバイスでのMarketoとの PhoneGap の使用」
-source-git-commit: 2e4eb416846de3ad62ff0626f536630278e1c0cd
-workflow-type: tm+mt
+title: PhoneGap
+feature: Mobile Marketing
+description: モバイルデバイスでのMarketoと PhoneGap の使用
+exl-id: 99f14c76-9438-4942-9309-643bca434d07
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+workflow-type: ht
 source-wordcount: '818'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
-
-# Phone ギャップ
+# PhoneGap
 
 Marketo PhoneGap プラグインの統合
 
 ## 前提条件
 
-1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
+1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
 1. プッシュ通知を設定（[iOS](push-notifications.md) | [Android](push-notifications.md)）に設定します。
 1. [PhoneGap/Cordova CLI のインストール](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
