@@ -44,12 +44,12 @@ ht-degree: 33%
    - [携帯電話](mobile/mobile.md)
    - [電話ギャップ](mobile/phonegap.md)
    - [プッシュ通知](mobile/push-notifications.md)
-   - [React ネイティブ](mobile/react-native.md)
+   - [React Native](mobile/react-native.md)
    - [ユーザープロファイル](mobile/user-profiles.md)
 - REST{#rest}
    - [REST API の概要](rest-api/rest-api.md)
    - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
-   - アセット {#assets}
+   - Assets {#assets}
       - [アセット](rest-api/assets.md)
       - [動的コンテンツ](rest-api/dynamic-content.md)
       - [メール](rest-api/emails.md)
@@ -141,7 +141,7 @@ ht-degree: 33%
       - [getChannels](soap-api/getchannels.md)
       - [getTag](soap-api/gettags.md)
    - [SOAP API](soap-api/soap-api.md)
-   - [SOAP に関する FAQ](soap-api/soap-faq.md)
+   - [SOAPに関する FAQ](soap-api/soap-faq.md)
    - 静的リスト {#static-lists}
       - [getImportToListStatus](soap-api/getimporttoliststatus.md)
       - [importToList](soap-api/importtolist.md)
