@@ -6,14 +6,14 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 source-git-commit: 15ac16ab4f8153ee069335951a84cf1691469c6d
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '255'
-ht-degree: 33%
+ht-degree: 100%
 
 ---
 
 
-# [!DNL Marketo] 開発者 {#marketo}
+# [!DNL Marketo] 開発者  {#marketo}
 
 - [ホーム](home.md)
 - [はじめに](getting-started.md)
@@ -32,8 +32,8 @@ ht-degree: 33%
    - [ソーシャル](javascript-api/social.md)
    - [トリガー](javascript-api/triggers.md)
    - [Web パーソナライズ](javascript-api/web-personalization.md)
-- モバイル {#mobile}
-   - [インストール [!DNL Adobe Launch] 拡張機能](mobile/adobe-launch-extension-installation.md)
+- モバイル {#mobile} モバイル 
+   - [インストール  [!DNL Adobe Launch]  拡張機能](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 拡張機能](mobile/adobe-launch-extension.md)
    - [高度なセキュリティ モード](mobile/advanced-security-access-mode.md)
    - [カスタムアクション](mobile/custom-actions.md)
@@ -42,7 +42,7 @@ ht-degree: 33%
    - [インストール](mobile/installation.md)
    - [イオン](mobile/ionic.md)
    - [携帯電話](mobile/mobile.md)
-   - [電話ギャップ](mobile/phonegap.md)
+   - [Phonegap](mobile/phonegap.md)
    - [プッシュ通知](mobile/push-notifications.md)
    - [React Native](mobile/react-native.md)
    - [ユーザープロファイル](mobile/user-profiles.md)
