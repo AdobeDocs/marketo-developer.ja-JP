@@ -32,7 +32,7 @@ ht-degree: 98%
    - [ソーシャル](javascript-api/social.md)
    - [トリガー](javascript-api/triggers.md)
    - [Web パーソナライズ](javascript-api/web-personalization.md)
-- モバイル {#mobile} モバイル 
+- モバイル {#mobile}
    - [インストール  [!DNL Adobe Launch]  拡張機能](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 拡張機能](mobile/adobe-launch-extension.md)
    - [高度なセキュリティ モード](mobile/advanced-security-access-mode.md)
