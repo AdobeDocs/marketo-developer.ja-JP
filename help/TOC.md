@@ -5,10 +5,10 @@ breadcrumb-title: “[!DNL Marketo] デベロッパーガイド"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 85062243d57a3fc6d15251163e926495858edf2a
 workflow-type: tm+mt
-source-wordcount: '231'
-ht-degree: 100%
+source-wordcount: '234'
+ht-degree: 98%
 
 ---
 
@@ -85,6 +85,7 @@ ht-degree: 100%
       - [プログラムの一括メンバー](rest-api/bulk-program-member-import.md)
    - [チャネル](rest-api/channels.md)
    - [カスタムサービス](rest-api/custom-services.md)
+   - [Swagger 定義のダウンロード](rest-api/swagger.md)
    - [エンドポイントの参照](rest-api/endpoint-reference.md)
    - [エラーコード](rest-api/error-codes.md)
    - リードデータベース {#lead-database}
