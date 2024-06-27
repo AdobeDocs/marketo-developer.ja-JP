@@ -1,14 +1,14 @@
 ---
-title: 「リードトラッキング」
-description: "Lead Tracking API"
+title: リードトラッキング
+description: Lead Tracking API
 feature: Munchkin Tracking Code, Javascript
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '768'
 ht-degree: 0%
 
 ---
-
 
 # Lead Tracking API
 
@@ -74,7 +74,7 @@ Munchkin の動作は、Munchkin を使用して変更できます [設定](lead
 
 - リードは、次の情報を含む Munchkin でトラッキングされたページを訪問する必要があります `mkt_tok` トラッキングされるMarketo メールリンクのクエリ文字列に含まれるパラメーター。
 - リードはMarketo フォームに入力する必要があります。
-- 石鹸 [syncLead](../soap-api/leads.md) または REST [リードを関連付け](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 通話を送信する必要があります。
+- SOAP [syncLead](../soap-api/leads.md) または REST [リードを関連付け](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 通話を送信する必要があります。
 
 これらの条件の 1 つが満たされると、Cookie と関連するすべての web アクティビティが既知のリードに関連付けられます。
 
@@ -96,7 +96,7 @@ Munchkin cookie は、各第 2 レベルドメインに固有です。 `example.
 
 ## 大文字ベータ
 
-ランディングページの Munchkin ベータ版チャネルをオプトインするには、 [Admin -> Treasure Chest](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) メニューを表示して、「ランディングページでの Munchkin ベータ版」設定を有効にします。 これにより、に新しいコードスニペットが追加されます。 **[!UICONTROL Admin]** ->  **[!UICONTROL マンチキン]** 外部サイトでベータ版を使用できるようにするメニュー。
+ランディングページの Munchkin ベータ版チャネルをオプトインするには、 [Admin -> Treasure Chest](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 「ランディングページの Munchkin Beta」設定を有効にします。 これにより、に新しいコードスニペットが追加されます。 **[!UICONTROL Admin]** ->  **[!UICONTROL マンチキン]** 外部サイトでベータ版を使用できるようにするメニュー。
 
 ## オプトアウト
 

@@ -69,7 +69,7 @@ Marketo管理者は、Marketo ユーザーがプログラムを作成する際�
 
 ## アセット
 
-アセットとは、プログラム内で使用されるランディングページ、電子メール、フォームおよび画像を指します。 アセットは、特定のプログラムに対してローカルか、グローバルかのいずれかです。 グローバルアセットは、どのプログラムでも使用できます。
+Assetsは、プログラム内で使用されるランディングページ、メール、フォームおよび画像を参照します。 Assetsは、特定のプログラムに対してローカルまたはグローバルのいずれかです。 グローバルアセットは、どのプログラムでも使用できます。
 
 関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/)
 
@@ -87,7 +87,7 @@ Marketo管理者は、Marketo ユーザーがプログラムを作成する際�
 
 ## カスタムオブジェクト
 
-Marketo カスタムオブジェクトを使用すると、Marketo リードとカスタムオブジェクトレコードの間に、1 対多または多対多（Edge-Bridge-Edge）の関係を作成できます。 Marketo カスタムオブジェクトを作成して公開したら、Marketo API を使用して、カスタムオブジェクトに対して CRUD 操作を実行できます。 カスタムオブジェクトの作成の詳細については、こちらを参照してください [こちら](https://experienceleague.adobe.com/en/docs/marketo/using/home). カスタムオブジェクトに新しいレコードが追加された場合は、スマートリストトリガーを使用して応答できます。 カスタムオブジェクトデータを、スマートリスト（セグメント化）またはメールのフィルターとして使用することもできます [メールスクリプティング](email-scripting.md).
+Marketo カスタムオブジェクトを使用すると、Marketo リードとカスタムオブジェクトレコードの間に、1 対多または多対多（EdgeとBridgeとEdge）の関係を作成できます。 Marketo カスタムオブジェクトを作成して公開したら、Marketo API を使用して、カスタムオブジェクトに対して CRUD 操作を実行できます。 カスタムオブジェクトの作成の詳細については、こちらを参照してください [こちら](https://experienceleague.adobe.com/en/docs/marketo/using/home). カスタムオブジェクトに新しいレコードが追加された場合は、スマートリストトリガーを使用して応答できます。 カスタムオブジェクトデータを、スマートリスト（セグメント化）またはメールのフィルターとして使用することもできます [メールスクリプティング](email-scripting.md).
 
 関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects), [SOAP](soap-api/custom-objects.md)
 
