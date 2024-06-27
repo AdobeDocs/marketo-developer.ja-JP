@@ -1,10 +1,10 @@
 ---
 title: "データ取り込み"
 description: "データ取得 API の概要"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '952'
-ht-degree: 10%
+source-wordcount: '945'
+ht-degree: 11%
 
 ---
 
@@ -132,7 +132,7 @@ HTTPPOST方式を使用して、サーバーにデータを送信します。
 
 | パス |
 |---|
-| /subscriptions/{munchkinId}/人 |
+| `/subscriptions/{munchkinId}/persons` |
 
 | HeadersKey | 値 |
 |---|---|
@@ -201,7 +201,7 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 
 | パス |
 |---|
-| /subscriptions/{munchkinId}/customobjects/{customObjectAPIName} |
+| `/subscriptions/{munchkinId}/customobjects/{customObjectAPIName}` |
 
 ヘッダ
 
@@ -210,7 +210,13 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 | Content-Type | application/json |
 | X-Mkto-User-Token | {accessToken} |
 
-リクエスト本文 | キー | データタイプ |必須 |値 | デフォルト値 | |—|—|—|—|—| |優先度 |文字列 |いいえ |要求の優先度：標準（高） |標準 | |重複排除 |文字列 |いいえ |重複排除する属性：dedupeFieldsmarketoGUID |重複排除フィールド | | customObjects | オブジェクトの配列 |はい | オブジェクトの属性名と値のペアのリスト。 | - |
+リクエスト本文
+
+| キー | データタイプ | 必須 | 値 | デフォルト値 |
+|---|---|---|---|---|
+| priority | 文字列 | いいえ | リクエストの優先度：normalhigh | 標準 |
+| dedupeBy | 文字列 | いいえ | 重複排除する属性：dedupeFieldsmarketoGUID | dedupeFields |
+| customObjects | オブジェクトの配列 | はい | オブジェクトの属性名と値のペアのリスト。 | - |
 
 | 権限 |
 |---|

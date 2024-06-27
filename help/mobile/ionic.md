@@ -1,30 +1,30 @@
 ---
-title: 「イオニア」
-feature: "Mobile Marketing"
-description: 「モバイルデバイス用Marketoでの Ionic の使用」
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: '[!DNL Ionic]'
+feature: Mobile Marketing
+description: 使用 [!DNL Ionic] モバイルデバイス向けMarketoの使用
+exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '613'
-ht-degree: 2%
+source-wordcount: '606'
+ht-degree: 73%
 
 ---
 
-
 # イオン
 
-ここでは、Marketo Cordova プラグインの統合方法を説明します。 イオン性コンデンサは現在サポートされていません。
+ここでは、Marketo Cordova プラグインの統合方法を説明します。 [!DNL Ionic] コンデンサは現在サポートされていません。
 
 ## 前提条件
 
-1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
+1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
 1. プッシュ通知を設定（[iOS](push-notifications.md) | [Android](push-notifications.md) ）に設定します。
-1. インストール [イオン](https://ionicframework.com/getting-started/) &amp; [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
+1. インストール [[!DNL Ionic]](https://ionicframework.com/getting-started/) &amp; [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
 ## インストール手順
 
-### Marketo Ionic プラグインの設定
+### Marketoの設定 [!DNL Ionic] プラグイン
 
-1. Cordova CLI がインストールされている場合は、Ionic アプリケーションディレクトリに移動し、次のコマンドを実行してMarketo プラグインをアプリケーションに追加します。
+1. Cordova CLI がインストールされている場合は、 [!DNL Ionic] アプリケーションディレクトリをクリックし、次のコマンドを実行してMarketo プラグインをアプリケーションに追加します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
@@ -74,7 +74,7 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 Marketo フレームワークがアプリの起動時に確実に開始されるようにするには、以下のコードをアプリの `onDeviceReady` メイン JavaScript ファイルで機能します。
 
-合格しなければなりません `ionicCordova` Ionic Cordova アプリのフレームワークタイプとして。
+合格しなければなりません `ionicCordova` のフレームワークタイプとして [!DNL Ionic] Cordova アプリ。
 
 #### 構文
 
@@ -104,7 +104,7 @@ marketo.onStart(
 
 ### Marketo プッシュ通知の初期化
 
-Marketoのプッシュ通知が開始されるようにするには、メインの JavaScript ファイル内の初期化された関数の後に次のコードを追加します。
+Marketoのプッシュ通知が確実に開始されるようにするには、メインのJavaScript ファイル内の初期化された関数の後に次のコードを追加します。
 
 #### 構文
 

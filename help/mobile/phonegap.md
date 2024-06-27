@@ -3,10 +3,10 @@ title: PhoneGap
 feature: Mobile Marketing
 description: モバイルデバイスでのMarketoと PhoneGap の使用
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+workflow-type: tm+mt
 source-wordcount: '818'
-ht-degree: 100%
+ht-degree: 96%
 
 ---
 
@@ -67,13 +67,13 @@ repositories{
 
 1. Firebase コンソールで Firebase アプリを設定します。
    1. でのプロジェクトの作成/追加 [](https://console.firebase.google.com/)Firebase コンソール。
-      1. が含まれる [Firebase コンソール](https://console.firebase.google.com/)を選択 [!UICONTROL プロジェクトを追加].
-      1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 [!UICONTROL Firebase の追加].
+      1. が含まれる [Firebase コンソール](https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
+      1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「Android アプリに Firebase を追加」を選択します。
-      1. パッケージ名と SHA-1 を指定し、を選択します。 [!UICONTROL アプリを追加]. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
-   1. プロジェクトの概要の「プロジェクト設定」に移動する
-      1. 「一般」タブをクリックします。 「google-services.json」ファイルをダウンロードします。
-      1. 「Cloud Messaging」タブをクリックします。 「サーバーキー」と「送信者 ID」をコピーします。 これらの「サーバーキー」と「送信者 ID」をMarketoに指定します。
+      1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
+   1. に移動します。 **[!UICONTROL プロジェクト設定]** 。対象： [!UICONTROL プロジェクトの概要]
+      1. クリックする **[!UICONTROL 一般]** タブ。 「google-services.json」ファイルをダウンロードします。
+      1. クリックする **[!UICONTROL クラウドメッセージング]** タブ。 コピー [!UICONTROL サーバーキー] &amp; [!UICONTROL 送信者 ID]. これらを指定 [!UICONTROL サーバーキー] &amp; [!UICONTROL 送信者 ID] をMarketoに送信します。
    1. Phonegap アプリでの FCM 変更の設定
       1. ダウンロードした「google-services.json」ファイルを Phonegap アプリモジュールのルートディレクトリに移動します
       1. の場所からファイル「MyFirebaseInstanceIDService」を削除します `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` （非推奨）

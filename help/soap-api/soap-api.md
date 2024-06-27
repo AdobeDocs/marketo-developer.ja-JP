@@ -1,18 +1,18 @@
 ---
-title: "SOAP API"
+title: SOAP API
 feature: SOAP
-description: "Marketo SOAP の概要"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Marketo SOAPの概要
+exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
 source-wordcount: '246'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # SOAP API
 
-SOAP API はアクティブに開発中ではなくなりました。 呼び出しは引き続き機能しますが、開発の焦点は次のとおりです [REST](https://developer.adobe.com/marketo-apis/) 先に進む。
+SOAP API は現在開発中ではありません。 呼び出しは引き続き機能しますが、開発の焦点は次のとおりです [REST](https://developer.adobe.com/marketo-apis/) 先に進む。
 
 Marketo SOAP API を使用すると、Marketoに保存されているエンティティとデータを作成、取得、削除できます。 次を見つけることができます [Marketo-SOAP-SDK](https://github.com/Marketo/SOAP-API-Java-Client) GitHub で。 次のものがあります [クライアントライブラリ](https://github.com/Marketo/Community-Supported-Client-Libraries) 時間を節約するために。
 
@@ -20,7 +20,7 @@ Marketo SOAP API を使用すると、Marketoに保存されているエンテ�
 
 ## SOAP WSDL
 
-SOAP WSDL ドキュメントを取得するには、から SOAP API エンドポイントを取得します。 **[!UICONTROL Admin]** > **[!UICONTROL 統合]** > **[!UICONTROL Web サービス]** メニュー。
+SOAP SOAP WSDL ドキュメントを取得するには、 **[!UICONTROL Admin]** > **[!UICONTROL 統合]** > **[!UICONTROL Web サービス]** メニュー。
 
 ![SOAP エンドポイント](assets/endpoint-soap.png)
 
@@ -38,12 +38,12 @@ WSDL で定義されているエンドポイントを使用しないでくださ
 
 バッチサイズは 300 以下にすることをお勧めします。 大きいサイズはサポートされず、タイムアウトや、極端な場合はスロットリングが発生する可能性があります。
 
-## Marketoでの SOAP API 設定
+## MarketoでのSOAP API 設定
 
-1. 「管理者」セクションに移動して、「Web サービス」をクリックします。
+1. に移動します **[!UICONTROL Admin]** セクションでクリック **[!UICONTROL Web サービス]**.
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 適切な暗号化キーを設定し、「変更を保存」をクリックし、SOAP API エンドポイント、ユーザー ID、暗号化キーの値を使用して、正しいを生成します。 [認証署名](authentication-signature.md) SOAP API 呼び出し毎。
+1. 適切な [!UICONTROL 暗号化キー]を選択し、 **[!UICONTROL 変更を保存]** およびSOAP API の使用 [!UICONTROL エンドポイント], [!UICONTROL ユーザー ID]、および [!UICONTROL 暗号化キー] 正しいを生成するための値 [認証署名](authentication-signature.md) （SOAP API 呼び出しごとに）。
 
 ![admin-web-services3](assets/admin-web-services3.png)

@@ -1,14 +1,14 @@
 ---
-title: "REST API"
+title: REST API
 feature: REST API
-description: "REST API の概要"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: REST API の概要
+exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
 source-wordcount: '664'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # REST API
 
@@ -30,15 +30,15 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![管理者ユーザーと役割](assets/admin-users-and-roles.png)
 
-「」をクリックします [!UICONTROL 役割] タブに続いて「新しい役割」をクリックし、「読み取り専用リード」（または「読み取り専用ユーザー」）以上の権限をアクセス API グループの役割に割り当てます。 必ずわかりやすい名前を付けて、 [!UICONTROL 作成].
+「」をクリックします **[!UICONTROL 役割]** タブに続いて「新しい役割」をクリックし、「読み取り専用リード」（または「読み取り専用ユーザー」）以上の権限をアクセス API グループの役割に割り当てます。 必ずわかりやすい名前を付けて、 **[!UICONTROL 作成]**.
 
 ![新しい役割](assets/new-role.png)
 
-「ユーザー」タブに戻り、「新規ユーザーを招待」をクリックします。 ユーザーに、API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、 **[!UICONTROL 次]**.
+次に、 [!UICONTROL ユーザー] tab キーを押してクリック **[!UICONTROL 新しいユーザーを招待]**. ユーザーに、API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、 **[!UICONTROL 次]**.
 
 ![新規ユーザー情報](assets/new-user-info.png)
 
-次に、「API のみ」オプションをオンにし、作成した API の役割をユーザーに付与して、クリックします **[!UICONTROL 次]**.
+次に、 [!UICONTROL API のみ] 作成した API の役割をユーザーに付与し、クリックします **[!UICONTROL 次]**.
 
 ![新規ユーザー権限](assets/new-user-permissions.png)
 
@@ -46,23 +46,23 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![新規ユーザーメッセージ](assets/new-user-message.png)
 
-次に、管理者メニューに移動し、 **[!UICONTROL LaunchPoint]**.
+次に、に移動します [!UICONTROL Admin] メニューとクリック **[!UICONTROL LaunchPoint]**.
 
 ![Launchpoint](assets/admin-launchpoint.png)
 
-「新規」メニューをクリックし、次の項目を選択します [!UICONTROL 新しいサービス]. サービスにわかりやすい名前を付け、サービス ドロップダウンメニューから「カスタム」を選択します。 説明を入力し、API のみのユーザーのドロップダウンメニューから新しいユーザーを選択して、クリックします [!UICONTROL 作成].
+「」をクリックします **[!UICONTROL 新規]** メニューと選択 **[!UICONTROL 新しいサービス]**. サービスにわかりやすい名前を付け、を選択します。 **[!UICONTROL カスタム]** から [!UICONTROL サービス] ドロップダウンメニュー。 説明を付けてから、新しいユーザーを [!UICONTROL API のみのユーザー] ドロップダウンメニューとクリック **[!UICONTROL 作成]**.
 
 ![新しい起動ポイント サービス](assets/admin-launchpoint-new-service.png)
 
-新しいサービスの「詳細を表示」をクリックして、クライアント ID とクライアント秘密鍵にアクセスします。 今のところ、をクリックできます [!UICONTROL トークンを取得] 1 時間有効なアクセストークンを生成するボタン。 現時点では、トークンをメモに保存します。
+クリック **[!UICONTROL 詳細を表示]** 新しいサービスでクライアント ID とクライアント秘密鍵にアクセスできるようにします。 今のところ、をクリックできます **[!UICONTROL トークンを取得]** 1 時間有効なアクセストークンを生成するボタン。 現時点では、トークンをメモに保存します。
 
 ![トークンを取得](assets/get-token.png)
 
-次に、管理メニューに移動し、次にアクセスします **[!UICONTROL Web サービス]**.
+次に、に移動します **[!UICONTROL Admin]** メニュー、次に **[!UICONTROL Web サービス]**.
 
 ![Web サービス](assets/admin-web-services.png)
 
-「REST API」ボックスでエンドポイントを見つけて、今はメモに保存します。
+の検索 [!UICONTROL エンドポイント] 今は、「REST API」ボックスにメモを保存します。
 
 ![REST エンドポイント](assets/admin-web-services-rest-endpoint-1.png)
 
