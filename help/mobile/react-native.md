@@ -1,22 +1,22 @@
 ---
-title: "React Native"
-feature: "Mobile Marketing"
-description: 「Marketo用 React Native のインストール」
-source-git-commit: 416044a6cce4dac229640058a9cb0013070c9d9c
+title: React Native
+feature: Mobile Marketing
+description: React Native for Marketoのインストール
+exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '822'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-
-# React ネイティブ
+# React Native
 
 この記事では、Marketo ネイティブ SDK をインストールおよび設定して、モバイルアプリをプラットフォームと統合する方法について説明します。
 
 ## 前提条件
 
-[Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
+[Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
 
 ## SDK 統合
 
@@ -81,11 +81,11 @@ Download [ココア ポッド](https://cocoapods.org/) - Ruby Gem として配�
 
 ## ネイティブモジュールのインストール手順
 
-React ネイティブアプリは、AppleまたはGoogle Pay にアクセスするためのネイティブ API など、JavaScript でデフォルトでは使用できないネイティブ Platform API にアクセスする必要が生じる場合があります。 既存の Objective-C、Swift、Java、C++ライブラリを JavaScript で再実装することなく再利用したり、画像処理などの高パフォーマンスのマルチスレッドコードを記述したりする場合があります。
+React Native アプリは、AppleまたはGoogle Pay にアクセスするためのネイティブ API など、JavaScript でデフォルトでは使用できないネイティブ Platform API にアクセスする必要が生じる場合があります。 既存の Objective-C、Swift、Java、C++ライブラリを JavaScript で再実装することなく再利用したり、画像処理などの高パフォーマンスのマルチスレッドコードを記述したりする場合があります。
 
-NativeModule システムは、Java/Objective-C/C++（ネイティブ）クラスのインスタンスを JS オブジェクトとして JavaScript （JS）に公開します。これにより、JS 内から任意のネイティブコードを実行できます。 この機能が通常の開発プロセスに含まれるとは思いませんが、この機能が存在することは不可欠です。 React Native が JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
+NativeModule システムは、Java/Objective-C/C++（ネイティブ）クラスのインスタンスを JS オブジェクトとして JavaScript （JS）に公開します。これにより、JS 内から任意のネイティブコードを実行できます。 この機能が通常の開発プロセスに含まれるとは思いませんが、この機能が存在することは不可欠です。 React Nativeが JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
 
-React ネイティブブリッジは、JSX とネイティブアプリレイヤー間の通信に使用されます。 この場合、ホストアプリは、Marketo SDK のメソッドを呼び出す JSX コードを記述できます。
+React Native ブリッジは、JSX とネイティブアプリレイヤー間の通信に使用されます。 この場合、ホストアプリは、Marketo SDK のメソッドを呼び出す JSX コードを記述できます。
 
 ### Android
 
@@ -226,7 +226,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 次のガイドでは、ネイティブモジュールを作成します。 _RNMarketoModule_:JavaScript からMarketoの API にアクセスできるようになります。
 
-開始するには、Xcode の React ネイティブアプリケーション内でiOS プロジェクトを開きます。 React ネイティブアプリ内でiOS プロジェクトを見つけることができます。 Xcode を使用してネイティブコードを記述することをお勧めします。 Xcode はiOS開発用に構築されており、コード構文などの小さなエラーをすばやく解決するのに役立ちます。
+開始するには、React Native アプリケーション内でiOS プロジェクトを Xcode で開きます。 iOS プロジェクトは、React Native アプリ内で見つけることができます。 Xcode を使用してネイティブコードを記述することをお勧めします。 Xcode はiOS開発用に構築されており、コード構文などの小さなエラーをすばやく解決するのに役立ちます。
 
 メインのカスタムネイティブモジュールヘッダーと実装ファイルを作成します。 という名前の新規ファイルを作成します。 `MktoBridge.h` さらに、次の内容を追加します。
 
