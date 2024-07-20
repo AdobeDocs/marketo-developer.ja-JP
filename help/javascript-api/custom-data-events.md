@@ -1,20 +1,20 @@
 ---
-title: 「カスタムデータイベント」
-description: 「Custom Data Events API」
+title: カスタムデータイベント
+description: カスタムデータイベント API
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: ef7cab9c-3bd0-450e-9247-9324b1e6f9ab
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '223'
-ht-degree: 4%
+ht-degree: 6%
 
 ---
-
 
 # カスタムデータイベント
 
 このメソッドは、トラッキングとリアルタイムパーソナライゼーション用のカスタムイベントを送信します。 これを使用して、サードパーティデータを送信したり、訪問者行動に基づいて独自のカスタムイベントをトリガーしたりできます。 カスタムデータイベントは、訪問者のセッション内で 1 回カウントされます。
 
-Web パーソナライゼーションの顧客になり、次を持っている必要があります [RTP タグが展開されました](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API を使用する前に、サイトで次の操作を行います。
+User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 
 | パラメーター | オプション/必須 | タイプ | 説明 |
 |---|---|---|---|

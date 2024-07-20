@@ -1,18 +1,18 @@
 ---
-title: "アクティビティ"
+title: アクティビティ
 feature: SOAP
-description: 「アクティビティに対する SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: SOAPによるアクティビティの呼び出し
+exl-id: fd695ab6-e7be-4ced-89c9-c4cd2d4c2ab0
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '19'
-ht-degree: 5%
+ht-degree: 15%
 
 ---
 
-
 # アクティビティ
 
-次の SOAP 呼び出しを使用して、アクティビティとやり取りできます。
+次のSOAP呼び出しを使用して、アクティビティとやり取りできます。
 
 - [getLeadActivity](getleadactivity.md)
 - [getLeadChanges](getleadchanges.md)

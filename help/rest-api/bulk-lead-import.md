@@ -1,20 +1,20 @@
 ---
-title: 「リードの一括読み込み」
+title: リードの一括読み込み
 feature: REST API
 description: リードデータのバッチインポート。
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+exl-id: 615f158b-35f9-425a-b568-0a7041262504
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '803'
 ht-degree: 1%
 
 ---
 
-
 # リードの一括読み込み
 
-[リードの一括インポートエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads)
+[ 一括リード読み込みエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads)
 
-大量のリードレコードの場合、リードはと非同期でインポートできます [一括 API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST). これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストをMarketoにインポートできます。 ファイルには任意の数のレコードを含めることができます（ファイルの合計サイズが 10 MB 未満である場合）。 レコード操作は、「挿入または更新」のみです。
+大量のリードレコードの場合、リードは [bulk API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) を使用して非同期でインポートできます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストをMarketoにインポートできます。 ファイルには任意の数のレコードを含めることができます（ファイルの合計サイズが 10 MB 未満である場合）。 レコード操作は、「挿入または更新」のみです。
 
 ## 処理制限
 
@@ -29,9 +29,9 @@ email,firstName,lastName
 test@example.com,John,Doe
 ```
 
-この `externalCompanyId` フィールドを使用して、リードレコードを会社レコードにリンクできます。 この `externalSalesPersonId` フィールドを使用して、潜在顧客レコードを販売担当者レコードにリンクできます。
+「`externalCompanyId`」フィールドを使用すると、リードレコードを会社レコードにリンクできます。 「`externalSalesPersonId`」フィールドを使用して、引合レコードを販売担当者レコードにリンクできます。
 
-呼び出しそのものは、 `multipart/form-data` content-type。
+呼び出し自体は、`multipart/form-data` の content-type を使用して行われます。
 
 このリクエストタイプは実装が困難な場合があるので、既存のライブラリ実装を使用することを強くお勧めします。
 
@@ -75,7 +75,7 @@ Easy,Fox,easyfox@marketo.com,Marketo
 }
 ```
 
-このエンドポイントはを使用します [content-type として multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html). 正しく設定するまでには時間がかかるので、ベストプラクティスは HTTP サポートライブラリを使用して目的の言語を選択することです。 コマンドラインから cURL を使用してこれを行う簡単な方法は、次のようになります。
+このエンドポイントは [multipart/form-data を content-type として使用します ](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)。 正しく設定するまでには時間がかかるので、ベストプラクティスは HTTP サポートライブラリを使用して目的の言語を選択することです。 コマンドラインから cURL を使用してこれを行う簡単な方法は、次のようになります。
 
 ```
 curl -i -F format=csv -F file=@lead_data.csv -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/leads.json
@@ -90,7 +90,7 @@ Charlie,Dog,charliedog@marketo.com,Marketo
 Easy,Fox,easyfox@marketo.com,Marketo
 ```
 
-オプションで、を含めることもできます `lookupField`, `listId`、および `partitionName` リクエストのパラメーター。 `lookupField` リードを同期と同様に、重複排除する特定のフィールドを選択でき、デフォルトはメールです。 以下を指定できます `id` as `lookupField` 「更新のみ」の操作を示します。 `listId` 静的リストを選択して、リードのリストを読み込むことができます。これにより、読み込みによる作成や更新に加えて、リスト内のリードがこの静的リストのメンバーになります。 `partitionName` インポート先の特定のパーティションを選択します。 詳しくは、ワークスペースとパーティションの節を参照してください。
+オプションで、`lookupField`、`listId`、`partitionName` のパラメーターをリクエストに含めることもできます。 `lookupField` 同期リードと同様に、重複排除する特定のフィールドを選択でき、デフォルトはメールです。 `id` を `lookupField` として指定して、「更新のみ」の操作を示すことができます。 `listId` では、静的リストを選択して、リードのリストを読み込むことができます。これにより、読み込みによる作成や更新に加えて、リスト内のリードがこの静的リストのメンバーになります。 `partitionName` インポート先の特定のパーティションを選択します。 詳しくは、ワークスペースとパーティションの節を参照してください。
 
 呼び出しへの応答では、同期リードの場合のように成功または失敗のリストはなく、結果の配列のレコードの batchId と status フィールドがあることに注意してください。 これは、この API が非同期で、ステータスが Queued、Importing または Failed を返す場合があるためです。 インポートジョブのステータスを取得したり、完了時に失敗や警告を取得したりするには、batchId を保持する必要があります。 batchId は 7 日間有効です。
 

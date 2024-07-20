@@ -1,26 +1,26 @@
 ---
-title: 「営業担当者」
+title: 販売担当者
 feature: REST API
 description: 営業担当者に関するデータを読み取ります。
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '303'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
-
 # 販売担当者
 
-[販売担当者エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[ 販売担当者エンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-販売担当者 API は、次の情報を持つ購読に対する読み取り専用アクセスです [SFDC 同期](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) または [Microsoft Dynamics Sync](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) が有効になっています。 営業担当者は、引合レコードの販売所有者である個人レコードのタイプです。 これらは、各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられています。 設定された externalSalesPersonId フィールドによってリードが販売担当者に関連付けられると、対応するリードオーナー検索フィールドにMarketoのそのリードレコードが設定され、対応するフィルターおよびトークンを使用できるようになります。
+営業担当者 API は、[SFDC 同期 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) または [Microsoft Dynamics 同期 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) が有効になっている購読に対する読み取り専用アクセスです。 営業担当者は、引合レコードの販売所有者である個人レコードのタイプです。 これらは、各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられています。 設定された externalSalesPersonId フィールドによってリードが販売担当者に関連付けられると、対応するリードオーナー検索フィールドにMarketoのそのリードレコードが設定され、対応するフィルターおよびトークンを使用できるようになります。
 
-営業担当者は、次の項目を使用してリード レコードに関連付けられています [リードを同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) エンドポイントを指定し、externalSalesPersonId 属性を渡します。
+販売担当者は、[ 同期リード ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、リードレコードに関連付けられます。
 
-営業担当者は、次の項目を使用して商談レコードに関連しています [商談を同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST) エンドポイントを指定し、externalSalesPersonId 属性を渡します。
+営業担当者は、[ 商談の同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、商談レコードに関連しています。
 
-販売担当者は、を使用して会社レコードに関連付けられます [会社の同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントを指定し、externalSalesPersonId 属性を渡します。
+販売担当者は、[ 会社の同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、会社レコードに関連付けられます。
 
 販売担当者レコードは、API からのみ編集できます。
 
@@ -95,7 +95,7 @@ GET /rest/v1/salespersons/describe.json
 }
 ```
 
-デフォルトでは、 `idField` 販売担当者のうち「id」で、 `dedupeFields` は単なる「externalSalesPersonId」です。
+デフォルトでは、販売担当者の `idField` は「id」で、`dedupeFields` は単に「externalSalesPersonId」です。
 
 ## クエリ
 

@@ -1,24 +1,24 @@
 ---
-title: 「メールテンプレート」
+title: メールテンプレート
 feature: REST API
-description: 「Marketo API を使用したメールテンプレートの作成」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo API を使用してメールテンプレートを作成します。
+exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '569'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # メールテンプレート
 
-[メールテンプレートエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
+[ メールテンプレートエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
 
-メールテンプレートは、Marketoで新しいメールを作成するたびに使用されます。  HTMLの置き換えを通じてメールをテンプレートからリンク解除することもできますが、メールは最初にテンプレートをベースとして作成する必要があります。  テンプレートは、名前や説明などのメタデータを含む、純粋なHTMLドキュメントとしてMarketoで作成されます。  コンテンツに関する制限はほとんどありませんが、テンプレートのHTMLが有効であり、要件に従って少なくとも 1 つの編集可能なセクションが含まれている必要があります [概要説明](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0).
+メールテンプレートは、Marketoで新しいメールを作成するたびに使用されます。  HTMLの置き換えを通じてメールをテンプレートからリンク解除することもできますが、メールは最初にテンプレートをベースとして作成する必要があります。  テンプレートは、名前や説明などのメタデータを含む、純粋なHTMLドキュメントとしてMarketoで作成されます。  コンテンツに関する制限はほとんどありませんが、テンプレートのHTMLが有効で、要件（ここでは概要 [ に従った編集可能なセクションが少なくとも 1 つ含まれている必要があ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0) ます。
 
 ## クエリ
 
-メールテンプレートのクエリは、アセットの標準パターンに従い、クエリを許可します [id 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getTemplateByIdUsingGET), [名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getTemplateByNameUsingGET) および [ブラウジング](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplatesUsingGET) 特定のフォルダー。
+メールテンプレートのクエリは、アセットの標準のパターンに従い、特定のフォルダーに対して [id 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getTemplateByIdUsingGET)、[ 名前別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getTemplateByNameUsingGET) および [ 参照別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplatesUsingGET) クエリを実行できます。
 
 ### Id 別
 
@@ -192,7 +192,7 @@ GET /rest/asset/v1/emailTemplates.json
 
 ## 作成と更新
 
-[作成中](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/createEmailTemplateUsingPOST) または [更新中](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST) テンプレートはかなり簡単です。 各テンプレートのコンテンツはHTMLドキュメントとして保存され、マルチパート/フォームデータタイプのPOSTを使用してMarketoに渡す必要があります。 の RFC に記載されているように、境界を含む適切な Content-Type ヘッダーを渡す必要があります。 [multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) および [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt).
+テンプレートの [ 作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/createEmailTemplateUsingPOST) または [ 更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST) はかなり簡単です。 各テンプレートのコンテンツはHTMLドキュメントとして保存され、マルチパート/フォームデータタイプのPOSTを使用してMarketoに渡す必要があります。 [multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) および [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt) の RFC で説明されているように、境界を含む適切な Content-Type ヘッダーを渡す必要があります。
 
 テンプレートを作成するには、名前、フォルダー、コンテンツの 3 つのパラメーターを含める必要があります。 オプションの説明パラメーターを含めることができます。  HTMLドキュメントは、コンテンツパラメーターで渡されます。このパラメーターには、従来の filename パラメーターも Content-Disposition ヘッダーの一部として含める必要があります。
 
@@ -257,7 +257,7 @@ Create email template using API
 }
 ```
 
-コンテンツの更新は、 [個別のエンドポイント](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST) これには、メールテンプレートの ID が必要です。 このエンドポイントでは、本文のコンテンツパラメーターの送信のみが許可されます。 更新を行うと、コンテンツパラメーターで渡される内容が、承認済みバージョンを更新する場合は新しいドラフトでメールの既存のコンテンツを完全に置き換え、アセットがドラフトのみの状態の場合は現在のドラフトを置き換えます。
+コンテンツの更新は、メールテンプレートの ID が必要な [ 個別のエンドポイント ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST) を使用して行われます。 このエンドポイントでは、本文のコンテンツパラメーターの送信のみが許可されます。 更新を行うと、コンテンツパラメーターで渡される内容が、承認済みバージョンを更新する場合は新しいドラフトでメールの既存のコンテンツを完全に置き換え、アセットがドラフトのみの状態の場合は現在のドラフトを置き換えます。
 
 ```
 POST /rest/asset/v1/emailTemplate/{id}/content.json
@@ -299,7 +299,7 @@ Content-Type: text/html
 
 ## メタデータを更新
 
-終了 [テンプレートのメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateUsingPOST)、名前および説明です。コンテンツを更新するには、と同じエンドポイントを使用できますが、代わりに、名前および説明のパラメーターを使用して application/x-www-url-formencoded POSTーを渡します。
+[ テンプレートのメタデータ、名前、説明を更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateUsingPOST) するには、コンテンツを更新する場合と同じエンドポイントを使用できますが、代わりに、名前と説明のパラメーターを使用して application/x-www-url-formencoded POSTーを渡します。
 
 ```
 POST /rest/asset/v1/emailTemplate/{id}.json
@@ -459,7 +459,7 @@ POST /rest/asset/v1/emailTemplate/{id}/delete.json
 
 ## クローン作成
 
-Marketoは、以下のためのシンプルな手段を提供します [メールテンプレートのクローン](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/cloneTemplateUsingPOST). creating とは異なり、この種のリクエストは application/x-www-url-formencoded POSTから行われ、id と type を持つ埋め込み JSON オブジェクトである、名前とフォルダーの 2 つの必須パラメーターを受け取ります。  説明はオプションのパラメーターでもあります。
+Marketoには、（メールテンプレートのクローン [ を作成するための簡単な方法が用意されて ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/cloneTemplateUsingPOST) ます。 creating とは異なり、この種のリクエストは application/x-www-url-formencoded POSTから行われ、id と type を持つ埋め込み JSON オブジェクトである、名前とフォルダーの 2 つの必須パラメーターを受け取ります。  説明はオプションのパラメーターでもあります。
 
 ```
 POST /rest/asset/v1/emailTemplate/{id}/clone.json
@@ -501,9 +501,9 @@ name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=T
 
 ## メールの依存関係のクエリ
 
-の使用 [が使用する電子メールテンプレートを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET) 特定のメールテンプレートに依存するメールのリストを取得するエンドポイント。  この `id` path パラメーターは、親メールテンプレートを指定します。
+[ 使用されているメールテンプレートを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET) エンドポイントを使用して、特定のメールテンプレートに依存するメールのリストを取得します。  `id` path パラメーターは、親メールテンプレートを指定します。
 
-オプションのパラメーターが 2 つあります。 `maxReturn`  は、結果の数を制限する整数（デフォルトは 20、最大は 200）、 `offset` は、と共に使用できる整数です `maxReturn` 大きな結果セットを読み取るには（デフォルトは 0）。
+オプションのパラメーターが 2 つあります。 `maxReturn`  は結果の数を制限する整数（デフォルトは 20、最大は 200）、`offset` は大きな結果セットを読み取るために `maxReturn` で使用できる整数（デフォルトは 0）です。
 
 ```
 GET /rest/asset/v1/emailTemplates/{id}/usedBy.json

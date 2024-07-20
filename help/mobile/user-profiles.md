@@ -1,21 +1,21 @@
 ---
-title: 「ユーザープロファイル」
+title: ユーザープロファイル
 feature: Mobile Marketing, Users and Roles
-description: 「Marketo Mobile でのユーザープロファイルの使用」
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Marketo Mobile でのユーザープロファイルの使用
+exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '83'
-ht-degree: 0%
+ht-degree: 12%
 
 ---
-
 
 # ユーザープロファイル
 
 ユーザープロファイルの作成方法
 
 1. [iOSでのユーザープロファイルの作成](#ios_user_profiles)
-1. [Android でのユーザープロファイルの作成](#android_user_profiles)
+1. [Androidでのユーザープロファイルの作成](#android_user_profiles)
 
 ## iOSでのユーザープロファイルの作成 {#ios_user_profiles}
 
@@ -65,7 +65,7 @@ profile.setLinkedInId("linkedinid")
 profile.setTwitterId("twitterid")
 ```
 
-さらに追加 [標準フィールド](../rest-api/list-of-standard-fields.md).
+さらに追加 [ 標準フィールド ](../rest-api/list-of-standard-fields.md)。
 
 >[!BEGINTABS]
 
@@ -113,7 +113,7 @@ marketo.associateLead(profile)
 
 >[!ENDTABS]
 
-## Android でのユーザープロファイルの作成 {#android_user_profiles}
+## Androidでのユーザープロファイルの作成 {#android_user_profiles}
 
 1. ユーザープロファイルを作成します。
 
@@ -135,7 +135,7 @@ marketo.associateLead(profile)
    }
    ```
 
-1. さらに追加 [標準フィールド](../rest-api/list-of-standard-fields.md).
+1. さらに追加 [ 標準フィールド ](../rest-api/list-of-standard-fields.md)。
 
    ```java
    // Add other custom fields

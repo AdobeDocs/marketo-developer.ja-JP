@@ -1,18 +1,18 @@
 ---
-title: 「プログラムメンバーの一括抽出」
+title: プログラムメンバーの一括抽出
 feature: REST API
-description: 「メンバーデータ抽出のバッチ処理」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: メンバーデータ抽出のバッチ処理。
+exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 4%
 
 ---
 
-
 # プログラムメンバーの一括抽出
 
-[一括プログラムメンバー抽出エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members)
+[ プログラムメンバー一括抽出エンドポイント参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members)
 
 REST API の Bulk Program Member Extract セットは、Marketoからプログラムメンバーレコードの大きなセットを取得するためのプログラム的なインターフェイスを提供します。 ETL、データウェアハウスおよびアーカイブの目的で、Marketoと 1 つ以上の外部システムとの間でデータを継続的にやり取りする必要があるユースケースでは、このインターフェイスをお勧めします。
 
@@ -22,7 +22,7 @@ REST API の Bulk Program Member Extract セットは、Marketoからプログ�
 
 ## 説明
 
-[プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2) は、フィールドを使用できるかどうか、およびそれらのフィールドに関するメタデータの主要な情報源です。 この `name` 属性には、REST API 名が含まれます。
+[ プログラムメンバーの説明 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2) は、フィールドの使用や、フィールドに関するメタデータについての主要な情報源です。 `name` 属性には、REST API 名が格納されます。
 
 ```
 GET /rest/v1/programs/members/describe.json
@@ -213,7 +213,7 @@ GET /rest/v1/programs/members/describe.json
 
 ## フィルター
 
-プログラムメンバーは、様々なフィルターオプションをサポートしています。 1 つのジョブに対して複数のフィルタータイプを指定できます。この場合、これらは AND 結合されます。 次のいずれかを指定する必要があります `programId` または `programIds` フィルター。 その他のフィルターはすべてオプションです。 この `updatedAt` フィルターを使用するには、すべてのサブスクリプションにまだロールアウトされていない追加のインフラストラクチャコンポーネントが必要です。
+プログラムメンバーは、様々なフィルターオプションをサポートしています。 1 つのジョブに対して複数のフィルタータイプを指定できます。この場合、これらは AND 結合されます。 `programId` または `programIds` フィルターのいずれかを指定する必要があります。 その他のフィルターはすべてオプションです。 `updatedAt` フィルターには、すべてのサブスクリプションにまだロールアウトされていない追加のインフラストラクチャコンポーネントが必要です。
 
 <table>
   <tbody>
@@ -225,17 +225,17 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>programId</td>
       <td>整数</td>
-      <td>プログラムの ID を受け入れます。 ジョブは、ジョブが処理を開始した時点でのプログラムのメンバーである、すべてのアクセス可能なレコードを返します。 <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">プログラムの取得</a> endpoint.Cannot be used with programIds filter.</td>
+      <td>プログラムの ID を受け入れます。 ジョブは、ジョブの処理開始時にプログラムのメンバーであった、アクセス可能なすべてのレコードを返します。<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs"> プログラムの取得 </a> エンドポイントを使用して、プログラム ID を取得します。programIds フィルターと併用することはできません。</td>
     </tr>
     <tr>
       <td>programIds</td>
       <td>Array[Integer]</td>
-      <td>最大 10 個のプログラム ID の配列を受け入れます。 ジョブは、ジョブの処理開始時にプログラムのメンバーであったすべてのアクセス可能なレコードを返します。さらに、「programId」というフィールドが、最初のフィールドとしてエクスポートファイルに追加されます。 このフィールドは、プログラムメンバーシップレコードが抽出されたプログラムを識別します。 <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">プログラムの取得</a> endpoint.Cannot be used with programId filter.</td>
+      <td>最大 10 個のプログラム ID の配列を受け入れます。 ジョブは、ジョブの処理開始時にプログラムのメンバーであったすべてのアクセス可能なレコードを返します。さらに、「programId」というフィールドが、最初のフィールドとしてエクスポートファイルに追加されます。 このフィールドは、プログラム メンバーシップ レコードが抽出されたプログラムを識別します。<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs"> プログラムの取得 </a> エンドポイントを使用して、プログラム ID を取得します。programId フィルターと共に使用することはできません。</td>
     </tr>
     <tr>
       <td>isExhausted</td>
       <td>ブール値</td>
-      <td>のプログラムメンバーシップレコードのフィルタリングに使用するブール値を受け入れます <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">コンテンツを使い果たした人々</a>.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content"> コンテンツを使い果たした人物 </a> のプログラムメンバーシップレコードをフィルタリングするために使用するブール値を受け入れます。</td>
     </tr>
     <tr>
       <td>nurtureCadence</td>
@@ -320,14 +320,14 @@ GET /rest/v1/programs/members/describe.json
 
 | パラメーター | データタイプ | 必須 | 注意 |
 |---|---|---|---|
-| フィールド | 配列[文字列] | はい | この fields パラメーターには、文字列の JSON 配列を指定できます。 リストされたフィールドは、書き出されたファイルに含まれます。 次のフィールドタイプを書き出すことができます。`LeadCustom` `LeadProgram` MemberCustom `ProgramMember`. REST API 名を使用してフィールドを指定します。この API 名は、リード 2 を説明および/またはプログラムメンバーを説明エンドポイントを使用して取得できます。 |
+| フィールド | 配列 [ 文字列 ] | はい | この fields パラメーターには、文字列の JSON 配列を指定できます。 リストされたフィールドは、書き出されたファイルに含まれます。 次のフィールド タイプをエクスポートできます：`LeadCustom` `LeadProgram` MemberCustom `ProgramMember`。 REST API 名を使用してフィールドを指定します。この API 名は、リード 2 を説明および/またはプログラムメンバーを説明エンドポイントを使用して取得できます。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
 | 形式 | 文字列 | いいえ | CSV、TSV、SSV のいずれかを使用できます。 書き出されたファイルは、コンマ区切り値、タブ区切り値、スペース区切り値の各ファイル（設定されている場合）としてレンダリングされます。 未設定の場合のデフォルト値は CSV です。 |
 
 
 ## ジョブの作成
 
-ジョブのパラメーターは、を使用してエクスポートを開始する前に定義されます [プログラム メンバージョブのエクスポートの作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) エンドポイント。 を定義する必要があります `filter` プログラム id と `fields` 書き出しに必要です。 オプションで、以下を定義できます `format` ファイル、および `columnHeaderNames`.
+ジョブのパラメーターは、[ エクスポートプログラムメンバージョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) エンドポイントを使用してエクスポートを開始する前に定義されます。 プログラム ID を含む `filter` と、書き出しに必要な `fields` を定義する必要があります。 オプションで、ファイルの `format` と `columnHeaderNames` を定義できます。
 
 ```
 POST /bulk/v1/program/members/export/create.json
@@ -371,7 +371,7 @@ POST /bulk/v1/program/members/export/create.json
 }
 ```
 
-ジョブが作成されたことを示すステータス応答を返します。 ジョブは定義され作成されましたが、まだ開始されていません。 そのためには、 [プログラム メンバージョブのエクスポートをキューに入れる](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) エンドポイントは、 `exportId` 作成ステータス応答から、次の操作を行います。
+ジョブが作成されたことを示すステータス応答を返します。 ジョブは定義され作成されましたが、まだ開始されていません。 これを行うには、作成ステータス応答の `exportId` を使用して [ エンキュー書き出しプログラムメンバージョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) エンドポイントを呼び出す必要があります。
 
 ```
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
@@ -393,13 +393,13 @@ POST /bulk/v1/program/members/export/{exportId}/enqueue.json
 }
 ```
 
-これは、最初のに応答します `status` （使用可能なエクスポートスロットがある場合、待機中の場合）は、待機中に設定されます。
+これにより、最初の `status` が「Queued」で応答し、使用可能なエクスポートスロットがある場合は「Processing」に設定されます。
 
 ## ジョブステータスのポーリング
 
 注意：ステータスは、同じ API ユーザーによって作成されたジョブに対してのみ取得できます。
 
-これは非同期エンドポイントなので、ジョブを作成した後、そのステータスをポーリングして、進行状況を判断する必要があります。 を使用したポーリング [プログラム メンバージョブの状態のエクスポートの取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) エンドポイント。 ステータスは 60 秒に 1 回だけ更新されるので、これよりも低いポーリング頻度は推奨されず、ほとんどすべての場合で過剰です。 ステータスフィールドは、作成済み、待機中、処理中、キャンセル済み、完了、失敗のいずれかの応答を返すことができます。
+これは非同期エンドポイントなので、ジョブを作成した後、そのステータスをポーリングして、進行状況を判断する必要があります。 [ 書き出しプログラムメンバージョブステータスの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) エンドポイントを使用してポーリングします。 ステータスは 60 秒に 1 回だけ更新されるので、これよりも低いポーリング頻度は推奨されず、ほとんどすべての場合で過剰です。 ステータスフィールドは、作成済み、待機中、処理中、キャンセル済み、完了、失敗のいずれかの応答を返すことができます。
 
 ```
 GET /bulk/v1/program/members/export/{exportId}/status.json
@@ -422,7 +422,7 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 }
 ```
 
-ステータスエンドポイントは、ジョブがまだ処理中であることを示す応答なので、ファイルはまだ取得できません。 ジョブの実行後 `status` 「完了」に変更され、ダウンロードできるようになりました。
+ステータスエンドポイントは、ジョブがまだ処理中であることを示す応答なので、ファイルはまだ取得できません。 ジョブ `status` が「完了」に変わると、ダウンロードできるようになります。
 
 ```json
 {
@@ -447,9 +447,9 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 ## データの取得
 
-完了したプログラムメンバーエクスポートのファイルを取得するには、を呼び出すだけです [プログラム メンバ ファイルのエクスポートの取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) エンドポイントと `exportId`.
+完了したプログラムメンバーエクスポートのファイルを取得するには、`exportId` で [ エクスポートプログラムメンバーファイルを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) エンドポイントを呼び出すだけです。
 
-応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。 リクエストされたプログラムメンバーフィールドが空（データが含まれていない）の場合、 `null` がエクスポートファイル内の対応するフィールドに配置されます。
+応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。 要求されたプログラムメンバーフィールドが空（データが含まれていない）の場合、`null` はエクスポートファイルの対応するフィールドに配置されます。
 
 ```
 GET /bulk/v1/program/members/export/{exportId}/file.json
@@ -471,11 +471,11 @@ Jory,Cassel,jcas@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1799,f
 Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800,false,Lead01_Value,Lead02_Value,PM01_Value,PM02_Value
 ```
 
-抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションでバイト型の HTTP ヘッダー範囲をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 Marketoでの範囲ヘッダーの使用について詳しくは、こちらを参照してください [一括抽出](bulk-extract.md).
+抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションでバイト型の HTTP ヘッダー範囲をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 Marketoでの範囲ヘッダーの使用について詳しくは、[ 一括抽出 ](bulk-extract.md) を参照してください。
 
 ## ジョブのキャンセル
 
-ジョブが正しく設定されなかった場合や不要になった場合は、を使用して簡単にキャンセルできます。 [プログラムメンバージョブのエクスポートをキャンセル](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) エンドポイント：
+ジョブが正しく設定されなかった場合や不要になった場合は、[ 書き出しプログラムメンバージョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) エンドポイントを使用して簡単にキャンセルできます。
 
 ```
 POST /bulk/v1/program/members/export/{exportId}/cancel.json
@@ -496,4 +496,4 @@ POST /bulk/v1/program/members/export/{exportId}/cancel.json
 }
 ```
 
-これは、次のように応答します `status` ジョブがキャンセルされたことを示します。
+ジョブがキャンセルされたことを示す `status` が返されます。

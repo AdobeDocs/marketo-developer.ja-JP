@@ -103,4 +103,4 @@ API 使用許諾契約
 
 [!DNL K].準拠法、通知。 本契約は、選択または法の規則の抵触に関わらず、カリフォルニア州の法律に準拠するものとします。 本契約に関連する法的事項の専属管轄権および裁判地は、カリフォルニア州サンマテオ郡の上級裁判所またはカリフォルニア州北部の米国地方裁判所とします。 本契約に基づく通知は、書面により行うものとし、（i）私信、（ii）郵送後 3 営業日、（ii）電子メール送信後最初の営業日に行われたものとみなされます。 Marketoへの通知は、「Application Programming Interface License Agreement」およびMarketo, Inc.（901 Mariner&#39;s Island Boulevard, Suite 500, San Mateo, CA 94404）に送付する必要があります。このとき、当社の法務部にも同じ住所のコピーを添付します。
 
-API 使用許諾契約をアーカイブしたバージョンは、次の場所にあります。 [https://developers.marketo.com/api-license-archived](https://developers.marketo.com/api-license-archived)
+API 使用許諾契約をアーカイブしたバージョンは、[https://developers.marketo.com/api-license-archived](https://developers.marketo.com/api-license-archived) にあります。

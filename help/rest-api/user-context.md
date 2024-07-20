@@ -1,20 +1,20 @@
 ---
-title: "ユーザーコンテキスト"
+title: ユーザーコンテキスト
 feature: REST API
-description: 「ユーザーコンテキストの概要と API の説明」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: ユーザーコンテキストの概要と API の説明
+exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '266'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
-
 # ユーザーコンテキスト
 
-User Context JavaScript API は、複数のセッションをまたいでユーザーおよび訪問者レベルのデータを公開し、過去のユーザー行動とデータを使用して高度なパーソナライゼーション機能を有効にします。 この API は、データの読み取りを超え、高度なセグメント化とパーソナライゼーションの目的で意味のあるデータとイベントを RTP バックエンドにプッシュできるカスタム変数を公開します。 追加機能： [トリガー](../javascript-api/triggers.md), [パターン一致](../javascript-api/pattern-match.md).
+User Context JavaScript API は、複数のセッションをまたいでユーザーおよび訪問者レベルのデータを公開し、過去のユーザー行動とデータを使用して高度なパーソナライゼーション機能を有効にします。 この API は、データの読み取りを超え、高度なセグメント化とパーソナライゼーションの目的で意味のあるデータとイベントを RTP バックエンドにプッシュできるカスタム変数を公開します。 その他の機能：[トリガー](../javascript-api/triggers.md)、[ パターン一致 ](../javascript-api/pattern-match.md)。
 
-- Web パーソナライゼーションの顧客になり、次を持っている必要があります [RTP タグが展開されました](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API を使用する前に、サイトで次の操作を行います。
+- User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 - User Context API は、Marketo サポートがリクエストに応じて有効にする必要がある機能です。 この API が有効な場合、RTP グローバルオブジェクトの下の userContext オブジェクトが公開されます。
 
 ## ユーザーコンテキスト属性

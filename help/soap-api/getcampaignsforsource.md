@@ -1,14 +1,14 @@
 ---
-title: 「getCampaignsForSource」
+title: getCampaignsForSource
 feature: SOAP
-description: 「getCampaignsForSource SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getCampaignsForSource SOAP呼び出し
+exl-id: bd8803ef-f462-4346-a381-73f40dc5d9ee
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '131'
-ht-degree: 8%
+ht-degree: 9%
 
 ---
-
 
 # getCampaignsForSource
 
@@ -22,7 +22,7 @@ ht-degree: 8%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| ソース | 必須 | ソースは以下のようになります `MKTOWS` または `SALES`. 後者には、Sales Insight で使用できるキャンペーンのリストが表示されます。 |
+| ソース | 必須 | ソースは、`MKTOWS` または `SALES` にすることができます。 後者には、Sales Insight で使用できるキャンペーンのリストが表示されます。 |
 | 名前 | オプション | これを使用して、名前でフィルタリングします。 これは単一の文字列であり、文字列の配列ではありません。 |
 | exactName | オプション | name パラメーターに完全に一致させるかどうかを示すブール値 |
 

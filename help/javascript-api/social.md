@@ -1,18 +1,18 @@
 ---
 title: ソーシャル
-description: 「ソーシャル」
+description: ソーシャル
 feature: Social, Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: 82d2b86f-5efe-4434-b617-d27f76515a79
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '776'
 ht-degree: 4%
 
 ---
 
-
 # ソーシャル
 
-[Marketo ソーシャルマーケティング](https://business.adobe.com/products/marketo/social-marketing.html) マーケターがソーシャルウィジェットを web サイトやランディングページに埋め込むことができます。 ソーシャルウィジェットには、投票、ソーシャル共有ボタン、ビデオ、キャンペーン、紹介オファーなどのプロモーションが含まれます。
+[Marketo ソーシャルマーケティング ](https://business.adobe.com/products/marketo/social-marketing.html) を使用すると、マーケターは web サイトやランディングページにソーシャルウィジェットを埋め込むことができます。 ソーシャルウィジェットには、投票、ソーシャル共有ボタン、ビデオ、キャンペーン、紹介オファーなどのプロモーションが含まれます。
 
 ## 埋め込み共有ウィジェットのサンプル
 
@@ -28,7 +28,7 @@ ht-degree: 4%
 </divclass='cf_widgetloader'>
 ```
 
-![ソーシャル共有ウィジェット](assets/social-share-widget.png)
+![social-share-widget](assets/social-share-widget.png)
 
 ソーシャルウィジェットをカスタマイズする基本的な方法は 2 つあります。
 
@@ -37,7 +37,7 @@ ht-degree: 4%
 
 ## 通常の UI へのイベントの添付
 
-CF JavaScript ライブラリでイベントを登録するには、グローバルに登録する方法と、単一のウィジェットで登録する方法の 2 つがあります。 イベントは、イベントテーブルの以下に記載されています。
+CF JavaScript ライブラリでイベントを登録するには、グローバルに登録する方法と、1 つのウィジェットで登録する方法の 2 つがあります。 イベントは、イベントテーブルの以下に記載されています。
 
 ### グローバルイベント購読
 
@@ -90,18 +90,18 @@ cf_scripts.afterload(function(){
 
 | イベント名 | 説明 | このイベントを使用するウィジェット | サポートされる引数（イベントコールバック関数に渡される） |
 | --- | --- | --- | --- | 
-| share_sent | 共有リクエストが処理のためにサーバーに送信されるたびに呼び出されます | 共有機能を持つすべてのウィジェット | 1.&quot;share_sent&quot;（文字列）<br>2. 送信されたパラメーター（オブジェクト） |
-| share_success | 共有要求が正常に処理されたときに発生します。 | 共有機能を持つすべてのウィジェット。 | 1.&quot;share_success&quot;（文字列）<br>2. 送信されたメッセージと短縮 URL を含む、応答オブジェクトを共有します（オブジェクト） |
-| vote_success | ユーザーが投票に成功したときに発生します。 | ポーリング、VS、投票ウィジェット | 1. &quot;vote_success&quot; （文字列）<br>2. タイトル、説明、エンティティ識別子（オブジェクト）など、投票された項目 |
-| offer_enrolled | ユーザーがオファーへの登録に成功したときに呼び出されます | すべてのオファーウィジェット | 1.&quot;offer_enrolled&quot;（文字列）<br>2. 変更されたユーザープロパティ（オブジェクト）、<br>3. 変更されたユーザー属性（オブジェクト） |
-| profile_saved | ユーザーがプロファイル キャプチャからプロファイルを更新したときに発生します。 | プロファイルキャプチャが有効になっているすべての非オファーウィジェット | 1.&quot;profile_saved&quot;（文字列）<br>2. 変更されたユーザープロパティ （オブジェクト）<br>3. 変更されたユーザー属性（オブジェクト） |
+| share_sent | 共有リクエストが処理のためにサーバーに送信されるたびに呼び出されます | 共有機能を持つすべてのウィジェット | 1.&quot;share_sent&quot;（String） <br>2. 送信されたパラメーター（オブジェクト） |
+| share_success | 共有要求が正常に処理されたときに発生します。 | 共有機能を持つすべてのウィジェット。 | 1.&quot;share_success&quot;（String） <br>2. 送信されたメッセージと短縮 URL を含む、応答オブジェクトを共有します（オブジェクト） |
+| vote_success | ユーザーが投票に成功したときに発生します。 | ポーリング、VS、投票ウィジェット | 1. &quot;vote_success&quot; （String） <br>2. タイトル、説明、エンティティ識別子（オブジェクト）など、投票された項目 |
+| offer_enrolled | ユーザーがオファーへの登録に成功したときに呼び出されます | すべてのオファーウィジェット | 1.&quot;offer_enrolled&quot;（文字列） <br>2. ユーザープロパティ（オブジェクト）、<br>3 を変更しました。 変更されたユーザー属性（オブジェクト） |
+| profile_saved | ユーザーがプロファイル キャプチャからプロファイルを更新したときに発生します。 | プロファイルキャプチャが有効になっているすべての非オファーウィジェット | 1.&quot;profile_saved&quot;（String） <br>2. ユーザープロパティ （オブジェクト） <br>3 を変更しました。 変更されたユーザー属性（オブジェクト） |
 | video_loaded | 埋め込みビデオが完全に読み込まれて初期化されたときに呼び出されます。 | VideoShare ウィジェット | 1. video_loaded （文字列） 2. ビデオを保持する「.cf_videoshare_wrap」要素（jQuery オブジェクト） |
 
 ## UI のカスタム UI への置き換え
 
-UI をカスタム UI に置き換えるには、最初に通常の UI をオフにする必要があります。それには、オプションを設定します _popupUIOnly_ 対象： _true_. このオプションを設定すると、標準 UI はページの読み込み時にレンダリングされず、代わりにウィジェットがデータを取得し、 _CF.widget.activate_ 機能し、それがなすべきことのオプションを提供します。
+UI をカスタム UI に置き換えるには、まず通常の UI をオフにする必要があります。これを行うには、オプション _popupUIOnly_ を _true_ に設定します。 このオプションを設定すると、標準 UI はページの読み込み時にレンダリングされず、代わりにウィジェットがデータを取得し、_CF.widget.activate_ 関数を呼び出してポップアップステージの 1 つを開始するのを待ち、実行するオプションを提供します。
 
-以下の例は、という名前の紹介オファーウィジェットに対して紹介オファーのサインアップフローを開始するカスタムボタンを作成する例です _リファラル_サインアップ_.
+以下の例は、_referral_SignUp_ という名前のリファラルオファーウィジェットに対してリファラルオファーのサインアップフローを開始するカスタムボタンを作成する例です。
 
 ```html
 <button id="myNewSignUpButton">My newSign Up button</button>
@@ -139,9 +139,9 @@ cf_scripts.afterload(function($, CF){
 
 ## ウィジェット UI データを代替の UI に入力する方法
 
-置き換える UI を描画するためにウィジェットに関するデータが必要な場合は、特別なイベントからデータを取得できます _ui_data_. このイベントはノーマルでリッスンできます `CF.widget.listen` 関数ただし、この関数を使用すると、ウィジェットが既に the_ui_data_ イベントを発生させた後にイベントリスナーが追加され、データを受信できなくなる競合状態が発生する可能性があります。 この競合を回避するには、 `CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` イベントは、でウィジェットの標準 UI を無効にした場合でも、そのウィジェットの標準 UI が再描画されるアクションが実行されるたびに発生します `popupUIOnly` オプション。
+置き換える UI を描画するためにウィジェットに関するデータが必要な場合は、特別なイベント _ui_data_ からデータを取得できます。 通常の `CF.widget.listen` 関数を使用してこのイベントをリッスンできますが、そうすると、ウィジェットが既に the_ui_data_ イベントを発生させた後にイベントリスナーが追加され、データを受信できなくなる競合状態が発生する可能性があります。 この競合を避けるために、`CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` イベントは、`popupUIOnly` のオプションでその UI を無効にした場合でも、ウィジェットの標準 UI を再描画する原因となったアクションが実行されるたびに使用されます。
 
-次を使用する例 `uiData` ウィジェット名を含む広告に対してユーザーが持つエントリ数を表示する機能 _sweaps_Sweepstakes_.
+`uiData` の関数を使用して、ウィジェット名が _sweaps_Sweepstakes_ の Sweepstakes に対するユーザーのエントリ数を表示する例を示します。
 
 ```html
 <span>You have <span id="entryCount">?</span> entries.</span>

@@ -1,14 +1,14 @@
 ---
-title: 「エラーコード」
+title: エラーコード
 feature: REST API
-description: 「Marketo エラーコードの説明。」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo エラーコードの説明。
+exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '2272'
 ht-degree: 3%
 
 ---
-
 
 # エラーコード
 
@@ -22,7 +22,7 @@ Marketo向けの開発を行う場合は、予期しない例外が発生した�
 
 Marketo REST API は、通常の操作で次の 3 種類のエラーを返す場合があります。
 
-* HTTP レベル：これらのエラーは `4xx` コード。
+* HTTP レベル：これらのエラーは `4xx` コードで示されます。
 * 応答レベル：これらのエラーは、JSON 応答の「errors」配列に含まれます。
 * レコードレベル：これらのエラーは JSON 応答の「結果」配列に含まれ、「ステータス」フィールドと「理由」配列を使用して、個々のレコードごとに示されます。
 
@@ -30,12 +30,12 @@ Marketo REST API は、通常の操作で次の 3 種類のエラーを返す場
 
 ### HTTP レベルのエラー
 
-通常の操作環境では、Marketoは、HTTP ステータスコードエラーを 2 つだけ返す必要があります。 `413 Request Entity Too Large`、および `414 Request URI Too Long`. これらは、エラーをキャッチし、リクエストを変更して再試行することで復元できますが、スマートコーディングの手法を使用すると、野生で発生することはありません。
+通常の操作環境では、Marketoは、2 つの HTTP ステータスコードエラー（`413 Request Entity Too Large` と `414 Request URI Too Long`）のみを返す必要があります。 これらは、エラーをキャッチし、リクエストを変更して再試行することで復元できますが、スマートコーディングの手法を使用すると、野生で発生することはありません。
 
 リクエストペイロードが 1MB を超える場合はMarketoから 413、読み込みリードの場合は 10MB が返されます。 ほとんどのシナリオでは、これらの制限に達する可能性はほとんどありませんが、リクエストのサイズにチェックを追加して、制限を超える原因となるレコードを新しいリクエストに移動すると、状況が防がれ、このエラーがすべてのエンドポイントで返されます。
 
-GETリクエストの URI が 8 KB を超える場合は 414 が返されます。 これを回避するには、クエリ文字列の長さとの照合で、この制限を超えていないかどうかを確認します。 リクエストがPOSTメソッドに変わる場合は、追加のパラメーターを使用して、リクエスト本文としてクエリ文字列を入力します `_method=GET`. これは、URI に関する制限はありません。 ほとんどの場合、この制限に達することはまれですが、GUID などの長い個々のフィルター値を持つレコードを大量に取得する場合は、やや一般的です。
-この [ID](https://developer.adobe.com/marketo-apis/api/identity/) エンドポイントは、401 Unauthorized エラーを返す場合があります。 これは通常、無効なクライアント ID または無効なクライアントシークレットが原因です。 HTTP レベルのエラーコード
+GETリクエストの URI が 8 KB を超える場合は 414 が返されます。 これを回避するには、クエリ文字列の長さとの照合で、この制限を超えていないかどうかを確認します。 リクエストがPOSTメソッドに変わる場合は、追加のパラメーター `_method=GET` を使用して、リクエスト本文としてクエリ文字列を入力します。 これは、URI に関する制限はありません。 ほとんどの場合、この制限に達することはまれですが、GUID などの長い個々のフィルター値を持つレコードを大量に取得する場合は、やや一般的です。
+[ID](https://developer.adobe.com/marketo-apis/api/identity/) エンドポイントは、401 Unauthorized エラーを返す場合があります。 これは通常、無効なクライアント ID または無効なクライアントシークレットが原因です。 HTTP レベルのエラーコード
 
 <table>
   <thead>
@@ -62,7 +62,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
 
 #### 応答レベルのエラー
 
-応答レベルのエラーは、次の場合に発生します `success` 応答のパラメーターは false に設定され、次のような構造になっています。
+応答レベルのエラーは、応答の `success` パラメーターが false に設定されている場合に発生し、次のような構造になっています。
 
 ```json
 {
@@ -77,7 +77,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
 }
 ```
 
-「errors」配列内の各オブジェクトには、次の 2 つのメンバーがあります。 `code`:601 から 799 までの引用符で囲まれた整数です。 `message` エラーの理由をプレーンテキストで指定します。 6xx コードは常に、リクエストが完全に失敗し、実行されなかったことを示します。 例えば、601 「Access token invalid」は、再認証を行い、リクエストを含む新しいアクセストークンを渡すことで回復できます。 7xx エラーは、データが返されなかったか、リクエストが正しくパラメーター化されていない（無効な日付が含まれている、必要なパラメーターが欠落しているなど）ために、リクエストが失敗したことを示します。
+「errors」配列内の各オブジェクトには、`code` という 2 つのメンバーがあります。これは 601 ～ 799 の引用符で囲まれた整数で、エラーの理由をプレーンテキストで示す `message` です。 6xx コードは常に、リクエストが完全に失敗し、実行されなかったことを示します。 例えば、601 「Access token invalid」は、再認証を行い、リクエストを含む新しいアクセストークンを渡すことで回復できます。 7xx エラーは、データが返されなかったか、リクエストが正しくパラメーター化されていない（無効な日付が含まれている、必要なパラメーターが欠落しているなど）ために、リクエストが失敗したことを示します。
 
 #### 応答レベルのエラーコード
 
@@ -110,7 +110,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="603"></a>603</td>
       <td>アクセス拒否</td>
-      <td>認証は成功しましたが、ユーザーにこの API を呼び出すのに十分な権限がありません。 [ 追加の権限 ] （custom-services.md）をユーザーの役割に割り当てる必要がある場合や、 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP ベースの API アクセスの許可リスト</a> が有効になっている可能性があります。</td>
+      <td>認証は成功しましたが、ユーザーにこの API を呼び出すのに十分な権限がありません。 [Additional permissions] （custom-services.md）を user role に割り当てる必要がある場合や、<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP ベースの API アクセスの許可リスト</a> を有効にする場合があります。</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>
@@ -155,7 +155,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="612"></a>612</td>
       <td>無効なコンテンツタイプ</td>
-      <td>このエラーが表示された場合は、JSON 形式を指定するコンテンツタイプヘッダーをリクエストに追加します。 例えば、「コンテンツタイプ：application/json」を使用してみてください。 <a href="https://stackoverflow.com/questions/28181325/why-invalid-content-type">この StackOverflow の質問を見る</a> を参照してください。</td>
+      <td>このエラーが表示された場合は、JSON 形式を指定するコンテンツタイプヘッダーをリクエストに追加します。 例えば、「コンテンツタイプ：application/json」を使用してみてください。 <a href="https://stackoverflow.com/questions/28181325/why-invalid-content-type"> 詳しくは、この StackOverflow の質問を参照してください </a>。</td>
     </tr>
     <tr>
       <td><a name="613"></a>613</td>
@@ -207,7 +207,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
       <td>この呼び出しは、テンプレートを使用せずにメールを作成しようとする場合など、アセットを作成または更新する要件に違反するので、実行できません。 また、次の操作を行おうとすると、このエラーが発生する場合があります。
         <ul>
           <li>ソーシャルコンテンツを含むランディングページのコンテンツを取得します。</li>
-          <li>特定のアセットタイプを含むプログラムのクローン（を参照） <a href="programs.md#clone">プログラムクローン</a> 詳しくは、「」を参照してください。</li>
+          <li>特定のアセットタイプを含むプログラムのクローンを作成します（詳しくは <a href="programs.md#clone"> プログラムクローン </a> を参照してください）。</li>
           <li>ドラフトのないアセット（つまり、既に承認されているアセット）を承認します。</li>
         </ul></td>
     </tr>
@@ -352,8 +352,8 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="1012"></a>1012</td>
       <td>無効な cookie 値'%s'</td>
-      <td>を呼び出すときに発生する可能性があります。 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">リードを関連付け</a> と cookie パラメーターの値が無効です。
-        これは、を呼び出す場合にも発生します <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">フィルタータイプ別のリードの取得</a> filterType=cookies であり、filterValues パラメーターの有効な値が無効です。</td>
+      <td>cookie パラメーターに無効な値を指定して <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST"> リードを関連付け </a> を呼び出すと、発生する場合があります。
+        これは、filterType=cookies を指定し、filterValues パラメーターの有効な値が無効な <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET"> フィルタータイプでリードを取得 </a> を呼び出す場合にも発生します。</td>
     </tr>
     <tr>
       <td><a name="1013"></a>1013</td>
@@ -469,19 +469,20 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     </tr>
     <tr>
       <td><a name="1076"></a>1076</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">リードを結合</a> mergeincrm フラグを使用した呼び出しは 4 です。</td>
+      <td>mergeInCRM フラグを使用した <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードの結合 </a> 呼び出しは 4 です。</td>
       <td>重複するレコードを作成しています。 代わりに、既存のレコードを使用することをお勧めします。
         これは、Salesforce で結合する際にMarketoが受け取るエラーメッセージです。</td>
     </tr>
     <tr>
       <td><a name="1077"></a>1077</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">リードを結合</a> 「SFDC フィールド」の長さが原因で呼び出しに失敗しました</td>
+      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合 </a> 「SFDC フィールド」の長さが原因で呼び出しに失敗しました</td>
       <td>「SFDC フィールド」が許可されている文字数の制限を超えているため、mergeInCRM を true に設定したリードの結合呼び出しが失敗しました。 修正するには、「SFDC フィールド」の長さを短くするか、mergeInCRM を false に設定します。</td>
     </tr>
     <tr>
       <td><a name="1078"></a>1078</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">リードを結合</a> エンティティが削除されたか、リード/取引先責任者でないか、またはフィールドのフィルター条件が一致しないため、呼び出しに失敗しました。</td>
-      <td>ネイティブに同期された CRM で結合操作を実行できない結合エラーこれは、Marketoが Salesforce で結合する際に受け取るエラーメッセージです。</td>
+      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合 </a> リード/連絡先ではなく、エンティティが削除されたか、フィールドのフィルター条件が一致しないため、呼び出しに失敗しました。</td>
+      <td>結合エラー。ネイティブに同期された CRM で結合操作を実行できません
+        これは、Salesforce で結合する際にMarketoが受け取るエラーメッセージです。</td>
     </tr>
   </tbody>
 </table>

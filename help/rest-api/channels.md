@@ -1,20 +1,20 @@
 ---
-title: 「チャネル」
+title: チャネル
 feature: REST API
-description: 「Marketo API を使用したチャネルデータの設定」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo API を使用したチャネルデータの設定。
+exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '125'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
-
 # チャネル
 
-[チャネルエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
+[ チャネルエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
 
-チャネルは、すべてのプログラムタイプの標準の必須フィールドです。 各タイプのチャネルは、特定の `applicableProgramType` 各プログラムのプログラムメンバーに有効な、使用可能なプログラムステータスのリストが表示されます。 プログラムの作成後にチャネルのプログラムステータスが変更された場合、リードを変更できるプログラムステータスのリストは、チャネルから提供された当時のリストと一致しますが、既存のプログラムメンバーシップレコードのプログラムステータスは遡及的に変更されません。
+チャネルは、すべてのプログラムタイプの標準の必須フィールドです。 各タイプのチャネルは、特定の `applicableProgramType` でのみ使用でき、各プログラムのプログラムメンバーに有効な使用可能なプログラムステータスのリストを提供します。 プログラムの作成後にチャネルのプログラムステータスが変更された場合、リードを変更できるプログラムステータスのリストは、チャネルから提供された当時のリストと一致しますが、既存のプログラムメンバーシップレコードのプログラムステータスは遡及的に変更されません。
 
 ## クエリ
 

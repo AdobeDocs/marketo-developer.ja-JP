@@ -12,17 +12,17 @@ ht-degree: 2%
 
 # SOAP API
 
-SOAP API は現在開発中ではありません。 呼び出しは引き続き機能しますが、開発の焦点は次のとおりです [REST](https://developer.adobe.com/marketo-apis/) 先に進む。
+SOAP API は現在開発中ではありません。 呼び出しは引き続き機能しますが、開発では今後 [REST](https://developer.adobe.com/marketo-apis/) に焦点を当てています。
 
-Marketo SOAP API を使用すると、Marketoに保存されているエンティティとデータを作成、取得、削除できます。 次を見つけることができます [Marketo-SOAP-SDK](https://github.com/Marketo/SOAP-API-Java-Client) GitHub で。 次のものがあります [クライアントライブラリ](https://github.com/Marketo/Community-Supported-Client-Libraries) 時間を節約するために。
+Marketo SOAP API を使用すると、Marketoに保存されているエンティティとデータを作成、取得、削除できます。 [Marketo-SOAP-SDK](https://github.com/Marketo/SOAP-API-Java-Client) は GitHub にあります。 [ クライアントライブラリ ](https://github.com/Marketo/Community-Supported-Client-Libraries) もあり、時間を節約できます。
 
 最新の API バージョン：3_1
 
 ## SOAP WSDL
 
-SOAP SOAP WSDL ドキュメントを取得するには、 **[!UICONTROL Admin]** > **[!UICONTROL 統合]** > **[!UICONTROL Web サービス]** メニュー。
+SOAP WSDL ドキュメントを取得するには、**[!UICONTROL 管理者]**/**[!UICONTROL 統合]**/**[!UICONTROL web サービス]** メニューからSOAP API エンドポイントを取得します。
 
-![SOAP エンドポイント](assets/endpoint-soap.png)
+![SOAP エンドポイント ](assets/endpoint-soap.png)
 
 WSDL URL は次のとおりです。
 
@@ -32,18 +32,18 @@ WSDL で定義されているエンドポイントを使用しないでくださ
 
 ## 制限
 
-- **毎日のクォータ：** ほとんどのサブスクリプションには、1 日に 10,000 回の API 呼び出しが割り当てられます（毎日 12:00 にリセットされます）。 アカウントマネージャーを通じて、1 日の割り当て量を増やすことができます。
-- **レート制限：** インスタンスごとの API アクセスは、20 秒あたり 100 回の呼び出しに制限されています。
+- **毎日の割り当て量：** ほとんどの購読には、1 日あたり 10,000 回の API 呼び出しが割り当てられます（毎日 12:00 にリセットされます）。 アカウントマネージャーを通じて、1 日の割り当て量を増やすことができます。
+- **レート制限：インスタンスあたりの** API アクセスは、20 秒あたり 100 回の呼び出しに制限されています。
 - **同時実行制限：**  最大 10 回の同時 API 呼び出し。
 
 バッチサイズは 300 以下にすることをお勧めします。 大きいサイズはサポートされず、タイムアウトや、極端な場合はスロットリングが発生する可能性があります。
 
 ## MarketoでのSOAP API 設定
 
-1. に移動します **[!UICONTROL Admin]** セクションでクリック **[!UICONTROL Web サービス]**.
+1. 「**[!UICONTROL 管理者]**」セクションに移動し、「**[!UICONTROL Web サービス]**」をクリックします。
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 適切な [!UICONTROL 暗号化キー]を選択し、 **[!UICONTROL 変更を保存]** およびSOAP API の使用 [!UICONTROL エンドポイント], [!UICONTROL ユーザー ID]、および [!UICONTROL 暗号化キー] 正しいを生成するための値 [認証署名](authentication-signature.md) （SOAP API 呼び出しごとに）。
+1. 適切な [!UICONTROL  暗号化キー ] を設定し、「**[!UICONTROL 変更を保存]**」をクリックして、SOAP API [!UICONTROL  エンドポイント ]、[!UICONTROL  ユーザー ID]、[!UICONTROL  暗号化キー ] の値を使用して、各SOAP API 呼び出しに正しい [ 認証署名 ](authentication-signature.md) を生成します。
 
 ![admin-web-services3](assets/admin-web-services3.png)

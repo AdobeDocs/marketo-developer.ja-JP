@@ -1,34 +1,34 @@
 ---
-title: "getLeadActivity"
+title: getLeadActivity
 feature: SOAP
-description: 「getLeadActivity SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getLeadActivity SOAP呼び出し
+exl-id: f38dee95-235f-4dc2-8839-61d6008132a5
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 4%
 
 ---
 
-
 # getLeadActivity
 
 この関数は、指定されたキーで識別される単一のリードのアクティビティ履歴を取得します。 結果に返すアクティビティタイプを指定できます。 すべてのアクティビティタイプが必要な場合は、空の値を渡す必要があります。 複数のアクティビティタイプの場合、アクティビティタイプのリストを渡します。 複数のアクティビティをリクエストする場合、残りのカウントは正確な数ではありませんが、残りのカウントが 0 を超えるとアクティビティが増えることを示すフラグとして扱う必要があります。
 
-A [ストリーム位置](stream-position.md) 大きな結果セットをページ分割するために使用できます。
+[ ストリーム位置 ](stream-position.md) は、大きな結果セットをページ分割するために使用できます。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadKey->keyType | 必須 | keyType を使用すると、リードのクエリに使用するフィールドを指定できます。 使用可能な値は次のとおりです。`IDNUM`, `COOKIE`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
-| leadKey->keyValue | 必須 | `keyValue` は、リードに対してクエリを実行する値です。 |
+| leadKey->keyType | 必須 | keyType を使用すると、リードのクエリに使用するフィールドを指定できます。 使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadKey->keyValue | 必須 | `keyValue` は、リードのクエリに使用する値です。 |
 | activityFilter->includeAttributes->activityType | オプション | 指定されたアクティビティタイプのみを含めるように応答を制限します。 すべてのアクティビティタイプについては、WSDL を参照してください。 |
-| activityFilter->excludeAttributes->activityType | オプション | 指定されたアクティビティタイプを除外するように、応答を制限します。 すべてのアクティビティタイプについては、WSDL を参照してください。 注意：両方を指定することはできません `includeAttributes` および `excludeAttributes` 同じ呼び出し内。 |
-| batchSize | オプション | 返されるレコードの最大数。 システムが 100 に制限する、または `batchSize`、いずれか小さい方。 |
-| startPosition->offset | オプション | 多数のアクティビティ応答をページ分割するために使用します。 オフセット値は、以前の呼び出し応答フィールドから返されます `newStartPosition->offset`. |
-| startPosition->activityCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 activityCreatedAt は、前の呼び出しの応答フィールドから返されます `newStartPosition->activityCreatedAt`. （W3C WSDL の日付形式） |
-| startPosition->latestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 latestCreatedAt は、前の呼び出しの応答フィールドによって返されます `newStartPosition->latestCreatedAt`. （W3C WSDL の日付形式） |
-| startPosition->oldestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 oldestCreatedAt は、前の呼び出しの応答フィールドによって返されます `newStartPosition->oldestCreatedAt`. （W3C WSDL の日付形式） |
+| activityFilter->excludeAttributes->activityType | オプション | 指定されたアクティビティタイプを除外するように、応答を制限します。 すべてのアクティビティタイプについては、WSDL を参照してください。 メモ：同じ呼び出し内で `includeAttributes` と `excludeAttributes` の両方を指定することはできません。 |
+| batchSize | オプション | 返されるレコードの最大数。 システムは 100 または `batchSize` のいずれか小さい方に制限します。 |
+| startPosition->offset | オプション | 多数のアクティビティ応答をページ分割するために使用します。 オフセット値は、以前の呼び出し応答フィールド `newStartPosition->offset` から返されます。 |
+| startPosition->activityCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 activityCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->activityCreatedAt` から返されます。 （W3C WSDL の日付形式） |
+| startPosition->latestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 latestCreatedAt は、以前の呼び出しの応答フィールド `newStartPosition->latestCreatedAt` から返されます。 （W3C WSDL の日付形式） |
+| startPosition->oldestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用します。 oldestCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->oldestCreatedAt` によって返されます。 （W3C WSDL の日付形式） |
 
 ## XML をリクエスト
 
@@ -668,7 +668,7 @@ A [ストリーム位置](stream-position.md) 大きな結果セットをペー�
 </SOAP-ENV:Envelope>
 ```
 
-内に `activityRecord` 要素、 `id` 要素はに置き換えられます `marketoGUID` 一意の識別子としての要素。  この変更は、2017 年春リリースで行われます。
+`activityRecord` 要素内では、`id` 要素は一意の識別子として `marketoGUID` 要素に置き換えられます。  この変更は、2017 年春リリースで行われます。
 
 ## サンプルコード - PHP
 

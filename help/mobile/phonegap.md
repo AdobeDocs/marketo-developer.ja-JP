@@ -71,9 +71,9 @@ repositories{
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「Android アプリに Firebase を追加」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
-   1. に移動します。 **[!UICONTROL プロジェクト設定]** 。対象： [!UICONTROL プロジェクトの概要]
-      1. クリックする **[!UICONTROL 一般]** タブ。 「google-services.json」ファイルをダウンロードします。
-      1. クリックする **[!UICONTROL クラウドメッセージング]** タブ。 コピー [!UICONTROL サーバーキー] &amp; [!UICONTROL 送信者 ID]. これらを指定 [!UICONTROL サーバーキー] &amp; [!UICONTROL 送信者 ID] をMarketoに送信します。
+   1. **[!UICONTROL プロジェクトの概要]** の [!UICONTROL  プロジェクト設定 ] に移動します
+      1. 「**[!UICONTROL 一般]**」タブをクリックします。 「google-services.json」ファイルをダウンロードします。
+      1. 「**[!UICONTROL クラウドメッセージング]**」タブをクリックします。 [!UICONTROL  サーバーキー ] と [!UICONTROL  送信者 ID] をコピーします。 これらの [!UICONTROL  サーバーキー ] と [!UICONTROL  送信者 ID] をMarketoに提供します。
    1. Phonegap アプリでの FCM 変更の設定
       1. ダウンロードした「google-services.json」ファイルを Phonegap アプリモジュールのルートディレクトリに移動します
       1. の場所からファイル「MyFirebaseInstanceIDService」を削除します `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` （非推奨）

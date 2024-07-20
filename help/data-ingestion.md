@@ -13,15 +13,15 @@ ht-degree: 11%
 
 Data Ingestion API は、大量の人物データや人物関連データの取り込みを効率的かつ最小限の遅延で処理するように設計された、大容量、低遅延、高可用性のサービスです。 
 
-非同期で実行されるリクエストを送信することで、データが取り込まれます。 リクエストのステータスは、からイベントを登録することで取得できます。 [Marketo Observability データストリーム](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/)..&#x200B;
+非同期で実行されるリクエストを送信することで、データが取り込まれます。 リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/) からイベントを登録することで取得できます&#x200B;
 
 インターフェイスは、人物、カスタムオブジェクトの 2 つのオブジェクトタイプで提供されます。 レコード操作は、「挿入または更新」のみです。
 
-データ取り込み API はプライベートベータ版です。 招待者にはの使用権限が必要です [Marketo Engageパフォーマンス層パッケージ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835).
+データ取り込み API はプライベートベータ版です。 招待者には、[Marketo Engageパフォーマンス層パッケージ ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) の使用権限が必要です。
 
 ## 認証
 
-Data Ingestion API では、Marketo REST API と同じ OAuth 2.0 認証方式を使用してアクセストークンを生成しますが、アクセストークンは HTTP ヘッダーを使用して渡す必要があります `X-Mkto-User-Token`. クエリパラメーターを使用してアクセストークンを渡すことはできません。
+Data Ingestion API では、Marketo REST API と同じ OAuth 2.0 認証方式を使用してアクセストークンを生成しますが、アクセストークンは HTTP ヘッダー `X-Mkto-User-Token` を使用して渡す必要があります。 クエリパラメーターを使用してアクセストークンを渡すことはできません。
 
 ヘッダーを介したアクセストークンの例：
 
@@ -59,9 +59,9 @@ HTTPPOST方式を使用して、サーバーにデータを送信します。
 
 データ表現は、application/json としてリクエスト本文に含まれます。
 
-ドメイン名は： `mkto-ingestion-api.adobe.io`
+ドメイン名：`mkto-ingestion-api.adobe.io`
 
-パスはで始まります `/subscriptions/_MunchkinId_` ここで、 `_MunchkinId_` は、Marketo インスタンスに固有です。 Munchkin ID は、Marketo EngageUI の下にあります **Admin** >**マイアカウント** > **サポート情報**. パスの残りの部分は、対象のリソースを指定するために使用されます。
+パスは `/subscriptions/_MunchkinId_` で始まり、`_MunchkinId_` はMarketo インスタンスに固有のパスです。 Munchkin ID は、Marketo EngageUI の **管理者**/**マイアカウント**/**サポート情報** で確認できます。 パスの残りの部分は、対象のリソースを指定するために使用されます。
 
 人物の URL の例：
 
@@ -73,7 +73,7 @@ HTTPPOST方式を使用して、サーバーにデータを送信します。
 
 ## 回答
 
-すべての応答は、 `X-Request-Id` ヘッダー。
+すべての応答は、`X-Request-Id` ヘッダーを介して一意のリクエスト ID を返します。
 
 ヘッダーを介したリクエスト ID の例：
 
@@ -89,7 +89,7 @@ HTTPPOST方式を使用して、サーバーにデータを送信します。
 
 ### エラー
 
-呼び出しでエラーが発生した場合は、202 以外のステータスと、エラーの詳細が追加された応答本文が返されます。 応答本文は application/json で、メンバーを持つ単一のオブジェクトを含んでいます `error_code` および `message`.
+呼び出しでエラーが発生した場合は、202 以外のステータスと、エラーの詳細が追加された応答本文が返されます。 応答本文は application/json で、メンバーが `error_code` および `message` の単一のオブジェクトが含まれます。
 
 以下は、Adobe Developer Gateway から再利用されたエラーコードです。
 
@@ -145,7 +145,7 @@ HTTPPOST方式を使用して、サーバーにデータを送信します。
 |---|---|---|---|---|
 | priority | 文字列 | いいえ | リクエストの優先度：normalhigh | 標準 |
 | partitionName | 文字列 | いいえ | ユーザーパーティションの名前 | デフォルト |
-| dedupeFields | オブジェクト | いいえ | 重複排除する属性。 1 つまたは 2 つの属性名を使用できます。 AND 操作では、2 つの属性が使用されます。 例えば、次の両方の場合： `email` および `firstName` が指定されている場合、いずれも AND 操作を使用して人物を検索するために使用されます。 サポートされる属性は次の通りです。`idemail`, `sfdcAccountId`, `sfdcContactId`, `sfdcLeadId`, `sfdcLeadOwnerIdCustom` 属性（「string」および「integer」タイプのみ） | メール |
+| dedupeFields | オブジェクト | いいえ | 重複排除する属性。 1 つまたは 2 つの属性名を使用できます。 AND 操作では、2 つの属性が使用されます。 例えば、`email` と `firstName` の両方を指定した場合、AND 操作を使用して人物を検索する際に両方を使用することになります。 サポートされる属性：`idemail`、`sfdcAccountId`、`sfdcContactId`、`sfdcLeadId`、`sfdcLeadOwnerIdCustom` 属性（「string」および「integer」タイプのみ） | メール |
 | 人物 | オブジェクトの配列 | はい | 人物の属性名と値のペアのリスト | - |
 
 | 権限 |
@@ -224,7 +224,7 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 
 #### 人が存在しません
 
-リクエストでユーザーへのリンクフィールドが指定されていて、そのユーザーが存在しない場合、再試行が数回行われます。 再試行期間中にそのユーザーが追加された場合（65 分）、更新は成功します。 例えば、リンクフィールドが `email` 「ユーザー」に「ユーザー」が存在しない場合、再試行が行われます。
+リクエストでユーザーへのリンクフィールドが指定されていて、そのユーザーが存在しない場合、再試行が数回行われます。 再試行期間中にそのユーザーが追加された場合（65 分）、更新は成功します。 例えば、リンクフィールドが「ユーザー」に `email` 定されていて、ユーザーが存在しない場合、再試行が行われます。
 
 #### カスタムオブジェクトの例
 
@@ -279,10 +279,10 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 データ取得 API と他のMarketo REST API の違いを以下に示します。
 
 - これは完全な CRUD インターフェイスではなく、「アップサート」のみをサポートします
-- 認証するには、を使用してアクセストークンを渡す必要があります `X-Mkto-User-Token` ヘッダー
-- URL ドメイン名はです。 `mkto-ingestion-api.adobe.io`
-- URL パスはで始まります。 `/subscriptions/_MunchkinId_`
+- 認証するには、`X-Mkto-User-Token` ヘッダーを使用してアクセストークンを渡す必要があります
+- URL ドメイン名は `mkto-ingestion-api.adobe.io` です
+- URL パスは `/subscriptions/_MunchkinId_` で始まります。
 - クエリパラメーターがありません
 - 呼び出しが成功した場合、202 ステータスが返され、応答本文は空です
-- 呼び出しが失敗した場合、非 202 ステータスが返され、応答本文には次の内容が含まれます `{ "error_code" : "_Error Code_", "message" : "_Message_" }`
-- リクエスト ID は、以下を介して返されます。 `X-Request-Id` ヘッダー
+- 呼び出しが失敗した場合、202 以外のステータスが返され、応答本文には `{ "error_code" : "_Error Code_", "message" : "_Message_" }` が含まれます
+- リクエスト ID はヘッダーを介して返 `X-Request-Id` れます

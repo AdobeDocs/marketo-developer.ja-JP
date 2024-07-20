@@ -1,14 +1,14 @@
 ---
-title: "describeMObject"
+title: describeMObject
 feature: SOAP
-description: "describeMObjects SOAP 呼び出し"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: describeMObjects SOAP呼び出し
+exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '71'
 ht-degree: 9%
 
 ---
-
 
 # describeMObject
 
@@ -18,7 +18,7 @@ ht-degree: 9%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| objectName | 必須 | メタデータを取得するオブジェクトの名前。 `objectName` 次のいずれかを指定できます。 `ActivityRecord`, `LeadRecord`, `Opportunity`, `OpportunityPersonRole` |
+| objectName | 必須 | メタデータを取得するオブジェクトの名前。 `objectName` は、`ActivityRecord`、`LeadRecord`、`Opportunity`、`OpportunityPersonRole` のいずれかです。 |
 
 ## XML をリクエスト
 

@@ -1,14 +1,14 @@
 ---
-title: "mergeLeads"
+title: mergeLeads
 feature: SOAP
-description: 「mergeLeads SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: mergeLeads SOAP呼び出し
+exl-id: a667cb76-525d-4583-b26a-1181d320a68c
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '83'
-ht-degree: 10%
+ht-degree: 13%
 
 ---
-
 
 # mergeLeads
 
@@ -18,7 +18,7 @@ ht-degree: 10%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| winningLeadKeyList | 必須 | 勝者リードを識別するために使用されるキー。 使用可能な値は次のとおりです。 `IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
+| winningLeadKeyList | 必須 | 勝者リードを識別するために使用されるキー。 使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | losingLeadKeyLists | 必須 | 失注したリードを識別するために使用されるキーのリスト。 |
 | mergeInSales | オプション | 「True」または「False」としてブール値として渡されます |
 

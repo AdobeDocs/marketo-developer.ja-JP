@@ -1,18 +1,18 @@
 ---
-title: 「リードの一括抽出」
+title: リードの一括抽出
 feature: REST API
-description: 「リードデータのバッチ抽出。」
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: リードデータのバッチ抽出。
+exl-id: 42796e89-5468-463e-9b67-cce7e798677b
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1173'
 ht-degree: 2%
 
 ---
 
-
 # リードの一括抽出
 
-[バルクリード抽出エンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads)
+[ 一括リード抽出エンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads)
 
 REST API の一括リード抽出セットは、Marketoからリード/人物レコードの大きなセットを取得するためのプログラム的なインターフェイスを提供します。 また、レコードの作成日、最新の更新、静的リストメンバーシップまたはスマートリストメンバーシップに基づいて、リードを増分的に取得するためにも使用できます。 ETL、データウェアハウスおよびアーカイブの目的で、Marketoと 1 つ以上の外部システムとの間でデータを継続的にやり取りする必要があるユースケースに推奨されるインターフェイス。
 
@@ -22,12 +22,12 @@ REST API の一括リード抽出セットは、Marketoからリード/人物レ
 
 ## フィルター
 
-リードは、様々なフィルターオプションをサポートします。 特定のフィルター（など） `updatedAt`, `smartListName`、および `smartListId` すべてのサブスクリプションにまだロールアウトされていない、追加のインフラストラクチャコンポーネントが必要です。 エクスポートジョブごとに指定できるフィルタータイプは 1 つだけです。
+リードは、様々なフィルターオプションをサポートします。 `updatedAt`、`smartListName`、`smartListId` を含む特定のフィルターには、すべてのサブスクリプションにまだロールアウトされていない追加のインフラストラクチャコンポーネントが必要です。 エクスポートジョブごとに指定できるフィルタータイプは 1 つだけです。
 
 | フィルタータイプ | データタイプ | 注意 |
 |---|---|---|
-| createdAt | 日付範囲 | メンバーを含む JSON オブジェクトを受け入れます `startAt` および `endAt`. `startAt` ローウォーターマークを表す日時を受け入れる `endAt` ハイウォーターマークを表す日時を受け入れます。 範囲は 31 日以内にする必要があります。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 このフィルタータイプを持つジョブは、日付範囲内に作成されたすべてのアクセス可能なレコードを返します。 |
-| updatedAt* | 日付範囲 | メンバーを含む JSON オブジェクトを受け入れます `startAt` および `endAt`. `startAt` ローウォーターマークを表す日時を受け入れる `endAt` ハイウォーターマークを表す日時を受け入れます。 範囲は 31 日以内にする必要があります。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 メモ：このフィルターは、標準フィールドの更新のみを反映する、表示されている「updatedAt」フィールドをフィルタリングしません。 このフィルタータイプは、リードのレコードが最新のフィールド更新をいつ行ったかに基づいてフィルタリングします。Jobs このフィルタータイプを使用すると、日付範囲内で最近更新されたアクセス可能なすべてのレコードが返されます。 |
+| createdAt | 日付範囲 | `startAt` および `endAt` メンバーを持つ JSON オブジェクトを受け入れます。 `startAt` にはローウォーターマークを表す日時を指定し、`endAt` にはハイウォーターマークを表す日時を指定します。 範囲は 31 日以内にする必要があります。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 このフィルタータイプを持つジョブは、日付範囲内に作成されたすべてのアクセス可能なレコードを返します。 |
+| updatedAt* | 日付範囲 | `startAt` および `endAt` メンバーを持つ JSON オブジェクトを受け入れます。 `startAt` にはローウォーターマークを表す日時を指定し、`endAt` にはハイウォーターマークを表す日時を指定します。 範囲は 31 日以内にする必要があります。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 メモ：このフィルターは、標準フィールドの更新のみを反映する、表示されている「updatedAt」フィールドをフィルタリングしません。 このフィルタータイプは、リードのレコードが最新のフィールド更新をいつ行ったかに基づいてフィルタリングします。Jobs このフィルタータイプを使用すると、日付範囲内で最近更新されたアクセス可能なすべてのレコードが返されます。 |
 | staticListName | 文字列 | 静的リストの名前を受け入れます。 このフィルタータイプを持つジョブは、ジョブの処理開始時に静的リストのメンバーであるすべてのアクセス可能なレコードを返します。 Get Lists エンドポイントを使用して静的リスト名を取得します。 |
 | staticListId | 整数 | 静的リストの ID を受け入れます。 このフィルタータイプを持つジョブは、ジョブの処理開始時に静的リストのメンバーであるすべてのアクセス可能なレコードを返します。 リストの取得エンドポイントを使用して、静的リスト ID を取得します。 |
 | smartListName* | 文字列 | スマートリストの名前を受け入れます。 このフィルタ・タイプを持つジョブは、ジョブの処理開始時にスマート・リストのメンバーであるアクセス可能なすべてのレコードを返します。 スマート・リストの取得エンドポイントを使用してスマート・リスト名を取得します。 |
@@ -42,14 +42,14 @@ REST API の一括リード抽出セットは、Marketoからリード/人物レ
 
 | パラメーター | データタイプ | 必須 | 注意 |
 |---|---|---|---|
-| フィールド | 配列[文字列] | はい | この fields パラメーターには、文字列の JSON 配列を指定できます。 各文字列は、Marketo リードフィールドの REST API 名である必要があります。 リストされたフィールドは、書き出されたファイルに含まれます。 columnHeader で上書きしない限り、各フィールドの列ヘッダーは各フィールドの REST API 名になります。 メモ：条件 [!DNL Adobe Experience Cloud Audience Sharing] 機能が有効になっている場合は、に関連付けられた cookie 同期プロセスが発生します [!DNL Adobe Experience Cloud] Marketo リード付き ID （ECID）。 「ecid」フィールドを指定して、エクスポートファイルに ECID を含めることができます。 |
+| フィールド | 配列 [ 文字列 ] | はい | この fields パラメーターには、文字列の JSON 配列を指定できます。 各文字列は、Marketo リードフィールドの REST API 名である必要があります。 リストされたフィールドは、書き出されたファイルに含まれます。 columnHeader で上書きしない限り、各フィールドの列ヘッダーは各フィールドの REST API 名になります。 メモ：[!DNL Adobe Experience Cloud Audience Sharing] 機能が有効な場合、ID （ECID）がMarketo リード [!DNL Adobe Experience Cloud] 関連付けられる cookie 同期プロセスが発生します。 「ecid」フィールドを指定して、エクスポートファイルに ECID を含めることができます。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 これは、Describe Lead を呼び出して取得できるフィールドの API 名です。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
 | 形式 | 文字列 | いいえ | CSV、TSV、SSV のいずれかを使用できます。 書き出されたファイルは、コンマ区切り値、タブ区切り値、スペース区切り値の各ファイル（設定されている場合）としてレンダリングされます。 未設定の場合のデフォルト値は CSV です。 |
 
 
 ## ジョブの作成
 
-ジョブのパラメーターは、を使用してエクスポートを開始する前に定義されます [リードエクスポートジョブの作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) エンドポイント。 を定義する必要があります `fields` 書き出しに必要なパラメーターのタイプ。 `filter`, `format` （ファイル名と列ヘッダー名がある場合）。
+ジョブのパラメーターは、[ エクスポートリードジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) エンドポイントを使用してエクスポートを開始する前に定義されます。 書き出しに必要な `fields`、`filter` のパラメーターのタイプ、ファイルの `format`、列ヘッダー名（存在する場合）を定義する必要があります。
 
 ```
 POST /bulk/v1/leads/export/create.json
@@ -79,7 +79,7 @@ POST /bulk/v1/leads/export/create.json
 }
 ```
 
-このリクエストでは、2017 年 1 月 1 日～ 2017 年 1 月 31 日の間に作成された一連のリードのエクスポートが開始され、対応するからの値が含まれます `firstName`, `lastName`, `id`、および `email` フィールド。
+このリクエストでは、2017 年 1 月 1 日～ 2017 年 1 月 31 日の期間に作成された一連のリードのエクスポートが開始されます。この中には、対応する `firstName`、`lastName`、`id` および `email` フィールドの値が含まれています。
 
 ```json
 {
@@ -97,7 +97,7 @@ POST /bulk/v1/leads/export/create.json
 }
 ```
 
-ジョブが作成されたことを示すステータス応答を返します。 ジョブは定義され作成されましたが、まだ開始されていません。 そのためには、 [リード書き出しジョブをキューに入れる](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) エンドポイントは、作成ステータス応答から exportId を使用して呼び出す必要があります。
+ジョブが作成されたことを示すステータス応答を返します。 ジョブは定義され作成されましたが、まだ開始されていません。 これを行うには、作成ステータス応答の exportId を使用して [ エンキュー書き出しリードジョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) エンドポイントを呼び出す必要があります。
 
 ```
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
@@ -119,13 +119,13 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 }
 ```
 
-これは、次のように応答します `status` （使用可能なエクスポートスロットがある場合、待機中の場合）は、待機中に設定されます。
+これにより、使用可能なエクスポートスロットがある場合に、「待機中」という `status` が返され、「処理中」に設定されます。
 
 ## ジョブステータスのポーリング
 
-`Note:` ステータスは、同じ API ユーザーによって作成されたジョブについてのみ取得できます。
+`Note:` ステータスは、同じ API ユーザーによって作成されたジョブに対してのみ取得できます。
 
-これは非同期エンドポイントなので、ジョブを作成した後、そのステータスをポーリングして、進行状況を判断する必要があります。 を使用したポーリング [リード書き出しジョブステータスの取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) エンドポイント。 ステータスは 60 秒に 1 回だけ更新されるので、これよりも低いポーリング頻度は推奨されず、ほとんどすべての場合で過剰です。 ポーリングについて簡単に見てみましょう。
+これは非同期エンドポイントなので、ジョブを作成した後、そのステータスをポーリングして、進行状況を判断する必要があります。 [ 書き出しリードジョブステータスの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) エンドポイントを使用してポーリングします。 ステータスは 60 秒に 1 回だけ更新されるので、これよりも低いポーリング頻度は推奨されず、ほとんどすべての場合で過剰です。 ポーリングについて簡単に見てみましょう。
 
 ```
 GET /bulk/v1/leads/export/{exportId}/status.json
@@ -160,7 +160,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## データの取得
 
-完了したリードエクスポートのファイルを取得するには、を呼び出すだけです [リードファイルのエクスポートを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) エンドポイントと `exportId`.
+完了したリードエクスポートのファイルを取得するには、`exportId` で [ エクスポートリードファイルを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) エンドポイントを呼び出すだけです。
 
 ```
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -168,18 +168,18 @@ GET /bulk/v1/leads/export/{exportId}/file.json
 
 応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。
 
-リクエストされたリードフィールドが空（データが含まれていない）の場合、 `null` がエクスポートファイル内の対応するフィールドに配置されます。 次の例では、返されたリードのメールフィールドが空です。
+リクエストされたリードフィールドが空（データを含まない）の場合、`null` はエクスポートファイルの対応するフィールドに配置されます。 次の例では、返されたリードのメールフィールドが空です。
 
 ```csv
 firstName,lastName,email,cookies
 Russell,Wilson,null,_mch-localhost-1536605780000-12105
 ```
 
-抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションでバイト型の HTTP ヘッダー範囲をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 詳しくは、Marketoでの範囲ヘッダーの使用を参照してください [一括抽出](bulk-extract.md).
+抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションでバイト型の HTTP ヘッダー範囲をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 Marketoでの範囲ヘッダーの使用について詳しくは、こちらを参照してください [ 一括抽出 ](bulk-extract.md)。
 
 ## ジョブのキャンセル
 
-ジョブが正しく設定されなかった場合や不要になった場合は、を使用して簡単にキャンセルできます。 [リードジョブの書き出しをキャンセル](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) エンドポイント：
+ジョブが正しく設定されなかった場合や、不要になった場合は、[ リードエクスポートジョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) エンドポイントを使用すると簡単にキャンセルできます。
 
 ```
 POST /bulk/v1/leads/export/{exportId}/cancel.json

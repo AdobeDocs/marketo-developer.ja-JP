@@ -1,14 +1,14 @@
 ---
-title: 「認証署名」
+title: 認証署名
 feature: REST API
-description: 「メッセージ送信にセキュア認証を使用する」
-source-git-commit: 9bc1e0867f9a21e2dc72bfab444a09f188d1bac9
+description: メッセージの送信にセキュア認証を使用。
+exl-id: dda9d81b-0a77-4a99-916b-bf21319fd26d
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '210'
-ht-degree: 4%
+ht-degree: 6%
 
 ---
-
 
 # 認証署名
 
@@ -20,7 +20,7 @@ HMAC-SHA1 署名には、次が必要です。
 - 共有の秘密鍵とメッセージコンテンツを使用して計算され、サービスリクエストと共に送信される署名
 - サービス要求と共に送信されない共有秘密キー（暗号化キーとも呼ばれます）
 
-クライアントプログラムは、共有された秘密鍵とリクエストメッセージコンテンツの一部を使用して HMAC-SHA1 署名を計算します。 クライアントは、SOAP メッセージと共に認証情報を渡す SOAP ヘッダー AuthenticationHeaderInfo を含める必要があります。
+クライアントプログラムは、共有された秘密鍵とリクエストメッセージコンテンツの一部を使用して HMAC-SHA1 署名を計算します。 クライアントは、SOAP メッセージと共に認証情報を渡すために、SOAP ヘッダー AuthenticationHeaderInfo を含める必要があります。
 
 次の疑似コードは、アルゴリズムを示しています。
 
@@ -43,10 +43,10 @@ authHeader = "<ns1:AuthenticationHeader>" +
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| `mktowsUserId` | 必須 | Marketo クライアントアクセス ID は、Marketo管理 SOAP API パネルの「統合」の下にあります。 |
-| `requestSignature` | 必須 | 共有秘密鍵に基づく HMAC-SHA1 署名 `requestTimestamp`、およびMarketo ユーザー ID |
+| `mktowsUserId` | 必須 | Marketo クライアントアクセス ID は、Marketo管理者SOAP API パネルの「統合」の下にあります。 |
+| `requestSignature` | 必須 | 共有秘密鍵、`requestTimestamp` およびMarketo ユーザー ID に基づく HMAC-SHA1 署名 |
 | `requestTimestamp` | 必須 | リクエストタイムスタンプ（W3C WSDL 日付形式の例： &quot;2013-06-09T14:04:54-08:00&quot;） |
-| `partnerId` | オプション | LaunchPoint テクノロジーパートナー [API キー](../launchpoint-api.pdf). |
+| `partnerId` | オプション | LaunchPoint テクノロジーパートナー [API キー ](../launchpoint-api.pdf)。 |
 
 ## リクエスト XML - getLeadActivity
 

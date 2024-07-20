@@ -1,13 +1,13 @@
 ---
-title: 「データストリーム」
-description: 「データストリームの概要」
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: データストリーム
+description: データストリームの概要
+exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1594'
 ht-degree: 2%
 
 ---
-
 
 # データストリーム
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 - API 制限のシナリオを減らし、生成されるアラートメッセージを減らします。
 - データストリーミング機能が原因で、はデータを抽出するために一括書き出しを実行する必要があります。
 
-データストリームは、 [Marketo Engageパフォーマンス層パッケージ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835).
+データストリームは、[Marketo Engageパフォーマンス層パッケージ ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) を購入したユーザーが利用できます。
 
 ## リードアクティビティデータストリームの概要
 
@@ -185,14 +185,14 @@ ht-degree: 2%
    1. 手順 1 のエンドポイントの URL
    1. 受け取るアクティビティタイプ（上記の完全なリスト）
    1. 認証の手段。これにより、顧客はリクエストが正当であることを確認できます。 次のいずれか：
-      1. OAuth 用の ID プロバイダー URL、クライアント ID およびクライアント秘密鍵 [クライアント資格情報認証](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/)
+      1. OAuth 用の ID プロバイダー URL、クライアント ID およびクライアント秘密鍵 [ クライアント資格情報認証 ](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/)
       1. API トークン。リードアクティビティデータストリームから送信されるリクエストに、クエリパラメーターまたは認証ヘッダー（顧客が選択）で含めることができます
 
 次に、Adobeによってデータストリームが有効になり、顧客はデータストリームでデータの受信を開始します。
 
 典型的なリードアクティビティデータストリーム呼び出しの UML 図：
 
-![リードアクティビティのデータストリーム図](assets/lead-activity-data-stream.png)
+![ リードアクティビティのデータストリーム図 ](assets/lead-activity-data-stream.png)
 
 URL エンドポイントの作成例：
 
@@ -239,7 +239,7 @@ app.listen(port,()=>{
 })
 ```
 
-Marketo リードアクティビティデータストリームを使用するアプリケーションのコードサンプルが見つかります [こちら](https://github.com/ihgrant/activity-stream-consumer-example).
+Marketo リードアクティビティデータストリームを使用するアプリケーションのコードサンプルは、[ こちら ](https://github.com/ihgrant/activity-stream-consumer-example) を参照してください。
 
 ### ユーザー監査データストリームおよび通知データストリーム
 
@@ -254,26 +254,26 @@ Marketo リードアクティビティデータストリームを使用するア
    1. このステップにはAdobe組織が必要です
    1. Adobe組織ユーザーには、開発者またはシステム管理者の役割が必要です
 
-Adobe IO を設定するには、を参照してください。 [Adobe IO を使用したMarketo ユーザー監査データストリームの設定](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup/) （公開ドキュメントの節）を参照してください。
+Adobe IO を設定するには、公開ドキュメントの節 [Adobe IO を使用したMarketo ユーザー監査データストリームの設定 ](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup/) を参照してください。
 
 ### Marketoでのユーザー監査データストリームの設定
 
-ユーザー監査データストリームは、現在、他の 3 つのデータストリームと共にパフォーマンスパッケージの一部として使用できます。 パッケージの詳細については、を参照してください。 [製品説明ページ](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage-product-description.html) （製品の制限および機能用）。
+ユーザー監査データストリームは、現在、他の 3 つのデータストリームと共にパフォーマンスパッケージの一部として使用できます。 パッケージの詳細については、[ 製品説明ページ ](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage-product-description.html) で製品の制限事項や機能を確認してください。
 
 ### Adobe I/Oの設定
 
-[Adobe I/Oイベントの概要を参照してください](https://developer.adobe.com/runtime/docs/guides/getting-started/)
+[Adobe I/Oイベントの概要を参照してください ](https://developer.adobe.com/runtime/docs/guides/getting-started/)
 
-このユースケースの基本的な手順については、以下を参照してください [console.adobe.io](https://developer.adobe.com/console):
+このユースケースの基本的な手順については、[console.adobe.io](https://developer.adobe.com/console) 以降を参照してください。
 
-プロンプトが表示されたら、次のいずれかを選択します **[!UICONTROL 新規プロジェクトを作成]** または **[!UICONTROL イベントを追加]**.
+プロンプトが表示されたら、「**[!UICONTROL 新規プロジェクトを作成]**」または「**[!UICONTROL イベントを追加]**」を選択します。
 
 ### 新しいプロジェクトの基本を学ぶ
 
-イベントの使用を開始するには、API、Adobe サービス、ランタイムを追加して、 [詳細を見る](https://developer.adobe.com/runtime/docs/).
+Adobe サービスの使用を開始するには、API、イベント、ランタイムを追加し、[ ドキュメント ](https://developer.adobe.com/runtime/docs/) を参照してください。
 
 ## 公開ドキュメント
 
-- [Marketo データストリーム](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)
-- [Adobe IO イベントと Webhook の概要](https://developer.adobe.com/events/docs/guides/)
-- [データストリームブログ](https://blog.developer.adobe.com/introducing-the-adobe-marketo-engage-data-streams-61198b567fbb)
+- [Marketo データストリーム ](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)
+- [Adobe IO イベントと Webhook の概要 ](https://developer.adobe.com/events/docs/guides/)
+- [ データストリームブログ ](https://blog.developer.adobe.com/introducing-the-adobe-marketo-engage-data-streams-61198b567fbb)

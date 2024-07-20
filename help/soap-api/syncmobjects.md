@@ -1,18 +1,18 @@
 ---
-title: "syncMObjects"
+title: syncMObjects
 feature: SOAP
-description: "syncMObjects SOAP 呼び出し"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncMObjects SOAP呼び出し
+exl-id: 68bb69ce-aa8c-40b7-8938-247f4fe97b5d
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '421'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 
-
 # syncMObjects
 
-次の配列を受け入れます [オブジェクト](marketo-objects.md) 1 回の呼び出しで最大 100 まで、作成または更新され、オペレーション （CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）の結果（ステータス）と MObject のMarketo ID を返します。 この API は、次の 3 つの操作モードのいずれかで呼び出すことができます。
+1 回の呼び出しで最大 100 まで作成または更新される [MObjects](marketo-objects.md) の配列を受け入れて、操作の結果（ステータス） （CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）および MObject のMarketo ID を返します。 この API は、次の 3 つの操作モードのいずれかで呼び出すことができます。
 
 1. INSERT – 新しいオブジェクトのみを挿入し、既存のオブジェクトはスキップします
 1. UPDATE：既存のオブジェクトのみを更新し、新しいオブジェクトはスキップします。
@@ -25,10 +25,10 @@ UPDATE 操作と UPSERT 操作では、ID をキーとして使用します。 1
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| mObjectList->mObject->type | 必須 | 次のいずれかを指定できます。`Program`, `Opportunity`, `OpportunityPersonRole` |
+| mObjectList->mObject->type | 必須 | `Program`、`Opportunity`、`OpportunityPersonRole` のいずれかを指定できます。 |
 | mObjectList->mObject->id | 必須 | オブジェクトの ID。 1 回の呼び出しで最大 100 個の MObjects を指定できます。 |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 必須 | コスト （プログラム MObject の更新時にのみ使用）は、次のいずれかになります。 `Cost`, `Tag` |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 必須 | プログラム MObject の場合、次の属性を名前と値のペアとして渡すことができます。 コスト：`Month (Required)`, `Amount (Required)`, `Id (Cost Id - Optional)`, `Note (Optional)`. タグ/チャネルの場合： `Type (Required)`, `Value (Required)`. 商談 MObject の場合、の出力からすべてのフィールド [describeMObject](describemobject.md) は、名前と値のペアとして渡すことができます。 以下のリストは、すべてのオプションフィールドと属性の標準セットです。 Opportunity MObject には、サポート・リクエストを通じて作成された追加のフィールドを含めることができます。 |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 必須 | コスト （プログラム MObject の更新時にのみ使用）は、`Cost`、`Tag` のいずれかです。 |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 必須 | プログラム MObject の場合、次の属性を名前と値のペアとして渡すことができます。 コスト：`Month (Required)`、`Amount (Required)`、`Id (Cost Id - Optional)`、`Note (Optional)` タグ/チャネル：`Type (Required)`、`Value (Required)` 商談 MObject の場合、[describeMObject](describemobject.md) の出力のすべてのフィールドは、名前と値のペアとして渡すことができます。 以下のリストは、すべてのオプションフィールドと属性の標準セットです。 Opportunity MObject には、サポート・リクエストを通じて作成された追加のフィールドを含めることができます。 |
 
 1. 金額
 1. CloseDate
@@ -50,7 +50,7 @@ UPDATE 操作と UPSERT 操作では、ID をキーとして使用します。 1
 1. ステージ
 1. タイプ
 
-OpportunityPersonRole MObject の場合、次の出力からすべてのフィールドを指定できます。 [describeMObject](./describemobject.md) 名前と値のペアとして使用します。 OpportunityPersonRole MObject の属性の標準セットは、次のとおりです。
+OpportunityPersonRole MObject の場合、[describeMObject](./describemobject.md) の出力からすべてのフィールドを名前と値のペアとして指定できます。 OpportunityPersonRole MObject の属性の標準セットは、次のとおりです。
 
 1. OpportunityId （必須）
 1. ユーザー Id （必須）
@@ -60,7 +60,10 @@ OpportunityPersonRole MObject の場合、次の出力からすべてのフィ�
 1. IsPrimary （オプション）
 1. 役割（オプション）
 
-| | mObjAssociationList->mObjAssociation->mObjType | オプション |関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）|のいずれかです。 | mObjAssociationList->mObjAssociation->id | オプション |関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） | | mObjAssociationList->mObjAssociation->externalKey | オプション |関連オブジェクトのカスタム属性 |
+|
+| mObjAssociationList->mObjAssociation->mObjType | オプション |関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）|のいずれかです。
+| mObjAssociationList->mObjAssociation->id | オプション |関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） |
+| mObjAssociationList->mObjAssociation->externalKey | オプション |関連オブジェクトのカスタム属性 |
 
 ## XML をリクエスト
 

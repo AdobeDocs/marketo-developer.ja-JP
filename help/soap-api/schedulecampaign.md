@@ -1,14 +1,14 @@
 ---
-title: "scheduleCampaign"
+title: scheduleCampaign
 feature: SOAP, Smart Campaigns
-description: 「scheduleCampaign SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: scheduleCampaign SOAP呼び出し
+exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 5%
 
 ---
-
 
 # scheduleCampaign
 
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 requestCampaign 関数と同様に、既存のトークンを上書きするマイトークンの配列をこの API 呼び出しに渡すことができます。 キャンペーンの実行後、トークンは破棄されます。
 
-このオプションパラメーターをで使用する場合 [importToList](importtolist.md)の場合、トークンは次の順序で優先順位が付けられます。
+[importToList](importtolist.md) でこのオプション・パラメータを使用する場合、トークンは次の順序で優先順位付けされます。
 
 1. リードトークンごとの importToList
 1. キャンペーントークンごとのキャンペーンのスケジュール
@@ -32,7 +32,7 @@ requestCampaign 関数と同様に、既存のトークンを上書きするマ�
 | campaignName | 必須 | スマートキャンペーンの名前 |
 | campaignRunAt | オプション | スケジュールされたキャンペーンを実行する時間（W3C WSDL 日付形式）。 |
 | cloneToProgramName | オプション | この属性が存在する場合、キャンペーンの親プログラムのクローンが作成され、新しく作成されたキャンペーンがスケジュールされます。 属性は、結果として得られるプログラムの目的の名前を指定します。 注意：このフィールドを使用する場合、1 日に許可される呼び出しは 10 件のみです。 |
-| programTokenList->attrib->name | オプション | 新しい値を送信するトークンの名前。 Marketo UI 内と同様に、完全なトークン形式を使用します。 つまり、「{{my.message}}“ |
+| programTokenList->attrib->name | オプション | 新しい値を送信するトークンの名前。 Marketo UI 内と同様に、完全なトークン形式を使用します。 つまり、「{{my.message}}」です |
 | programTokenList->attrib->value | オプション | 関連付けられたトークン名の値。 |
 
 ## XML をリクエスト

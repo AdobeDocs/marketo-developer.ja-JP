@@ -1,14 +1,14 @@
 ---
-title: 「例」
-description: 「Marketo コードの例」
+title: 例
+description: Marketo コードの例
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 0%
 
 ---
-
 
 # 例
 
@@ -32,7 +32,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## ユーザー定義 URL に訪問者を移動
 
-この例では、訪問者を、設定済みの「ありがとうございます」ページではなく、送信に成功した後に JavaScript によって決定された URL に移動します。
+この例では、設定された「ありがとうございます」ページではなく、送信の成功後にJavaScriptによって特定された URL に訪問者を誘導します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -137,7 +137,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 
 ## LightBox にフォームを表示
 
-次の使用例は、URL にパラメーターが含まれている場合、Lightbox のスタイルダイアログのフォームを表示します `lightboxForm=true`.
+次の使用例は、url にパラメータ `lightboxForm=true` が含まれている場合、Lightbox のスタイルダイアログにフォームを表示します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 

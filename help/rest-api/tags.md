@@ -1,18 +1,18 @@
 ---
-title: "タグ"
+title: タグ
 feature: REST API, Tags
-description: 「Marketoでのプログラムのタグの管理」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketoでプログラムのタグを管理します。
+exl-id: 64731d1a-a749-4d6f-b336-16c733d002f0
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '205'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # タグ
 
-[タグエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags)
+[ タグエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags)
 
 タグは、プログラムに対してユーザーが定義したフィールドです。 各タグは、1 つ以上のプログラムタイプに適用でき、タグの定義方法に応じて、必須またはオプションのいずれかになります。 タグは、使用するためにから選択する必要がある許容値のリストを提供することもできます。
 
@@ -77,7 +77,7 @@ GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 
 ## 更新
 
-この [プログラム タグの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用すると、特定のタグタイプの値を更新できます。 エンドポイントは `id` および `tagType` 更新するプログラム id とタグタイプを指定するパスパラメーター。 A `tagValue` クエリパラメーターは、タグタイプの新しい値を指定するために使用されます。 すべてのパラメーターが必要です。
+[ プログラムタグを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用すると、特定のタグタイプの値を更新できます。 エンドポイントは、プログラム ID と更新するタグタイプを指定する `id` および `tagType` パスパラメーターを受け取ります。 `tagValue` クエリパラメーターを使用して、タグタイプの新しい値を指定します。 すべてのパラメーターが必要です。
 
 ```
 POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
@@ -97,11 +97,11 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-タグは、を使用して一括更新できます。 [プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイント。 その例をご覧ください [こちら](programs.md#update).
+タグは、「[ プログラムメタデータを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用して一括で更新できます。 その例については、[ こちら ](programs.md#update) を参照してください。
 
 ## 削除
 
-この [プログラム タグの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/deleteProgramUsingPOST) エンドポイントを使用すると、不要なタグタイプを削除できます。 エンドポイントはを取ります `id` および `tagType` プログラム id と削除するタグタイプを指定するパスパラメーター。
+[ プログラムタグを削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/deleteProgramUsingPOST) エンドポイントを使用すると、不要なタグタイプを削除できます。 エンドポイントは、プログラム ID と削除するタグタイプを指定する `id` および `tagType` パスパラメーターを受け取ります。
 
 ```
 POST /rest/asset/v1/program/{id}/tag/{tagType}/delete.json

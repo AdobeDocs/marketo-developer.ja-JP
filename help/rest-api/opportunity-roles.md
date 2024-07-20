@@ -1,20 +1,20 @@
 ---
-title: "オポチュニティの役割"
+title: オポチュニティの役割
 feature: REST API
-description: 「Marketoでのオポチュニティ役割の処理」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketoでのオポチュニティの役割の処理。
+exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '253'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
-
 # オポチュニティの役割
 
-[商談の役割エンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[ 商談の役割のエンドポイントリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
-リードは、中間ページを介して商談にリンクされます `opportunityRole` オブジェクト。
+リードは、中間 `opportunityRole` オブジェクトを介して商談にリンクされています。
 
 商談役割 API は、ネイティブの CRM 同期が有効になっていない購読に対してのみ公開されます。
 
@@ -106,7 +106,7 @@ GET /rest/v1/opportunities/roles/describe.json
 
 ## クエリ
 
-次の両方に注意してください `dedupeFields` および `searchableFields` 機会とは少し異なります。 `dedupeFields` 実際には、複合キーが提供されます。この場合、3 つすべてが `externalOpportunityId`, `leadId`、および `role` は必須です。 レコードの作成を成功させるには、ID フィールド別のオポチュニティとリードリンクの両方が宛先インスタンスに存在する必要があります。 の場合 `searchableFields`, `marketoGUID`, `leadId`、および `externalOpportunityId` はすべて独自のクエリに有効で、Opportunities と同じパターンを使用しますが、複合キーを使用してクエリを実行する追加のオプションがあり、追加のクエリパラメーターを使用して、POST経由で JSON オブジェクトを送信する必要があります `_method=GET`.
+`dedupeFields` と `searchableFields` はどちらも商談とは少し異なります。 `dedupeFields` は実際に、`externalOpportunityId`、`leadId`、`role` の 3 つすべてが必要な複合キーを提供します。 レコードの作成を成功させるには、ID フィールド別のオポチュニティとリードリンクの両方が宛先インスタンスに存在する必要があります。 `searchableFields`、`marketoGUID`、`leadId`、`externalOpportunityId` はすべて、独自のクエリに有効で、Opportunities と同じパターンを使用しますが、複合キーを使用してクエリを実行するには、追加のクエリパラメーター `_method=GET` を使用したPOST経由で JSON オブジェクトを送信する必要があります。
 
 ```
 POST /rest/v1/opportunities/roles.json?_method=GET

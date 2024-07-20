@@ -1,39 +1,39 @@
 ---
-title: "getMObjects"
+title: getMObjects
 feature: SOAP
-description: 「getMObjects SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getMObjects SOAP呼び出し
+exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '226'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
-
 # getMObjects
 
-1 つ以上の情報を取得します。 [オブジェクト](marketo-objects.md) 次の条件の組み合わせを使用します。
+次の条件を組み合わせて 1 つまたは複数の [MObjects](marketo-objects.md) を取得します。
 
 - 0 または 1 つの一意の ID （Marketo ID または外部 ID）
 - 0 個以上の属性フィルターを名前、値、比較のトライアルとして使用
 - 0 個以上の関連するオブジェクトフィルター（オブジェクト名/ID ペアとして）
 
-一致する MObjects、すべて 1 つの型、最大 100 個のバッチ、および [ストリーム位置](stream-position.md) 連続したバッチを取得するためのトークン。
+一致する MObjects のリスト、すべて 1 つのタイプ、1 つのバッチで最大 100、および連続するバッチを取得するための [ ストリーム位置 ](stream-position.md) トークンを返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| タイプ | 必須 | クエリするオブジェクトタイプ。 次のいずれかを指定できます。 `Opportunity`, `OpportunityPersonRole`、または `Program` |
+| タイプ | 必須 | クエリするオブジェクトタイプ。 次のいずれかを指定できます。`Opportunity`、`OpportunityPersonRole`、`Program` |
 | ID | オプション | オブジェクトの ID |
 | includeDetails | オプション | true の場合、指定された MObject のすべての属性を返します。 このパラメータは、プログラム オブジェクトと共に使用される場合にのみ適用されます |
-| mObjCriteriaList->mObjCriteria->attrName | オプション | 次の入力パラメーターを 1 つ以上使用できます。`Name`, `Role`, `Type`, `Stage`, `CRM Id`, `Created At`, `Updated At` または `Tag Type` （1 つのみ指定できます）、 `Tag Value`, `Workspace Name`, `Workspace Id`, `Include Archive` |
+| mObjCriteriaList->mObjCriteria->attrName | オプション | 次の入力パラメーターの 1 つ以上を使用できます：`Name`、`Role`、`Type`、`Stage`、`CRM Id`、`Created At`、`Updated At`、`Tag Type` （指定できるのは 1 つのみ）、`Tag Value`、`Workspace Name`、`Workspace Id`、`Include Archive` |
 | mObjCriteriaList->mObjCriteria->attrValue | オプション | フィルタリングに使用する値 |
-| mObjCriteriaList->mObjCriteria->comparison | オプション | 次のいずれか `EQ`, `NE`, `LT` ,`LE`, `GT`, `GE` |
+| mObjCriteriaList->mObjCriteria->comparison | オプション | `EQ`、`NE`、`LT`、`LE`、`GT`、`GE` のいずれか |
 | mObjAssociationList->mObjAssociation->mObjType | オプション |  |
 | mObjAssociationList->mObjAssociation->id | オプション | 関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） |
 | mObjAssociationList->mObjAssociation->externalKey | オプション | 関連付けられたオブジェクトのカスタム属性 |
-| streamPosition | オプション | 複数の結果セットをページ分割するために使用します。 渡される値は、以前の関数から返された値です。 `getMObjects` を呼び出します。 |
+| streamPosition | オプション | 複数の結果セットをページ分割するために使用します。 渡される値は、前の `getMObjects` 呼び出しから返された値です。 |
 
 ## XML をリクエスト
 

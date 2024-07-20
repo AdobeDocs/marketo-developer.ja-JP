@@ -1,18 +1,18 @@
 ---
-title: 「トークン」
+title: トークン
 feature: REST API, Tokens
-description: 「Marketoのトークンの管理」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketoでトークンを管理します。
+exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '297'
 ht-degree: 4%
 
 ---
 
-
 # トークン
 
-[トークンエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)
+[ トークンエンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)
 
 Marketoのトークンは、ショートコードに似た特殊な文字列で、実行時に別のデータに置き換えられます。 Marketoで使用できるトークンにはいくつかの種類がありますが、API で編集できるのはマイトークンのみです。 マイトークンは、特定のフォルダーまたはプログラムに対してローカルな子トークンです。 トークンは、API を介して読み取り、作成および削除できます。
 
@@ -34,7 +34,7 @@ Marketoのトークンは、ショートコードに似た特殊な文字列で�
 
 ## クエリ
 
-[フォルダー ID によるトークンの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/getTokensByFolderIdUsingGET) 次を取ります `id` 「プログラム」タイプまたは「フォルダー」タイプのパスパラメーターとして。 このタイプは、 `folderType` パラメーター。
+[ フォルダー ID によるトークンの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/getTokensByFolderIdUsingGET) プログラムまたはフォルダータイプのパスパラメーターとして `id` を受け取ります。 このタイプは `folderType` パラメーターで指定されます。
 
 ```curl
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
@@ -67,7 +67,7 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 ## 作成と更新
 
-この [トークンを作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/addTokenTOFolderUsingPOST) エンドポイントがトークンを作成するか、トークンが存在する場合は、送信された値で更新します。 トークンは、フォルダーまたはプログラムのコンテキストで作成されます。 必須 `id` path パラメーターは、トークンが関連付けられるフォルダーの id です。 この `name`, `type`, `value`、および `folderType` は、トークンに必要なすべてのパラメーターです。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。 この `name` トークンのフィールドは 50 文字以下にする必要があります。
+[ トークンを作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/addTokenTOFolderUsingPOST) エンドポイントはトークンを作成します。トークンが存在する場合は、送信された値で更新します。 トークンは、フォルダーまたはプログラムのコンテキストで作成されます。 必須の `id` パスパラメーターは、トークンが関連付けられるフォルダーの ID です。 `name`、`type`、`value`、`folderType` はすべて、トークンの必須パラメーターです。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。 トークンの `name` フィールドは 50 文字以下にする必要があります。
 
 ```
 POST /rest/asset/v1/folder/{id}/tokens.json
@@ -108,7 +108,7 @@ name=April Fools&type=date&value=2015-04-01&folderType=Folder
 
 ## 削除
 
-[名前によるトークンの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/deleteTokenByNameUsingPOST) プログラムまたはフォルダータイプのパスパラメーターとして ID を受け取ります。 このタイプは、 `folderType` パラメーター。 トークンは、その親フォルダー、 `name`、および `type` トークンのうち、それぞれが必須です。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。
+[ 名前によるトークンの削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/deleteTokenByNameUsingPOST):ID をプログラムタイプまたはフォルダータイプのパスパラメーターとして受け取ります。 このタイプは `folderType` パラメーターで指定されます。 トークンは、その親フォルダー、トークンの `name`、トークンの `type` に基づいて削除されます。各トークンは必須です。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。
 
 ```
 POST /rest/asset/v1/folder/{id}/tokens/delete.json

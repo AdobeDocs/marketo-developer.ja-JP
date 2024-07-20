@@ -1,14 +1,14 @@
 ---
-title: "getChannels"
+title: getChannels
 feature: SOAP
-description: 「getChannels SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getChannels SOAP呼び出し
+exl-id: bcaef85b-154b-4571-ad24-07a36707a6ef
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '92'
-ht-degree: 7%
+ht-degree: 9%
 
 ---
-
 
 # getChannels
 
@@ -24,7 +24,7 @@ ht-degree: 7%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| tag->values->stringItem | オプション | クエリするチャネルのリスト。 次の場合 `<tag>` が省略されると、すべてのチャネルに関する情報を受信します |
+| tag->values->stringItem | オプション | クエリするチャネルのリスト。 `<tag>` を省略すると、すべてのチャネルに関する情報が表示されます |
 
 ## XML をリクエスト
 

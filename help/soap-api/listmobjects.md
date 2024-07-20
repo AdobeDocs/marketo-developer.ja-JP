@@ -1,22 +1,22 @@
 ---
-title: "listMObjects"
+title: listMObjects
 feature: SOAP
-description: 「listMObjects SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: listMObjects SOAP呼び出し
+exl-id: d8b32ba2-7c20-4611-9062-c3c5db2d2ccb
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '48'
-ht-degree: 2%
+ht-degree: 6%
 
 ---
 
-
 # listMObjects
 
-この関数は、への入力として使用できるMarketo オブジェクトの名前を返します。 [describeMObjects](./describemobject.md) スキーマ検出操作の関数。
+この関数は、スキーマ検出操作用の [describeMObjects](./describemobject.md) 関数への入力として使用できるMarketo オブジェクトの名前を返します。
 
 ## リクエスト
 
-_この API への入力がありません_
+_この API への入力はありません_
 
 ## XML をリクエスト
 

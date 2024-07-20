@@ -1,7 +1,7 @@
 ---
 title: '[!DNL Ionic]'
 feature: Mobile Marketing
-description: 使用 [!DNL Ionic] モバイルデバイス向けMarketoの使用
+description: モバイルデバイス向けMarketoの使用  [!DNL Ionic]  使用
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
 source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
@@ -17,14 +17,14 @@ ht-degree: 73%
 ## 前提条件
 
 1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
-1. プッシュ通知を設定（[iOS](push-notifications.md) | [Android](push-notifications.md) ）に設定します。
-1. インストール [[!DNL Ionic]](https://ionicframework.com/getting-started/) &amp; [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
+1. プッシュ通知の設定（[iOS](push-notifications.md) | [Android](push-notifications.md)）。
+1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) および [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) をインストールします。
 
 ## インストール手順
 
-### Marketoの設定 [!DNL Ionic] プラグイン
+### Marketo [!DNL Ionic] プラグインの設定
 
-1. Cordova CLI がインストールされている場合は、 [!DNL Ionic] アプリケーションディレクトリをクリックし、次のコマンドを実行してMarketo プラグインをアプリケーションに追加します。
+1. Cordova CLI がインストールされている場合は、[!DNL Ionic] アプリケーションディレクトリに移動し、次のコマンドを実行してMarketo プラグインをアプリケーションに追加します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
@@ -44,7 +44,7 @@ ht-degree: 73%
 
 ### xCode でのプッシュ通知の有効化
 
-1. xCode プロジェクトでプッシュ通知機能をオンにします。![通知機能](assets/notification-capability.png)
+1. xCode プロジェクトでプッシュ通知機能をオンにします。![ 通知機能 ](assets/notification-capability.png)
 
 ### プッシュ通知のトラッキング
 
@@ -74,7 +74,7 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 Marketo フレームワークがアプリの起動時に確実に開始されるようにするには、以下のコードをアプリの `onDeviceReady` メイン JavaScript ファイルで機能します。
 
-合格しなければなりません `ionicCordova` のフレームワークタイプとして [!DNL Ionic] Cordova アプリ。
+[!DNL Ionic] Cordova アプリのフレームワークタイプとして `ionicCordova` を渡す必要があります。
 
 #### 構文
 

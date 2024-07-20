@@ -1,30 +1,30 @@
 ---
-title: 「getCustomObjects」
+title: getCustomObjects
 feature: SOAP, Custom Objects
-description: 「getCustomObjects SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getCustomObjects SOAP呼び出し
+exl-id: 32ff208a-f824-4420-a26f-1fd969a2bc4c
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '156'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
-
 
 # getCustomObjects
 
 0 または 1 つのカスタム オブジェクト キーで構成される条件の組み合わせを使用して、1 つまたは複数のカスタム オブジェクトを取得します。
 
-一致するカスタムオブジェクト、すべて 1 つのタイプ、最大 100 個のオブジェクトのリストをバッチで返します。 [ストリーム位置](stream-position.md) 連続したバッチを取得するためのトークン。
+一致するカスタムオブジェクト、単一のタイプのすべて、1 つのバッチで最大 100 個のリスト、および連続するバッチを取得するための [ ストリーム位置 ](stream-position.md) トークンを返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
 | objTypeName | 必須 | カスタムオブジェクトの名前 |
-| customObjKeyLists->keyList->attribute | 必須 | 属性は、取得するカスタムオブジェクトを識別するために使用されるキーと値のペアです。 で複数の属性を指定できます `customObjKeyLists` |
+| customObjKeyLists->keyList->attribute | 必須 | 属性は、取得するカスタムオブジェクトを識別するために使用されるキーと値のペアです。 `customObjKeyLists` では複数の属性を指定できます |
 | includeAttributes | 必須 | 取得するカスタムオブジェクトのフィールドのリスト。 none を渡すと、すべての値が返されます。 |
 | batchSize | オプション | 返されるオブジェクトの数（最大 100） |
-| streamPosition | オプション | 複数の結果セットをページ分割するために使用します。 渡される値は、以前の関数から返された値です。 `getCustomObjects` を呼び出します。 |
+| streamPosition | オプション | 複数の結果セットをページ分割するために使用します。 渡される値は、前の `getCustomObjects` 呼び出しから返された値です。 |
 
 ## XML をリクエスト
 

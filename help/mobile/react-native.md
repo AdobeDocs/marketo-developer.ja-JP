@@ -16,7 +16,7 @@ ht-degree: 1%
 
 ## 前提条件
 
-[Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
+[Marketo管理者でアプリケーションを追加します ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
 
 ## SDK 統合
 
@@ -24,15 +24,15 @@ ht-degree: 1%
 
 **Gradle を使用したセットアップ**
 
-Marketo SDK の依存関係を、アプリケーションレベルで、最新バージョンに追加します。 `build.gradle` ファイルを dependencies セクションの下に追加します（Marketo SDK の適切なバージョンを含む）。
+Marketo SDK の依存関係を、最新バージョンで追加します。アプリケーションレベルの `build.gradle` ファイルの dependencies セクションで、（Marketo SDK の適切なバージョンを含めて）を追加します
 
 ```
 implementation 'com.marketo:MarketoSDK:0.x.x'
 ```
 
-**Mavencentral リポジトリーの追加**
+**Mavencentral リポジトリの追加**
 
-Marketo SDK はで入手できます。 [maven 中央リポジトリ](https://mvnrepository.com/). これらのファイルを同期するには、 `mavencentral` ルートへのリポジトリ `build.gradle`
+Marketo SDK は、[maven central リポジトリー ](https://mvnrepository.com/) で入手できます。 これらのファイルを同期するには、リポジトリー `mavencentral` ルート `build.gradle` に追加します
 
 ```
 build script {
@@ -53,7 +53,7 @@ React Native プロジェクトのブリッジを作成する前に、Xcode プ�
 
 iOS SDK をアプリで簡単に使用できます。 CocoaPods を使用してアプリの Xcode プロジェクトにプラットフォームをセットアップし、アプリとプラットフォームを統合するには、次の手順を実行します。
 
-Download [ココア ポッド](https://cocoapods.org/) - Ruby Gem として配布され、iOS SDK などのサードパーティライブラリをコードで簡単に使用できる、Objective-C および Swift の依存関係マネージャーです。
+[CocoaPods](https://cocoapods.org/) をダウンロード - Ruby Gem として配布され、コード内でiOS SDK などのサードパーティライブラリを使用するプロセスを簡素化する、Objective-C および Swift の依存関係マネージャーです。
 
 ダウンロードしてインストールするには、Macでコマンドラインターミナルを起動し、次のコマンドを実行します。
 
@@ -81,9 +81,9 @@ Download [ココア ポッド](https://cocoapods.org/) - Ruby Gem として配�
 
 ## ネイティブモジュールのインストール手順
 
-React Native アプリは、AppleまたはGoogle Pay にアクセスするためのネイティブ API など、JavaScript でデフォルトでは使用できないネイティブ Platform API にアクセスする必要が生じる場合があります。 既存の Objective-C、Swift、Java、C++ライブラリを JavaScript で再実装することなく再利用したり、画像処理などの高パフォーマンスのマルチスレッドコードを記述したりする場合があります。
+React Native アプリは、AppleまたはGoogle Pay にアクセスするためのネイティブ API など、JavaScriptでデフォルトでは使用できないネイティブ Platform API にアクセスする必要が生じる場合があります。 JavaScriptに再実装することなく、既存の Objective-C、Swift、Java、C++ライブラリを再利用したり、画像処理などの目的で高性能のマルチスレッドコードを記述したりする場合があります。
 
-NativeModule システムは、Java/Objective-C/C++（ネイティブ）クラスのインスタンスを JS オブジェクトとして JavaScript （JS）に公開します。これにより、JS 内から任意のネイティブコードを実行できます。 この機能が通常の開発プロセスに含まれるとは思いませんが、この機能が存在することは不可欠です。 React Nativeが JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
+NativeModule システムは、Java/Objective-C/C++（ネイティブ）クラスのインスタンスを JS オブジェクトとしてJavaScript（JS）に公開します。これにより、JS 内から任意のネイティブコードを実行できます。 この機能が通常の開発プロセスに含まれるとは思いませんが、この機能が存在することは不可欠です。 React Nativeが JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
 
 React Native ブリッジは、JSX とネイティブアプリレイヤー間の通信に使用されます。 この場合、ホストアプリは、Marketo SDK のメソッドを呼び出す JSX コードを記述できます。
 
@@ -224,11 +224,11 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### iOS
 
-次のガイドでは、ネイティブモジュールを作成します。 _RNMarketoModule_:JavaScript からMarketoの API にアクセスできるようになります。
+次のガイドでは、JavaScriptからMarketoの API にアクセスできるネイティブモジュール _RNMarketoModule_ を作成します。
 
 開始するには、React Native アプリケーション内でiOS プロジェクトを Xcode で開きます。 iOS プロジェクトは、React Native アプリ内で見つけることができます。 Xcode を使用してネイティブコードを記述することをお勧めします。 Xcode はiOS開発用に構築されており、コード構文などの小さなエラーをすばやく解決するのに役立ちます。
 
-メインのカスタムネイティブモジュールヘッダーと実装ファイルを作成します。 という名前の新規ファイルを作成します。 `MktoBridge.h` さらに、次の内容を追加します。
+メインのカスタムネイティブモジュールヘッダーと実装ファイルを作成します。 `MktoBridge.h` という名前の新しいファイルを作成し、次の内容を追加します。
 
 ```
 //
@@ -344,7 +344,7 @@ const NewModuleButton = () => {
 export default NewModuleButton;
 ```
 
-この JavaScript ファイルは、ネイティブモジュールを JavaScript レイヤーに読み込みます。
+このJavaScript ファイルは、ネイティブモジュールをJavaScript レイヤーに読み込みます。
 
 ```javascript
 import React from 'react';
@@ -387,7 +387,7 @@ RNMarketoModule.uninitializeMarketoPush()
 RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 ```
 
-次のサービスをに追加します `AndroidManifest.xml`
+`AndroidManifest.xml` に次のサービスを追加します
 
 
 ```xml
@@ -401,7 +401,7 @@ RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 </activity/>
 ```
 
-名前のクラスの作成 `FirebaseMessagingService.java` 次のコードを追加します
+`FirebaseMessagingService.java` という名前のクラスを作成し、次のコードを追加します
 
 ```java
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -427,15 +427,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 ユーザーのデバイスにプッシュ通知を送信するには、Xcode プロジェクトで権限が有効になっている必要があります。
 
-プッシュ通知を送信するには [プッシュ通知の追加](push-notifications.md).
+プッシュ通知を送信するには、[ プッシュ通知を追加 ](push-notifications.md) します。
 
-次に、 `AppDelegate.m` xcode のファイル、Marketoの読み込み
+Xcode の `AppDelegate.m` ファイルで、Marketoを読み込みます。
 
 ```
 #import <MarketoFramework/MarketoFramework.h> 
 ```
 
-追加 `UNUserNotificationCenterDelegate` AppDelegate インターフェイスに対して、デリゲートを処理するために次のように設定します
+次のように、AppDelegate インターフェイスに `UNUserNotificationCenterDelegate` を追加して、デリゲートを処理します
 
 ```
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
@@ -443,7 +443,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 @end
 ```
 
-でのリモート通知の登録 `didFinishLaunchingWithOptions` メソッド。
+メソッドにリモート通知 `didFinishLaunchingWithOptions` 登録します。
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -485,7 +485,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 }
 ```
 
-次を含める `UNUserNotificationCenter` 必須の通知デリゲートメソッド。
+次の `UNUserNotificationCenter` デリゲート必須通知デリゲートメソッドを含めます。
 
 ```
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
@@ -516,7 +516,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 **Android**
 
-「MarketoActivity」をに追加 `AndroidManifest.xml` ファイルはアプリケーションタグ内にあります。
+アプリケーションタグ内のファイルに「MarketoActivity」 `AndroidManifest.xml` 追加します。
 
 ```xml
 <activity android:name="com.marketo.MarketoActivity" android:configChanges="orientation|screenSize" android:exported="true">
@@ -533,11 +533,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 1. Project/Target/情報/URL タイプを選択します。
 
-1. 識別子を追加：${PRODUCT_NAME}
+1. 識別子の追加：${PRODUCT_NAME}
 
-1. URL スキームの設定： `mkto-<S_ecret Key_>`
+1. URL スキームの設定：`mkto-<S_ecret Key_>`
 
-1. 次を含める `application:openURL:sourceApplication:annotation:` 対象： `AppDelegate.m` ファイル（Objective-C）
+1. `AppDelegate.m` ファイルに `application:openURL:sourceApplication:annotation:` を含める（Objective-C）
 
 **iOS - AppDelegate でカスタム Url タイプ/ディープリンクを処理します** 
 

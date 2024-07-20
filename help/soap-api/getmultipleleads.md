@@ -1,42 +1,42 @@
 ---
-title: "getMultipleLeads"
+title: getMultipleLeads
 feature: SOAP
-description: 「getMultipleLeads SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getMultipleLeads SOAP呼び出し
+exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '384'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
-
 # getMultipleLeads
 
-類似 `getLead`, `getMultipleLeads` Marketoからリードレコードを取得します。 この呼び出しでは、単一のリードのデータではなく、leadSelector パラメーターに渡された条件に一致するリードバッチのデータが返されます。 条件は、最終更新日などの日付範囲、リードキーの配列、静的リストにすることができます。
+`getLead` と同様に、`getMultipleLeads` はMarketoからリードレコードを取得します。 この呼び出しでは、単一のリードのデータではなく、leadSelector パラメーターに渡された条件に一致するリードバッチのデータが返されます。 条件は、最終更新日などの日付範囲、リードキーの配列、静的リストにすることができます。
 
 メモ：リードキーの配列を使用する場合、1 つのバッチにつき 100 個に制限されます。追加のキーは無視されます。
 
-リードフィールドのサブセットのみが必要な場合、 `includeAttributes` 目的のフィールドを指定するには、パラメーターを使用する必要があります。
+リードフィールドのサブセットのみが必要な場合は、目的のフィールドを指定するために `includeAttributes` パラメーターを使用する必要があります。
 
-Each `getMultipleLeads` 関数呼び出しは、最大 1000 個のリードを返します。 1,000 件を超えるリードを取得する必要がある場合、結果は [ストリーム位置](stream-position.md):1,000 件のリードの次のバッチを取得する後続の呼び出しで使用できます。 結果の残りのカウントは、残りのリードの数を正確に示します。 静的リストから取得する場合、終了条件は remainingCount == 0 です。
+各 `getMultipleLeads` 関数呼び出しは、最大 1000 個のリードを返します。 1,000 件を超えるリードを取得する必要がある場合、結果は [ ストリーム位置 ](stream-position.md) を返します。これを後続の呼び出しで使用すると、1,000 件のリードの次のバッチを取得できます。 結果の残りのカウントは、残りのリードの数を正確に示します。 静的リストから取得する場合、終了条件は remainingCount == 0 です。
 
-このエンドポイントの一般的なユースケースは、特定の日付に更新されたリードを検索することです。 この `LastUpdateAtSelector` では、これを行うことができます。
+このエンドポイントの一般的なユースケースは、特定の日付に更新されたリードを検索することです。 `LastUpdateAtSelector` では、これを実行できます。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadSelector | 必須 | 次の 3 つのタイプのいずれかを指定できます。`LeadKeySelector`, `StaticListSelector`,`LastUpdateAtSelector` |
+| leadSelector | 必須 | 次の 3 つのタイプのいずれかです。`LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` |
 | keyType | 必須 | クエリする ID タイプ。 値には、IDNUM、COOKIE、EMAIL、LEADOWNEREMAIL、SFDCACCOUNTID、SFDCCONTACTID、SFDCLEADID、SFDCLEADOWNERID、SFDCOPPTYID などがあります。 |
 | keyValues->stringItem | 必須 | キー値のリスト。 つまり、「lead@email.com」です。 |
 | LastUpdateAtSelector: leadSelector->oldestUpdatedAt | 必須 | 「since」条件を指定するタイムスタンプ。 つまり、指定した時間以降に更新されたすべてのリードを返します。 （W3C WSDL 日時形式） |
 | LastUpdateAtSelector: leadSelector->latestUpdatedAt | オプション | 「まで」の条件を指定するタイムスタンプ。 つまり、指定された時間までに更新されたすべてのリードを返します。 （W3C WSDL 日時形式） |
-| StaticListSelector: leadSelector->staticListName | オプション条件 `leadSelector->staticListId` が存在する | 静的リストの名前 |
-| StaticListSelector: leadSelector->staticListId | オプション条件 `leadSelector->staticListName` が存在する | 静的リストの ID |
-| lastUpdatedAt | **非推奨** | 使用方法 `LastUpdateAtSelector` その代わり |
+| StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |
+| StaticListSelector: leadSelector->staticListId | `leadSelector->staticListName` が存在する場合はオプション | 静的リストの ID |
+| lastUpdatedAt | **非推奨** | 代わりに `LastUpdateAtSelector` を使用してください |
 | includeAttributes | オプション | 取得する属性のリスト。 返されるリードフィールドを制限すると、API の応答時間が向上する可能性があります。 |
-| batchSize | オプション | 返されるレコードの最大数。 システム制限が 100 に設定されている場合は、 `batchSize`、いずれか小さい方 |
-| streamPosition | オプション | 多数のリード応答をページ分割するために使用されます。 この `streamPosition` 値は、以前の呼び出しの応答フィールドから返されます `newStreamPosition` |
+| batchSize | オプション | 返されるレコードの最大数。 システムの制限は 100 または `batchSize` のいずれか小さい方 |
+| streamPosition | オプション | 多数のリード応答をページ分割するために使用されます。 `streamPosition` の値は、以前の呼び出し応答フィールド `newStreamPosition` から返されます。 |
 
 ## XML をリクエスト
 

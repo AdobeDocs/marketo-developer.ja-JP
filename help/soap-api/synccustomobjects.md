@@ -1,14 +1,14 @@
 ---
-title: "syncCustomObjects"
+title: syncCustomObjects
 feature: SOAP
-description: "syncCustomObjects SOAP 呼び出し"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncCustomObjects SOAP呼び出し
+exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '226'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
-
 
 # syncCustomObjects
 
@@ -20,7 +20,7 @@ ht-degree: 4%
 
 1 回の API 呼び出しで、一部の更新が成功し、一部の更新が失敗する場合があります。 失敗するたびにエラーメッセージが返されます。
 
-新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、として指定されたフィールドのみ `dedupe` ui のフィールドは、の属性として渡すことができます。 `CustomObjKeyList`. 以外のフィールドをリンク `dedupe` フィールドは属性としてに渡す必要があります `customObjAttributeList`.
+新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、UI で `dedupe` フィールドとして指定されたフィールドのみを、`CustomObjKeyList` の属性として渡すことができます。 フィールド以 `dedupe` のリンクフィールドは、`customObjAttributeList` の属性として渡す必要があります。
 
 ## リクエスト
 

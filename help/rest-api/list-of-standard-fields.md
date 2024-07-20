@@ -1,20 +1,20 @@
 ---
-title: 「標準フィールド」
+title: 標準フィールド
 feature: REST API, Field Management
-description: 「標準のMarketo フィールドのテーブル。」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 標準のMarketo フィールドのテーブル。
+exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1140'
-ht-degree: 29%
+ht-degree: 30%
 
 ---
-
 
 # 標準フィールド
 
 以下は、API からアクセスできる、Marketoで使用できる標準フィールドのリストです。
 
-REST を使用すると、リードレコードで使用可能なすべてのサポートされているフィールド名のリストを取得できます [リードの説明](https://developer.adobe.com/marketo-apis/api/mapi/) エンドポイント。
+REST [ リードを説明 ](https://developer.adobe.com/marketo-apis/api/mapi/) エンドポイントを使用すると、リードレコードで使用可能なすべてのサポートされているフィールド名のリストを取得できます。
 
 | REST API 名 | SOAP API 名 | フレンドリ ラベル | 説明 |
 | --- | --- | --- | --- |

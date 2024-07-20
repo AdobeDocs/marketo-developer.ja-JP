@@ -1,14 +1,14 @@
 ---
-title: "requestCampaign"
+title: requestPaign
 feature: SOAP, Smart Campaigns
-description: "requestCampaign SOAP 呼び出し"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: requestCampaign SOAP呼び出し
+exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '277'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
-
 
 # requestPaign
 
@@ -16,19 +16,19 @@ ht-degree: 4%
 
 ![Web サービス API](assets/webserviceapi.png)
 
-2 つのパラメーターセットを使用できます。 最初のケースでは、を使用しています。 `campaignName` + `programName` + `programTokenList`. この `programTokenList` この場合、は空にできます。 2 番目のケースでは、を使用しています `campaignId` 一人で。 その他の組み合わせは、不正なパラメーター例外をスローします。
+2 つのパラメーターセットを使用できます。 最初のケースは、`campaignName` + `programName` + `programTokenList` を使用する場合です。 この場合、`programTokenList` は空にできます。 2 番目のケースは、`campaignId` を単独で使用する場合です。 その他の組み合わせは、不正なパラメーター例外をスローします。
 
 メモ：呼び出しごとに 100 個の leadKey 値の制限。 追加のキーは無視されます。
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadList->leadKey->keyType | 必須 | `keyType` リードのクエリに使用するフィールドを指定できます。 使用可能な値は次のとおりです。`IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
-| leadList->leadKey->keyValue | 必須 | `keyValue` は、リードに対してクエリを実行する値です。 |
-| ソース | 必須 | キャンペーンソース。 使用可能な値： `MKTOWS` または `SALES`. 定義済みリストは、WSDL で定義されます。 |
-| campaignId | オプション条件 `campaignName`, `programName`、および `programTokenList` パラメーターサイト内で一緒に存在する。それ以外 `campaignId` は必須です | キャンペーンの ID。 メモ：次の場合に、不正なパラメーターエラーが発生します `campaignID` および `campaignName` が両方とも渡されます。 |
-| campaignName | campaignId が存在する場合はオプション。それ以外の場合は、として設定する場合に必要 `campaignName`、programName および programTokenList | キャンペーンの名前 |
-| programName | campaignId が存在する場合はオプション。それ以外の場合は、として設定する場合に必要 `campaignName`、programName および programTokenList | プログラムの名前 |
-| programTokenList | campaignId が存在する場合はオプション。それ以外の場合は、として設定する場合に必要 `campaignName`, `programName`、および `programTokenList` | キャンペーンで使用されるトークンの配列。 トークンを指定する場合、programName と `campaignName` は必須です。 |
+| leadList->leadKey->keyType | 必須 | リードのクエリに使用するフィールドを指定で `keyType` ます。 使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadList->leadKey->keyValue | 必須 | `keyValue` は、リードのクエリに使用する値です。 |
+| ソース | 必須 | キャンペーンソース。 使用可能な値：`MKTOWS` または `SALES`。 定義済みリストは、WSDL で定義されます。 |
+| campaignId | `campaignName`、`programName`、`programTokenList` がパラメーターサイトで一緒にある場合はオプションです。それ以外の場合は、`campaignId` が必要です | キャンペーンの ID。 メモ：`campaignID` と `campaignName` の両方が渡されると、不正なパラメーターエラーが発生します。 |
+| campaignName | campaignId が存在する場合はオプション。それ以外の場合は、`campaignName`、programName および programTokenList としてのセットで必須 | キャンペーンの名前 |
+| programName | campaignId が存在する場合はオプション。それ以外の場合は、`campaignName`、programName および programTokenList としてのセットで必須 | プログラムの名前 |
+| programTokenList | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、`programName`、`programTokenList` などのセットで必須です | キャンペーンで使用されるトークンの配列。 トークンを指定する場合、programName と `campaignName` が必要です。 |
 | programTokenList->attrib->name | オプション | 値を渡すプログラムトークンの名前。 例：{{my.message}} |
 | programTokenList->attrib->value | オプション | 指定されたトークン名の値。 |
 

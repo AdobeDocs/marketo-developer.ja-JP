@@ -1,18 +1,18 @@
 ---
-title: 「一括アクティビティ抽出」
+title: 一括アクティビティ抽出
 feature: REST API
-description: 「Marketoからのアクティビティデータのバッチ処理」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketoからのアクティビティデータをバッチ処理します。
+exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1381'
 ht-degree: 7%
 
 ---
 
-
 # 一括アクティビティ抽出
 
-[一括アクティビティ抽出エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/)
+[ 一括アクティビティ抽出エンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/)
 
 REST API の一括アクティビティ抽出セットは、Marketoから大量のアクティビティデータを取得するためのプログラムによるインターフェイスを提供します。  低遅延を必要とせず、CRM 統合、ETL、データウェアハウジング、データアーカイブなど、大量のアクティビティデータをMarketoから転送する必要がある場合。
 
@@ -40,13 +40,13 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
       <td>activityTypeIds</td>
       <td>Array[Integer]</td>
       <td>いいえ</td>
-      <td>1 つのメンバー activityTypeIds を持つ JSON オブジェクトを受け入れます。 値は、目的のアクティビティタイプに対応する整数の配列である必要があります。「リードを削除」アクティビティはサポートされていません（ <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET">削除されたリードの取得</a>代わりに、エンドポイントを使用します）。次を使用して、アクティビティタイプ ID を取得します<a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET">アクティビティタイプの取得</a>エンドポイント。</td>
+      <td>1 つのメンバー activityTypeIds を持つ JSON オブジェクトを受け入れます。 値は、目的のアクティビティタイプに対応する、整数の配列である必要があります。「リードを削除」アクティビティはサポートされていません（代わりに <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET"> 削除されたリードを取得 </a> エンドポイントを使用します）。<a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET"> アクティビティタイプを取得 </a> エンドポイントを使用して、アクティビティタイプ ID を取得します。</td>
     </tr>
     <tr>
       <td>primaryAttributeValueIds</td>
       <td>Array[Integer]</td>
       <td>いいえ</td>
-      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValueIds を受け入れます。 値は、フィルタリングするプライマリ属性を指定する id の配列です。 最大 50 個の ID を指定できます。ID はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、特定のフォームを「フォームに入力」アクティビティ用にフィルタリングするには、フォーム名をに渡します <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET">名前によるフォームの取得</a> フォーム ID を取得するエンドポイント。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
+      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValueIds を受け入れます。 値は、フィルタリングするプライマリ属性を指定する id の配列です。 最大 50 個の ID を指定できます。ID はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、「フォームに入力」アクティビティ用に特定のフォームをフィルタリングするには、フォーム名を <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET"> 名前によるフォームの取得 </a> エンドポイントに渡して、フォーム ID を取得します。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
         <table>
           <tbody>
             <tr>
@@ -93,13 +93,13 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
             </tr>
           </tbody>
         </table>
-        primaryAttributeValueIds を使用する場合、activityTypeIds フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含める必要があります。例：web フォームアセットでフィルタリングしている場合、activityTypeIds では「フォームに入力」アクティビティタイプ ID のみを使用できます。例：リクエスト本文：{"filter":{"createdAt":{"startAt": "2021-07-01T2:59:59-00:00","endAt": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValueIds" : [16,102,95,8]}}primaryAttributeValueIds と primaryAttributeValues を一緒に使用することはできません。</td>
+        primaryAttributeValueIds を使用する場合は、activityTypeIds フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含める必要があります。例：web フォームアセットでフィルタリングしている場合、activityTypeIds では「フォームに入力」アクティビティタイプ ID のみを使用できます。例：リクエスト本文：{"filter":{"createdAt":{"startAt": "2021-07-07-01:59:0:00:00 at": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValueIds" : [16,102,95,8]}}primaryAttributeValueIds と primaryAttributeValues を一緒に使用することはできません。</td>
     </tr>
     <tr>
       <td>primaryAttributeValues</td>
       <td>配列 [ 文字列 ]</td>
       <td>いいえ</td>
-      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValues を受け入れます。 値は、フィルタリングするプライマリ属性を指定する名前の配列です。 最大 50 個の名前を指定できます。名前はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、特定のフォームを「フォームに入力」アクティビティ用にフィルタリングするには、フォーム ID をに渡します <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">Id でフォームを取得</a> フォーム名を取得するエンドポイント。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
+      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValues を受け入れます。 値は、フィルタリングするプライマリ属性を指定する名前の配列です。 最大 50 個の名前を指定できます。名前はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、「フォームに入力」アクティビティ用に特定のフォームをフィルタリングするには、フォーム ID を <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">ID によるフォームの取得 </a> エンドポイントに渡して、フォーム名を取得します。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
         <table>
           <tbody>
             <tr>
@@ -146,7 +146,7 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
             </tr>
           </tbody>
         </table>
-        「&lt;」を使用する必要があります<em>プログラム</em>&gt;.&lt;<em>資産</em>次のアセットグループの名前を一意に指定する &gt;」表記：マーケティングプログラム、静的リスト、web フォーム。例：例：「GL_OP_ALL_2021」という名前のプログラムの下にある「MPS Outbound」という名前のフォームは、「GL_OP_ALL_2021.MPS Outbound」と指定されます。例：リクエスト本文：{"filter":{"createdAt": "202221-07-0 1T23:59:59-00:00","endAt": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValues":["GL_OP_ALL_2021.MPS Outbound"]}}primaryAttributeValues を使用する場合、activityTypeIds フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含んでいる必要があります。 例えば、web フォームのアセットをフィルタリングしている場合、activityTypeIds.primaryAttributeValues と primaryAttributeValueIds を一緒に使用することはできません。使用できるアクティビティタイプ ID は「フォームに入力」のみです。</td>
+        「&lt;<em>program</em>&gt; を使用する必要があります。次のアセットグループの名前を一意に指定する &lt;<em>asset</em>&gt;」表記：マーケティングプログラム、静的リスト、web フォーム。例：例：「GL_OP_ALL_2021」という名前のプログラムの下にある「MPS Outbound」という名前のフォームは、「GL_OP_ALL_2021.MPS Outbound」と指定されます。例：リクエスト本文：{"filter":{"createdAt":{"startAt":"20221 -07-01T23:59:59-00:00","endAt": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValues":["GL_OP_ALL_2021.MPS Outbound"]}}primaryAttributeValues を使用する場合、activityType ids フィルターが存在し、対応するアセットグループに一致するアクティビティ id のみを含んでいる必要があります。 例えば、web フォームのアセットをフィルタリングしている場合、activityTypeIds.primaryAttributeValues と primaryAttributeValueIds を一緒に使用することはできません。使用できるアクティビティタイプ ID は「フォームに入力」のみです。</td>
     </tr>
   </tbody>
 </table>
@@ -155,15 +155,15 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
 
 | パラメーター | データタイプ | 必須 | 注意 |
 |---|---|---|---|
-| フィルター | 配列[オブジェクト] | はい | フィルターの配列を受け入れます。 配列には、createdAt フィルターを 1 つだけ含める必要があります。 オプションの activityTypeIds フィルターを含めることができます。フィルターはアクセス可能なアクティビティセットに適用され、結果のアクティビティセットはエクスポートジョブによって返されます。 |
+| フィルター | Array[Object] | はい | フィルターの配列を受け入れます。 配列には、createdAt フィルターを 1 つだけ含める必要があります。 オプションの activityTypeIds フィルターを含めることができます。フィルターはアクセス可能なアクティビティセットに適用され、結果のアクティビティセットはエクスポートジョブによって返されます。 |
 | 形式 | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定されている場合、それぞれコンマ区切り値、タブ区切り値、スペース区切り値のファイルとしてレンダリングされます。設定されていない場合、デフォルトは CSV です。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
-| フィールド | 配列[文字列] | いいえ | オプションのフィールド値を含む文字列の配列。 リストに表示されたフィールドは、書き出されたファイルに含まれます。デフォルトでは、次のフィールドが返されます。 `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes`、このパラメーターを使用すると、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすことができます。例：&quot;fields&quot;: [&quot;leadId&quot;, &quot;activityDate&quot;, &quot;activityTypeId&quot;]追加のフィールド「actionResult」を指定して、アクティビティアクション（「succeeded」、「skipped」、「failed」）を含めることができます。 |
+| フィールド | 配列 [ 文字列 ] | いいえ | オプションのフィールド値を含む文字列の配列。 リストに表示されたフィールドは、書き出されたファイルに含まれます。デフォルトでは、次のフィールドが返されます。`marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes`、このパラメーターを使用して、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすことができます。例：&quot;fields&quot;: [&quot;leadId&quot;、&quot;activityDate&quot;、&quot;activityTypeId&quot;] 追加のフィールド&quot;actionResult&quot;を指定して、アクティビティアクション（&quot;successed&quot;、&quot;skiped&quot;、または&quot;failed&quot;）を失敗&quot;）にできます。 |
 
 
 ## ジョブの作成
 
-レコードを書き出すには、まず取得するジョブとレコードのセットを定義する必要があります。  を使用したジョブの作成 [エクスポートアクティビティジョブを作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) エンドポイント。  アクティビティを書き出す場合、2 つの主要なフィルターを適用できます。 `createdAt`（常に必須）、 `activityTypeIds`（オプション）。  createdAt フィルターは、 `startAt` および `endAt` パラメーターは、いずれも datetime フィールドで、許可される最も早い作成日と許可される最も遅い作成日をそれぞれ表します。  オプションで、を使用して、特定のタイプのアクティビティのみをフィルタリングすることもできます `activityTypeIds` フィルター。  これは、ユースケースとは関係のない結果を削除する場合に役立ちます。
+レコードを書き出すには、まず取得するジョブとレコードのセットを定義する必要があります。  [ エクスポートアクティビティジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) エンドポイントを使用してジョブを作成します。  アクティビティを書き出す場合、適用できる主なフィルターは、常に必須の `createdAt` とオプションの `activityTypeIds` の 2 つです。  createdAt フィルターを使用すると、アクティビティが作成された日付範囲を定義できます。`startAt` パラメーターと `endAt` パラメーターは両方とも datetime フィールドであり、許可された最も古い作成日と最も遅い作成日を表します。  また、オプションで、`activityTypeIds` フィルターを使用して、特定のタイプのアクティビティのみをフィルタリングすることもできます。  これは、ユースケースとは関係のない結果を削除する場合に役立ちます。
 
 ```
 POST /bulk/v1/activities/export/create.json
@@ -202,7 +202,7 @@ POST /bulk/v1/activities/export/create.json
 }
 ```
 
-ジョブのステータスは「作成済み」になりましたが、まだ処理キューにありません。  処理を開始できるようにキューに入れるには、を呼び出す必要があります。 [書き出しアクティビティジョブをエンキュー](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 作成ステータス応答から exportId を使用しているエンドポイント。
+ジョブのステータスは「作成済み」になりましたが、まだ処理キューにありません。  処理を開始できるようにキューに入れるには、作成ステータス応答の exportId を使用して [ エンキューエクスポートアクティビティジョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) エンドポイントを呼び出す必要があります。
 
 ```
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
@@ -230,7 +230,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 
 ジョブステータスは、同じ API ユーザーによって作成されたジョブに対してのみ取得できます。
 
-Marketoの一括アクティビティ抽出は非同期エンドポイントなので、ジョブのステータスをポーリングして、ジョブがいつ完了するかを判断する必要があります。  を使用したポーリング [エクスポートアクティビティジョブステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) エンドポイントを次に示します。
+Marketoの一括アクティビティ抽出は非同期エンドポイントなので、ジョブのステータスをポーリングして、ジョブがいつ完了するかを判断する必要があります。  [ 書き出しアクティビティのジョブステータスを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) エンドポイントを使用して、次のようにポーリングします。
 
 ```
 GET /bulk/v1/activities/export/{exportId}/status.json
@@ -268,7 +268,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 ## データの取得
 
-ジョブが完了したら、 [書き出しアクティビティファイルを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) エンドポイント。
+ジョブが完了したら、[ 書き出しアクティビティファイルを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) エンドポイントを使用してデータを取得します。
 
 ```
 GET /bulk/v1/activities/export/{exportId}/file.json
@@ -276,7 +276,7 @@ GET /bulk/v1/activities/export/{exportId}/file.json
 
 応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。
 
-リクエストされたリードフィールドが空（データが含まれていない）の場合、 `then null` がエクスポートファイル内の対応するフィールドに配置されます。  次の例では、返されるアクティビティの campaignId フィールドが空です。
+リクエストされたリードフィールドが空（データを含まない）の場合、`then null` はエクスポートファイルの対応するフィールドに配置されます。  次の例では、返されるアクティビティの campaignId フィールドが空です。
 
 ```json
 marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueId,primaryAttributeValue,attributes
@@ -286,11 +286,11 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 783961924,5316669,2022-02-13T14:27:21Z,104,11614,2333,Nurture Automation,"{""Program Member ID"":3240306,""Acquired By"":false,""Old Status"":""Not in Program"",""New Status ID"":27,""Success"":false,""New Status"":""Member"",""Old Status ID"":26}"
 ```
 
-抽出したデータの部分的で再開に適した取得をサポートするために、ファイルエンドポイントではオプションで HTTP ヘッダーをサポートしています `Range` タイプの `bytes`.  ヘッダーが設定されていない場合は、コンテンツ全体が返されます。  Marketoでの範囲ヘッダーの使用について詳しくは、こちらを参照してください [一括抽出](bulk-extract.md).
+抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションで `bytes` タイプの HTTP ヘッダー `Range` をサポートします。  ヘッダーが設定されていない場合は、コンテンツ全体が返されます。  Marketoでの範囲ヘッダーの使用について詳しくは、[ 一括抽出 ](bulk-extract.md) を参照してください。
 
 ## ジョブのキャンセル
 
-ジョブが正しく設定されなかった場合や不要になった場合は、を使用して簡単にキャンセルできます。 [書き出しアクティビティジョブをキャンセル](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) エンドポイント：
+ジョブが正しく設定されなかった場合や、不要になった場合は、[ エクスポートアクティビティジョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) エンドポイントを使用すると簡単にキャンセルできます。
 
 ```
 POST /bulk/v1/activities/export/{exportId}/cancel.json

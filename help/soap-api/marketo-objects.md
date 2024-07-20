@@ -1,14 +1,14 @@
 ---
-title: "Marketo オブジェクト"
+title: Marketo オブジェクト
 feature: SOAP
-description: 「Marketo オブジェクトの概要」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo オブジェクトの概要
+exl-id: 99b9aed4-94e8-46e8-84d9-2cc5215b0c13
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '249'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
-
 
 # Marketo オブジェクト
 
@@ -31,7 +31,7 @@ MObjects には、標準、カスタム、仮想の 3 つのタイプがあり�
 
 ### 外部キー
 
-外部キーは、リードやオポチュニティなど、Marketo オブジェクトで定義されたカスタムフィールドです。 name はフィールド名で、value は外部システムで生成されたフィールド値です。 **Marketoは、これらの値に対して一意性制約を適用しません。** 値が一意であることを確認するのは、API ユーザーの責任です。 重複が発生した場合、Marketoは最後に追加されたオブジェクトを使用します。 これは、「メールアドレスの標準」フィールドの動作と似ています。
+外部キーは、リードやオポチュニティなど、Marketo オブジェクトで定義されたカスタムフィールドです。 name はフィールド名で、value は外部システムで生成されたフィールド値です。 **Marketoでは、これらの値に対して一意性制約が適用されません。** 値が一意であることを確認するのは、API ユーザーの責任です。 重複が発生した場合、Marketoは最後に追加されたオブジェクトを使用します。 これは、「メールアドレスの標準」フィールドの動作と似ています。
 
 ### 使用可能な API
 

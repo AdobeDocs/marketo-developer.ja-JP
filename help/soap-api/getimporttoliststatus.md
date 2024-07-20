@@ -1,20 +1,20 @@
 ---
-title: "getImportToListStatus"
+title: getImportToListStatus
 feature: SOAP
-description: 「getImportToListStatus SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getImportToListStatus SOAP呼び出し
+exl-id: 17a62f65-dfa0-4f40-89b2-154f7734a2dc
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '76'
-ht-degree: 10%
+ht-degree: 13%
 
 ---
 
-
 # getImportToListStatus
 
-この関数は、特定ののステータスをチェックします。 `importToList` 関数呼び出し。
+この関数は、特定の `importToList` 関数呼び出しのステータスを確認します。
 
-を完了する `importToList` 最初に API 呼び出し、次にポーリング `getImportToListStatus` 定期的。 ポーリングしない `getImportToListStatus` 1 分に 2 回以上。
+最初に `importToList` API 呼び出しを完了し、次に定期的にポーリング `getImportToListStatus` ます。 1 分あたり `getImportToListStatus` 回以上ポーリングしないでください。
 
 ## リクエスト
 

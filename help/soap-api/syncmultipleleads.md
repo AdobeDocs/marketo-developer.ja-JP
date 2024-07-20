@@ -1,35 +1,35 @@
 ---
-title: "syncMultipleLeads"
+title: syncMultipleLeads
 feature: SOAP
-description: "syncMultipleLeads SOAP 呼び出し"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncMultipleLeads SOAP呼び出し
+exl-id: 91980b82-dff9-48a7-b03e-20dce9d0d046
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '221'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
-
 # syncMultipleLeads
 
-この関数は、以下に対して挿入または更新（アップサート）操作をリクエストします。 _複数_ リードレコード。 既存のリードを更新する場合、そのリードは次のいずれかのキーで識別できます。
+この関数は、（複数の _リードレコードに対する挿入または更新_ アップサート）操作をリクエストします。 既存のリードを更新する場合、そのリードは次のいずれかのキーで識別できます。
 
 - Marketo ID
 - 外部システム ID
 - メール
 
-複数のキーが存在する場合、Marketo ID がよりも優先されます `ForeignSysPersonId`、後者が更新されます。 ただし、メールもキーとして存在する場合、属性のリストで指定されていない限り、更新されません。
+複数のキーが存在する場合は、Marketo ID が `ForeignSysPersonId` よりも優先され、後者が更新されます。 ただし、メールもキーとして存在する場合、属性のリストで指定されていない限り、更新されません。
 
 バッチサイズは 300 以下にすることをお勧めします。 これより大きなサイズはサポートされず、タイムアウトや、極端な場合はスロットリングが発生する可能性があります。
 
-この関数呼び出しでは、重複除外機能をオフにできます。 dedupEnabled が true に設定され、他の一意の ID が指定されていない場合（`foreignSysPersonId` またはMarketoのリード ID）が含まれる場合は、メールアドレスを使用してリードレコードの重複が排除されます。 false を渡すと、Marketo内で重複が作成されることに注意してください。
+この関数呼び出しでは、重複除外機能をオフにできます。 dedupEnabled が true に設定され、他の一意の ID （`foreignSysPersonId` またはMarketo リード ID）が指定されていない場合、リードレコードはメールアドレスを使用して重複排除されます。 false を渡すと、Marketo内で重複が作成されることに注意してください。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
 | leadRecordList->leadRecord | 必須 | 同期する LeadRecords の配列。 LeadRecords はリード ID、電子メール、または ForeignSysPersonId を指定する必要があります |
-| dedupEnabled | 任意 | 重複除外機能をオフにできるオプションの値。 値の受け渡し `false` Marketoで重複を作成します |
+| dedupEnabled | 任意 | 重複除外機能をオフにできるオプションの値。 値 `false` を渡すと、Marketoで重複が作成されます |
 
 ## XML をリクエスト
 

@@ -1,20 +1,20 @@
 ---
-title: "importToList"
+title: importToList
 feature: SOAP
-description: 「importToList SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: importToList SOAP呼び出し
+exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '317'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
-
 
 # importToList
 
 この関数を使用すると、Marketo UI のリストの読み込み関数と同様に、Marketoの既存の静的リストにリードのリストを読み込むことができます。
 
-**読み込み形式：** これらの値は、リストの読み込みで使用される CSV の構造と同一です。
+**読み込み形式：** これらの値は、リストの読み込みで使用される CSV の構造と同じです。
 
 **例：**
 
@@ -24,9 +24,9 @@ ht-degree: 6%
 | mary@company.com | メアリー | ロジャーズ |
 | wanda@megacorp.com | ワンダ | ウィリアムズ |
 
-**注意：** `displayName` の値は、 `importFileHeader` 次の項目ではなくです `name` 値。
+**メモ：** `displayName` 値は、`name` 値ではなく `importFileHeader` で使用する必要があります。
 
-**動的メールコンテンツ：** オプションとして、メール内のマイトークンの置き換えとして機能する値をリードごとに渡すことができます。
+**動的メールコンテンツ：** オプションで、メール内のマイトークンの置き換えとして機能する値をリードごとに渡すことができます。
 
 | メール | 最初 | 姓 | {{my.specialToken}} | {{my.otherToken}} |
 | --- | --- | --- | --- | --- |
@@ -36,7 +36,7 @@ ht-degree: 6%
 
 **重要：** リードのトークンを追加する場合は、それらを使用するスマートキャンペーンを指定する必要があります。 次回、指定したスマートキャンペーンを実行すると、通常のマイトークンの値ではなく、リストの値が使用されます。 その単一のキャンペーンの実行後、トークンは破棄されます。
 
-**注意：** `importToList` 特に、大規模なリストの場合、完了までに時間がかかる場合があります。 新しく読み込んだリストを他の API 呼び出しで使用する予定がある場合は、を使用する必要があります。 `importToListStatus` 操作が完了したことを確認します。
+**メモ：** 完了 `importToList` るには、特に大きなリストの場合、時間がかかる場合があります。 新しく読み込んだリストを他の API 呼び出しで使用する予定がある場合は、`importToListStatus` を使用して操作が完了していることを確認してください。
 
 ## リクエスト
 
@@ -47,7 +47,7 @@ ht-degree: 6%
 | listName | 必須 | リードが追加されるMarketoの静的リストの名前 |
 | importFileHeader | 必須 | リード属性やマイトークン名など、読み込まれるリードの列ヘッダー。 |
 | importFileRows->stringItem | 必須 | コンマ区切り値（リードごとに 1 行） |
-| importListMode | 必須 | 有効なオプション： `UPSERTLEADS` および `LISTONLY` |
+| importListMode | 必須 | 有効なオプション：`UPSERTLEADS` および `LISTONLY` |
 | clearList | オプション | true の場合は、読み込みの前に静的リストがクリアされ、false の場合はリードが追加されます。 |
 
 ## XML をリクエスト

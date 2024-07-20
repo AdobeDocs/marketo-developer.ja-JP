@@ -13,7 +13,7 @@ ht-degree: 2%
 
 [Swagger](https://swagger.io/) または [OpenAPI](https://www.openapis.org/) 定義は、REST API のすべてのメソッドとパラメーターを記述したデータファイルです。 これらのデータファイルをダウンロードし、個人用 API リファレンスとしてローカルに使用できます。
 
-Marketo Engageの Swagger/OpenAPI 定義を使用するには、 `host` 各ドキュメントのフィールドは、Marketo Engageインスタンスの REST API ホスト名に一致するように更新する必要があります。
+Marketo Engageの Swagger/OpenAPI 定義を使用するには、各ドキュメントの `host` フィールドを更新して、Marketo Engageインスタンスの REST API ホスト名と一致させる必要があります。
 
 まず、使用する OpenAPI 定義をダウンロードします。
 
@@ -22,8 +22,8 @@ Marketo Engageの Swagger/OpenAPI 定義を使用するには、 `host` 各ド�
 * [ID](assets/swagger-identity.json)
 * [ユーザ管理](assets/swagger-user.json)
 
-次に、Marketo管理者から REST API ホスト名を取得します。 に移動します _Admin_-> _Web サービス_ Marketo Engageのメニューで、エンドポイント フィールドからホスト名をコピーします。 この `hostname` は、プロトコルの間の文字列です。 `https://`、および `/rest`。次のようになります `AAA-999-AAA.mktorest.com`
+次に、Marketo管理者から REST API ホスト名を取得します。 エンドポイントで _管理者_/_web サービス_ メニューに移動し、Marketo Engage フィールドからホスト名をコピーします。 `hostname` は、プロトコル、`https://`、`/rest` の間の文字列で、`AAA-999-AAA.mktorest.com` のようになります
 
-OpenAPI ファイルをテキストエディターで開き、 `host` 「」フィールドに入力し、その値を REST API ホスト名に変更します。 `"host":"localhost:8080"` 対象： `"host":"AAA-999-AAA.mktorest.com"`.
+OpenAPI ファイルをテキストエディターで開き、JSON 内の `host` フィールドを見つけて、その値を REST API ホスト名に変更します：`"host":"localhost:8080"` を `"host":"AAA-999-AAA.mktorest.com"` に変更します。
 
 保存したら、Swagger UI インスタンスまたはその他の OpenAPI ソフトウェアで定義ファイルを実行できます。

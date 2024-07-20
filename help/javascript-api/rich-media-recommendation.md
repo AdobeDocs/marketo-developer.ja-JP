@@ -1,14 +1,14 @@
 ---
-title: "リッチメディアのレコメンデーション"
-description: "リッチメディアのレコメンデーション"
+title: リッチメディアレコメンデーション
+description: リッチメディアレコメンデーション
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '812'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
-
 
 # リッチメディアレコメンデーション
 
@@ -21,14 +21,14 @@ ht-degree: 4%
 1. ページ本文内
    1. テンプレートを表示する場所にテンプレートタグ（div クラス）を配置します
 
-詳しくは、こちらを参照してください [こちら](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media).
+詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media) を参照してください。
 
 ## テンプレートタグ
 
 | 属性 | オプション/必須 | 説明 |
 |---|---|---|
 | クラス | 必須 | この divHTML要素が RTP 推奨 div であることを指定します。 |
-| data-rtp-template-id | 必須 | テンプレート ID。 これにより、レコメンデーションの整合性が決定されます。 水平方向の整列には「template1」、垂直方向の整列には「template2」、タイトルと説明のみを含む垂直方向の整列には「template3」を使用します。 スクリプトは、このに一致するテンプレートを挿入します `div.Permissible` 値：template1、template2、template3 |
+| data-rtp-template-id | 必須 | テンプレート ID。 これにより、レコメンデーションの整合性が決定されます。 水平方向の整列には「template1」、垂直方向の整列には「template2」、タイトルと説明のみを含む垂直方向の整列には「template3」を使用します。 スクリプトは、template1、template2、template3 の `div.Permissible` 値に一致するテンプレートを挿入します。 |
 
 ### 例
 
@@ -50,11 +50,11 @@ ht-degree: 4%
 <div class="RTP_RCMD2" data-rtp-template-id="template3"></div>
 ```
 
-テンプレート配置のスクリーンショットを参照 [こちら](#example_of_rich_media_recommendation_template_1).
+テンプレートの配置のスクリーンショットを参照してください [ こちら ](#example_of_rich_media_recommendation_template_1)。
 
 ## レコメンデーションの入力
 
-このメソッドは、すべてのリッチメディアに入力されます `<divs>` お勧めのページで。
+この方法では、ページ上のすべてのリッチメディア `<divs>` にレコメンデーションが入力されます。
 
 ### 使用方法
 
@@ -149,7 +149,7 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;green&quot; | ボタンの背景色を変更します。 このプロパティは、すべての css カラー値（カラー名、rgb など）をサポートします。 |
 | rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb （90, 84, 164）&quot; | ボタンのフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、16 進数など）をサポートします |
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; :&quot;プッシュ&quot; | ボタンのテキストを変更します。 テキストは、すべてのボタンで同じです。 |
-| カテゴリー | &quot;category&quot; : [「1 つのカテゴリ」] | このテンプレートがサポートする推奨カテゴリを変更します。 テンプレートには、この設定で設定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
+| カテゴリー | &quot;category&quot; :[&quot;one category&quot;] | このテンプレートがサポートする推奨カテゴリを変更します。 テンプレートには、この設定で設定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
 
 
 メモ：設定のサポートはテンプレートごとに変わることがあります。
@@ -232,16 +232,16 @@ rtp('get','rcmd', 'richmedia');
 
 #### リッチメディアレコメンデーションテンプレート#1 の例
 
-**名前**: template1 **説明**：画像、タイトル、説明、誘い文句（CTA：コールトゥアクション）ボタンなどの横長コンテンツ。
+**名前**: template1 **説明**：画像、タイトル、説明、誘い文句（CTA：コールトゥアクション）ボタンなどの水平方向のコンテンツ。
 
-![リッチメディアテンプレート](assets/rich-media-template1.png)
+![ リッチメディアテンプレート ](assets/rich-media-template1.png)
 
 #### リッチメディアレコメンデーションテンプレート#2 の例
 
 **名前**:template2 **説明**：画像、タイトル、説明、誘い文句（CTA：コールトゥアクション）ボタンなどの垂直方向のコンテンツ。
 
-![リッチメディアテンプレート](assets/rich-media-template2.png)
+![ リッチメディアテンプレート ](assets/rich-media-template2.png)
 
 #### リッチメディアレコメンデーションテンプレート#3 の例
 
-**名前**:template3 **説明**：タイトルと説明のみを含む垂直コンテンツ。 マウスポインターを置くと、ヘッダーの色が変更され、コンテンツ URL にハイパーリンクされます。 説明は、色を変更せずにコンテンツにリンクすることもできます。 ![リッチメディアテンプレート](assets/rich-media-template3.png)
+**名前**: template3 **説明**: タイトルと説明のみを含む垂直コンテンツ。 マウスポインターを置くと、ヘッダーの色が変更され、コンテンツ URL にハイパーリンクされます。 説明は、色を変更せずにコンテンツにリンクすることもできます。 ![ リッチメディアテンプレート ](assets/rich-media-template3.png)

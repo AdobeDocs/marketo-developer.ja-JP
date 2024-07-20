@@ -1,30 +1,30 @@
 ---
-title: 「ランディングページのリダイレクトルール」
+title: ランディングページのリダイレクトルール
 feature: REST API, Landing Pages
-description: 「API を使用したランディングページのリダイレクトルールの設定」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: API を使用したランディングページのリダイレクトルールの設定。
+exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '641'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
-
 # ランディングページのリダイレクトルール
 
-[ランディングページリダイレクトルールエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules)
+[ ランディングページリダイレクトルールエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules)
 
 Marketoは、ランディングページのリダイレクト URL で CRUD 操作を実行するための一連の REST API を提供します。 これらの API は、クエリ、作成、更新、削除のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
-ランディングページのリダイレクトルールは、ランディングページの URL を別のページの URL にリダイレクトする機能を提供します。 Marketoのランディングページ、Marketo以外のランディングページまたはそれらの組み合わせをリダイレクトできます。 リダイレクトランディングページルールに関する追加情報は、次のとおりです [こちら](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja).
+ランディングページのリダイレクトルールは、ランディングページの URL を別のページの URL にリダイレクトする機能を提供します。 Marketoのランディングページ、Marketo以外のランディングページまたはそれらの組み合わせをリダイレクトできます。 リダイレクトランディングページルールに関する追加情報は、[ こちら ](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja) を参照してください。
 
 ## クエリ
 
-ランディングページのリダイレクトルールのクエリは、のアセットの標準のクエリタイプに従います [id 別](#by_id)、および [ブラウジング](#browse).
+ランディングページのリダイレクトルールのクエリは、[id 別 ](#by_id) および [ 参照 ](#browse) のアセットの標準のクエリタイプに従います。
 
 ### Id 別
 
-この [Id によるランディングページのリダイレクトルールの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET) エンドポイントは、単一のランディングページルールリダイレクトを使用します `id` パスパラメーターで、単一のランディングページリダイレクトルールレコードを返します。
+[ID によるランディングページリダイレクトルールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET) エンドポイントは、パスパラメーター `id` とに 1 つのランディングページルールのリダイレクトを受け取り、1 つのランディングページリダイレクトルールレコードを返します。
 
 ```
 GET /rest/asset/v1/redirectRule/{id}.json
@@ -59,17 +59,17 @@ GET /rest/asset/v1/redirectRule/{id}.json
 
 ### 参照
 
-この [ランディングページのリダイレクトルールの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) エンドポイントは、ランディングページリダイレクトルールレコードのリストを返します。
+[ ランディングページのリダイレクトルールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) エンドポイントは、ランディングページのリダイレクトルールレコードのリストを返します。
 
 結果をフィルタリングするためのオプションのクエリパラメーターがいくつか渡されています。
 
-この `offset` パラメーターは、返されるエントリの最大数を指定する整数です（デフォルトは 20）。 最大値は 200 です。 この `maxReturn` パラメータは、エントリの取得を開始する場所を指定する整数です。 offset と組み合わせて使用できます（デフォルトは 0）。
+`offset` パラメーターは、返されるエントリの最大数を指定する整数です（デフォルトは 20）。 最大値は 200 です。 `maxReturn` パラメーターは、エントリの取得を開始する場所を指定する整数です。 offset と組み合わせて使用できます（デフォルトは 0）。
 
-この `hostname` パラメーターを使用して、ランディングページのホスト名をフィルタリングできます。
+`hostname` パラメーターは、ランディングページのホスト名でフィルタリングするために使用できます。
 
-この `redirectToLandingPageId` は、リダイレクト先のランディングページの ID に基づいてフィルタリングするために使用できる整数です。 この `redirectToPath` リダイレクト先のランディングページのパスに基づいてフィルタリングするために使用できます。
+`redirectToLandingPageId` は整数で、リダイレクト先のランディングページの ID に基づいてをフィルタリングするために使用できます。 この `redirectToPath` を使用して、リダイレクト先のランディングページのパスに基づいてフィルタリングできます。
 
-この `earliestUpdatedAt` および `latestUpdatedAt` パラメーターを使用すると、指定された範囲内で更新または最初に作成されたランディングページリダイレクトルールを返すための日時下限と上限の透かしを設定できます。
+`earliestUpdatedAt` パラメーターと `latestUpdatedAt` パラメーターを使用すると、指定された範囲内に更新または最初に作成されたランディングページリダイレクトルールを返すための低日時透かしと高日時透かしを設定できます。
 
 ```
 GET /rest/asset/v1/redirectRules.json&maxReturn=3
@@ -136,11 +136,11 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 
 ## 作成
 
-この [ランディングページのリダイレクトルールの作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) エンドポイントは、次の 3 つの必須パラメーターを持つ application/x-www-form-urlencoded POSTで実行されます。
+[ ランディングページリダイレクトルールの作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) エンドポイントは、次の 3 つの必須パラメーターを持つ application/x-www-form-urlencoded POSTで実行されます。
 
-この `hostname` パラメーターは、ランディングページのホスト名を指定します。 これは、ブランディングドメインまたはエイリアスに属している必要があります。 最大長は 255 文字です。
+`hostname` パラメーターは、ランディングページのホスト名を指定します。 これは、ブランディングドメインまたはエイリアスに属している必要があります。 最大長は 255 文字です。
 
-この `redirectFrom` パラメーターは、ソースランディングページを指定します。 これは、ソースがMarketo ランディングページかMarketo以外のランディングページかを判断するタイプと値のペアを含む JSON オブジェクトです。 この `type` 属性は、「landingPageId」または「path」のいずれかです。
+`redirectFrom` パラメーターは、ソースランディングページを指定します。 これは、ソースがMarketo ランディングページかMarketo以外のランディングページかを判断するタイプと値のペアを含む JSON オブジェクトです。 `type` 属性は、「landingPageId」または「path」のいずれかです。
 
 | パラメーター | オプション/必須 | タイプ | 説明 |
 |---|---|---|---|
@@ -149,14 +149,14 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | callback | 必須 | 機能 | 返されるキャンペーンごとにトリガーされるコールバック関数。 |
 
 
-この `redirectTo` パラメーターは、ターゲットランディングページを指定します。 これは、ソースがMarketo ランディングページかMarketo以外のランディングページかを判断するタイプと値のペアを含む JSON オブジェクトです。 この `type` 属性は、「landingPageId」または「url」のいずれかです。
+`redirectTo` パラメーターは、ターゲットランディングページを指定します。 これは、ソースがMarketo ランディングページかMarketo以外のランディングページかを判断するタイプと値のペアを含む JSON オブジェクトです。 `type` 属性は、「landingPageId」または「url」のいずれかです。
 
 | ランディングページのタイプ | redirectTo タイプ | 例 |
 |---|---|---|
 | Marketo | landingPageId | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 非Marketo | URL | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-ランディングページのリダイレクトルールの作成について詳しくは、こちらを参照してください [こちら](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html).
+ランディングページのリダイレクトルールの作成について詳しくは [ こちら ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html) を参照してください。
 
 ```
 POST /rest/asset/v1/redirectRules.json
@@ -199,9 +199,9 @@ hostname=calqeauto.com&redirectFrom={"type":"landingPageId", "value":"5483"}&red
 
 ## 更新
 
-この [ランディングページのリダイレクトルールを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) エンドポイントは、単一のランディングページリダイレクトルールを使用 `id` パスパラメーター。 このエンドポイントは、application/x-www-form-urlencoded POSTで実行されます。
+[ ランディングページのリダイレクトルールを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) エンドポイントは、パスパラメーターとして単一のランディングページのリダイレクトルール `id` 受け取ります。 このエンドポイントは、application/x-www-form-urlencoded POSTで実行されます。
 
-前述の create 呼び出しと同様に、次の 1 つ以上のクエリパラメーターが渡され、ルールの更新する属性が指定されます。 `hostname`, `redirectFrom`, `redirectTo`.
+前述の create 呼び出しと同様に、更新するルールの属性を指定する 1 つ以上のクエリパラメーター（`hostname`、`redirectFrom`、`redirectTo`）が渡されます。
 
 更新されたランディングページのリダイレクトルールレコードが応答で返されます。
 
@@ -246,7 +246,7 @@ redirectTo={"type":"landingPageId", "value":"5561"}
 
 ## 削除
 
-この [Id によるランディングページリダイレクトルールの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST) エンドポイントは、単一のランディングページルールリダイレクトを使用します `id` パスパラメーター。
+[ID によるランディングページリダイレクトルールを削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST) エンドポイントは、パスパラメーターを使用して 1 つのランディングページルール `id` リダイレクトを受け取ります。
 
 ```
 POST /rest/asset/v1/redirectRule/{id}/delete.json
@@ -268,13 +268,13 @@ POST /rest/asset/v1/redirectRule/{id}/delete.json
 
 ## ランディングページドメインの参照
 
-この [ランディングページのドメインを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) エンドポイントは、ランディングページドメインレコードのリストを返します。
+[ ランディングページドメインを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) エンドポイントは、ランディングページドメインレコードのリストを返します。
 
 結果をフィルタリングするためのオプションのクエリパラメーターが 2 つあります。
 
-この `offset` パラメーターは、返されるエントリの最大数を指定する整数です（デフォルトは 20、最大は 200）。
+`offset` パラメーターは、返されるエントリの最大数を指定する整数です（デフォルトは 20、最大は 200）。
 
-この `maxReturn` パラメータは、エントリの取得を開始する場所を指定する整数です。 と組み合わせて使用できます `offset` （デフォルトは 0）。
+`maxReturn` パラメーターは、エントリの取得を開始する場所を指定する整数です。 `offset` と組み合わせて使用できます（デフォルトは 0）。
 
 ```
 POST /rest/asset/v1/landingPageDomains.json?maxReturn=3

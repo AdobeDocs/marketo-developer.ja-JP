@@ -1,20 +1,20 @@
 ---
-title: "Web パーソナライゼーション"
-description: "Web パーソナライゼーション"
+title: Web パーソナライズ
+description: Web パーソナライズ
 feature: Web Personalization, Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '401'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
-
 # Web パーソナライズ
 
-Web Personalization JavaScript API は、プラットフォームの Automated Personalization 機能を拡張します。 これにより、イベントの追跡や、web ページの動的なカスタマイズが可能になります。 追加機能： [カスタムデータイベント](custom-data-events.md), [動的コンテンツ](web-personalization.md), [訪問者データの取得](get-visitor-data.md), [特定のボットのタグを除外](#exclude_tag_for_specific_bots).
+Web Personalization JavaScript API は、プラットフォームの Automated Personalization 機能を拡張します。 これにより、イベントの追跡や、web ページの動的なカスタマイズが可能になります。 その他の機能：[ カスタムデータイベント ](custom-data-events.md)、[ 動的コンテンツ ](web-personalization.md)、[ 訪問者データの取得 ](get-visitor-data.md)、[ 特定のボットのタグを除外 ](#exclude_tag_for_specific_bots)。
 
-- Web パーソナライゼーションの顧客になり、次を持っている必要があります [RTP タグが展開されました](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API を使用する前に、サイトで次の操作を行います。
+- User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 - RTP では、アカウントベースのマーケティングの名前付きアカウントリストをサポートしていません。 ABM のリストとコードは、RTP で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## タグ設定
@@ -71,9 +71,9 @@ rtp('send', 'view', page);
 
 ## 特定のボットのタグを除外（ユーザーエージェント）
 
-特定のブラウザーが Web パーソナライゼーションプラットフォームにデータを送信しないようにするには（ボットが識別されている場合）、タグスクリプトに次の IF 文を追加します。
+特定のブラウザーから Web Personalization プラットフォームにデータが送信されないようにするには（ボットが識別されている場合）、タグスクリプトに次の IF 文を追加します。
 
-以下のコード例では、「Googlebot|msnbot」をボットの例として使用して、web パーソナライゼーションアクティビティから除外します。
+以下のコード例では、「Googlebot|msnbot」をボットの例として使用して、web Personalization アクティビティから除外します。
 
 ```javascript
 <!-- RTP tag --> 
@@ -91,11 +91,11 @@ if(navigator.userAgent.match(/.(Googlebot|msnbot)./gi) == null){
 <!-- End of RTP tag -->
 ```
 
-## JavaScript 呼び出しの説明
+## JavaScript呼び出しの説明
 
-Web パーソナライゼーションと予測コンテンツを使用する際に web サイトに追加される JavaScript の説明。
+Web JavaScriptと予測コンテンツを使用する際に web サイトに追加されるPersonalizationの説明。
 
-### コア/依存 JavaScript
+### コア /依存JavaScript
 
 | 名前 | 説明 | 制御 |
 |---------------------------|-------------|--------------------------------------------------------|
@@ -107,7 +107,7 @@ Web パーソナライゼーションと予測コンテンツを使用する際�
 
 *jQuery UI にダイアログがない場合にのみ使用されます
 
-### オンデマンド JavaScript
+### オンデマンドJavaScript
 
 | 名前 | 説明 | 制御 |
 |-------------------------|-----------------------------------------------------------------------|-----------------------|
@@ -115,4 +115,3 @@ Web パーソナライゼーションと予測コンテンツを使用する際�
 | insightera-bar-2.1.js | 予測コンテンツレコメンデーションバーが有効な場合に使用されます | Marketoによって制御 |
 | froogaloop2.min.js | コンテンツ追跡が有効で、Vimeo プレーヤーがページ上に存在する場合に使用されます | - |
 | iframe-api-v1.js | コンテンツトラッキングが有効になっていて、YouTube Player がページに存在する場合に使用されます | - |
-

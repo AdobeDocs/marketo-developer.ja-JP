@@ -1,20 +1,20 @@
 ---
-title: "トリガー"
-description: "トリガー"
+title: トリガー
+description: トリガー
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: 588836fa-1e4d-41f3-aec5-5cd17eb16071
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '80'
-ht-degree: 11%
+ht-degree: 13%
 
 ---
-
 
 # トリガー
 
 グローバル rtp オブジェクトの特定のステートに対してトリガー関数を追加します。
 
-Web パーソナライゼーションの顧客であり、次を持っている必要があります [RTP タグが展開されました](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API を使用する前に、サイトで次の操作を行います。
+User Context API を使用する前に、Web Personalizationのユーザーであり、サイトに [RTP タグがデプロイされている ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) 必要があります。
 
 ## 使用方法
 

@@ -1,14 +1,14 @@
 ---
-title: "getTags"
+title: getTag
 feature: SOAP, Tags
-description: 「getTags SOAP 呼び出し」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getTags SOAP呼び出し
+exl-id: 4fd9de1a-9362-479a-afe1-09ef0aaf5e6e
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '94'
-ht-degree: 11%
+ht-degree: 13%
 
 ---
-
 
 # getTag
 
@@ -23,7 +23,7 @@ ht-degree: 11%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| tagList->tag | オプション | クエリするタグのリスト。 各タグには、タイプと、文字列としての値の配列を含めることができます。 次の場合 `<tagList>` が省略されると、すべてのチャネルに関する情報を受信します |
+| tagList->tag | オプション | クエリするタグのリスト。 各タグには、タイプと、文字列としての値の配列を含めることができます。 `<tagList>` を省略すると、すべてのチャネルに関する情報が表示されます |
 
 ## XML をリクエスト
 

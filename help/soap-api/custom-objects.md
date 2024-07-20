@@ -1,14 +1,14 @@
 ---
-title: 「カスタムオブジェクト」
+title: カスタムオブジェクト
 feature: SOAP
-description: 「カスタムオブジェクトの作成」
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: カスタムオブジェクトの作成。
+exl-id: 29d65841-4b44-4d94-b14e-c583d433d015
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '231'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # カスタムオブジェクト
 
@@ -16,7 +16,7 @@ Marketo カスタムオブジェクトを使用すると、Marketo リードと�
 
 カスタムオブジェクトは、Spark を除くすべてのMarketo エディションでサポートされています。 Marketo カスタムオブジェクトがアカウントに正常にプロビジョニングされると、次のことが可能になります
 
-- Marketo SOAP API を使用したカスタムオブジェクト内のレコードの作成/読み取り/更新/削除
+- Marketo SOAP API を使用して、カスタムオブジェクトのレコードを作成/読み取り/更新/削除します。
 - 新しいレコードがカスタム・オブジェクトに追加された場合にスマート・リスト・トリガーを使用します
 - カスタム・オブジェクト・データをスマート・リストのフィルタとして使用
 - Marketoのメールスクリプティングを使用したメールでのカスタムオブジェクトデータの使用

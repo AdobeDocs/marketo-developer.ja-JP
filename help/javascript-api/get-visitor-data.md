@@ -1,20 +1,20 @@
 ---
-title: 「訪問者データの取得」
-description: 「訪問者データの取得」
+title: 訪問者データの取得
+description: 訪問者データの取得
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: 39a2446d-8a31-461e-bbe6-a7edf24b4d52
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '184'
-ht-degree: 5%
+ht-degree: 10%
 
 ---
-
 
 # 訪問者データの取得
 
 このメソッドを使用すると、リアルタイムの訪問者識別データを取得できます。
 
-- Web パーソナライゼーションの顧客になり、次を持っている必要があります [RTP タグが展開されました](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API を使用する前に、サイトで次の操作を行います。
+- User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 - RTP では、アカウントベースのマーケティングの名前付きアカウントリストをサポートしていません。 ABM のリストとコードは、RTP で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 エラーが発生した場合、応答 JSON の一部としてエラーメッセージが表示されます。 500 コードが返された場合は、そのリクエストをサポートにお問い合わせください。

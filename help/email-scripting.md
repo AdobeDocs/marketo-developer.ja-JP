@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # メールスクリプト
 
-メモ：を読むことを強くお勧めします。 [Velocity ユーザーガイド](https://velocity.apache.org/engine/devel/user-guide.html) velocity テンプレート言語の動作について詳しく説明します。
+メモ：Velocity テンプレート言語の動作について詳しくは、[Velocity ユーザーガイド ](https://velocity.apache.org/engine/devel/user-guide.html) を参照することを強くお勧めします。
 
-[Apache Velocity](https://velocity.apache.org/) は Java に基づいて構築された言語で、HTMLコンテンツのテンプレート化とスクリプト作成のために設計されています。 Marketoでは、スクリプトトークンを使用して、メールのコンテキストで使用できます。 これにより、商談やカスタムオブジェクトに保存されたデータにアクセスでき、メール内で動的コンテンツを作成できるようになります。 Velocity では、if/else、for および for each を使用した標準的な高レベルの制御フローを提供し、コンテンツの条件付きおよび反復操作を可能にします。 次に、正しい敬称で挨拶を印刷する簡単な例を示します。
+[Apache Velocity](https://velocity.apache.org/) は Java 上に構築された言語で、HTMLコンテンツのテンプレート化とスクリプト作成のために設計されています。 Marketoでは、スクリプトトークンを使用して、メールのコンテキストで使用できます。 これにより、商談やカスタムオブジェクトに保存されたデータにアクセスでき、メール内で動的コンテンツを作成できるようになります。 Velocity では、if/else、for および for each を使用した標準的な高レベルの制御フローを提供し、コンテンツの条件付きおよび反復操作を可能にします。 次に、正しい敬称で挨拶を印刷する簡単な例を示します。
 
 ```java
 //check if the lead is male
@@ -51,7 +51,7 @@ $variablename ##outputs '$variablename'
 ${variable}name ##outputs 'valuename'
 ```
 
-また、クワイエット参照表記もあります。ここでは、 `!` 次の後に含まれる `$`. 通常、velocity が未定義の参照に遭遇した場合、参照を表す文字列はそのままになります。 クワイエット参照表記では、未定義の参照が検出されても、値は出力されません。
+`$` の後に Included という `!` があるクワイエット参照表記もあります。 通常、velocity が未定義の参照に遭遇した場合、参照を表す文字列はそのままになります。 クワイエット参照表記では、未定義の参照が検出されても、値は出力されません。
 
 ```
 ##Defined Reference
@@ -68,11 +68,11 @@ $baz ##outputs "$baz"
 $!baz ##outputs nothing
 ```
 
-変数の参照方法について詳しくは、を参照してください [Apache ユーザーガイド](https://velocity.apache.org/engine/devel/user-guide.html#formal-reference-notation).
+変数の参照方法について詳しくは、[Apache ユーザーガイド ](https://velocity.apache.org/engine/devel/user-guide.html#formal-reference-notation) を参照してください。
 
 ## Velocity ツール
 
-Apache Velocity プロジェクトでは、次の機能を使用できます [Velocity ツール](https://velocity.apache.org/tools/devel/apidocs/overview-summary.html). これらは単に Java オブジェクトのラッパーであり、すべてのスクリプトで使用できるグローバル変数を通じてそのメソッドを公開します。
+Apache Velocity プロジェクトでは、[Velocity ツール ](https://velocity.apache.org/tools/devel/apidocs/overview-summary.html) を使用して機能を使用できます。 これらは単に Java オブジェクトのラッパーであり、すべてのスクリプトで使用できるグローバル変数を通じてそのメソッドを公開します。
 
 - [AlternatorTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/AlternatorTool.html)
 - [ComparisonDateTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/ComparisonDateTool.html)
@@ -80,11 +80,11 @@ Apache Velocity プロジェクトでは、次の機能を使用できます [Ve
 - [DateTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/DateTool.html)
 - [DisplayTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/DisplayTool.html)
 - [MathTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/MathTool.html)
-- [NumberTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/NumberTool.html)
+- [ 数値ツール ](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/NumberTool.html)
 - [EscapeTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/EscapeTool.html)
 - [LoopTool](https://velocity.apache.org/tools/devel/apidocs/org/apache/velocity/tools/generic/LoopTool.html)
 
-例えば、からメソッドを使用するには `ComparisonDateTool`、からアクセスする場合 `$date` スクリプトトークンの変数：
+例えば、`ComparisonDateTool` からメソッドを使用するには、スクリプトトークンで `$date` 変数から if にアクセスします。
 
 ```
 #set($birthday = $convert.parseDate("2015-08-07","yyyy-MM-dd"))
@@ -94,31 +94,31 @@ $date.whenIs($birthday).days ##outputs 1
 
 ## スクリプトトークンの作成
 
-Velocity スクリプトは、メールスクリプティングトークンを使用してメールに含まれます。 これらは、マーケティングフォルダーまたはプログラムのマーケティングアクティビティで作成できます。 トークンをメール内で使用するには、そのメールが、トークンを所有するプログラムの子であるか、マーケティングフォルダーから継承されている必要があります。 トークンを作成するには、フォルダーまたはプログラムに移動し、 [!UICONTROL マイトークン] タブ。 右側のメニューから「Email Script」オプションをトークン・リストにドラッグします
+Velocity スクリプトは、メールスクリプティングトークンを使用してメールに含まれます。 これらは、マーケティングフォルダーまたはプログラムのマーケティングアクティビティで作成できます。 トークンをメール内で使用するには、そのメールが、トークンを所有するプログラムの子であるか、マーケティングフォルダーから継承されている必要があります。 トークンを作成するには、フォルダーまたはプログラムに移動し、「[!UICONTROL  マイトークン ]」タブを選択します。 右側のメニューから「Email Script」オプションをトークン・リストにドラッグします
 
-![スクリプトトークン](assets/script-token.png)
+![ スクリプトトークン ](assets/script-token.png)
 
-ここから、トークンの名前を編集し、 [!UICONTROL クリックして編集] オプション：
+ここから、トークンの名前を編集し、「[!UICONTROL  クリックして編集 ] オプションでエディターを開くことができます。
 
-![スクリプトを編集](assets/script-edit.png)
+![ スクリプトを編集 ](assets/script-edit.png)
 
 エディターを開くと、スクリプトでアクセス可能なオブジェクト内のすべての変数にアクセスできるスクリプトを作成できます。 オブジェクトからフィールド参照を取得するには、右側のツリーからスクリプトにドラッグします。
 
-![スクリプトトークンを編集](assets/edit-script-token.png)
+![ スクリプトトークンを編集 ](assets/edit-script-token.png)
 
 ## スクリプトの埋め込みとテスト
 
 プログラムマイトークン内でスクリプトを定義したら、特定のメール内でMarketoのメールエディターを使用してスクリプトを参照できます。
 
-![電子メールスクリプト](assets/email-script-marketo-email.png)
+![ メールスクリプト ](assets/email-script-marketo-email.png)
 
-次を使用してスクリプトをテストできます [!UICONTROL サンプルメールを送信] Marketo E メールデザイナー内のメールのアクション。 スクリプトが正しく処理されるようにするには、で実行する既存のリードを選択する必要があります [!UICONTROL リード] フィールド。 でテストする場合 `$TriggerObject`を使用してトリガーするオブジェクトを選択できます [!UICONTROL トリガー] パラメーター。 そのタイプの最も新しく更新されたオブジェクトのデータを `$TriggerObject` 変数。
+Marketoのメールデザイナー内で「[!UICONTROL  サンプルのメールを送信 ]」メールアクションを使用して、スクリプトをテストできます。 スクリプトが正しく処理されるようにするには、別のユーザーとして実行する既存のリードを「[!UICONTROL  リード ]」フィールドで選択する必要があります。 `$TriggerObject` を使用してテストしている場合は、[!UICONTROL  トリガー] パラメーターを介してトリガーオブジェクトを選択できます。 そのタイプの最も新しく更新されたオブジェクトのデータを `$TriggerObject` 変数として使用します。
 
-![メールスクリプトをテスト](assets/velocity-test.png)
+![ メールスクリプトをテスト ](assets/velocity-test.png)
 
-を使用することもできます [!UICONTROL メールのプレビュー] スクリプトをテストします。 これを行うには、を選択する必要があります。 **[!UICONTROL 表示：リード詳細]**&#x200B;使用可能な静的リストからリードを選択します。 これには、スクリプトの実行中に発生した例外を出力できるという利点もあります。
+また、[!UICONTROL  メールのプレビュー ] を使用して、スクリプトをテストすることもできます。 これを行うには、「**[!UICONTROL 表示形態：リード詳細]**」を選択し、使用可能な静的リストからリードを選択する必要があります。 これには、スクリプトの実行中に発生した例外を出力できるという利点もあります。
 
-![電子メールを次の形式で表示](assets/view-as.png)
+![ 電子メールの表示方法 ](assets/view-as.png)
 
 ## 役に立つヒント
 
@@ -126,15 +126,15 @@ Velocity スクリプトは、メールスクリプティングトークンを�
 
 - メールスクリプトで参照される変数は、スクリプトで使用可能ないずれかのオブジェクトにMarketoにある必要があります。
 - 第 1 レベルと第 2 レベルのカスタムオブジェクトを参照できます。これらのカスタムオブジェクトは、ネイティブに統合された CRM から派生し、リードまたは連絡先に直接接続されていますが、第 3 レベルのカスタムオブジェクトは参照できません。 カスタムオブジェクトは、リードまたは会社の親にできません
-- Marketoのカスタムオブジェクトの場合は、親子関係を持つ第 2 レベルのカスタムオブジェクトを参照できます。 例： `Lead <- Parent <- Child`. EdgeとBridgeの関係を持つ第 2 レベルのカスタムオブジェクトは参照できません。 例：  `Lead <- Bridge -> Edge`
+- Marketoのカスタムオブジェクトの場合は、親子関係を持つ第 2 レベルのカスタムオブジェクトを参照できます。 例：`Lead <- Parent <- Child`。 EdgeとBridgeの関係を持つ第 2 レベルのカスタムオブジェクトは参照できません。 例：`Lead <- Bridge -> Edge`
 - リード、連絡先またはアカウントに接続されたカスタムオブジェクトを参照できますが、複数は参照できません。
 - カスタムオブジェクトは、1 つの接続、リード、連絡先、アカウントからのみ参照できます
 - 使用しているフィールドのスクリプトエディターのチェックボックスをオンにする必要があります。オンにしない場合、処理されません
-- 各カスタムオブジェクトでは、ユーザー/連絡先ごとに最近更新された 10 件のレコードが実行時に使用可能で、最近更新されたレコード（0 の場合）から最も古い更新レコード（9 の場合）へと並べられます。 使用可能なレコードの数は、次の方法で増やすことができます [指示に従って](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting).
+- 各カスタムオブジェクトでは、ユーザー/連絡先ごとに最近更新された 10 件のレコードが実行時に使用可能で、最近更新されたレコード（0 の場合）から最も古い更新レコード（9 の場合）へと並べられます。 使用可能なレコードの数を増やすには、[ 手順に従う ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting) を実行します。
 - 1 つのメールに複数のメールスクリプトを含めると、上から下に向かって実行されます。 最初に実行するスクリプトで定義された変数のスコープは、後続のスクリプトでも使用できます。
-- ツールリファレンス： [https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
+- ツールリファレンス：[https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 改行文字「\\n」または「\\r\\n」を含むトークンに関するメモ。 「サンプルの送信」または「バッチキャンペーン」を使用してメールが送信されると、トークン内の改行文字がスペースに置き換えられます。 トリガーキャンペーン経由でメールが送信されると、改行文字はそのまま残ります。
-- URL を適切に解析するには、パス全体を変数として設定してから印刷する必要があります。また、変数を URL 参照内に印刷しないでください。 プロトコル （http://またはhttps://）を含め、URL の残りの部分とは別にする必要があります。 URL は、完全な形式のアンカーの一部である必要があります（<a>）タグを使用します。 リンクをトラッキングするには、スクリプトが完全な形式のアンカータグを出力する必要があります。 for ループまたは foreach ループ内から出力されたリンクはトラッキングされません。
+- URL を適切に解析するには、パス全体を変数として設定してから印刷する必要があります。また、変数を URL 参照内に印刷しないでください。 プロトコル （http://またはhttps://）を含め、URL の残りの部分とは別にする必要があります。 URL は、完全な形式のアンカー（<a>） タグの一部である必要があります。 リンクをトラッキングするには、スクリプトが完全な形式のアンカータグを出力する必要があります。 for ループまたは foreach ループ内から出力されたリンクはトラッキングされません。
 
 ```html
 <!-- Correct -->

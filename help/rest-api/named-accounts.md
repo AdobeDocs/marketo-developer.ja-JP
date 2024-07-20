@@ -1,18 +1,18 @@
 ---
-title: 「重点顧客」
+title: 重点顧客
 feature: REST API
-description: API を使用した名前付きアカウントの操作。
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: API を使用して名前付きアカウントを操作します。
+exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '679'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
-
 # 重点顧客
 
-[重点顧客エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts)
+[ 重点顧客エンドポイントリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts)
 
 Marketoは、Marketo ABM で使用する名前付きアカウントに対して CRUD 操作を実行するための一連の API を提供します。 これらの API は、リードデータベース API の標準インターフェイスパターンに従い、説明、作成/更新、削除、クエリの各オプションを提供します。
 
@@ -20,7 +20,7 @@ Marketoは、Marketo ABM で使用する名前付きアカウントに対して 
 
 ## 説明
 
-指定されたアカウントを記述すると、Marketo API による指定されたアカウントの使用に関するメタデータが返されます。これには、クエリ時に検索できる有効なフィールドのリスト、API で使用可能なすべてのフィールドのリストが含まれます。 この `idField` の指定されたアカウントは常に `marketoGUID`、および唯一の利用可能な `dedupeField`。作成のキーはです。 `name` オブジェクトのフィールド。
+指定されたアカウントを記述すると、Marketo API による指定されたアカウントの使用に関するメタデータが返されます。これには、クエリ時に検索できる有効なフィールドのリスト、API で使用可能なすべてのフィールドのリストが含まれます。 名前付きアカウントの `idField` は常に `marketoGUID` であり、作成に使用できる `dedupeField` とキーはオブジェクトの `name` フィールドのみです。
 
 ```
 GET /rest/v1/namedaccounts/describe.json
@@ -135,7 +135,7 @@ GET /rest/v1/namedaccounts/describe.json
 
 ### クエリ
 
-名前付きアカウントのクエリは、filterType の使用方法と、最大 300 個のコンマ区切り filterValues のセットに基づいています。 `filterType` には、 `searchableFields` 名前付きアカウントの describe 結果のメンバー。filterValues には、フィールドのデータ型に対する有効な入力を指定できます。 から特定のフィールドのセットを返すには、fields パラメーターを渡す必要があります。この値は、応答で返されるフィールドのコンマ区切りリストです。 他のクエリオプションと同様に、1 つのクエリページの最大レコード数は 300 で、セット内の追加のレコードをリクエストするには、呼び出しによって返される nextPageToken を使用する必要があります。
+名前付きアカウントのクエリは、filterType の使用方法と、最大 300 個のコンマ区切り filterValues のセットに基づいています。 `filterType` は、名前付き勘定科目の記述結果の `searchableFields` メンバーで返される任意の単一フィールドです。一方、filterValues は、フィールドのデータ型に対する任意の有効な入力です。 から特定のフィールドのセットを返すには、fields パラメーターを渡す必要があります。この値は、応答で返されるフィールドのコンマ区切りリストです。 他のクエリオプションと同様に、1 つのクエリページの最大レコード数は 300 で、セット内の追加のレコードをリクエストするには、呼び出しによって返される nextPageToken を使用する必要があります。
 
 ```
 GET /rest/v1/namedaccounts.json?filterType=name&filterValues=Google,Yahoo
@@ -166,7 +166,7 @@ GET /rest/v1/namedaccounts.json?filterType=name&filterValues=Google,Yahoo
 
 ### 作成と更新
 
-指定顧客の作成と更新は、標準のリードデータベースパターンに従います。 レコードは、POSTリクエストの JSON 本文の入力メンバーで渡す必要があります。 `input` は必須の唯一のメンバーで、を持つ `action` および `dedupeBy` （省略可能メンバとして） 入力には、最大 300 件のレコードを含めることができます。 Action は、createOnly、updateOnly、createOrUpdate のいずれかです。 指定しない場合、アクションはデフォルトで createOrUpdate になります。 dedupeBy は、action が updateOnly の場合にのみ指定でき、それぞれ name フィールドおよび marketoGUID フィールドに対応する dedupeFields または idField のいずれか 1 つのみを受け入れます。
+指定顧客の作成と更新は、標準のリードデータベースパターンに従います。 レコードは、POSTリクエストの JSON 本文の入力メンバーで渡す必要があります。 必須のメンバーは `input` のみです。`action` と `dedupeBy` は省略可能なメンバーです。 入力には、最大 300 件のレコードを含めることができます。 Action は、createOnly、updateOnly、createOrUpdate のいずれかです。 指定しない場合、アクションはデフォルトで createOrUpdate になります。 dedupeBy は、action が updateOnly の場合にのみ指定でき、それぞれ name フィールドおよび marketoGUID フィールドに対応する dedupeFields または idField のいずれか 1 つのみを受け入れます。
 
 ```
 POST /rest/v1/namedaccounts.json
@@ -224,7 +224,7 @@ Content-Type: application/json
 
 #### 名前別
 
-この [名前による名前付きアカウントフィールドの取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、指定されたアカウントオブジェクトの 1 つのフィールドのメタデータを取得します。 必須の fieldApiName パスパラメーターは、フィールドの API 名を指定します。 この応答は、Describe Named Account エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す isCustom 属性などの追加メタデータが含まれています。
+[ 名前による名前付きアカウント フィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、名前付きアカウント オブジェクトの 1 つのフィールドのメタデータを取得します。 必須の fieldApiName パスパラメーターは、フィールドの API 名を指定します。 この応答は、Describe Named Account エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す isCustom 属性などの追加メタデータが含まれています。
 
 ```
 GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
@@ -252,7 +252,7 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 参照
 
-この [指定顧客フィールドの取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、指定されたアカウントオブジェクト上のすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 件のレコードが返されます。 batchSize クエリパラメーターを使用して、この数を減らすことができます。 moreResult 属性が true の場合は、使用可能な結果が多いことを意味します。 moreResult 属性が false を返す（使用できる結果がないことを意味する）まで、このエンドポイントの呼び出しを続行します。 この API から返された nextPageToken は、常にこの呼び出しの次のイテレーションで再利用する必要があります。
+[ 名前付きアカウント フィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、名前付きアカウント オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 件のレコードが返されます。 batchSize クエリパラメーターを使用して、この数を減らすことができます。 moreResult 属性が true の場合は、使用可能な結果が多いことを意味します。 moreResult 属性が false を返す（使用できる結果がないことを意味する）まで、このエンドポイントの呼び出しを続行します。 この API から返された nextPageToken は、常にこの呼び出しの次のイテレーションで再利用する必要があります。
 
 ```
 GET /rest/v1/namedaccounts/schema/fields.json?batchSize=5

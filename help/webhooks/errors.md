@@ -1,14 +1,14 @@
 ---
-title: 「エラー」
+title: エラー
 feature: Webhooks
-description: 「Webhook のエラーコード」
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Webhook のエラーコード
+exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '235'
 ht-degree: 2%
 
 ---
-
 
 # エラー
 
@@ -25,9 +25,9 @@ Marketoが値をフィールドにマッピングし直すには、webhook 応�
 
 ## Webhook エラーのキャッチ
 
-Webhook からのエラーは、 [!UICONTROL Webhook は呼び出されます] トリガー:
+Webhook からのエラーは、[!UICONTROL Webhook は呼び出されます ]トリガーでキャッチおよび処理できます。
 
-![Webhook は呼び出されます](assets/webhook-called.png)
+![Webhook が呼び出される ](assets/webhook-called.png)
 
 * Response - Response は、リクエストによって受信されたリテラル応答ペイロードです。
 * エラータイプ - HTTP ステータスメッセージの理由フレーズに対応しています。

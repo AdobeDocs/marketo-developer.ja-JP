@@ -1,14 +1,14 @@
 ---
-title: 「一括読み込み」
+title: 一括読み込み
 feature: REST API
-description: 「人物データのバッチインポート」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 人物データのバッチインポート。
+exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '554'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
-
 
 # 一括読み込み
 
@@ -24,7 +24,7 @@ Bulk API エンドポイントには、他のエンドポイントのように�
 
 ## 認証
 
-一括読み込み API は、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。  これには、有効なアクセストークンをクエリ文字列パラメーターとして埋め込む必要があります `access_token={_AccessToken_}`、または HTTP ヘッダーとして `Authorization: Bearer {_AccessToken_}`.
+一括読み込み API は、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。  これには、有効なアクセストークンをクエリ文字列パラメーター `access_token={_AccessToken_}` または HTTP ヘッダー `Authorization: Bearer {_AccessToken_}` として埋め込む必要があります。
 
 ## 制限
 
@@ -42,7 +42,7 @@ Bulk API エンドポイントには、他のエンドポイントのように�
 
 ## ジョブの作成
 
-Marketoの一括読み込み API では、データの読み込みを実行するジョブの概念を使用します。 を使用したシンプルなリードインポートジョブの作成を見てみましょう。 [リードを読み込み](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) エンドポイント。  このエンドポイントはを使用します。 [content-type として multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html). 正しく設定するまでには時間がかかるので、ベストプラクティスは HTTP サポートライブラリを使用して目的の言語を選択することです。  足を濡らすだけなら、を使用することをお勧めします [curl](https://curl.se/).
+Marketoの一括読み込み API では、データの読み込みを実行するジョブの概念を使用します。 [ リードの読み込み ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) エンドポイントを使用して、シンプルなリードの読み込みジョブを作成する方法を見てみましょう。  このエンドポイントは、content-type として [multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用することに注意してください。 正しく設定するまでには時間がかかるので、ベストプラクティスは HTTP サポートライブラリを使用して目的の言語を選択することです。  足を濡らしているだけの場合は、[curl](https://curl.se/) を使用することをお勧めします。
 
 ```
 POST /bulk/v1/leads.json?format=csv
@@ -96,7 +96,7 @@ Easy,Fox,easyfox@marketo.com
 
 ## ジョブステータスのポーリング
 
-ジョブのステータスを判断するには、 [リードのインポートステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) エンドポイント。
+[ リードステータスの読み込みを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) エンドポイントを使用すると、ジョブのステータスを簡単に判断できます。
 
 ```
 GET /bulk/v1/leads/batch/{batchId}.json
@@ -120,13 +120,13 @@ GET /bulk/v1/leads/batch/{batchId}.json
 }
 ```
 
-インナー `status` メンバーは、ジョブの進行状況を示します。値は Queued、Importing、Complete、Failed のいずれかになります。 この場合、ジョブが完了したので、ポーリングを停止できます。
+内部の `status` メンバーは、ジョブの進行状況を示します。Queued、Importing、Complete、Failed のいずれかの値を指定できます。 この場合、ジョブが完了したので、ポーリングを停止できます。
 
 ## 失敗
 
-失敗は、によって示されます `numOfRowsFailed` リードステータス取得応答の属性。 次の場合 `numOfRowsFailed` が 0 より大きい場合、その値は発生したエラーの数を示します。
+失敗は、「インポートリードステータスの取得」応答の `numOfRowsFailed` 属性で示されます。 `numOfRowsFailed` が 0 より大きい場合、その値は発生したエラーの数を示します。
 
-失敗した行のレコードと原因を取得するには、次を使用して失敗ファイルを取得する必要があります [リードの読み込みエラーを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) エンドポイント。
+失敗した行のレコードと原因を取得するには、[ 読み込みリードのエラーを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) エンドポイントを使用して失敗ファイルを取得する必要があります。
 
 ```
 GET /bulk/v1/leads/batch/{batchId}/failures.json

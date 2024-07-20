@@ -1,28 +1,28 @@
 ---
-title: 「ランディングページテンプレート」
+title: ランディングページのテンプレート
 feature: REST API, Landing Pages
-description: ランディングページテンプレートの作成と編集。
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: ランディングページテンプレートの作成と編集
+exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '533'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-
 # ランディングページのテンプレート
 
-[ランディングページテンプレートエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates)
+[ ランディングページテンプレートエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates)
 
 ランディングページテンプレートは、個々のMarketo ランディングページの親リソースおよび依存関係です。 ランディングページは、親テンプレートからコンテンツのスケルトンを派生させます。
 
 ## テンプレートタイプ
 
-Marketoには、自由形式とガイド付きの 2 種類のランディングページテンプレートがあります。 自由形式のランディングページテンプレートは、そのテンプレートから派生したページに対して、大まかに構造化された編集エクスペリエンスを提供します。 ガイド付きテンプレートは、要素のタイプと場所をテンプレートレベルで制限できる、高度に構造化されたエクスペリエンスを提供します。 違いについて詳しくは、 [このドキュメント](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages).
+Marketoには、自由形式とガイド付きの 2 種類のランディングページテンプレートがあります。 自由形式のランディングページテンプレートは、そのテンプレートから派生したページに対して、大まかに構造化された編集エクスペリエンスを提供します。 ガイド付きテンプレートは、要素のタイプと場所をテンプレートレベルで制限できる、高度に構造化されたエクスペリエンスを提供します。 違いについて詳しくは、[ このドキュメント ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages) を参照してください。
 
 ## クエリ
 
-ランディングページテンプレートは、のアセットに対する標準のクエリタイプをサポートしています。 [id 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET), [名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)、および [ブラウジング](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET). これらのエンドポイントは、テンプレートのメタデータを返します。 テンプレートのHTMLコンテンツの取得は、その ID を使用して、テンプレートごとに行う必要があります。
+ランディングページテンプレートは、[ID 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)、[ 名前別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET) および [ ブラウジング ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET) のアセットに対する標準のクエリタイプをサポートしています。 これらのエンドポイントは、テンプレートのメタデータを返します。 テンプレートのHTMLコンテンツの取得は、その ID を使用して、テンプレートごとに行う必要があります。
 
 ## 作成と更新
 
@@ -66,11 +66,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-テンプレートのコンテンツは、 [ランディングページテンプレートコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) エンドポイント。
+テンプレートのコンテンツは、[ ランディングページテンプレートコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを介して個別に入力する必要があります。
 
 ### メタデータを更新
 
-ランディングページテンプレートのメタデータは、 [ランディングページテンプレートメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) エンドポイント。 名前、説明、enableMunchkin 設定は、この方法で更新できます。
+ランディングページテンプレートのメタデータは、[ ランディングページテンプレートメタデータを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) エンドポイントを介して更新できます。 名前、説明、enableMunchkin 設定は、この方法で更新できます。
 
 ### コンテンツを更新
 
@@ -114,13 +114,13 @@ Content-Type: text/plain
 
 Marketoでは、ランディングページテンプレートのクローンを簡単に作成できます。 これは、application/x-www-url-formencodedPOSTリクエストです。
 
-この `id` path パラメーターは、複製するソースランディングページテンプレートの ID を指定します。
+`id` path パラメーターは、複製するソースランディングページテンプレートの ID を指定します。
 
-この `name` パラメーターは、新しいランディングページテンプレートの名前を指定するために使用されます。
+`name` パラメーターは、新しいランディングページテンプレートの名前を指定するために使用されます。
 
-この `folder` パラメーターは、新しいランディングページテンプレートが存在する親フォルダーを指定するために使用されます。 これは、を含む埋め込み JSON オブジェクトの形式です。  `id` および `type`.
+`folder` パラメーターは、新しいランディングページテンプレートが存在する親フォルダーを指定するために使用されます。 これは、を含む埋め込み JSON オブジェクトの形式です。  `id` と `type`。
 
-オプション `description` パラメーターは、新しいランディングページテンプレートを記述するために使用されます。
+オプションの `description` パラメーターは、新しいランディングページテンプレートを記述するために使用されます。
 
 ```
 POST /rest/asset/v1/landingPageTemplate/{id}/clone.json
@@ -167,9 +167,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 テンプレートが承認されるには、そのタイプのルール（自由形式のガイド付き）に従う必要があります。 それぞれのタイプのテンプレートを作成および承認するための要件について詳しくは、それぞれの作成ドキュメントを参照してください。
 
-- [自由形式のランディングページテンプレート](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [ガイド付きランディングページテンプレート](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [ガイドテンプレートの例](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
+- [ 自由形式のランディングページテンプレート ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
+- [ ガイド付きランディングページテンプレート ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [ ガイド付きテンプレート ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list) 例
 
 ## 削除
 

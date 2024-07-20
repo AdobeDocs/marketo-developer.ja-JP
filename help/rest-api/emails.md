@@ -1,26 +1,26 @@
 ---
-title: "Emails"
+title: メール
 feature: REST API
-description: 「メールアセットを操作するための API」
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: メールアセットを操作するための API。
+exl-id: 6875730d-c74a-42cf-a3d2-dad7a3ac535d
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1946'
 ht-degree: 2%
 
 ---
 
-
 # メール
 
-[メールエンドポイントのリファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails) メールアセットの操作に使用できる REST エンドポイントの完全なセットが用意されています。
+[ メールエンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails) メールアセットの操作に使用できる REST エンドポイントの完全なセットが提供されています。
 
-メモ：を使用している場合 [Marketo予測コンテンツ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)の場合、予測コンテンツを含むメールを参照している場合、次のエンドポイントは失敗します。 [メールコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET), [「メールコンテンツの更新」セクション](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST), [メールのドラフトを承認](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST). この呼び出しは、709 エラーコードと、対応するエラーメッセージを返します。
+注意：[Marketo予測コンテンツ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content) を使用している場合、予測コンテンツを含むメールを参照しているエンドポイント [ メールコンテンツの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET)、[ メールコンテンツの更新セクション ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST)、[ メールドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST) は失敗します。 この呼び出しは、709 エラーコードと、対応するエラーメッセージを返します。
 
 ## クエリ
 
-メールのクエリパターンはテンプレートのクエリパターンと同じであり、クエリを使用できます [id 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET)、および [ブラウジング](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET)およびを参照および名前によるフォルダーに基づいてフィルタリングするための API。
+メールのクエリパターンはテンプレートのクエリパターンと同じであり、クエリ [ID 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET)、[ 名前別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET) および [ 閲覧別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) が可能なほか、参照 API と名前別 API を使用してフォルダーに基づいてフィルタリングできます。
 
-メモ：電子メールが、を使用する電子メールプログラムに含まれている場合 [A/B テスト](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)その場合、次のエンドポイントを使用して、そのメールをクエリすることはできません。 [Id でメールを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [名前によるメールの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET), [メールを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET). 呼び出しは成功を示しますが、「指定された検索条件でアセットが見つかりませんでした」という警告が含まれます。
+メモ：メールが [A/B テスト ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test) を使用するメールプログラムに含まれている場合、そのメールは、[ID でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET)、[ 名前でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET)、[ メールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) のエンドポイントを使用したクエリでは使用できません。 呼び出しは成功を示しますが、「指定された検索条件でアセットが見つかりませんでした」という警告が含まれます。
 
 ### ID 別
 
@@ -151,7 +151,7 @@ GET /rest/asset/v1/email/byName.json?name=My Email&folder={"id":1056,"type"="Fol
 
 ### 参照
 
-フォルダーの参照は、他の Asset API 参照エンドポイントと同様に機能し、以下に対するオプションのフィルタリングを可能にします `status`, `folder`, `earliestUpdatedAt`/`latestUpdatedAt`, `maxReturn`、および `offset`. `status` が承認済みまたはドラフトである。 `folder` は、を含む JSON オブジェクトです。 `id` および `type`. `maxReturn` は、結果の数を制限する整数（デフォルトは 20、最大は 200）、 `offset` は、と共に使用できる整数です `maxReturn` 大きな結果セットを読み取るには（デフォルトは 0）。
+フォルダーの参照は、他の Asset API 参照エンドポイントと同様に機能し、`status`、`folder`、`earliestUpdatedAt`/`latestUpdatedAt`、`maxReturn` および `offset` に対するオプションのフィルタリングを可能にします。 `status` は承認済みまたはドラフトです。 `folder` は、`id` と `type` を含む JSON オブジェクトです。 `maxReturn` は結果の数を制限する整数（デフォルトは 20、最大は 200）、`offset` は大きな結果セットを読み取るために `maxReturn` で使用できる整数（デフォルトは 0）です。
 
 ```
 GET /rest/asset/v1/emails.json?maxReturn=3&folder={"id":341,"type":"Folder"}
@@ -218,7 +218,7 @@ GET /rest/asset/v1/emails.json?maxReturn=3&folder={"id":341,"type":"Folder"}
 
 ## コンテンツのクエリ
 
-次のことができます [使用可能な編集可能セクションの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) メールの場合は、コンテンツをクエリし、オプションでステータスをフィルタリングして、承認済みバージョンまたはドラフトバージョンのいずれかのセクションを取得します。
+メールのコンテンツをクエリして、そのメールで [ 使用可能な編集可能なセクションを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) できます。また、オプションでステータスをフィルタリングして、承認済みまたはドラフトのバージョンのセクションを取得できます。
 
 ```
 GET /rest/asset/v1/email/1356/content.json
@@ -249,11 +249,11 @@ GET /rest/asset/v1/email/1356/content.json
 }
 ```
 
-セクションは、dynamicContent タイプを持つものとして返される場合があります。 を参照してください。 [動的コンテンツ](dynamic-content.md) を参照してください。
+セクションは、dynamicContent タイプを持つものとして返される場合があります。 詳しくは、[ 動的コンテンツ ](dynamic-content.md) の節を参照してください。
 
 ## CC フィールドのクエリ
 
-ターゲットインスタンスで「CC でメールを送信」が有効になっている一連のフィールドを取得するには、を呼び出します [メール CC フィールドを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailCCFieldsUsingGET) エンドポイント。
+[ メール CC フィールドを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailCCFieldsUsingGET) エンドポイントを呼び出して、ターゲットインスタンスで「メール CC」が有効な一連のフィールドを取得できます。
 
 ```
 GET /rest/asset/v1/email/ccFields.json
@@ -284,9 +284,9 @@ GET /rest/asset/v1/email/ccFields.json
 
 ## 作成と更新
 
-[メールが作成されます](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailUsingPOST) ソーステンプレートをベースとし、「mktEditable」のクラスと一意の id プロパティを持つ、そのテンプレート内の個別のHTML要素から派生した編集可能セクションのリストを持ちます。 API でメールを作成すると、テンプレートに基づいたレコードと、渡された追加のメタデータが作成されます。 作成メールを正常に呼び出すには、名前、テンプレート、フォルダーのパラメーターが必要です。
+[ メールは ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailUsingPOST) ソーステンプレートをベースにして作成され、「mktEditable」クラスと一意の id プロパティを持つ、そのテンプレート内の個別のHTML要素から派生した編集可能セクションのリストを持ちます。 API でメールを作成すると、テンプレートに基づいたレコードと、渡された追加のメタデータが作成されます。 作成メールを正常に呼び出すには、名前、テンプレート、フォルダーのパラメーターが必要です。
 
-作成する場合は、次のパラメーターはオプションです。 `subject`, `fromName`, `fromEmail`, `replyEmail`, `operational`, `isOpenTrackingDisabled`. 未設定の場合、 `subject` は空になります。 `fromName`, `fromEmail` および `replyEmail` は、インスタンスのデフォルトに設定され、 `operational` および `isOpenTrackingDisabled` は false になります。 `isOpenTrackingDisabled` 送信時に、開封トラッキングピクセルをメールに含めるかどうかを決定します。
+作成する場合は、`subject`、`fromName`、`fromEmail`、`replyEmail`、`operational`、`isOpenTrackingDisabled` のパラメーターはオプションです。 設定を解除すると、`subject` は空、`fromName`、`fromEmail` になり、`replyEmail` はインスタンスのデフォルトに設定され、`operational` と `isOpenTrackingDisabled` は false になります。 送信時に、開封トラッキングピクセルをメールに含めるかどうかを `isOpenTrackingDisabled` 定します。
 
 ```
 POST /rest/asset/v1/emails.json
@@ -352,7 +352,7 @@ name=My New Email 02 - deverly&folder={"id":1017,"type":"Program"}&template=24&d
 }
 ```
 
-[メールの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailContentUsingPOST) レコードは id で実行できます。 これにより、メールの説明または名前を更新できます。
+[ メールの更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailContentUsingPOST) レコードは ID で作成できます。 これにより、メールの説明または名前を更新できます。
 
 ```
 POST /rest/asset/v1/email/{id}.json
@@ -420,7 +420,7 @@ description=This is an Email&name=Updated Email
 
 ### Content Section, Type, and Update
 
-メールの各セクションのコンテンツは、件名、fromName、fromEmail、replyEmail を別に、個別に更新する必要があります。件名は、を使用して更新されます。 [メールコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailContentUsingPOST) エンドポイント。 このエンドポイントを使用する場合、静的コンテンツではなく動的コンテンツを使用するようにこれらの値を設定することもできます。 各パラメーターは、タイプ/値の JSON オブジェクトです。タイプは「Text」または「DynamicContent」で、値は、適切なテキスト値または動的コンテンツに使用するセグメント化の ID です。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。  isOpenTrackingDisabled は Update Email Content で設定できます。
+メールの各セクションのコンテンツは、件名、fromName、fromEmail、replyEmail とは別に、個別に更新する必要があります。件名は、「[ メールコンテンツの更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailContentUsingPOST) エンドポイントを使用して更新されます。 このエンドポイントを使用する場合、静的コンテンツではなく動的コンテンツを使用するようにこれらの値を設定することもできます。 各パラメーターは、タイプ/値の JSON オブジェクトです。タイプは「Text」または「DynamicContent」で、値は、適切なテキスト値または動的コンテンツに使用するセグメント化の ID です。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。  isOpenTrackingDisabled は Update Email Content で設定できます。
 
 ```
 POST /rest/asset/v1/email/{id}/content.json
@@ -484,15 +484,15 @@ type=Text&value=<h1>Hello World!</h1>&textValue=Hello World!
 
 ## モジュール
 
-メールエディター 1.0 のモジュールは、テンプレートで定義されたメールのセクションです。モジュールには、要素、変数、その他のHTMLコンテンツを任意に組み合わせて記述することができます [こちら](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules). Marketoは、メール内のモジュールを管理するための一連の API を提供します。 HTTP POST方式を必要とするモジュール関連のエンドポイントの場合、本文は（JSON ではなく）「application/x-www-form-urlencoded」としてフォーマットされます。
+メールエディター 1.0 のモジュールは、テンプレートで定義されたメールのセクションです。モジュールには、要素、変数、その他のHTMLコンテンツを任意に組み合わせて含めることができます。詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules) を参照してください。 Marketoは、メール内のモジュールを管理するための一連の API を提供します。 HTTP POST方式を必要とするモジュール関連のエンドポイントの場合、本文は（JSON ではなく）「application/x-www-form-urlencoded」としてフォーマットされます。
 
-モジュール関連のエンドポイントのほとんどは、パスパラメーターとして「moduleId」を必要とします。 これは、モジュールを説明する文字列です。 moduleIds は [メールコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) 「htmlId」属性としてのエンドポイント（を参照） [クエリ](#modules_query) セクションを下に表示）。
+モジュール関連のエンドポイントのほとんどは、パスパラメーターとして「moduleId」を必要とします。 これは、モジュールを説明する文字列です。 moduleId は、[ メールコンテンツを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) エンドポイントによって「htmlId」属性として返されます（以下の [ クエリ ](#modules_query) の節を参照）。
 
 ### クエリ
 
 モジュールを操作するには、モジュールを一意に識別する moduleId パラメーターを指定する必要があります。 また、モジュールインデックスパラメーターを指定する必要もあります。このパラメーターは、メール内のモジュールの順序を説明する整数です。
 
-[moduleId とそのインデックスの取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) メール id をパスパラメーターとして指定する。
+メール ID をパスパラメーターとして指定して、[moduleIds とそのインデックスを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) します。
 
 次の例では、テンプレートピッカー UI の「スターターテンプレート」セクションにある「スケルトン」テンプレートに基づいて 1.0 メールをクエリします。
 
@@ -722,7 +722,7 @@ GET /rest/asset/v1/email/{moduleId}/content.json
 
 #### 追加
 
-[モジュールを追加](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/addModuleUsingPOST) 使用中のメールテンプレートに含まれる既存のモジュールの 1 つを選択してメールに送信します。 これを行うには、メール ID と moduleId をパスパラメーターとして指定します。 インデックスクエリパラメーターは必須で、メール内のモジュールの順序を決定します。 インデックス値が既存の最大インデックス値を超えると、モジュールがメールに追加されます。
+使用中のメールテンプレートに含まれる既存のモジュールの 1 つを選択して、メールに [ モジュールを追加 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/addModuleUsingPOST) します。 これを行うには、メール ID と moduleId をパスパラメーターとして指定します。 インデックスクエリパラメーターは必須で、メール内のモジュールの順序を決定します。 インデックス値が既存の最大インデックス値を超えると、モジュールがメールに追加されます。
 
 ```
 POST /rest/asset/v1/email/{id}/content/{moduleId}/add.json
@@ -752,7 +752,7 @@ index=10
 
 #### 削除
 
-[モジュールの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/deleteModuleUsingPOST) メール ID と moduleId をパスパラメーターとして指定する。
+メール ID と moduleId をパスパラメーターとして指定して、[ モジュールを削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/deleteModuleUsingPOST) します。
 
 ```
 POST /rest/asset/v1/email/{id}/content/{moduleId}/delete.json
@@ -774,7 +774,7 @@ POST /rest/asset/v1/email/{id}/content/{moduleId}/delete.json
 
 #### 複製
 
-[モジュールの複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/duplicateModuleUsingPOST) メール ID と moduleId をパスパラメーターとして指定する。 この呼び出しではモジュールが複製され、元のモジュールの下に配置されて、他のモジュールを下に押し下げます。
+メール ID と moduleId をパスパラメーターとして指定して [ モジュールを複製 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/duplicateModuleUsingPOST) します。 この呼び出しではモジュールが複製され、元のモジュールの下に配置されて、他のモジュールを下に押し下げます。
 
 ```
 POST /rest/asset/v1/email/{id}/content/{moduleId}/duplicate.json
@@ -796,7 +796,7 @@ POST /rest/asset/v1/email/{id}/content/{moduleId}/duplicate.json
 
 #### 並べ替え
 
-[モジュールの並べ替え](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/rearrangeModulesUsingPOST)すべてのモジュールとそれぞれのメール内の目的の位置を含む配列。 各配列要素には、{ &quot;index&quot;: &lt;_索引_>, &quot;moduleId&quot;: &quot;&lt;_moduleId_>&quot; }、&lt;_索引_> は 0 から始まるモジュールのオーダー番号、&lt; です。_moduleId_> は moduleId です。
+[ すべてのモジュールと、それぞれのメール内の目的の位置を含むモジュール ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/rearrangeModulesUsingPOST) 配列を並べ替えます。 各配列要素には、次の形式の JSON オブジェクトが含まれます。  { &quot;index&quot;: &lt;_index_>, &quot;moduleId&quot;: &quot;&lt;_moduleId_>&quot; }。&lt;_index_> は 0 から始まるモジュールのオーダー番号、&lt;_moduleId_> はモジュール ID です。
 
 ```
 POST /rest/asset/v1/email/{id}/content/rearrange.json
@@ -826,7 +826,7 @@ positions=[ {"index": 0, "moduleId": "free-image"}, {"index": 1, "moduleId": "ti
 
 #### 名前変更
 
-[モジュール名の変更](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/renameUsingPOST) メールで name パラメーターを使用して新しい名前を渡す。 メール ID と moduleId （既存の名前）をパスパラメーターとして指定します。
+name パラメーターを使用して新しい名前を渡すことにより、メールの [ モジュール名を変更 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/renameUsingPOST) します。 メール ID と moduleId （既存の名前）をパスパラメーターとして指定します。
 
 ```
 POST /rest/asset/v1/email/{id}/content/{moduleId}/rename.json
@@ -856,11 +856,11 @@ name=MarketoVideo
 
 ## 変数
 
-メールエディター 1.0 では、変数を使用してメール内の要素の値が格納されます。 各変数は、説明に従って、Marketo固有の構文をHTMLに追加することで定義されます [こちら](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables). Marketoは、メール内の変数を管理するための一連の API を提供します。
+メールエディター 1.0 では、変数を使用してメール内の要素の値が格納されます。 各変数は、（こちら [ の説明に従って、Marketo固有の構文をHTMLに追加することで定義され ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables) す。 Marketoは、メール内の変数を管理するための一連の API を提供します。
 
 ### クエリ
 
-[変数の取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailVariablesUsingGET) メール id をパスパラメーターとして指定したメールの場合。
+メール ID をパスパラメーターとして指定して、メールの [ 変数を取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailVariablesUsingGET) します。
 
 次の例では、テンプレートピッカー UI の「スターターテンプレート」セクションにある「スケルトン」テンプレートに基づいて 1.0 メールをクエリします。
 
@@ -1080,7 +1080,7 @@ GET /rest/asset/v1/email/{id}/variables.json
 
 #### 更新
 
-[変数の更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateVariableUsingPOST) メールで、value パラメーターを使用して新しい目的の値を渡す。 メール ID と変数名をパスパラメーターとして指定します。 モジュール変数を更新する場合、moduleId パラメーターを渡して、変数が関連付けられているモジュールを指定する必要もあります。
+値パラメーターを使用して新しい目的の値を渡すことにより、メール内で [ 変数を更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateVariableUsingPOST) します。 メール ID と変数名をパスパラメーターとして指定します。 モジュール変数を更新する場合、moduleId パラメーターを渡して、変数が関連付けられているモジュールを指定する必要もあります。
 
 次の例では、「hrBorderSize」という名前のグローバル変数を値 1 に更新します。
 
@@ -1149,7 +1149,7 @@ value=Click this button!&moduleId=CTA
 
 ### 承認
 
-承認エンドポイントを呼び出すと、メールがMarketo メールのルールに対して検証されます。 この `from name`, `from email`, `reply to email`、および `subject` メールを承認する前に入力する必要があります。
+承認エンドポイントを呼び出すと、メールがMarketo メールのルールに対して検証されます。 メールを承認するには、`from name`、`from email`、`reply to email`、`subject` を入力する必要があります。
 
 ```
 POST /rest/asset/v1/email/{id}/approveDraft.json
@@ -1171,7 +1171,7 @@ POST /rest/asset/v1/email/{id}/approveDraft.json
 
 #### 承認取消
 
-この `unapprove` 操作は、承認された E メールに対してのみ実行できます。
+`unapprove` の操作は、承認された E メールに対してのみ実行できます。
 
 ```
 POST /rest/asset/v1/email/{id}/unapprove.json
@@ -1329,7 +1329,7 @@ emailAddress=abe@testmail.com&textOnly=true
 
 ## メールのプレビュー
 
-Marketoは、次のものを提供します [メールの完全なコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailFullContentUsingGET) エンドポイント：受信者に送信されるメールのライブプレビューを取得します。 このエンドポイントは、バージョン 1.0 のメールでのみ使用できます。 必須パラメーターが 1 つあります。id パスパラメーターは、プレビューするメールアセットの ID です。 オプションのクエリパラメーターがさらに 3 つあります。
+Marketoは [ メールの完全なコンテンツを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailFullContentUsingGET) エンドポイントを提供して、受信者に送信されるメールのライブプレビューを取得します。 このエンドポイントは、バージョン 1.0 のメールでのみ使用できます。 必須パラメーターが 1 つあります。id パスパラメーターは、プレビューするメールアセットの ID です。 オプションのクエリパラメーターがさらに 3 つあります。
 
 - ステータス：値「ドラフト」または「承認済み」を受け入れます。この値はデフォルトで、承認済みのバージョン、承認済みの場合、ドラフト （未承認の場合）に設定されます。
 - type:「テキスト」または「HTML」を使用できます。デフォルトはHTMLです。
@@ -1357,9 +1357,9 @@ GET /rest/asset/v1/email/{id}/fullContent.json
 
 ## HTML の置換
 
-Marketoは、次のものを提供します [メールの完全なコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailFullContentUsingPOST) メールアセットのコンテンツ全体を置き換えるためのエンドポイント。 このエンドポイントは、UI の「コードを編集」機能が使用され、親テンプレートとの関係が壊れているバージョン 1.0 のメールでのみ使用できます。 この API は主に、プログラムの一部として複製されたアセットで使用することを目的としており、標準のコンテンツエンドポイントでは変更できません。 動的コンテンツを含むメールはサポートされていません。 また、関係が損なわれていないメールのHTMLを置き換えようとすると、エラーが返されます。
+Marketoには、メールアセットのコンテンツ全体を置き換える [ メールの完全なコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailFullContentUsingPOST) エンドポイントが用意されています。 このエンドポイントは、UI の「コードを編集」機能が使用され、親テンプレートとの関係が壊れているバージョン 1.0 のメールでのみ使用できます。 この API は主に、プログラムの一部として複製されたアセットで使用することを目的としており、標準のコンテンツエンドポイントでは変更できません。 動的コンテンツを含むメールはサポートされていません。 また、関係が損なわれていないメールのHTMLを置き換えようとすると、エラーが返されます。
 
-このエンドポイントでは、パスに id パラメーター、メールの ID および本文に 1 つのパラメーターを持つマルチパート/フォームデータで、コンテンツタイプが「text/html」の完全なHTMLメールドキュメントとしてコンテンツが想定されます。 形式が正しくないHTMLドキュメントは、警告を表示しますが、JavaScript や `<script>`ドキュメント内のタグを使用すると、の呼び出しが失敗し、エラーが発生します。
+このエンドポイントでは、パスに id パラメーター、メールの ID および本文に 1 つのパラメーターを持つマルチパート/フォームデータで、コンテンツタイプが「text/html」の完全なHTMLメールドキュメントとしてコンテンツが想定されます。 形式が正しくないHTMLドキュメントでは警告が表示されますが、承認できない場合があります。その一方で、ドキュメントにJavaScriptや `<script>` タグを含めると、呼び出しが失敗し、エラーが表示されます。
 
 ```
 POST /rest/asset/v1/email/{id}/fullContent.json
