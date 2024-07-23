@@ -62,7 +62,7 @@ OpportunityPersonRole MObject の場合、[describeMObject](./describemobject.md
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| mObjAssociationList->mObjAssociation->mObjType | オプション |関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）|のいずれかです。
+| mObjAssociationList->mObjAssociation->mObjType | オプション |関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）のいずれかです。|
 | mObjAssociationList->mObjAssociation->id | オプション |関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） |
 | mObjAssociationList->mObjAssociation->externalKey | オプション |関連オブジェクトのカスタム属性 |
 
