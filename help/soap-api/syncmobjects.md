@@ -3,10 +3,10 @@ title: syncMObjects
 feature: SOAP
 description: syncMObjects SOAP呼び出し
 exl-id: 68bb69ce-aa8c-40b7-8938-247f4fe97b5d
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 04e6b38a7ee602c38a851f9b99101186e72a8518
 workflow-type: tm+mt
-source-wordcount: '421'
-ht-degree: 7%
+source-wordcount: '426'
+ht-degree: 9%
 
 ---
 
@@ -45,8 +45,8 @@ UPDATE 操作と UPSERT 操作では、ID をキーとして使用します。 1
 1. LeadSource
 1. 名前
 1. NextStep
-1. 可能性
-1. 数
+1. Probability
+1. 数量
 1. ステージ
 1. タイプ
 
@@ -62,9 +62,9 @@ OpportunityPersonRole MObject の場合、[describeMObject](./describemobject.md
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| mObjAssociationList->mObjAssociation->mObjType | オプション |関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）のいずれかです。|
-| mObjAssociationList->mObjAssociation->id | オプション |関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） |
-| mObjAssociationList->mObjAssociation->externalKey | オプション |関連オブジェクトのカスタム属性 |
+| mObjAssociationList->mObjAssociation->mObjType | オプション | 関連するオブジェクトの ID または外部キーを使用して、Opportunity/OpportunityPersonRole MObjects を更新するために使用されます。 関連するオブジェクトは、会社（Opportunity MObject を更新する）、リード（OpportunityPersonRole MObject を更新する）、商談（OpportunityPersonRole MObject を更新する）のいずれかです |
+| mObjAssociationList->mObjAssociation->id | オプション | 関連付けられたオブジェクトの ID （リード/会社/オポチュニティ） |
+| mObjAssociationList->mObjAssociation->externalKey | オプション | 関連付けられたオブジェクトのカスタム属性 |
 
 ## XML をリクエスト
 
