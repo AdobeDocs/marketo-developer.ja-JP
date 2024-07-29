@@ -2,7 +2,7 @@
 title: データ取り込み
 feature: REST API, Dynamic Content
 description: Marketo API でのデータの使用。
-source-git-commit: 5d18a24f25e5bda39e10bce3b2a77370dd28c937
+source-git-commit: 1595aa6df0b0404c7cda2c246c9249018fe87e77
 workflow-type: tm+mt
 source-wordcount: '968'
 ht-degree: 12%
@@ -50,7 +50,7 @@ Data Ingestion API では、Marketo REST API と同じ OAuth 2.0 認証方式を
 ### 応答
 
 | キー | 値 | 必須 |
-| - | - |
+| - | - | - |
 | X-Request-Id | 一意のリクエスト ID。 | はい |
 
 ## リクエスト
