@@ -3,10 +3,10 @@ title: リード
 feature: REST API
 description: リード API 呼び出しの詳細
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 2c125161cf06be8ebb44ae8212f15fbbe5c1f6b7
+source-git-commit: 8c1c620614408dd2df0b0848e6efc027adb71834
 workflow-type: tm+mt
-source-wordcount: '3308'
-ht-degree: 2%
+source-wordcount: '3343'
+ht-degree: 3%
 
 ---
 
@@ -152,11 +152,19 @@ ID でリードを取得およびフィルタータイプでリードを取得�
 
 ## ADOBEECID
 
-Adobe Experience Cloudのオーディエンス共有機能が有効な場合、Adobe Experience Cloud ID （ECID）をMarketo リードに関連付ける Cookie 同期プロセスが発生します。  上記のリード取得方法を使用して、関連する ECID 値を取得できます。  これを行うには、fields パラメーターに「ecid」を指定します。 例えば、「&amp;fields=email,firstName,lastName,ecids」と指定します。
+Adobe Experience Cloudのオーディエンス共有機能が有効な場合、Adobe Experience Cloud ID （ECID）をMarketo リードに関連付ける Cookie 同期プロセスが発生します。  上記のリード取得方法を使用して、関連する ECID 値を取得できます。  これを行うには、fields パラメーターに `ecids` を指定します。 例：`&fields=email,firstName,lastName,ecids`。
 
 ## 作成と更新
 
 リードデータを取得する以外にも、API を使用してリードレコードを作成、更新、削除できます。 リードの作成と更新は、リクエストで定義されている操作タイプと同じエンドポイントを共有し、同時に最大 300 個のレコードを作成または更新できます。
+
+>[!NOTE]
+>
+> [ リードを同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) エンドポイントを使用した会社フィールドの更新はサポートされていません。 代わりに、[ 会社を同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントを使用します。
+
+>[!NOTE]
+>
+> 人物レコードのメール値を作成または更新する場合、メールアドレスのフィールドでは ASCII 文字のみがサポートされます。
 
 ### リクエスト
 
@@ -483,66 +491,66 @@ POST /rest/v1/leads/schema/fields.json
 </tr>
 <tr>
 <td style="width: 26.5306%;">dataType</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">なし</td>
-<td style="width: 19.3878%;">なし</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">いいえ</td>
+<td style="width: 19.3878%;">いいえ</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">description</td>
-<td style="width: 17.449%;">はい</td>
-<td style="width: 17.551%;">はい</td>
-<td style="width: 19.3878%;">はい</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 17.449%;">○</td>
+<td style="width: 17.551%;">○</td>
+<td style="width: 19.3878%;">○</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">displayName</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">なし</td>
-<td style="width: 19.3878%;">はい</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">いいえ</td>
+<td style="width: 19.3878%;">○</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">isCustom</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">なし</td>
-<td style="width: 19.3878%;">なし</td>
-<td style="width: 18.8776%;">なし</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">いいえ</td>
+<td style="width: 19.3878%;">いいえ</td>
+<td style="width: 18.8776%;">いいえ</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">isHidden</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">はい</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">○</td>
 <td style="width: 19.3878%;">対応（API で作成されている場合）</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">isHtmlEncodingInEmail</td>
-<td style="width: 17.449%;">はい</td>
-<td style="width: 17.551%;">はい</td>
-<td style="width: 19.3878%;">はい</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 17.449%;">○</td>
+<td style="width: 17.551%;">○</td>
+<td style="width: 19.3878%;">○</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">isSensitive</td>
-<td style="width: 17.449%;">はい</td>
-<td style="width: 17.551%;">はい</td>
-<td style="width: 19.3878%;">はい</td>
-<td style="width: 18.8776%;">はい</td>
+<td style="width: 17.449%;">○</td>
+<td style="width: 17.551%;">○</td>
+<td style="width: 19.3878%;">○</td>
+<td style="width: 18.8776%;">○</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">length</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">なし</td>
-<td style="width: 19.3878%;">なし</td>
-<td style="width: 18.8776%;">なし</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">いいえ</td>
+<td style="width: 19.3878%;">いいえ</td>
+<td style="width: 18.8776%;">いいえ</td>
 </tr>
 <tr>
 <td style="width: 26.5306%;">名前</td>
-<td style="width: 17.449%;">なし</td>
-<td style="width: 17.551%;">なし</td>
-<td style="width: 19.3878%;">なし</td>
-<td style="width: 18.8776%;">なし</td>
+<td style="width: 17.449%;">いいえ</td>
+<td style="width: 17.551%;">いいえ</td>
+<td style="width: 19.3878%;">いいえ</td>
+<td style="width: 18.8776%;">いいえ</td>
 </tr>
 </tbody>
 </table>
@@ -710,7 +718,7 @@ cookie メンバー文字列はオプションで、Marketoで Munchkin cookie �
 POST /rest/v1/leads/submitForm.json
 ```
 
-### ヘッダ
+### ヘッダー
 
 ```
 Content-Type: application/json
