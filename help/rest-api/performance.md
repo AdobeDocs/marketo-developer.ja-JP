@@ -3,9 +3,9 @@ title: パフォーマンス
 feature: REST API
 description: Marketo API を使用する際のパフォーマンスヒント
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 4e64b8a801e443471f52090b7f008b11e628012d
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '122'
 ht-degree: 1%
 
 ---
@@ -16,9 +16,11 @@ ht-degree: 1%
 
 ## HTTP 圧縮
 
-Marketo REST API は、HTTP 1.1 仕様で定義された標準を使用して、応答本文の HTTP 圧縮をサポートしています。  圧縮を有効にすることをお勧めします。これにより、帯域幅の使用量と、データの取得に費やす時間が削減されるからです。
+Marketo REST API は、HTTP 1.1 仕様で定義された標準を使用して、応答本文の HTTP 圧縮をサポートしています。 圧縮を有効にすることをお勧めします。これにより、帯域幅の使用量と、データの取得に費やす時間が削減されるからです。
 
-**メモ：**  1024 バイト未満のペイロードは圧縮されません。
+>[!NOTE]
+>
+>1024 バイトに満たないペイロードは圧縮されず、Bulk API は圧縮をサポートしません。
 
 圧縮を有効にするには、リクエストに次の HTTP ヘッダーを含めます。
 
