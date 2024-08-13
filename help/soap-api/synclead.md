@@ -3,14 +3,14 @@ title: syncLead
 feature: SOAP
 description: syncLead SOAP呼び出し
 exl-id: e6cda794-a9d4-4153-a5f3-52e97a506807
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: ebe8faf41dff0e0ba5f4323f5909cc3c9813fd10
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 2%
 
 ---
 
-# syncLine
+# syncLead
 
 この関数は、単一のリードレコードを挿入または更新します。 既存のリードを更新すると、そのリードは次のいずれかのキーで識別されます。
 
