@@ -5,8 +5,7 @@ product: marketo
 type: Documentation
 mini-toc-levels: 2
 git-repo: https://github.com/AdobeDocs/marketo-developer.ja-JP
-hide: true
-source-git-commit: 4c6df71f0d7f569582597eac48c8f44ea12036f8
+source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
 workflow-type: tm+mt
 source-wordcount: '53'
 ht-degree: 98%

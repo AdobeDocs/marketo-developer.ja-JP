@@ -5,9 +5,9 @@ breadcrumb-title: “[!DNL Marketo] デベロッパーガイド"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
+source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '240'
 ht-degree: 97%
 
 ---
@@ -49,7 +49,6 @@ ht-degree: 97%
 - REST{#rest}
    - [REST API の概要](rest-api/rest-api.md)
    - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
-   - [アクティビティ](rest-api/activities.md)
    - Assets {#assets}
       - [アセット](rest-api/assets.md)
       - [動的コンテンツ](rest-api/dynamic-content.md)
@@ -91,7 +90,9 @@ ht-degree: 97%
    - [エンドポイントの参照](rest-api/endpoint-reference.md)
    - [エラーコード](rest-api/error-codes.md)
    - リードデータベース {#lead-database}
+      - [アクティビティ](rest-api/activities.md)
       - [企業](rest-api/companies.md)
+      - [カスタムオブジェクト](rest-api/custom-objects.md)
       - [フィールドリスト](rest-api/fields.md)
       - [フィールドのタイプ](rest-api/field-types.md)
       - [リードデータベース](rest-api/lead-database.md)
