@@ -3,9 +3,9 @@ title: 設定
 description: Munchkin を使用する場合は、設定 JavaScript API を使用して設定値を設定します。
 feature: Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
+source-git-commit: 257478ecb76b5908c2f623192f37be25bff1a02a
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '554'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | 名前 | データタイプ | 説明 |
 |---|---|---|
 | altIds | 配列 | Munchkin ID 文字列の配列を受け入れます。 有効にすると、すべての web アクティビティが、Munchkin ID に基づいてターゲットのサブスクリプションに複製されます。 |
-| anonymizeIP | ブール値 | Marketoに記録された新規訪問者向けの IP アドレスを匿名化します。`{Munchkin-Id}.mktoresp.com` ドメインに `192.28.144.124` アドレスまたは `103.237.104.82` アドレスがあるかどうかを確認することで、Munchkin V2 でサブスクリプションがプロビジョニングされているかどうかを判断でき `134.213.193.62` す。アドレス `192.28.147.68` アドレス。 または、Unix シェルから次のスクリプトを実行できます。nslookup {munchkin-id}.mktoresp.com | grep -E -c -e ```（192.28.144.124,134.213.193.62,192.28.147.68,103.237.104.82）``` コマンドで「0」と出力された場合、サブスクリプションは Munchkin V2 でプロビジョニングされていません。1 以上が出力された場合、プロビジョニングされます。 |
+| anonymizeIP | ブール値 | 新規訪問者のMarketoに記録される IP アドレスを匿名化します。 |
 | apiOnly | ブール値 | true に設定すると、関数は `Munchkin.Init()` を呼び出 `visitsWebPage` ません。 これは、すべての `visitsWebPage` イベントに対して完全な制御を必要とする単一ページ web アプリケーションで役立ちます。 |
 | asyncOnly | ブール値 | true に設定した場合、XMLHttpRequest のを非同期で送信します。 デフォルトは false です。 |
 | clickTime | 整数 | クリック追跡要求を許可するために、クリック後にブロックする時間をミリ秒単位で設定します。 これを減らすと、クリックの追跡の精度が低下します。 デフォルトは 350 ms です。 |
