@@ -3,9 +3,9 @@ title: 一括アクティビティ抽出
 feature: REST API
 description: Marketoからのアクティビティデータをバッチ処理します。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 8c22255673fee1aa0f5b47393a241fcf6680778b
 workflow-type: tm+mt
-source-wordcount: '1381'
+source-wordcount: '1343'
 ht-degree: 7%
 
 ---
@@ -22,148 +22,94 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
 
 ## フィルター
 
-<table>
-  <tbody>
-    <tr>
-      <td>フィルタータイプ</td>
-      <td>データタイプ</td>
-      <td>必須</td>
-      <td>注意</td>
-    </tr>
-    <tr>
-      <td>createdAt</td>
-      <td>日付範囲</td>
-      <td>はい</td>
-      <td>startAt および endAt メンバーを持つ JSON オブジェクトを受け入れます。 startAt には透かし（低）を表す日時を指定し、endAt には透かし（高）を表す日時を指定します。 範囲は 31 日以内である必要があります。このフィルタータイプを使用するジョブは、日付範囲内に作成されたすべてのアクセス可能なレコードを返します。日時はミリ秒なしの ISO-8601 形式である必要があります。</td>
-    </tr>
-    <tr>
-      <td>activityTypeIds</td>
-      <td>Array[Integer]</td>
-      <td>いいえ</td>
-      <td>1 つのメンバー activityTypeIds を持つ JSON オブジェクトを受け入れます。 値は、目的のアクティビティタイプに対応する、整数の配列である必要があります。「リードを削除」アクティビティはサポートされていません（代わりに <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET"> 削除されたリードを取得 </a> エンドポイントを使用します）。<a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET"> アクティビティタイプを取得 </a> エンドポイントを使用して、アクティビティタイプ ID を取得します。</td>
-    </tr>
-    <tr>
-      <td>primaryAttributeValueIds</td>
-      <td>Array[Integer]</td>
-      <td>いいえ</td>
-      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValueIds を受け入れます。 値は、フィルタリングするプライマリ属性を指定する id の配列です。 最大 50 個の ID を指定できます。ID はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、「フォームに入力」アクティビティ用に特定のフォームをフィルタリングするには、フォーム名を <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET"> 名前によるフォームの取得 </a> エンドポイントに渡して、フォーム ID を取得します。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
-        <table>
-          <tbody>
-            <tr>
-              <td>アクティビティのタイプ</td>
-              <td>プライマリ属性値 Id</td>
-              <td>取得エンドポイント</td>
-              <td>アセットグループ</td>
-            </tr>
-            <tr>
-              <td>データ値の変更</td>
-              <td>リードフィールド ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">リードの説明</a></td>
-              <td>属性名</td>
-            </tr>
-            <tr>
-              <td>スコアの変更</td>
-              <td>リードフィールド ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">リードの説明</a></td>
-              <td>属性名</td>
-            </tr>
-            <tr>
-              <td>進行状況のステータスの変更</td>
-              <td>プログラム ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET">名前によるプログラムの取得</a></td>
-              <td>マーケティング プログラム</td>
-            </tr>
-            <tr>
-              <td>リストに追加</td>
-              <td>静的リスト ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET">名前による静的リストの取得</a></td>
-              <td>静的リスト</td>
-            </tr>
-            <tr>
-              <td>リストから削除</td>
-              <td>静的リスト ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET">名前による静的リストの取得</a></td>
-              <td>静的リスト</td>
-            </tr>
-            <tr>
-              <td>フォームの入力</td>
-              <td>フォーム ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET">名前によるフォームの取得</a></td>
-              <td>ウェブフォーム</td>
-            </tr>
-          </tbody>
-        </table>
-        primaryAttributeValueIds を使用する場合は、activityTypeIds フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含める必要があります。例：web フォームアセットでフィルタリングしている場合、activityTypeIds では「フォームに入力」アクティビティタイプ ID のみを使用できます。例：リクエスト本文：{"filter":{"createdAt":{"startAt": "2021-07-07-01:59:0:00:00 at": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValueIds" : [16,102,95,8]}}primaryAttributeValueIds と primaryAttributeValues を一緒に使用することはできません。</td>
-    </tr>
-    <tr>
-      <td>primaryAttributeValues</td>
-      <td>配列 [ 文字列 ]</td>
-      <td>いいえ</td>
-      <td>1 つのメンバーを持つ JSON オブジェクト、primaryAttributeValues を受け入れます。 値は、フィルタリングするプライマリ属性を指定する名前の配列です。 最大 50 個の名前を指定できます。名前はリードフィールドまたはアセットの一意の ID であり、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、「フォームに入力」アクティビティ用に特定のフォームをフィルタリングするには、フォーム ID を <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">ID によるフォームの取得 </a> エンドポイントに渡して、フォーム名を取得します。プライマリ属性フィルタリングがサポートされているアクティビティタイプのリストを以下に示します。
-        <table>
-          <tbody>
-            <tr>
-              <td>アクティビティのタイプ</td>
-              <td>プライマリ属性値</td>
-              <td>取得エンドポイント</td>
-              <td>アセットグループ</td>
-            </tr>
-            <tr>
-              <td>データ値の変更</td>
-              <td>リードフィールド displayName</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">リードの説明</a></td>
-              <td>属性名</td>
-            </tr>
-            <tr>
-              <td>スコアの変更</td>
-              <td>リードフィールド displayName</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">リードの説明</a></td>
-              <td>属性名</td>
-            </tr>
-            <tr>
-              <td>進行状況のステータスの変更</td>
-              <td>プログラム名</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET">Id でプログラムを取得</a></td>
-              <td>マーケティング プログラム</td>
-            </tr>
-            <tr>
-              <td>リストに追加</td>
-              <td>静的リスト名</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET">Id による静的リストの取得</a></td>
-              <td>静的リスト</td>
-            </tr>
-            <tr>
-              <td>リストから削除</td>
-              <td>静的リスト名</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET">Id による静的リストの取得</a></td>
-              <td>静的リスト</td>
-            </tr>
-            <tr>
-              <td>フォームの入力</td>
-              <td>フォーム名</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">Id でフォームを取得</a></td>
-              <td>ウェブフォーム</td>
-            </tr>
-          </tbody>
-        </table>
-        「&lt;<em>program</em>&gt; を使用する必要があります。次のアセットグループの名前を一意に指定する &lt;<em>asset</em>&gt;」表記：マーケティングプログラム、静的リスト、web フォーム。例：例：「GL_OP_ALL_2021」という名前のプログラムの下にある「MPS Outbound」という名前のフォームは、「GL_OP_ALL_2021.MPS Outbound」と指定されます。例：リクエスト本文：{"filter":{"createdAt":{"startAt":"20221 -07-01T23:59:59-00:00","endAt": "2021-07-02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValues":["GL_OP_ALL_2021.MPS Outbound"]}}primaryAttributeValues を使用する場合、activityType ids フィルターが存在し、対応するアセットグループに一致するアクティビティ id のみを含んでいる必要があります。 例えば、web フォームのアセットをフィルタリングしている場合、activityTypeIds.primaryAttributeValues と primaryAttributeValueIds を一緒に使用することはできません。使用できるアクティビティタイプ ID は「フォームに入力」のみです。</td>
-    </tr>
-  </tbody>
-</table>
+| フィルタータイプ | データタイプ | 必須 | 注意 |
+| --- | --- | --- | --- |
+| createdAt | 日付範囲 | はい | `startAt` および `endAt` メンバーを持つ JSON オブジェクトを受け入れます。 `startAt` にはローウォーターマークを表す日時を指定し、`endAt` にはハイウォーターマークを表す日時を指定します。 範囲は 31 日以内にする必要があります。 このフィルタータイプを持つジョブは、日付範囲内に作成されたアクセス可能なすべてのレコードを返します。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 |
+| activityTypeIds | 配列\[Integer\] | いいえ | 1 つのメンバー `activityTypeIds` を持つ JSON オブジェクトを受け入れます。 値は、目的のアクティビティタイプに対応する整数の配列である必要があります。 「リードを削除」アクティビティはサポートされていません（代わりに [ 削除されたリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) エンドポイントを使用します）。 [Get アクティビティタイプ エンドポイント ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET) を使用して、アクティビティタイプ ID を取得します。 |
+| [primaryAttributeValueIds](#primaryattributevalueids-options) | 配列\[Integer\] | いいえ | 1 つのメンバー `primaryAttributeValueIds` を持つ JSON オブジェクトを受け入れます。 値は、フィルタリングするプライマリ属性を指定する id の配列です。 最大 50 個の ID を指定できます。 ID は、リードフィールドまたはアセットの一意の ID で、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、特定のフォームを「フォームに入力」アクティビティ用にフィルタリングするには、フォーム名を [ 名前によるフォームを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) エンドポイントに渡して、フォーム ID を取得します。 プライマリ属性のフィルタリングがサポートされているアクティビティタイプのリストを以下に示します。 |
+| [primaryAttributeValues](#primaryattributevalues-options) | 配列\[ 文字列\] | いいえ | 1 つのメンバー `primaryAttributeValues` を持つ JSON オブジェクトを受け入れます。 値は、フィルタリングするプライマリ属性を指定する名前の配列です。 最大 50 個の名前を指定できます。 この名前は、リードフィールドまたはアセットの一意の ID で、適切な REST API エンドポイントを呼び出すことで取得できます。 例えば、特定のフォームを「フォームに入力」アクティビティ用にフィルタリングするには、フォーム ID を [ID でフォームを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントに渡して、フォーム名を取得します。 プライマリ属性のフィルタリングがサポートされているアクティビティタイプのリストを以下に示します。 |
+
+### primaryAttributeValueIds オプション {#primaryattributevalueids-options}
+
+| アクティビティのタイプ | プライマリ属性値 Id | 取得エンドポイント | アセットグループ |
+| --- | --- | --- | --- |
+| データ値の変更 | リードフィールド ID | [ リードの説明 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 属性名 |
+| スコアの変更 | リードフィールド ID | [ リードの説明 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 属性名 |
+| 進行状況のステータスの変更 | プログラム ID | [ 名前によるプログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET) | マーケティング プログラム |
+| リストに追加 | 静的リスト ID | [ 名前による静的リストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 静的リスト |
+| リストから削除 | 静的リスト ID | [ 名前による静的リストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 静的リスト |
+| フォームの入力 | フォーム ID | [ 名前によるフォームの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) | ウェブフォーム |
+
+`primaryAttributeValueIds` を使用する場合、`activityTypeIds` フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含んでいる必要があります。 例えば、web フォームアセットをフィルタリングしている場合、「フォームに入力」アクティビティタイプ ID のみ `activityTypeIds` で許可されます。
+
+リクエスト本文の例：
+
+```json
+{
+  "filter": {
+    "createdAt": {
+      "startAt": "2021-07-01T23:59:59-00:00",
+      "endAt": "2021-07-02T23:59:59-00:00"
+    },
+    "activityTypeIds": [
+      2
+    ],
+    "primaryAttributeValueIds": [
+      16,102,95,8
+    ]
+  }
+}
+```
+
+`primaryAttributeValueIds` と `primaryAttributeValues` は併用できません。
+
+### primaryAttributeValues オプション {#primaryattributevalues-options}
+
+| アクティビティのタイプ | プライマリ属性値 | 取得エンドポイント | アセットグループ |
+| --- | --- | --- | --- |
+| データ値の変更 | リードフィールド displayName | [ リードの説明 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 属性名 |
+| スコアの変更 | リードフィールド displayName | [ リードの説明 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 属性名 |
+| 進行状況のステータスの変更 | プログラム名 | [Id によるプログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET) | マーケティング プログラム |
+| リストに追加 | 静的リスト名 | [Id による静的リストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 静的リスト |
+| リストから削除 | 静的リスト名 | [Id による静的リストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 静的リスト |
+| フォームの入力 | フォーム名 | [Id でフォームを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) | ウェブフォーム |
+
+「&lt;<em>program</em>> を使用する必要があります。マーケティングプログラム、静的リスト、web フォームの &lt;<em>asset</em>>」表記で、アセットグループの名前を指定します。 例えば、「GL_OP_ALL_2021」という名前のプログラムの下にある「MPS Outbound」という名前のフォームは、「GL_OP_ALL_2021.MPS Outbound」と指定されます。
+
+リクエスト本文の例：
+
+```json
+{
+  "filter": {
+    "createdAt": {
+      "startAt": "2021-07-01T23:59:59-00:00",
+      "endAt": "2021-07-02T23:59:59-00:00"
+    },
+    "activityTypeIds": [
+      2
+    ],
+    "primaryAttributeValues": [
+      "GL_OP_ALL_2021.MPS Outbound"
+    ]
+  }
+}
+```
+
+`primaryAttributeValues` を使用する場合、`activityTypeIds` フィルターが存在し、対応するアセットグループに一致するアクティビティ ID のみを含んでいる必要があります。 例えば、web フォームのアセットをフィルターしている場合、「フォームに入力」アクティビティタイプ ID のみ `activityTypeIds` で許可されます。 `primaryAttributeValues` と `primaryAttributeValueIds` は併用できません。
 
 ## オプション
 
 | パラメーター | データタイプ | 必須 | 注意 |
 |---|---|---|---|
-| フィルター | Array[Object] | はい | フィルターの配列を受け入れます。 配列には、createdAt フィルターを 1 つだけ含める必要があります。 オプションの activityTypeIds フィルターを含めることができます。フィルターはアクセス可能なアクティビティセットに適用され、結果のアクティビティセットはエクスポートジョブによって返されます。 |
-| 形式 | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定されている場合、それぞれコンマ区切り値、タブ区切り値、スペース区切り値のファイルとしてレンダリングされます。設定されていない場合、デフォルトは CSV です。 |
+| filter | Array[Object] | はい | フィルターの配列を受け入れます。 配列には、1 つの `createdAt` フィルターのみを含める必要があります。 オプションの `activityTypeIds` フィルターを含めることができます。 フィルターはアクセス可能なアクティビティセットに適用され、結果のアクティビティセットはエクスポートジョブによって返されます。 |
+| format | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、コンマ区切り値、タブ区切り値、スペース区切り値のファイルとしてレンダリングされます（設定されている場合）。 未設定の場合のデフォルト値は CSV です。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
-| フィールド | 配列 [ 文字列 ] | いいえ | オプションのフィールド値を含む文字列の配列。 リストに表示されたフィールドは、書き出されたファイルに含まれます。デフォルトでは、次のフィールドが返されます。`marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes`、このパラメーターを使用して、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすことができます。例：&quot;fields&quot;: [&quot;leadId&quot;、&quot;activityDate&quot;、&quot;activityTypeId&quot;] 追加のフィールド&quot;actionResult&quot;を指定して、アクティビティアクション（&quot;successed&quot;、&quot;skiped&quot;、または&quot;failed&quot;）を失敗&quot;）にできます。 |
+| フィールド | 配列 [ 文字列 ] | いいえ | オプションのフィールド値を含む文字列の配列。 リストされたフィールドは、書き出されたファイルに含まれます。 デフォルトでは、次のフィールド `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes` が返されます。 このパラメーターを使用すると、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすことができます。 例：&quot;fields&quot;:[&quot;leadId&quot;、&quot;activityDate&quot;、&quot;activityTypeId&quot;] 追加のフィールド&quot;actionResult&quot;を指定して、アクティビティアクション（&quot;succeeded&quot;、&quot;skipped&quot;、または&quot;failed&quot;）を含めることができます。 |
 
 
 ## ジョブの作成
 
-レコードを書き出すには、まず取得するジョブとレコードのセットを定義する必要があります。  [ エクスポートアクティビティジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) エンドポイントを使用してジョブを作成します。  アクティビティを書き出す場合、適用できる主なフィルターは、常に必須の `createdAt` とオプションの `activityTypeIds` の 2 つです。  createdAt フィルターを使用すると、アクティビティが作成された日付範囲を定義できます。`startAt` パラメーターと `endAt` パラメーターは両方とも datetime フィールドであり、許可された最も古い作成日と最も遅い作成日を表します。  また、オプションで、`activityTypeIds` フィルターを使用して、特定のタイプのアクティビティのみをフィルタリングすることもできます。  これは、ユースケースとは関係のない結果を削除する場合に役立ちます。
+レコードを書き出すには、まず取得するジョブとレコードのセットを定義する必要があります。  [ エクスポートアクティビティジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) エンドポイントを使用してジョブを作成します。  アクティビティを書き出す場合、適用できる主なフィルターは、常に必須の `createdAt` とオプションの `activityTypeIds` の 2 つです。  `createdAt` フィルターを使用して、アクティビティが作成された日付範囲を定義します。`startAt` パラメーターと `endAt` パラメーターは両方とも datetime フィールドであり、許可される最も早い作成日と許可される最も遅い作成日をそれぞれ表します。  また、オプションで、`activityTypeIds` フィルターを使用して、特定のタイプのアクティビティのみをフィルタリングすることもできます。  これは、ユースケースに関係のない結果を削除する場合に役立ちます。
 
 ```
 POST /bulk/v1/activities/export/create.json
@@ -202,7 +148,7 @@ POST /bulk/v1/activities/export/create.json
 }
 ```
 
-ジョブのステータスは「作成済み」になりましたが、まだ処理キューにありません。  処理を開始できるようにキューに入れるには、作成ステータス応答の exportId を使用して [ エンキューエクスポートアクティビティジョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) エンドポイントを呼び出す必要があります。
+ジョブのステータスは「作成済み」になりましたが、まだ処理キューにありません。  処理を開始できるようにキューに入れるには、作成ステータス応答の exportId を使用して [ エンキューエクスポートアクティビティジョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) エンドポイントを呼び出します。
 
 ```
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
@@ -224,7 +170,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 }
 ```
 
-これで、ステータスは、ジョブがキューに入れられたことをレポートしています。  このジョブでワーカーが使用可能になると、ステータスが「処理中」に切り替わり、ジョブはMarketoからのレコードの集計を開始します。
+これで、ステータスは、ジョブがキューに入れられたことをレポートしています。  このジョブでワーカーが使用可能になると、ステータスが「処理中」に切り替わり、ジョブがMarketoからのレコードの集計を開始します。
 
 ## ジョブステータスのポーリング
 
