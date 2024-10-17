@@ -3,10 +3,10 @@ title: エラーコード
 feature: REST API
 description: Marketo エラーコードの説明。
 exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: d0750eab0a37df0b7f80c6252f46c95068975000
 workflow-type: tm+mt
-source-wordcount: '2272'
-ht-degree: 3%
+source-wordcount: '2273'
+ht-degree: 4%
 
 ---
 
@@ -149,7 +149,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     </tr>
     <tr>
       <td><a name="611"></a>611*</td>
-      <td>システムエラー</td>
+      <td>システムエラー。</td>
       <td>すべての未処理の例外</td>
     </tr>
     <tr>
@@ -224,7 +224,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="712"></a>712</td>
       <td>個人アカウントに結合操作が無効です</td>
-      <td>Salesforce 人物アカウントのリードを結合しようとしたため、リードの結合呼び出しが失敗しました。  Salesforce 人物アカウントは、Salesforce で結合する必要があります。</td>
+      <td>Salesforce人物アカウントのリードを結合しようとしたため、リードの結合呼び出しが失敗しました。  Salesforceの人物アカウントは、Salesforceで結合する必要があります。</td>
     </tr>
     <tr>
       <td><a name="713"></a>713</td>
@@ -352,8 +352,8 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="1012"></a>1012</td>
       <td>無効な cookie 値'%s'</td>
-      <td>cookie パラメーターに無効な値を指定して <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST"> リードを関連付け </a> を呼び出すと、発生する場合があります。
-        これは、filterType=cookies を指定し、filterValues パラメーターの有効な値が無効な <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET"> フィルタータイプでリードを取得 </a> を呼び出す場合にも発生します。</td>
+      <td>「cookie」パラメーターに無効な値を指定して <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST"> リードを関連付け </a> を呼び出すと、問題が発生する場合があります。
+        これは、「filterType=cookies」を指定し、「filterValues」パラメーターの値が無効な <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET"> フィルタータイプでリードを取得 </a> を呼び出す場合にも発生します。</td>
     </tr>
     <tr>
       <td><a name="1013"></a>1013</td>
@@ -471,18 +471,18 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
       <td><a name="1076"></a>1076</td>
       <td>mergeInCRM フラグを使用した <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードの結合 </a> 呼び出しは 4 です。</td>
       <td>重複するレコードを作成しています。 代わりに、既存のレコードを使用することをお勧めします。
-        これは、Salesforce で結合する際にMarketoが受け取るエラーメッセージです。</td>
+        これは、Salesforceで結合する際にMarketoが受け取るエラーメッセージです。</td>
     </tr>
     <tr>
       <td><a name="1077"></a>1077</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合 </a> 「SFDC フィールド」の長さが原因で呼び出しに失敗しました</td>
-      <td>「SFDC フィールド」が許可されている文字数の制限を超えているため、mergeInCRM を true に設定したリードの結合呼び出しが失敗しました。 修正するには、「SFDC フィールド」の長さを短くするか、mergeInCRM を false に設定します。</td>
+      <td>「SFDCフィールド」の長さが原因で、<a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合 </a> 呼び出しが失敗しました</td>
+      <td>「SFDCフィールド」が許可されている上限の文字を超えているので、mergeInCRM を true に設定したリードの結合呼び出しが失敗しました。 修正するには、「SFDC フィールド」の長さを短くするか、mergeInCRM を false に設定します。</td>
     </tr>
     <tr>
       <td><a name="1078"></a>1078</td>
       <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合 </a> リード/連絡先ではなく、エンティティが削除されたか、フィールドのフィルター条件が一致しないため、呼び出しに失敗しました。</td>
       <td>結合エラー。ネイティブに同期された CRM で結合操作を実行できません
-        これは、Salesforce で結合する際にMarketoが受け取るエラーメッセージです。</td>
+        これは、Salesforceで結合する際にMarketoが受け取るエラーメッセージです。</td>
     </tr>
   </tbody>
 </table>
