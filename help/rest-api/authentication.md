@@ -3,7 +3,7 @@ title: 認証
 feature: REST API
 description: API を使用するためのMarketo ユーザーの認証。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: e0fc654efe4501f734ab5158ce0bfd3ed08896ce
+source-git-commit: 2bea5277a80ca99d98eb9b774f8cbea24cb6705f
 workflow-type: tm+mt
 source-wordcount: '588'
 ht-degree: 0%
@@ -64,7 +64,7 @@ REST API メソッドを呼び出す場合は、呼び出しを正常に実行�
 
    >[!IMPORTANT]
    >
-   >**access_token** クエリパラメーターを使用した認証のサポートは、今後のリリースで削除される予定です。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
+   >**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
 ## ヒントとベストプラクティス
 
