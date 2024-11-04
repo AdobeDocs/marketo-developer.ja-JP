@@ -2,13 +2,13 @@
 title: アクティビティ
 feature: REST API
 description: Marketo Engageアクティビティを管理するための API。
-source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
+exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
+source-git-commit: 6baf62bc8881470eca597899e3228c377fb597d0
 workflow-type: tm+mt
 source-wordcount: '2029'
 ht-degree: 0%
 
 ---
-
 
 # アクティビティ
 
@@ -133,7 +133,7 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 各結果配列項目内では、`id` integer 属性が一意の識別子として `marketoGUID` string 属性に置き換えられています。 
 
-## データ値変更
+### データ値変更
 
 データ値の変更アクティビティの場合は、アクティビティ API の専用バージョンが提供されます。 [ リード変更を取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadChangesUsingGET) エンドポイントは、データ値変更レコードのアクティビティをリードフィールドにのみ返します。 このインターフェイスは、Get Lead Activities API と同じですが、次の 2 つの違いがあります。
 
@@ -188,7 +188,7 @@ GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQG
 
 各結果配列項目内では、`id` integer 属性が一意の識別子として `marketoGUID` string 属性に置き換えられています。
 
-## 削除されたリード
+### 削除されたリード
 
 また、Marketoから削除されたアクティビティを取得するための特別なエンドポイント [ 削除されたリードの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) もあります。
 
@@ -229,7 +229,7 @@ GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQ
 
 各結果配列項目内では、`id` integer 属性が一意の識別子として `marketoGUID` string 属性に置き換えられています。
 
-## ページスルーの結果
+### ページスルーの結果
 
 デフォルトでは、この節で説明するエンドポイントは、一度に 300 個のアクティビティ項目を返します。  `moreResult` 属性が true の場合は、より多くの結果を利用できます。 `moreResult` 属性が false を返し、使用できる結果がなくなるまでエンドポイントを呼び出します。 このエンドポイントから返された `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
 
@@ -322,7 +322,7 @@ GET /rest/v1/activities/external/type/{apiName}/describe.json
 }
 ```
 
-### タイプを作成
+## タイプを作成
 
 カスタムアクティビティタイプごとに、表示名、API 名、トリガー名、フィルター名およびプライマリ属性が必要です。
 
@@ -386,7 +386,7 @@ POST /rest/v1/activities/external/type.json
 }
 ```
 
-### 更新の種類
+## 更新の種類
 
 タイプの更新は非常によく似ていますが、apiName がパスパラメーターとして必要な唯一のパラメーターである点が異なります。
 
@@ -448,7 +448,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 アクティビティタイプのプライマリ属性を変更する場合は、まず `isPrimary` を false に設定して、既存のプライマリ属性をすべて降格させる必要があります。
 
-## 属性を作成
+### 属性を作成
 
 属性の作成には、必須の `apiName` パスパラメーターを使用します。 `name` パラメーターと `dataType` パラメーターも必須です。`isPrimary`` The description and` パラメーターはオプションです。
 
@@ -515,7 +515,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
 }
 ```
 
-## 属性を更新
+### 属性を更新
 
 属性の更新を実行する場合、属性の `apiName` がプライマリキーになります。 更新を成功させるには、`apiName` パラメーターが存在する必要があります（つまり、update を使用して `apiName` パラメーターを変更することはできません）。
 
@@ -582,7 +582,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/update.json
 }
 ```
 
-## 属性を削除
+### 属性を削除
 
 属性を削除するには、必須の `apiName` パスパラメーター（カスタムアクティビティ API 名）を使用します。  また、属性オブジェクトの配列である属性パラメーターも必要です。  各オブジェクトには、カスタムアクティビティタイプの API 名である `apiName` パラメーターを含める必要があります。
 
@@ -710,4 +710,4 @@ POST /rest/v1/activities/external.json
 アクティビティエンドポイントのタイムアウトは、以下に示す場合を除き 30 秒です。
 
 * ページングトークンの取得：300 秒 
-* カスタム アクティビティの追加：90s 
+* カスタム アクティビティの追加：90s
