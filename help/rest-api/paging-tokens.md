@@ -3,9 +3,9 @@ title: ページングトークン
 feature: REST API
 description: ページング・トークン・データの表示。
 exl-id: 63fbbf03-8daf-4add-85b0-a8546c825e5b
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: a00583f367c2da36d9d1d6e0b05bfd4216573fbb
 workflow-type: tm+mt
-source-wordcount: '345'
+source-wordcount: '352'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,8 @@ ht-degree: 2%
 Marketoでは、結果をページスルーしたり、特定のデータに関連して更新されたデータを取得したりするために、ページングトークンを使用できます。
 
 場合によっては、長いページングトークン文字列が返されることがあります。 これにより、HTTP 414 エラーコードが発生する場合があります。 これらの [ エラー ](error-codes.md) の処理方法の詳細を確認できます。
+
+[ ページングトークン API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) ドキュメントを参照してください。
 
 ## トークンのタイプ
 
@@ -39,7 +41,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 }
 ```
 
-`sinceDateTime` パラメーターの形式は、[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 標準の日付表記に準拠する必要があります。 最適な結果を得るには、タイムゾーンを含む完全な日時を使用します。 タイムゾーンは、次の形式を使用して GMT からのオフセットとして表すことができます。
+`sinceDateTime` パラメーターの形式は、[ISO 8601](https://ja.wikipedia.org/wiki/ISO_8601) 標準の日付表記に準拠する必要があります。 最適な結果を得るには、タイムゾーンを含む完全な日時を使用します。 タイムゾーンは、次の形式を使用して GMT からのオフセットとして表すことができます。
 
 `yyyy-mm-ddThh:mm:ss+|-hh:mm`
 
