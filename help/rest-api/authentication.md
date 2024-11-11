@@ -3,9 +3,9 @@ title: 認証
 feature: REST API
 description: API を使用するためのMarketo ユーザーの認証。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: d57167d60f1cc6a32c600b72829afcba81e6ec92
+source-git-commit: 6f8dc76703aba204b6d0d4f1a3b5275aea819f08
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ REST API メソッドを呼び出す場合は、呼び出しを正常に実行�
 
 アクセストークンの有効期限の管理は、統合がスムーズに動作し、通常の操作中に予期しない認証エラーが発生するのを防ぐために重要です。 統合の認証を設計する場合は、ID 応答に含まれるトークンと有効期限を必ず保存してください。
 
-REST 呼び出しを行う前に、残りの存続期間に基づいてトークンの有効性を確認する必要があります。 トークンの有効期限が切れている場合は、[Identity](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)endpoint を呼び出して更新します。 これにより、トークンの有効期限が切れていることが原因で REST 呼び出しが失敗することがなくなります。 これにより、予測可能な方法で REST 呼び出しの待ち時間を管理できます。これは、エンドユーザーに接続するアプリケーションにとって重要です。
+REST 呼び出しを行う前に、残りの存続期間に基づいてトークンの有効性を確認する必要があります。 トークンの有効期限が切れている場合は、[Identity](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) エンドポイントを呼び出して更新します。 これにより、トークンの有効期限が切れていることが原因で REST 呼び出しが失敗することがなくなります。 これにより、予測可能な方法で REST 呼び出しの待ち時間を管理できます。これは、エンドユーザーに接続するアプリケーションにとって重要です。
 
 期限切れトークンを使用して REST 呼び出しを認証すると、REST 呼び出しは失敗し、602 エラーコードが返されます。 REST 呼び出しの認証に無効なトークンが使用されている場合は、601 エラーコードが返されます。 これらのコードのいずれかが受信された場合、クライアントは ID エンドポイントを呼び出してトークンを更新する必要があります。
 
