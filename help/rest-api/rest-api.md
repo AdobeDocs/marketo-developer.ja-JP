@@ -3,9 +3,9 @@ title: REST API
 feature: REST API
 description: REST API の概要
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: ade3216f04c822de14dc0bbcbc08bfa3a4b17cb3
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '744'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ Marketoは、システムの機能の多くをリモートで実行できる RES
 これらの API は、通常、[ リードデータベース ](https://developer.adobe.com/marketo-apis/api/mapi/) と [ アセット ](https://developer.adobe.com/marketo-apis/api/asset/) の 2 つの大きなカテゴリに分類されます。 Lead Database API を使用すると、Marketoの人物レコードおよび関連するオブジェクトタイプ（商談や会社など）の取得とやり取りをおこなうことができます。 Asset API を使用すると、マーケティング用販促物やワークフロー関連のレコードを操作できます。
 
 - **毎日の割り当て量：** 購読には、1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日午前 0 時（CST）にリセットされます）。 アカウントマネージャーを通じて、1 日の割り当て量を増やすことができます。
-- **レート制限：インスタンスあたりの** API アクセスは、20 秒あたり 100 回の呼び出しに制限されています。
+- **レート制限：インスタンスあたりの** API アクセスは、20 秒あたり 100 呼び出しに制限されています。
 - **同時実行制限：**  最大 10 回の同時 API 呼び出し。
 
 標準呼び出しのサイズは、URI の長さが 8 KB、本文のサイズが 1 MB に制限されていますが、バルク API の本文は 10 MB にすることができます。 呼び出しでエラーが発生した場合、API は通常、ステータスコード 200 を返しますが、JSON 応答には、値が `false` の「success」メンバーと、「errors」メンバーにエラーの配列が含まれます。 エラーの詳細は [ こちら ](error-codes.md)。
@@ -34,7 +34,7 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![ 新しい役割 ](assets/new-role.png)
 
-次に、「[!UICONTROL  ユーザー ]」タブに戻り、「**[!UICONTROL 新規ユーザーを招待]**」をクリックします。 ユーザーに API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、「**[!UICONTROL 次へ]**」をクリックします。
+ここで、「[!UICONTROL  ユーザー ]」タブに戻り、「**[!UICONTROL 新規ユーザーを招待]**」をクリックします。 ユーザーに API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、「**[!UICONTROL 次へ]**」をクリックします。
 
 ![ 新規ユーザー情報 ](assets/new-user-info.png)
 
@@ -66,10 +66,20 @@ REST API ボックスで [!UICONTROL  エンドポイント ] を見つけて、
 
 ![REST エンドポイント ](assets/admin-web-services-rest-endpoint-1.png)
 
-新しいブラウザータブを開き、適切な情報を使用して [ フィルタータイプ別にリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) を呼び出し、次の情報を入力します。
+REST API メソッドを呼び出す場合は、呼び出しを正常に実行するために、すべての呼び出しにアクセストークンを含める必要があります。 アクセストークンは HTTP ヘッダーとして送信する必要があります。
 
 ```
-<Your Endpoint URL>/rest/v1/leads.json?access_token=<Your Access Token>&filterType=email&filterValues=<Your Email Address>
+Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
+```
+
+>[!IMPORTANT]
+>
+>**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
+
+新しいブラウザータブを開き、適切な情報を使用して [ フィルタータイプ別リードの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) を呼び出し、次の情報を入力します
+
+```
+<Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>
 ```
 
 データベースにメールアドレスを含むリードレコードがない場合は、存在することが分かっているメールアドレスに置き換えます。 URL バーで Enter キーを押すと、次のような JSON 応答が返されます。
