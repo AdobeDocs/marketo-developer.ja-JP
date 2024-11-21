@@ -3,9 +3,9 @@ title: 一括読み込み
 feature: REST API
 description: 人物データのバッチインポート。
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '592'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,11 @@ Bulk API エンドポイントには、他のエンドポイントのように�
 
 ## 認証
 
-一括読み込み API は、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。  これには、有効なアクセストークンをクエリ文字列パラメーター `access_token={_AccessToken_}` または HTTP ヘッダー `Authorization: Bearer {_AccessToken_}` として埋め込む必要があります。
+一括読み込み API は、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。  これには、HTTP ヘッダー `Authorization: Bearer {_AccessToken_}` として送信される有効なアクセストークンが必要です。
+
+>[!IMPORTANT]
+>
+>**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
 ## 制限
 
@@ -90,7 +94,7 @@ Easy,Fox,easyfox@marketo.com
 
 | パラメーター | データタイプ | 注意 |
 |---|---|---|
-| 形式 | 文字列 | 読み込むデータのファイル形式を、コンマ区切り値、タブ区切り値、セミコロン区切り値のオプションと共に決定します。 CSV、SSV、TSV のいずれかを使用できます。 形式のデフォルトは CSV です。 |
+| format | 文字列 | 読み込むデータのファイル形式を、コンマ区切り値、タブ区切り値、セミコロン区切り値のオプションと共に決定します。 CSV、SSV、TSV のいずれかを使用できます。 形式のデフォルトは CSV です。 |
 | ファイル | 文字列 | データは、ファイル内のマルチパートフォームデータを通じて指定されます。 |
 
 

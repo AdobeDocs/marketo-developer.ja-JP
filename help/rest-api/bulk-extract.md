@@ -3,9 +3,9 @@ title: 一括抽出
 feature: REST API
 description: Marketo データを抽出するためのバッチ操作。
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
 workflow-type: tm+mt
-source-wordcount: '1643'
+source-wordcount: '1683'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,11 @@ Marketoには、一括抽出と呼ばれる、人物および人物関連の大�
 
 ## 認証
 
-Bulk extract API では、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。 これには、有効なアクセストークンをクエリ文字列パラメーター `access_token={_AccessToken_}` または HTTP ヘッダー `Authorization: Bearer {_AccessToken_}` として埋め込む必要があります。
+Bulk extract API では、他のMarketo REST API と同じ OAuth 2.0 認証方式を使用します。 これには、有効なアクセストークンを HTTP ヘッダー `Authorization: Bearer {_AccessToken_}` として送信する必要があります。
+
+>[!IMPORTANT]
+>
+>**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
 ## 制限
 
@@ -115,9 +119,9 @@ POST /bulk/v1/leads/export/create.json
 
 | パラメーター | データタイプ | 注意 |
 |---|---|---|
-| 形式 | 文字列 | 抽出されたデータのファイル形式を、コンマ区切り値、タブ区切り値、およびセミコロン区切り値のオプションと共に決定します。 CSV、SSV、TSV のいずれかを使用できます。 形式のデフォルトは CSV です。 |
+| format | 文字列 | 抽出されたデータのファイル形式を、コンマ区切り値、タブ区切り値、およびセミコロン区切り値のオプションと共に決定します。 CSV、SSV、TSV のいずれかを使用できます。 形式のデフォルトは CSV です。 |
 | columnHeaderNames | オブジェクト | 返されるファイルの列ヘッダーの名前を設定できるようにします。 各メンバーキーは、名前を変更する列ヘッダーの名前であり、値は列ヘッダーの新しい名前です。 例：&quot;columnHeaderNames&quot;: { &quot;firstName&quot;: &quot;First Name&quot;, &quot;lastName&quot;: &quot;Last Name&quot; }, |
-| フィルター | オブジェクト | 抽出ジョブに適用するフィルター。 タイプとオプションは、ジョブタイプによって異なります。 |
+| filter | オブジェクト | 抽出ジョブに適用するフィルター。 タイプとオプションは、ジョブタイプによって異なります。 |
 
 
 ## ジョブを取得中
