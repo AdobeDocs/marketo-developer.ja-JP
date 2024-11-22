@@ -3,9 +3,9 @@ title: ユーザ管理
 feature: REST API
 description: ユーザーレコードに対して CRUD 操作を実行します。
 exl-id: 2a58f496-0fe6-4f7e-98ef-e9e5a017c2de
-source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
+source-git-commit: 159c3fe29c26ea0fff718bf582a7e4c9a1740831
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1180'
 ht-degree: 1%
 
 ---
@@ -23,12 +23,12 @@ Marketoには、Marketo内のユーザーレコードに対して CRUD 操作を
    1. 「管理者にアクセス ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループからの「ユーザーにアクセス [ 権限
    1. [Access API](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループの「User Management Api へのアクセス」
 - 応答本文には、呼び出しの成功または失敗を示す「success」ブール値属性が含まれていません。 代わりに、HTTP 応答ステータスコードを評価する必要があります。 呼び出しが成功した場合は、200 ステータスコードが返されます。 呼び出しが失敗した場合は、200 レベル以外のステータスコードが返され、応答本文には、エラーコードと説明的なエラーメッセージを含む標準の「エラー」配列が含まれます。
-- 日時文字列の形式は、「yyyyMMdd&#39;T&#39;HH:mm:ss.SSS&#39;t&#39;+|-hhmm」です。 これは、createdAt、updatedAt、expiresAt の各属性に適用されます。
+- 日時文字列の形式は `yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm` です。 これは、属性 `createdAt`、`updatedAt`、`expiresAt` に適用されます。
 - User Management API エンドポイントには、他のエンドポイントのようにプレフィックス「/rest」が付きません。
 
 ## クエリ
 
-ユーザー管理のクエリサポートには、すべてのユーザー、役割、ワークスペースを取得する機能が含まれます。 また、ユーザー ID ごとに 1 つのユーザーレコードを取得したり、ユーザー ID ごとに役割/ワードスペースレコードを取得したりできます。
+ユーザー管理のクエリサポートには、すべてのユーザー、役割、ワークスペースを取得する機能が含まれます。 また、ユーザー ID によって 1 つのユーザーレコードを取得したり、ユーザー ID によって役割/ワークスペースレコードを取得したりできます。
 
 ### ユーザー（ID 別）
 
