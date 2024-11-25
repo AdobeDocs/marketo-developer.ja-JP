@@ -1,31 +1,33 @@
 ---
 title: Munchkin API リファレンス
 description: Munchkin JavaScript API を使用して、Munchkin データをカスタマイズします。
-feature: Javascript
-source-git-commit: c6c0a492ede415471e10efb6213eb3f590e63ebe
+feature: Munchkin Tracking Code, Javascript
+exl-id: e9727691-5501-4223-bc98-2b4bacc33513
+source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
 workflow-type: tm+mt
 source-wordcount: '414'
 ht-degree: 9%
 
 ---
 
-
 # Munchkin API リファレンス
 
-Munchkin は、JavaScript を使用して手動で呼び出すことができるいくつかの関数を提供しています。 これにより、ビデオ再生やリンク以外のクリックなど、ブラウザーイベントのトラッキングをカスタマイズできます。
+Munchkinには、JavaScript を使用して手動で呼び出すことができる関数がいくつか用意されています。 これにより、ビデオ再生やリンク以外のクリックなど、ブラウザーイベントのトラッキングをカスタマイズできます。
 
 ## 関数
 
 Munchkin API は、`init`、`createTrackingCookie`、`munchkinFunction` の関数で構成されています。
 
+<a name="munchkin_init"></a>
+
 ### Munchkin.init()
 
-`Munchkin.init()` は、他の関数の前に呼び出す必要があります。 現在のページに Munchkin を設定して、特定のインスタンスにアクティビティを送信し、現在のページの「訪問 Web ページ」アクティビティを生成します。
+`Munchkin.init()` は、他の関数の前に呼び出す必要があります。 現在のページにMunchkinを設定して、特定のインスタンスにアクティビティを送信し、現在のページの「訪問 web ページ」アクティビティを生成します。
 
 | パラメータ名 | オプション/必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
-| Munchkin ID | 必須 | 文字列 | Munchkin アカウント ID は、管理者/統合/Munchkin メニューにあります。 アクティビティの送信先のターゲットインスタンスを設定します。 |
-| [ 設定 ](configuration.md) | オプション | オブジェクト | Munchkin の代替動作設定を有効にします。 |
+| Munchkin ID | 必須 | 文字列 | Munchkin アカウント ID は、管理者/統合/Munchkinメニューの下にあります。 アクティビティの送信先のターゲットインスタンスを設定します。 |
+| [ 設定 ](configuration.md) | オプション | オブジェクト | Munchkinの代替動作の設定を有効にします。 |
 
 ```javascript
 Munchkin.init('299-BYM-827');

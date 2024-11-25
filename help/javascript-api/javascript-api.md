@@ -1,16 +1,16 @@
 ---
 title: JAVASCRIPT API
 description: Javascript API
-feature: Munchkin Tracking Code, Javascript
+feature: Munchkin Tracking Code, Forms, Web Personalization, Predictive Content, Social, Javascript
 exl-id: 6129a467-be44-44bd-9e02-62009070c318
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e63db409981d10cfea6206cf91340428e5d0b17f
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 2%
 
 ---
 
-# JavaScript アプリ
+# Javascript API
 
 Marketoのクライアントサイド JavaScript統合機能の概要を次に示します。 これらの機能を利用するには、Marketo アカウントが必要です。 通常、実装では単に web プロパティに「埋め込みコード」を追加するだけです。 埋め込みコードによって公開されるJavaScript関数を呼び出すことで、追加の機能を使用することもできます。 これらの関数については、こちらを参照してください。
 
@@ -18,13 +18,13 @@ Marketoのクライアントサイド JavaScript統合機能の概要を次に�
 
 ## リードトラッキング （Munchkin）
 
-Marketo [Munchkin JavaScript トラッキングコード ](lead-tracking.md) は、Marketoの機能の鍵です。 Web サイトへの訪問からリードを生成できます。 さらに、まだ個人情報を提供していない訪問者を追跡し、ユーザーの IP アドレスやその他の情報を含む匿名のリードを作成します。 Munchkin は、Marketoの管理領域にある Munchkin ページで設定します。
+Marketo [Munchkin JavaScript トラッキングコード ](lead-tracking.md) は、Marketoの機能の鍵です。 Web サイトへの訪問からリードを生成できます。 さらに、まだ個人情報を提供していない訪問者を追跡し、ユーザーの IP アドレスやその他の情報を含む匿名のリードを作成します。 Munchkinの設定は、Marketoの管理領域にある「Munchkin」ページでおこないます。
 
 ## Forms 2.0
 
 [Forms 2.0](forms-api-reference.md) を使用すると、マーケターは、プログラミングの知識がなくても、美しく安定した柔軟な web フォームを作成できます。 Formsは、Marketoのランディングページにあり、web サイトの任意のページに埋め込むことができます。 Marketo web フォームのコア機能は、Forms 2.0 JavaScript API を使用して拡張できます。
 
-## Web パーソナライズ
+## Web パーソナライズ機能
 
 [Marketo Web Personalization](web-personalization.md) は、ターゲット設定とPersonalizationを実現するプラットフォームです。Web サイトを訪問する何千人もの見込み客に対し、その人物と行動に基づいてリアルタイムでエンゲージできるよう支援します。
 

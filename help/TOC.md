@@ -5,9 +5,9 @@ breadcrumb-title: “[!DNL Marketo] デベロッパーガイド"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 28b040f6473677abaaa0c73f1bb6e887e9e35a81
+source-git-commit: 8160ddaea848d0aefe4eef89a67f55b210c91f70
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '243'
 ht-degree: 96%
 
 ---
@@ -18,14 +18,15 @@ ht-degree: 96%
 - [ホーム](home.md)
 - [はじめに](getting-started.md)
 - Javascript API {#javascriptapi}
-   - [設定](javascript-api/configuration.md)
    - [カスタムデータイベント](javascript-api/custom-data-events.md)
    - [例](javascript-api/examples.md)
    - [Forms API リファレンス](javascript-api/forms-api-reference.md)
    - [訪問者データの取得](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
-   - [リードトラッキング](javascript-api/lead-tracking.md)
-   - [Munchkin API リファレンス](javascript-api/api-reference.md)
+   - [リードトラッキング]{#leadtracking}
+      - [リードトラッキング](javascript-api/lead-tracking.md)
+      - [設定](javascript-api/configuration.md)
+      - [Munchkin API リファレンス](javascript-api/api-reference.md)
    - [パターン一致](javascript-api/pattern-match.md)
    - [予測コンテンツ](javascript-api/predictive-content.md)
    - [リダイレクト](javascript-api/redirect.md)
