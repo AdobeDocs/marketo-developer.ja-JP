@@ -5,10 +5,10 @@ breadcrumb-title: “[!DNL Marketo] デベロッパーガイド"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 8160ddaea848d0aefe4eef89a67f55b210c91f70
+source-git-commit: afe7e713fe15d63822625cd0299dc7125761cd33
 workflow-type: tm+mt
 source-wordcount: '243'
-ht-degree: 96%
+ht-degree: 95%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 96%
    - [Forms API リファレンス](javascript-api/forms-api-reference.md)
    - [訪問者データの取得](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
-   - [リードトラッキング]{#leadtracking}
+   - リード追跡 {#leadtracking}
       - [リードトラッキング](javascript-api/lead-tracking.md)
       - [設定](javascript-api/configuration.md)
       - [Munchkin API リファレンス](javascript-api/api-reference.md)
@@ -60,8 +60,8 @@ ht-degree: 96%
       - [フォルダー](rest-api/folders.md)
       - [フォーム](rest-api/forms.md)
       - [ランディングページ](rest-api/landing-pages.md)
-      - [ランディングページのテンプレート](rest-api/landing-page-templates.md)
       - [ランディングページのリダイレクトルール](rest-api/landing-page-redirect-rules.md)
+      - [ランディングページのテンプレート](rest-api/landing-page-templates.md)
       - [標準フィールドのリスト](rest-api/list-of-standard-fields.md)
       - [プログラム](rest-api/programs.md)
       - [スマートキャンペーン](rest-api/smart-campaigns.md)
