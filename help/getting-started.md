@@ -2,9 +2,9 @@
 title: はじめに
 description: Marketo EngageAPI の概要
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
-source-git-commit: 82bea1ab3d0d83a8867bb7efefb828ce2d92747c
+source-git-commit: 7a3df193e47e7ee363c156bf24f0941879c6bd13
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1268'
 ht-degree: 1%
 
 ---
@@ -19,9 +19,9 @@ Marketo Engageは、マーケターが見込み客や顧客に対してパーソ
 
 ## 人物（リード）
 
-人物は、あらゆるマーケティング自動化プラットフォームの基盤です。 Marketo内では、すべての営業外担当者レコードは、営業の観点からリード、見込み客、容疑者、連絡先などに指定されているかどうかに関係なく、リードと呼ばれます。 リードオブジェクトには、メール、名、姓など ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadFieldsUsingGET) 一連の [ 標準フィールド）が用意されています。 リードオブジェクトタイプにフィールドを追加して、システム内のレコードに関連付けられている情報のタイプを拡張することができます。 カスタム属性は、標準フィールドと同様に読み取りおよび書き込みが可能です。 すべてのフィールドのリストは、Marketoの **[!UICONTROL 管理者]**/**[!UICONTROL フィールド管理]** メニューにあります。 リードは、Marketoで id フィールドによって一意に識別されます。 その他の一意のキーは、システムの外部で適用する必要があります。
+人物は、あらゆるマーケティング自動化プラットフォームの基盤です。 Marketo内では、すべての営業外担当者レコードは、営業の観点からリード、見込み客、容疑者、連絡先などに指定されているかどうかに関係なく、リードと呼ばれます。 リードオブジェクトには、メール、名、姓など、一連の標準フィールドが用意されています。 リードオブジェクトタイプにフィールドを追加して、システム内のレコードに関連付けられている情報のタイプを拡張することができます。 カスタム属性は、標準フィールドと同様に読み取りおよび書き込みが可能です。 すべてのフィールドのリストは、Marketoの **[!UICONTROL 管理者]**/**[!UICONTROL フィールド管理]** メニューにあります。 リードは、Marketoで id フィールドによって一意に識別されます。 その他の一意のキーは、システムの外部で適用する必要があります。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads)、[SOAP](soap-api/leads.md)、[JavaScript](javascript-api/lead-tracking.md#lead-tracking-api)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads)、[JavaScript](javascript-api/lead-tracking.md#lead-tracking-api)
 
 ## アクティビティ
 
@@ -29,7 +29,7 @@ Marketo Engageは、マーケターが見込み客や顧客に対してパーソ
 
 独自のカスタムアクティビティを定義できます。 カスタムアクティビティを作成して公開したら、Marketo API を介してカスタムアクティビティを追加できます。 カスタムアクティビティの詳細については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities) を参照してください。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities)、[SOAP](soap-api/activities.md)、[JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities)、[JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
 ## プログラムとキャンペーン
 
@@ -37,7 +37,7 @@ Marketo Engageは、マーケターが見込み客や顧客に対してパーソ
 
 キャンペーンは、プログラム内の特定の目的と特定の目標を果たすために作成されます。 キャンペーンの例として、リードのグループを絞り込んで電子メールのブラストを送信したり、リードが電子メールのブラストプログラム内のリンクをクリックした場合のフォローアップについて営業担当者に通知したりすることができます。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns)、[SOAP](soap-api/getcampaignsforsource.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns)
 
 ## タグ
 
@@ -47,25 +47,25 @@ Marketo管理者は、Marketo ユーザーがプログラムを作成する際�
 
 例えば、複数のタグ値（北東部、南東部など）を持つカスタム「地域」タグタイプを作成して、最もリードを生成している地域を分析できる場合があります。 例えば、「所有者」タグタイプを作成して、リードやオポチュニティの作成に最も影響を与えているプログラム所有者（Maria、David、John など）を評価および理解できます。 タグについて詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags) を参照してください。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/)、[SOAP](soap-api/gettags.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/)
 
 ## リスト
 
-マーケターは、リストを使用してリードのコレクションを整理できます。 Marketo内には、静的リストとスマート リストの 2 種類があります。 静的リストは、マーケターが選択に応じて追加または削除できるリードの固定リストです。 スマートリストは、指定された一連の特性に基づいてリードを動的に収集したものです。 スマートリストの例としては、「当社の web サイトの価格ページにアクセスしたすべてのリード」があります。 このスマートリストは、より多くのリードが価格ページにアクセスするにつれて増加し続けます。 リストの詳細については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/home) を参照してください。
+マーケターは、リストを使用してリードのコレクションを整理できます。 Marketo内には、静的リストとスマート リストの 2 種類があります。 静的リストは、マーケターが選択に応じて追加または削除できるリードの固定リストです。 スマートリストは、指定された一連の特性に基づいてリードを動的に収集したものです。 スマートリストの例としては、「当社の web サイトの価格ページにアクセスしたすべてのリード」があります。 このスマートリストは、より多くのリードが価格ページにアクセスするにつれて増加し続けます。 リストの詳細については、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) を参照してください。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists)、[SOAP](soap-api/getimporttoliststatus.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists)
 
 ## 商談
 
 マーケターは、オポチュニティの形式でリードを販売に導きます。 オポチュニティは、潜在的な販売取引を表し、Marketoのリードまたは連絡先および組織に関連付けられます。 オポチュニティの役割は、特定のリードと組織の積集合です。 オポチュニティの役割は、組織内のリードの機能に関連しています。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities)、[SOAP](soap-api/getmobjects.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities)
 
 ## 企業
 
 組織（Marketoではアカウントとも呼ばれます）は、ユーザーが属する組織を指します。 Marketoまたは収益サイクル分析（RCA）で ROI レポートを使用する場合、適切な ROI アトリビューションを決定できるように、ユーザーを組織やオポチュニティに関連付けることが重要です。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies)、[SOAP](soap-api/leads.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies)
 
 ## アセット
 
@@ -81,15 +81,15 @@ Assetsは、プログラム内で使用されるランディングページ、�
 
 特定のキャンペーンフォルダーまたはプログラム内でローカルに作成されたマイトークンは、その特定のプログラムまたはキャンペーンフォルダー（ローカル）で使用できます。 キャンペーンフォルダーレベルで作成されたマイトークンは、そのキャンペーンフォルダー内に含まれるすべてのプログラムで使用できます（継承）。 プログラムレベルでカスタム値によって変更されたマイトークンは、プログラムフォルダーレベル（上書き）でのトークンの親マイトークン値を変更しません。
 
-マイトークンでは、命名規則 {{my.My Token}}, with the word "my" added to the beginning of the token name. For example, if you create a Date type My Token with the name EventDate, the name of the token is {{my.EventDate}} を使用します。 マイトークンについて詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program) を参照してください。
+マイトークンは、命名規則 {{my.My Token}} を使用し、トークン名の先頭に「my」という単語を追加します。 例えば、EventDate という名前で Date タイプ My Token を作成した場合、トークンの名前は {{my.EventDate}} になります。 マイトークンについて詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program) を参照してください。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)、[SOAP](soap-api/getcampaignsforsource.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)
 
 ## カスタムオブジェクト
 
-Marketo カスタムオブジェクトを使用すると、Marketo リードとカスタムオブジェクトレコードの間に、1 対多または多対多（EdgeとBridgeとEdge）の関係を作成できます。 Marketo カスタムオブジェクトを作成して公開したら、Marketo API を使用して、カスタムオブジェクトに対して CRUD 操作を実行できます。 カスタムオブジェクトの作成の詳細については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/home) を参照してください。 カスタムオブジェクトに新しいレコードが追加された場合は、スマートリストトリガーを使用して応答できます。 また、カスタムオブジェクトデータをスマートリスト（セグメント化）のフィルターとして使用したり、[ メールスクリプティング ](email-scripting.md) を使用したメールで使用したりすることもできます。
+Marketo カスタムオブジェクトを使用すると、Marketo リードとカスタムオブジェクトレコードの間に、1 対多または多対多（EdgeとBridgeとEdge）の関係を作成できます。 Marketo カスタムオブジェクトを作成して公開したら、Marketo API を使用して、カスタムオブジェクトに対して CRUD 操作を実行できます。 カスタムオブジェクトの作成の詳細については、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) を参照してください。 カスタムオブジェクトに新しいレコードが追加された場合は、スマートリストトリガーを使用して応答できます。 また、カスタムオブジェクトデータをスマートリスト（セグメント化）のフィルターとして使用したり、[ メールスクリプティング ](email-scripting.md) を使用したメールで使用したりすることもできます。
 
-関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects)、[SOAP](soap-api/custom-objects.md)
+関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects)
 
 ## 販売担当者
 
