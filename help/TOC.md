@@ -1,14 +1,14 @@
 ---
-user-guide-title: “[!DNL Marketo] デベロッパーガイド"
-user-guide-description: 「このガイドでは、の使用方法を説明します [!DNL Marketo] API について」
-breadcrumb-title: “[!DNL Marketo] デベロッパーガイド"
+user-guide-title: '[!DNL Marketo] 開発者ガイド'
+user-guide-description: このガイドでは、API の使用手順  [!DNL Marketo]  説明します。
+breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: afe7e713fe15d63822625cd0299dc7125761cd33
+source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 95%
+source-wordcount: '247'
+ht-degree: 91%
 
 ---
 
@@ -142,6 +142,7 @@ ht-degree: 95%
       - [[!DNL listMObjects]](soap-api/listmobjects.md)
       - [Marketo オブジェクト](soap-api/marketo-objects.md)
       - [[!DNL syncMObjects]](soap-api/syncmobjects.md)
+   - [REST API への移行](soap-api/migration.md)
    - プログラム {#programs}
       - [[!DNL getChannels]](soap-api/getchannels.md)
       - [[!DNL getTags]](soap-api/gettags.md)

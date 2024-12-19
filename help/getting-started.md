@@ -2,9 +2,9 @@
 title: はじめに
 description: Marketo EngageAPI の概要
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
-source-git-commit: 7a3df193e47e7ee363c156bf24f0941879c6bd13
+source-git-commit: 490411e411bed7b5b76fd9e5f41ccc9d156b2ba9
 workflow-type: tm+mt
-source-wordcount: '1268'
+source-wordcount: '1340'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 1%
 
 Marketo Engageは、マーケターが見込み客や顧客に対してパーソナライズされたマルチチャネルプログラムやキャンペーンを管理できるようにするマーケティング自動処理プラットフォームです。 Marketo Engageプラットフォームは、統合ポイントを使用して拡張できます。 以下に、コアエンティティとその関係を示します。
 
-ネイティブ同期が有効な場合、REST API を介して使用できないオブジェクトは、会社、オポチュニティ、オポチュニティの役割、販売担当者です
+>[!NOTE]
+>SOAP API は非推奨（廃止予定）となっており、2025 年 10 月 31 日（PT）以降は使用できなくなります。 すべての新規開発はMarketo [REST API](./rest-api/rest-api.md) を使用して行う必要があり、サービスが中断されないように、既存のサービスはその日までに移行する必要があります。 SOAP API を使用するサービスがある場合は、SOAP API [ 移行ガイド ](./soap-api/migration.md) を参照して、移行方法を確認してください。
+>
+
+Marketo EngageインスタンスでネイティブのSFDCまたは MS Dynamics CRM 連携が有効になっている場合、会社、オポチュニティ、商談ロール、販売担当者などのオブジェクトは読み取り専用です
 
 ![ データモデル ](assets/data_model.png)
 

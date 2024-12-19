@@ -3,9 +3,9 @@ title: リードトラッキング
 description: Lead Tracking API
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
+source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '766'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Munchkinの動作は、Munchkin[ 設定 ](configuration.md) を使用して変�
 
 - リードは、トラッキング対象のMunchkin メールリンクから、クエリ文字列に `mkt_tok` パラメーターを含んだMarketoでトラッキングされるページにアクセスする必要があります。
 - リードはMarketo フォームに入力する必要があります。
-- SOAP [syncLead](../soap-api/leads.md) または REST [Associate Lead](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 呼び出しを送信する必要があります。
+- REST[ リードを関連付け ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 呼び出しを送信する必要があります。
 
 これらの条件の 1 つが満たされると、Cookie と関連するすべての web アクティビティが既知のリードに関連付けられます。
 

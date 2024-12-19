@@ -3,10 +3,10 @@ title: REST API
 feature: REST API
 description: REST API の概要
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: ade3216f04c822de14dc0bbcbc08bfa3a4b17cb3
+source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
 workflow-type: tm+mt
-source-wordcount: '744'
-ht-degree: 2%
+source-wordcount: '808'
+ht-degree: 1%
 
 ---
 
@@ -15,6 +15,10 @@ ht-degree: 2%
 Marketoは、システムの機能の多くをリモートで実行できる REST API を公開しています。 プログラムの作成からリードの一括読み込みまで、Marketo インスタンスの詳細な制御を可能にするオプションが多数あります。
 
 これらの API は、通常、[ リードデータベース ](https://developer.adobe.com/marketo-apis/api/mapi/) と [ アセット ](https://developer.adobe.com/marketo-apis/api/asset/) の 2 つの大きなカテゴリに分類されます。 Lead Database API を使用すると、Marketoの人物レコードおよび関連するオブジェクトタイプ（商談や会社など）の取得とやり取りをおこなうことができます。 Asset API を使用すると、マーケティング用販促物やワークフロー関連のレコードを操作できます。
+
+>[!NOTE]
+>SOAP API は非推奨（廃止予定）となっており、2025 年 10 月 31 日（PT）以降は使用できなくなります。 すべての新規開発はMarketo [REST API](./rest-api.md) を使用して行う必要があり、サービスが中断されないように、既存のサービスはその日までに移行する必要があります。 SOAP API を使用するサービスがある場合は、SOAP API [ 移行ガイド ](../soap-api/migration.md) を参照して、移行方法を確認してください。
+>
 
 - **毎日の割り当て量：** 購読には、1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日午前 0 時（CST）にリセットされます）。 アカウントマネージャーを通じて、1 日の割り当て量を増やすことができます。
 - **レート制限：インスタンスあたりの** API アクセスは、20 秒あたり 100 呼び出しに制限されています。
