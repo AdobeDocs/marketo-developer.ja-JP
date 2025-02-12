@@ -3,9 +3,9 @@ title: エンドポイントの参照
 feature: REST API
 description: Marketo API エンドポイントのリファレンス
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 8a019985fc9ce7e1aa690ca26bfa263cd3c48cfc
+source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
 workflow-type: tm+mt
-source-wordcount: '4676'
+source-wordcount: '4677'
 ht-degree: 28%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 28%
 - [ リードデータベース ](https://developer.adobe.com/marketo-apis/api/mapi/)
 - [ユーザー管理](https://developer.adobe.com/marketo-apis/api/user/)
 
-## エンドポイントリスト
+## エンドポイントリスト（#endpoint_list）
 
 REST API エンドポイントの一覧を次に示します。
 
@@ -41,7 +41,7 @@ REST API エンドポイントの一覧を次に示します。
 | ページトークンの取得 | アクティビティ | GET | /rest/v1/activities/pagingtoken.json | 読み取り専用アクティビティ |
 | カスタムアクティビティタイプを更新 | アクティビティ | POST | /rest/v1/activities/external/type/{apiName}.json | 読み取り／書き込みアクティビティメタデータ |
 | カスタムアクティビティタイプ属性の更新 | アクティビティ | POST | /rest/v1/activities/external/type/{apiName}/attributes/update.json | 読み取り／書き込みアクティビティメタデータ |
-| ID | 認証 | GETまたはPOST | /identity/oauth/token | None |
+| ID | 認証 | GETまたは POST | /identity/oauth/token | None |
 | 書き出しアクティビティジョブをキャンセル | 一括書き出しアクティビティ | POST | /bulk/v1/activities/export/{exportid}/cancel.json | 読み取り専用アクティビティ |
 | エクスポートアクティビティジョブを作成 | 一括書き出しアクティビティ | POST | /bulk/v1/activities/export/create.json | 読み取り専用アクティビティ |
 | 書き出しアクティビティジョブをエンキュー | 一括書き出しアクティビティ | POST | /bulk/v1/activities/export/{exportid}/enqueue.json | 読み取り専用アクティビティ |

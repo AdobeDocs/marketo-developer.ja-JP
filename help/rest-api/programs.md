@@ -3,9 +3,9 @@ title: プログラム
 feature: REST API, Programs
 description: プログラム情報を作成および編集します。
 exl-id: 30700de2-8f4a-4580-92f2-7036905deb80
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '848'
 ht-degree: 2%
 
 ---
@@ -320,9 +320,12 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 作成と更新
 
-[]https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST）および [ 更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) プログラムは標準のアセットパターンに従い、必須パラメーターとして `folder`、`name`、`type` および `channel` を持ちます。`description`、`costs` および `tags` はオプションです。 チャネルとタイプは、プログラムの作成時にのみ設定できます。 作成後に更新できるのは、説明、名前、`tags` および `costs` のみで、追加の `costsDestructiveUpdate` パラメーターを使用できます。 `costsDestructiveUpdate` を true に渡すと、既存のコストがすべてクリアされ、呼び出しに含まれるコストに置き換えられます。 一部の購読では、一部のプログラムタイプにタグが必要になる場合があることに注意してください。ただし、これは設定に依存し、最初に「タグを取得」を使用して、インスタンス固有の要件があるかどうかを確認する必要があります。
+[ 作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) および [ 更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) プログラムは標準的なアセットパターンに従い、必須のパラメーターとして `folder`、`name`、`type` および `channel` を持ちます。`description`、`costs` および `tags` はオプションです。 チャネルとタイプは、プログラムの作成時にのみ設定できます。 作成後に更新できるのは、説明、名前、`tags` および `costs` のみで、追加の `costsDestructiveUpdate` パラメーターを使用できます。 `costsDestructiveUpdate` を true に渡すと、既存のコストがすべてクリアされ、呼び出しに含まれるコストに置き換えられます。 一部の購読では、一部のプログラムタイプにタグが必要になる場合があることに注意してください。ただし、これは設定に依存し、最初に「タグを取得」を使用して、インスタンス固有の要件があるかどうかを確認する必要があります。
 
-メールプログラムを作成または更新する際に、`startDate` と `endDate` が渡される場合もあります。
+メールプログラムを作成または更新する際に、`startDate` および `endDate` を UTC 日時として渡すこともできます。
+
+`"startDate": "2022-10-19T15:00:00.000Z"`
+`"endDate": "2022-10-19T15:00:00.000Z"`
 
 ### 作成
 
