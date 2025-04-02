@@ -3,9 +3,9 @@ title: 一括アクティビティ抽出
 feature: REST API
 description: Marketoからのアクティビティデータをバッチ処理します。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 8c22255673fee1aa0f5b47393a241fcf6680778b
+source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1342'
 ht-degree: 7%
 
 ---
@@ -222,7 +222,7 @@ GET /bulk/v1/activities/export/{exportId}/file.json
 
 応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。
 
-リクエストされたリードフィールドが空（データを含まない）の場合、`then null` はエクスポートファイルの対応するフィールドに配置されます。  次の例では、返されるアクティビティの campaignId フィールドが空です。
+リクエストされたリードフィールドが空（データを含まない）の場合、`then null` はエクスポートファイルの対応するフィールドに配置されます。  次の例では、返されるアクティビティの `campaignId` フィールドが空です。
 
 ```json
 marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueId,primaryAttributeValue,attributes

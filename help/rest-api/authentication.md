@@ -3,9 +3,9 @@ title: 認証
 feature: REST API
 description: API を使用するためのMarketo ユーザーの認証。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 6f8dc76703aba204b6d0d4f1a3b5275aea819f08
+source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '573'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Marketoの REST API は、2-legged OAuth 2.0 で認証されます。クライ�
 
 この `Identity URL` は、「REST API」セクションの **[!UICONTROL 管理者]**/**[!UICONTROL 統合]**/**[!UICONTROL web サービス]** メニューにあります。
 
-次のように、HTTP GET（またはPOST）リクエストを使用してアクセストークンを作成します。
+次のように、HTTP GET（または POST）リクエストを使用してアクセストークンを作成します。
 
 ```
 GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client Id>&client_secret=<Client Secret>
@@ -52,13 +52,15 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 
 REST API メソッドを呼び出す場合は、呼び出しを正常に実行するために、すべての呼び出しにアクセストークンを含める必要があります。
 
-アクセストークンは HTTP ヘッダーとして送信する必要があります。
-
-`Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int`
-
 >[!IMPORTANT]
 >
 >**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
+
+アクセストークンは HTTP ヘッダーとして送信する必要があります。 例えば、CURL リクエストでは次のようになります。
+
+```bash
+$ curl -H 'Authorization: Bearer cdf01657-110d-4155-99a7-f984b2ff13a0:int`' 'https://123-ABC-456.mktourl.com/rest/v1/apicall.json?filterType=id&filterValues=4,5,7,12,13'
+```
 
 ## ヒントとベストプラクティス
 

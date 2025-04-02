@@ -3,9 +3,9 @@ title: カスタムオブジェクトの一括抽出
 feature: REST API, Custom Objects
 description: カスタム Marketo オブジェクトのバッチ処理。
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
 workflow-type: tm+mt
-source-wordcount: '1300'
+source-wordcount: '1298'
 ht-degree: 1%
 
 ---
@@ -403,7 +403,7 @@ leadId,color,make,model,vIN
 13,Fusion Red,Tesla,Roadster,SFGRC3C41FF154321
 ```
 
-抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションでバイト型の HTTP ヘッダー範囲をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 範囲ヘッダーの使用について詳しくは、Marketo[ 一括抽出 ](bulk-extract.md) を参照してください。
+抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションで `bytes` タイプの HTTP ヘッダー `Range` をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 範囲ヘッダーの使用について詳しくは、Marketo[ 一括抽出 ](bulk-extract.md) を参照してください。
 
 ## ジョブのキャンセル
 
