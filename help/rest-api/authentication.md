@@ -3,9 +3,9 @@ title: 認証
 feature: REST API
 description: API を使用するためのMarketo ユーザーの認証。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 9582f7ac5998b670dd04cc6529db23f558c0e18e
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -51,15 +51,27 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 ## アクセストークンの使用
 
 REST API メソッドを呼び出す場合は、呼び出しを正常に実行するために、すべての呼び出しにアクセストークンを含める必要があります。
+アクセストークンは HTTP ヘッダーとして送信する必要があります。
 
 >[!IMPORTANT]
 >
 >**access_token** クエリパラメーターを使用した認証のサポートは、2025 年 6 月 30 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新しい開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
-アクセストークンは HTTP ヘッダーとして送信する必要があります。 例えば、CURL リクエストでは次のようになります。
+### 認証ヘッダーへの切り替え
+
+
+`access_token` クエリパラメーターの使用から認証ヘッダーの使用に切り替えるには、小規模なコード変更が必要です。
+
+例えば CURL を使用する場合、このコードでは `access_token` の値をフォームパラメーター（– F フラグ）として送信します。
 
 ```bash
-$ curl -H 'Authorization: Bearer cdf01657-110d-4155-99a7-f984b2ff13a0:int`' 'https://123-ABC-456.mktourl.com/rest/v1/apicall.json?filterType=id&filterValues=4,5,7,12,13'
+curl ...  -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/apiCall.json
+```
+
+このコードは、`Authorization: Bearer` http ヘッダー（– H フラグ）と同じ値を送信します。
+
+```bash
+curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/bulk/v1/apiCall.json
 ```
 
 ## ヒントとベストプラクティス
