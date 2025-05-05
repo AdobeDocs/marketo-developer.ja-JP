@@ -12,7 +12,7 @@ ht-degree: 10%
 
 # フィールドのタイプ
 
-Marketoのフィールドタイプの説明を以下に示します。 フィールドタイプに関する追加情報は、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary) を参照してください。 フィールドタイプの制限に関する追加情報は、[ こちら ](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613) を参照してください。
+Marketoのフィールドタイプの説明を以下に示します。 フィールドタイプに関する追加情報は、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary) を参照してください。 フィールドタイプの制限に関する追加情報は、[ こちら ](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613) を参照してください。
 
 | フィールドのタイプ | 説明 | 例 |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Marketoのフィールドタイプの説明を以下に示します。 フィ�
 | メール | メールアドレスを受け入れる文字列フィールド | example@example.com |
 | 浮動 | 実数を含み、小数点以下の桁数を使用できる数値フィールド。 | 10.4 |
 | 整数 | 整数 | 10 |
-| 数式 | リードレコード上に存在する他のフィールドのデータを操作することによって値が生成されるフィールド。 これらはエクスポートされず、スマートキャンペーンでは使用できません。 | この [ 記事 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/create-and-use-a-concatenated-string-formula-field) を参照してください。 |
+| 数式 | リードレコード上に存在する他のフィールドのデータを操作することによって値が生成されるフィールド。 これらはエクスポートされず、スマートキャンペーンでは使用できません。 | この [ 記事 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/create-and-use-a-concatenated-string-formula-field) を参照してください。 |
 | パーセント | 整数で表された割合 | 30 |
 | URL | 入力を URL のプロトコルを含む URL に制限するテキストフィールド。 | http://example.com/ |
 | 電話 | 電話番号 | 111-111-1111 |

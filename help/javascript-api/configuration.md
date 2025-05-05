@@ -40,7 +40,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | domainSelectorV2 | ブール値 | true に設定した場合、は改善された方法を利用して、cookie ドメイン属性の設定方法を決定します。 |
 | httpsOnly | ブール値 | デフォルトは false です。 true に設定した場合、トラッキングするページが https で提供された際に、cookie がセキュア設定を使用するように設定します。 |
 | useBeaconAPI | ブール値 | デフォルトは false です。 true に設定した場合、は [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) ではなく [Beacon API](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) を使用して非ブロックリクエストを送信します。 ブラウザーがこの API をサポートしていない場合、Munchkinは XMLHttpRequest の使用にフォールバックします。 |
-| wsInfo | 文字列 | ワークスペースをターゲットにする文字列を取得します。 この Workspace ID は、管理者/統合/Workspace メニューでMunchkinを選択することで取得されます。 この設定は、匿名リードレコードの初期作成にのみ適用されます。 そのリードレコードに対してMunchkin Cookie の値が設定されると、wsInfo パラメーターを使用してパーティションを変更できなくなります。 この設定は匿名リードにのみ影響するので、パーティション固有の [web レポートの匿名訪問者 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports) にのみ関連します。 |
+| wsInfo | 文字列 | ワークスペースをターゲットにする文字列を取得します。 この Workspace ID は、管理者/統合/Workspace メニューでMunchkinを選択することで取得されます。 この設定は、匿名リードレコードの初期作成にのみ適用されます。 そのリードレコードに対してMunchkin Cookie の値が設定されると、wsInfo パラメーターを使用してパーティションを変更できなくなります。 この設定は匿名リードにのみ影響するので、パーティション固有の [web レポートの匿名訪問者 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports) にのみ関連します。 |
 
 ## 例
 

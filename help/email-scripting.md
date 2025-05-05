@@ -130,7 +130,7 @@ Marketoのメールデザイナー内で「[!UICONTROL &#x200B; サンプルの�
 - リード、連絡先またはアカウントに接続されたカスタムオブジェクトを参照できますが、複数は参照できません。
 - カスタムオブジェクトは、1 つの接続、リード、連絡先、アカウントからのみ参照できます
 - 使用しているフィールドのスクリプトエディターのチェックボックスをオンにする必要があります。オンにしない場合、処理されません
-- 各カスタムオブジェクトでは、ユーザー/連絡先ごとに最近更新された 10 件のレコードが実行時に使用可能で、最近更新されたレコード（0 の場合）から最も古い更新レコード（9 の場合）へと並べられます。 使用可能なレコードの数を増やすには、[ 手順に従う ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting) を実行します。
+- 各カスタムオブジェクトでは、ユーザー/連絡先ごとに最近更新された 10 件のレコードが実行時に使用可能で、最近更新されたレコード（0 の場合）から最も古い更新レコード（9 の場合）へと並べられます。 使用可能なレコードの数を増やすには、[ 手順に従う ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting) を実行します。
 - 1 つのメールに複数のメールスクリプトを含めると、上から下に向かって実行されます。 最初に実行するスクリプトで定義された変数のスコープは、後続のスクリプトでも使用できます。
 - ツールリファレンス：[https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 改行文字「\\n」または「\\r\\n」を含むトークンに関するメモ。 「サンプルの送信」または「バッチキャンペーン」を使用してメールが送信されると、トークン内の改行文字がスペースに置き換えられます。 トリガーキャンペーン経由でメールが送信されると、改行文字はそのまま残ります。

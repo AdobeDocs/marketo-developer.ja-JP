@@ -14,7 +14,7 @@ ht-degree: 0%
 
 [ プログラムメンバーエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members)
 
-Marketoは、プログラムメンバーレコードの読み取り、作成、更新、削除のための API を公開しています。 プログラムメンバーレコードは、リード ID フィールドを介してリードレコードに関連付けられています。 レコードは、一連の標準フィールド、およびオプションで最大 20 個の追加カスタムフィールドで構成されます。 このフィールドは、各メンバーのプログラム固有のデータを含んでおり、フォーム、フィルター、トリガー、フローアクションで使用できます。 このデータは、Marketo EngageUI のプログラムの [ 「メンバー」タブ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members) に表示されます。
+Marketoは、プログラムメンバーレコードの読み取り、作成、更新、削除のための API を公開しています。 プログラムメンバーレコードは、リード ID フィールドを介してリードレコードに関連付けられています。 レコードは、一連の標準フィールド、およびオプションで最大 20 個の追加カスタムフィールドで構成されます。 このフィールドは、各メンバーのプログラム固有のデータを含んでおり、フォーム、フィルター、トリガー、フローアクションで使用できます。 このデータは、Marketo EngageUI のプログラムの [ 「メンバー」タブ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members) に表示されます。
 
 ## 説明
 
@@ -597,9 +597,9 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### フィールドを作成
 
-[ プログラムメンバーフィールドの作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトに 1 つ以上のカスタムフィールドを作成します。 このエンドポイントは、[Marketo EngageUI で使用できる ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields) 機能と同等の機能を提供します。 このエンドポイントを使用して最大 20 個のカスタムフィールドを作成できます。
+[ プログラムメンバーフィールドの作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトに 1 つ以上のカスタムフィールドを作成します。 このエンドポイントは、[Marketo EngageUI で使用できる ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields) 機能と同等の機能を提供します。 このエンドポイントを使用して最大 20 個のカスタムフィールドを作成できます。
 
-API を使用してMarketo Engageの実稼動インスタンスで作成する各フィールドについては、慎重に検討してください。 作成したフィールドは削除できません（[ 非表示にしかできません ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)）。 未使用のフィールドの急増は望ましくない手法であり、インスタンスが煩雑になります。
+API を使用してMarketo Engageの実稼動インスタンスで作成する各フィールドについては、慎重に検討してください。 作成したフィールドは削除できません（[ 非表示にしかできません ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)）。 未使用のフィールドの急増は望ましくない手法であり、インスタンスが煩雑になります。
 
 必須の `input` パラメーターは、プログラムメンバーフィールドオブジェクトの配列です。 各オブジェクトには、1 つ以上の属性が含まれます。 必須の属性は、フィールドの UI 表示名、フィールドの API 名、フィールドタイプにそれぞれ対応する `displayName`、`name`、`dataType` です。 オプションで、`description`、`isHidden`、`isHtmlEncodingInEmail`、`isSensitive` を指定できます。
 

@@ -14,9 +14,9 @@ ht-degree: 7%
 
 Marketoでは、Webhook を使用してサードパーティの web サービスと通信できます。 Webhook では、GETまたはPOST HTTP 動詞を使用して、特定の URL からデータをプッシュまたは取得できます。 Webhook のアプリケーション内作成と、スマートキャンペーンに追加する方法について詳しくは、次の記事を参照してください。
 
-- [Web フックの作成](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
-- [Webhook を呼び出す ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
-- [スマートキャンペーンでの web フックの使用](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
+- [Web フックの作成](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
+- [Webhook を呼び出す ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
+- [スマートキャンペーンでの web フックの使用](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
 
 個々の Webhook には、次のプロパティがあります。
 
@@ -33,9 +33,9 @@ Marketoでは、Webhook を使用してサードパーティの web サービス
 
 Webhook のすべての送信フィールド（URL、テンプレート、カスタムヘッダー）は、フローステップの同じコンテキストでトークンのコンテンツを入力します。 つまり、リードトークンとシステムトークンは常に使用できますが、トリガートークン、キャンペーントークン、プログラムトークンはそれぞれのスコープで使用できます。 トークンに関する記事を参照してください。
 
-- [トークンの概要](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
-- [ システムトークンの用語集 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
-- [注目のアクションのトークン](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
+- [トークンの概要](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
+- [ システムトークンの用語集 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
+- [注目のアクションのトークン](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
 
 よくあるケースは、プログラムまたはキャンペーンがサードパーティのリソースに明示的にマッピングされる場合です。 ID は、プログラムレベルで `My Token` として設定し、トークンとして Webhook リクエストに渡すことができます。
 

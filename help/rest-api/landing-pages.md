@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-詳しくは、「ガイド付きランディングページテンプレートの作成 [ ドキュメントの「編集可能な変数」の節を参照し ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) ください。
+詳しくは、「ガイド付きランディングページテンプレートの作成 [ ドキュメントの「編集可能な変数」の節を参照し ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) ください。
 
 ### クエリ
 

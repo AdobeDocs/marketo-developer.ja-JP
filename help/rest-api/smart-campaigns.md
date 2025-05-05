@@ -426,7 +426,7 @@ POST /rest/v1/campaigns/{id}/schedule.json
 
 このエンドポイントには、パスパラメーターとして campaign `id` と、リード ID を含む `leads` の整数配列パラメーターが必要です。 1 回の呼び出しでは最大 100 件のリードを使用できます。
 
-オプションで、`tokens` 配列パラメーターを使用して、キャンペーンの親プログラムに対してローカルのマイトークンを上書きできます。 `tokens` は最大 100 個のトークンを受け入れます。 各 `tokens` 配列項目には、名前と値のペアが含まれます。 トークン名は、「{{my.name}}」の形式にする必要があります。 [ システムトークンをメール内のリンクとして追加 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) を使用して「viewAsWebpageLink」システムトークンを追加するアプローチを使用する場合、`tokens` を使用して上書きすることはできません。 代わりに、`tokens` を使用して「viewAsWebPageLink」を上書きできる [ メールに web ページリンクとして表示を追加 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) アプローチを使用します。
+オプションで、`tokens` 配列パラメーターを使用して、キャンペーンの親プログラムに対してローカルのマイトークンを上書きできます。 `tokens` は最大 100 個のトークンを受け入れます。 各 `tokens` 配列項目には、名前と値のペアが含まれます。 トークン名は、「{{my.name}}」の形式にする必要があります。 [ システムトークンをメール内のリンクとして追加 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) を使用して「viewAsWebpageLink」システムトークンを追加するアプローチを使用する場合、`tokens` を使用して上書きすることはできません。 代わりに、`tokens` を使用して「viewAsWebPageLink」を上書きできる [ メールに web ページリンクとして表示を追加 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) アプローチを使用します。
 
 `leads` パラメーターと `tokens` パラメーターは、application/json としてリクエスト本文に渡されます。
 

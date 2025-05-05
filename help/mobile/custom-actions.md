@@ -14,7 +14,7 @@ ht-degree: 4%
 
 カスタムアクションを送信することで、ユーザーインタラクションを追跡できます。 モバイルアプリがMarketo SDK を呼び出してカスタムアクションを送信すると、カスタムアクションは最初にデバイスに保存されます。 次に、Marketo SDK は、カスタムアクションを送信する前に、適切なインターネット接続があるかどうかを確認します。 その結果、カスタムアクションが送信されてからMarketoが受信されるまでの間に遅延が生じる可能性があります。
 
-カスタムアクションは、スマートキャンペーンのトリガーおよびフィルターとして使用できます。 詳しくは、[ モバイルアプリのアクティビティ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns) を参照してください。
+カスタムアクションは、スマートキャンペーンのトリガーおよびフィルターとして使用できます。 詳しくは、[ モバイルアプリのアクティビティ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns) を参照してください。
 
 ## iOSでのカスタムアクションの送信
 

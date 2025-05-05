@@ -31,7 +31,7 @@ Marketo EngageインスタンスでネイティブのSFDCまたは MS Dynamics C
 
 リードは、いくつかの方法で組織とやり取りします。 リードは、会社の web サイトのページを訪問したり、展示会に出席したり、ホワイトペーパーをダウンロードしたりできます。 これらの各アクションをMarketo内で取り込むことで、マーケターがリードが行ったアクティビティとそのタイミングをより深く理解し、タイムリーで関連性の高いコミュニケーションを調整できるようになります。 アクティビティは、常に leadId によってリードに関連付けられます。
 
-独自のカスタムアクティビティを定義できます。 カスタムアクティビティを作成して公開したら、Marketo API を介してカスタムアクティビティを追加できます。 カスタムアクティビティの詳細については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities) を参照してください。
+独自のカスタムアクティビティを定義できます。 カスタムアクティビティを作成して公開したら、Marketo API を介してカスタムアクティビティを追加できます。 カスタムアクティビティの詳細については、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities) を参照してください。
 
 関連する API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities)、[JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
@@ -49,7 +49,7 @@ Marketo EngageインスタンスでネイティブのSFDCまたは MS Dynamics C
 
 Marketo管理者は、Marketo ユーザーがプログラムを作成する際に選択可能な必須およびオプションのタグタイプを作成できます。 これらの各タグタイプの取り得る値はユーザーが定義し、レポート目的で会社がカスタムタグをどのように使用したいかを反映します。
 
-例えば、複数のタグ値（北東部、南東部など）を持つカスタム「地域」タグタイプを作成して、最もリードを生成している地域を分析できる場合があります。 例えば、「所有者」タグタイプを作成して、リードやオポチュニティの作成に最も影響を与えているプログラム所有者（Maria、David、John など）を評価および理解できます。 タグについて詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags) を参照してください。
+例えば、複数のタグ値（北東部、南東部など）を持つカスタム「地域」タグタイプを作成して、最もリードを生成している地域を分析できる場合があります。 例えば、「所有者」タグタイプを作成して、リードやオポチュニティの作成に最も影響を与えているプログラム所有者（Maria、David、John など）を評価および理解できます。 タグについて詳しくは、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags) を参照してください。
 
 関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/)
 
@@ -85,7 +85,7 @@ Assetsは、プログラム内で使用されるランディングページ、�
 
 特定のキャンペーンフォルダーまたはプログラム内でローカルに作成されたマイトークンは、その特定のプログラムまたはキャンペーンフォルダー（ローカル）で使用できます。 キャンペーンフォルダーレベルで作成されたマイトークンは、そのキャンペーンフォルダー内に含まれるすべてのプログラムで使用できます（継承）。 プログラムレベルでカスタム値によって変更されたマイトークンは、プログラムフォルダーレベル（上書き）でのトークンの親マイトークン値を変更しません。
 
-マイトークンは、命名規則 {{my.My Token}} を使用し、トークン名の先頭に「my」という単語を追加します。 例えば、EventDate という名前で Date タイプ My Token を作成した場合、トークンの名前は {{my.EventDate}} になります。 マイトークンについて詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program) を参照してください。
+マイトークンは、命名規則 {{my.My Token}} を使用し、トークン名の先頭に「my」という単語を追加します。 例えば、EventDate という名前で Date タイプ My Token を作成した場合、トークンの名前は {{my.EventDate}} になります。 マイトークンについて詳しくは、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program) を参照してください。
 
 関連する API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)
 

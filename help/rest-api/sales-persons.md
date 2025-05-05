@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [ 販売担当者エンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-営業担当者 API は、[SFDC 同期 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) または [Microsoft Dynamics 同期 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) が有効になっている購読に対する読み取り専用アクセスです。 営業担当者は、引合レコードの販売所有者である個人レコードのタイプです。 これらは、各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられています。 設定された externalSalesPersonId フィールドによってリードが販売担当者に関連付けられると、対応するリードオーナー検索フィールドにMarketoのそのリードレコードが設定され、対応するフィルターおよびトークンを使用できるようになります。
+営業担当者 API は、[SFDC 同期 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) または [Microsoft Dynamics 同期 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) が有効になっている購読に対する読み取り専用アクセスです。 営業担当者は、引合レコードの販売所有者である個人レコードのタイプです。 これらは、各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられています。 設定された externalSalesPersonId フィールドによってリードが販売担当者に関連付けられると、対応するリードオーナー検索フィールドにMarketoのそのリードレコードが設定され、対応するフィルターおよびトークンを使用できるようになります。
 
 販売担当者は、[ 同期リード ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、リードレコードに関連付けられます。
 

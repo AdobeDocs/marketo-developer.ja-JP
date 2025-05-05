@@ -34,4 +34,4 @@ Marketoは、Marketo Mobile SDK がMarketo Platform で初期化された後に�
 
 タップのアクティビティを追跡したり、タップ数に基づいてベース表示頻度を使用したりするには、必ず「解除」以外のアクションをプライマリボタンまたはセカンダリボタンのいずれかに割り当ててください。
 
-詳しくは、製品ドキュメントの [ アプリ内メッセージ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message) の節を参照してください。
+詳しくは、製品ドキュメントの [ アプリ内メッセージ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message) の節を参照してください。

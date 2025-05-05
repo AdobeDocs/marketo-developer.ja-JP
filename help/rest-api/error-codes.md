@@ -110,7 +110,7 @@ GETリクエストの URI が 8 KB を超える場合は 414 が返されます�
     <tr>
       <td><a name="603"></a>603</td>
       <td>アクセス拒否</td>
-      <td>認証は成功しましたが、ユーザーにこの API を呼び出すのに十分な権限がありません。 [Additional permissions] （custom-services.md）を user role に割り当てる必要がある場合や、<a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP ベースの API アクセスの許可リスト</a> を有効にする場合があります。</td>
+      <td>認証は成功しましたが、ユーザーにこの API を呼び出すのに十分な権限がありません。 [Additional permissions] （custom-services.md）を user role に割り当てる必要がある場合や、<a href="https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP ベースの API アクセスの許可リスト</a> を有効にする場合があります。</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>

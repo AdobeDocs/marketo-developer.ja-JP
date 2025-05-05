@@ -235,7 +235,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>isExhausted</td>
       <td>ブール値</td>
-      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content"> コンテンツを使い果たした人物 </a> のプログラムメンバーシップレコードをフィルタリングするために使用するブール値を受け入れます。</td>
+      <td><a href="https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content"> コンテンツを使い果たした人物 </a> のプログラムメンバーシップレコードをフィルタリングするために使用するブール値を受け入れます。</td>
     </tr>
     <tr>
       <td>nurtureCadence</td>

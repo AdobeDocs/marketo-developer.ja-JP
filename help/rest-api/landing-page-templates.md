@@ -18,7 +18,7 @@ ht-degree: 2%
 
 ## テンプレートタイプ
 
-Marketoには、自由形式とガイド付きの 2 種類のランディングページテンプレートがあります。 自由形式のランディングページテンプレートは、そのテンプレートから派生したページに対して、大まかに構造化された編集エクスペリエンスを提供します。 ガイド付きテンプレートは、要素のタイプと場所をテンプレートレベルで制限できる、高度に構造化されたエクスペリエンスを提供します。 違いについて詳しくは、[ このドキュメント ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages) を参照してください。
+Marketoには、自由形式とガイド付きの 2 種類のランディングページテンプレートがあります。 自由形式のランディングページテンプレートは、そのテンプレートから派生したページに対して、大まかに構造化された編集エクスペリエンスを提供します。 ガイド付きテンプレートは、要素のタイプと場所をテンプレートレベルで制限できる、高度に構造化されたエクスペリエンスを提供します。 違いについて詳しくは、[ このドキュメント ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages) を参照してください。
 
 ## クエリ
 
@@ -168,8 +168,8 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 テンプレートが承認されるには、そのタイプのルール（自由形式のガイド付き）に従う必要があります。 それぞれのタイプのテンプレートを作成および承認するための要件について詳しくは、それぞれの作成ドキュメントを参照してください。
 
 - [ 自由形式のランディングページテンプレート ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [ ガイド付きランディングページテンプレート ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [ ガイド付きテンプレート ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list) 例
+- [ ガイド付きランディングページテンプレート ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [ ガイド付きテンプレート ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list) 例
 
 ## 削除
 

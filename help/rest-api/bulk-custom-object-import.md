@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## カスタムオブジェクトの例
 
-一括 API を使用する前に、まずMarketo管理 UI を使用して [ カスタムオブジェクトを作成 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects) する必要があります。 例えば、「Color」、「Make」、「Model」、「VIN」の各フィールドを持つ「Car」カスタムオブジェクトを作成したとします。 カスタムオブジェクトを表示する管理 UI 画面を以下に示します。 重複排除に VIN フィールドを使用したことがわかります。 API 名は、API 関連の一括エンドポイントを呼び出す際に使用する必要があるので、ハイライト表示されています。
+一括 API を使用する前に、まずMarketo管理 UI を使用して [ カスタムオブジェクトを作成 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects) する必要があります。 例えば、「Color」、「Make」、「Model」、「VIN」の各フィールドを持つ「Car」カスタムオブジェクトを作成したとします。 カスタムオブジェクトを表示する管理 UI 画面を以下に示します。 重複排除に VIN フィールドを使用したことがわかります。 API 名は、API 関連の一括エンドポイントを呼び出す際に使用する必要があるので、ハイライト表示されています。
 
 ![ カスタム オブジェクトの挿入 ](assets/bulk-insert-co-car-1.png)
 

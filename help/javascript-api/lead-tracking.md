@@ -100,7 +100,7 @@ Munchkin cookie は、第 2 レベルドメイン（`example.com`）ごとに固
 
 ## ベータ版
 
-ランディングページのMunchkin ベータ版チャネルをオプトインするには、[ 管理者/宝箱 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) メニューに移動し、「ランディングページのMunchkin Beta」設定を有効にします。 これにより、**[!UICONTROL 管理者]** -> に新しいコードスニペットが提供されます。  **[!UICONTROL Munchkin]** メニューを使用すると、外部サイトでベータ版を使用できます。
+ランディングページのMunchkin ベータ版チャネルをオプトインするには、[ 管理者/宝箱 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) メニューに移動し、「ランディングページのMunchkin Beta」設定を有効にします。 これにより、**[!UICONTROL 管理者]** -> に新しいコードスニペットが提供されます。  **[!UICONTROL Munchkin]** メニューを使用すると、外部サイトでベータ版を使用できます。
 
 ## オプトアウト
 

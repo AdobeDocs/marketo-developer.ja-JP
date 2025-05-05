@@ -14,13 +14,13 @@ ht-degree: 2%
 
 [ メールエンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails) メールアセットの操作に使用できる REST エンドポイントの完全なセットが提供されています。
 
-注意：[Marketo予測コンテンツ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content) を使用している場合、予測コンテンツを含むメールを参照しているエンドポイント [ メールコンテンツの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET)、[ メールコンテンツの更新セクション ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST)、[ メールドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST) は失敗します。 この呼び出しは、709 エラーコードと、対応するエラーメッセージを返します。
+注意：[Marketo予測コンテンツ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content) を使用している場合、予測コンテンツを含むメールを参照しているエンドポイント [ メールコンテンツの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET)、[ メールコンテンツの更新セクション ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST)、[ メールドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST) は失敗します。 この呼び出しは、709 エラーコードと、対応するエラーメッセージを返します。
 
 ## クエリ
 
 メールのクエリパターンはテンプレートのクエリパターンと同じであり、クエリ [ID 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET)、[ 名前別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET) および [ 閲覧別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) が可能なほか、参照 API と名前別 API を使用してフォルダーに基づいてフィルタリングできます。
 
-メモ：メールが [A/B テスト ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test) を使用するメールプログラムに含まれている場合、そのメールは、[ID でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET)、[ 名前でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET)、[ メールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) のエンドポイントを使用したクエリでは使用できません。 呼び出しは成功を示しますが、「指定された検索条件でアセットが見つかりませんでした」という警告が含まれます。
+メモ：メールが [A/B テスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test) を使用するメールプログラムに含まれている場合、そのメールは、[ID でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET)、[ 名前でメールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET)、[ メールを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) のエンドポイントを使用したクエリでは使用できません。 呼び出しは成功を示しますが、「指定された検索条件でアセットが見つかりませんでした」という警告が含まれます。
 
 ### ID 別
 
@@ -484,7 +484,7 @@ type=Text&value=<h1>Hello World!</h1>&textValue=Hello World!
 
 ## モジュール
 
-メールエディター 1.0 のモジュールは、テンプレートで定義されたメールのセクションです。モジュールには、要素、変数、その他のHTMLコンテンツを任意に組み合わせて含めることができます。詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules) を参照してください。 Marketoは、メール内のモジュールを管理するための一連の API を提供します。 HTTP POST方式を必要とするモジュール関連のエンドポイントの場合、本文は（JSON ではなく）「application/x-www-form-urlencoded」としてフォーマットされます。
+メールエディター 1.0 のモジュールは、テンプレートで定義されたメールのセクションです。モジュールには、要素、変数、その他のHTMLコンテンツを任意に組み合わせて含めることができます。詳しくは、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules) を参照してください。 Marketoは、メール内のモジュールを管理するための一連の API を提供します。 HTTP POST方式を必要とするモジュール関連のエンドポイントの場合、本文は（JSON ではなく）「application/x-www-form-urlencoded」としてフォーマットされます。
 
 モジュール関連のエンドポイントのほとんどは、パスパラメーターとして「moduleId」を必要とします。 これは、モジュールを説明する文字列です。 moduleId は、[ メールコンテンツを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) エンドポイントによって「htmlId」属性として返されます（以下の [ クエリ ](#modules_query) の節を参照）。
 
@@ -856,7 +856,7 @@ name=MarketoVideo
 
 ## 変数
 
-メールエディター 1.0 では、変数を使用してメール内の要素の値が格納されます。 各変数は、（こちら [ の説明に従って、Marketo固有の構文をHTMLに追加することで定義され ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables) す。 Marketoは、メール内の変数を管理するための一連の API を提供します。
+メールエディター 1.0 では、変数を使用してメール内の要素の値が格納されます。 各変数は、（こちら [ の説明に従って、Marketo固有の構文をHTMLに追加することで定義され ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables) す。 Marketoは、メール内の変数を管理するための一連の API を提供します。
 
 ### クエリ
 

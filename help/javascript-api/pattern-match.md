@@ -14,7 +14,7 @@ ht-degree: 11%
 
 RTP は、パターンが特定の文字列に一致するかどうかを確認するユーティリティ関数を公開します。 ユーティリティは、一致があるかどうかに関する表示を返すので、非同期では使用できません。
 
-User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
+User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 
 ## 使用方法
 

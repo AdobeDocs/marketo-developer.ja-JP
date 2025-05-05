@@ -21,7 +21,7 @@ ht-degree: 5%
 1. ページ本文内
    1. テンプレートを表示する場所にテンプレートタグ（div クラス）を配置します
 
-詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media) を参照してください。
+詳しくは、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media) を参照してください。
 
 ## テンプレートタグ
 

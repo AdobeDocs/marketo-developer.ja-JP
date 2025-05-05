@@ -14,7 +14,7 @@ ht-degree: 6%
 
 このメソッドは、トラッキングとリアルタイムパーソナライゼーション用のカスタムイベントを送信します。 これを使用して、サードパーティデータを送信したり、訪問者行動に基づいて独自のカスタムイベントをトリガーしたりできます。 カスタムデータイベントは、訪問者のセッション内で 1 回カウントされます。
 
-User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
+User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
 
 | パラメーター | オプション/必須 | タイプ | 説明 |
 |---|---|---|---|

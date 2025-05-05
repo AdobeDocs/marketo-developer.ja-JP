@@ -14,7 +14,7 @@ ht-degree: 13%
 
 グローバル rtp オブジェクトの特定のステートに対してトリガー関数を追加します。
 
-User Context API を使用する前に、Web Personalizationのユーザーであり、サイトに [RTP タグがデプロイされている ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) 必要があります。
+User Context API を使用する前に、Web Personalizationのユーザーであり、サイトに [RTP タグがデプロイされている ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) 必要があります。
 
 ## 使用方法
 

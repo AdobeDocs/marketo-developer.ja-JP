@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [ メールテンプレートエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
 
-メールテンプレートは、Marketoで新しいメールを作成するたびに使用されます。  HTMLの置き換えを通じてメールをテンプレートからリンク解除することもできますが、メールは最初にテンプレートをベースとして作成する必要があります。  テンプレートは、名前や説明などのメタデータを含む、純粋なHTMLドキュメントとしてMarketoで作成されます。  コンテンツに関する制限はほとんどありませんが、テンプレートのHTMLが有効で、要件（ここでは概要 [ に従った編集可能なセクションが少なくとも 1 つ含まれている必要があ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0) ます。
+メールテンプレートは、Marketoで新しいメールを作成するたびに使用されます。  HTMLの置き換えを通じてメールをテンプレートからリンク解除することもできますが、メールは最初にテンプレートをベースとして作成する必要があります。  テンプレートは、名前や説明などのメタデータを含む、純粋なHTMLドキュメントとしてMarketoで作成されます。  コンテンツに関する制限はほとんどありませんが、テンプレートのHTMLが有効で、要件（ここでは概要 [ に従った編集可能なセクションが少なくとも 1 つ含まれている必要があ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0) ます。
 
 ## クエリ
 

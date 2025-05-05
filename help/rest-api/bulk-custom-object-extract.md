@@ -16,7 +16,7 @@ ht-degree: 1%
 
 REST API の一括カスタムオブジェクト抽出セットは、Marketoから大きなカスタムオブジェクトレコードセットを取得するためのプログラムによるインターフェイスを提供します。 ETL、データウェアハウスおよびアーカイブの目的で、Marketoと 1 つ以上の外部システムとの間でデータを継続的にやり取りする必要があるユースケースでは、このインターフェイスをお勧めします。
 
-この API は、リードに直接リンクされた第 1 レベルのMarketo カスタムオブジェクトレコードの書き出しをサポートします。 カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。 リストのリードごとに、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが行としてエクスポートファイルに書き込まれます。 カスタムオブジェクトデータは、[Marketo UI のリードの詳細ページの「カスタムオブジェクト」タブ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects) で表示できます。
+この API は、リードに直接リンクされた第 1 レベルのMarketo カスタムオブジェクトレコードの書き出しをサポートします。 カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。 リストのリードごとに、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが行としてエクスポートファイルに書き込まれます。 カスタムオブジェクトデータは、[Marketo UI のリードの詳細ページの「カスタムオブジェクト」タブ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects) で表示できます。
 
 ## 権限
 

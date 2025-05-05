@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Marketoは、スマートリストで操作を実行するための一連の REST API を備えています。 これらの API は、クエリ、削除、複製のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
-メモ：これらの API は、ユーザー作成のスマートリストでのみサポートされます。 [ 組み込み/システムのスマートリスト ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists) には使用できません。
+メモ：これらの API は、ユーザー作成のスマートリストでのみサポートされます。 [ 組み込み/システムのスマートリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists) には使用できません。
 
 ## クエリ
 

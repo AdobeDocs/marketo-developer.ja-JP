@@ -28,7 +28,7 @@ Marketo API の一般的なユースケースは、[Request Campaign](https://de
 
 ![RequestCampaign-Approve-Draft](assets/request-campaign-approve-draft.png)
 
-キャンペーンの作成を初めて行う場合は、[ 新しいスマートキャンペーンの作成 ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html) の記事を参照してください。 キャンペーンを作成したら、次の手順を実行する必要があります。 「キャンペーンがリクエストされました」トリガーでスマートリストを設定します。
+キャンペーンの作成を初めて行う場合は、[ 新しいスマートキャンペーンの作成 ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ja) の記事を参照してください。 キャンペーンを作成したら、次の手順を実行する必要があります。 「キャンペーンがリクエストされました」トリガーでスマートリストを設定します。
 
 ![Request-Campaign-Smart-List](assets/request-campaign-smart-list.png)
 
@@ -182,7 +182,7 @@ public class RequestCampaign {
 
 ### メールの作成
 
-コンテンツをカスタマイズするには、まずMarketoで [ プログラム ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) と [ メール ](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja) を設定する必要があります。 カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。 簡単にするために、この例では 1 つのトークンのみを使用していますが、送信元メール、送信者名、返信先またはメール内の任意のコンテンツで、メール内の任意の数のトークンを置き換えることができます。 置き換える 1 つのトークンリッチテキストを作成して、「bodyReplacement」と呼びましょう。 リッチテキストを使用すると、トークン内の任意のコンテンツを入力したい任意のHTMLに置き換えることができます。
+コンテンツをカスタマイズするには、まずMarketoで [ プログラム ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ja) と [ メール ](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja) を設定する必要があります。 カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。 簡単にするために、この例では 1 つのトークンのみを使用していますが、送信元メール、送信者名、返信先またはメール内の任意のコンテンツで、メール内の任意の数のトークンを置き換えることができます。 置き換える 1 つのトークンリッチテキストを作成して、「bodyReplacement」と呼びましょう。 リッチテキストを使用すると、トークン内の任意のコンテンツを入力したい任意のHTMLに置き換えることができます。
 
 ![New-Token](assets/New-Token.png)
 

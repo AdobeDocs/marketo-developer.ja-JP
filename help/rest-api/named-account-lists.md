@@ -14,7 +14,7 @@ ht-degree: 3%
 
 [ 指定顧客リストのエンドポイントリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketoの [ 名前付きアカウントリスト ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists) は、名前付きアカウントのコレクションを表します。 カテゴリ化、データ強化、スマートキャンペーンフィルタリングなど、様々なケースで使用できます。 指定アカウントリスト API を使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
+Marketoの [ 名前付きアカウントリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists) は、名前付きアカウントのコレクションを表します。 カテゴリ化、データ強化、スマートキャンペーンフィルタリングなど、様々なケースで使用できます。 指定アカウントリスト API を使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
 `Content`
 
 ## 権限
