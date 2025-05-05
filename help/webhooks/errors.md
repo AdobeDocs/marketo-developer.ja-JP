@@ -25,7 +25,7 @@ Marketoが値をフィールドにマッピングし直すには、webhook 応�
 
 ## Webhook エラーのキャッチ
 
-Webhook からのエラーは、[!UICONTROL Webhook は呼び出されます ]トリガーでキャッチおよび処理できます。
+Webhook からのエラーは、[!UICONTROL Webhook は呼び出されます &#x200B;]トリガーでキャッチおよび処理できます。
 
 ![Webhook が呼び出される ](assets/webhook-called.png)
 

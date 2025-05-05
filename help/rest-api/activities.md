@@ -450,7 +450,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 ### 属性を作成
 
-属性の作成には、必須の `apiName` パスパラメーターを使用します。 `name` パラメーターと `dataType` パラメーターも必須です。`isPrimary`` The description and` パラメーターはオプションです。
+属性の作成には、必須の `apiName` パスパラメーターを使用します。 `name` パラメーターと `dataType` パラメーターも必須です。`isPrimary` ` The description and` パラメーターはオプションです。
 
 ```
 POST /rest/v1/activities/external/type/{apiName}/attributes/create.json

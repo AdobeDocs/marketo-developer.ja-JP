@@ -12,13 +12,13 @@ ht-degree: 3%
 
 # REST API への移行
 
-Marketo EngageSOAP API は、2025 年 10 月 31 日（PT）以降に廃止されます。 サービスの中断を避けるために、SOAP API を使用するすべての既存の統合は、この日までに廃止するか ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api)[Marketo Engage REST API} に移行する必要があります。
+Marketo EngageSOAP API は、2025 年 10 月 31 日（PT）以降に廃止されます。 サービスの中断を避けるために、SOAP API を使用するすべての既存の統合は、この日までに廃止するか [&#128279;](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api)Marketo Engage REST API&rbrace; に移行する必要があります。
 
 ## 移行
 
 SOAP API は、[REST AP](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api)I と比較して、限られた範囲のユースケースをサポートしています。ユースケースをマッピングするエンドポイントを決定する際は、[Marketo統合のベストプラクティスに従う必要があります ](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)
 
-[ リファレンスアーキテクチャ ](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/reference-architectures) は、{CRM 同期 [ および ](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=en)4}Data Warehouseエクスポート ](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=en) のユースケースで利用できます。[
+[ リファレンスアーキテクチャ ](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/reference-architectures) は、{CRM 同期 [ および ](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=en)4}Data Warehouseエクスポート [&#128279;](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=en) のユースケースで利用できます。
 
 ## 認証
 
@@ -42,7 +42,7 @@ SOAP API は、リードデータの同期、[Munchkin cookie の関連付け ](
 | [getLead](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/getlead) | [ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadByIdUsingGET)、[ フィルタータイプでリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET) |
 | [getMultipleLeads](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/getmultipleleads) | [ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadByIdUsingGET)、[ フィルタータイプでリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET)、[ プログラム ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByProgramIdUsingGET)、[ リスト ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByListIdUsingGET)、[ 一括リードエクスポート ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads) |
 | [mergeLeads](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/mergeleads) | [ リードを結合 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/mergeLeadsUsingPOST) |
-| [syncLead](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/synclead) | [ リードを同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncLeadUsingPOST)[ フォームを送信 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/SubmitFormUsingPOST)[ リードを関連付け ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/associateLeadUsingPOST) |
+| [syncLead](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/synclead) | [ リードを同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncLeadUsingPOST) [ フォームを送信 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/SubmitFormUsingPOST) [ リードを関連付け ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/associateLeadUsingPOST) |
 | [syncMultipleLeads](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/syncmultipleleads) | [ リード ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncLeadUsingPOST) 一括読み込み [ 同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads) |
 
 ## M オブジェクト
@@ -86,8 +86,8 @@ REST ドキュメント：
 
 | SOAP メソッド | REST メソッド |
 | --- | --- |
-| [getLeadActivity](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activities/getleadactivity) | [ 一括書き出しアクティビティ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities)[ リードアクティビティの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET) |
-| [getLeadChanges](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activities/getleadchanges) | [ 一括書き出しアクティビティ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities)[ リードの変更を取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadChangesUsingGET) |
+| [getLeadActivity](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activities/getleadactivity) | [ 一括書き出しアクティビティ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities) [ リードアクティビティの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET) |
+| [getLeadChanges](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activities/getleadchanges) | [ 一括書き出しアクティビティ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities) [ リードの変更を取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadChangesUsingGET) |
 
 ## キャンペーン
 
@@ -115,4 +115,4 @@ SOAP API は、カスタムオブジェクトに対して CRUD 操作のみを�
 | --- | --- |
 | [deleteCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/deletecustomobjects) | [ カスタム オブジェクトの削除 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/deleteCustomObjectsUsingPOST) |
 | [getCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/getcustomobjects) | [ カスタムオブジェクトの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getCustomObjectsUsingGET) |
-| [syncCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/synccustomobjects) | [Sync Custom Objects](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncCustomObjectsUsingPOST)[Bulk Import Custom Object](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import) |
+| [syncCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/synccustomobjects) | [Sync Custom Objects](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncCustomObjectsUsingPOST) [Bulk Import Custom Object](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import) |

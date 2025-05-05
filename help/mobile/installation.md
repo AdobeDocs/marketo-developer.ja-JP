@@ -208,7 +208,7 @@ Android アプリ開発者は、この SDK でGoogle[Firebase Cloud Messaging](h
 
 1. Android アプリに最新のMarketo Android SDK を統合します。  手順は、[GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
       1. [Firebase コンソール ](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/) で、「`Add Project`」を選択します。
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択し、「`Add Firebase`」を選択します。
       1. Firebase のスタートアップスクリーンで、「`Add Firebase to your Android App`」を選択します。

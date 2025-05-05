@@ -38,11 +38,11 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![ 新しい役割 ](assets/new-role.png)
 
-ここで、「[!UICONTROL  ユーザー ]」タブに戻り、「**[!UICONTROL 新規ユーザーを招待]**」をクリックします。 ユーザーに API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、「**[!UICONTROL 次へ]**」をクリックします。
+ここで、「[!UICONTROL &#x200B; ユーザー &#x200B;]」タブに戻り、「**[!UICONTROL 新規ユーザーを招待]**」をクリックします。 ユーザーに API ユーザーであることを示すわかりやすい名前とメールアドレスを指定し、「**[!UICONTROL 次へ]**」をクリックします。
 
 ![ 新規ユーザー情報 ](assets/new-user-info.png)
 
-次に、「[!UICONTROL API のみ ]」オプションをオンにし、作成した API の役割をユーザーに付与し、「**[!UICONTROL 次へ]**」をクリックします。
+次に、「[!UICONTROL API のみ &#x200B;]」オプションをオンにし、作成した API の役割をユーザーに付与し、「**[!UICONTROL 次へ]**」をクリックします。
 
 ![新規ユーザー権限](assets/new-user-permissions.png)
 
@@ -50,11 +50,11 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![ 新規ユーザーメッセージ ](assets/new-user-message.png)
 
-次に、[!UICONTROL  管理者 ] メニューに移動し、**[!UICONTROL LaunchPoint]** をクリックします。
+次に、[!UICONTROL &#x200B; 管理者 &#x200B;] メニューに移動し、**[!UICONTROL LaunchPoint]** をクリックします。
 
 ![ ローンチポイント ](assets/admin-launchpoint.png)
 
-**[!UICONTROL 新規]** メニューをクリックし、「**[!UICONTROL 新しいサービス]**」を選択します。 **[!UICONTROL サービスにわかりやすい名前を付け、「サービス]**」ドロップダウンメニューから [!UICONTROL  カスタム ] を選択します。 説明を入力し、「[!UICONTROL API のみのユーザー ]」ドロップダウンメニューから新しいユーザーを選択し、「**[!UICONTROL 作成]**」をクリックします。
+**[!UICONTROL 新規]** メニューをクリックし、「**[!UICONTROL 新しいサービス]**」を選択します。 **[!UICONTROL サービスにわかりやすい名前を付け、「サービス]**」ドロップダウンメニューから [!UICONTROL &#x200B; カスタム &#x200B;] を選択します。 説明を入力し、「[!UICONTROL API のみのユーザー &#x200B;]」ドロップダウンメニューから新しいユーザーを選択し、「**[!UICONTROL 作成]**」をクリックします。
 
 ![ 新しい起動ポイント サービス ](assets/admin-launchpoint-new-service.png)
 
@@ -66,7 +66,7 @@ Marketoへの最初の呼び出しでは、リードレコードを取得しま�
 
 ![Web サービス ](assets/admin-web-services.png)
 
-REST API ボックスで [!UICONTROL  エンドポイント ] を見つけて、今はメモに保存します。
+REST API ボックスで [!UICONTROL &#x200B; エンドポイント &#x200B;] を見つけて、今はメモに保存します。
 
 ![REST エンドポイント ](assets/admin-web-services-rest-endpoint-1.png)
 

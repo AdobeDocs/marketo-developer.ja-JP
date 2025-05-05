@@ -14,9 +14,9 @@ ht-degree: 1%
 
 [ 会社エンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies)
 
-会社は、リードレコードが属する組織を表します。 リードは、「リードを同期」または「リードを一括で読み込み [ エンドポイントを使用して、対応する `externalCompanyId` フィールドに値を入力す ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)[ ことで、会社に追加さ ](bulk-lead-import.md) ます。 リードを会社に追加した後は、その会社からリードを削除することはできません（リードを別の会社に追加する場合を除く）。 会社レコードにリンクされたリードは、値がリード自身のレコードに存在していたかのように、会社レコードから値を直接継承します。
+会社は、リードレコードが属する組織を表します。 リードは、「リードを同期」または「リードを一括で読み込み [ エンドポイントを使用して、対応する `externalCompanyId` フィールドに値を入力す ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) [ ことで、会社に追加さ ](bulk-lead-import.md) ます。 リードを会社に追加した後は、その会社からリードを削除することはできません（リードを別の会社に追加する場合を除く）。 会社レコードにリンクされたリードは、値がリード自身のレコードに存在していたかのように、会社レコードから値を直接継承します。
 
-会社 API は、{SFDC 同期 [ または ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en)2}Microsoft Dynamics 同期 } が有効になっている購読の読み取り専用アクセス ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en) す。[
+会社 API は、{SFDC 同期 [ または ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en)2}Microsoft Dynamics 同期 &rbrace; が有効になっている購読の読み取り専用アクセス [&#128279;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en) す。
 
 ## 説明
 

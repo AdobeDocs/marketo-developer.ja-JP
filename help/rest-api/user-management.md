@@ -20,7 +20,7 @@ Marketoには、Marketo内のユーザーレコードに対して CRUD 操作を
 
 - 認証するアクセストークンを送信するには、HTTP ヘッダーメソッドを使用する必要があります。 アクセストークンをクエリ文字列パラメーターとして渡すことはできません。 認証の詳細については、[ こちら ](authentication.md) を参照してください。
 - REST API 用の [ カスタムサービス ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api) のユーザーの役割を作成する場合は、2 つの異なるグループから役割の権限を選択する必要があります。
-   1. 「管理者にアクセス ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループからの「ユーザーにアクセス [ 権限
+   1. 「管理者にアクセス [&#128279;](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループからの「ユーザーにアクセス  権限
    1. [Access API](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループの「User Management Api へのアクセス」
 - 応答本文には、呼び出しの成功または失敗を示す「success」ブール値属性が含まれていません。 代わりに、HTTP 応答ステータスコードを評価する必要があります。 呼び出しが成功した場合は、200 ステータスコードが返されます。 呼び出しが失敗した場合は、200 レベル以外のステータスコードが返され、応答本文には、エラーコードと説明的なエラーメッセージを含む標準の「エラー」配列が含まれます。
 - 日時文字列の形式は `yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm` です。 これは、属性 `createdAt`、`updatedAt`、`expiresAt` に適用されます。

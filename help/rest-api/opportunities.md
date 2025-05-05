@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Marketoは、商談レコードの読み取り、書き込み、作成、更新のための API を公開しています。 Marketoでは、商談レコードは中間の商談ロールオブジェクトを通じてリードおよび連絡先レコードにリンクされるので、1 つの商談が多数の個々のリードにリンクされることがあります。  これらのオブジェクトタイプは両方とも API を通じて公開され、ほとんどのリードデータベースオブジェクトタイプと同様に、両方とも対応する Describe 呼び出しを持ち、オブジェクトタイプに関するメタデータを返します。
 
-商談 API は、{SFDC 同期 [ または ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en)2}Microsoft Dynamics 同期 } が有効になっている購読の読み取り専用アクセ ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en) です。[
+商談 API は、{SFDC 同期 [ または ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en)2}Microsoft Dynamics 同期 &rbrace; が有効になっている購読の読み取り専用アクセ [&#128279;](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en) です。
 
 ## 説明
 

@@ -892,7 +892,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 1 対多のカスタムオブジェクト構造の場合、カスタムオブジェクトのリンクフィールドを使用して、標準オブジェクト（リードまたは会社）に接続します。 Marketo製品ドキュメント [ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure) にある自動車オーナーの例を使用して、リードと結び付ける自動車関連情報を含むカスタムオブジェクトを作成します。
 
 1. **Car** オブジェクトを作成する
-1. **Car** オブジェクトにフィールドを追加：**VIN** での重複排除、**リード****/リード ID**へのリンク
+1. **Car** オブジェクトにフィールドを追加：**VIN** での重複排除、**リード**&#x200B;**/リード ID**&#x200B;へのリンク
 1. **Car** オブジェクトを承認
 
 まず、自動車固有の情報を格納するカスタム オブジェクト タイプを作成します。
@@ -996,7 +996,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. にフィールドを追加 **コース :** コース ID **で重複排除**
 1. 承認 **コース**
 1. **登録** ブリッジオブジェクトの作成
-1. **登録：** のフィールドを **登録 ID** に重複排除、**コース****/コース ID**フィールドにリンク、**リード****/リード ID**にリンクを追加
+1. **登録：** のフィールドを **登録 ID** に重複排除、**コース**&#x200B;**/コース ID**&#x200B;フィールドにリンク、**リード**&#x200B;**/リード ID**&#x200B;にリンクを追加
 1. 承認 **登録**
 
 まず、コース固有の情報を含むエッジオブジェクトタイプを作成します。

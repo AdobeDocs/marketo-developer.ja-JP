@@ -25,11 +25,11 @@ Marketo拡張機能 [!DNL Adobe Launch] インストール手順。 プッシュ
 
 ### Swift ブリッジング ヘッダーの設定
 
-1. [!UICONTROL  ファイル ]/[!UICONTROL  新規 ]/[!UICONTROL  ファイル ] に移動し、「**[!UICONTROL ヘッダーファイル]**」を選択します。
+1. [!UICONTROL &#x200B; ファイル &#x200B;]/[!UICONTROL &#x200B; 新規 &#x200B;]/[!UICONTROL &#x200B; ファイル &#x200B;] に移動し、「**[!UICONTROL ヘッダーファイル]**」を選択します。
 
 1. ファイルに「&lt;_ProjectName_>-Bridging-Header」という名前を付けます。
 
-1. [!UICONTROL  プロジェクト ]/[!UICONTROL  ターゲット ]/[!UICONTROL  ビルド設定 ]/[!UICONTROL Swift コンパイラ ]/[!UICONTROL  コード生成 ] に移動します。 「Objective-Bridging」ヘッダーに次のパスを追加します。
+1. [!UICONTROL &#x200B; プロジェクト &#x200B;]/[!UICONTROL &#x200B; ターゲット &#x200B;]/[!UICONTROL &#x200B; ビルド設定 &#x200B;]/[!UICONTROL Swift コンパイラ &#x200B;]/[!UICONTROL &#x200B; コード生成 &#x200B;] に移動します。 「Objective-Bridging」ヘッダーに次のパスを追加します。
 
 `$(PODS_ROOT)/<_ProjectName_>-Bridging-Header.h`
 
@@ -159,16 +159,16 @@ Android アプリ開発者は、この SDK でGoogle[Firebase Cloud Messaging](h
 
 1. Android アプリに最新のMarketo Android SDK を統合します。  手順は、[GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
       1. が含まれる [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のようこそ画面で、「**[!UICONTROL Android アプリに Firebase を追加]**」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
       1. 「**[!UICONTROL 続行]**」を選択し、Android Studio にGoogle Services プラグインを追加する手順の詳細に従います。
 
-   1. **[!UICONTROL プロジェクトの概要]** の [!UICONTROL  プロジェクト設定 ] に移動します
+   1. **[!UICONTROL プロジェクトの概要]** の [!UICONTROL &#x200B; プロジェクト設定 &#x200B;] に移動します
       1. **[!UICONTROL 一般]** タブをクリックします。 `google-services.json` ファイルをダウンロードします。
-      1. 「**[!UICONTROL クラウドメッセージング]**」タブをクリックします。 [!UICONTROL  サーバーキー ] と [!UICONTROL  送信者 ID] をコピーします。 これらの [!UICONTROL  サーバーキー ] と [!UICONTROL  送信者 ID] をMarketoに提供します。
+      1. 「**[!UICONTROL クラウドメッセージング]**」タブをクリックします。 [!UICONTROL &#x200B; サーバーキー &#x200B;] と [!UICONTROL &#x200B; 送信者 ID] をコピーします。 これらの [!UICONTROL &#x200B; サーバーキー &#x200B;] と [!UICONTROL &#x200B; 送信者 ID] をMarketoに提供します。
    1. Android アプリでの FCM の変更
       1. Android Studio のプロジェクトビューに切り替えて、プロジェクトのルートディレクトリを表示します
          1. ダウンロードした `google-services.json` ファイルをAndroid アプリモジュールのルートディレクトリに移動します。

@@ -40,6 +40,6 @@ WSDL で定義されているエンドポイントを使用しないでくださ
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 適切な [!UICONTROL  暗号化キー ] を設定し、「**[!UICONTROL 変更を保存]**」をクリックして、SOAP API [!UICONTROL  エンドポイント ]、[!UICONTROL  ユーザー ID]、[!UICONTROL  暗号化キー ] の値を使用して、各SOAP API 呼び出しに正しい [ 認証署名 ](authentication-signature.md) を生成します。
+1. 適切な [!UICONTROL &#x200B; 暗号化キー &#x200B;] を設定し、「**[!UICONTROL 変更を保存]**」をクリックして、SOAP API [!UICONTROL &#x200B; エンドポイント &#x200B;]、[!UICONTROL &#x200B; ユーザー ID]、[!UICONTROL &#x200B; 暗号化キー &#x200B;] の値を使用して、各SOAP API 呼び出しに正しい [ 認証署名 ](authentication-signature.md) を生成します。
 
 ![admin-web-services3](assets/admin-web-services3.png)

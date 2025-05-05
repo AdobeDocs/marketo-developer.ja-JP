@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # 応答マッピング
 
-Marketoは、Webhook で受信した 2 つのコンテンツタイプのデータを変換し、これらの値をリードフィールド（JSON および XML）に返すことができます。 Marketo フィールドパラメーターは、常にフィールドの ](../rest-api/fields.md)0}SOAP API 名 } を使用します。 [各 Webhook には、無制限の数の応答マッピングがある可能性があります。これらは、Webhook の応答マッピングペインの「[!UICONTROL  編集 ]」ボタンをクリックして追加および編集します。
+Marketoは、Webhook で受信した 2 つのコンテンツタイプのデータを変換し、これらの値をリードフィールド（JSON および XML）に返すことができます。 Marketo フィールドパラメーターは、常にフィールドの [&#128279;](../rest-api/fields.md)0&rbrace;SOAP API 名 &rbrace; を使用します。 各 Webhook には、無制限の数の応答マッピングがある可能性があります。これらは、Webhook の応答マッピングペインの「[!UICONTROL &#x200B; 編集 &#x200B;]」ボタンをクリックして追加および編集します。
 
 ![Response-Mapping](assets/response-mapping.png)
 
