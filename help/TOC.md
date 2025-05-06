@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: e2e45c0dfa55966aeaa11c0ecf5bfcff01bbaf81
 workflow-type: tm+mt
-source-wordcount: '247'
-ht-degree: 91%
+source-wordcount: '249'
+ht-degree: 90%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 91%
    - [Forms API リファレンス](javascript-api/forms-api-reference.md)
    - [訪問者データの取得](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
-   - リード追跡 {#leadtracking}
+   - リードトラッキング {#leadtracking}
       - [リードトラッキング](javascript-api/lead-tracking.md)
       - [設定](javascript-api/configuration.md)
       - [Munchkin API リファレンス](javascript-api/api-reference.md)
@@ -51,7 +51,7 @@ ht-degree: 91%
 - REST{#rest}
    - [REST API の概要](rest-api/rest-api.md)
    - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
-   - Assets {#assets}
+   - アセット {#assets}
       - [アセット](rest-api/assets.md)
       - [動的コンテンツ](rest-api/dynamic-content.md)
       - [メール](rest-api/emails.md)
@@ -128,7 +128,7 @@ ht-degree: 91%
       - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
       - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)
    - [エラーコード](soap-api/error-codes.md)
-   - リード数 {#leads}
+   - リード {#leads}
       - [[!DNL getLead]](soap-api/getlead.md)
       - [[!DNL getMultipleLeads]](soap-api/getmultipleleads.md)
       - [[!DNL mergeLeads]](soap-api/mergeleads.md)
@@ -153,7 +153,7 @@ ht-degree: 91%
       - [[!DNL importToList]](soap-api/importtolist.md)
       - [[!DNL listOperation]](soap-api/listoperation.md)
    - [ストリーム位置](soap-api/stream-position.md)
-- Webhook {#webhooks}
+- Web フック {#webhooks}
    - [エラー](webhooks/errors.md)
    - [応答マッピング](webhooks/response-mappings.md)
    - [Web フック](webhooks/webhooks.md)
@@ -163,3 +163,4 @@ ht-degree: 91%
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローの手順](self-service-flow-steps.md)
+- [ブログアーカイブ](blog.md)
