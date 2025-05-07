@@ -3,9 +3,9 @@ title: 一括アクティビティ抽出
 feature: REST API
 description: Marketoからのアクティビティデータをバッチ処理します。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: a5b855691e7fb9e628e2d68fd14a8a6c689d6750
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1332'
 ht-degree: 7%
 
 ---
@@ -104,7 +104,7 @@ REST API の一括アクティビティ抽出セットは、Marketoから大量�
 | filter | Array[Object] | はい | フィルターの配列を受け入れます。 配列には、1 つの `createdAt` フィルターのみを含める必要があります。 オプションの `activityTypeIds` フィルターを含めることができます。 フィルターはアクセス可能なアクティビティセットに適用され、結果のアクティビティセットはエクスポートジョブによって返されます。 |
 | format | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、コンマ区切り値、タブ区切り値、スペース区切り値のファイルとしてレンダリングされます（設定されている場合）。 未設定の場合のデフォルト値は CSV です。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
-| フィールド | 配列 [ 文字列 ] | いいえ | オプションのフィールド値を含む文字列の配列。 リストされたフィールドは、書き出されたファイルに含まれます。 デフォルトでは、次のフィールド `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes` が返されます。 このパラメーターを使用すると、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすことができます。 例：&quot;fields&quot;:[&quot;leadId&quot;、&quot;activityDate&quot;、&quot;activityTypeId&quot;] 追加のフィールド&quot;actionResult&quot;を指定して、アクティビティアクション（&quot;succeeded&quot;、&quot;skipped&quot;、または&quot;failed&quot;）を含めることができます。 |
+| フィールド | 配列 [ 文字列 ] | いいえ | オプションのフィールド値を含む文字列の配列。 リストされたフィールドは、書き出されたファイルに含まれます。 デフォルトでは、次のフィールドが返されます。 <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>.このパラメーターは、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすために使用できます。`"fields": ["leadId", "activityDate", "activityTypeId"]` 追加のフィールド `actionResult` を指定して、アクティビティ アクション `("succeeded", "skipped", or "failed")` を含めることができます。 |
 
 
 ## ジョブの作成
