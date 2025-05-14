@@ -1,31 +1,31 @@
 ---
-title: getTag
+title: getTags
 feature: SOAP, Tags
-description: getTags SOAP呼び出し
+description: getTags SOAP 呼び出し
 exl-id: 4fd9de1a-9362-479a-afe1-09ef0aaf5e6e
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '94'
-ht-degree: 13%
+ht-degree: 100%
 
 ---
 
-# getTag
+# getTags
 
-この関数は、Marketoで設定された非チャネルタグに関する次の情報を取得します。
+この関数は、Marketo で設定された、チャネル以外のタグに関する次の情報を取得します。
 
 - タグのタイプ
 - タグ値
 
-チャネル以外のすべてのタグに関する情報を取得したり、タグや値の特定のリストを指定したりできます。
+チャネル以外のすべてのタグに関する情報を取得したり、特定のタグや値のリストを指定したりできます。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| tagList->tag | オプション | クエリするタグのリスト。 各タグには、タイプと、文字列としての値の配列を含めることができます。 `<tagList>` を省略すると、すべてのチャネルに関する情報が表示されます |
+| tagList／tag | オプション | クエリを実行するタグのリスト。各タグには、タイプと、文字列として値の配列を含めることができます。`<tagList>` を省略すると、すべてのチャネルに関する情報が表示されます |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

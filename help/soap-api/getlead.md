@@ -1,18 +1,18 @@
 ---
 title: getLead
 feature: SOAP
-description: getLead SOAP呼び出し
+description: getLead SOAP 呼び出し
 exl-id: 1a3eab26-7994-455d-bc7a-80e43e6ef4a7
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '127'
-ht-degree: 7%
+ht-degree: 100%
 
 ---
 
 # getLead
 
-この関数は、Marketoから 1 つのリードレコードを取得します。この中には、指定されたキー（LeadKey）で識別されるリードについて、組み込みフィールドとカスタムフィールドのすべてのフィールド値が含まれています。 入力パラメーターに基づいてリードが存在する場合、リードレコード属性が結果に返されます。
+この関数は、指定したキー（LeadKey）で識別されるリードに対して、単一のリードレコードと、組み込みフィールドとカスタムフィールドのすべてのフィールド値を Marketo から取得します。入力パラメーターに基づいてリードが存在する場合、リードレコード属性が結果に返されます。
 
 メモ：文字列データタイプで空のリード属性は、応答の一部として返されません。
 
@@ -20,10 +20,10 @@ ht-degree: 7%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadKey->keyType | 必須 | keyType を使用すると、リードのクエリに使用するフィールドを指定できます。 使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
-| leadKey->keyValue | 必須 | keyValue は、リードに対してクエリを実行する値です。 |
+| leadKey／keyType | 必須 | keyType を使用すると、リードに対してクエリを実行するフィールドを指定できます。使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadKey／keyValue | 必須 | keyValue は、リードに対してクエリを実行する値です。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

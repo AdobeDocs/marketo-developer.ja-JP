@@ -1,50 +1,50 @@
 ---
-title: ユーザーコンテキスト
+title: ユーザコンテキスト
 feature: REST API
-description: ユーザーコンテキストの概要と API の説明
+description: ユーザコンテキストの概要と API の説明
 exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '266'
-ht-degree: 7%
+ht-degree: 100%
 
 ---
 
-# ユーザーコンテキスト
+# ユーザコンテキスト
 
-User Context JavaScript API は、複数のセッションをまたいでユーザーおよび訪問者レベルのデータを公開し、過去のユーザー行動とデータを使用して高度なパーソナライゼーション機能を有効にします。 この API は、データの読み取りを超え、高度なセグメント化とパーソナライゼーションの目的で意味のあるデータとイベントを RTP バックエンドにプッシュできるカスタム変数を公開します。 その他の機能：[トリガー](../javascript-api/triggers.md)、[ パターン一致 ](../javascript-api/pattern-match.md)。
+User Context JavaScript API は、複数のセッションをまたいでユーザおよび訪問者レベルのデータを公開し、過去のユーザの行動とデータを使用して高度なパーソナライゼーション機能を有効にします。この API は、データの読み取りにとどまらず、高度なセグメント化とパーソナライゼーションの目的で、意味のあるデータとイベントを RTP バックエンドにプッシュできるカスタム変数を公開します。その他の機能：[トリガー](../javascript-api/triggers.md)、[パターン一致](../javascript-api/pattern-match.md)。
 
-- User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
-- User Context API は、Marketo サポートがリクエストに応じて有効にする必要がある機能です。 この API が有効な場合、RTP グローバルオブジェクトの下の userContext オブジェクトが公開されます。
+- User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
+- User Context API は、リクエストに応じて Marketo サポートが有効にする必要がある機能です。この API が有効な場合、RTP グローバルオブジェクトの下にある userContext オブジェクトが公開されます。
 
-## ユーザーコンテキスト属性
+## ユーザコンテキスト属性
 
 | 名前 | タイプ | 説明 |
 |------------------|-------------|------|
-| customVar[1-5] | 文字列 | ユーザーコンテキストに保存されたカスタムデータ。 |
-| viewedCampaigns | キャンペーン ID をコンマ区切り文字列で表したもの | 現在または以前の訪問でキャンペーンを表示。 |
-| clickedCampaign | キャンペーン ID をコンマ区切り文字列で表したもの | 現在または以前の訪問でキャンペーンをクリック済み。 |
+| customVar[1-5] | 文字列 | ユーザコンテキストに保存されたカスタムデータ。 |
+| viewedCampaigns | コンマ区切りの文字列としてのキャンペーン ID | 現在または以前の訪問で閲覧したキャンペーン。 |
+| clickedCampaigns | コンマ区切りの文字列としてのキャンペーン ID | 現在または以前の訪問でクリックスルーされたキャンペーン。 |
 
 ## カスタム変数の設定
 
-ユーザーコンテキストへのカスタムデータの追加
+ユーザコンテキストにカスタムデータを追加します。
 
 ### 使用方法
 
 `rtp('set', 'customVar'[1-5], my_custom_value);`
 
-| パラメーター | オプション/必須 | タイプ | 説明 |
+| パラメーター | オプション／必須 | タイプ | 説明 |
 |-----------------|-------------------|--------|-----------------|
-| &#39;設定&#39; | 必須 | 文字列 | メソッドのアクション。 |
+| ‘set’ | 必須 | 文字列 | メソッドアクション。 |
 | customVar | 必須 | 文字列 | カスタム変数名。 |
-| my_custom_value | 必須 | 文字列 | インデックス 1 ～ 5 のカスタム変数に保存するカスタム値。 |
+| my_custom_value | 必須 | 文字列 | インデックス 1～5 のカスタム変数に保存するカスタム値。 |
 
-メモ：カスタム変数はビュー呼び出し時にのみ RTP に送信されるので、ビューが呼び出される前にカスタム変数を設定することをお勧めします。 それ以外の場合は、次のビュー呼び出しでのみ送信されます。
+メモ：カスタム変数は、ビュー呼び出しでのみ RTP に送信されるので、ビューが呼び出される前にカスタム変数を設定することをお勧めします。それ以外の場合は、次のビュー呼び出しでのみ送信されます。
 
-カスタム変数の制限
+カスタム Var の制限
 
-- カスタム変数の長さは 100 文字以下にする必要があります。
-- キャンペーンデータは最後の 10 回の訪問に制限され、1 訪問あたり 10 回のキャンペーンが含まれます。
+- カスタム変数の長さは 100 文字を超えることはできません。
+- キャンペーンデータは、1 回の訪問あたり 10 個のキャンペーンが含まれる過去 10 回の訪問に制限されます。
 
 ### 使用方法
 

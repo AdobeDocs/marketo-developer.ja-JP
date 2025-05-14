@@ -1,26 +1,26 @@
 ---
 title: describeMObject
 feature: SOAP
-description: describeMObjects SOAP呼び出し
+description: describeMObjects SOAP 呼び出し
 exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '71'
-ht-degree: 9%
+ht-degree: 100%
 
 ---
 
 # describeMObject
 
-この関数は、標準オブジェクトおよび仮想オブジェクトのメタデータを返します。 Marketo オブジェクトを入力として取り込み、そのオブジェクトに関連付けられているフィールド属性を返します。
+この関数は、標準 MObject および仮想 MObject のメタデータを返します。Marketo オブジェクトを入力として取り込み、このオブジェクトに関連付けられているフィールド属性を返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| objectName | 必須 | メタデータを取得するオブジェクトの名前。 `objectName` は、`ActivityRecord`、`LeadRecord`、`Opportunity`、`OpportunityPersonRole` のいずれかです。 |
+| objectName | 必須 | メタデータを取得する MObject の名前。`objectName` は、`ActivityRecord`、`LeadRecord`、`Opportunity`、`OpportunityPersonRole` のいずれかを指定できます。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

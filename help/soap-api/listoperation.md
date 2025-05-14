@@ -1,20 +1,20 @@
 ---
-title: listOperations
+title: listOperation
 feature: SOAP
-description: listOperation SOAP呼び出し
+description: listOperation SOAP 呼び出し
 exl-id: 8332cc22-c5a9-43d6-9e92-8d62265cfab2
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '187'
-ht-degree: 11%
+ht-degree: 100%
 
 ---
 
-# listOperations
+# listOperation
 
-このメソッドを使用すると、Marketo リードデータベース内で定義されている静的リストに対して操作を実行できます。 プログラム内で定義されている静的リストのメンバーを追加または削除するには、[importToList](importtolist.md) を使用します。 このエンドポイントへの各呼び出しには、1 回の呼び出しあたり 1,000 リードという制限があります。
+このメソッドを使用すると、Marketo リードデータベース内で定義された静的リストに対して操作を実行できます。プログラム内で定義された静的リストのメンバーを追加または削除するには、[importToList](importtolist.md) を使用します。このエンドポイントへの各呼び出しには、呼び出しあたり 1000 リードの制限があります。
 
-操作のタイプは次のとおりです。
+操作タイプには、以下を含めることができます。
 
 - リストに追加
 - リストから削除
@@ -24,14 +24,14 @@ ht-degree: 11%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| listOperations | 必須 | 指定したリストに対して実行する操作のタイプ。 可能な操作：`ADDTOLIST`、`ISMEMBEROFLIST`、`REMOVEFROMLIST` |
-| listKey->keyType | 必須 | 操作するリストのタイプ。 使用可能な値：`MKTOLISTNAME`、`MKTOSALESUSERID`、`SFDCLEADOWNERID` |
-| listKey->keyValue | 必須 | 操作するリストの名前。 |
-| listMemberList->leadKey->keyType | 必須 | リード `keyType` 参照する ID を指定できます。 使用可能な値：`IDNUM` |
-| listMemberList->leadKey->keyValue | 必須 | `keyValue` は、リストを操作する値です |
-| 制限 | オプション | 呼び出しのサブセットのいずれかが失敗した場合、操作全体で厳密モードが失敗します。 非厳密モードは、可能な限りすべてを完了し、失敗した場合はエラーを返します。 |
+| listOperation | 必須 | 指定したリストに対して実行する操作のタイプ。使用可能な操作：`ADDTOLIST`、`ISMEMBEROFLIST`、`REMOVEFROMLIST` |
+| listKey／keyType | 必須 | 操作するリストのタイプ。使用可能な値：`MKTOLISTNAME`、`MKTOSALESUSERID`、`SFDCLEADOWNERID` |
+| listKey／keyValue | 必須 | 操作するリストの名前。 |
+| listMemberList／leadKey／keyType | 必須 | `keyType` を使用すると、リードを参照する ID を指定できます。使用可能な値：`IDNUM` |
+| listMemberList／leadKey／keyValue | 必須 | `keyValue` は、リストを操作する値です。 |
+| strict | オプション | 呼び出しのサブセットが失敗すると、操作全体で strict モードが失敗します。strict 以外のモードは、可能な限りすべてを完了し、失敗した場合はエラーを返します。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

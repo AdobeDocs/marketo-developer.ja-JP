@@ -1,43 +1,43 @@
 ---
-title: 重点顧客の一覧
+title: 重点顧客リスト
 feature: REST API
-description: 名前付きアカウント リストを構成します。
+description: 重点顧客リストを設定します。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '696'
-ht-degree: 3%
+ht-degree: 100%
 
 ---
 
-# 重点顧客の一覧
+# 重点顧客リスト
 
-[ 指定顧客リストのエンドポイントリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
+[重点顧客リストエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketoの [ 名前付きアカウントリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists) は、名前付きアカウントのコレクションを表します。 カテゴリ化、データ強化、スマートキャンペーンフィルタリングなど、様々なケースで使用できます。 指定アカウントリスト API を使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
+Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、重点顧客のコレクションを表します。分類、データエンリッチメント、スマートキャンペーンフィルタリングなど、様々なケースに使用できます。Named Account List API を使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
 `Content`
 
 ## 権限
 
-名前付きアカウント リストを照会するには、読み取り専用の名前付きアカウント リストまたは読み取り/書き込みの名前付きアカウント リスト権限が必要です。 リストを作成、更新または削除するには、読み取り/書き込み可能な名前付きアカウントリスト権限が必要です。 リスト メンバーシップのクエリには、読み取り専用の名前付きアカウントまたは読み取り/書き込みの名前付きアカウントのアクセス許可が必要ですが、メンバーシップの管理には、読み取り/書き込みの名前付きアカウントのアクセス許可が必要です。
+重点顧客リストのクエリを実行するには、重点顧客リストの読み取り専用権限、または重点顧客リストの読み取り／書き込み権限が必要です。リストを作成、更新または削除するには、重点顧客リストの読み取り／書き込み権限が必要です。リストメンバーシップのクエリを実行するには、重点顧客の読み取り専用権限、または重点顧客の読み取り／書き込み権限が必要です。一方、メンバーシップを管理するには、重点顧客の読み取り／書き込み権限が必要です。
 
 ## モデル
 
-名前付きアカウントリストには限られた数の標準フィールドがあり、カスタムフィールドを使用して拡張することはできません。
+重点顧客リストでは、標準フィールドの数が制限され、カスタムフィールドで拡張できません。
 `Named Account List Field`
 
-| 名前 | データタイプ | 更新可能 | 注意 |
+| 名前 | データタイプ | 更新可能 | メモ |
 |---|---|---|---|
-| marketoGUID | 文字列 | False | 指定されたアカウントリストを表す一意の文字列識別子。 このフィールドはシステム管理であり、レコードの作成時にフィールドとして使用することはできません。 作成または更新の実行時に「dedupeBy」:「idField」によって使用されるフィールド。 |
-| 名前 | 文字列 | True | リストの名前。 作成または更新の実行時に「dedupeBy」:「dedupeFields」によって使用されるフィールド。 |
-| createdAt | 日時 | False | リストの作成日時。 このフィールドはシステムによって管理され、レコードの作成または更新時にはフィールドとして許可されません。 |
-| updatedAt | 日時 | False | リストの最新の更新の日時。 このフィールドはシステムによって管理され、レコードの作成または更新時にはフィールドとして許可されません。 |
-| タイプ | 文字列 | False | リストのタイプ。 「default」または「external」のいずれかの値を持つことができます。 外部リストは、CRM アカウント ビューで作成されたリストです。 |
+| marketoGUID | 文字列 | False | 重点顧客リストの一意の文字列識別子。このフィールドは、システムで管理され、レコードを作成する際にフィールドとして使用できません。作成または更新の実行時に &quot;dedupeBy&quot;:&quot;idField&quot; によって使用されるフィールド。 |
+| name | 文字列 | True | リストの名前。作成または更新の実行時に &quot;dedupeBy&quot;:&quot;dedupeFields&quot; によって使用されるフィールド。 |
+| createdAt | 日時 | False | リストの作成日時。このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
+| updatedAt | 日時 | False | リストの最新の更新日時。このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
+| タイプ | 文字列 | False | リストのタイプ。&quot;default&quot; または &quot;external&quot;のいずれかの値を指定できます。外部リストは、CRM アカウントビューで作成されたリストです。 |
 
 
 ## クエリ
 
-アカウントリストのクエリはシンプルで簡単です。 現在、名前付きアカウントリストをクエリするための有効な filterType は、「dedupeFields」と「idField」の 2 つのみです。 フィルターするフィールドはクエリの `filterType` パラメーターで設定し、値はコンマ区切りリスト `filterValues as` 設定します。 `nextPageToken` フィルターと `batchSize` フィルターもオプションのパラメーターです。
+アカウントリストのクエリの実行はシンプルで簡単です。現在、重点顧客リストのクエリを実行するための有効な filterTypes は、&quot;dedupeFields&quot; と &quot;idField&quot; の 2 つだけです。フィルタリングするフィールドは、クエリの `filterType` パラメーターで設定され、値はコンマ区切りのリストとして `filterValues as` に設定されます。また、`nextPageToken` フィルターおよび `batchSize` フィルターもオプションのパラメーターです。
 
 ```
 GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fb,dff23271-f996-47d7-984f-f2676861b5fc
@@ -72,11 +72,11 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 
 ## 作成と更新
 
-名前付きアカウントリストレコードの作成および更新は、他のリードデータベースの作成および更新操作で確立されたパターンに従います。 名前付きアカウントリストには、更新可能なフィールド `name` が 1 つだけあることに注意してください。
+重点顧客リストレコードの作成と更新は、他のリードデータベースの作成および更新操作の確立されたパターンに従います。重点顧客リストには、更新可能なフィールドの `name` が 1 つだけあります。
 
-エンドポイントでは、「createOnly」と「updateOnly」の 2 つの標準のアクションタイプが許可されています。  「createOnly」の `action defaults`。
+エンドポイントでは、&quot;createOnly&quot; と &quot;updateOnly&quot; の 2 つの標準アクションタイプを指定できます。`action defaults` は &quot;createOnly&quot; です。
 
-アクションが `updateOnly` の場合は、オプションの `dedupeBy parameter` を指定できます。  指定できる値は、「dedupeFields」（「name」に対応）または「idField」（「marketoGUID」に対応）です。  `createOnly` モードでは、「名前」のみが `dedupeBy` フィールドとして許可されます。 一度に最大 300 件のレコードを送信できます。
+アクションが `updateOnly` の場合、オプションの `dedupeBy parameter` パラメーターを指定できます。指定可能な値は、&quot;dedupeFields&quot;（&quot;name&quot; に対応）または idField&quot;（&quot;marketoGUID&quot; に対応）です。`createOnly` モードでは、`dedupeBy` フィールドとして &quot;name&quot; のみが指定できます。一度に最大 300 個のレコードを送信できます。
 
 ```
 POST /rest/v1/namedAccountLists.json
@@ -118,7 +118,7 @@ POST /rest/v1/namedAccountLists.json
 
 ## 削除
 
-名前付きアカウントリストの削除は簡単で、リストの `name` または `marketoGUID` に基づいて実行できます。 使用するキーを選択するには、リクエストの `deleteB` メンバーで、名前に「dedupeFields」を渡すか、marketoGUID に「idField」を渡します。 未設定の場合、デフォルトで dedupeFields になります。 一度に最大 300 件のレコードを削除できます。
+重点顧客リストの削除は簡単で、リストの `name` または `marketoGUID` に基づいて実行できます。使用するキーを選択するには、リクエストの `deleteB` メンバーで、名前に &quot;dedupeFields&quot; を渡すか、marketoGUID に &quot;idField&quot; を渡します。未設定の場合、デフォルトは dedupeFields になります。一度に最大 300 個のレコードを削除できます。
 
 ```
 POST /rest/v1/namedAccountLists/delete.json
@@ -170,19 +170,19 @@ POST /rest/v1/namedAccountLists/delete.json
 }
 ```
 
-指定されたキーのレコードが見つからない場合、対応する結果項目には「スキップ」の `status` と、上記の例に示すように、失敗を説明するコードとメッセージを含む理由が含まれます。
+特定のキーのレコードが見つからない場合、対応する結果項目の `status` は &quot;skipped&quot; になり、上記の例に示すように、失敗を説明するコードとメッセージを含む理由が表示されます。
 
 ## メンバーシップの管理
 
 ### クエリメンバーシップ
 
-名前付きアカウントリストのメンバーシップのクエリは簡単で、アカウントリストの `i` のみが必要です。 オプションのパラメーターは次のとおりです。
+重点顧客リストのメンバーシップのクエリの実行は簡単で、アカウントリストの `i` のみが必要です。オプションのパラメーターは次のとおりです。
 
--`field` – 応答レコードに含めるフィールドのコンマ区切りのリスト
--`nextPageToke` – 結果セットをページングする
--`batchSiz` – 返すレコード数を指定します。
+-`field` - 応答レコードに含めるフィールドのコンマ区切りのリスト
+-`nextPageToke` - 結果セットのページング用
+-`batchSiz` - 返すレコード数の指定用
 
-`field` が未設定の場合は、`marketoGUI`,`nam`、`createdA` および `updatedA` が返されます。 `batchSiz` の最大値とデフォルト値は 300 です。
+`field` が未設定の場合は、`marketoGUI`、`nam`、`createdA`、`updatedA` が返されます。 `batchSiz` の最大値とデフォルト値は 300 です。
 
 ```
 GET /rest/v1/namedAccountList/{id}/namedAccounts.json
@@ -213,7 +213,7 @@ GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 ### メンバーの追加
 
-名前付きアカウントは、名前付きアカウント リストに簡単に追加できます。 アカウントは、marketoGUID を使用してのみ追加できます。 一度に最大 300 件のレコードを追加できます。
+重点顧客は、重点顧客リストに簡単に追加できます。アカウントは、marketoGUID を使用してのみ追加できます。一度に最大 300 個のレコードを追加できます。
 
 ```
 POST /rest/v1/namedAccountList/{id}/namedAccounts.json
@@ -253,7 +253,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 ### メンバーの削除
 
-アカウントリストからレコードを削除すると、パスは異なりますが、削除するレコードごとに `marketoGUI` が必要な同じインターフェイスになります。 一度に最大 300 件のレコードを削除できます。
+アカウントリストからレコードを削除するには、パスは異なりますが、インターフェイスは同じで、削除するレコードごとに `marketoGUI` が必要です。一度に最大 300 個のレコードを削除できます。
 
 ```
 POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
@@ -293,10 +293,10 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 
 ## タイムアウト
 
-- 以下に示さない限り、名前付きアカウントリストのエンドポイントのタイムアウトは 30 秒です
-   - 名前付きアカウント リストの同期：60s 
-   - 重点顧客リストの削除：60s 
-   - 名前付きアカウント リストの取得：60s 
-   - 指定アカウント・リスト・メンバーの追加：60s 
-   - 名前付きアカウント リスト メンバの削除：60s 
-   - 指定されたアカウント リスト メンバの取得：60s
+- 「重点顧客リスト」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります
+   - 重点顧客リストを同期：60 秒
+   - 重点顧客リストを削除：60 秒
+   - 重点顧客リストを取得：60 秒
+   - 重点顧客リストメンバーを追加：60 秒
+   - 重点顧客リストメンバーを削除：60 秒
+   - 重点顧客リストメンバーを取得：60 秒

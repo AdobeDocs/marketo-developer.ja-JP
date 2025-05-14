@@ -1,30 +1,30 @@
 ---
 title: '[!DNL Ionic]'
 feature: Mobile Marketing
-description: モバイルデバイス向けMarketoの使用  [!DNL Ionic]  使用
+description: モバイルデバイス用 Marketo を使用した  [!DNL Ionic]  の使用
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
 source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '606'
-ht-degree: 73%
+ht-degree: 100%
 
 ---
 
-# イオン
+# Ionic
 
-ここでは、Marketo Cordova プラグインの統合方法を説明します。 [!DNL Ionic] コンデンサは現在サポートされていません。
+このトピックでは、Marketo Cordova プラグインを統合する方法について説明します。[!DNL Ionic] キャパシターは現在サポートされていません。
 
 ## 前提条件
 
 1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
 1. プッシュ通知の設定（[iOS](push-notifications.md) | [Android](push-notifications.md)）。
-1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) および [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) をインストールします。
+1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) と [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) のインストール。
 
 ## インストール手順
 
 ### Marketo [!DNL Ionic] プラグインの設定
 
-1. Cordova CLI がインストールされている場合は、[!DNL Ionic] アプリケーションディレクトリに移動し、次のコマンドを実行してMarketo プラグインをアプリケーションに追加します。
+1. Cordova CLI がインストールされている場合は、[!DNL Ionic] アプリケーションディレクトリに移動し、次のコマンドを実行して Marketo プラグインをアプリケーションに追加します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
@@ -32,19 +32,19 @@ ht-degree: 73%
 
    `$ ionic plugin list com.marketo.plugin 0.X.0 "MarketoPlugin"`
 
-### 新しいバージョンに移行（オプション）
+### 新しいバージョンへの移行（オプション）
 
 1. 既存のプラグインを削除するには、次のコマンドを実行します。
 
    `$ ionic plugin remove com.marketo.plugin`
 
-1. プラグインを読み込むには、次のコマンドを実行します。
+1. プラグインを再追加するには、次のコマンドを実行します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
 ### xCode でのプッシュ通知の有効化
 
-1. xCode プロジェクトでプッシュ通知機能をオンにします。![ 通知機能 ](assets/notification-capability.png)
+1. xCode プロジェクトでプッシュ通知機能をオンにします。![通知機能](assets/notification-capability.png)
 
 ### プッシュ通知のトラッキング
 
@@ -72,7 +72,7 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 ### Marketo フレームワークの初期化
 
-Marketo フレームワークがアプリの起動時に確実に開始されるようにするには、以下のコードをアプリの `onDeviceReady` メイン JavaScript ファイルで機能します。
+Marketo フレームワークをアプリの起動時に開始するには、以下のコードをアプリのメインの JavaScript ファイル内の `onDeviceReady` 関数に追加してください。
 
 [!DNL Ionic] Cordova アプリのフレームワークタイプとして `ionicCordova` を渡す必要があります。
 
@@ -104,7 +104,7 @@ marketo.onStart(
 
 ### Marketo プッシュ通知の初期化
 
-Marketoのプッシュ通知が確実に開始されるようにするには、メインのJavaScript ファイル内の初期化された関数の後に次のコードを追加します。
+Marketo プッシュ通知を開始するには、メインの JavaScript ファイルの初期化関数の後に次のコードを追加します。
 
 #### 構文
 
@@ -132,7 +132,7 @@ marketo.uninitializeMarketoPush(
 );
 ```
 
-## リードの関連付け
+## リードを関連付け
 
 associateLead 関数を呼び出すことで、Marketo リードを作成できます。
 
@@ -218,7 +218,7 @@ marketo.reportaction(
 
 ## セッションレポート
 
-次に示すように、「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントをレポートします。 これは、モバイルアプリケーションで費やした時間を追跡するために使用されます。 メモ：これは Android で必要です。
+次に示すように、「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントをレポートします。 これは、モバイルアプリケーションで費やした時間を追跡するために使用されます。メモ：これは Android で必要です。
 
 ```javascript
 //Add the following code in your www/js/index.js
@@ -249,6 +249,6 @@ onStart: function() {
 1. MARKETO REST API
 1. フォーム送信
 
-新しく作成されたリードは、使用する方法に応じて、異なるトリガーとフィルターで認識されます。 MME SDK または REST API を使用して作成されたリードは、「リードが作成されました」のトリガーおよびフィルターに表示されます。 フォーム送信によって作成されたリードは、「フォームに記入」トリガーとフィルターに表示されます。
+使用する方法に応じて、新しく作成したリードは様々なトリガーとフィルターによって認識されます。MME SDK または REST API を使用して作成されたリードは、「リードが作成されました」のトリガーおよびフィルターに表示されます。 フォーム送信によって作成されたリードは、「フォームに記入」トリガーとフィルターに表示されます。
 
 ベストプラクティスは、リードを作成する際に Web アプリで使用される方法との一貫性を維持することです。 リードを作成するメカニズムとしてフォーム送信を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 リードを作成するメカニズムとして REST API を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 Web アプリでリードを作成するメカニズムとしてフォーム送信も REST API も使用していない場合は、MME SDK を使用してMarketoでリードを作成することを検討できます。

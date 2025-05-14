@@ -1,12 +1,12 @@
 ---
 title: deleteCustomObjects
 feature: SOAP, Custom Objects
-description: deleteCustomObjects SOAP呼び出し。
+description: deleteCustomObjects SOAP 呼び出し。
 exl-id: 214b7cd1-dc4e-45dc-a29a-91518a275e61
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '78'
-ht-degree: 12%
+ht-degree: 100%
 
 ---
 
@@ -19,9 +19,9 @@ ht-degree: 12%
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
 | objTypeName | 必須 | カスタムオブジェクトの名前 |
-| customObjKeyLists->keyList->attribute | 必須 | 属性は、削除するカスタムオブジェクトを識別するために使用されるキーと値のペアです。 customObjKeyLists には複数の属性を指定できます |
+| customObjKeyLists／keyList／attribute | 必須 | 属性は、削除するカスタムオブジェクトを識別するために使用されるキーと値のペアです。customObjKeyLists では複数の属性を指定できます |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

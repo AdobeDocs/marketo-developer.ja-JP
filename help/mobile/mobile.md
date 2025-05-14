@@ -4,7 +4,7 @@ feature: Mobile Marketing
 description: Marketo Mobile の使用
 exl-id: d5fa5640-01f5-49a1-944a-9f81a1f83617
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '129'
 ht-degree: 100%
 

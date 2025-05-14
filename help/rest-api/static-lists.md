@@ -4,27 +4,27 @@ feature: REST API, Static Lists
 description: 静的リストに対して CRUD 操作を実行します。
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '741'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
 # 静的リスト
 
-[ 静的リストエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists)
+[静的リストエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists)
 
-[ リストメンバーシップエンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists)
+[リストメンバーシップエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists)
 
-Marketoは、静的リストに対して CRUD 操作を実行するための一連の REST API を提供します。 これらの API は、クエリ、作成、更新、削除のオプションを提供するアセット API の標準インターフェイスパターンに従います。
+Marketo は、静的リストで CRUD 操作を実行する一連の REST API を備えています。これらの API は、クエリ、作成、更新、削除のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
 ## クエリ
 
-静的リストのクエリは、[by id](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET)、[by name](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) および [browse](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListsUsingGET) のアセットに対する標準のクエリタイプに従います。
+静的リストのクエリは、アセットに対する標準のクエリタイプ（[IDによるクエリ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET)、[名前によるクエリ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET)、および[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListsUsingGET)）に従います。
 
-### Id 別
+### ID 別
 
-[ID でクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) は、単一の静的リストレコードをパスパラメーターとして受け取 `id`、単一の静的リストレコードを返します。
+[ID によるクエリ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET)は、単一の静的リスト `id` をパスパラメーターとして受け取り、単一の静的リストレコードを返します。
 
 ```
 GET /rest/asset/v1/staticList/{id}.json
@@ -53,7 +53,7 @@ GET /rest/asset/v1/staticList/{id}.json
 
 #### 名前別
 
-[ 名前でクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET) は、静的リスト `name` をパラメーターとして受け取り、単一の静的リストレコードを返します。 完全な文字列一致は、インスタンス内のすべての静的リスト名に対して実行され、その名前に一致する静的リストの結果を返します。
+[名前によるクエリ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET)は、静的リスト `name` をパラメーターとして受け取り、単一の静的リストレコードを返します。 インスタンス内のすべての静的リスト名に対して正確な文字列一致検索が実行され、その名前に一致する静的リストの結果が返されます。
 
 ```
 GET /rest/asset/v1/staticList/byName.json?name=Foundation Seed List
@@ -82,7 +82,7 @@ GET /rest/asset/v1/staticList/byName.json?name=Foundation Seed List
 
 #### 参照
 
-静的リストは [ バッチで取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListsUsingGET) することもできます。 `folder` パラメーターを使用すると、クエリを実行する親フォルダーを指定でき、ID とタイプを含む JSON オブジェクトとしてフォーマットされます。 他の一括アセット取得エンドポイントと同様に、`offset` および `maxReturn` は、ページングに使用できるオプションのパラメーターです。 `earliestUpdatedAt` パラメーターおよび `latestUpdatedAt` パラメーターを使用すると、指定された範囲内で作成または更新された静的リストを返すための低日時透かしおよび高日時透かしを設定できます。 日時の値は、有効な ISO-8601 文字列である必要があり、ミリ秒を含めることはできません
+静的リストは、[バッチで取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListsUsingGET)することもできます。`folder` パラメーターは、クエリが実行される親フォルダーを指定するために使用でき、ID とタイプを含む JSON オブジェクトの形式で指定されます。他の一括アセット取得エンドポイントと同様に、`offset` と `maxReturn` はページングに使用できるオプションパラメーターです。`earliestUpdatedAt` および `latestUpdatedAt` パラメーターを使用すると、指定した範囲内で作成または更新された静的リストを返すための日時の日時透かし（低および高）を設定できます。日時値は、有効な ISO-8601 文字列にする必要があります。ミリ秒を含めないでください。
 
 ```
 GET /rest/asset/v1/staticLists.json?folder={"id":13,"type":"Folder"}
@@ -133,7 +133,7 @@ GET /rest/asset/v1/staticLists.json?folder={"id":13,"type":"Folder"}
 
 ## 作成と更新
 
-[ 静的リストの作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/createStaticListUsingPOST) は、2 つの必須パラメーターを持つ application/x-www-form-urlencoded POSTを使用して実行されます。 `folder` パラメーターは、静的リストが作成される親フォルダーを指定するために使用され、ID とタイプを含む JSON オブジェクトとしてフォーマットされます。 `name` パラメーターは、静的リストに名前を付けるために使用され、一意である必要があります。 オプションで、`description` パラメーターを使用して静的リストを記述できます。
+[静的リストの作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/createStaticListUsingPOST)は、2 つの必須パラメーターを含む application/x-www-form-urlencoded POST で実行されます。`folder` パラメーターは、静的リストが作成される親フォルダーを指定するために使用され、ID とタイプを含む JSON オブジェクトの形式で指定されます。`name` パラメーターは、静的リストに名前を付けるために使用され、一意である必要があります。オプションで、`description` パラメーターを使用して静的リストについて説明することもできます。
 
 ```
 POST /rest/asset/v1/staticLists.json
@@ -168,7 +168,7 @@ folder={"id":1034,"type":"Program"}&name=My Static List
 }
 ```
 
-[ 静的リストの更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/updateStaticListUsingPOST) は、2 つのオプションパラメーターを持つ別のエンドポイントを通じて行われます。 `description` パラメーターを使用すると、静的リストの説明を更新できます。 `name` パラメーターは、静的リスト名の更新に使用でき、一意である必要があります。
+[静的リストの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/updateStaticListUsingPOST)は、2 つのオプションパラメーターを持つ別のエンドポイントを通じて行われます。`description` パラメーターは、静的リストの説明を更新するために使用できます。`name` パラメーターは、静的リスト名を更新するために使用でき、一意である必要があります。
 
 ```
 POST /rest/asset/v1/staticList/{id}.json
@@ -206,7 +206,7 @@ description=This is a static list used for testing
 
 ### 削除
 
-[ 静的リストの削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/deleteStaticListByIdUsingPOST) は、単一の静的リスト `id` をパスパラメーターとして受け取ります。 インポートまたはエクスポート操作で使用されている静的リスト、または他のアセットで使用されている静的リストには削除を実行できません。
+[静的リストの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/deleteStaticListByIdUsingPOST)では、パスパラメーターとして単一の静的リスト `id` を受け取ります。読み込みまたは書き出し操作で使用されている静的リストや、他のアセットで使用されている静的リストは削除できません。
 
 ```
 POST /rest/asset/v1/staticList/{id}/delete.json
@@ -225,15 +225,15 @@ POST /rest/asset/v1/staticList/{id}/delete.json
 }
 ```
 
-## List Membership
+## リストメンバーシップ
 
-リスト メンバシップ エンドポイントは、静的リスト メンバの追加、削除、およびクエリを実行する機能を提供します。 また、静的なリストメンバーシップに対してクエリを実行することもできます。
+リストメンバーシップエンドポイントは、静的リストメンバーの追加、削除、クエリを実行する機能を提供します。また、静的リストメンバーシップに対してクエリを実行することもできます。
 
 ### リストに追加
 
-[ リストに追加 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/addLeadsToListUsingPOST) エンドポイントを使用して、1 つ以上のメンバーをリストに追加します。 このエンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の ID クエリパラメーター（最大許容値は 300）を受け取ります。
+[リストに追加](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/addLeadsToListUsingPOST)エンドポイントは、リストに 1 人以上のメンバーを追加するのに使用されます。エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の id クエリパラメーター（最大許容値は 300）を受け取ります。
 
-応答には、リクエストで指定された各リード ID のステータスを持つ JSON オブジェクトで構成される `result` 配列が含まれています。
+応答には、リクエストで指定した各リード ID のステータスを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
 ```
 POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
@@ -264,9 +264,9 @@ POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 
 ### リストから削除
 
-[ リストから削除 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE) エンドポイントは、リストから 1 つ以上のメンバーを削除するために使用します。 このエンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
+[リストから削除](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE)エンドポイントは、リストから 1 人以上のメンバーを削除するのに使用されます。エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
 
-応答には、リクエストで指定された各リード ID のステータスを持つ JSON オブジェクトで構成される `result` 配列が含まれています。
+応答には、リクエストで指定した各リード ID のステータスを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
 ```
 DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
@@ -299,17 +299,17 @@ DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
 }
 ```
 
-### クエリリスト
+### リストのクエリの実行
 
-[ リスト ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET) エンドポイントは、リストのメンバーを取得するために使用されます。 エンドポイントは必須の `listId` パスパラメーターを受け取り、オプションで複数のクエリパラメーターを使用してフィルタリング条件を指定できます。
+[リスト ID によるリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET)エンドポイントは、リストのメンバーを取得するのに使用されます。エンドポイントは、必須の `listId` パスパラメーターを受け取り、フィルタリング条件を指定するのにオプションで複数のクエリパラメーターを許可します。
 
-`batchSize` パラメーターは、1 回の呼び出しで返されるリードレコードの数を指定するために使用されます（デフォルトは最大 300）。
+`batchSize` パラメーターは、1 回の呼び出しで返されるリードレコードの数を指定するのに使用されます（デフォルトおよび最大は 300）。
 
-`nextPageToken` パラメーターは、大きな結果セットをページ分割するために使用されます。 このパラメーターは、最初の呼び出しでは渡されず、後続のページネーションの呼び出しでのみ渡されます。
+`nextPageToken` パラメーターは、大きな結果セットをページ分割するのに使用されます。このパラメーターは、最初の呼び出しでは渡されず、ページネーションの後続の呼び出しでのみ渡されます。
 
-`fields` パラメーターには、応答で返されるフィールド名のコンマ区切りリストが含まれます。 fields パラメーターがこのリクエストに含まれていない場合は、デフォルトのフィールド email、updatedAt、createdAt、lastName、firstName、id が返されます。
+`fields` パラメーターには、応答で返されるフィールド名のコンマ区切りのリストが含まれます。このリクエストに fields パラメーターが含まれていない場合、email、updatedAt、createdAt、lastName、firstName、id のデフォルトフィールドが返されます。
 
-応答には、リクエストで指定されたリードフィールドを含む JSON オブジェクトで構成される `result` 配列が含まれています。
+応答には、リクエストで指定したリードフィールドを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
 ```
 GET /rest/v1/lists/{listId}/leads.json?batchSize=3
@@ -349,11 +349,11 @@ GET /rest/v1/lists/{listId}/leads.json?batchSize=3
 }
 ```
 
-#### リード Id 別のクエリリストメンバーシップ
+#### リード ID によるリストメンバーシップのクエリの実行
 
-[ リストのメンバー ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/areLeadsMemberOfListUsingGET) エンドポイントは、1 人以上のリードがリストのメンバーであるかどうかを確認するために使用されます。 このエンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
+[リストのメンバー](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/areLeadsMemberOfListUsingGET)エンドポイントは、1 つ以上のリードがリストのメンバーであるかどうかを確認するのに使用されます。エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
 
-応答には、リクエストで指定された各リード ID のステータスを持つ JSON オブジェクトで構成される `result` 配列が含まれています。
+応答には、リクエストで指定した各リード ID のステータスを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
 ```
 GET /rest/v1/lists/{listId}/leads/ismember.json?id=309901&id=318603&id=999999

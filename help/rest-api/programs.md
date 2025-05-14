@@ -4,21 +4,21 @@ feature: REST API, Programs
 description: プログラム情報を作成および編集します。
 exl-id: 30700de2-8f4a-4580-92f2-7036905deb80
 source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '848'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # プログラム
 
-[ プログラムエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs)
+[プログラムエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs)
 
-プログラムは、Marketo マーケティングアクティビティの中心組織コンポーネントです。 ほとんどのタイプのアセットの親となることができ、個々のマーケティング施策の中で、メンバーシップの追跡やリードの成功を可能にします。 プログラムは、LP、電子メールテンプレート、およびファイルを除くすべての種類のレコードの親にすることができます。
+プログラムは、Marketo マーケティングアクティビティのコアとなる組織コンポーネントです。ほとんどのタイプのアセットの親にすることができ、個々のマーケティングイニシアチブのコンテキスト内で、メンバーシップと、リードの成功を追跡できます。プログラムは、LP、メールテンプレートおよびファイルを除く、すべてのタイプのレコードの親にすることができます。
 
 ## プログラムタイプ
 
-Marketoには 5 つの主要なタイプのプログラムがあります。
+Marketo には、5 つのコアとなるプログラムタイプがあります。
 
 - デフォルト
 - イベント
@@ -26,19 +26,19 @@ Marketoには 5 つの主要なタイプのプログラムがあります。
 - エンゲージメント
 - メール
 
-エンゲージメントプログラムは、他のタイプのプログラムの親になることができますが、デフォルト、ウェビナー付きイベントおよびイベントは、メールプログラムの親でしかありません。
+エンゲージメントプログラムは、他のタイプのプログラムの親にすることができますが、デフォルト、イベント、ウェビナー付きイベントは、メールプログラムの親にすることができます。
 
-プログラムには常にチャネルがあり、プログラムが作成されたチャネルから、可能なセットアッププログラムメンバーステータスを派生します。これは Get Channels API で取得できます。 プログラムには、一連のタグが関連付けられている場合もあります。 タグはカスタマイズ可能なフィールドで、任意の種類のプログラムに対してオプションまたは必須に設定できます。このフィールドの値は、Marketo管理で設定されたリストから選択されます。
+プログラムには常にチャネルがあり、プログラムを作成したチャネルから設定可能なプログラムメンバーステータスを取得します。このステータスは、Get Channels API を使用して取得できます。また、プログラムには、関連付けられているタグのセットが含まれる場合もあります。タグはカスタマイズ可能なフィールドで、特定のタイプのプログラムに対してオプションまたは必須として設定でき、Marketo Admin で設定したリストから値が選択されます。
 
 ## クエリ
 
-プログラムは、タグタイプと値でクエリする追加のオプションを備えた、アセットクエリの標準のパターンに従います。 使用可能なタグと値は、[ タグタイプを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags/operation/getTagTypesUsingGET) で取得できます。
+プログラムは、タグのタイプと値でクエリを実行する追加オプションを含むアセットクエリの標準パターンに従います。使用可能なタグと値は、[タグタイプを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags/operation/getTagTypesUsingGET)で取得できます。
 
-### Id 別
+### ID 別
 
-[ID によるプログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントには、`id` のパス パラメーターが必要です。
+[ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5)エンドポイントには、`id` パスパラメーターが必要です。
 
-プログラム ID は、UI のプログラムの URL から取得できます（URL は `https://app-\*\*\*.marketo.com/#PG1001A1` のようになります）。 この URL の `id` は 1001 です。 URL の最初の文字セットと 2 番目の文字セットの間に必ず入ります。
+プログラム ID は、UI のプログラムの URL から取得できます。URL は、`https://app-\*\*\*.marketo.com/#PG1001A1` のようになります。この URL では、`id` は 1001 です。これは常に URL の最初の文字セットと 2 番目の文字セットの間にあります。
 
 ```
 GET /rest/asset/v1/program/{id}.json
@@ -82,7 +82,7 @@ GET /rest/asset/v1/program/{id}.json
 
 ### 名前別
 
-[ 名前によるプログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/) エンドポイントには、`name` のクエリパラメーターが必要です。 オプションのブール型クエリパラメーターは `includeTags` と `includeCosts` で、それぞれプログラムタグとプログラムコストを返すために使用されます。
+[名前によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/)エンドポイントには、`name` クエリパラメーターが必要です。オプションのブール値クエリパラメーターは、`includeTags` と `includeCosts` で、それぞれプログラムタグとプログラムコストを返すために使用されます。
 
 ```
 GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
@@ -126,13 +126,13 @@ GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
 
 ### 参照
 
-[ プログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントを使用すると、プログラムを参照できます。
+[プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5)エンドポイントを使用すると、プログラムを参照できます。
 
-オプションの `status` パラメーターを使用すると、プログラムステータスをフィルタリングできます。 このパラメーターは、エンゲージメントおよびメールプログラムにのみ適用されます。 使用可能な値は、エンゲージメントプログラムの場合は「オン」と「オフ」、メールプログラムの場合は「ロック解除」です。
+オプションの `status` パラメーターを使用すると、プログラムステータスでフィルタリングできます。このパラメーターは、エンゲージメントプログラムとメールプログラムにのみ適用されます。可能な値は、エンゲージメントプログラムの場合は &quot;on&quot; と &quot;off&quot;、メールプログラムの場合は &quot;unlocked&quot; です。
 
-オプションの `maxReturn` パラメーターは、返されるプログラムの数を制御します（最大は 200、デフォルトは 20）。 結果のページングに使用するオプションの `offset` パラメーター（デフォルトは 0）。
+オプションの `maxReturn` パラメーターは、返されるプログラムの数を制御します（最大は 200、デフォルトは 20）。オプションの `offset` パラメーターは、結果のページングに使用されます（デフォルトは 0）。
 
-プログラムに関連付けられたタグは、このエンドポイントでは返されないことに注意してください。 プログラムタグは、[ プログラムを ID で取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET) または [ プログラムを名前で取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET) を使用して取得できます。
+プログラムに関連付けられたタグは、このエンドポイントによって返されません。プログラムタグは、[ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET)または[名前によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET)のいずれかを使用して取得できます。
 
 ```
 GET /rest/asset/v1/programs.json
@@ -187,7 +187,7 @@ GET /rest/asset/v1/programs.json
 
 ### 日付範囲別
 
-[ プログラムを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントの `earliestUpdatedAt` パラメーターと `latestUpdatedAt` パラメーターを使用すると、指定された範囲内に更新または最初に作成されたプログラムを返すために、日時の下限と上限を設定できます。
+[プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5)エンドポイントの `earliestUpdatedAt` および `latestUpdatedAt` パラメーターを使用すると、指定した範囲内で更新されたか最初に作成されたプログラムを返すための最低および最高の日時透かしを設定できます。
 
 ```
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00
@@ -278,9 +278,9 @@ GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&lat
 
 ### タグタイプ別
 
-[ タグによるプログラムの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramListByTagUsingGET) エンドポイントは、提供されたタグタイプとタグ値に一致するプログラムのリストを取得します。
+[タグによるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramListByTagUsingGET)エンドポイントでは、指定したタグタイプとタグ値に一致するプログラムのリストを取得します。
 
-必須パラメーターは 2 つあります。`tagType` れはフィルタリング対象のタグのタイプで、`tagValue` れはフィルタリング対象のタグの値です。  返すプログラムの数を制御するオプションの整数 `maxReturn` パラメーター（最大は 200、デフォルトは 20）、および結果のページングに使用するオプションの整数 `offset` パラメーター（デフォルトは 0）があります。  結果はランダムな順序で返されます。
+必須パラメーターは、フィルタリングするタグのタイプである `tagType` と、フィルタリングするタグの値である `tagValue` の2 つがあります。返されるプログラムの数を制御するオプションの整数 `maxReturn` パラメーター（最大値は 200、デフォルトは 20）と、結果のページングに使用されるオプションの整数 `offset` パラメーター（デフォルトは 0）があります。 結果はランダムな順序で返されます。
 
 ```
 GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
@@ -320,9 +320,9 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 作成と更新
 
-[ 作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) および [ 更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) プログラムは標準的なアセットパターンに従い、必須のパラメーターとして `folder`、`name`、`type` および `channel` を持ちます。`description`、`costs` および `tags` はオプションです。 チャネルとタイプは、プログラムの作成時にのみ設定できます。 作成後に更新できるのは、説明、名前、`tags` および `costs` のみで、追加の `costsDestructiveUpdate` パラメーターを使用できます。 `costsDestructiveUpdate` を true に渡すと、既存のコストがすべてクリアされ、呼び出しに含まれるコストに置き換えられます。 一部の購読では、一部のプログラムタイプにタグが必要になる場合があることに注意してください。ただし、これは設定に依存し、最初に「タグを取得」を使用して、インスタンス固有の要件があるかどうかを確認する必要があります。
+プログラムの[作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST)と[更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST)は、標準のアセットパターンに従います。`folder`、`name`、`type`、`channel` が必須のパラメーターとして設定され、`description`、`costs`、`tags` はオプションです。チャネルとタイプは、プログラム作成時にのみ設定できます。作成後に更新できるのは、description、name、`tags`、`costs` のみで、追加の `costsDestructiveUpdate` パラメーターが許可されます。`costsDestructiveUpdate` を true として渡すと、既存のコストがすべてクリアされ、呼び出しに含まれるコストに置き換えられます。一部のサブスクリプションの一部のプログラムタイプではタグが必要な場合がありますが、これは設定に依存するので、最初に「タグを取得」でインスタンス固有の要件があるかどうかを確認する必要があります。
 
-メールプログラムを作成または更新する際に、`startDate` および `endDate` を UTC 日時として渡すこともできます。
+メールプログラムを作成または更新する際に、`startDate` と `endDate` を UTC 日時として渡すこともできます。
 
 `"startDate": "2022-10-19T15:00:00.000Z"`
 `"endDate": "2022-10-19T15:00:00.000Z"`
@@ -379,7 +379,7 @@ name=API Test Program&folder={"id":1035,"type":"Folder"}&description=Sample API 
 
 ### 更新
 
-プログラムコストを更新する場合、新しいコストを追加するには、`costs` 配列に追加するだけです。 破壊的な更新を実行するには、新しいコストを、パラメーター `costsDestructiveUpdate` を `true` に設定して渡します。 プログラムからすべてのコストをクリアするには、`costs` パラメーターを渡さず、設定 `costsDestructiveUpdate` を `true` に渡します。
+プログラムコストを更新する際に、新しいコストを追加するには、`costs` 配列に追加するだけです。破壊的な更新を実行するには、新しいコストと、`true` に設定されたパラメーター `costsDestructiveUpdate` を渡します。プログラムからすべてのコストをクリアするには、`costs` パラメーターを渡さずに、`true` に設定された `costsDestructiveUpdate` のみを渡します。
 
 ```
 POST /rest/asset/v1/program/{id}.json
@@ -441,7 +441,7 @@ description=This is an updated description&name=Updated Program Name&costs=[{"st
 
 ## 承認
 
-メールプログラムは、リモートで承認または未承認になる場合があります。これにより、プログラムは指定された startDate に実行され、指定された endDate に終了します。 これらは両方とも、プログラムを承認するように設定し、UI から有効で承認されたメールとスマートリストを設定する必要があります。
+メールプログラムは、リモートで承認または未承認にすることができます。これにより、プログラムは指定した startDate に実行し、指定した endDate に終了します。プログラムを承認するには、これら両方を設定する必要があります。また、UI 経由で有効で承認済みのメールとスマートリストを設定する必要があります。
 
 ### 承認
 
@@ -463,7 +463,7 @@ POST /rest/asset/v1/program/{id}/approve.json
 }
 ```
 
-### 承認取消
+### 未承認
 
 ```
 POST /rest/asset/v1/program/{id}/unapprove.json
@@ -485,9 +485,9 @@ POST /rest/asset/v1/program/{id}/unapprove.json
 
 ## 複製
 
-[ プログラムのクローン作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/cloneProgramUsingPOST) は、新しい名前とフォルダーを必須パラメーターとして指定し、オプションで説明を付けた、標準のアセットパターンに従います。  `name` パラメーターは、グローバルに一意であり、255 文字を超えることはできません。  `folder` パラメーターは親フォルダーです。  `folder` パラメータータイプ属性は「フォルダー」に設定し、ターゲットフォルダーは、複製されるプログラムと同じワークスペースにある必要があります。
+[プログラムの複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/cloneProgramUsingPOST)は、標準のアセットパターンに従います。新しい名前とフォルダーを必須のパラメーターとして、またオプションの説明として指定します。 `name` パラメーターはグローバルに一意にする必要があり、255 文字を超えることはできません。`folder` パラメーターは親フォルダーです。`folder` パラメーターのタイプ属性は「フォルダー」に設定する必要があり、ターゲットフォルダーは複製するプログラムと同じワークスペース内にある必要があります。
 
-プッシュ通知、アプリ内メッセージ、レポート、ソーシャルAssetsなど、特定の種類のアセットを含んだプログラムは、この API を使用してクローンすることはできません。 アプリ内プログラムは、この API を使用して複製することはできません。
+プッシュ通知、アプリ内メッセージ、レポート、ソーシャルアセットなど、特定のタイプのアセットを含むプログラムは、この API 経由で複製できない場合があります。アプリ内プログラムは、この API 経由で複製できません。
 
 ```
 POST /rest/asset/v1/program/{id}/clone.json

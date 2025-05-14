@@ -1,32 +1,32 @@
 ---
 title: getCampaignsForSource
 feature: SOAP
-description: getCampaignsForSource SOAP呼び出し
+description: getCampaignsForSource SOAP 呼び出し
 exl-id: bd8803ef-f462-4346-a381-73f40dc5d9ee
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '131'
-ht-degree: 9%
+ht-degree: 100%
 
 ---
 
 # getCampaignsForSource
 
-この関数は、requestCampaign 関数への入力パラメーターとして使用できる、適格なMarketoキャンペーンのリストを返します。 キャンペーンはリクエストのソースによって分類され、WSDL でカウントされます。
+この関数は、requestCampaign 関数への入力パラメーターとして使用できる、適格な Marketo キャンペーンのリストを返します。キャンペーンは、WSDL でカウントされるリクエストのソースによって分類されます。
 
-重要：スマートキャンペーンが適合するには、「キャンペーンがリクエストされました」トリガーが必要です。 そのソースには web サービス API が含まれている必要があります。
+重要：スマートキャンペーンの対象になるには、「キャンペーンをリクエスト」トリガーが必要です。このソースには、Web Service API が含まれている必要があります。
 
-![campaign_is_requested_トリガー](assets/campaign-is-requested-trigger.png)
+![campaign_is_requested_trigger](assets/campaign-is-requested-trigger.png)
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| ソース | 必須 | ソースは、`MKTOWS` または `SALES` にすることができます。 後者には、Sales Insight で使用できるキャンペーンのリストが表示されます。 |
-| 名前 | オプション | これを使用して、名前でフィルタリングします。 これは単一の文字列であり、文字列の配列ではありません。 |
-| exactName | オプション | name パラメーターに完全に一致させるかどうかを示すブール値 |
+| ソース | 必須 | ソースは、`MKTOWS` または `SALES` に指定できます。後者では、セールスインサイトで使用可能なキャンペーンのリストを提供します。 |
+| name | オプション | 名前でフィルタリングするには、これを使用します。これは、文字列の配列ではなく、単一の文字列です。 |
+| exactName | オプション | name パラメーターに完全一致が必要かどうかを示すブール値 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

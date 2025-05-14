@@ -1,26 +1,26 @@
 ---
 title: スニペット
 feature: REST API, Snippets
-description: Marketo API を使用したスニペットの管理。
+description: Marketo API を通じたスニペットの管理。
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '438'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # スニペット
 
-[ スニペットエンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets)
+[スニペットエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets)
 
-スニペットは、メールやランディングページに埋め込み、動的コンテンツ用にセグメント化できる、再利用可能なHTMLコンポーネントです。 スニペットにはテンプレートが関連付けられていないため、Marketo内の他のアセット内で作成し、デプロイすることができます。
+スニペットは、メールやランディングページに埋め込むことができ、動的コンテンツ用にセグメント化できる再利用可能な HTML コンポーネントです。スニペットには関連するテンプレートがなく、Marketo 内の他のアセット内で作成およびデプロイできます。
 
 ## クエリ
 
-スニペットのクエリは、By Name メソッドを持たない点を除き、アセットの標準パターンに従います。 [ID 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetByIdUsingGET) と [ 参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetUsingGET) の両方のメソッドを使用すると、ステータスフィールドを使用して、スニペットの承認済みバージョンまたはドラフトバージョンを取得できます。
+スニペットのクエリは、名前別メソッドがないことを除いて、アセットの標準パターンに従います。[ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetByIdUsingGET)メソッドと[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetUsingGET)メソッドの両方で、ステータスフィールドを使用して、スニペットの承認済みバージョンまたはドラフトバージョンを取得できます。
 
-### Id 別
+### ID 別
 
 ```
 GET /rest/asset/v1/snippet/{id}.json?status=approved
@@ -112,7 +112,7 @@ GET /rest/asset/v1/snippets.json?maxReturn=3
 }
 ```
 
-## コンテンツのクエリ
+## クエリコンテンツ
 
 特定のスニペットのコンテンツは、スニペット ID に基づいて取得できます。
 
@@ -139,11 +139,11 @@ GET /rest/asset/v1/snippet/{id}/content.json
 }
 ```
 
-この呼び出しは、コンテンツセクションのリストを返します。  HTML型または DynamicContent 型のセクションで構成され、オプションでテキスト型のセクションも構成されます。
+この呼び出しは、HTML タイプまたは DynamicContent タイプのセクションと、オプションで Text タイプのセクションで構成されるコンテンツセクションのリストを返します。
 
 ## 作成と更新
 
-スニペットは、複雑なアセット作成パターンに従います。このパターンでは、[ スニペットを作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST) の呼び出しと、そのコンテンツが別々に行われるので、最初の呼び出しは、オプションの説明を付けて create エンドポイントに対するものにする必要があります。   データは、JSON としてではなく、x-www-form-urlencoded として渡されます。
+スニペットは、複雑なアセット作成パターンに従います。[スニペットを作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST)の呼び出しとそのコンテンツは別々に行われるので、最初の呼び出しは、オプションの説明と共に作成エンドポイントに対して行う必要があります。データは JSON ではなく、x-www-form-urlencoded として渡されます。
 
 ```
 POST /rest/asset/v1/snippets.json
@@ -183,7 +183,7 @@ name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=Thi
 }
 ```
 
-スニペット内のコンテンツの追加や置換は、ID によって行われます。 コンテンツのタイプは、テキスト、HTML、DynamicContent のいずれかです。 type が Text の場合、コンテンツパラメーターはプレーンテキストのエンドポイントになり、HTMLの場合は、目的のマークアップテキストになります。 タイプを DynamicContent に設定した場合は、コンテンツパラメーターを、スニペットに関連付けるセグメントの ID に設定する必要があります。
+スニペット内のコンテンツの追加や置換は、ID によって行われます。コンテンツのタイプは、テキスト、HTML または DynamicContent のいずれかになります。タイプがテキストの場合、コンテンツパラメーターはプレーンテキストエンドポイントになりますが、HTML の場合は、目的のマークアップテキストになります。タイプを DynamicContent に設定した場合、コンテンツパラメーターは、スニペットに関連付けるセグメント化の ID に設定する必要があります。
 
 ```
 POST /rest/asset/v1/snippet/{id}/content.json
@@ -211,7 +211,7 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[ メタデータの更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST) も ID 別に行われます。 更新できるのは名前と説明のみです：
+[メタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST)も ID によって行われます。名前と説明のみ更新できます。
 
 ```
 POST /rest/asset/v1/snippet/{id}.json
@@ -253,7 +253,7 @@ name=Test Snippet&description=New Description
 
 ## 動的コンテンツ
 
-スニペットは、動的コンテンツの標準的なパターンに従いますが、それ自体はコンテンツセクション全体を 1 つだけ表すので、各スニペットには動的セクションが 1 つだけ、オプションで使用されるセグメント内の各セグメントの内部セクションのリストが含まれる場合があります。 スニペットには動的コンテンツセクションが 1 つのみ存在する可能性があるので、動的コンテンツはスニペット ID だけでクエリできます。
+スニペットは動的コンテンツの標準パターンに従いますが、それ自体では 1 つのコンテンツセクション全体を表すだけなので、各スニペットには 1 つの動的セクションのみを含めることができ、使用されるセグメント化内の各セグメントに対してオプションで内部セクションのリストを含めることができます。スニペットには動的コンテンツセクションが 1 つしか存在しない場合があるので、動的コンテンツはスニペット ID のみでクエリを実行できます。
 
 ```
 GET /rest/asset/v1/snippet/{id}/dynamicContent.json
@@ -308,7 +308,7 @@ GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 
 ## 承認
 
-スニペットには、ドラフトの承認、未承認および破棄に使用できるエンドポイントがあり、標準のアセットパターンに従っています。 スニペットを承認するには、そのスニペットがドラフトステータスになっている必要があります。
+スニペットには、標準のアセットパターンに従って、ドラフトを承認、未承認、破棄するエンドポイントがあります。スニペットを承認するには、スニペットがドラフトステータスである必要があります。
 
 ### 承認
 
@@ -342,9 +342,9 @@ POST /rest/asset/v1/snippet/{id}/approveDraft.json
 }
 ```
 
-### 承認取消
+### 未承認
 
-`unapprove` エンドポイントは、承認されたスニペットでのみ使用できます。
+`unapprove` エンドポイントは、承認済みスニペットに対してのみ使用できます。
 
 ```
 POST /rest/asset/v1/snippet/{id}/unapprove.json
@@ -376,9 +376,9 @@ POST /rest/asset/v1/snippet/{id}/unapprove.json
 }
 ```
 
-### 下書きの破棄
+### 下書きを破棄
 
-破棄するには、スニペットはドラフトステータスになっている必要があります。  承認済みのスニペットは破棄できません。
+スニペットを破棄するには、メールがドラフトステータスである必要があります。承認済みスニペットは破棄できません。
 
 ```
 POST /rest/asset/v1/snippet/{id}/discardDraft.json
@@ -400,7 +400,7 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 複製
 
-API を使用した [ スニペットのクローン作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST) はシンプルで、標準的なパターンに従います。その際、必要な名前、元のスニペットの ID、フォルダー、オプションの説明を指定します。  承認済みバージョンが存在しない場合は、ドラフトバージョンのクローンが作成されます。
+API を使用して[スニペットを複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST)するのは簡単で、必須の名前、元のスニペットとフォルダーの ID、オプションの説明を含む標準パターンに従います。承認済みバージョンが存在しない場合は、ドラフトバージョンが複製されます。
 
 ```
 POST /rest/asset/v1/snippet/{id}/clone.json

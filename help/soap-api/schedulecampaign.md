@@ -1,27 +1,27 @@
 ---
 title: scheduleCampaign
 feature: SOAP, Smart Campaigns
-description: scheduleCampaign SOAP呼び出し
+description: scheduleCampaign SOAP 呼び出し
 exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '252'
-ht-degree: 5%
+ht-degree: 100%
 
 ---
 
 # scheduleCampaign
 
-この関数は、バッチ Smart Campaign のスケジュールを、即時または将来の日付に実行するように設定します。 正常に完了するには、既存のスマートキャンペーンが必要です。 これは、importToList と組み合わせてリードのリストをアップロードし、新しく作成したリストに対してバッチキャンペーンを実行するために使用できます。
+この関数は、バッチスマートキャンペーンをすぐに実行するか、今後の日付で実行するようにスケジュールします。正常に完了するには、既存のスマートキャンペーンが必要です。これを importToList と組み合わせて使用すると、リードのリストをアップロードし、新しく作成されたリストに対してバッチキャンペーンを実行できます。
 
 ## オプションのプログラムトークン：
 
-requestCampaign 関数と同様に、既存のトークンを上書きするマイトークンの配列をこの API 呼び出しに渡すことができます。 キャンペーンの実行後、トークンは破棄されます。
+requestCampaign 関数と同様に、既存のトークンを上書きするこの API 呼び出しにマイトークンの配列を渡すことができます。キャンペーンの実行後、トークンは破棄されます。
 
-[importToList](importtolist.md) でこのオプション・パラメータを使用する場合、トークンは次の順序で優先順位付けされます。
+このオプションパラメーターを [importToList](importtolist.md) と共に使用している場合、トークンは次の順序で優先順位付けされます。
 
 1. リードトークンごとの importToList
-1. キャンペーントークンごとのキャンペーンのスケジュール
+1. キャンペーントークンごとの scheduleCampaign
 1. プログラムのマイトークン
 
 ## リクエスト
@@ -31,11 +31,11 @@ requestCampaign 関数と同様に、既存のトークンを上書きするマ�
 | programName | 必須 | 含まれるプログラムの名前 |
 | campaignName | 必須 | スマートキャンペーンの名前 |
 | campaignRunAt | オプション | スケジュールされたキャンペーンを実行する時間（W3C WSDL 日付形式）。 |
-| cloneToProgramName | オプション | この属性が存在する場合、キャンペーンの親プログラムのクローンが作成され、新しく作成されたキャンペーンがスケジュールされます。 属性は、結果として得られるプログラムの目的の名前を指定します。 注意：このフィールドを使用する場合、1 日に許可される呼び出しは 10 件のみです。 |
-| programTokenList->attrib->name | オプション | 新しい値を送信するトークンの名前。 Marketo UI 内と同様に、完全なトークン形式を使用します。 つまり、「{{my.message}}」です |
-| programTokenList->attrib->value | オプション | 関連付けられたトークン名の値。 |
+| cloneToProgramName | オプション | この属性が存在する場合、キャンペーンの親プログラムが複製され、新しく作成されたキャンペーンがスケジュールされます。属性は、結果として得られるプログラムの目的の名前を指定します。メモ：このフィールドを使用する場合、1 日に許可される呼び出しは 10 個のみです。 |
+| programTokenList／attrib／name | オプション | 新しい値を送信するトークンの名前。Marketo UI 内と同様に、完全なトークン形式を使用します。つまり、「{{my.message}}」です。 |
+| programTokenList／attrib／value | オプション | 関連付けられたトークン名の値。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

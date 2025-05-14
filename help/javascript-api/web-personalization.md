@@ -1,25 +1,25 @@
 ---
-title: Web パーソナライズ
-description: Web パーソナライズ
+title: Web パーソナライゼーション
+description: Web パーソナライゼーション
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '401'
-ht-degree: 6%
+ht-degree: 100%
 
 ---
 
-# Web パーソナライズ
+# Web パーソナライゼーション
 
-Web Personalization JavaScript API は、プラットフォームの Automated Personalization 機能を拡張します。 これにより、イベントの追跡や、web ページの動的なカスタマイズが可能になります。 その他の機能：[ カスタムデータイベント ](custom-data-events.md)、[ 動的コンテンツ ](web-personalization.md)、[ 訪問者データの取得 ](get-visitor-data.md)、[ 特定のボットのタグを除外 ](#exclude_tag_for_specific_bots)。
+Web Personalization JavaScript API は、プラットフォームの Automated Personalization 機能を拡張します。これにより、web ページのイベントトラッキングと動的なカスタマイズが可能です。その他の機能：[カスタムデータイベント](custom-data-events.md)、[動的コンテンツ](web-personalization.md)、[訪問者データを取得](get-visitor-data.md)、[特定のボットのタグを除外](#exclude_tag_for_specific_bots)。
 
-- User Context API を使用する前に、web Personalizationのユーザーになり、サイトに [RTP タグをデプロイ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) しておく必要があります。
-- RTP では、アカウントベースのマーケティングの名前付きアカウントリストをサポートしていません。 ABM のリストとコードは、RTP で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
+- RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## タグ設定
 
-RTP タグは、パーソナライズされたページのヘッダーに挿入してください。
+RTP タグは、パーソナライズされたページのヘッダーに挿入する必要があります。
 
 ```javascript
 <!-- RTP tag --> 
@@ -34,12 +34,12 @@ g.src=f;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b)
 
 ## アカウント設定
 
-このメソッドは、タグレベルで自動的に呼び出され、関連するアカウント ID が設定されます。 異なるドメイン間で分割する場合は、アカウント ID を設定できます。
+このメソッドは、関連するアカウント ID を設定するタグレベルで自動的に呼び出されます。異なるドメイン間で分割する際は、アカウント ID を設定できます。
 
-| パラメーター | オプション/必須 | タイプ | 説明 |
+| パラメーター | オプション／必須 | タイプ | 説明 |
 |--------------|-------------------|--------|--------------|
 | &#39;setAccount&#39; | 必須 | 文字列 | メソッド名。 |
-| accountId | 必須 | 文字列 | アカウント Id。 |
+| accountId | 必須 | 文字列 | アカウント ID。 |
 
 
 ```javascript
@@ -49,15 +49,15 @@ rtp('setAccount', accountId);
 
 ## イベント送信関数
 
-このメソッドは、ページトラッキングに使用されるビューイベントを送信します。 次の例では、現在のページ URL を訪問者ページビューとして追跡します。
+このメソッドは、ページトラッキングに使用されるビューイベントを送信します。次の例では、現在のページ URL を訪問者ページビューとして追跡します。
 
 このメソッドでオプションの「page」パラメーターを渡すと、現在のページを上書きできます。
 
-| パラメーター | オプション/必須 | タイプ | 説明 |
+| パラメーター | オプション／必須 | タイプ | 説明 |
 |-----------|-------------------|--------|---------------------------------|
-| &#39;送信&#39; | 必須 | 文字列 | メソッドのアクション。 |
-| &#39;表示&#39; | 必須 | 文字列 | メソッド名。 |
-| ページ | オプション | 文字列 | 相対パスまたは完全ページの URL。 |
+| &#39;send&#39; | 必須 | 文字列 | メソッドアクション。 |
+| &#39;view&#39; | 必須 | 文字列 | メソッド名。 |
+| ページ | オプション | 文字列 | 相対パスまたは完全なページの URL。 |
 
 
 ```javascript
@@ -69,11 +69,11 @@ var page = 'my-page?param=1';
 rtp('send', 'view', page);
 ```
 
-## 特定のボットのタグを除外（ユーザーエージェント）
+## 特定のボットのタグを除外（ユーザエージェント）
 
-特定のブラウザーから Web Personalization プラットフォームにデータが送信されないようにするには（ボットが識別されている場合）、タグスクリプトに次の IF 文を追加します。
+Web パーソナライゼーションプラットフォームにデータを送信する特定のブラウザーを除外するには（ボットが識別された場合）、次の IF ステートメントをタグスクリプトに追加します。
 
-以下のコード例では、「Googlebot|msnbot」をボットの例として使用して、web Personalization アクティビティから除外します。
+以下のコード例では、Web パーソナライゼーションアクティビティから除外するボットの例として「Googlebot|msnbot」が使用されています。
 
 ```javascript
 <!-- RTP tag --> 
@@ -91,15 +91,15 @@ if(navigator.userAgent.match(/.(Googlebot|msnbot)./gi) == null){
 <!-- End of RTP tag -->
 ```
 
-## JavaScript呼び出しの説明
+## JavaScript 呼び出しの説明
 
-Web JavaScriptと予測コンテンツを使用する際に web サイトに追加されるPersonalizationの説明。
+Web パーソナライゼーションおよび予測コンテンツを使用する際に web サイトに追加される JavaScript の説明です。
 
-### コア /依存JavaScript
+### コア／依存 JavaScript
 
-| 名前 | 説明 | 制御 |
+| 名前 | 説明 | コントロール |
 |---------------------------|-------------|--------------------------------------------------------|
-| rtp.js | - | Marketoによって制御 |
+| rtp.js | - | Marketo によって制御されます |
 | jquery.min.js | v1.8.3 | Marketo カスタマーサポートに連絡して無効にすることができます |
 | jquery-custom-ui-min.js | v1.9.2 | Marketo カスタマーサポートに連絡して無効にすることができます |
 | query-ui-1.8.17-dialog.js | v1.9.2* | Marketo カスタマーサポートに連絡して無効にすることができます |
@@ -107,11 +107,11 @@ Web JavaScriptと予測コンテンツを使用する際に web サイトに追�
 
 *jQuery UI にダイアログがない場合にのみ使用されます
 
-### オンデマンドJavaScript
+### オンデマンド JavaScript
 
-| 名前 | 説明 | 制御 |
+| 名前 | 説明 | コントロール |
 |-------------------------|-----------------------------------------------------------------------|-----------------------|
-| ga-integration-2.0.1.js | Google Analytics/Facebook/SiteCatalyst統合が有効な場合に使用されます | Marketoによって制御 |
-| insightera-bar-2.1.js | 予測コンテンツレコメンデーションバーが有効な場合に使用されます | Marketoによって制御 |
-| froogaloop2.min.js | コンテンツ追跡が有効で、Vimeo プレーヤーがページ上に存在する場合に使用されます | - |
-| iframe-api-v1.js | コンテンツトラッキングが有効になっていて、YouTube Player がページに存在する場合に使用されます | - |
+| ga-integration-2.0.1.js | Google Analytics／Facebook／SiteCatalyst 統合が有効な場合に使用されます | Marketo によって制御されます |
+| insightera-bar-2.1.js | 予測コンテンツレコメンデーションバーが有効な場合に使用されます | Marketo によって制御されます |
+| froogaloop2.min.js | コンテンツトラッキングが有効で、Vimeo プレーヤーがページ上に存在する場合に使用されます | - |
+| iframe-api-v1.js | コンテンツトラッキングが有効で、YouTube プレーヤーがページ上に存在する場合に使用されます | - |

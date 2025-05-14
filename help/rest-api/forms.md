@@ -1,30 +1,30 @@
 ---
 title: フォーム
 feature: REST API, Forms
-description: API を使用したフォームの作成と管理
+description: API を通じてフォームを作成および管理します。
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1598'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # フォーム
 
-[Forms エンドポイント参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms)
+[フォームエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms)
 
-[ フォームフィールドエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields)
+[フォームフィールドエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields)
 
-Marketo forms にはエンドポイントの複雑なセットがあり、リモートシステムからフォームを完全に管理できます。 フォームの一部として管理する必要のあるオブジェクトには様々なタイプ（Forms、フィールド、フィールドセット、表示ルール、フォローアップページルール）があるので、フォームの構造は複雑になる場合があります。
+Marketo フォームには、エンドポイントの複雑なセットがあり、リモートシステムからフォーム管理を完全に制御できます。フォームの一部として管理する必要があるオブジェクトのタイプには、フォーム、フィールド、フィールドセット、表示ルール、フォローアップページルールなど、様々なタイプがあるので、フォームの構造は複雑になる場合があります。
 
 ## クエリ
 
-Formsでは、アセットを取得する標準的な方法である [id ごと ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByIdUsingGET)、[ 名前ごと ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET)、および [ ブラウジングごと ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/browseForms2UsingGET) をサポートしています。 各フォーム応答には、フィールドリストを除くすべてのプロパティが含まれます。
+フォームは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET)、[参照別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/browseForms2UsingGET)でのアセット取得の標準的な方法をサポートしています。各フォーム応答には、フィールドリストを除くすべてのプロパティが含まれます。
 
 ### ID 別
 
-[ID でフォームを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByIdUsingGET) パスパラメーターとしてフォーム `id` を受け取り、フォームレコードを返します。
+[ID によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByIdUsingGET)では、フォーム `id` をパスパラメーターして受け取り、フォームレコードを返します。
 
 ```
 GET /rest/asset/v1/form/{id}.json
@@ -78,7 +78,7 @@ GET /rest/asset/v1/form/{id}.json
 
 ### 名前別
 
-[ 名前によるフォームの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) フォーム `name` をパスパラメーターとして受け取り、フォームレコードを返します。
+[名前によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET)では、フォーム `name` をパスパラメーターとして受け取り、フォームレコードを返します。
 
 ```
 GET /rest/asset/v1/form/byName.json?name=newForm
@@ -132,7 +132,7 @@ GET /rest/asset/v1/form/byName.json?name=newForm
 
 ### 参照
 
-[Formsを入手 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/browseForms2UsingGET) フォームは他の Asset API 参照エンドポイントと同様に機能し、`status`、`maxReturn`、`offset` に対するオプションのフィルタリングを可能にします。 ステータスは、承認済み、ドラフトで承認済み、ドラフトのいずれかです。
+[フォームを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/browseForms2UsingGET)フォームでは、他の Asset API 参照エンドポイントと同様に機能し、`status`、`maxReturn`、`offset` でのオプションのフィルタリングが可能です。ステータスは、承認済み、ドラフトで承認済み、ドラフトのいずれかになります。
 
 ```
 GET /rest/asset/v1/forms.json
@@ -285,31 +285,31 @@ GET /rest/asset/v1/form/{id}/fields.json
 }
 ```
 
-フィールドまたはフォーム内でのフィールドの動作を編集する場合は、編集を試みる前に、必ずフィールドリストを取得する必要があります。 これにより、更新や削除の際に、適切なフィールド ID が確実に付与されます。
+フィールドを編集する場合や、フォーム内でのフィールドの動作を編集する場合は、編集を試みる前に常にフィールドリストを取得する必要があります。これにより、更新や削除の際に、適切なフィールド ID が付与されます。
 
 ### フィールドのタイプ
 
 | UI タイプ | API 名 |
 |--------------|-----------------|
-| 複数選択チェックボックス | チェックボックス |
-| ラジオボタン | ラジオ |
-| テキストエリア | テキストエリア |
-| 選択リスト | 選択リスト |
-| 文字列 | 文字列 |
-| メール | メール |
-| 日付 | 日 |
+| チェックボックス | checkbox |
+| ラジオボタン | radio |
+| テキストエリア | textarea |
+| 選択リスト | picklist |
+| 文字列 | string |
+| メール | email |
+| 日付 | date |
 | 数字 | number |
-| 二重 | 二重線 |
-| 電話 | 電話 |
+| Double | double |
+| 電話 | phone |
 | URL | URL |
 | 通貨 | currency |
 | チェックボックス | single_checkbox |
-| スライダ | 範囲 |
+| スライダ | range |
 
 
 ### 依存関係
 
-[Get Form Used By](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getFormUsedByUsingGET) エンドポイントは、パスパラメーターとして `id` されるフォームを受け取り、そのフォームに依存するアセットのリストを返します。 Formsは、ランディングページ、スマートリスト、スマートキャンペーン、レポート、メールプログラムのアセットタイプで使用できます。
+[使用されるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getFormUsedByUsingGET)エンドポイントでは、フォーム `id` をパスパラメーターとして受け取り、フォームに依存するアセットのリストを返します。フォームは、ランディングページ、スマートリスト、スマートキャンペーン、レポート、メールプログラムなどのアセットタイプで使用できます。
 
 ```
 GET /rest/asset/v1/form/{id}/usedBy.json
@@ -335,7 +335,7 @@ GET /rest/asset/v1/form/{id}/usedBy.json
 
 ## 作成と更新
 
-[ フォームの作成 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/createLpFormsUsingPOST) 時には、必須フィールドが 2 つだけ存在します。フォームの親フォルダー、フォームの名前です。 その他のパラメーターはすべてオプションで、デフォルト値を使用します。 フォームを作成すると、名、姓、メールの 3 つのデフォルトフィールドが表示されます。
+[フォームの作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/createLpFormsUsingPOST)時に必要なフィールドは、フォームの親フォルダーとフォーム名の 2 つだけです。その他のパラメーターはすべてオプションで、デフォルト値が設定されます。フォームを作成すると、名、姓、メールの 3 つのデフォルトフィールドが追加されます。
 
 ```
 POST /rest/asset/v1/forms.json
@@ -395,7 +395,7 @@ name=newForm&description=test&folder={"type": "Folder","id": 293}&language=Frenc
 }
 ```
 
-Formsは、id を介して同様の呼び出しで [ 更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/updateFormsUsingPOST) されます。 作成時または更新時に、任意の基本スタイルパラメーターにアクセスして編集できるので、エンドユーザーに対するフォームの表示方法を変更できます。
+フォームは、ID を通じた同様の呼び出しで[更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/updateFormsUsingPOST)されます。作成中または更新中は、基本スタイル設定パラメーターのいずれかにアクセスして編集できるので、エンドユーザへのフォームの表示方法を変更できます。
 
 ```
 POST /rest/asset/v1/form/736.json
@@ -454,13 +454,13 @@ name=updated name&description=This is a test for updateapi&language=English&prog
 }
 ```
 
-既知の訪問者ページやありがとうページの動作は、作成または更新フォーム呼び出しを使用して変更することはできず、それぞれのエンドポイントを使用してアクセスする必要があります。
+既知の訪問者およびサンキューページの動作は、作成フォームや更新フォームの呼び出しを通じて変更できず、それぞれのエンドポイント経由でアクセスする必要があります。
 
 ## フィールドメタデータ
 
-フォームに属するフィールドを適切に追加または編集するには、ターゲットインスタンスの有効なフィールドのリストを取得する必要があります。 フィールドのインタラクションは、常にフィールドの id プロパティに基づいて行われます。このプロパティは、結果に項目ごとに表示されます。
+フォームに属するフィールドを適切に追加または編集するには、ターゲットインスタンスの有効なフィールドのリストを取得する必要があります。フィールドのインタラクションは常に、結果の各項目に表示されるフィールドの id プロパティに基づいて行われます。
 
-リードフィールドの場合は、「[ 使用可能なフォームフィールドを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getAllFieldsUsingGET)」エンドポイントを使用して行います。これには、フィールドがフォームに追加される際のデータタイプと、フィールドのデフォルトメタデータが含まれます。
+リードフィールドの場合、これは[使用可能なフォームフィールドを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getAllFieldsUsingGET)エンドポイントを使用して実行され、フォームに追加した際のフィールドのデータタイプとデフォルトのメタデータが含まれます。
 
 ```
 GET /rest/asset/v1/form/fields.json
@@ -592,7 +592,7 @@ GET /rest/asset/v1/form/fields.json
 }
 ```
 
-プログラムメンバーカスタムフィールドについては、[ 利用可能なフォームプログラムメンバーフィールドを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getAllProgramMemberFieldsUsingGET) を呼び出してください  プログラムメンバーのカスタムフィールドのデータタイプとデフォルトのメタデータを取得するエンドポイント。 これらのフィールドをフォームで使用するには、フォームが（Design Studio ではなく）プログラムの下にある必要があります。 これらのフィールドを使用するフォームを含むランディングページも、プログラムの下に存在する必要があります（Design Studio 内に存在したり、Design Studio に複製したりすることはできません）。
+プログラムメンバーのカスタムフィールドの場合は、[使用可能なフォームプログラムメンバーフィールドを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getAllProgramMemberFieldsUsingGET)エンドポイントを呼び出して、プログラムメンバーのカスタムフィールドのデータタイプとデフォルトのメタデータを取得します。フォームでこれらのフィールドを使用するには、フォームがプログラム（Design Studio 内ではない）の下に存在する必要があります。また、これらのフィールドを使用するフォームを含むランディングページも、プログラムの下に存在する必要があります（Design Studio 内に存在したり、Design Studio に複製したりすることはできません）。
 
 ```
 GET /rest/asset/v1/form/programMemberFields.json
@@ -629,9 +629,9 @@ GET /rest/asset/v1/form/programMemberFields.json
 
 ### フィールドの編集
 
-各フォームには、読み込み時にエンドユーザーに表示される、編集可能なフィールドのリストが含まれています。 各フィールドは、フィールドリストから各エンドポイントを介して一度に 1 つずつ追加、更新または削除されます。
+各フォームには、編集可能なフィールドのリストが含まれ、読み込むとエンドユーザに表示されます。各フィールドは、それぞれのエンドポイントを通じて、フィールドリストから 1 つずつ追加、更新または削除されます。
 
-[ フィールドの追加 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldToAFormUsingPOST) には、親フォームの ID とフィールドの fieldId のみが必要です。 その他のフィールドはすべて、データタイプとフィールドメタデータに基づいて、空になるか、デフォルト値になります。 データは、JSON としてではなく、POST x-www-form-urlencoded として渡されます。
+[フィールドの追加](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldToAFormUsingPOST)には、親フォームの ID とフィールドの fieldId のみが必要です。他のすべてのフィールドは、空になるか、データタイプとフィールドメタデータに基づいてデフォルト値が設定されます。データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。
 
 ```
 POST /rest/asset/v1/form/{id}/fields.json
@@ -676,7 +676,7 @@ fieldId=NumberOfEmployees&maxLength=125&defaultValue=this is default&required=tr
 }
 ```
 
-アップデートは、フィールドの追加と同じフィールドをすべて編集する可能性があります。同様に、fieldId がパスパラメーターで、アップデートを実行する際にクエリパラメーターではないことを除き、フォーム ID と fieldId が必要です。
+更新では、フィールドの追加と同じフィールドがすべて編集される場合があり、同様にフォーム ID と fieldId が必要になります。ただし、更新を実行する際に fieldId はクエリパラメーターではなくパスパラメーターである点が異なります。
 
 ```
 POST /rest/asset/v1/form/{id}/field/LastName.json
@@ -715,11 +715,11 @@ label=enter the last name here
 }
 ```
 
-上記の例では、単純な文字列である LastName フィールドを更新しています。 一部のフォームフィールドはより複雑です。 例えば、「敬称」フィールドは、項目のリストとデフォルト値を含む「選択」フィールドタイプです。 選択タイプフィールドを追加または更新する場合、選択肢の 1 つに true の `isDefault` 値を設定しない限り、最初の選択肢に値がなく、「選択」というラベルが付きます。
+上記の例では、シンプルな文字列である LastName フィールドを更新しています。一部のフォームフィールドはより複雑です。例えば、「敬称」フィールドは、項目のリストとデフォルト値を含む「選択」フィールドタイプです。選択タイプフィールドを追加または更新する場合、選択の 1 つに `isDefault` 値を true に設定しない限り、最初の選択には値がなく、「選択…」というラベルが付けられます。
 
-![ 敬称 ](assets/form-field-salutation.png)
+![敬称](assets/form-field-salutation.png)
 
-リスト項目を更新するには、「values」パラメーターの形式を次に示します。
+リスト項目を更新する場合、「values」パラメーターの形式は次のようになります。
 
 ```
 POST /rest/asset/v1/form/{id}/field/Salutation.json
@@ -789,21 +789,21 @@ values=[{"label":"Select...","value":"","isDefault":true,"selected":true}, {"lab
 }
 ```
 
- 
+ 
 
-複雑なフォームフィールドの書式設定方法を決定するには、「フィールドをフォームに追加」からの応答を確認してください。
+複雑なフォーム フィールドの書式設定方法を決定するには、「フォームにフィールドを追加」からの応答を確認します。
 
-### 並べ替えフィールド
+### フィールドの並べ替え
 
-[ フォームフィールド位置の変更 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST) エンドポイントを使用して、フォーム内のフィールドをすべて、1 つの単位として並べ替える必要があります。 エンドポイントには `positions` というパラメーターが必要です。これは、3 つのメンバーを持つオブジェクトの JSON 配列です。
+フォーム内のフィールドはすべて、[フォームフィールド位置を変更](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST)エンドポイントを通じて単一の単位として並べ替える必要があります。エンドポイントには、`positions` というパラメーターが必要です。これは、次の 3 つのメンバーを持つオブジェクトの JSON 配列です。
 
 - columnNumber
 - rowNumber
-- fieldName （フィールドの ID を指します）
+- fieldName（フィールドの ID を指します）
 
-フォーム内のフィールドは、最大 3 列、最大 10 行のテーブル状のインターフェイスで配置されます。 行と列の両方に 0 からインデックスが付けられるので、最初の行と最初の列は両方とも 0 を渡すことで示されます。 すべてのフィールドが一意の位置を占める必要があります
+フォーム内のフィールドは、最大 3 列、最大 10 行のテーブルのようなインターフェイスで配置されます。行と列は両方とも 0 からインデックス付けされるので、最初の行と最初の列は両方とも 0 を渡すことによって示されます。すべてのフィールドが一意の位置を占める必要があります
 
-ターゲットフィールドが fieldset である場合は、positions 配列内のレコードにも fieldList というパラメーター（同じ columnNumber、rowNumber、および fieldName メンバーを含むオブジェクトの配列）が含まれている必要があります。 フィールドセット自体は、親リスト内の位置に対して単一のフィールドとして扱われますが、サブフィールドは fieldList パラメーターの指定された位置に従って配置されます。
+また、ターゲットフィールドもフィールドセットである場合、positions 配列内のこのレコードには、同じ columnNumber、rowNumber および fieldName メンバーを含むオブジェクトの配列である fieldList というパラメーターも含める必要があります。フィールドセット自体は親リスト内の位置に対して単一のフィールドとして処理され、このサブフィールドは fieldList パラメーターで指定した位置に従って配置されます。
 
 ```
 POST /rest/asset/v1/form/{id}/reArrange.json
@@ -833,7 +833,7 @@ positions=[{"columnNumber":0,"rowNumber":0,"fieldName":"FirstName"},{"columnNumb
 
 ### リッチテキスト
 
-リッチテキストフィールドは、リードフィールドから [ 別のエンドポイント ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addRichTextFieldUsingPOST) を介して追加されます。 フィールドコンテンツは、multipart/form-data として渡されます。 スクリプト、メタタグまたはリンクタグを含まないHTMLコンテンツとして構造化する必要があります。
+リッチテキストフィールドは、リードフィールドとは[別のエンドポイント](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addRichTextFieldUsingPOST)を通じて追加されます。フィールドコンテンツは、multipart/form-data として渡されます。スクリプト、メタタグ、リンクタグを含まない HTML コンテンツとして構造化する必要があります。
 
 ```
 POST /rest/asset/v1/form/{id}/richText.json
@@ -872,13 +872,13 @@ Content-Type: text/html
 
 ### フィールドセット
 
-Marketo forms には、fieldsets というオプションのコンポーネントがあります。 フィールドセットは、表示ルールによる移動や処理の目的で、最上位のフィールドリスト内の単一のフィールドとして扱われるフィールドのグループです。 例えば、コンプライアンス要件のフィールドがあり、クライアントが「はい」を選択した場合、HIPAA および PCI のコンプライアンス要件のフィールドを含むフィールドセットが表示される場合があります。
+Marketo フォームには、フィールドセットというオプションのコンポーネントがあります。フィールドセットは、表示ルールによる移動および処理の目的で、上位レベルのフィールドリスト内で単一のフィールドとして処理されるフィールドのグループです。例えば、コンプライアンス要件のフィールドがあり、クライアントが「はい」を選択した場合、HIPAA および PCI コンプライアンス要件のフィールドを含むフィールドセットが表示される可能性があります。
 
-フィールドセット内のフィールドは、フォーム全体に固有なので、重複したフィールドは、フォームの親フィールドリストと子フィールドセットの両方に存在しない場合があります。 フィールドセットは、[ フォームにフィールドセットを追加 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldSetUsingPOST) エンドポイントを介して追加され、[ フォームのフィールドを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getFormFieldByFormVidUsingGET) の結果に表示されます。 [ フィールド位置を更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST) を使用してフィールドをフィールドセットの fieldList に移動することで、フィールドをフィールドセットに追加します。 これらのエンドポイントの場合、データは JSON ではなく、POST x-www-form-urlencoded として渡されます。
+フィールドセット内のフィールドはフォーム全体に固有なので、重複するフィールドはフォームの親フィールドリストと子フィールドセットの両方に存在できません。フィールドセットは、[フォームにフィールドセットを追加](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldSetUsingPOST)エンドポイントを通じて追加され、[フォームのフィールドを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getFormFieldByFormVidUsingGET)の結果に表示されます。フィールドは、[フィールド位置を更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST)を使用してフィールドセットのフィールドリストに移動することで、フィールドセットに追加されます。これらのエンドポイントの場合、データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。
 
 ## 表示ルール
 
-各フィールドには、フォームに入力した値に応じて訪問者がフィールドを表示できるかどうかを決定する、一連の表示ルールを含めることができます。 ルールは、フォーム内に存在する subjectField の値と、ルールで指定された値のリストを比較します。 各フィールドには、表示ルール、表示、非表示、または alwaysShow の 1 つのタイプと、評価するルールのリストが含まれる場合があります。 ルールは上から下のように評価され、true と評価される最初のルールが適用されるルールです。
+各フィールドには、フォームに入力した値に応じて訪問者がフィールドを表示できるかどうかを決定する一連の表示ルールがある場合があります。ルールは、フォーム内に存在する subjectField の値と、ルールで指定された値のリストを比較します。各フィールドには、表示、非表示、または alwaysShow のいずれか 1 つのタイプの表示ルールと、評価するルールのリストを設定できます。ルールは上から下に向かって評価され、最初に true と評価されたルールが適用されます。
 
 表示ルールの変更は、破壊的な更新です。
 
@@ -917,25 +917,25 @@ visibilityRule={"ruleType":"show", "rules":[{"subjectField": "LastName", "operat
 }
 ```
 
-使用可能な演算子の完全なリストについては、[ フォームフィールド表示ルールの追加 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFormFieldVisibilityRuleUsingPOST) に関するエンドポイント参照のページを参照してください。
+使用可能な演算子の完全なリストについては、[フォームフィールド表示ルールを追加](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFormFieldVisibilityRuleUsingPOST)のエンドポイント参照ページを参照してください。
 
 ## フォローアップ
 
-Marketo forms には、特定のページにリダイレクトするルールや現在のページに留まるルールが、送信時に指定されたフィールドの内容に基づいて適用される、動的なフォローアップページの動作が含まれる場合があります。 ルールは、「ありがとうございます」ページルールまたはフォローアップページルールと同義に呼ばれます。 これらのルールは、メンバー `followupType`、`followupValue`、`operator`、`subjectField`、`values` および `default` を含む JSON 配列として表されます。 `default` は、配列の 1 つのレコードのみが true になるブール値です。 訪問者がその他のルールの対象とならない場合は、デフォルトとして指定されたルールが使用されます。 lp または url を指定で `followupType` ます。lp は `followupValue` のMarketo ランディングページ ID を示し、url は別のページへの URL を示します。 演算子は、件名フィールドの値を指定された値のリストと比較するために使用されます。
+Marketo フォームには動的なフォローアップページ動作があり、送信時に指定したフィールドのコンテンツに基づいて、特定のページにリダイレクトするルールや現在のページに留まるルールが適用される場合があります。ルールは、サンキューページルールまたはフォローアップページルールとも呼ばれます。これらのルールは、`followupType`、`followupValue`、`operator`、`subjectField`、`values`、`default` のメンバーを含む JSON 配列として表されます。`default` はブール値で、配列内の 1 つのレコードのみが true になる場合があります。訪問者が他のルールの要件を満たさない場合は、デフォルトとして指定したルールが使用されます。`followupType` は lp または url のいずれかです。lp は `followupValue` の Marketo ランディング ページ ID を示し、url は別のページへの URL を示します。演算子は、件名フィールドの値を、指定した値のリストと比較するために使用されます。
 
 ## 送信ボタン
 
-フォームの送信ボタンのスタイル設定は、[ 送信ボタンを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/updateFormSubmitButtonUsingPOST) エンドポイントで管理されます。 buttonPosition、buttonStyle、label、および waitingLabel （送信が保留中の間に表示されるラベル）は変更できます。
+フォームの送信ボタンのスタイル設定は、[送信ボタンを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/updateFormSubmitButtonUsingPOST)エンドポイントで管理されます。buttonPosition、buttonStyle、label、waitingLabel（送信が保留中に表示されるラベル）を変更できます。
 
 これは破壊的な更新です。
 
 ## 承認
 
-他のほとんどのアセットと同様に、フォームはドラフト承認済みモデルに従います。ドラフトバージョンや承認済みバージョンを使用できます。 フォームに更新が適用されるたびに、常に最初にドラフトバージョンに適用され、フォームが承認されたときにのみライブで表示されます。 フォームを承認すると、現在のドラフトバージョンが取得され、承認済みのバージョンがある場合は、そのバージョンがドラフトに置き換えられます。 フォームをライブから削除する必要がある場合は、まず未承認にする必要があります。これにより、現在のドラフトがすべて削除され、承認済みバージョンがドラフトのみの状態に降格されます。 Formsを削除する前に、常に承認を取り消す必要があります。
+他のほとんどのアセットと同様に、フォームはドラフトバージョンや承認済みバージョンを指定できるドラフト承認済みモデルに従います。フォームに更新を適用するたびに、常に最初にドラフトバージョンに適用され、フォームが承認された場合にのみライブで表示されます。フォームを承認すると、現在のドラフトバージョンが取得され、承認済みバージョンがある場合はドラフトに置き換えられます。フォームをライブから削除する必要がある場合は、最初にフォームを未承認にする必要があります。これにより、現在のドラフトがすべて削除され、承認済みバージョンがドラフトのみの状態に降格されます。フォームは、削除を試みる前に、常に未承認にする必要があります。
 
-## プログレッシブ プロファイリング
+## プログレッシブプロファイリング
 
-フォームに対してプログレッシブプロファイルが有効になっている場合、「プロファイル」というフィールドセットがフィールドリストに含まれます。 プログレッシブプロファイルリストにフィールドを追加または削除するには、「フィールド位置を更新」エンドポイントを使用する必要があります。 このエンドポイントは、破壊的な更新を行うので、フォーム内のすべてのフィールドを各リクエストに含める必要があります。 次の例では、「Phone」フィールドをプログレッシブプロファイルリストに追加します。
+フォームでプログレッシブプロファイリングが有効になっている場合、「プロファイリング」と呼ばれるフィールドセットがフィールドリストに含まれます。プログレッシブプロファイリングリストからフィールドを追加または削除するには、「フィールド位置を更新」エンドポイントを使用する必要があります。このエンドポイントは、破壊的な更新を行うので、フォーム内のすべてのフィールドを各リクエストに含める必要があります。次の例では、「電話」フィールドをプログレッシブプロファイルリストに追加します。
 
 ```
 POST /rest/asset/v1/form/{id}/reArrange.json

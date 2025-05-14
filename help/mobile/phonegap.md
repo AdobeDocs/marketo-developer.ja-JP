@@ -4,9 +4,9 @@ feature: Mobile Marketing
 description: モバイルデバイスでのMarketoと PhoneGap の使用
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
 source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '818'
-ht-degree: 96%
+ht-degree: 100%
 
 ---
 
@@ -66,14 +66,14 @@ repositories{
 1. Firebase Cloud Messaging サポート
 
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [&#128279;](https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [](https://console.firebase.google.com/)Firebase コンソール。
       1. が含まれる [Firebase コンソール](https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「Android アプリに Firebase を追加」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
-   1. **[!UICONTROL プロジェクトの概要]** の [!UICONTROL &#x200B; プロジェクト設定 &#x200B;] に移動します
-      1. 「**[!UICONTROL 一般]**」タブをクリックします。 「google-services.json」ファイルをダウンロードします。
-      1. 「**[!UICONTROL クラウドメッセージング]**」タブをクリックします。 [!UICONTROL &#x200B; サーバーキー &#x200B;] と [!UICONTROL &#x200B; 送信者 ID] をコピーします。 これらの [!UICONTROL &#x200B; サーバーキー &#x200B;] と [!UICONTROL &#x200B; 送信者 ID] をMarketoに提供します。
+   1. [!UICONTROL プロジェクトの概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します
+      1. 「**[!UICONTROL 一般]**」タブをクリックします。「google-services.json」ファイルをダウンロードします。
+      1. 「**[!UICONTROL Cloud Messaging]**」タブをクリックします。[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] をコピーします。これらの[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] を Marketo に指定します。
    1. Phonegap アプリでの FCM 変更の設定
       1. ダウンロードした「google-services.json」ファイルを Phonegap アプリモジュールのルートディレクトリに移動します
       1. の場所からファイル「MyFirebaseInstanceIDService」を削除します `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` （非推奨）
@@ -124,7 +124,7 @@ xCode プロジェクトでプッシュ通知機能をオンにします。
 
 >[!BEGINTABS]
 
->[!TAB 目標 C]
+>[!TAB Objective C]
 
 を更新 `applicationDidBecomeActive` 次のようなメソッド
 
@@ -208,7 +208,7 @@ marketo. uninitializeMarketoPush(
 );
 ```
 
-## リードの関連付け
+## リードを関連付け
 
 associateLead 関数を呼び出すことで、Marketo リードを作成できます。
 

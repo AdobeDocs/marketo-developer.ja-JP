@@ -1,28 +1,28 @@
 ---
 title: mergeLeads
 feature: SOAP
-description: mergeLeads SOAP呼び出し
+description: mergeLeads SOAP 呼び出し
 exl-id: a667cb76-525d-4583-b26a-1181d320a68c
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '83'
-ht-degree: 13%
+ht-degree: 100%
 
 ---
 
 # mergeLeads
 
-勝者リードのキーと複数の失注リードのキーを受け入れて、結合操作を実行します。 リードの ID とステータスを返します。
+成功したリードのキーと複数の失敗したリードのキーを受け入れて、結合操作を実行します。リードの ID とステータスを返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| winningLeadKeyList | 必須 | 勝者リードを識別するために使用されるキー。 使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
-| losingLeadKeyLists | 必須 | 失注したリードを識別するために使用されるキーのリスト。 |
-| mergeInSales | オプション | 「True」または「False」としてブール値として渡されます |
+| winningLeadKeyList | 必須 | 成功したリードを識別するのに使用されるキー。使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| losingLeadKeyLists | 必須 | 失敗したリードを識別するのに使用されるキーのリスト。 |
+| mergeInSales | オプション | 「True」または「False」のいずれかとして、ブール値として渡されます。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

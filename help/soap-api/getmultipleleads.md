@@ -1,44 +1,44 @@
 ---
 title: getMultipleLeads
 feature: SOAP
-description: getMultipleLeads SOAP呼び出し
+description: getMultipleLeads SOAP 呼び出し
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '384'
-ht-degree: 4%
+ht-degree: 100%
 
 ---
 
 # getMultipleLeads
 
-`getLead` と同様に、`getMultipleLeads` はMarketoからリードレコードを取得します。 この呼び出しでは、単一のリードのデータではなく、leadSelector パラメーターに渡された条件に一致するリードバッチのデータが返されます。 条件は、最終更新日などの日付範囲、リードキーの配列、静的リストにすることができます。
+`getLead` と同様に、`getMultipleLeads` は Marketo からリードレコードを取得します。この呼び出しでは、単一のリードのデータの代わりに、leadSelector パラメーターに渡された条件に一致するリードのバッチのデータが返されます。条件には、最終更新日などの日付範囲、リードキーの配列、静的リストなどを指定できます。
 
-メモ：リードキーの配列を使用する場合、1 つのバッチにつき 100 個に制限されます。追加のキーは無視されます。
+メモ：リードキーの配列を使用する場合は、バッチごとに 100 個に制限され、追加のキーは無視されます。
 
-リードフィールドのサブセットのみが必要な場合は、目的のフィールドを指定するために `includeAttributes` パラメーターを使用する必要があります。
+リードフィールドのサブセットのみが必要な場合は、`includeAttributes` パラメーターを使用して目的のフィールドを指定する必要があります。
 
-各 `getMultipleLeads` 関数呼び出しは、最大 1000 個のリードを返します。 1,000 件を超えるリードを取得する必要がある場合、結果は [ ストリーム位置 ](stream-position.md) を返します。これを後続の呼び出しで使用すると、1,000 件のリードの次のバッチを取得できます。 結果の残りのカウントは、残りのリードの数を正確に示します。 静的リストから取得する場合、終了条件は remainingCount == 0 です。
+`getMultipleLeads` 関数の各呼び出しでは、最大 1000 個のリードが返されます。1,000 個を超えるリードを取得する必要がある場合、結果として[ストリームの位置](stream-position.md)が返されます。この位置は、後続の呼び出しで次の 1,000 個のリードのバッチを取得するために使用できます。結果の残りの数は、残りのリードの数を正確に示します。静的リストから取得する際、終了条件は remainingCount == 0 です。
 
-このエンドポイントの一般的なユースケースは、特定の日付に更新されたリードを検索することです。 `LastUpdateAtSelector` では、これを実行できます。
+このエンドポイントの一般的なユースケースは、特定の日付に更新されたリードを見つけることです。`LastUpdateAtSelector` を使用すると、これを実行できます。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadSelector | 必須 | 次の 3 つのタイプのいずれかです。`LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` |
-| keyType | 必須 | クエリする ID タイプ。 値には、IDNUM、COOKIE、EMAIL、LEADOWNEREMAIL、SFDCACCOUNTID、SFDCCONTACTID、SFDCLEADID、SFDCLEADOWNERID、SFDCOPPTYID などがあります。 |
-| keyValues->stringItem | 必須 | キー値のリスト。 つまり、「lead@email.com」です。 |
-| LastUpdateAtSelector: leadSelector->oldestUpdatedAt | 必須 | 「since」条件を指定するタイムスタンプ。 つまり、指定した時間以降に更新されたすべてのリードを返します。 （W3C WSDL 日時形式） |
-| LastUpdateAtSelector: leadSelector->latestUpdatedAt | オプション | 「まで」の条件を指定するタイムスタンプ。 つまり、指定された時間までに更新されたすべてのリードを返します。 （W3C WSDL 日時形式） |
-| StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |
-| StaticListSelector: leadSelector->staticListId | `leadSelector->staticListName` が存在する場合はオプション | 静的リストの ID |
-| lastUpdatedAt | **非推奨** | 代わりに `LastUpdateAtSelector` を使用してください |
-| includeAttributes | オプション | 取得する属性のリスト。 返されるリードフィールドを制限すると、API の応答時間が向上する可能性があります。 |
-| batchSize | オプション | 返されるレコードの最大数。 システムの制限は 100 または `batchSize` のいずれか小さい方 |
-| streamPosition | オプション | 多数のリード応答をページ分割するために使用されます。 `streamPosition` の値は、以前の呼び出し応答フィールド `newStreamPosition` から返されます。 |
+| leadSelector | 必須 | `LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` の 3 つのタイプのいずれかを指定できます |
+| keyType | 必須 | クエリを実行する ID タイプ。値には、IDNUM、COOKIE、EMAIL、LEADOWNEREMAIL、SFDCACCOUNTID、SFDCCONTACTID、SFDCLEADID、SFDCLEADOWNERID、SFDCOPPTYID が含まれます。 |
+| keyValues／stringItem | 必須 | キー値のリスト。つまり、「lead@email.com」 |
+| LastUpdateAtSelector：leadSelector／oldestUpdatedAt | 必須 | 「since」条件を指定するタイムスタンプ。つまり、指定した時間以降に更新したすべてのリードが返されます。（W3C WSDL 日時形式） |
+| LastUpdateAtSelector：leadSelector／latestUpdatedAt | オプション | 「until」条件を指定するタイムスタンプ。つまり、指定した時間までに更新したすべてのリードが返されます。（W3C WSDL 日時形式） |
+| StaticListSelector：leadSelector／staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |
+| StaticListSelector：leadSelector／staticListId | `leadSelector->staticListName` が存在する場合はオプション | 静的リストの ID |
+| lastUpdatedAt | **非推奨（廃止予定）** | 代わりに `LastUpdateAtSelector` を使用します |
+| includeAttributes | オプション | 取得する属性のリスト。返されるリードフィールドを制限すると、API の応答時間が向上する場合があります。 |
+| batchSize | オプション | 返されるレコードの最大数。100 または `batchSize` のいずれか小さい方に制限されます |
+| streamPosition | オプション | 多数のリード応答をページ分割するために使用されます。`streamPosition` 値は、前の呼び出しの応答フィールド `newStreamPosition` によって返されます。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

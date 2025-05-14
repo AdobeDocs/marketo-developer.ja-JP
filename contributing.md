@@ -1,6 +1,6 @@
 ---
 source-git-commit: 4c6df71f0d7f569582597eac48c8f44ea12036f8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '281'
 ht-degree: 100%
 
@@ -18,7 +18,7 @@ ht-degree: 100%
 
 ## 投稿者ガイドドキュメント
 
-[投稿者ガイド](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ja&ja-jp)を参照してください。
+[投稿者ガイド](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ja)を参照してください。
 
 ## ご質問がある場合
 
@@ -45,4 +45,4 @@ submitting a pull request!
 
 ## セキュリティ上の問題
 
-セキュリティ上の問題は、この問題トラッカーでは報告しないでください。代わりに、[アドビのセキュリティエキスパート](https://helpx.adobe.com/jp/security/alertus.html)に問題を報告してください。
+セキュリティ上の問題は、この問題トラッカーでは報告しないでください。代わりに、[アドビのセキュリティエキスパート](https://helpx.adobe.com/security/alertus.html)に問題を報告してください。

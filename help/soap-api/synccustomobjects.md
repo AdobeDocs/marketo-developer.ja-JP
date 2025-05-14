@@ -1,37 +1,37 @@
 ---
 title: syncCustomObjects
 feature: SOAP
-description: syncCustomObjects SOAP呼び出し
+description: syncCustomObjects SOAP 呼び出し
 exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '226'
-ht-degree: 5%
+ht-degree: 100%
 
 ---
 
 # syncCustomObjects
 
-作成または更新するカスタムオブジェクトの配列を受け入れます。1 回の呼び出しで最大 100 個まで指定できます。 操作（CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）の結果（ステータス）と、処理されたカスタムオブジェクトを返します。 API は、次の 3 つの操作モードのいずれかで呼び出されます。
+作成または更新するカスタムオブジェクトの配列を、呼び出しごとに最大 100 個まで受け入れます。操作（CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）の結果（ステータス）と、処理されたカスタムオブジェクトを返します。API は、次の 3 つの操作モードのいずれかで呼び出されます。
 
-1. INSERT – 新しいオブジェクトのみを挿入し、既存のオブジェクトはスキップします
-1. UPDATE – 既存のオブジェクトのみを更新し、新しいオブジェクトはスキップします
-1. アップサート – 新しいオブジェクトを挿入し、既存のオブジェクトを更新します
+1. INSERT - 新しいオブジェクトのみを挿入し、既存のオブジェクトはスキップします
+1. UPDATE - 既存のオブジェクトのみを更新し、新しいオブジェクトはスキップします。
+1. UPSERT - 新しいオブジェクトを挿入し、既存のオブジェクトを更新します
 
-1 回の API 呼び出しで、一部の更新が成功し、一部の更新が失敗する場合があります。 失敗するたびにエラーメッセージが返されます。
+1 回の API 呼び出しで、一部の更新は成功し、一部の更新は失敗する場合があります。失敗するたびにエラーメッセージが返されます。
 
-新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、UI で `dedupe` フィールドとして指定されたフィールドのみを、`CustomObjKeyList` の属性として渡すことができます。 フィールド以 `dedupe` のリンクフィールドは、`customObjAttributeList` の属性として渡す必要があります。
+新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、UI で `dedupe` フィールドとして指定されているフィールドのみが `CustomObjKeyList` の属性として渡される可能性があります。`dedupe` フィールドではないリンクフィールドは、`customObjAttributeList` の属性として渡す必要があります。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| 操作 | 必須 | 「挿入」、「更新」または「アップサート」 |
+| operation | 必須 | 「INSERT」、「UPDATE」または「UPSERT」 |
 | objectTypeName | 必須 | カスタムオブジェクトの名前 |
-| customObjectList->customObject->customObjectKeyList->attribute | 必須 | 属性は、カスタムオブジェクトの識別に使用されるキーと値のペアです。 customObjKeyList には複数の属性を含めることができます |
-| customObjectList->customObject->customObjectAttributeList->attribute | 必須 | キーと値のペア。name はフィールド名で、value は customObject に挿入する値です |
+| customObjectList／customObject／customObjKeyList／attribute | 必須 | 属性は、カスタムオブジェクトを識別するのに使用されるキーと値のペアです。customObjKeyList には複数の属性を含めることができます。 |
+| customObjectList／customObject／customObjAttributeList／attribute | 必須 | キーと値のペア。名前はフィールド名で、値は customObject に挿入する値です。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

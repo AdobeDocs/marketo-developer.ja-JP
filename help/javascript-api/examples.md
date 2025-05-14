@@ -1,20 +1,20 @@
 ---
 title: 例
-description: フォームアクションを設定するためのMarketo コードの例
+description: フォームアクションを設定するための Marketo コードの例
 feature: Javascript
 exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
 source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '211'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
 # 例
 
-以下に、実証的なForms 2.0 web フォームの例のセットを示します。
+実証的な Forms 2.0 web フォームのセットの例を以下に示します。
 
-## 送信成功後にフォームを非表示
+## 送信成功後にフォームを非表示にする
 
 この例では、訪問者をフォローアップページに移動させたり、現在のページをリロードしたりしません。
 
@@ -30,9 +30,9 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 });
 ```
 
-## ユーザー定義 URL に訪問者を移動
+## ユーザ定義 URL に訪問者を移動させる
 
-この例では、設定された「ありがとうございます」ページではなく、送信の成功後にJavaScriptによって特定された URL に訪問者を誘導します。
+この例では、送信成功後に、設定されたサンキューページではなく、JavaScript によって決定された URL へと訪問者を誘導します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -48,7 +48,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## フォームフィールド値の設定
 
-次の使用例は、フォーム フィールドを設定します。
+この例では、フォームフィールドを設定します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -57,7 +57,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 });
 ```
 
-## フォーム送信時のフォームフィールド値の読み取り
+## フォーム送信時にフォームフィールド値を読み取る
 
 この例では、フォーム送信時にフォームフィールドを読み取ります。
 
@@ -75,9 +75,9 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 }); 
 ```
 
-## 非フォームクリックイベントでのフォーム送信
+## フォームクリック以外のイベントでフォームを送信する
 
-次の使用例では、フォームの一部ではない他の要素またはイベントのクリック イベントに基づいてフォームを送信します。
+この例では、フォームの一部ではない他の要素またはイベントのクリックイベントに基づいてフォームを送信します。
 
 ```javascript
 // Load the form normally
@@ -93,9 +93,9 @@ btn.onclick = function() {
 };
 ```
 
-## ユーザーによるフォームの送信を防ぐ
+## ユーザによるフォームの送信を防止する
 
-この例では、フォームの送信ボタンを機能させるために、クリックカウンターボタンを 3 回以上クリックする必要があります。
+この例では、フォームの送信ボタンが機能する前に、クリックカウンターボタンを 3 回以上クリックする必要があります。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 
@@ -123,9 +123,9 @@ clickCounterBtn.onclick = function() {
 };
 ```
 
-## フォーム上の非表示フィールドに値を設定する
+## フォームの非表示フィールドに値を設定する
 
-次の使用例は、非表示のフィールドの値を設定します。
+この例では、非表示フィールドに値を設定します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 
@@ -135,9 +135,9 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 });
 ```
 
-## LightBox にフォームを表示
+## ライトボックスでフォームを表示する
 
-次の使用例は、url にパラメータ `lightboxForm=true` が含まれている場合、Lightbox のスタイルダイアログにフォームを表示します。
+この例では、URL にパラメーター `lightboxForm=true` が含まれている場合に、ライトボックススタイルのダイアログにフォームを表示します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 
@@ -147,9 +147,9 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 });
 ```
 
-## カスタム エラーメッセージを表示
+## カスタムエラーメッセージの表示
 
-この例では、カスタムビジネスロジックに基づいた送信に基づくカスタムエラーメッセージを示しています。
+この例では、カスタムビジネスロジックに基づいて送信時にカスタムエラーメッセージを表示します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 

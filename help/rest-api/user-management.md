@@ -1,38 +1,38 @@
 ---
 title: ユーザ管理
 feature: REST API
-description: ユーザーレコードに対して CRUD 操作を実行します。
+description: ユーザレコードに対して CRUD 操作を実行します。
 exl-id: 2a58f496-0fe6-4f7e-98ef-e9e5a017c2de
 source-git-commit: b89a22e136a7b81a5cd1af9ba7b0caa41c619ff4
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1180'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
 # ユーザ管理
 
-[User Management エンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/user/)
+[ユーザ管理エンドポイント参照](https://developer.adobe.com/marketo-apis/api/user/)
 
-Marketoには、Marketo内のユーザーレコードに対して CRUD 操作を実行できる一連の User Management エンドポイントが用意されています。 ユーザーを作成するには、招待をユーザーに送信します。ユーザーはパスワードを設定し、初めてMarketoにアクセスできるようになります。
+Marketo には、Marketo 内のユーザレコードに対して CRUD 操作を実行できる一連のユーザ管理エンドポイントが用意されています。ユーザは、ユーザに招待状を送信することで作成され、このユーザはパスワードを設定して初めて Marketo へのアクセス権を取得できます。
 
-他のMarketo REST API とは異なり、User Management API を使用する場合は、次の点に注意してください。
+User Management API を使用する際、他の Marketo REST API とは次の点が異なります。
 
-- 認証するアクセストークンを送信するには、HTTP ヘッダーメソッドを使用する必要があります。 アクセストークンをクエリ文字列パラメーターとして渡すことはできません。 認証の詳細については、[ こちら ](authentication.md) を参照してください。
-- REST API 用の [ カスタムサービス ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api) のユーザーの役割を作成する場合は、2 つの異なるグループから役割の権限を選択する必要があります。
-   1. 「管理者にアクセス [&#128279;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループからの「ユーザーにアクセス  権限
-   1. [Access API](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループの「User Management Api へのアクセス」
-- 応答本文には、呼び出しの成功または失敗を示す「success」ブール値属性が含まれていません。 代わりに、HTTP 応答ステータスコードを評価する必要があります。 呼び出しが成功した場合は、200 ステータスコードが返されます。 呼び出しが失敗した場合は、200 レベル以外のステータスコードが返され、応答本文には、エラーコードと説明的なエラーメッセージを含む標準の「エラー」配列が含まれます。
-- 日時文字列の形式は `yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm` です。 これは、属性 `createdAt`、`updatedAt`、`expiresAt` に適用されます。
-- User Management API エンドポイントには、他のエンドポイントのようにプレフィックス「/rest」が付きません。
+- 認証するには、HTTP ヘッダーメソッドを使用してアクセストークンを送信する必要があります。 アクセストークンをクエリ文字列パラメーターとして渡すことはできません。認証について詳しくは、[こちら](authentication.md)を参照してください。
+- REST API の[カスタムサービス](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)のユーザロールを作成する際は、2 つの異なるグループからロール権限を選択する必要があります。
+   1. [管理にアクセス](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions)グループの「ユーザにアクセス」権限
+   1. [Access API](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループの「Access User Management API」
+- 応答本文には、呼び出しの成功または失敗を示す success ブール属性が含まれていません。代わりに、HTTP 応答ステータスコードを評価する必要があります。呼び出しが成功すると、200 ステータスコードが返されます。呼び出しが失敗すると、200 レベル以外のステータスコードが返され、応答本文にはエラーコードとエラーの説明メッセージを含む標準の「エラー」配列が含まれます。
+- 日時文字列の形式は、`yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm` です。これは、`createdAt`、`updatedAt`、`expiresAt` の属性に適用されます。
+- ユーザ管理 API エンドポイントには、他のエンドポイントのように「/rest」というプレフィックスは付きません。
 
 ## クエリ
 
-ユーザー管理のクエリサポートには、すべてのユーザー、役割、ワークスペースを取得する機能が含まれます。 また、ユーザー ID によって 1 つのユーザーレコードを取得したり、ユーザー ID によって役割/ワークスペースレコードを取得したりできます。
+ユーザ管理のクエリサポートには、すべてのユーザ、ロール、ワークスペースを取得する機能が含まれます。また、ユーザ ID による単一のユーザレコードを取得したり、ユーザ ID でロール／ワークスペースレコードを取得したりすることもできます。
 
-### ユーザー（ID 別）
+### ID 別のユーザ
 
-[ID によるユーザーの取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserUsingGET) エンドポイントは、単一の `userid` パスパラメーターを受け取り、招待を承諾したユーザーに関する単一のユーザーレコードを返します。
+[ID によるユーザの取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserUsingGET)エンドポイントは、単一の `userid` パスパラメーターを受け取り、招待を受け入れたユーザの単一のユーザレコードを返します。
 
 ```
 GET /userservice/management/v1/users/{userid}/user.json
@@ -71,9 +71,9 @@ GET /userservice/management/v1/users/{userid}/user.json
 }
 ```
 
-### 招待ユーザー（Id 別）
+### ID 別の招待ユーザ
 
-[ID で招待ユーザーを取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getInvitedUserUsingGET) エンドポイントは、単一の `userid` パスパラメーターを受け取り、「保留中」のユーザー（まだ招待を受け入れていない）に対して単一のユーザーレコードを返します。
+[ID により招待されたユーザの取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getInvitedUserUsingGET)エンドポイントは、単一の `userid` パスパラメーターを受け取り、「保留中」のユーザ（まだ招待を受け入れていないユーザ）の単一のユーザレコードを返します。
 
 ```
 GET /userservice/management/v1/users/{userid}/invite.json
@@ -94,9 +94,9 @@ GET /userservice/management/v1/users/{userid}/invite.json
 }
 ```
 
-### 役割とワークスペース （Id 別）
+### ID 別のロールとワークスペース
 
-[ID による役割とワークスペースの取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserRolesAndWorkspacesUsingGET) エンドポイントは、単一の `userid` パスパラメーターを受け取り、ユーザーの役割とワークスペースのレコードのリストを返します。 応答には、指定したユーザーの役割、ワークスペース ID および名前を含む 1 つのオブジェクトを持つ配列が含まれています。
+[ID によるロールとワークスペースをの取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserRolesAndWorkspacesUsingGET)エンドポイントは、単一の `userid` パスパラメーターを受け取り、ユーザロールとワークスペースレコードのリストを返します。応答には、指定されたユーザに対応するロールとワークスペースのIDおよび名前を含むオブジェクトが 1 つ含まれた配列が含まれます。
 
 ```
 GET /userservice/management/v1/users/{userid}/roles.json
@@ -119,9 +119,9 @@ GET /userservice/management/v1/users/{userid}/roles.json
 ]
 ```
 
-### ユーザーの参照
+### ユーザの参照
 
-[ ユーザーを取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUsersUsingGET) エンドポイントは、すべてのユーザーレコードのリストを返します。 オプションの `pageSize` パラメーターは、返されるエントリの最大数を指定する整数です。 デフォルトは 20 です。 最大値は 200 です。 オプションの `pageOffset` パラメーターは、エントリの取得を開始する場所を指定する整数です。 `pageSize` と併用できます。 初期設定は 0 です。
+[ユーザを取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUsersUsingGET)エンドポイントは、すべてのユーザレコードのリストを返します。オプションの `pageSize` パラメーターは、返されるエントリの最大数を指定する整数です。初期設定は 20 です。最大値は 200 です。オプションの `pageOffset` パラメーターは、エントリの取得を開始する場所を指定する整数です。`pageSize` と併用できます。初期設定は 0 です。
 
 ```
 GET /userservice/management/v1/users/allusers.json
@@ -158,11 +158,11 @@ GET /userservice/management/v1/users/allusers.json
 
 >[!NOTE]
 >
->上記のコードサンプルでは、Adobe IMSに移行されたお客様の `userid` が表示されます。 移行されていないお客様には、`userid` フィールドに通常のメールアドレスが表示されます。
+>上記のコードサンプルでは、表示される`userid` は、Adobe IMS に移行されたお客様の ID です。まだ移行していないお客様には、`userid` フィールドに通常のメールアドレスが表示されます。
 
-### 役割の参照
+### ロールの参照
 
-[ 役割を取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getRolesUsingGET) エンドポイントは、すべての役割レコードのリストを返します。
+[ロールを取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getRolesUsingGET)エンドポイントは、すべてのロールレコードのリストを返します。
 
 ```
 GET /userservice/management/v1/users/roles.json
@@ -245,7 +245,7 @@ GET /userservice/management/v1/users/roles.json
 
 ### ワークスペースの参照
 
-[ ワークスペースを取得 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getWorkspacesUsingGET) エンドポイントは、すべてのワークスペースレコードのリストを返します。
+[ワークスペースを取得](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getWorkspacesUsingGET)エンドポイントは、すべてのワークスペースレコードのリストを返します。
 
 ```
 GET /userservice/management/v1/users/workspaces.json
@@ -296,21 +296,21 @@ GET /userservice/management/v1/users/workspaces.json
 ]
 ```
 
-## ユーザーの招待
+## ユーザの招待
 
-[Adobe IMS統合サブスクリプション ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview) では、このエンドポイントは [API のみのユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user) の招待のみをサポートします。 [ 標準ユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users) を招待するには、代わりに [AdobeUser Management API](https://developer.adobe.com/umapi/) を使用します。
+[Adobe IMS 統合サブスクリプション](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)では、このエンドポイントは [API 専用ユーザ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)の招待のみをサポートします。[標準ユーザ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)を招待するには、代わりに [Adobe User Management API](https://developer.adobe.com/umapi/) を使用します。
 
-[ ユーザーを招待 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST) エンドポイントは、「Marketoへようこそ」という E メール招待状を新規ユーザーに送信します。 メール本文には、ユーザーが初めてMarketoにアクセスできる「Marketoにログイン」リンクが含まれています。 招待を受け入れるために、メール受信者が「Marketoにログイン」リンクをクリックし、パスワードを作成して、Marketoにアクセスできます。 受け入れプロセスが完了するまで、招待は「保留中」となり、ユーザーレコードは編集できません。 保留中の招待は、送信されてから 7 日後に有効期限が切れます。 ユーザー管理の詳細については、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users) を参照してください。
+「Marketo へようこそ」というメール招待状を新規ユーザに送信するための[ユーザを招待](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST)エンドポイントです。メール本文には、初めて Marketo にアクセスするユーザを許可する「Marketo にログイン」リンクが含まれます。メールの受信者が招待を受け入れるには、「Marketo にログイン」リンクをクリックし、パスワードを作成して、Marketo へのアクセス権を取得します。受け入れプロセスが完了するまで、招待は「保留中」となり、ユーザレコードは編集できません。保留中の招待状は、送信後 7 日で期限切れになります。ユーザの管理について詳しくは、[こちら](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)を参照してください。
 
 パラメーターは、リクエスト本文で `application/json` 形式で渡されます。
 
-次のパラメーターが必要です。  `emailAddress`、`firstName`、`lastName, userRoleWorkspaces`。 `userRoleWorkspaces` パラメーターは、`accessRoleId` および `workspaceId` 属性を含むオブジェクトの配列です。
+`emailAddress`、`firstName`、`lastName, userRoleWorkspaces` パラメーターは必須です。`userRoleWorkspaces` パラメーターは、`accessRoleId` 属性と `workspaceId` 属性を含むオブジェクトの配列です。
 
-`userid` パラメーターは、ユーザーログイン目的で使用される一意のユーザー識別子文字列値で、メールアドレスの形式にする必要があります。 リクエストに値が指定されていない場合、`userid` のデフォルト値はパラメーターに指定された値 `emailAddress` なります。
+`userid` パラメーターは、ユーザログインの目的で使用される一意のユーザ ID の文字列値であり、メールアドレスの形式にする必要があります。リクエストい指定されていない場合、`userid` の値はデフォルトで `emailAddress` パラメーターで指定された値になります。
 
-ブール値 `apiOnly` パラメーターは、ユーザーが [API のみのユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user) かどうかを指定します。 `expiresAt` パラメーターは、ユーザーログインの有効期限を指定し、W3C ISO-8601 形式（ミリ秒単位なし）で書式設定します。 リクエストで指定されていない場合、ユーザーの有効期限はありません。 `reason` パラメーターは、ユーザー招待の理由を説明する文字列です。
+ブール値の `apiOnly` パラメーターは、ユーザが [API 専用ユーザ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)であるかどうかを指定します。`expiresAt` パラメーターは、ユーザログインの有効期限を指定し、W3C ISO-8601 形式（ミリ秒単位なし）を使用して書式設定されます。リクエストで指定されていない場合、ユーザは期限切れになりません。`reason` パラメーターは、ユーザの招待理由を説明する文字列です。
 
-エンドポイントは、成功した場合は「true」の値を返し、失敗した場合はエラーメッセージを返します。
+エンドポイントは、成功した場合は「true」の値を返し、それ以外の場合はエラーメッセージを返します。
 
 ```
 POST /userservice/management/v1/users/invite.json
@@ -340,21 +340,21 @@ Content-Type: application/json
 true
 ```
 
-以下は、新しいユーザーに送信される「Marketoへようこそ」というメール招待の例です。 メールの件名は「Marketo Login Information」で、送信者は [REST API カスタムサービス ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api) に関連付けられている API 専用ユーザーのメールアドレスで、受信者は firstName、lastName、emailAddress パラメーターで指定されています。
+以下は、新規ユーザに送信される「Marketo へようこそ」というメール招待状の例です。メールの件名は「Marketo ログイン情報」、送信者は [REST API カスタムサービス](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)に関連付けられた API 専用ユーザのメールアドレス、受信者は firstName、lastName、emailAddress パラメーターで指定されています。
 
-![Invite User Email](assets/invite-user-email.png)
+![ユーザ招待メール](assets/invite-user-email.png)
 
-ユーザーは、パスワードを 2 回入力し、「パスワードを作成」ボタンをクリックして、電子メールの招待を受け入れます。 その後、Marketoへのアクセス権が初めて付与されます。
+ユーザは、パスワードを 2 回入力し、「パスワードを作成」ボタンをクリックして、メール招待状を受け入れます。その後、Marketo へのアクセス権が初めて付与されます。
 
-## ユーザーの更新
+## ユーザの更新
 
-ユーザーの更新サポートには、ユーザー属性を更新する機能や、ユーザーを削除する機能が含まれます。 更新できるのは、招待を承諾したユーザーのみです。 属性は、パラメーターとしてリクエスト本文に application/json 形式で渡されます。
+ユーザの更新サポートには、ユーザ属性を更新したり、ユーザを削除したりする機能が含まれます。招待を受け入れたユーザのみが更新できます。属性は、リクエスト本文のパラメーターとして application/json 形式で渡されます。
 
-### ユーザー属性の更新
+### ユーザ属性の更新
 
-[Adobe IMS統合サブスクリプション ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview) では、このエンドポイントは [API のみのユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user) の属性の更新のみをサポートしています。 [ 標準ユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users) の属性を更新するには、代わりに [AdobeUser Management API](https://developer.adobe.com/umapi/) を使用します。
+[Adobe IMS 統合サブスクリプション](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)では、このエンドポイントは [API 専用ユーザ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)の属性の更新のみをサポートします。[標準ユーザ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)の属性を更新するには、代わりに [Adobe User Management API](https://developer.adobe.com/umapi/) を使用します。
 
-[ ユーザー属性を更新 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/updateUserAttributeUsingPOST) エンドポイントは、単一の `userid` パスパラメーターを受け取り、単一のユーザーレコードを返します。 リクエスト本文には、更新する 1 つ以上のユーザー属性（`emailAddress`、`firstName`、`lastName`、`expiresAt`）が含まれます。
+[ユーザ属性を更新](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/updateUserAttributeUsingPOST)エンドポイントは、単一の `userid` パスパラメーターを受け取り、単一のユーザレコードを返します。リクエスト本文には、更新する 1 つ以上のユーザ属性（`emailAddress`、`firstName`、`lastName`、`expiresAt`）が含まれます。
 
 ```
 POST /userservice/management/v1/users/{userid}/update.json
@@ -407,29 +407,29 @@ Content-Type: application/json
 
 #### ユーザの削除
 
-[Adobe IMS統合サブスクリプション ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview) では、このエンドポイントは [API のみのユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user) の削除のみをサポートします。 [ 標準ユーザー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users) を削除するには、代わりに [AdobeUser Management API](https://developer.adobe.com/umapi/) を使用します。
+[Adobe IMS 統合サブスクリプション](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)では、このエンドポイントは [API 専用ユーザ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)の削除のみをサポートします。[標準ユーザ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)を削除するには、代わりに [Adobe User Management API](https://developer.adobe.com/umapi/) を使用します。
 
-[ ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteUserUsingPOST) エンドポイントは、1 つの `userid` パスパラメーターを受け取り、対応するユーザーをインスタンスから削除します。 これは破壊的な削除であり、元に戻すことはできません。 成功した場合は 200 ステータスコードが返され、失敗した場合はエラーメッセージが返されます。
+[ユーザを削除](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteUserUsingPOST)エンドポイントは、単一の `userid` パスパラメーターを受け取り、インスタンスから対応するユーザを削除します。これは、破壊的な削除であり、元に戻すことはできません。成功した場合は 200 ステータスコードが返され、それ以外の場合はエラーメッセージが返されます。
 
 ```
 POST /userservice/management/v1/users/{userid}/delete.json
 ```
 
-#### 招待ユーザーの削除
+#### 招待されたユーザの削除
 
-[ 招待ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteInvitedUserUsingPOST) エンドポイントは、単一の `userid` パスパラメーターを受け取り、対応する「保留中」ユーザーをインスタンスから削除します（ユーザーはまだ招待を受け入れていません）。 これは破壊的な削除であり、元に戻すことはできません。 成功した場合は 200 ステータスコードが返され、失敗した場合はエラーメッセージが返されます。
+[招待されたユーザを削除](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteInvitedUserUsingPOST)エンドポイントは、単一の `userid` パスパラメーターを受け取り、対応する「保留中」のユーザ（まだ招待を受け入れていないユーザ）をインスタンスから削除します。これは、破壊的な削除であり、元に戻すことはできません。成功した場合は 200 ステータスコードが返され、それ以外の場合はエラーメッセージが返されます。
 
 ```
 POST /userservice/management/v1/users/{userid}/invite/delete.json
 ```
 
-## 役割の更新
+## ロールの更新
 
-役割の更新サポートには、役割を追加および削除する機能が含まれます。 属性は、パラメーターとしてリクエスト本文に application/json 形式で渡されます。
+ロールの更新サポートには、ロールの追加と削除の機能が含まれます。属性は、リクエスト本文のパラメーターとして application/json 形式で渡されます。
 
-## 役割の追加
+## ロールの追加
 
-[ 役割を追加 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/addRolesUsingPOST) エンドポイントは、単一の `userid` パスパラメーターを受け取り、1 つ以上のユーザーの役割を対応するユーザーに追加します。 リクエスト本文には、1 つ以上のオブジェクトのリストが含まれ、各オブジェクトには以下の情報が含まれます。  `accessRoleId` と `workspaceId` 属性。 成功した場合は、指定したユーザーの `accessRoleId/workspaceId` ペアのリスト全体が返されます。
+[ロールを追加](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/addRolesUsingPOST)エンドポイントは、単一の `userid` パスパラメーターを受け取り、対応するユーザに 1 つ以上のユーザロールを追加します。 リクエスト本文には、それぞれ `accessRoleId` 属性と `workspaceId` 属性を含む 1 つ以上のオブジェクトのリストが含まれます。成功した場合、指定したユーザの `accessRoleId/workspaceId` ペアのリスト全体が返されます。
 
 ```
 POST /userservice/management/v1/users/{userid}/roles/create.json
@@ -465,9 +465,9 @@ Content-Type: application/json
 ]
 ```
 
-## 役割の削除
+## ロールの削除
 
-[ 役割を削除 ](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteRolesUsingPOST) エンドポイントは、単一の `userid` パスパラメーターを受け取り、対応するユーザーから 1 つ以上のユーザーの役割を削除します。 リクエスト本文には、1 つ以上のオブジェクトのリストが含まれ、各オブジェクトには以下の情報が含まれます。  `accessRoleId` と `workspaceId` 属性。 成功すると、指定したユーザーの accessRoleId と workspaceId のペアの残りのリストが返されます。
+[ロールを削除](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteRolesUsingPOST)エンドポイントは、単一の `userid` パスパラメーターを受け取り、対応するユーザから 1 つ以上のユーザロールを削除します。リクエスト本文には、それぞれ `accessRoleId` 属性と `workspaceId` 属性を含む 1 つ以上のオブジェクトのリストが含まれます。成功した場合、指定したユーザの accessRoleId/workspaceId ペアの残りのリストが返されます。
 
 ```
 POST /userservice/management/v1/users/{userid}/roles/delete.json

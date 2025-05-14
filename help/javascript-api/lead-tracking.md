@@ -4,31 +4,31 @@ description: Lead Tracking API
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
 source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '766'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
 # Lead Tracking API
 
-MarketoのMunchkin JavaScriptを使用すると、Marketo ランディングページや外部 web ページへのエンドユーザーページの訪問およびクリックをトラッキングできます。 これらの指標は、Marketoで「Web ページに訪問」アクティビティと「Web ページ上のクリックされたリンク」アクティビティとして記録され、スマートキャンペーンやスマートリストのトリガーおよびフィルターで使用できるようになります。
+Marketo の Munchkin JavaScript を使用すると、エンドユーザのページ訪問と Marketo ランディングページおよび外部 web ページへのクリックを追跡できます。これらは、Marketo に「web ページを訪問」アクティビティと「web ページのリンクのクリック」アクティビティとして記録され、スマートキャンペーンとスマートリストのトリガーおよびフィルターで使用できます。
 
 ## コードの埋め込み
 
-Marketo インスタンスは、外部ページにコードを埋め込むための事前設定済みのトラッキングコードスニペットを自動的に提供します。このコードは、アクティビティを追跡してMarketo インスタンスに返します。 埋め込みコードの使用は、この [ 使用許諾契約 ](../munchkin-license.pdf) の規定に従います。
+Marketo インスタンスでは、コードを外部ページに埋め込むための、事前設定済みのトラッキングコードスニペットを自動的に提供し、Marketo インスタンスまでアクティビティを追跡します。埋め込みコードの使用は、この[ライセンス契約](../munchkin-license.pdf)の規定に従います。
 
-使用できるトラッキングコードタイプは 3 つあります。
+使用可能なトラッキングコードのタイプは次の 3 つです。
 
-1. シンプル – 同期的に読み込む
-1. 非同期 – 非同期で読み込みます
-1. 非同期 jQuery – 非同期で読み込みます。事前に jQuery を読み込んでおく必要があります
+1. シンプル - 同期的に読み込みます
+1. 非同期 - 非同期的に読み込みます
+1. 非同期 jQuery - 非同期的に読み込み、事前に jQuery を読み込む必要があります
 
-外部ページへのMunchkinの埋め込みには、非同期トラッキングコードを使用することを強くお勧めします。 実行の成功率を可能な限り高くするには、各ページの `<head>` に非同期トラッキングコードを埋め込みます。
+外部ページに Munchkin を埋め込む場合は、非同期トラッキングコードを使用することを強くお勧めします。実行の成功率を最大限に高めるには、各ページの `<head>` に非同期トラッキングコードを埋め込みます。
 
-一部のコンテンツ管理システムでは、任意のスクリプトを埋め込む際に、特定のメソッドや制限が存在する場合があります。
+一部のコンテンツ管理システムでは、任意のスクリプトを埋め込む際に特定の方法や制限が適用される場合があります。
 
-参照用に、最終ページのHTMLドキュメントの `<head>` に次のようなコードを含める必要があります。
+参照用に、最終ページでは HTML ドキュメントの `<head>` に次のようなコードを含める必要があります。
 
 ```html
 <head>
@@ -58,37 +58,37 @@ Marketo インスタンスは、外部ページにコードを埋め込むため
 </head>
 ```
 
-## Munchkin動作
+## Munchkin の動作
 
-Marketo Munchkinのデフォルトの動作は、ページの読み込み時に次のとおりです。
+Marketo Munchkin のデフォルトの動作は、ページの読み込み時に次の操作を実行することです。
 
-1. 現在のブラウザーにMunchkin Cookie があるかどうかを確認し、ない場合は作成します。
-1. 現在のページとブラウザーの情報を使用して、指定されたMarketo インスタンスに「Web ページに訪問」イベントを送信します。 これにより、Marketo内の対応するレコードにアクティビティが記録されます。
-1. リンクで発生するユーザークリックに対して「Web ページ上のクリックされたリンク」イベントを送信します。
+1. 現在のブラウザーに Munchkin cookie があるかどうかを確認し、ない場合は作成します。
+1. 現在のページとブラウザーの情報を使用して、指定された Marketo インスタンスに「web ページを訪問」イベントを送信します。これにより、Marketo の対応するレコードにアクティビティが記録されます。
+1. リンク上で発生したユーザクリックごとに、「web ページのリンクをクリック」イベントを送信します。
 
-Munchkinの動作は、Munchkin[ 設定 ](configuration.md) を使用して変更できます。例えば、`cookieAnon` 設定を使用してページにアクセスしたすべてのリードに対して cookie が作成されるかどうか、または `clickTime` 設定を使用してクリックの遅延を変更するかどうかなどです。 apiOnly を true に設定すると、訪問アクティビティの送信が無効になる場合があります。 バージョン 162 （2022 年 8 月）の時点では、`http/s` のリンクに加えて、クリック数 `tel` と `mailto` のリンクも追跡されています。
+Munchkin の動作は、Munchkin [設定](configuration.md)を使用して変更できます。例えば、`cookieAnon` 設定を使用してページを訪問した際にすべてのリードに対して cookie を作成するかどうか、`clickTime` 設定を使用してクリック遅延を変更するかどうかなどです。apiOnly 設定を true に設定し、訪問アクティビティの送信を無効にすることができます。バージョン 162（2022年8月）時点では、`http/s` リンクに加えて、`tel` リンクと `mailto` リンクのクリックも追跡されます。
 
-## 既知のリードと匿名リード
+## 既知および匿名のリード
 
-ドメイン上のページにリードが初めて訪問すると、新しい匿名リードレコードがMarketoに作成されます。 このレコードのプライマリキーはMunchkin Cookie （`_mkto_trk`）で、ユーザーのブラウザー内で作成されます。 そのブラウザーでの後続のすべての web アクティビティは、この匿名レコードに対して記録されます。 Marketoの既知のレコードに関連付けるには、次のいずれかの操作を行う必要があります。
+リードがドメイン上のページに初めて訪問すると、Marketo に新しい匿名リードレコードが作成されます。このレコードのプライマリキーは、ユーザのブラウザーで作成される Munchkin cookie（`_mkto_trk`）です。そのブラウザーでの後続のすべての web アクティビティは、この匿名レコードに対して記録されます。 Marketo の既知のレコードに関連付けるには、次のいずれかの条件を満たす必要があります。
 
-- リードは、トラッキング対象のMunchkin メールリンクから、クエリ文字列に `mkt_tok` パラメーターを含んだMarketoでトラッキングされるページにアクセスする必要があります。
-- リードはMarketo フォームに入力する必要があります。
-- REST[ リードを関連付け ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 呼び出しを送信する必要があります。
+- リードは、トラッキング対象の Marketo メールリンクからクエリ文字列に `mkt_tok` パラメーターを含む Munchkin トラッキング対象ページを訪問する必要があります。
+- リードは、Marketo フォームに入力する必要があります。
+- REST の[リードを関連付け](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST)呼び出しを送信する必要があります。
 
-これらの条件の 1 つが満たされると、Cookie と関連するすべての web アクティビティが既知のリードに関連付けられます。
+これらの条件のいずれかが満たされると、cookie と関連するすべての web アクティビティが既知のリードに関連付けられます。
 
-個々のブラウザーごとに新しい匿名 web アクティビティレコードが作成されるので、リードが新しいコンピューターやブラウザーを使用して初めてドメインを訪問した場合、この関連付けは再度行われる必要があります。
+個々のブラウザーごとに新しい匿名の web アクティビティレコードが作成されるので、リードが新しいコンピューターやブラウザーを使用して初めてドメインを訪問する場合は、この関連付けを再度実行する必要があります。
 
 ## ドメイン
 
-Munchkinはドメインごとに個々の cookie を作成および追跡します。このため、複数のドメインをまたいで既知のリードトラッキングが行われる場合、ドメインごとにリードの関連付けイベントが発生する必要があります。 例えば、`marketo.com` と `example.com` の 2 つのドメインを制御しており、あるリードが `marketo.com` でフォームに入力してから、後で `example.com` に移動した場合、`marketo.com` でのアクティビティは既知のリードレコードで追跡されますが、`example.com` でのアクティビティは匿名となります。 ただし、既知のリードはサブドメイン間で保持されるので、`www.example.com` での既知のリードは `info.example.com` での既知のリードでもあります。
+Munchkin はドメインごとに個々の cookie を作成して追跡するので、ドメイン間で既知のリードトラッキングを行うには、各ドメインでリード関連付けイベントが発生する必要があります。例えば、`marketo.com` と `example.com` という 2 つのドメインを管理していて、リードが `marketo.com` でフォームに入力し、その後 `example.com` に移動した場合、`marketo.com` でのアクティビティは既知のリードレコードで追跡されますが、`example.com` でのアクティビティは匿名になります。ただし、既知のリードはサブドメイン間で保持されるので、`www.example.com` の既知のリードは `info.example.com` でも既知のリードになります。
 
-`.co.uk` のようにトップレベルドメインが 2 つの部分で構成されている場合は、コードが正しく追跡されるように domainLevel パラメーターをMunchkin スニペットに追加します。 詳しくは [ こちら ](configuration.md#domainlevel) を参照してください。
+上位レベルのドメインが `.co.uk` のように 2 つの部分で構成されている場合は、コードが正しく追跡されるように、Munchkin スニペットに domainLevel パラメーターを追加します。詳しくは、[こちら](configuration.md#domainlevel)を参照してください。
 
-## Cookie
+## cookie
 
-Munchkin Cookie はキー `_mkto_trk` を使用し、値はこのパターンに従います。
+Munchkin cookie はキー `_mkto_trk` を使用し、次のパターンに従う値があります。
 
 `id:561\-HYG\-937&token:_mch\-marketo.com\-1374552656411\-90718`
 
@@ -96,12 +96,12 @@ Munchkin Cookie はキー `_mkto_trk` を使用し、値はこのパターンに
 
 `id:561\-HYG\-937&token:_mch\-marketo.com\-97bf4361ef4433921a6da262e8df45a`
 
-Munchkin cookie は、第 2 レベルドメイン（`example.com`）ごとに固有です。 Cookie のデフォルトの有効期間は 2 年（730 日）です。
+Munchkin cookie は、第 2 レベルドメイン（`example.com`）ごとに固有です。cookie のデフォルトの有効期間は 2 年（730 日）です。
 
 ## ベータ版
 
-ランディングページのMunchkin ベータ版チャネルをオプトインするには、[ 管理者/宝箱 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) メニューに移動し、「ランディングページのMunchkin Beta」設定を有効にします。 これにより、**[!UICONTROL 管理者]** -> に新しいコードスニペットが提供されます。  **[!UICONTROL Munchkin]** メニューを使用すると、外部サイトでベータ版を使用できます。
+ランディングページで Munchkin ベータ版チャネルにオプトインするには、[管理／アイデアスペース](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)メニューに移動し、「ランディングページでの Munchkin ベータ版」設定を有効にします。これにより、**[!UICONTROL 管理]**／**[!UICONTROL Munchkin]** メニューに新しいコードスニペットが提供され、外部サイトでベータ版を使用できます。
 
 ## オプトアウト
 
-訪問者は、ブラウザーの URL に `querystring` パラメーター「marketo_opt_out=true」を追加することで、Munchkinのトラッキングを完全にオプトアウトできます。 Munchkin JavaScriptはこの設定を検出すると、値が `true` の新しい cookie 「mkto_opt_out」の設定を試みます。 この設定が検出された場合、他のすべてのMarketo トラッキング cookie は削除され、新しい cookie は設定されず、Munchkinによる HTTP リクエストも行われません。
+訪問者は、ブラウザーの URL に `querystring` パラメーター「marketo_opt_out=true」を追加すれば、Munchkin のトラッキングを完全にオプトアウトできます。Munchkin JavaScript は、この設定を検出すると、値が `true` の新しい cookie「mkto_opt_out」を設定しようとします。この設定が検出されると、他のすべての Marketo トラッキング cookie は削除され、新しい cookie は設定されず、Munchkin によって HTTP リクエストは行われません。

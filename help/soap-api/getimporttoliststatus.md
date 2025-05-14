@@ -1,12 +1,12 @@
 ---
 title: getImportToListStatus
 feature: SOAP
-description: getImportToListStatus SOAP呼び出し
+description: getImportToListStatus SOAP 呼び出し
 exl-id: 17a62f65-dfa0-4f40-89b2-154f7734a2dc
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '76'
-ht-degree: 13%
+ht-degree: 100%
 
 ---
 
@@ -14,16 +14,16 @@ ht-degree: 13%
 
 この関数は、特定の `importToList` 関数呼び出しのステータスを確認します。
 
-最初に `importToList` API 呼び出しを完了し、次に定期的にポーリング `getImportToListStatus` ます。 1 分あたり `getImportToListStatus` 回以上ポーリングしないでください。
+最初に `importToList` API 呼び出しを完了し、次に `getImportToListStatus` を定期的にポーリングします。`getImportToListStatus` を 1 分間に 1 回以上ポーリングしないでください。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
 | programName | 必須 | 静的リストを含むプログラムの名前 |
-| listName | 必須 | インポートステータスを取得するMarketoの静的リストの名前。 |
+| listName | 必須 | 読み込みステータスを取得する Marketo の静的リストの名前。 |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

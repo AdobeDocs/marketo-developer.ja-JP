@@ -1,38 +1,38 @@
 ---
 title: React Native
 feature: Mobile Marketing
-description: React Native for Marketoのインストール
+description: Marketo 用 React Native のインストール
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
 source-git-commit: e7cb23c4d578d949553b2b7a6e127d6be54cdf23
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '811'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
 # React Native
 
-この記事では、Marketo ネイティブ SDK をインストールおよび設定して、モバイルアプリをプラットフォームと統合する方法について説明します。
+この記事では、Marketo のネイティブ SDK をインストールおよび設定して、モバイルアプリをプラットフォームと統合する方法について説明します。
 
 ## 前提条件
 
-[Marketo管理者でアプリケーションを追加します ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
+[Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)（アプリケーションの秘密鍵と Munchkin ID を取得します）。
 
-## SDK 統合
+## SDK の統合
 
 ### Android SDK の統合
 
-**Gradle を使用したセットアップ**
+**Gradle を使用した設定**
 
-Marketo SDK の依存関係を、最新バージョンで追加します。アプリケーションレベルの `build.gradle` ファイルの dependencies セクションで、（Marketo SDK の適切なバージョンを含めて）を追加します
+最新バージョンの Marketo SDK 依存関係を追加します。アプリケーションレベルの `build.gradle` ファイルの依存関係セクションに（適切なバージョンの Marketo SDK を含めて）追加します
 
 ```
 implementation 'com.marketo:MarketoSDK:0.x.x'
 ```
 
-**Mavencentral リポジトリの追加**
+**mavencentral リポジトリの追加**
 
-Marketo SDK は、[maven central リポジトリー ](https://mvnrepository.com/) で入手できます。 これらのファイルを同期するには、リポジトリー `mavencentral` ルート `build.gradle` に追加します
+Marketo SDK は、[Maven 中央リポジトリ](https://mvnrepository.com/)で入手できます。これらのファイルを同期するには、ルート `build.gradle` に `mavencentral` リポジトリを追加します。
 
 ```
 build script {
@@ -47,21 +47,21 @@ build script {
 
 #### iOS SDK の統合
 
-React Native プロジェクトのブリッジを作成する前に、Xcode プロジェクトで SDK を設定することが重要です。
+React Native プロジェクト用のブリッジを作成する前に、Xcode プロジェクトで SDK を設定することが重要です。
 
-**SDK 統合 – CocoaPods の使用**
+**SDK の統合 - CocoaPods の使用**
 
-iOS SDK をアプリで簡単に使用できます。 CocoaPods を使用してアプリの Xcode プロジェクトにプラットフォームをセットアップし、アプリとプラットフォームを統合するには、次の手順を実行します。
+アプリで iOS SDK を使用するのは簡単です。プラットフォームをアプリに統合するために、CocoaPods を使用してアプリの Xcode プロジェクトで設定するには、次の手順に従います。
 
-[CocoaPods](https://cocoapods.org/) をダウンロード - Ruby Gem として配布され、コード内でiOS SDK などのサードパーティライブラリを使用するプロセスを簡素化する、Objective-C および Swift の依存関係マネージャーです。
+[CocoaPods](https://cocoapods.org/) をダウンロード - Ruby gem として配布される CocoaPods は、Objective-C および Swift の依存関係マネージャーであり、iOS SDK などのサードパーティライブラリをコード内で使用するプロセスを簡素化します。
 
-ダウンロードしてインストールするには、Macでコマンドラインターミナルを起動し、次のコマンドを実行します。
+ダウンロードしてインストールするには、Mac でコマンドラインターミナルを起動し、次のコマンドを実行します。
 
 1. CocoaPods をインストールします。
 
 `$ sudo gem install cocoapods`
 
-1. Podfile を開きます。 （ReactNative プロジェクトのiOS フォルダー内）
+1. Podfile を開きます。（ReactNative プロジェクトの iOS フォルダー内）。
 
 `$ open -a Xcode Podfile`
 
@@ -81,15 +81,15 @@ iOS SDK をアプリで簡単に使用できます。 CocoaPods を使用して�
 
 ## ネイティブモジュールのインストール手順
 
-React Native アプリは、AppleまたはGoogle Pay にアクセスするためのネイティブ API など、JavaScriptでデフォルトでは使用できないネイティブ Platform API にアクセスする必要が生じる場合があります。 JavaScriptに再実装することなく、既存の Objective-C、Swift、Java、C++ライブラリを再利用したり、画像処理などの目的で高性能のマルチスレッドコードを記述したりする場合があります。
+場合によっては、React Native アプリで、Apple や Google Play にアクセスするためのネイティブ API など、JavaScript ではデフォルトでは使用できないネイティブプラットフォーム API にアクセスする必要があります。場合によっては、既存の Objective-C、Swift、Java または C++ ライブラリを JavaScript で再実装することなく再利用したり、画像処理などの高性能なマルチスレッドコードを記述したりする必要があります。
 
-NativeModule システムは、Java/Objective-C/C++（ネイティブ）クラスのインスタンスを JS オブジェクトとしてJavaScript（JS）に公開します。これにより、JS 内から任意のネイティブコードを実行できます。 この機能が通常の開発プロセスに含まれるとは思いませんが、この機能が存在することは不可欠です。 React Nativeが JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
+NativeModule システムでは、Java／Objective-C／C++（ネイティブ）クラスのインスタンスを JS オブジェクトとして JavaScript（JS）に公開し、JS 内から任意のネイティブコードを実行できます。この機能が通常の開発プロセスの一部になることは想定していませんが、存在することは不可欠です。 React Native が JS アプリに必要なネイティブ API を書き出さない場合は、自分で書き出すことができます。
 
-React Native ブリッジは、JSX とネイティブアプリレイヤー間の通信に使用されます。 この場合、ホストアプリは、Marketo SDK のメソッドを呼び出す JSX コードを記述できます。
+React Native ブリッジは、JSX とネイティブアプリレイヤー間の通信に使用されます。この場合、ホストアプリでは、Marketo SDK のメソッドを呼び出すことができる JSX コードを記述できます。
 
 ### Android
 
-このファイルには、指定されたパラメーターでMarketo SDK のメソッドを内部で呼び出すことができるラッパーメソッドが含まれています。
+このファイルには、指定したパラメーターを使用して Marketo SDK のメソッドを内部的に呼び出すことができるラッパーメソッドが含まれています。
 
 ```
 public class RNMarketoModule extends ReactContextBaseJavaModule {
@@ -175,9 +175,9 @@ public class RNMarketoModule extends ReactContextBaseJavaModule {
 }
 ```
 
-**パッケージを登録**
+**パッケージの登録**
 
-React-native にMarketo パッケージについて知らせます。
+react-native に Marketo パッケージについて通知します。
 
 ```
 public class MarketoPluginPackage implements ReactPackage {
@@ -200,7 +200,7 @@ public class MarketoPluginPackage implements ReactPackage {
 }
 ```
 
-パッケージの登録を完了するには、MarketoPluginPackage をアプリケーションクラスの React パッケージリストに追加します。
+パッケージの登録を完了するには、アプリケーションクラスの React パッケージリストに MarketoPluginPackage を追加します。
 
 ```
 public class MainApplication extends Application implements ReactApplication {
@@ -225,11 +225,11 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### iOS
 
-次のガイドでは、JavaScriptからMarketoの API にアクセスできるネイティブモジュール _RNMarketoModule_ を作成します。
+次のガイドでは、JavaScript から Marketo の API にアクセスするネイティブモジュールの _RNMarketoModule_ を作成します。
 
-開始するには、React Native アプリケーション内でiOS プロジェクトを Xcode で開きます。 iOS プロジェクトは、React Native アプリ内で見つけることができます。 Xcode を使用してネイティブコードを記述することをお勧めします。 Xcode はiOS開発用に構築されており、コード構文などの小さなエラーをすばやく解決するのに役立ちます。
+開始するには、Xcode で React Native アプリケーション内の iOS プロジェクトを開きます。iOS プロジェクトは、React Native アプリ内で見つけることができます。ネイティブコードを記述するには、Xcode を使用することをお勧めします。Xcode は、iOS 開発用に作成されています。これを使用すると、コード構文などの小さなエラーをすばやく解決するのに役立ちます。
 
-メインのカスタムネイティブモジュールヘッダーと実装ファイルを作成します。 `MktoBridge.h` という名前の新しいファイルを作成し、次の内容を追加します。
+メインのカスタムネイティブモジュールヘッダーと実装ファイルを作成します。`MktoBridge.h` という新しいファイルを作成し、次のコードを追加します。
 
 ```
 //
@@ -250,7 +250,7 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 ```
 
-対応する実装ファイル `MktoBridge.m` を同じフォルダーに作成し、次の内容を含めます。
+同じフォルダーに対応する実装ファイルの `MktoBridge.m` を作成し、次のコンテンツを含めます。
 
 ```
 //
@@ -362,7 +362,7 @@ RCT_EXPORT_METHOD(registerForRemoteNotifications) {
 
 #### Marketo SDK の初期化
 
-ネイティブモジュールの createCalendarEvent （） メソッドの呼び出しを追加する場所を、アプリケーションで見つけます。 以下は、アプリに追加できる NewModuleButton コンポーネントの例です。 NewModuleButton の onPress （）関数内でネイティブモジュールを呼び出すことができます。
+アプリケーション内で、ネイティブモジュールの create Calendar Event() メソッドへの呼び出しを追加する場所を見つけます。アプリに追加できる NewModuleButton コンポーネントの例を以下に示します。NewModuleButton の onPress() 関数内でネイティブモジュールを呼び出すことができます。
 
 ```
 import React from 'react';
@@ -381,7 +381,7 @@ const NewModuleButton = () => {
 export default NewModuleButton;
 ```
 
-このJavaScript ファイルは、ネイティブモジュールをJavaScript レイヤーに読み込みます。
+この JavaScript ファイルは、ネイティブモジュールを JavaScript レイヤーに読み込みます。
 
 ```javascript
 import React from 'react';
@@ -391,9 +391,9 @@ import { NativeModules } from 'react-native';
 const { RNMarketoModule } = NativeModules;
 ```
 
-上記のファイルが正しく配置されたら、js モジュールを任意の js クラスにインポートし、そのメソッドを直接呼び出すことができます。 例：
+上記のファイルを正しく配置すると、任意の js クラスに js モジュールを読み込み、このメソッドを直接呼び出すことができます。例：
 
-React ネイティブアプリのフレームワークタイプとして「reactNative」を渡す必要があります。 
+React Native アプリのフレームワークタイプとして「reactNative」を渡す必要があります。 
 
 ```
 // Initialize marketo SDK with Munchkin & Seretkey you have from step 1.
@@ -417,13 +417,13 @@ RNMarketoModule.uninitializeMarketoPush()
 
 #### プッシュ通知の設定
 
-プロジェクト ID とチャネル名を使用してプッシュを初期化
+プロジェクト ID とチャネル名を使用して、プッシュを初期化します。
 
 ```
 RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 ```
 
-`AndroidManifest.xml` に次のサービスを追加します
+`AndroidManifest.xml` に次のサービスを追加します。
 
 ```xml
 <service android:exported="true" android:name=".MyFirebaseMessagingService" android:stopWithTask="true">
@@ -436,7 +436,7 @@ RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 </activity/>
 ```
 
-`FirebaseMessagingService.java` という名前のクラスを作成し、次のコードを追加します
+`FirebaseMessagingService.java` という名前のクラスを作成し、次のコードを追加します。
 
 ```java
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -460,12 +460,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 }
 ```
 
-ユーザーのデバイスにプッシュ通知を送信するには、Xcode プロジェクトで権限が有効になっている必要があります。
+ユーザのデバイスにプッシュ通知を送信するには、Xcode プロジェクトで権限を有効にする必要があります。
 
-プッシュ通知を送信するには、[ プッシュ通知を追加 ](push-notifications.md) します。
+プッシュ通知を送信するには、[プッシュ通知を追加](push-notifications.md)します。
 
-iOSのプッシュ通知を設定する。
-pushNotifications.tsx ファイルを作成し、以下を追加します。
+iOS プッシュ通知を設定し、
+PushNotifications.tsx ファイルを作成して、以下を追加します。
 
 ```
 import { NativeModules } from 'react-native';
@@ -491,7 +491,7 @@ export { requestPermission, registerForRemoteNotifications };
 ```
 
 
-`App.tsx` を追加してプッシュ通知を許可する
+プッシュ通知を許可するには、`App.tsx` を追加します。
 
 ```
 import React, { useEffect } from 'react';
@@ -505,7 +505,7 @@ registerForRemoteNotifications();
 }, []);
 ```
 
-APNS デリゲートメソッドで `AppDelegate.mm` を更新します。
+APNS デリゲートメソッドを使用して、`AppDelegate.mm` を更新します。
 
 ```
 #import "AppDelegate.h"
@@ -568,11 +568,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 @end
 ```
 
-### テスト デバイスの追加
+### テストデバイスの追加
 
 **Android**
 
-アプリケーションタグ内のファイルに「MarketoActivity」 `AndroidManifest.xml` 追加します。
+アプリケーションタグ内の `AndroidManifest.xml` ファイルに「MarketoActivity」を追加します。
 
 ```xml
 <activity android:name="com.marketo.MarketoActivity" android:configChanges="orientation|screenSize" android:exported="true">
@@ -587,15 +587,15 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 **iOS**
 
-1. Project/Target/情報/URL タイプを選択します。
+1. プロジェクト／ターゲット／情報／URL タイプを選択します。
 
-1. 識別子の追加：${PRODUCT_NAME}
+1. ${PRODUCT_NAME} 識別子を追加します。
 
-1. URL スキームの設定：`mkto-<S_ecret Key_>`
+1. `mkto-<S_ecret Key_>` URL スキームを設定します。
 
-1. `AppDelegate.m` ファイルに `application:openURL:sourceApplication:annotation:` を含める（Objective-C）
+1. `AppDelegate.m` ファイル（Objective-C）に `application:openURL:sourceApplication:annotation:` を含めます。
 
-**iOS - AppDelegate でカスタム Url タイプ/ディープリンクを処理します** 
+**iOS - AppDelegate でのカスタム URL タイプ／ディープリンクの処理**
 
 ```
 - (BOOL)application:(UIApplication *)app
@@ -608,7 +608,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 }
 ```
 
-これらの定数は、JavaScript から API を呼び出す際に使用されます。 定数ファイルを作成し、次の情報を追加する必要があります。
+これらの定数は、JavaScript から API を呼び出す際に使用されます。定数ファイルを作成し、以下を追加する必要があります。
 
 ```
 // Lead attributes.

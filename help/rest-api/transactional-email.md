@@ -1,52 +1,52 @@
 ---
 title: トランザクションメール
 feature: REST API
-description: リクエストキャンペーンのトランザクションメールを処理します。
+description: リクエストキャンペーンのトランザクションメールについて扱います。
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
 source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '971'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
 # トランザクションメール
 
-Marketo API の一般的なユースケースは、[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns/operation/triggerCampaignUsingPOST) API 呼び出しを介して、トランザクションメールを特定のレコードに送信することをトリガーにすることです。 Marketo REST API を使用して必要な呼び出しを実行するためのMarketo内の設定要件がいくつかあります。
+Marketo API の一般的なユースケースは、[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns/operation/triggerCampaignUsingPOST) API 呼び出しを通じて特定のレコードへのトランザクションメールの送信をトリガーすることです。Marketo REST API を使用して必要な呼び出しを実行するには、Marketo にいくつかの設定要件があります。
 
-- 受信者には、Marketo内にレコードが必要です
-- Marketo インスタンスでトランザクションメールを作成し承認する必要があります。
-- 「キャンペーンがリクエストされました、1」という文字を持つアクティブなトリガーキャンペーンが必要です。 メールを送信するために設定されるSource:web サービス API」
+- .受信者は、Marketo 内にレコードを持っている必要があります。
+- Marketo インスタンスでトランザクションメールを作成して承認する必要があります。
+- メールを送信するように設定された、「キャンペーンをリクエスト、1. ソース：Web Service API」を含むアクティブなトリガーキャンペーンが存在する必要があります。
 
-最初に [ メールを作成して承認 ](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja) します。 メールが真にトランザクション型である場合、通常はメールを運用可能に設定する必要がありますが、法的には運用可能と認定されていることを確認してください。 これは、メールのアクション/メール設定の下の編集画面を使用して設定します。
+最初に[メールを作成して承認します](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja)。メールが実際にトランザクション用である場合は、運用に設定する必要がありますが、法的に運用として選定されていることを確認します。これは、編集画面のメールアクション／メール設定から設定します。
 
-![Request-Campaign-Email-Settings](assets/request-campaign-email-settings.png)
+![リクエスト-キャンペーンのメール-設定](assets/request-campaign-email-settings.png)
 
-![ リクエスト – キャンペーン – 運用 ](assets/request-campaign-operational.png)
+![リクエスト-キャンペーン-運用](assets/request-campaign-operational.png)
 
 承認すると、キャンペーンを作成する準備が整います。
 
-![RequestCampaign-Approve-Draft](assets/request-campaign-approve-draft.png)
+![リクエストキャンペーン-承認-ドラフト](assets/request-campaign-approve-draft.png)
 
-キャンペーンの作成を初めて行う場合は、[ 新しいスマートキャンペーンの作成 ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ja) の記事を参照してください。 キャンペーンを作成したら、次の手順を実行する必要があります。 「キャンペーンがリクエストされました」トリガーでスマートリストを設定します。
+キャンペーンの作成を初めて行う場合は、[新しいスマートキャンペーンの作成](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ja)の記事を参照してください。キャンペーンを作成したら、次の手順を実行する必要があります。「キャンペーンをリクエスト」トリガーでスマートリストを設定します。
 
-![Request-Campaign-Smart-List](assets/request-campaign-smart-list.png)
+![リクエスト-キャンペーン-スマート-リスト](assets/request-campaign-smart-list.png)
 
-次に、メールを送信ステップをメールに指すようにフローを設定する必要があります。
+次に、「メールを送信」ステップを、アドビのメール宛に指定するようフローを設定する必要があります。
 
-![Request-Campaign-Flow](assets/request-campaign-flow.png)
+![リクエスト-キャンペーン-フロー](assets/request-campaign-flow.png)
 
-アクティベーションの前に、「スケジュール」タブで一部の設定を決定する必要があります。 この特定のメールが特定のレコードに 1 回だけ送信される必要がある場合は、認定設定をそのままにしておきます。 ただし、メールを複数回受信する必要がある場合は、毎回または使用可能な頻度のいずれかに調整する必要があります。
+アクティブ化の前に、「スケジュール」タブでいくつかの設定を決定する必要があります。この特定のメールを特定のレコードに 1 回だけ送信する場合は、選定の設定はそのままにしておきます。メールを複数回受信する必要がある場合は、毎回または使用可能な頻度のいずれかに調整する必要があります。
 
-アクティベートする準備ができました。
+これでアクティブ化する準備が整いました。
 
-![Request-Campaign-Schedule](assets/request-campaign-schedule.png)
+![リクエスト-キャンペーン-スケジュール](assets/request-campaign-schedule.png)
 
 ## API 呼び出しの送信
 
-**注意：** 以下の Java の例では、コードで JSON 表現を処理するために [minimal-json パッケージ ](https://github.com/ralfstx/minimal-json) を使用しています。
+**メモ：**&#x200B;以下の Java の例では、コード内の JSON 表現を処理するために [minimal-json パッケージ](https://github.com/ralfstx/minimal-json)を使用しています。
 
-API を介してトランザクションメールを送信する最初の部分は、対応するメールアドレスを持つレコードがMarketo インスタンスに存在し、そのリード ID にアクセスできることを確認することです。 この投稿の目的上、メールアドレスが既にMarketoにあり、レコードの ID を取得する必要があるとします。 ここでは、「フィルタータイプ別のリードの取得 [ 呼び出しを使用 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) ます。 キャンペーンをリクエストするためのの主な方法を見てみましょう。
+API を通じてトランザクションメールを送信する最初の部分は、対応するメールアドレスのレコードが Marketo インスタンスに存在し、このリード ID へのアクセス権があることを確認するものです。この投稿では、メールアドレスが既に Marketo に存在するものと想定し、レコードの ID を取得するだけで済みます。このため、[フィルタータイプでリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET)呼び出しを使用しています。キャンペーンをリクエストするための main メソッドを見てみましょう。
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -80,14 +80,14 @@ public class App
 }
 ```
 
-leadsRequest の JsonObject 応答からこれらの結果を取得するには、いくつかのコードを記述する必要があります。 配列の最初の結果を取得するには、配列を JsonObject から抽出し、0 でインデックス付けされたオブジェクトを取得する必要があります。
+leadsRequest の JsonObject 応答からこれらの結果を取得するには、いくつかのコードを記述する必要があります。配列の最初の結果を取得するには、JsonObject から配列を抽出し、インデックス 0 のオブジェクトを取得する必要があります。
 
 ```java
 JsonArray leadsResult = leadsRequest.getData().get("result").asArray();
 int leadId = leadsResult.get(0).asObject().get("id").asInt();
 ```
 
-今後は、キャンペーンのリクエストコールを行うだけです。 この場合、必須パラメーターはリクエストの URL 内の ID と、1 つのメンバー「id」を含む JSON オブジェクトの配列です。 このコードを見てみましょう。
+ここからは、リクエストキャンペーンの呼び出しだけを行うだけです。これには、リクエストの URL 内の ID と、1つのメンバー &quot;id&quot; を含む JSON オブジェクトの配列が必要です。このコードを見てみましょう。
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -178,19 +178,19 @@ public class RequestCampaign {
 }
 ```
 
-このクラスには、Auth とキャンペーンの ID を取得するコンストラクターが 1 つあります。 リードをオブジェクトに追加するには、setLeads にレコードの ID を含む `ArrayList<Integer>` を渡すか、addLead を使用します。この場合、1 つの整数を使用して、leads プロパティ内の既存の ArrayList に追加します。 リードレコードをキャンペーンに渡すための API 呼び出しをトリガーするには、postData を呼び出す必要があります。このメソッドは、リクエストからのレスポンスデータを含んだ JsonObject を返します。 リクエストキャンペーンが呼び出されると、その呼び出しに渡されたすべてのリードは、Marketoのターゲットトリガーキャンペーンで処理され、以前に作成されたメールが送信されます。 これで、Marketo REST API を使用してメールをトリガーしました。 リクエストキャンペーンを通じてメールのコンテンツを動的にカスタマイズする方法に関するパート 2 に注目してください。
+このクラスには、Auth とキャンペーンの ID を受け取る 1 つのコンストラクターがあります。レコードの ID を含む `ArrayList<Integer>` を setLeads に渡すか、1 つの整数を受け取り、leads プロパティの既存の ArrayList に追加する addLead を使用することによって、リードがオブジェクトに追加されます。API 呼び出しをトリガーしてリードレコードをキャンペーンに渡すには、リクエストからの応答データを含む JsonObject を返す postData を呼び出す必要があります。リクエストキャンペーンを呼び出すと、呼び出しに渡されたすべてのリードが Marketo のターゲットトリガーキャンペーンによって処理され、以前に作成したメールが送信されます。これで、Marketo REST API を使用してメールをトリガーしました。パート 2 では、リクエストキャンペーンを通じてメールのコンテンツを動的にカスタマイズする方法について説明します。
 
 ### メールの作成
 
-コンテンツをカスタマイズするには、まずMarketoで [ プログラム ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ja) と [ メール ](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja) を設定する必要があります。 カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。 簡単にするために、この例では 1 つのトークンのみを使用していますが、送信元メール、送信者名、返信先またはメール内の任意のコンテンツで、メール内の任意の数のトークンを置き換えることができます。 置き換える 1 つのトークンリッチテキストを作成して、「bodyReplacement」と呼びましょう。 リッチテキストを使用すると、トークン内の任意のコンテンツを入力したい任意のHTMLに置き換えることができます。
+コンテンツをカスタマイズするには、最初に Marketo で[プログラム](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ja)と[メール](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja)を設定する必要があります。カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。簡単にするために、この例では 1 つのトークンのみを使用していますが、メール内、送信元メール、送信者名、返信先、またはメール内の任意のコンテンツで、任意の数のトークンを置き換えることができます。ここで、置換用のトークンリッチテキストを 1 つ作成し、「bodyReplacement」という名前を付けます。リッチテキストを使用すると、トークン内の任意のコンテンツを、入力する任意の HTML に置き換えることができます。
 
-![New-Token](assets/New-Token.png)
+![新規トークン](assets/New-Token.png)
 
-空の状態ではトークンを保存できないので、ここにプレースホルダーテキストを挿入します。 次に、メールにトークンを挿入する必要があります。
+トークンは空のままでは保存できないので、ここにプレースホルダーテキストを挿入します。次に、メールにトークンを挿入する必要があります。
 
-![Add-Token](assets/Add-Token.png)
+![トークンを追加](assets/Add-Token.png)
 
-このトークンにアクセスして、リクエストキャンペーン呼び出しを通じて置き換えることができます。 このトークンは、メールごとに置き換える必要がある 1 行のテキストとして単純にすることも、メールのレイアウトのほぼ全体を含めることもできます。
+このトークンにアクセスして、リクエストキャンペーン呼び出しを通じて置き換えることができます。このトークンは、メールごとに置き換える必要がある 1 行のテキストとしてシンプルにすることも、メールのレイアウトのほとんど全体を含めることもできます。
 
 ### コード
 
@@ -227,7 +227,7 @@ public class App
 }
 ```
 
-コードに見覚えがある場合は、上記の main メソッドから追加の行が 2 行しかないためです。 今回は、bodyReplacement 変数にトークンの内容を作成し、addToken メソッドを使用してリクエストに追加します。 addToken はキーと値を受け取り、JsonObject 表現を作成して、内部の tokens 配列に追加します。 その後、これが postData メソッド中にシリアル化され、次のような本文が作成されます。
+コードに見覚えがある場合は、上記の main メソッドから追加の行が 2 行しかないためです。今回は、bodyReplacement 変数にトークンの内容を作成し、addToken メソッドを使用してリクエストに追加します。addToken はキーと値を受け取り、JsonObject 表現を作成して、内部の tokens 配列に追加します。その後、これが postData メソッド中にシリアル化され、次のような本文が作成されます。
 
 ```json
 {
@@ -248,7 +248,7 @@ public class App
 }
 ```
 
-コンソール出力を組み合わせると、次のようになります。
+組み合わせると、コンソール出力は次のようになります。
 
 ```bash
 Token is empty or expired. Trying new authentication
@@ -264,4 +264,4 @@ Result:
 
 ## まとめ
 
-この方法は様々な方法で拡張可能で、個々のレイアウトセクション内または外部のメールのコンテンツを変更することで、カスタム値をタスクや興味深い瞬間に渡すことができます。 プログラム内のどこからでもトークンを使用できる場合は、この方法を使用してカスタマイズできます。 [ キャンペーンのスケジュール ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns/operation/scheduleCampaignUsingPOST) 呼び出しでも同様の機能を使用でき、バッチキャンペーン全体でトークンを処理できます。 これらはリードごとにカスタマイズすることはできませんが、幅広いリードセットにわたってコンテンツをカスタマイズする場合に役立ちます。
+この方法は、様々な方法で拡張可能で、個々のレイアウトセクション内またはメール外部のメールのコンテンツを変更し、カスタム値をタスクや注目のアクションに渡すことができます。プログラム内からトークンを使用できる場所はすべて、この方法を使用してカスタマイズできます。また、同様の機能は、[キャンペーンをスケジュール](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns/operation/scheduleCampaignUsingPOST)呼び出しでも使用でき、バッチキャンペーン全体をまたいでトークンを処理できます。これらはリードごとにカスタマイズできませんが、幅広いリードセットをまたいでコンテンツをカスタマイズするのに役立ちます。

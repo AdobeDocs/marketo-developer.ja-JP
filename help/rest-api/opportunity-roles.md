@@ -1,26 +1,26 @@
 ---
-title: オポチュニティの役割
+title: 商談ロール
 feature: REST API
-description: Marketoでのオポチュニティの役割の処理。
+description: Marketo での商談ロールの処理。
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '253'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
-# オポチュニティの役割
+# 商談ロール
 
-[ 商談の役割のエンドポイントリファレンス ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[商談ロールエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
-リードは、中間 `opportunityRole` オブジェクトを介して商談にリンクされています。
+リードは、中間の `opportunityRole` オブジェクトを通じて商談にリンクされます。
 
-商談役割 API は、ネイティブの CRM 同期が有効になっていない購読に対してのみ公開されます。
+Opportunity Role API は、ネイティブ CRM 同期が有効になっていないサブスクリプションに対してのみ公開されます。
 
 ## 説明
 
-オポチュニティと同様に、説明の電話および CRUD 操作がオポチュニティの役割に公開されます。
+商談と同様に、商談ロールに対して説明呼び出しと CRUD 操作が公開されます。
 
 ```
 GET /rest/v1/opportunities/roles/describe.json
@@ -106,7 +106,7 @@ GET /rest/v1/opportunities/roles/describe.json
 
 ## クエリ
 
-`dedupeFields` と `searchableFields` はどちらも商談とは少し異なります。 `dedupeFields` は実際に、`externalOpportunityId`、`leadId`、`role` の 3 つすべてが必要な複合キーを提供します。 レコードの作成を成功させるには、ID フィールド別のオポチュニティとリードリンクの両方が宛先インスタンスに存在する必要があります。 `searchableFields`、`marketoGUID`、`leadId`、`externalOpportunityId` はすべて、独自のクエリに有効で、Opportunities と同じパターンを使用しますが、複合キーを使用してクエリを実行するには、追加のクエリパラメーター `_method=GET` を使用したPOST経由で JSON オブジェクトを送信する必要があります。
+`dedupeFields` と `searchableFields` は、両方とも商談とは少し異なります。`dedupeFields` は、実際には複合キーを提供しますが、`externalOpportunityId`、`leadId`、`role` の 3 つすべてが必要です。レコードの作成を成功させるには、ID フィールド別の商談リンクとリードリンクの両方が宛先インスタンスに存在する必要があります。`searchableFields` の場合、`marketoGUID`、`leadId`、`externalOpportunityId` は、すべて独自のクエリに有効で、商談と同じパターンを使用しますが、複合キーを使用してクエリを実行する追加オプションがあり、追加のクエリパラメーター `_method=GET` を使用して、JSON オブジェクトを POST 経由で送信する必要があります。
 
 ```
 POST /rest/v1/opportunities/roles.json?_method=GET
@@ -141,11 +141,11 @@ POST /rest/v1/opportunities/roles.json?_method=GET
 }
 ```
 
-これにより、標準のGETクエリと同じタイプの応答が生成されます。リクエストを行うための異なるインターフェイスが用意されているだけです。
+これにより、標準の GET クエリと同じタイプの応答が生成されますが、リクエストを行うインターフェイスが異なるだけです。
 
 ## 作成と更新
 
-商談役割には、商談としてレコードを作成および更新するための同じインターフェイスが用意されています。
+商談ロールには、レコードの作成および更新用の、商談と同じインターフェイスが用意されています。
 
 ```
 POST /rest/v1/opportunities/roles.json
@@ -193,7 +193,7 @@ POST /rest/v1/opportunities/roles.json
 
 ## 削除
 
-重複の除外フィールドまたは ID フィールドを使用して、オポチュニティの役割を削除できます。 値が dedupeFields または idField の deleteBy パラメーターを使用して指定します。 指定しない場合、デフォルトは dedupeFields です。 リクエスト本文には、削除するオポチュニティの役割の入力配列が含まれます。 1 回の呼び出しで許可されるオポチュニティの役割は、最大 300 個です。
+商談ロールは、重複排除フィールドまたは ID フィールドで削除できます。dedupeFields または idField のいずれかの値を持つ deleteBy パラメーターを使用して指定します。指定しない場合、デフォルトは dedupeFields です。リクエスト本体には、削除する商談ロールの入力配列が含まれます。1 回の呼び出しにつき最大 300 個の商談ロールが許可されます。
 
 ```
 POST /rest/v1/opportunities/roles/delete.json
@@ -228,6 +228,6 @@ POST /rest/v1/opportunities/roles/delete.json
 
 ## タイムアウト
 
-- 以下に示さない限り、商談の役割エンドポイントのタイムアウトは 30 秒です
-   - 商談ロールの同期：60s 
-   - 商談ロールの削除：60s
+- 「商談ロール」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります。
+   - 商談ロールを同期：60 秒
+   - 商談ロールを削除：60 秒

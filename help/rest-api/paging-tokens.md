@@ -1,33 +1,33 @@
 ---
 title: ページングトークン
 feature: REST API
-description: ページング・トークン・データの表示。
+description: ページングトークンデータを表示します。
 exl-id: 63fbbf03-8daf-4add-85b0-a8546c825e5b
 source-git-commit: a00583f367c2da36d9d1d6e0b05bfd4216573fbb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '352'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # ページングトークン
 
-Marketoでは、結果をページスルーしたり、特定のデータに関連して更新されたデータを取得したりするために、ページングトークンを使用できます。
+結果をページスルーしたり、特定のデータに関連して更新されたデータを取得したりするために、Marketo にはページングトークンが用意されています。
 
-場合によっては、長いページングトークン文字列が返されることがあります。 これにより、HTTP 414 エラーコードが発生する場合があります。 これらの [ エラー ](error-codes.md) の処理方法の詳細を確認できます。
+場合によっては、長いページングトークン文字列が返されることがあります。これにより、HTTP 414 エラーコードが発生する場合があります。これらのエラーの処理方法について詳しくは、[こちら](error-codes.md)を参照してください。
 
-[ ページングトークン API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) ドキュメントを参照してください。
+[Paging Token API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) ドキュメントを参照してください。
 
 ## トークンのタイプ
 
-Marketoが提供する、関連する異なる 2 種類のページングトークンがあります。
+Marketo が提供するページングトークンには、2 つのタイプがあります。これらは関連性はあるものの、異なるタイプです。
 
 - 日付ベース
 - 位置ベース
 
 ## 日付ベース
 
-1 つ目は、日付を表すページングトークンです。 これらは、ページングトークンで表された日付以降に発生したアクティビティ、データ値の変更および削除されたリードを取得するために使用されます。 このタイプのページングトークンは、[ ページングトークンの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) エンドポイントを呼び出し、日時を含めることで生成されます。
+1 番目は、日付を表すページングトークンです。これらは、ページングトークンで表される日付以降に発生したアクティビティ、データ値の変更、および削除されたリードを取得するために使用されます。このタイプのページングトークンは、[ページングトークンを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET)エンドポイントを呼び出して日時を含めることで生成されます。
 
 ```
 GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
@@ -41,11 +41,11 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 }
 ```
 
-`sinceDateTime` パラメーターの形式は、[ISO 8601](https://ja.wikipedia.org/wiki/ISO_8601) 標準の日付表記に準拠する必要があります。 最適な結果を得るには、タイムゾーンを含む完全な日時を使用します。 タイムゾーンは、次の形式を使用して GMT からのオフセットとして表すことができます。
+`sinceDateTime` パラメーターの形式は、[ISO 8601](https://ja.wikipedia.org/wiki/ISO_8601) 標準の日付表記に準拠する必要があります。最適な結果を得るには、タイムゾーンを含む完全な日時を使用します。タイムゾーンは、次の形式を使用して GMT からのオフセットとして表すことができます。
 
 `yyyy-mm-ddThh:mm:ss+|-hh:mm`
 
-または、大文字「Z」を略記法として使用して、UTC を次のように表します。
+または、大文字の「Z」を省略形として使用して、次のように UTC を表します。
 
 `yyyy-mm-ddThh:mm:ssZ`
 
@@ -57,7 +57,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 `sinceDateTime` はクエリパラメーターなので、URL エンコードする必要があります。
 
-次に、`nextPageToken` 文字列が [ リードアクティビティを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadActivitiesUsingGET)、[ リード変更を取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadChangesUsingGET) または [ 削除されたリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 呼び出しに提供され、アクティビティは Get Paging Token API に提供された日時の後から取得されます。
+次に、`nextPageToken` 文字列が[リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadActivitiesUsingGET)、[リード変更を取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadChangesUsingGET)、または[削除されたリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET)呼び出しに提供され、Get Paging Token API に提供された日時以降のアクティビティが取得されます。
 
 ```
 GET /rest/v1/activities.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&activityTypeIds=1&activityTypeIds=12
@@ -65,4 +65,4 @@ GET /rest/v1/activities.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDA
 
 ## 位置ベース
 
-2 つ目のタイプのページングトークンは、リードデータベース API に対する任意のバッチ取得呼び出しによって返される場合があります。 このタイプのページングトークンは、レコードのトラバーサルを可能にするデータベースカーソルと、概念が似ています。 例えば、フィルタータイプによるリードの取得呼び出しは、指定されたバッチサイズを超えるセット（通常は最大およびデフォルトの 300）を表す場合があります。 より多くの結果がある場合、応答で moreResult フィールドが true になり、`nextPageToken` が返されます。 結果セット内の追加のレコードを取得するには、新しい呼び出しの前の応答から受け取った値を持つ `nextPageToken` を含む、追加の呼び出しを実行します。 結果の応答は、結果セットの次のページを返します。
+2 番目のタイプのページングトークンは、Lead Database API へのバッチ取得呼び出しで返される場合があります。このタイプのページングトークンは、レコードのトラバーサルを可能にするデータベースカーソルと概念的に似ています。例えば、「フィルタータイプでリードを取得」呼び出しを使用すると、指定されたバッチサイズ（通常は最大値およびデフォルトの 300）を超えるセットが表示される場合があります。さらに結果がある場合、応答内の moreResult フィールドは true になり、`nextPageToken` が返されます。結果セット内の追加レコードを取得するには、新しい呼び出しで前の応答から受信した値を含む `nextPageToken` を含む追加の呼び出しを実行します。結果として得られる応答では、結果セットの次のページが返されます。

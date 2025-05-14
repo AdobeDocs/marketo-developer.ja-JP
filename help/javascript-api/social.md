@@ -4,15 +4,15 @@ description: ソーシャル
 feature: Social, Javascript
 exl-id: 82d2b86f-5efe-4434-b617-d27f76515a79
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '776'
-ht-degree: 4%
+ht-degree: 100%
 
 ---
 
 # ソーシャル
 
-[Marketo ソーシャルマーケティング ](https://business.adobe.com/products/marketo/social-marketing.html) を使用すると、マーケターは web サイトやランディングページにソーシャルウィジェットを埋め込むことができます。 ソーシャルウィジェットには、投票、ソーシャル共有ボタン、ビデオ、キャンペーン、紹介オファーなどのプロモーションが含まれます。
+[Marketo ソーシャルマーケティング](https://business.adobe.com/products/marketo/social-marketing.html)では、マーケターは web サイトやランディングページにソーシャルウィジェットを埋め込むことができます。ソーシャルウィジェットには、投票、ソーシャル共有ボタン、ビデオ、懸賞、紹介オファーなどのプロモーションが含まれます。
 
 ## 埋め込み共有ウィジェットのサンプル
 
@@ -30,16 +30,16 @@ ht-degree: 4%
 
 ![social-share-widget](assets/social-share-widget.png)
 
-ソーシャルウィジェットをカスタマイズする基本的な方法は 2 つあります。
+ソーシャルウィジェットのカスタマイズには、2 つの基本的な方法があります。
 
-1. 製品の通常の UI を使用し、UI で特定のアクションが発生した場合に通知されるイベントリスナーを付加して、追加のビジネスロジックを実行する。
+1. 製品の通常の UI を使用し、イベントリスナーを添付して、UI で特定のアクションが発生した際に通知を受け取り、追加のビジネスロジックを実行する。
 1. 製品の通常の UI をカスタム UI に置き換え、必要に応じて UI のポップアップ「ステージ」をアクティブ化する。
 
 ## 通常の UI へのイベントの添付
 
-CF JavaScript ライブラリでイベントを登録するには、グローバルに登録する方法と、1 つのウィジェットで登録する方法の 2 つがあります。 イベントは、イベントテーブルの以下に記載されています。
+CF JavaScript ライブラリ内のイベントをサブスクライブする方法は、グローバルにサブスクライブする方法と、単一のウィジェットに対してサブスクライブする方法の 2 つがあります。イベントは、以下のイベントテーブルに記載されています。
 
-### グローバルイベント購読
+### グローバルイベントサブスクリプション
 
 ```html
 <script>
@@ -54,7 +54,7 @@ cf_scripts.afterload(function(){
 </script>
 ```
 
-### ウィジェットごとのイベント購読
+### ウィジェットごとのイベントサブスクリプション
 
 ```html
 <script>
@@ -71,7 +71,7 @@ cf_scripts.afterload(function(){
 
 ## 例
 
-この例では、「referral_SignUp」という名前のウィジェットのオファー登録を完了した後、ID が「signedUp」の以前に非表示にされた要素を示しています。
+この例では、ユーザが「referral_SignUp」というウィジェットのオファー登録を完了した後、以前は非表示だった ID「signedUp」の要素が表示されています。
 
 ```html
 <div id='signedUp'style='display:none; color:green;'>This is a custom message to let you know that you signed up!</div>
@@ -90,18 +90,18 @@ cf_scripts.afterload(function(){
 
 | イベント名 | 説明 | このイベントを使用するウィジェット | サポートされる引数（イベントコールバック関数に渡される） |
 | --- | --- | --- | --- | 
-| share_sent | 共有リクエストが処理のためにサーバーに送信されるたびに呼び出されます | 共有機能を持つすべてのウィジェット | 1.&quot;share_sent&quot;（String） <br>2. 送信されたパラメーター（オブジェクト） |
-| share_success | 共有要求が正常に処理されたときに発生します。 | 共有機能を持つすべてのウィジェット。 | 1.&quot;share_success&quot;（String） <br>2. 送信されたメッセージと短縮 URL を含む、応答オブジェクトを共有します（オブジェクト） |
-| vote_success | ユーザーが投票に成功したときに発生します。 | ポーリング、VS、投票ウィジェット | 1. &quot;vote_success&quot; （String） <br>2. タイトル、説明、エンティティ識別子（オブジェクト）など、投票された項目 |
-| offer_enrolled | ユーザーがオファーへの登録に成功したときに呼び出されます | すべてのオファーウィジェット | 1.&quot;offer_enrolled&quot;（文字列） <br>2. ユーザープロパティ（オブジェクト）、<br>3 を変更しました。 変更されたユーザー属性（オブジェクト） |
-| profile_saved | ユーザーがプロファイル キャプチャからプロファイルを更新したときに発生します。 | プロファイルキャプチャが有効になっているすべての非オファーウィジェット | 1.&quot;profile_saved&quot;（String） <br>2. ユーザープロパティ （オブジェクト） <br>3 を変更しました。 変更されたユーザー属性（オブジェクト） |
-| video_loaded | 埋め込みビデオが完全に読み込まれて初期化されたときに呼び出されます。 | VideoShare ウィジェット | 1. video_loaded （文字列） 2. ビデオを保持する「.cf_videoshare_wrap」要素（jQuery オブジェクト） |
+| share_sent | 共有リクエストが処理にサーバーに送信されるたびに発生します。 | 共有する機能を持つすべてのウィジェット。 | 1.&quot;share_sent&quot;（文字列）<br>2.送信されたパラメーター（オブジェクト） |
+| share_success | 共有リクエストが正常に処理された際に発生します。 | 共有する機能を持つすべてのウィジェット。 | 1.&quot;share_success&quot;（文字列）<br>2.送信されたメッセージと短縮 URL を含む共有応答オブジェクト（オブジェクト） |
+| vote_success | ユーザが調査に正常に投票した際に発生します。 | 調査と投票ウィジェット | 1.&quot;vote_success&quot;（文字列）<br>2.タイトル、説明、エンティティ識別子など、投票された項目（オブジェクト） |
+| offer_enrolled | ユーザがオファーに正常に登録した際に発生します。 | すべてのオファーウィジェット。 | 1.&quot;offer_enrolled&quot;（文字列）<br>2.変更されたユーザプロパティ（オブジェクト）、<br>3.変更されたユーザ属性（オブジェクト） |
+| profile_saved | ユーザがプロファイル取得からプロファイルを更新した際に発生します。 | プロファイル取得が有効になっているすべてのオファー以外のウィジェット | 1.&quot;profile_saved&quot;（文字列）<br>2.変更されたユーザプロパティ（オブジェクト）<br>3.変更されたユーザ属性（オブジェクト） |
+| video_loaded | 埋め込みビデオが完全に読み込まれ、初期化された際に発生します。 | VideoShare ウィジェット | 1.&quot;video_loaded&quot;（文字列）2.“.cf_videoshare_wrap” ビデオを保持する要素（jQuery オブジェクト） |
 
 ## UI のカスタム UI への置き換え
 
-UI をカスタム UI に置き換えるには、まず通常の UI をオフにする必要があります。これを行うには、オプション _popupUIOnly_ を _true_ に設定します。 このオプションを設定すると、標準 UI はページの読み込み時にレンダリングされず、代わりにウィジェットがデータを取得し、_CF.widget.activate_ 関数を呼び出してポップアップステージの 1 つを開始するのを待ち、実行するオプションを提供します。
+UI をカスタム UI に置き換えるには、まず通常の UI をオフにする必要があります。これを行うには、オプション _popupUIOnly_ を _true_ に設定します。このオプションを設定すると、ページの読み込み時に標準 UI はレンダリングされず、代わりにウィジェットがデータを取得し、_CF.widget.activate_ 関数を呼び出して、実行するオプションを指定して、ポップアップステージの 1 つを開始するまで待機します。
 
-以下の例は、_referral_SignUp_ という名前のリファラルオファーウィジェットに対してリファラルオファーのサインアップフローを開始するカスタムボタンを作成する例です。
+_referral_SignUp_ という名前のリファラルオファーウィジェットのリファラルオファー新規登録フローを起動するカスタムボタンの作成例を以下に示します。
 
 ```html
 <button id="myNewSignUpButton">My newSign Up button</button>
@@ -122,7 +122,7 @@ cf_scripts.afterload(function($, CF){
 </script>
 ```
 
-クリックハンドラーの追加は一般的なので、クリックハンドラーを追加するためのショートカットメソッドがあります。 次の例は、機能的には前の例と同じです。
+クリックハンドラーの追加は一般的なので、追加するショートカットメソッドがあります。次の例は、機能的には前の例と同じです。
 
 ```html
 <button id="myNewSignUpButton">My newSign Up button</button>
@@ -137,11 +137,11 @@ cf_scripts.afterload(function($, CF){
 </script>
 ```
 
-## ウィジェット UI データを代替の UI に入力する方法
+## 置換 UI に組み込むウィジェット UI データの取得
 
-置き換える UI を描画するためにウィジェットに関するデータが必要な場合は、特別なイベント _ui_data_ からデータを取得できます。 通常の `CF.widget.listen` 関数を使用してこのイベントをリッスンできますが、そうすると、ウィジェットが既に the_ui_data_ イベントを発生させた後にイベントリスナーが追加され、データを受信できなくなる競合状態が発生する可能性があります。 この競合を避けるために、`CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` イベントは、`popupUIOnly` のオプションでその UI を無効にした場合でも、ウィジェットの標準 UI を再描画する原因となったアクションが実行されるたびに使用されます。
+置換 UI を描画するのにウィジェットに関するデータが必要な場合は、特別なイベント _ui_data_ からデータを取得できます。通常の `CF.widget.listen` 関数を使用してこのイベントをリッスンできますが、これを行うと、ウィジェットが the_ui_data_ イベントを既に発生させた後にイベントリスナーが追加され、データが受信されないという潜在的な競合状態が発生する場合があります。この競合を回避するには、`popupUIOnly` オプションで UI を無効にしている場合でも、ウィジェットの標準 UI の再描画を引き起こすアクションが発生するたびに `CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` イベントが発生するようにします。
 
-`uiData` の関数を使用して、ウィジェット名が _sweaps_Sweepstakes_ の Sweepstakes に対するユーザーのエントリ数を表示する例を示します。
+`uiData` 関数を使用して、ウィジェット名 _sweeps_Sweepstakes_ の懸賞に対するユーザのエントリ数を表示する例。
 
 ```html
 <span>You have <span id="entryCount">?</span> entries.</span>
@@ -164,49 +164,49 @@ cf_scripts.afterload(function($, CF){
 </script>
 ```
 
-## 参照オファーのサインアップ UI データ参照
+## リファラルオファー SignUp UI データ参照
 
 | タイプ | 説明 |
 |---------------|----------------------------------------------------|
-| 日 | 「yyyy-MM-dd」形式の日付値 |
+| date | 「yyyy-MM-dd」形式の日付値 |
 | number | 整数または浮動小数点数 |
-| リッチテキスト | HTML文字列 |
-| スコア | 符号付き 32 ビット整数 |
-| sfdc キャンペーン | Salesforce キャンペーン管理統合で使用 |
-| テキスト | テキスト文字列 |
+| rich text | HTML 文字列 |
+| score | 符号付き 32 ビット整数 |
+| sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
+| text | テキスト文字列 |
 
-## 参照オファーの TrackProgress UI データ参照
+## リファラルオファー TrackProgress UI データ参照
 
 | タイプ | 説明 |
 |---------------|----------------------------------------------------|
-| 日 | 「yyyy-MM-dd」形式の日付値 |
+| date | 「yyyy-MM-dd」形式の日付値 |
 | number | 整数または浮動小数点数 |
-| リッチテキスト | HTML文字列 |
-| スコア | 符号付き 32 ビット整数 |
-| sfdc キャンペーン | Salesforce キャンペーン管理統合で使用 |
-| テキスト | テキスト文字列 |
+| rich text | HTML 文字列 |
+| score | 符号付き 32 ビット整数 |
+| sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
+| text | テキスト文字列 |
 
-## 広告キャンペーン UI データ参照（LM 広告ではなくソーシャルキャンペーン広告）
+## 懸賞 UI データ参照（LM 懸賞ではなくソーシャルキャンペーン懸賞）
 
 | タイプ | 説明 |
 |---------------|----------------------------------------------------|
-| 日 | 「yyyy-MM-dd」形式の日付値 |
+| date | 「yyyy-MM-dd」形式の日付値 |
 | number | 整数または浮動小数点数 |
-| リッチテキスト | HTML文字列 |
-| スコア | 符号付き 32 ビット整数 |
-| sfdc キャンペーン | Salesforce キャンペーン管理統合で使用 |
-| テキスト | テキスト文字列 |
+| rich text | HTML 文字列 |
+| score | 符号付き 32 ビット整数 |
+| sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
+| text | テキスト文字列 |
 
 ## ソーシャルサインオン（フォーム入力ウィジェット）データ参照
 
 | タイプ | 説明 |
 |---------------|----------------------------------------------------|
-| 日 | 「yyyy-MM-dd」形式の日付値 |
+| date | 「yyyy-MM-dd」形式の日付値 |
 | number | 整数または浮動小数点数 |
-| リッチテキスト | HTML文字列 |
-| スコア | 符号付き 32 ビット整数 |
-| sfdc キャンペーン | Salesforce キャンペーン管理統合で使用 |
-| テキスト | テキスト文字列 |
+| rich text | HTML 文字列 |
+| score | 符号付き 32 ビット整数 |
+| sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
+| text | テキスト文字列 |
 
 ```javascript
 {

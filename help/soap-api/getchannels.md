@@ -1,32 +1,32 @@
 ---
 title: getChannels
 feature: SOAP
-description: getChannels SOAP呼び出し
+description: getChannels SOAP 呼び出し
 exl-id: bcaef85b-154b-4571-ad24-07a36707a6ef
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '92'
-ht-degree: 9%
+ht-degree: 100%
 
 ---
 
 # getChannels
 
-この関数は、Marketoに設定されたチャンネルに関する以下の情報を取得します。
+この関数は、Marketo で設定されたチャネルに関する次の情報を取得します。
 
-- 進行状況のステータス
-- 各進行ステータスのステップ番号
-- 特定の進捗ステータスが成功として定義されているかどうか
+- 進行状況ステータス
+- 各進行状況ステータスのステップ番号
+- 特定の進行状況ステータスが成功として定義されているか
 
-すべてのチャネルに関する情報を取得するか、特定のチャネルリストを指定できます
+すべてのチャネルに関する情報を取得したり、特定のチャネルリストを指定したりできます
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| tag->values->stringItem | オプション | クエリするチャネルのリスト。 `<tag>` を省略すると、すべてのチャネルに関する情報が表示されます |
+| tag／values／stringItem | オプション | クエリを実行するチャネルのリスト。`<tag>` を省略すると、すべてのチャネルに関する情報が表示されます |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -1,32 +1,32 @@
 ---
-title: 販売担当者
+title: セールス担当者
 feature: REST API
-description: 営業担当者に関するデータを読み取ります。
+description: セールス担当者に関するデータを読み取ります。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '303'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
-# 販売担当者
+# セールス担当者
 
-[ 販売担当者エンドポイントの参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[セールス担当者エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-営業担当者 API は、[SFDC 同期 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) または [Microsoft Dynamics 同期 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) が有効になっている購読に対する読み取り専用アクセスです。 営業担当者は、引合レコードの販売所有者である個人レコードのタイプです。 これらは、各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられています。 設定された externalSalesPersonId フィールドによってリードが販売担当者に関連付けられると、対応するリードオーナー検索フィールドにMarketoのそのリードレコードが設定され、対応するフィルターおよびトークンを使用できるようになります。
+Sales Person API は、[SFDC 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)が有効になっているサブスクリプションに対する読み取り専用アクセスです。セールス担当者は、リードレコードのセールス所有者であるユーザレコードのタイプです。各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられます。リードが、入力した externalSalesPersonId フィールドでセールス担当者に関連付けられると、Marketo のそのリードレコードに対応するリード所有者ルックアップフィールドが入力され、対応するフィルターとトークンの使用が可能になります。
 
-販売担当者は、[ 同期リード ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、リードレコードに関連付けられます。
+セールス担当者は、[リードを同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによってリードレコードに関連付けられます。
 
-営業担当者は、[ 商談の同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、商談レコードに関連しています。
+セールス担当者は、[商談を同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって商談レコードに関連付けられます。
 
-販売担当者は、[ 会社の同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントを使用し、externalSalesPersonId 属性を渡すことで、会社レコードに関連付けられます。
+セールス担当者は、[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって会社レコードに関連付けられます。
 
-販売担当者レコードは、API からのみ編集できます。
+セールス担当者レコードは、API 経由でのみ編集可能です。
 
 ## 説明
 
-営業担当者レコードの記述は、引合データベース・オブジェクトの標準パターンに従います。
+セールス担当者レコードの説明は、リードデータベースオブジェクトの標準パターンに従います。
 
 ```
 GET /rest/v1/salespersons/describe.json
@@ -95,11 +95,11 @@ GET /rest/v1/salespersons/describe.json
 }
 ```
 
-デフォルトでは、販売担当者の `idField` は「id」で、`dedupeFields` は単に「externalSalesPersonId」です。
+デフォルトでは、セールス担当者の `idField` は「id」で、`dedupeFields` は「externalSalesPersonId」です。
 
 ## クエリ
 
-シンプルなキーに対する標準的なクエリパターンを使用する販売担当者。 次の例では、ユーザーのメールを externalSalesPersonId として使用しています。 デフォルトでは、クエリは、返されたレコードに対して入力されたすべてのフィールドを返します。
+シンプルなキーの標準クエリパターンを使用するセールス担当者。この例では、ユーザのメールは externalSalesPersonId として使用されています。デフォルトでは、クエリは、返されたレコードに対して入力されているすべてのフィールドを返します。
 
 ```
 GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.com,sam@test.com
@@ -180,10 +180,10 @@ POST /rest/v1/salespersons.json
 
 削除のパターンは標準です。
 
-「使用中」の場合、販売担当者の削除は許可されません。 この場合、販売担当者はスキップされます。 例:
+セールス担当者は、「使用中」の場合は削除できません。この場合、セールス担当者はスキップされます。例:
 
-- 販売担当者がアクティブなリードに関連付けられている場合
-- 販売担当者が削除された会社に関連付けられている場合
+- セールス担当者がアクティブなリードに関連付けられている場合
+- セールス担当者が削除された会社に関連付けられている場合
 
 ```
 POST /rest/v1/salespersons/delete.json
@@ -237,6 +237,6 @@ POST /rest/v1/salespersons/delete.json
 
 ## タイムアウト
 
-- 販売担当者エンドポイントのタイムアウトは、以下に記載されていない限り 30 秒です
-   - 営業担当者の同期：60s
-   - 営業担当者の削除：60s
+- 「セールス担当者」エンドポイントは、以下では、30 秒でタイムアウトします。
+   - セールス担当者を同期：60 秒
+   - セールス担当者を削除：60 秒

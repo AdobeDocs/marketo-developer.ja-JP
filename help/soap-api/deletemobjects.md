@@ -1,27 +1,27 @@
 ---
 title: deleteMObjects
 feature: SOAP
-description: deleteMObjects SOAP呼び出し
+description: deleteMObjects SOAP 呼び出し
 exl-id: 31511584-5366-4af1-975b-94417680c4d9
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '58'
-ht-degree: 17%
+ht-degree: 100%
 
 ---
 
 # deleteMObjects
 
-1 つ以上の [MObjects](marketo-objects.md) を削除し、操作の結果（DELETED、UNCHANGED、FAILED）を返します。
+1 つ以上の [MObject](marketo-objects.md) を削除し、操作の結果（DELETED、UNCHANGED、FAILED）を返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| mObjectList->mObject->type | 必須 | `Opportunity` または `OpportunityPersonRole` のいずれかです。 |
-| mObjectList->mObject->id | 必須 | 削除するオブジェクトの ID |
+| mObjectList／mObject／type | 必須 | `Opportunity` または `OpportunityPersonRole` のいずれかを指定できます。 |
+| mObjectList／mObject／id | 必須 | 削除する MObject の ID |
 
-## XML をリクエスト
+## リクエスト XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -1,32 +1,32 @@
 ---
 title: スマートリスト
 feature: REST API
-description: スマート・リストを作成および編集します。
+description: スマートリストを作成および編集します。
 exl-id: 4ba37e57-ee56-48c3-bb2b-b4ec8e907911
 source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '419'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
 # スマートリスト
 
-[ スマートリストエンドポイントのリファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists)
+[スマートリストエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists)
 
-Marketoは、スマートリストで操作を実行するための一連の REST API を備えています。 これらの API は、クエリ、削除、複製のオプションを提供するアセット API の標準インターフェイスパターンに従います。
+Marketo は、スマートリストで操作を実行する一連の REST API を備えています。これらの API は、クエリ、削除、複製のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
-メモ：これらの API は、ユーザー作成のスマートリストでのみサポートされます。 [ 組み込み/システムのスマートリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists) には使用できません。
+メモ：これらの API は、ユーザが作成したスマートリストに対してのみサポートされます。[組み込み／システムのスマートリスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)には使用できません。
 
 ## クエリ
 
-スマートリストのクエリは、[id 別 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByIdUsingGET)、[ 名前 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET) および [ 参照 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListsUsingGET) のアセットに対する標準のクエリタイプに従います。
+スマートリストのクエリは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET)および[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListsUsingGET)のアセットに対する標準のクエリタイプに従います。
 
-### Id 別
+### ID 別
 
-[ID でクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByIdUsingGET) は、単一のスマート リスト `id` をパス パラメーターとして受け取り、単一のスマート リスト レコードを返します。 オプションで、`includeRules` のブール値パラメーターを渡して、応答にスマートリストルールを含めることもできます。
+[ID によるクエリ実行](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByIdUsingGET)は、単一のスマートリスト `id` をパスパラメーターとして受け取り、単一のスマートリストレコードを返します。オプションで、`includeRules` ブール値パラメーターを渡して、応答にスマートリストルールを含めることができます。
 
-![ スマートリストルール ](assets/smartlist-rules.png)
+![スマートリストルール](assets/smartlist-rules.png)
 
 ```
 GET /rest/asset/v1/smartList/{id}.json?includeRules=true
@@ -97,9 +97,9 @@ GET /rest/asset/v1/smartList/{id}.json?includeRules=true
 }
 ```
 
-### スマートキャンペーン Id 別
+### スマートキャンペーン ID 別
 
-[ スマートキャンペーン ID でクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/getSmartListBySmartCampaignIdUsingGET) 単一のスマートキャンペーン `id` をパスパラメーターとして受け取り、単一のスマートリストレコードを返します。 オプションで、`includeRules` のブール値パラメーターを渡して、応答にスマートリストルールを含めることもできます。
+[スマートキャンペーン ID によるクエリ実行](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/getSmartListBySmartCampaignIdUsingGET)は、単一のスマートキャンペーン `id` をパスパラメーターとして受け取り、単一のスマートリストレコードを返します。オプションで、`includeRules` ブール値パラメーターを渡して、応答にスマートリストルールを含めることができます。
 
 ```
 GET /rest/asset/v1/smartCampaign/{smartCampaignId}/smartList.json
@@ -128,9 +128,9 @@ GET /rest/asset/v1/smartCampaign/{smartCampaignId}/smartList.json
 }
 ```
 
-### プログラム Id 別
+### プログラム ID 別
 
-[ プログラム ID でクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getSmartListByProgramIdUsingGET) は、1 つの電子メールプログラム `id` をパスパラメーターとして受け取り、1 つのスマートリストレコードを返します。 オプションで、`includeRules` のブール値パラメーターを渡して、応答にスマートリストルールを含めることもできます。
+[プログラム ID によるクエリ実行](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getSmartListByProgramIdUsingGET)は、単一のメールプログラム `id` をパスパラメーターとして受け取り、単一のスマートリストレコードを返します。オプションで、`includeRules` ブール値パラメーターを渡して、応答にスマートリストルールを含めることができます。
 
 ```
 GET /rest/asset/v1/program/{programId}/smartList.json
@@ -161,7 +161,7 @@ GET /rest/asset/v1/program/{programId}/smartList.json
 
 ### 名前別
 
-[ 名前によるクエリ ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET) は、スマート・リスト・レコードをパラメータとして受け取り、単一のスマート・リスト・`name` コードを返します。  完全一致文字列は、インスタンス内のすべてのスマートリスト名に対して実行され、その名前に一致するスマートリストの結果を返します。
+[名前によるクエリ実行](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListByNameUsingGET)は、スマートリスト `name` をパラメーターとして受け取り、単一のスマートリストレコードを返します。インスタンス内のすべてのスマートリスト名に対して正確な文字列一致が実行され、その名前に一致するスマートリストの結果が返されます。
 
 ```
 GET /rest/asset/v1/smartList/byName.json?name=2018 Leads
@@ -191,7 +191,7 @@ GET /rest/asset/v1/smartList/byName.json?name=2018 Leads
 
 ### 参照
 
-スマート・リストは [ バッチで取得 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListsUsingGET) することもできます。 `folder` パラメーターは、クエリの実行対象となる親フォルダーを指定するために使用されます。 `id` と `type` を含む JSON オブジェクトとしてフォーマットされています。 他の一括アセット取得エンドポイントと同様に、`offset` および `maxReturn` は、ページングに使用できるオプションのパラメーターです。 オプションの `earliestUpdatedAt` および `latestUpdatedAt` の datetime パラメーターを使用して、UpdatedAt の日付範囲で結果をフィルタリングできます。
+スマートリストは、[バッチで取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/getSmartListsUsingGET)することもできます。`folder` パラメーターは、クエリが実行される親フォルダーを指定するために使用されます。これは、`id` と `type` を含む JSON オブジェクトとして書式設定されます。他の一括アセット取得エンドポイントと同様に、 `offset` と `maxReturn` はページングに使用できるオプションパラメーターです。オプションの `earliestUpdatedAt` および `latestUpdatedAt` 日時パラメーターを使用すると、UpdatedAt 日付範囲で結果をフィルタリングできます。
 
 ```
 GET /rest/asset/v1/smartLists.json?folder={"id":31,"type":"Folder"}
@@ -245,7 +245,7 @@ GET /rest/asset/v1/smartLists.json?folder={"id":31,"type":"Folder"}
 
 ## 複製
 
-[ スマート・リストのクローニング ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/cloneSmartListUsingPOST) は、application/x-www-form-urlencodedPOSTを使用して実行されます。 複製するスマートリストは、`id` のパスパラメーターで指定します。 `folder` パラメーターは、スマートリストを作成する親フォルダーを指定するために使用され、ID とタイプを含む JSON オブジェクトとしてフォーマットされます。 親フォルダは、プログラムまたはスマート・リスト・フォルダのいずれかである必要があります。 `name` パラメーターは、新しいスマート リストに名前を付けるために使用され、一意である必要があります。 必要に応じて、`description` パラメーターを使用してスマートリストを記述できます。
+[スマートリストの複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/cloneSmartListUsingPOST)は、application/x-www-form-urlencoded POST で実行されます。複製するスマートリストは、`id` パスパラメーターで指定されます。`folder` パラメーターは、スマートリストが作成される親フォルダーを指定するために使用され、ID とタイプを含む JSON オブジェクトとして書式設定されます。親フォルダーは、プログラムフォルダーまたはスマートリストフォルダーのいずれかである必要があります。`name` パラメーターは、新しいスマートリストに名前を付けるために使用され、一意である必要があります。オプションで、`description` パラメーターを使用してスマートリストを説明することもできます。
 
 ```
 POST /rest/asset/v1/smartList/{id}/clone.json
@@ -283,7 +283,7 @@ folder={"id":31,"type":"Folder"}&name=2018 Leads Qualified
 
 ## 削除
 
-[ スマートリストの削除 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/deleteSmartListByIdUsingPOST) では、単一のスマートリスト `id` がパスパラメーターとして使用されます。
+[スマートリストの削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/deleteSmartListByIdUsingPOST)では、パスパラメーターとして単一のスマートリスト `id` を受け取ります。
 
 ```
 POST /rest/asset/v1/smartList/{id}/delete.json
