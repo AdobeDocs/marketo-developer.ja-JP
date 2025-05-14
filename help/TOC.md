@@ -1,6 +1,6 @@
 ---
 user-guide-title: '[!DNL Marketo] 開発者ガイド'
-user-guide-description: このガイドでは、API の使用手順  [!DNL Marketo]  説明します。
+user-guide-description: このガイドでは、 [!DNL Marketo]  API の使用方法について説明します。
 breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
@@ -8,7 +8,7 @@ index: true
 source-git-commit: e2e45c0dfa55966aeaa11c0ecf5bfcff01bbaf81
 workflow-type: tm+mt
 source-wordcount: '249'
-ht-degree: 90%
+ht-degree: 99%
 
 ---
 
@@ -17,11 +17,11 @@ ht-degree: 90%
 
 - [ホーム](home.md)
 - [はじめに](getting-started.md)
-- Javascript API {#javascriptapi}
+- JavaScript API {#javascriptapi}
    - [カスタムデータイベント](javascript-api/custom-data-events.md)
    - [例](javascript-api/examples.md)
    - [Forms API リファレンス](javascript-api/forms-api-reference.md)
-   - [訪問者データの取得](javascript-api/get-visitor-data.md)
+   - [訪問者データを取得](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
    - リードトラッキング {#leadtracking}
       - [リードトラッキング](javascript-api/lead-tracking.md)
@@ -33,7 +33,7 @@ ht-degree: 90%
    - [Rich Media Recommendations](javascript-api/rich-media-recommendation.md)
    - [ソーシャル](javascript-api/social.md)
    - [トリガー](javascript-api/triggers.md)
-   - [Web パーソナライズ](javascript-api/web-personalization.md)
+   - [Web パーソナライゼーション](javascript-api/web-personalization.md)
 - モバイル {#mobile}
    - [インストール  [!DNL Adobe Launch]  拡張機能](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 拡張機能](mobile/adobe-launch-extension.md)
@@ -47,7 +47,7 @@ ht-degree: 90%
    - [Phonegap](mobile/phonegap.md)
    - [プッシュ通知](mobile/push-notifications.md)
    - [React Native](mobile/react-native.md)
-   - [ユーザープロファイル](mobile/user-profiles.md)
+   - [ユーザプロファイル](mobile/user-profiles.md)
 - REST{#rest}
    - [REST API の概要](rest-api/rest-api.md)
    - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
@@ -86,30 +86,30 @@ ht-degree: 90%
       - [プログラムの一括メンバー](rest-api/bulk-program-member-import.md)
    - [チャネル](rest-api/channels.md)
    - [カスタムサービス](rest-api/custom-services.md)
-   - [データ取得 API](rest-api/data-ingestion.md)
+   - [Data Ingestion API](rest-api/data-ingestion.md)
    - [Swagger 定義のダウンロード](rest-api/swagger.md)
-   - [エンドポイントの参照](rest-api/endpoint-reference.md)
+   - [エンドポイント参照](rest-api/endpoint-reference.md)
    - [エラーコード](rest-api/error-codes.md)
    - リードデータベース {#lead-database}
       - [アクティビティ](rest-api/activities.md)
-      - [企業](rest-api/companies.md)
+      - [会社](rest-api/companies.md)
       - [カスタムオブジェクト](rest-api/custom-objects.md)
       - [フィールドリスト](rest-api/fields.md)
       - [フィールドのタイプ](rest-api/field-types.md)
       - [リードデータベース](rest-api/lead-database.md)
       - [リード](rest-api/leads.md)
       - [重点顧客](rest-api/named-accounts.md)
-      - [重点顧客の一覧](rest-api/named-account-lists.md)
+      - [重点顧客リスト](rest-api/named-account-lists.md)
       - [商談](rest-api/opportunities.md)
-      - [オポチュニティの役割](rest-api/opportunity-roles.md)
+      - [商談ロール](rest-api/opportunity-roles.md)
       - [プログラムメンバー](rest-api/program-members.md)
-      - [販売担当者](rest-api/sales-persons.md)
+      - [セールス担当者](rest-api/sales-persons.md)
    - [ページングトークン](rest-api/paging-tokens.md)
    - [パフォーマンス](rest-api/performance.md)
-   - [リファレンスアーキテクチャ](rest-api/reference-architectures.md)
+   - [参照アーキテクチャ](rest-api/reference-architectures.md)
    - [サンプルコード](https://github.com/Marketo/REST-Sample-Code)
    - [タグ](rest-api/tags.md)
-   - [ユーザーコンテキスト](rest-api/user-context.md)
+   - [ユーザコンテキスト](rest-api/user-context.md)
    - [ユーザ管理](rest-api/user-management.md)
 - SOAP {#soap}
    - アクティビティ {#activities}
@@ -147,7 +147,7 @@ ht-degree: 90%
       - [[!DNL getChannels]](soap-api/getchannels.md)
       - [[!DNL getTags]](soap-api/gettags.md)
    - [SOAP API](soap-api/soap-api.md)
-   - [SOAPに関する FAQ](soap-api/soap-faq.md)
+   - [SOAP に関するよくある質問](soap-api/soap-faq.md)
    - 静的リスト {#static-lists}
       - [[!DNL getImportToListStatus]](soap-api/getimporttoliststatus.md)
       - [[!DNL importToList]](soap-api/importtolist.md)
@@ -162,5 +162,5 @@ ht-degree: 90%
 - [メールスクリプト](email-scripting.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
-- [セルフサービスフローの手順](self-service-flow-steps.md)
+- [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログアーカイブ](blog.md)

@@ -6,69 +6,69 @@ exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
 source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
 workflow-type: tm+mt
 source-wordcount: '1298'
-ht-degree: 1%
+ht-degree: 100%
 
 ---
 
 # カスタムオブジェクトの一括抽出
 
-[ カスタムオブジェクト抽出エンドポイントの一括参照 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects)
+[カスタムオブジェクトの一括抽出エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects)
 
-REST API の一括カスタムオブジェクト抽出セットは、Marketoから大きなカスタムオブジェクトレコードセットを取得するためのプログラムによるインターフェイスを提供します。 ETL、データウェアハウスおよびアーカイブの目的で、Marketoと 1 つ以上の外部システムとの間でデータを継続的にやり取りする必要があるユースケースでは、このインターフェイスをお勧めします。
+REST API のカスタムオブジェクトの一括抽出のセットには、Marketo から大量のカスタムオブジェクトレコードを取得するためのプログラムインターフェイスが用意されています。これは、ETL、データウェアハウス、アーカイブの目的で、Marketo と 1 つ以上の外部システム間で継続的にデータを交換する必要があるユースケースに推奨されるインターフェイスです。
 
-この API は、リードに直接リンクされた第 1 レベルのMarketo カスタムオブジェクトレコードの書き出しをサポートします。 カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。 リストのリードごとに、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが行としてエクスポートファイルに書き込まれます。 カスタムオブジェクトデータは、[Marketo UI のリードの詳細ページの「カスタムオブジェクト」タブ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects) で表示できます。
+この API では、リードに直接リンクされている第 1 レベルの Marketo カスタムオブジェクトレコードの書き出しをサポートしています。カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。リスト内の各リードについて、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが、書き出しファイルに行として書き込まれます。カスタムオブジェクトデータは、Marketo UI のリード詳細ページの「[カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)」タブに表示されます。
 
 ## 権限
 
-一括カスタムオブジェクト抽出 API では、API ユーザーが「読み取り専用カスタムオブジェクト」または「読み取り/書き込みカスタムオブジェクト」の権限の一方または両方の役割を持っている必要があります。
+カスタムオブジェクトの一括抽出 API では、API ユーザーに、「読み取り専用カスタムオブジェクト」権限または「読み取り／書き込みカスタムオブジェクト」権限のいずれかまたは両方を含むロールを用意する必要があります。
 
 ## フィルター
 
-カスタムオブジェクト抽出は、カスタムオブジェクトにリンクされたリードのリストを指定するために使用される、複数のフィルターオプションをサポートしています。 リスト内のリードが特定のカスタムオブジェクト名に一致するカスタムオブジェクトレコードにリンクされている場合、レコードはエクスポートファイルに書き込まれます。 エクスポートジョブごとに指定できるフィルタータイプは 1 つだけです。
+カスタムオブジェクトの抽出では、カスタムオブジェクトにリンクされているリードのリストを指定するために使用されるフィルターオプションがいくつかサポートされています。リスト内のリードが、指定したカスタムオブジェクト名に一致するカスタムオブジェクトレコードにリンクされている場合、このレコードは書き出しファイルに書き込まれます。書き出しジョブごとに指定できるフィルタータイプは 1 つだけです。
 
-| フィルタータイプ | データタイプ | 注意 |
+| フィルタータイプ | データタイプ | メモ |
 |---|---|---|
-| `updatedAt` | 日付範囲 | メンバーが `startAt` および&amp;nbsp の JSON オブジェクト `endAt` 受け入れます。;`startAt` にはローウォーターマークを表す日時、`endAt` にはハイウォーターマークを表す日時を指定できます。 範囲は 31 日以内にする必要があります。 このフィルタータイプを持つジョブは、日付範囲内に更新されたすべてのアクセス可能なレコードを返します。 日時は、ミリ秒なしの ISO-8601 形式である必要があります。 |
-| `staticListName` | 文字列 | 静的リストの名前を受け入れます。 このフィルタータイプを持つジョブは、ジョブの処理開始時に静的リストのメンバーであるすべてのアクセス可能なレコードを返します。 Get Lists エンドポイントを使用して静的リスト名を取得します。 |
-| `staticListId` | 整数 | 静的リストの ID を受け入れます。 このフィルタータイプを持つジョブは、ジョブの処理開始時に静的リストのメンバーであるすべてのアクセス可能なレコードを返します。 リストの取得エンドポイントを使用して、静的リスト ID を取得します。 |
-| `smartListName`* | 文字列 | スマートリストの名前を受け入れます。 このフィルタ・タイプを持つジョブは、ジョブの処理開始時にスマート・リストのメンバーであるアクセス可能なすべてのレコードを返します。 「スマート・リストの取得」エンドポイントを使用してスマート・リスト名を取得します。 |
-| `smartListId`* | 整数 | スマートリストの ID を受け入れます。 このフィルタ・タイプを持つジョブは、ジョブの処理開始時にスマート・リストのメンバーであるアクセス可能なすべてのレコードを返します。 「スマート・リストの取得」エンドポイントを使用してスマート・リスト ID を取得します。 |
+| `updatedAt` | 日付範囲 | メンバー `startAt` と `endAt` を持つ JSON オブジェクトを受け取ります。`startAt` は透かし（低）を表す日時を受け取り、`endAt` は透かし（高）を表す日時を受け取ります。範囲は 31日以内にする必要があります。 このフィルタータイプのジョブは、日付範囲内で更新されたアクセス可能なすべてのレコードを返します。日時形式は、ミリ秒を含まない ISO-8601 形式にする必要があります。 |
+| `staticListName` | 文字列 | 静的リストの名前を受け取ります。このフィルタータイプのジョブは、ジョブの処理開始時点で静的リストのメンバーであるアクセス可能なすべてのレコードを返します。「リストを取得」エンドポイントを使用して静的リスト名を取得します。 |
+| `staticListId` | 整数 | 静的リストの ID を受け取ります。このフィルタータイプのジョブは、ジョブの処理開始時点で静的リストのメンバーであるアクセス可能なすべてのレコードを返します。「リストを取得」エンドポイントを使用して静的リスト ID を取得します。 |
+| `smartListName`* | 文字列 | スマートリストの名前を受け取ります。このフィルタータイプのジョブは、ジョブの処理開始時点でスマートリストのメンバーであるアクセス可能なすべてのレコードを返します。「スマートリストを取得」エンドポイントを使用してスマートリスト名を取得します。 |
+| `smartListId`* | 整数 | スマートリストの ID を受け取ります。このフィルタータイプのジョブは、ジョブの処理開始時点でスマートリストのメンバーであるアクセス可能なすべてのレコードを返します。「スマートリストを取得」エンドポイントを使用してスマートリスト ID を取得します。 |
 
-一部のサブスクリプションでは、フィルタータイプを使用できません。 サブスクリプションで利用できない場合は、リードの書き出しジョブを作成エンドポイントを呼び出すとエラーが発生します（「1035, ターゲットのサブスクリプションでサポートされていないフィルタータイプ」）。 お客様は、Marketo サポートに連絡して、この機能をサブスクリプションで有効にすることができます。
+一部のサブスクリプションでは、フィルタータイプは使用できません。サブスクリプションで使用できない場合は、「リードを書き出しジョブを作成」エンドポイントを呼び出す際にエラーが発生します（「1035、ターゲットサブスクリプションでサポートされていないフィルタータイプ」）。顧客は、Marketo サポートに連絡して、サブスクリプションでこの機能を有効にすることができます。
 
 ## オプション
 
-[ カスタムオブジェクトの書き出しを作成ジョブ ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) エンドポイントには、複数の書式設定オプションが用意されています。 これらのオプションを使用すると、ユーザーは次のことができます。
+「[カスタムオブジェクトを書き出しジョブを作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST)」エンドポイントには、複数の書式設定オプションが用意されています。これらのオプションにより、ユーザは次の操作を実行できます。
 
-- 書き出されたファイルに含めるフィールドを指定
-- これらのフィールドの列ヘッダーの名前を変更
-- 書き出すファイルの形式を指定
+- 書き出されたファイル内に含めるフィールドの指定
+- これらのフィールドの列ヘッダーの名前の変更
+- 書き出すファイルの形式の指定
 
-| パラメーター | データタイプ | 必須 | 注意 |
+| パラメーター | データタイプ | 必須 | メモ |
 |---|---|---|---|
-| `fields` | 配列 [ 文字列 ] | はい | Describe Custom Object エンドポイントによって返されるカスタムオブジェクト属性名の値を含む文字列の配列。 リストされたフィールドは、書き出されたファイルに含まれます。 |
-| `columnHeaderNames` | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。 キーは、エクスポートジョブに含まれるフィールドの名前である必要があります。 値は、そのフィールドの書き出された列ヘッダーの名前です。 |
-| `format` | 文字列 | いいえ | CSV、TSV、SSV のいずれかを使用できます。 書き出されたファイルは、コンマ区切り値、タブ区切り値、スペース区切り値の各ファイル（設定されている場合）としてレンダリングされます。 未設定の場合のデフォルト値は CSV です。 |
+| `fields` | 配列[文字列] | はい | 「カスタムオブジェクトを説明」エンドポイントによって返されるカスタムオブジェクト属性名の値を含む文字列の配列。リストされたフィールドは、書き出されたファイルに含まれます。 |
+| `columnHeaderNames` | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。キーは、書き出しジョブに含まれるフィールドの名前にする必要があります。値は、このフィールドの書き出された列ヘッダーの名前です。 |
+| `format` | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定した場合、それぞれコンマ区切り値、タブ区切り値、またはスペース区切り値のファイルとしてレンダリングされます。未設定の場合は、デフォルトで CSV に設定されます。 |
 
 
 ## ジョブの作成
 
-ジョブのパラメーターは、[ 書き出しカスタムオブジェクトジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) エンドポイントを使用して書き出しを開始する前に定義されます。
+ジョブのパラメーターは、[カスタムオブジェクトを書き出しジョブを作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST)エンドポイントを使用して、書き出しの開始前に定義されます。
 
-必須の `apiName` パスパラメーターは、[ カスタムオブジェクトを記述 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/describeUsingGET_1) エンドポイントによって返されるカスタムオブジェクト名です。 書き出すMarketo カスタムオブジェクトを指定します。 CRM カスタムオブジェクトは許可されていません。 必須の `filter` パラメーターには、カスタムオブジェクトにリンクされているリードのリストが含まれています。 これは、静的リストまたはスマートリストを参照できます。 必須の `fields` パラメーターには、書き出しファイルに含めるカスタムオブジェクト属性の API 名が含まれています。 オプションで、ファイルの `format` と `columnHeaderNames` を定義できます。
+必須の `apiName` パスパラメーターは、[カスタムオブジェクトを説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/describeUsingGET_1)エンドポイントによって返されるカスタムオブジェクト名です。これは、書き出す Marketo カスタムオブジェクトを指定します。CRM カスタムオブジェクトは許可されていません。必須の `filter` パラメーターには、カスタムオブジェクトにリンクされているリードのリストが含まれます。これは、静的リストまたはスマートリストを参照できます。必須の `fields` パラメーターには、書き出しファイルに含めるカスタムオブジェクト属性の API 名が含まれます。オプションで、ファイルの `format` と、`columnHeaderNames` を定義できます。
 
-例えば、「Color」、「Make」、「Model」、「VIN」のフィールドを持つ「Car」というカスタムオブジェクトを作成したとします。 リンクフィールドはリード ID で、重複排除フィールドは VIN です。
+例えば、「カラー」、「メーカー」、「モデル」、「VIN（車両識別番号）」のフィールドを持つ「自動車」という名前のカスタムオブジェクトを作成したとします。リンクフィールドはリード ID で、重複排除フィールドは VIN です。
 
-カスタムオブジェクト定義
+カスタムオブジェクトの定義
 
-![ カスタム オブジェクト ](assets/custom-object-car.png)
+![カスタムオブジェクト](assets/custom-object-car.png)
 
 
 カスタムオブジェクトフィールド
 
-![ カスタムオブジェクトフィールド ](assets/custom-object-car-fields.png)
+![カスタムオブジェクトフィールド](assets/custom-object-car-fields.png)
 
-[ カスタムオブジェクトを記述 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/describeUsingGET_1) を呼び出して、応答の `fields` 属性に表示されるカスタムオブジェクト属性をプログラムで調べることができます。
+[カスタムオブジェクトを説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/describeUsingGET_1)を呼び出して、応答の `fields` 属性に表示されるカスタムオブジェクト属性をプログラムで調べることができます。
 
 ```
 GET /rest/v1/customobjects/car_c/describe.json
@@ -178,7 +178,7 @@ GET /rest/v1/customobjects/car_c/describe.json
 }
 ```
 
-複数のカスタムオブジェクトレコードを作成し、[ カスタムオブジェクトを同期 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) エンドポイントを使用してそれぞれを別のリードにリンクします。 1 つのリードを複数のカスタムオブジェクトレコードにリンクすることができます。 これは、「1 対多」関係と呼ばれます。
+複数のカスタムオブジェクトレコードを作成し、[カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST)エンドポイントを使用して、それぞれを異なるリードにリンクします。1 つのリードを多数のカスタムオブジェクトレコードにリンクできます。これは「1 対多」の関係と呼ばれます。
 
 ```
 POST /rest/v1/customobjects/car_c.json
@@ -237,7 +237,7 @@ POST /rest/v1/customobjects/car_c.json
 }
 ```
 
-上記の 3 つのリードはそれぞれ、「リスト ID でリードを取得 [ エンドポイントを呼び出すことで示されるように、`id` が 1081 である「自動車バイヤー」という名前の静的リストに属し ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1) す。
+上記の 3 つのリードはそれぞれ、「自動車購入者」という名前の静的リストに属しており、この `id`は 1081 です。これは、[リスト ID によるリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1)エンドポイントを呼び出すと、次のように表示されます。
 
 ```
 GET /rest/v1/lists/1081/leads.json
@@ -276,7 +276,7 @@ GET /rest/v1/lists/1081/leads.json
 }
 ```
 
-次に、これらのレコードを取得するエクスポートジョブを作成します。 [ 書き出しカスタムオブジェクトジョブを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) エンドポイントを使用して、カスタムオブジェクト属性を `fields` パラメーターで、静的リスト ID を `filter` パラメーターで指定します。
+次に、これらのレコードを取得する書き出しジョブを作成します。[カスタムオブジェクトを書き出しジョブを作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST)エンドポイントを使用して、`fields` パラメーターにカスタムオブジェクト属性を指定し、`filter` パラメーターに静的リスト ID を指定します。
 
 ```
 POST /bulk/v1/customobjects/car_c/export/create.json
@@ -312,7 +312,7 @@ POST /bulk/v1/customobjects/car_c/export/create.json
 }
 ```
 
-これは、ジョブが作成されたことを示すステータスを応答で返します。 ジョブは定義され作成されましたが、まだ開始されていません。 これを行うには、`apiName` と、作成ステータス応答の `exportId` を使用して、[ カスタムオブジェクトジョブのエンキュー ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST) エンドポイントを呼び出す必要があります。
+これにより、応答では、ジョブが作成されたことを示すステータスが返されます。ジョブは定義および作成されましたが、まだ開始されていません。これを行うには、`apiName` と、作成ステータス応答の `exportId` を使用して、[カスタムオブジェクトを書き出しジョブをキューに入れる](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST)エンドポイントを呼び出す必要があります。
 
 ```
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/enqueue.json
@@ -334,13 +334,13 @@ POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/en
 }
 ```
 
-これにより、使用可能な書き出しスロットがある場合、初期 `status` は「待機中」になり、「処理中」に設定されます。
+これは、最初の `status` の &quot;Queued&quot; で応答し、その後、使用可能な書き出しスロットがある場合に &quot;Processing&quot; に設定されます。
 
 ## ジョブステータスのポーリング
 
-ステータスは、同じ API ユーザーによって作成されたジョブについてのみ取得できます。
+ステータスを取得できるのは、同じ API ユーザによって作成されたジョブのみです。
 
-これは非同期エンドポイントなので、ジョブを作成した後、そのステータスをポーリングして、進行状況を判断する必要があります。 [ カスタム オブジェクト ジョブの状態のエクスポートの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsStatusUsingGET) エンドポイントを使用してポーリングします。 ステータスは 60 秒に 1 回だけ更新されるので、これよりも低いポーリング頻度は推奨されず、ほとんどすべての場合で過剰です。 ステータスフィールドの応答は、作成済み、待機中、処理中、キャンセル済み、完了または失敗のいずれかです。
+これは非同期エンドポイントなので、ジョブを作成した後、その進行状況を判断するためにこのステータスをポーリングする必要があります。[カスタムオブジェクトを書き出しジョブのステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsStatusUsingGET)エンドポイントを使用してポーリングします。ステータスは 60 秒ごとに 1 回しか更新されないので、これより低いポーリング頻度はお勧めしません。ほとんどの場合、それでも過剰です。ステータスフィールドには、作成済み、待機中、処理中、キャンセル済み、完了、失敗のいずれかが返されます。
 
 ```
 GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
@@ -363,7 +363,7 @@ GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
 }
 ```
 
-ステータスエンドポイントは、ジョブがまだ処理中であることを示す応答なので、ファイルはまだ取得できません。 ジョブ `status` が「完了」に変わると、ダウンロードできるようになります。
+ステータスエンドポイントは、ジョブがまだ処理中なので、ファイルはまだ取得できないことを示す応答を返します。ジョブの `status` が「完了」に変更されると、ダウンロードできます。
 
 ```json
 {
@@ -388,9 +388,9 @@ GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
 
 ## データの取得
 
-完了したカスタムオブジェクト書き出しのファイルを取得するには、`apiName` と `exportId` を指定して [ 書き出しカスタムオブジェクトファイルを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET) エンドポイントを呼び出すだけです。
+完了したカスタムオブジェクトの書き出しのファイルを取得するには、`apiName` と `exportId` を使用して[カスタムオブジェクトを書き出しファイルを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET)エンドポイントを呼び出すだけです。
 
-応答には、ジョブの設定方法に従ってフォーマットされたファイルが含まれています。 エンドポイントは、ファイルのコンテンツを使用して応答します。 リクエストされたカスタムオブジェクト属性が空（データが含まれていない）の場合、`null` はエクスポートファイルの対応するフィールドに配置されます。
+応答には、ジョブの設定方法に従って書式設定されたファイルが含まれます。エンドポイントは、ファイルのコンテンツを使用して応答します。リクエストされたカスタムオブジェクト属性が空（データが含まれていない）の場合、書き出しファイル内の対応するフィールドに `null` が配置されます。
 
 ```
 GET /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/file.json
@@ -403,11 +403,11 @@ leadId,color,make,model,vIN
 13,Fusion Red,Tesla,Roadster,SFGRC3C41FF154321
 ```
 
-抽出されたデータの部分的で再開にわかりやすい取得をサポートするために、ファイルエンドポイントはオプションで `bytes` タイプの HTTP ヘッダー `Range` をサポートします。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 範囲ヘッダーの使用について詳しくは、Marketo[ 一括抽出 ](bulk-extract.md) を参照してください。
+抽出されたデータの部分的で再開にわかりやすい取得をサポートするのに、ファイルエンドポイントは、オプションで `bytes` タイプの HTTP ヘッダー `Range` をサポートします。ヘッダーが設定されていない場合は、コンテンツ全体が返されます。Marketo 一括抽出で範囲ヘッダーを使用する方法について詳しくは、[こちら](bulk-extract.md)を参照してください。
 
 ## ジョブのキャンセル
 
-ジョブが誤って設定された場合、または不要になった場合は、[ カスタムオブジェクトジョブの書き出しをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingPOST) エンドポイントを使用すると、簡単にキャンセルできます。 ジョブがキャンセルされたことを示す `status` が返されます。
+ジョブが誤って設定されたり、不要になったりした場合は、[カスタムオブジェクトを書き出しジョブをキャンセル](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingPOST)エンドポイントを使用して簡単にキャンセルできます。これは、ジョブがキャンセルされたことを示す `status` で応答します。
 
 ```
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/cancel.json
