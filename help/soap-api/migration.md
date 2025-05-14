@@ -93,7 +93,7 @@ REST ドキュメント：
 
 REST ドキュメント：
 
-- [スマートキャンペーン](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
+- [スマートキャンペーン](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
 
 SOAP API では、[リクエスト可能なスマートキャンペーンを選定するためのリードのトリガー](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns#trigger)、リクエスト可能なキャンペーンの取得、および[スマートキャンペーンの今後の実行のスケジュール](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns#schedule)のスマートキャンペーンの 3 つのユースケースのみをサポートしています。
 
@@ -107,7 +107,7 @@ SOAP API では、[リクエスト可能なスマートキャンペーンを選�
 
 REST ドキュメント：
 
-- [カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
+- [カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
 
 SOAP API では、カスタムオブジェクトの CRUD 操作のみをサポートしていました。
 
