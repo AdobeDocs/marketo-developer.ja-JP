@@ -2,14 +2,18 @@
 title: データストリーム
 description: データストリームの概要
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 43bcafd335a2fdc709e917ef74504500422c2889
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1601'
 ht-degree: 98%
 
 ---
 
 # データストリーム
+
+>[!NOTE]
+> データストリームに関する現在の情報は、[ データストリームの使用 ](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/) に記載されています。
+>
 
 アドビのお客様のマーケティング組織は、ビジネスで上位の地位を保ち、競争力を維持することを目的に、タイムリーで焦点を当てたマーケティングキャンペーンに依存しています。ペースの速い意思決定をサポートし、戦略的変更を迅速に実行できるようにするには、焦点を当てたターゲットキャンペーンを実現する重要な決定をサポートし、推進するデータを持つことが重要です。また、Marketo Engage 内外の顧客セグメントのレベルでマーケティング活動を行うお客様もいます。これらの様々な取り組みのサポートに、Marketo ではデータストリームを通じてほとんどリアルタイムで大量のデータを取得する機能を作成しました。
 
