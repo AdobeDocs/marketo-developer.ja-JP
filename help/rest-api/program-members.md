@@ -3,10 +3,10 @@ title: プログラムメンバー
 feature: REST API
 description: プログラムメンバーを作成および管理します。
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '1712'
-ht-degree: 100%
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+workflow-type: tm+mt
+source-wordcount: '1708'
+ht-degree: 98%
 
 ---
 
@@ -228,7 +228,7 @@ GET /rest/v1/programs/members/describe.json
 
 デフォルトでは、最大 300 個のレコードが返されます。`batchSize` クエリパラメーターを使用して、この数を減らすことができます。**moreResult** 属性が true の場合、さらに多くの結果を使用できます。moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。この API から返される `nextPageToken` は、この呼び出しの次の反復処理で必ず再利用する必要があります。
 
-GET リクエストの合計長が 8 KB を超えると、HTTP エラー「414、URI が長すぎます」（[RFC 7231](https://datatracker.ietf.org/doc/html/rfc72316.5.12) に準拠）という HTTP エラーが返されます。回避策として、GET を POST に変更し、`_method=GET` パラメーターを追加して、リクエスト本文にクエリ文字列を配置します。
+GET リクエストの合計の長さが 8 KB を超えると、「414、URI が長すぎます」という HTTP エラーが返されます。 回避策として、GET を POST に変更し、`_method=GET` パラメーターを追加して、リクエスト本文にクエリ文字列を配置します。
 
 ```
 GET /rest/v1/programs/{programId}/members.json?filterType=statusName&filterValues=Influenced

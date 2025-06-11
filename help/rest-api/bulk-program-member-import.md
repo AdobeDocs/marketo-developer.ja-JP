@@ -3,10 +3,10 @@ title: プログラムメンバーの一括読み込み
 feature: REST API
 description: メンバーデータのバッチ読み込み。
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '838'
-ht-degree: 100%
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+workflow-type: tm+mt
+source-wordcount: '837'
+ht-degree: 97%
 
 ---
 
@@ -141,7 +141,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 
 失敗は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsFailed` 属性によって示されます。numOfRowsFailed がゼロより大きい場合、この値は発生した失敗の数を示します。
 
-[プログラムメンバーを読み込み失敗を取得](http://TODO)エンドポイントを使用して、`batchId` パスパラメーターを渡すことで、失敗した行のレコードと原因を取得します。
+「読み込みプログラムメンバーのエラーの取得」エンドポイントを使用して、`batchId` パスパラメーターを渡すことにより、失敗した行のレコードと原因を取得します。
 
 ```
 GET /bulk/v1/program/members/import/{batchId}/failures.json

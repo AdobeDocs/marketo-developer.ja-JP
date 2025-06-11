@@ -3,10 +3,10 @@ title: REST API への移行
 feature: SOAP
 description: SOAP から REST API への移行
 exl-id: c2956db3-defe-4163-99f3-58654ce8ee2b
-source-git-commit: 5adb5d25c5f1b3e63bf8139725f00d450820e88a
-workflow-type: ht
-source-wordcount: '646'
-ht-degree: 100%
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+workflow-type: tm+mt
+source-wordcount: '624'
+ht-degree: 99%
 
 ---
 
@@ -33,7 +33,7 @@ Marketo REST API では、クライアント資格情報付与タイプを使用
 SOAP API では、リードデータの同期、[Munchkin cookie の関連付け](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/javascriptapi/leadtracking/lead-tracking)、およびリードの結合をサポートしています。アプリケーションが SOAP syncLead メソッドを呼び出して `marketoCookie` パラメーターを設定する場合は、次のいずれかの方法で移行できます。
 
 1. [リードを同期](https://developer.adobe.com/marketo-apis/api/mapi/#operation/syncLeadUsingPOST) RESTメソッドを使用し、その後に[関連付けられたリード](https://developer.adobe.com/marketo-apis/api/mapi/#operation/associateLeadUsingPOST)を使用
-2. [フォームを送信](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/leads&quot;%20\l%20&quot;submit-form)を呼び出すことができますが、これにはマーケティングアセットの設定と [Forms API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/forms) とのインタラクションが必要です
+2. [フォームを送信](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/leads)を呼び出すことができますが、これにはマーケティングアセットの設定と [Forms API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/forms) とのインタラクションが必要です
 
 `foreignSysPersonId` キータイプを使用するアプリケーションでは、この外部識別子を表すカスタムリードフィールドを使用するように移行し、[リードを同期](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/leads#create-and-update)または[リードの一括読み込み](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/bulk-import/bulk-lead-import) REST メソッドのいずれかを使用する必要があります。
 
@@ -93,7 +93,7 @@ REST ドキュメント：
 
 REST ドキュメント：
 
-- [スマートキャンペーン](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
+- [スマートキャンペーン](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
 
 SOAP API では、[リクエスト可能なスマートキャンペーンを選定するためのリードのトリガー](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns#trigger)、リクエスト可能なキャンペーンの取得、および[スマートキャンペーンの今後の実行のスケジュール](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/assets/smart-campaigns#schedule)のスマートキャンペーンの 3 つのユースケースのみをサポートしています。
 
@@ -107,7 +107,7 @@ SOAP API では、[リクエスト可能なスマートキャンペーンを選�
 
 REST ドキュメント：
 
-- [カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects&quot;%20\h%20HYPERLINK%20&quot;https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
+- [カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
 
 SOAP API では、カスタムオブジェクトの CRUD 操作のみをサポートしていました。
 

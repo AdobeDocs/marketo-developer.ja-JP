@@ -3,10 +3,10 @@ title: データ取り込み
 feature: REST API, Dynamic Content
 description: Marketo API を使用してデータを消費します。
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 32e42ef5678c1cef76e66822809091ee602e9df8
-workflow-type: ht
-source-wordcount: '968'
-ht-degree: 100%
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+workflow-type: tm+mt
+source-wordcount: '965'
+ht-degree: 99%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 100%
 
 Data Ingestion API は、大量のユーザおよびユーザ関連データの取り込みを効率的で最小限の遅延で処理するように設計された、大容量、低遅延、高可用性のサービスです。
 
-データは、非同期で実行されるリクエストを送信することで取り込まれます。リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/) からのイベントをサブスクライブすることで取得できます。
+データは、非同期で実行されるリクエストを送信することで取り込まれます。リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup) からのイベントをサブスクライブすることで取得できます。
 
 インターフェイスは、ユーザとカスタムオブジェクトの 2 つのオブジェクトタイプに対して提供されます。レコード操作は、「挿入または更新」のみです。
 
@@ -275,8 +275,8 @@ Data Ingestion API と他の Marketo REST API の違いのリストを以下に�
 
 * これは完全な CRUD インターフェイスではなく、アップサートのみをサポートします
 * 認証するには、`X-Mkto-User-Token` ヘッダーを使用してアクセストークンを渡す必要があります
-* URL ドメイン名は `mkto-ingestion-api.adobe.io` です
-* URL パスは `/subscriptions/MunchkinId` で始まります
+* URL ドメイン名は `mkto-ingestion-api.adobe.io`
+* URL パスは `/subscriptions/MunchkinId` で始まる
 * クエリパラメーターがない
 * 呼び出しが成功した場合、202 ステータスが返され、応答本文は空です
 * 呼び出しが失敗した場合、202 以外のステータスが返され、応答本文には `{ "error_code" : "Error Code", "message" : "Message" }` が含まれます

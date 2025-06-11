@@ -2,9 +2,9 @@
 title: ブログアーカイブ
 description: 2014 年から 2023 年までのMarketo Developers ブログのアーカイブ
 exl-id: d7ae88dd-9938-4957-9798-db43090dab4e
-source-git-commit: 206724e5177eb9040fa36202d91b2ed9daa734c3
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
 workflow-type: tm+mt
-source-wordcount: '61742'
+source-wordcount: '61741'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 >[!INFO]
 >
 >これは、2014 年から 2023 年にわたるMarketoのブログのアーカイブです。 これは、履歴参照としてのみ提供されています。
->一部の情報が古くなっている可能性があります。  最新の機能については、常に最新のドキュメントを確認してください。
+>>一部の情報が古くなっている可能性があります。  最新の機能については、常に最新のドキュメントを確認してください。
 >
 
 >[!IMPORTANT]
->SOAP API は非推奨（廃止予定）となっており、2025 年 10 月 31 日（PT）以降は使用できなくなります。 すべての新しい開発はMarketo REST API を使用して行う必要があり、サービスが中断されないように、既存のサービスはその日までに移行する必要があります。 SOAP API を使用するサービスがある場合は、[SOAP API Migration Guide](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/soap/migration) を参照して、移行方法を確認してください。
+>SOAP API は非推奨（廃止予定）となっており、2025 年 10 月 31 日（PT）以降は使用できなくなります。 すべての新しい開発はMarketo REST API を使用して行う必要があり、サービスが中断されないように、既存のサービスはその日までに移行する必要があります。 SOAP API を使用するサービスがある場合は、[SOAP API Migration Guide](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration) を参照して、移行方法を確認してください。
 >
 
 >[!IMPORTANT]
@@ -596,7 +596,7 @@ Posted on _1970-01-01_ by _Murta_
 
 次のプレゼンテーションでは、データをMarketoに取り込む様々な方法を示します。 フォーム、カスタムオブジェクト、統合に重点を置いています。
 
-[ データをMarketoに取り込む ](https://www.slideshare.net/MurtzaManzur/getting-data-into-marketo-35662408) [Murtza Manzur](https://www.slideshare.net/MurtzaManzur)
+[ データをMarketoに取り込む ](https://www.slideshare.net/MurtzaManzur/getting-data-into-marketo-35662408)[Murtza Manzur](https://www.slideshare.net/MurtzaManzur)
 
 Posted on _2014-06-06_ by _Murta_
 
@@ -921,7 +921,6 @@ response = client.call(:sync_multiple_leads, message: request)
 
 puts response
 ```
-
  
 
 この記事には、カスタム統合の実装に使用するコードが含まれています。 カスタマイズされた特性により、Marketo テクニカルサポートチームはカスタム作業のトラブルシューティングを行うことができません。 適切な技術的経験がなく、経験豊富な開発者にアクセスすることなく、次のコードサンプルを実装しようとしないでください。
@@ -930,7 +929,7 @@ Posted on _2014-06-27_ by _Murta_
 
 ## リードのメールアドレスの更新
 
-ユーザーがサイト上のMarketo フォームに入力するとします。 何が起こるの？ Marketoは、ユーザーを cookie に登録し、提供されたメールに関連付けます。 次回ユーザーが web サイトを訪問し、同じフォームに別のメールで再度入力した場合。 何が起こるの？ Marketoは、新しいリードレコードを作成し、ユーザーのブラウザーの最初の cookie を上書きします。 これで、ユーザーはMarketoの新しいリードまたは別のリードになります。 [syncLead API メソッド ](/help/soap-api/synclead.md)、フォームメソッドのカスタムフィールド、Marketo UI、リストの読み込みなど、Marketoでリードのメールアドレスを更新する 4 つの方法を示します。 **syncLead API 経由**&#x200B;[syncLead API](/help/soap-api/synclead.md) を使用して、Marketo ID と新しいメールアドレスを使用してリードレコードを更新できます。 SOAP API 呼び出し用 `syncMultipleLeads`XML をリクエスト
+ユーザーがサイト上のMarketo フォームに入力するとします。 何が起こるの？ Marketoは、ユーザーを cookie に登録し、提供されたメールに関連付けます。 次回ユーザーが web サイトを訪問し、同じフォームに別のメールで再度入力した場合。 何が起こるの？ Marketoは、新しいリードレコードを作成し、ユーザーのブラウザーの最初の cookie を上書きします。 これで、ユーザーはMarketoの新しいリードまたは別のリードになります。 [syncLead API メソッド ](/help/soap-api/synclead.md)、フォームメソッドのカスタムフィールド、Marketo UI、リストの読み込みなど、Marketoでリードのメールアドレスを更新する 4 つの方法を示します。 **syncLead API 経由**[syncLead API](/help/soap-api/synclead.md) を使用して、Marketo ID と新しいメールアドレスを使用してリードレコードを更新できます。 SOAP API 呼び出し用 `syncMultipleLeads`XML をリクエスト
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -1052,7 +1051,7 @@ Posted on _2015-02-20_ by _Murta_
 
 ## Marketoでカスタムフィールドを作成し、AP を使用してこのフィールドを更新する
 
-標準のMarketo フィールドに適合しないリードに関する追加データがあるとします。 例えば、このカスタムフィールドにはサードパーティのスコアを使用できます。 Marketoでサードパーティのスコアのカスタムフィールドを作成し、Marketo [REST API](https://developer.adobe.com/marketo-apis/) または [SOAP API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/soap/activity-type-filters) を使用してこのフィールドの値を更新できます。 まず、Marketoでカスタムフィールドを作成する方法を示し、次に、REST API を使用してこのフィールドを更新する方法を示します。
+標準のMarketo フィールドに適合しないリードに関する追加データがあるとします。 例えば、このカスタムフィールドにはサードパーティのスコアを使用できます。 Marketoでサードパーティのスコアのカスタムフィールドを作成し、Marketo [REST API](https://developer.adobe.com/marketo-apis/) または [SOAP API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activity-type-filters) を使用してこのフィールドの値を更新できます。 まず、Marketoでカスタムフィールドを作成する方法を示し、次に、REST API を使用してこのフィールドを更新する方法を示します。
 
 ### Marketoでのカスタムフィールドの作成方法
 
@@ -1217,7 +1216,7 @@ Google タグマネージャーを使用すると、web サイトにタグを追
 ### Munchkin トラッキングコードの生成方法
 
 1. アプリの右上にある「**管理者**」をクリックします。
-1. 左側のツリーで **0&rbrace;Munchkin&rbrace; をクリックします。**
+1. 左側のツリーで **0}Munchkin} をクリックします。**
 1. トラッキングコードタイプは「**非同期**」を選択します。
 1. 「」をクリックして、JavaScript トラッキングコードをコピーします。
 
@@ -1611,7 +1610,7 @@ Posted on _2014-09-29_ by _Murta_
 
 ### 外部ページの事前入力
 
-Marketo forms は、Marketo ランディングページ以外で読み込まれた場合、ネイティブの事前入力機能を提供しません。 ただし、[Marketo API と ](/help/rest-api/rest-api.md)2&rbrace;Forms 2.0 JavaScript API[&#128279;](/help/javascript-api/forms-api-reference.md/) を使用して、これを実装することはできます。 最初の手順は、サーバーからの REST 呼び出しを使用して、Marketoからリードデータを取得することです。 サーバーからリード ID またはその他の一意の ID を相互参照する手段がすぐにはないのであれば、Munchkin Cookie 「_mkto_trk」を使用して、[Get Leads By Filter Type メソッド ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET) を使用してMarketo サーバーからデータを取得する必要があります。
+Marketo forms は、Marketo ランディングページ以外で読み込まれた場合、ネイティブの事前入力機能を提供しません。 ただし、[Marketo API と ](/help/rest-api/rest-api.md)2}Forms 2.0 JavaScript API](/help/javascript-api/forms-api-reference.md/) を使用して、これを実装することはできます。 [最初の手順は、サーバーからの REST 呼び出しを使用して、Marketoからリードデータを取得することです。 サーバーからリード ID またはその他の一意の ID を相互参照する手段がすぐにはないのであれば、Munchkin Cookie 「_mkto_trk」を使用して、[Get Leads By Filter Type メソッド ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET) を使用してMarketo サーバーからデータを取得する必要があります。
 この呼び出しを行うには、インスタンスから認証エンドポイントと REST エンドポイントが必要です。 Marketo インスタンスで認証が完了したら、リード API を呼び出す必要があります（`https://<host>/rest/v1/leads.json`）。 次に、次のように、Marketo cookie に対してフィルタリングするクエリ文字列を作 `?filterType=cookie&filterValues=` する必要があります。 クライアントからサーバーに送信された「_mkto_trk」キーから、特定の値を取得する必要があります。 メモ：_mkto_trk cookie の値にはアンパサンドが含まれており、Marketo エンドポイントで適切に受け入れられるよ `%26` に URL でエンコードする必要があります。 デフォルトでは、リード API は 4 つのフィールド（`id`、`email`、`firstName`、`updatedAt`）を返します。 特定のフィールドのセットを設定するには、次のようにフィールド名をコンマで区切った `fields` クエリパラメーターを含める必要があります。`&fields=email,firstName,lastName,company` 最終的に、呼び出しは次のようになります。
 
 `https://<host>/rest/v1/leads.json?filterType=cookie&filterValues=<cookie>&fields=email,firstName,lastName,company&access_token=<token>`
@@ -2920,7 +2919,7 @@ Posted on _2015-02-02_ by _Murta_
 
 ## Marketo SOAP API のヒントとテクニック
 
-メモ：これはゲストのブログ投稿です。 [Ed Blachman はシニアアーキテクト ](https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fprofile%2Fview%3Fid%3D2777965) [TIBCO Software, a well-known vendor of enterprise software](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) です。 Ed は、Gartner が「市民開発者」と呼ぶ製品を、プログラミングを自ら行わなくても使用するクラウドサービスと統合できるように取り組んでいます。 [MarketoのSOAP API](/help/soap-api/soap-api.md) は、デベロッパーがMarketoの機能を活用し、独自のアプリケーションと統合できる強力なツールです。 [ 正式なドキュメント ](./getting-started.md) と [ コミュニティリソース ](https://nation.marketo.com/) の間には、その使用方法に関する多くの情報が提供されています。 使い始めた頃、私はその情報に大いに頼り、非常に貴重なものだと思いました。 しかし、その過程で、私はそれらのどの場所でも見たことのないヒントやコツを積み上げました。 私が考えたもののいくつかを以下に示します。
+メモ：これはゲストのブログ投稿です。 [Ed Blachman はシニアアーキテクト ](https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fprofile%2Fview%3Fid%3D2777965)[TIBCO Software, a well-known vendor of enterprise software](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) です。 Ed は、Gartner が「市民開発者」と呼ぶ製品を、プログラミングを自ら行わなくても使用するクラウドサービスと統合できるように取り組んでいます。 [MarketoのSOAP API](/help/soap-api/soap-api.md) は、デベロッパーがMarketoの機能を活用し、独自のアプリケーションと統合できる強力なツールです。 [ 正式なドキュメント ](./getting-started.md) と [ コミュニティリソース ](https://nation.marketo.com/) の間には、その使用方法に関する多くの情報が提供されています。 使い始めた頃、私はその情報に大いに頼り、非常に貴重なものだと思いました。 しかし、その過程で、私はそれらのどの場所でも見たことのないヒントやコツを積み上げました。 私が考えたもののいくつかを以下に示します。
 
 **開発者のサンドボックス** サンドボックスは、もちろん API 開発者にとって素晴らしいリソースです。組織の実際のMarketo ユーザーが行う実際のマーケティングアクティビティに干渉することなく、Marketoの機能を試し、オブジェクトを追加および削除できる安全な場所です。 ただし、サンドボックスは万能薬ではありません。
 例えば、サンドボックスを別の開発グループと共有する必要がありましたが、サンドボックスを所有しているという考えに慣れていたので、ある程度の手間がかかりました。 最終的に、共有のベストプラクティスをいくつか考え出しました。- サンドボックスの内容の完全な知識に依存するテストを記述しないでください。 共有リソースの場合、スキーマは予告なく変更される場合があります。また、リードデータベース、プログラム、その他のエンティティのエントリ全体も変更される場合があります。 テストでサンドボックスについて完全に知識していることが前提の場合、開発サイクルは、それを共有しているグループのブラックアウト期間を作成します。 通常、開発サイクルはユーザーの開発サイクルと一致しないので、これはリソースを大量に消費するだけで冷却にはならないことに相当します。 考え抜く限り、これは必要ありません。  – 規則を使って、リード、リードスキーマフィールド、プログラムなど、すべての要素にラベルを付けてください。 自分の物を自分の物として見つけ、他の物は自分の物として残す事を共同入居者に認めれば、共有のための固い土台を築くべきです。 リードの場合は、カスタムフィールドを作成し、このカスタムフィールドを使用して規則を作成し、これらのリードをテストリードとして識別できます。 リストまたはプログラムの場合は、オブジェクトの名前の先頭に、そのオブジェクトが自分に属していることを示す文字列を付ける場合があります。  – 自分でクリーンアップするテストを記述することを検討します。テストでは、まず目的のオブジェクトを作成し、次に、それらのオブジェクトにアクセス、更新、または選択的に削除してから、最終的に削除します。 （これは、SOAP API では 100% 達成できないことに注意してください。サンドボックス内のすべて、またはその問題の実際のインスタンスがSOAP API を介して管理できるわけではありません。 それでも、できる限りこれを行う価値があります。
@@ -3078,7 +3077,7 @@ Posted on _2015-02-19_ by _Murta_
 
 ## Marketo Platform で構築されたオープンなSource プロジェクトのハイライト：第 3 部
 
-これは、開発者向けコミュニティがMarketo プラットフォームを中心に構築したオープンソースプロジェクトに焦点を当てた、進行中のシリーズの 3 番目の投稿です。 アドビでは [Marketoの GitHub アカウントのリスト ](https://github.com/Marketo/Community-Supported-Client-Libraries) を維持管理しており、Marketo開発者コミュニティが作成したクライアントライブラリおよびプロジェクトをトラッキングしています。 Marketo REST API を中心に開発された 3 つのプロジェクトを以下に示します。 **[ユーザー精神 ](http://www.usermind.com/)Marketo REST API 用に [Node.js クライアントライブラリ ](https://github.com/MadKudu/node-marketo) を作成しました。**&#x200B;**[Arunim Samat](https://github.com/asamat) は、[Marketo REST API 用のクライアントライブラリ ](https://github.com/asamat/python_marketo) を Python に作成しました。Marketoの** **[Jacques Lemieux](https://www.linkedin.com/in/jalemieux) は、Marketo REST API 用に Ruby で [ クライアントライブラリを作成しました。](https://github.com/jalemieux/mkto_rest)** 開発者向けコミュニティがMarketo プラットフォームで作成したプロジェクトが増えることを楽しみにしています。 Marketo プラットフォームのオープンソースプロジェクトに取り組んでいる場合は、[ プルリクエストを通じてこの GitHub リポジトリーに送信 ](https://github.com/Marketo/Community-Supported-Client-Libraries) してください。
+これは、開発者向けコミュニティがMarketo プラットフォームを中心に構築したオープンソースプロジェクトに焦点を当てた、進行中のシリーズの 3 番目の投稿です。 アドビでは [Marketoの GitHub アカウントのリスト ](https://github.com/Marketo/Community-Supported-Client-Libraries) を維持管理しており、Marketo開発者コミュニティが作成したクライアントライブラリおよびプロジェクトをトラッキングしています。 Marketo REST API を中心に開発された 3 つのプロジェクトを以下に示します。 **[ユーザー精神 ](http://www.usermind.com/)Marketo REST API 用に [Node.js クライアントライブラリ ](https://github.com/MadKudu/node-marketo) を作成しました。****[Arunim Samat](https://github.com/asamat) は、[Marketo REST API 用のクライアントライブラリ ](https://github.com/asamat/python_marketo) を Python に作成しました。Marketoの** **[Jacques Lemieux](https://www.linkedin.com/in/jalemieux) は、Marketo REST API 用に Ruby で [ クライアントライブラリを作成しました。](https://github.com/jalemieux/mkto_rest)** 開発者向けコミュニティがMarketo プラットフォームで作成したプロジェクトが増えることを楽しみにしています。 Marketo プラットフォームのオープンソースプロジェクトに取り組んでいる場合は、[ プルリクエストを通じてこの GitHub リポジトリーに送信 ](https://github.com/Marketo/Community-Supported-Client-Libraries) してください。
 
 Posted on _2015-02-20_ by _Murta_
 
@@ -3427,7 +3426,7 @@ Posted on _2015-05-11_ by _David_
 
 ## REST API を使用したリードデータの変更の同期
 
-この POST では、Marketoに更新をポーリングするために繰り返し実行できるコードサンプルを提示しました。 その目的は、Marketo API を使用してリードデータの変更内容を特定し、変更があったリードデータを抽出することでした。 このデータは、同期のために外部システムにプッシュできます。 提示されたコードサンプルは、SOAP API を使用していました。 [ 新しい歩き方 ](https://www.youtube.com/watch?v=G-7ZJjLy5D8&amp;feature=youtu.be) がありますが、それは [Marketo REST API](/help/rest-api/rest-api.md) を使用する方法です。 この投稿では、[ リードの変更を取得 ](/help/rest-api/rest-api.md)、[ リードを ID で取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadByIdUsingGET) の 2 つの REST エンドポイントを使用して同じ目標を達成する方法を説明します。 プログラムには、2 つの主な手順が含まれています。
+この POST では、Marketoに更新をポーリングするために繰り返し実行できるコードサンプルを提示しました。 その目的は、Marketo API を使用してリードデータの変更内容を特定し、変更があったリードデータを抽出することでした。 このデータは、同期のために外部システムにプッシュできます。 提示されたコードサンプルは、SOAP API を使用していました。 [ 新しい歩き方 ](https://www.youtube.com/watch?v=G-7ZJjLy5D8&feature=youtu.be) がありますが、それは [Marketo REST API](/help/rest-api/rest-api.md) を使用する方法です。 この投稿では、[ リードの変更を取得 ](/help/rest-api/rest-api.md)、[ リードを ID で取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadByIdUsingGET) の 2 つの REST エンドポイントを使用して同じ目標を達成する方法を説明します。 プログラムには、2 つの主な手順が含まれています。
 
 1. Get Lead Changes を呼び出して、特定のリードフィールドが変更された、または特定の期間内に追加されたすべてのリード ID のリストを生成します。
 1. リスト内の各リード ID に対して Get Lead ID を呼び出し、リードレコードからフィールドデータを取得します。
@@ -3834,7 +3833,7 @@ Posted on _2015-06-30_ by _David_
 1. **キャンペーン – クリック済み」を選択します。** キャンペーン ID **をキャンペーンの ID に** 定します。 （キャンペーン ID を見つける方法については、以下のメモを参照してください）。
 1. **キャンペーンを保存して定義** をクリックして、キャンペーンクリエイティブを作成します。
 
-全体的に、訪問者がエンタープライズと等しいカスタム変数（サブスクリプションタイプ）に関連付けられている場合や、訪問者が以前の訪問でキャンペーン（ID:5390）をクリックした場合には、このセグメントは一致します。 次の手順では、このセグメント用にパーソナライズされたキャンペーンを定義します。 次のスクリーンショットは、My Marketo ページに表示される RTP ダイアログキャンペーン（左下）で、大規模法人ユーザー向けのウェビナーのプロモーションを行っています。  **注意：**&#x200B;**キャンペーン ID の検索**&#x200B;**キャンペーン** に移動し、**キャンペーン名** にカーソルを合わせてキャンペーン ID を検索します。
+全体的に、訪問者がエンタープライズと等しいカスタム変数（サブスクリプションタイプ）に関連付けられている場合や、訪問者が以前の訪問でキャンペーン（ID:5390）をクリックした場合には、このセグメントは一致します。 次の手順では、このセグメント用にパーソナライズされたキャンペーンを定義します。 次のスクリーンショットは、My Marketo ページに表示される RTP ダイアログキャンペーン（左下）で、大規模法人ユーザー向けのウェビナーのプロモーションを行っています。  **注意：****キャンペーン ID の検索****キャンペーン** に移動し、**キャンペーン名** にカーソルを合わせてキャンペーン ID を検索します。
 Posted on _2015-06-17_ by _David_
 
 ## Marketo REST API を使用したトランザクションメールの送信：パート 1
@@ -3845,7 +3844,7 @@ Marketo REST API を使用して必要な呼び出しを実行するには、Mar
 * Marketo インスタンスでトランザクションメールを作成し、承認する必要があります。
 * メールを送信するように設定された、キャンペーンがリクエストされた、Source:web サービス API を含むアクティブなトリガーキャンペーンが必要です
 
-最初に[メールを作成して承認します](https://experienceleague.adobe.com/ja/docs/marketo/using/home)。メールが真にトランザクション型である場合は、運用可能に設定する必要が生じる可能性がありますが、法的には運用可能と認定されていることを確認してください。 これは、メールのアクション / メール設定の下の編集画面を使用して設定します。 承認すると、キャンペーンを作成する準備が整います。 キャンペーンの作成を初めて行う場合は、docs.marketo.comにある [ 新しいスマートキャンペーンの作成 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign) 記事を参照してください。 キャンペーンを作成したら、これらの手順を実行する必要があります。 キャンペーンがリクエストされたトリガーでスマートリストを設定する：次に、メールを送信手順をメールに指定するようにフローを設定する必要があります。 アクティベーションの前に、「スケジュール」タブで一部の設定を決定する必要があります。 この特定のメールを特定のレコードに 1 回だけ送信する場合は、選定の設定はそのままにしておきます。ただし、メールを複数回受信する必要がある場合は、毎回または使用可能な頻度のいずれかに調整する必要があります。 これで、アクティブ化する準備が整いました。
+最初に[メールを作成して承認します](https://experienceleague.adobe.com/ja/docs/marketo/using/home)。メールが真にトランザクション型である場合は、運用可能に設定する必要が生じる可能性がありますが、法的には運用可能と認定されていることを確認してください。 これは、メールのアクション / メール設定の下の編集画面を使用して設定します。 承認すると、キャンペーンを作成する準備が整います。 キャンペーンの作成を初めて行う場合は、docs.marketo.comにある [ 新しいスマートキャンペーンの作成 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign) 記事を参照してください。 キャンペーンを作成したら、これらの手順を実行する必要があります。 キャンペーンがリクエストされたトリガーでスマートリストを設定する：次に、メールを送信手順をメールに指定するようにフローを設定する必要があります。 アクティベーションの前に、「スケジュール」タブで一部の設定を決定する必要があります。 この特定のメールを特定のレコードに 1 回だけ送信する場合は、選定の設定はそのままにしておきます。ただし、メールを複数回受信する必要がある場合は、毎回または使用可能な頻度のいずれかに調整する必要があります。 これで、アクティブ化する準備が整いました。
 
 ### API 呼び出しの送信
 
@@ -4227,7 +4226,7 @@ Marketoには、商談レポートを完全に確立するために重要な関�
 * 「商談を持つ」スマートリストフィルターの資格を得るには、リードに商談に関連する OpportunityRole が必要です。
 * オポチュニティは、externalCompanyId フィールドを介して会社オブジェクトと多対 1 の関係を持ちます。
 * リードは、externalCompanyId フィールドを介して会社と 1 対多の関係を持ちます。
-* 商談は、リードの獲得プログラム、またはプログラムのメンバーシップと成功に基づいて、プログラムに関連付けられます（[ アトリビューションについて ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/reporting/revenue-cycle-analytics/revenue-tools/attribution/understanding-attribution) を参照）。
+* 商談は、リードの獲得プログラム、またはプログラムのメンバーシップと成功に基づいて、プログラムに関連付けられます（[ アトリビューションについて ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/revenue-cycle-analytics/revenue-tools/attribution/understanding-attribution) を参照）。
 
 リードデータベース全体でこれらの関係を構築すると、Marketo Analytics を最大限に活用し、プログラムがオポチュニティの創出と獲得率に与える影響を確認できます。
 
@@ -4718,7 +4717,7 @@ Posted on _2015-08-07_ by _Kenny_
 
 ### メールの作成
 
-コンテンツをカスタマイズするには、まずMarketoで [ プログラム ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program) と [ メール ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) を設定する必要があります。 カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。 簡単にするために、この例では 1 つのトークンのみを使用していますが、送信元メール、送信者名、返信先またはメール内の任意のコンテンツで、メール内の任意の数のトークンを置き換えることができます。 ここで、置換用のトークンリッチテキストを 1 つ作成し、「bodyReplacement」という名前を付けます。リッチテキストを使用すると、トークン内の任意のコンテンツを入力したい任意のHTMLに置き換えることができます。 トークンは空のままでは保存できないので、ここにプレースホルダーテキストを挿入します。次に、トークンをメールに挿入する必要があります。このトークンにアクセスして、リクエストキャンペーンの呼び出しを通じて置き換えることができます。 このトークンは、メールごとに置き換える必要がある 1 行のテキストとして単純にすることも、メールのレイアウトのほぼ全体を含めることもできます。
+コンテンツをカスタマイズするには、まずMarketoで [ プログラム ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program) と [ メール ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) を設定する必要があります。 カスタムコンテンツを生成するには、プログラム内でトークンを作成し、送信するメールに配置する必要があります。 簡単にするために、この例では 1 つのトークンのみを使用していますが、送信元メール、送信者名、返信先またはメール内の任意のコンテンツで、メール内の任意の数のトークンを置き換えることができます。 ここで、置換用のトークンリッチテキストを 1 つ作成し、「bodyReplacement」という名前を付けます。リッチテキストを使用すると、トークン内の任意のコンテンツを入力したい任意のHTMLに置き換えることができます。 トークンは空のままでは保存できないので、ここにプレースホルダーテキストを挿入します。次に、トークンをメールに挿入する必要があります。このトークンにアクセスして、リクエストキャンペーンの呼び出しを通じて置き換えることができます。 このトークンは、メールごとに置き換える必要がある 1 行のテキストとして単純にすることも、メールのレイアウトのほぼ全体を含めることもできます。
 
 ### コード
 
@@ -5300,13 +5299,13 @@ Marketoの REST API は、認証にカスタムサービスを使用し、これ
 
 ### Workspaceの管理
 
-Marketo Enterprise サブスクリプションの場合、サービスが 1 つのワークスペースへのアクセスのみを必要とするのが一般的であり、これは [API ユーザーへのロールの割り当てによって適用 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/allow-user-access-to-a-workspace) できます。 各ユーザーの役割は、グローバルに、またはワークスペースごとに割り当てることができるので、ワークスペース内で適切な場所へのアクセスを制限でき、可能な限り最小限の権限セットを提供します。
+Marketo Enterprise サブスクリプションの場合、サービスが 1 つのワークスペースへのアクセスのみを必要とするのが一般的であり、これは [API ユーザーへのロールの割り当てによって適用 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/allow-user-access-to-a-workspace) できます。 各ユーザーの役割は、グローバルに、またはワークスペースごとに割り当てることができるので、ワークスペース内で適切な場所へのアクセスを制限でき、可能な限り最小限の権限セットを提供します。
 
 Posted on _2015-08-28_ by _Kenny_
 
 ## REST API を使用したリードパーティションの指定方法
 
-**リードのパーティション化** Marketoのリードパーティションを使用すると、リードを簡単に分離できます。 パーティションを使用すると、組織内の様々なマーケティンググループが 1 つのMarketo インスタンスを共有できます。 詳細は、「ワークスペースとリード・パーティションについて [ を参照してください ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)。 Marketo REST API を使用して、リードパーティションを使用し、プログラムでリードを作成しているとします。 作成したリードが正しいパーティションに配置されるようにするには、どうすればよいですか。 この投稿では、その方法を説明します。 この例では、Workspaces と Partitions を使用して、地域に基づいてリードを分離します。
+**リードのパーティション化** Marketoのリードパーティションを使用すると、リードを簡単に分離できます。 パーティションを使用すると、組織内の様々なマーケティンググループが 1 つのMarketo インスタンスを共有できます。 詳細は、「ワークスペースとリード・パーティションについて [ を参照してください ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)。 Marketo REST API を使用して、リードパーティションを使用し、プログラムでリードを作成しているとします。 作成したリードが正しいパーティションに配置されるようにするには、どうすればよいですか。 この投稿では、その方法を説明します。 この例では、Workspaces と Partitions を使用して、地域に基づいてリードを分離します。
 
 まず、「国」というワークスペースを定義します。 次に、そのワークスペース内に「Mexico」と「Canada」という 2 つのパーティションを作成します。  **Create Lead in Partition** 「Mexico」パーティションに 2 つのリードを作成するとします。 リードを作成するには、を呼び出します。 パーティションを指定するには、リクエスト本文に「partitionName」属性を含める必要があります。 partitionName の値に何を使用すればよいかを知る方法を教えてください。 インスタンスの有効なパーティション名の値のリストを取得するには、次のように [Get Lead Partitions](https://developer.adobe.com/marketo-apis/api/mapi/#operation/describeProgramMemberUsingGET) API を呼び出します。
 
@@ -5579,7 +5578,7 @@ Marketo データベースへの **SQL コネクタ** Marketoには、データ�
 
 DataDirect は、2006 年以来、SaaS データソースへの接続を Web サービス API 上に構築された最初のSalesforce ODBC ドライバーから構築してきました。 **Marketoへの接続の概要：**
 
-1. [DataDirect Cloud ログインの登録 ](https://pacific.progress.com/console/register?productName=d2c&amp;ignoreCookie=true)
+1. [DataDirect Cloud ログインの登録 ](https://pacific.progress.com/console/register?productName=d2c&ignoreCookie=true)
 1. 「データソース」をクリックし、「+新規データSource」ボタンをクリックします
 1. 「Marketo」を選択し、設定を入力してください。 Marketo管理者またはログインに問い合わせて、[SOAP integration の接続情報 ](/help/soap-api/soap-api.md) を見つけることができます。
 1. 「接続をテスト」ボタンをクリックします。 Marketoから OData を生成する「OData」タブがあることに注意してください。これについては、今後のブログ投稿で説明します。
@@ -5719,7 +5718,7 @@ processStats(
 );
 ```
 
-ご覧のように、web サービスは、アプリから 2 つの出力ファイルのコンテンツを単にラップしています。 [Mocky](https://designer.mocky.io) を使用してモック web サービス応答を作成しました。 モック用 web サービスの例は [ こちら](http://www.mocky.io/v2/5627b2f9270000f2226eec63?month=10&amp;year=2015&amp;account=111-AAA-222&amp;callback=processStats) この web サービスの作成は、読者の演習としておきます。**ダッシュボード web ページ** したがって、必要なのは、web サービスを呼び出し、データを書式設定する web ページだけです。 JSONP パターンを使用するには、web サービスを呼び出す `<script>` タグを追加するだけです。
+ご覧のように、web サービスは、アプリから 2 つの出力ファイルのコンテンツを単にラップしています。 [Mocky](https://designer.mocky.io) を使用してモック web サービス応答を作成しました。 モック用 web サービスの例は [ こちら](http://www.mocky.io/v2/5627b2f9270000f2226eec63?month=10&year=2015&account=111-AAA-222&callback=processStats) この web サービスの作成は、読者の演習としておきます。**ダッシュボード web ページ** したがって、必要なのは、web サービスを呼び出し、データを書式設定する web ページだけです。 JSONP パターンを使用するには、web サービスを呼び出す `<script>` タグを追加するだけです。
 
 `<script src="http: //<hostname>/stats?month=10&year=2015&account=284-RPR-133&callback=processStats"></script>`
 
@@ -6584,7 +6583,6 @@ public class SyncMultipleLeadsExample {
   }
 }
 ```
-
  
 この記事には、カスタム統合の実装に使用するコードが含まれています。 カスタマイズされた特性により、Marketo テクニカルサポートチームはカスタム作業のトラブルシューティングを行うことができません。 適切な技術的経験がなく、経験豊富な開発者にアクセスすることなく、次のコードサンプルを実装しようとしないでください。
 
@@ -6754,7 +6752,7 @@ Posted on _2014-03-27_ by _Murta_
 
 その方法を次に示します。 1. マーケティングアクティビティ ツリーで、トークンを作成する Campaign フォルダーまたはプログラムを選択します。 上部のメニューバーから、「マイトークン」を選択します。 次に、マイトークン キャンバスが表示されます。 右側のツリーからトークン・タイプ（この場合は「Text」）をキャンバスにドラッグします。 「トークン名」フィールドで「マイトークン」をハイライト表示し、一意のトークン名（この場合は「my.conversationtopic」）を入力します。 「値」フィールドに、トークンに関連する値を入力します。この場合は「Thank you for calling us today」となります。 API を使用することで、デフォルトのマイトークン値を上書きします。 「保存」をクリックして、カスタムトークンを保存します。  1. 「新規」をクリックして新規メールを作成します。 次に、「新規ローカルAssets」をクリックし、「メール」を選択します。 次に、関連するフィールドに入力して、メールに名前を付けます。 メールのドラフトを作成する際に、トークン アイコンをクリックすると、メールにトークンが含まれます。 トークンを含むテンプレートメールを作成したので、次の手順でキャンペーンのフローアクションとしてメールを追加します。 そのため、API を使用してキャンペーンを呼び出すと、メールが送信されます。\
 **キャンペーンでメールフローアクションを作成する方法** メールとスマートキャンペーンを関連付けると、マーケターはメールの外観を管理でき、サードパーティアプリケーションでメールの受信者とタイミングを決定できるようになります。 メールを新しいローカルアセットとして作成した後、キャンペーンのフローアクションとして設定できます。 送信するメールを検索して選択します。
-**requestCampaign API を呼び出すコードサンプル** Marketo インターフェイスでキャンペーンとトリガーを設定したら、API を使用してメールを送信する方法を示します。 最初のサンプルは XML リクエストで、2 番目は XML 応答で、最後のサンプルは XML リクエストの生成に使用できる Java コードサンプルです。 また、requestCampaign API を呼び出す際に使用するキャンペーン ID を見つける方法についても説明します。 また、API 呼び出しでは、事前にMarketo キャンペーンの ID を知っておく必要があります。 次のいずれかの方法を使用して、キャンペーン ID を決定できます。1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1 を使用します。 ブラウザーでMarketo キャンペーンを開き、URL アドレスバーを確認します。 キャンペーン ID （4 桁の整数で表されます）は、「SC」の直後にあります。 たとえば、`<https://app-stage.marketo.com/#SC&#x200B;**1025**&#x200B;A1>` のように設定します。太字で示した部分は、キャンペーン ID 「1025」です。 requestCampaign のSOAP リクエスト
+**requestCampaign API を呼び出すコードサンプル** Marketo インターフェイスでキャンペーンとトリガーを設定したら、API を使用してメールを送信する方法を示します。 最初のサンプルは XML リクエストで、2 番目は XML 応答で、最後のサンプルは XML リクエストの生成に使用できる Java コードサンプルです。 また、requestCampaign API を呼び出す際に使用するキャンペーン ID を見つける方法についても説明します。 また、API 呼び出しでは、事前にMarketo キャンペーンの ID を知っておく必要があります。 次のいずれかの方法を使用して、キャンペーン ID を決定できます。1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1 を使用します。 ブラウザーでMarketo キャンペーンを開き、URL アドレスバーを確認します。 キャンペーン ID （4 桁の整数で表されます）は、「SC」の直後にあります。 たとえば、`<https://app-stage.marketo.com/#SC**1025**A1>` のように設定します。太字で示した部分は、キャンペーン ID 「1025」です。 requestCampaign のSOAP リクエスト
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -6904,7 +6902,7 @@ Posted on _2014-04-03_ by _Murta_
 
 会社のブログ上で特定の投稿にアクセスしたユーザーを追跡するとします。 投稿を訪問したユーザーの合計数のうち、少なくとも 5 秒を費やしてページをスクロールして、興味を示すユーザーのみを追跡したい場合を考えてみましょう。 匿名ユーザーの場合は、このイベントを使用してMarketoに新しいリードを作成し、既知のユーザーの場合は、このイベントを使用してリードアクティビティを更新します。 これは、web サイトで [Munchkin トラッキングコード ](/help/javascript-api/lead-tracking.md) を使用することで実現できます。 cookie を設定していないユーザーがMunchkin トラッキングコードを使用しているページに移動すると、ユーザーのブラウザーで新しい cookie が作成され、新しい匿名リードがMarketoで作成されます。 ユーザーが既に Cooked で、そのユーザーがMarketoの既存のリードである場合、ページへの訪問は、Marketoのそのユーザーのアクティビティログに記録されます。 最初に、MarketoでMunchkin トラッキングコードを生成する方法、2 番目に、特定の条件が満たされた場合にのみトリガーされるようにMunchkin サンプルコードを変更する方法、3 番目に、匿名ユーザーからのページ訪問がMarketoに記録されたことを確認する方法を説明します。
 
-**Munchkin トラッキングコードの生成方法**&#x200B;Munchkin トラッキングコードを使用すると、web サイトへの訪問を追跡できます。 以下に示すMunchkin コードには 3 つのタイプがありますが、この例では、非同期Munchkin トラッキングコードを使用します。 A） シンプル：コードは最も少ないですが、web ページの読み込み時間に対して最適化されません。 このコードは、web ページが読み込まれるたびに jQuery ライブラリを読み込みます。 B）非同期：Web ページの読み込み時間を短縮します。 このコードは、jQuery ライブラリが既に存在するかどうかを確認し、存在しない場合は読み込み、Web ページの残りの部分が読み込まれると、トラッキングコードの実行に使用します。 C）非同期 jQuery:Web ページの読み込み時間を短縮し、システムパフォーマンスも向上させます。 このコードは、jQuery が既に存在することを前提としていますが、読み込むためにはをチェックしません。 1. アプリの右上にある [ 管理者 ] をクリックします。  1.左側のツリーでMunchkinをクリックします。  1. 「コードタイプを追跡」で「非同期」を選択します。 1. 「JavaScript トラッキングコード」をクリックしてコピーし、Web サイトに配置します。
+**Munchkin トラッキングコードの生成方法**Munchkin トラッキングコードを使用すると、web サイトへの訪問を追跡できます。 以下に示すMunchkin コードには 3 つのタイプがありますが、この例では、非同期Munchkin トラッキングコードを使用します。 A） シンプル：コードは最も少ないですが、web ページの読み込み時間に対して最適化されません。 このコードは、web ページが読み込まれるたびに jQuery ライブラリを読み込みます。 B）非同期：Web ページの読み込み時間を短縮します。 このコードは、jQuery ライブラリが既に存在するかどうかを確認し、存在しない場合は読み込み、Web ページの残りの部分が読み込まれると、トラッキングコードの実行に使用します。 C）非同期 jQuery:Web ページの読み込み時間を短縮し、システムパフォーマンスも向上させます。 このコードは、jQuery が既に存在することを前提としていますが、読み込むためにはをチェックしません。 1. アプリの右上にある [ 管理者 ] をクリックします。  1.左側のツリーでMunchkinをクリックします。  1. 「コードタイプを追跡」で「非同期」を選択します。 1. 「JavaScript トラッキングコード」をクリックしてコピーし、Web サイトに配置します。
 **Cookie ユーザーおよびトラッキングイベントのコードサンプル** Web ページの `</body>` タグの直前にトラッキングコードを配置します。 Marketoで作成されたランディングページにはトラッキングコードが自動的に含まれるので、このコードを適用する必要はありません。 このコードサンプルでは、スクリプトの読み込み後にMunchkin API を呼び出します。
 
 ```javascript
@@ -7240,7 +7238,7 @@ Posted on _2016-02-05_ by _Kenny_
 
 ### 前提条件
 
-**Zapier で無料アカウントにサインアップ**&#x200B;[Zapier](https://zapier.com/) は、プログラマーや IT リソースを必要とせずに、他のオンラインアプリ間のタスクを簡単に自動化できる web アプリ自動化サービスです。 簡単な概要は、[ こちら ](https://zapier.com/api/v4/helpdocs/category/redirect/what-is-zapier) を参照してください。 現在、Zapier は、マーケティング、CRM、CMS、カスタマーサポート、電子サイン、Formsなど、さまざまな分野で 500 を超えるアプリをサポートしています。 あるアプリと別のアプリの間の単一の統合は、Zap と呼ばれます。 サポートされている Web アプリの完全なリストについては、Zapier の [zapbook](https://zapier.com/apps) を確認してください。  無料アカウントに新規登録 [ こちら ](https://zapier.com/sign-up/)。 15 分ごとに実行される最大 100 個のタスク/月、5 個の ZAP、ZAP にアクセスできます。 もちろん、Zapier の有料プラン（基本、ビジネス、ビジネスプラスなど）に登録すると、さらに多くのプランを利用できます。
+**Zapier で無料アカウントにサインアップ**[Zapier](https://zapier.com/) は、プログラマーや IT リソースを必要とせずに、他のオンラインアプリ間のタスクを簡単に自動化できる web アプリ自動化サービスです。 簡単な概要は、[ こちら ](https://zapier.com/api/v4/helpdocs/category/redirect/what-is-zapier) を参照してください。 現在、Zapier は、マーケティング、CRM、CMS、カスタマーサポート、電子サイン、Formsなど、さまざまな分野で 500 を超えるアプリをサポートしています。 あるアプリと別のアプリの間の単一の統合は、Zap と呼ばれます。 サポートされている Web アプリの完全なリストについては、Zapier の [zapbook](https://zapier.com/apps) を確認してください。  無料アカウントに新規登録 [ こちら ](https://zapier.com/sign-up/)。 15 分ごとに実行される最大 100 個のタスク/月、5 個の ZAP、ZAP にアクセスできます。 もちろん、Zapier の有料プラン（基本、ビジネス、ビジネスプラスなど）に登録すると、さらに多くのプランを利用できます。
 
 **管理者として、または提供された API ユーザーアカウントを使用してMarketo インスタンスにアクセスします** アドビの Zapier コネクタは、Marketo REST API を使用してリードデータをMarketoにプッシュします。 この API を使用するには、Marketo インスタンスの管理者が自分で作成できる API ユーザーとカスタムサービスが必要です。 そうでない場合は、管理者がそれらを提供する必要があります。 また、作成する Webhook もあり、Marketo管理者のみがアクセスできます。 Marketo API ユーザーとカスタムサービスの作成方法に関する詳しい手順については、[ こちら ](http://rest-api/custom-services/) を参照してください。 完了したら、Marketo REST API を呼び出すための次の資格情報が必要です：クライアント ID、クライアントの秘密鍵、Munchkin アカウント ID、Munchkin アカウント ID
 
@@ -7259,7 +7257,7 @@ Munchkin アカウント ID は、Munchkinまたは web サービスの管理画
 
   `{"access_token":"{{access_token}}"}`
 
-* アクセストークン配置&#x200B;**:Querystring 内の** トークン
+* アクセストークン配置**:Querystring 内の** トークン
 
 Marketo カスタムサービスを作成すると、クライアント ID とクライアント秘密鍵が使用可能になります。 クライアント ID とクライアントシークレットを使用して、REST API[ 認証 ](/help/rest-api/authentication.md) エンドポイントを介してアクセストークンを生成します。 その後、このアクセストークンを使用して、REST API に対して後続のリクエストを実行できます。 トークンは 1 時間後に有効期限が切れ、REST API の呼び出しを続行するには再度生成する必要があります。 セッショントークンの有効期限が切れるたびにカスタム認証スクリプトを実行できるので、認証タイプ = 「セッション認証」を選択しました。 このタイプの認証でのみ動作するこのメカニズムを実装する方法については、「スクリプティング API」の節で説明します。
 **トリガー** Zapier トリガーは、データを Zapier に取り込むために使用します。 代わりにMarketo Webhook を利用するので、ユースケースには必要ありません。 ただし、Marketo コネクタの必須テストとして、ダミーのトリガーを記述する必要があります。 Marketo REST API[ 毎日の使用状況を取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getDailyUsageUsingGET) エンドポイントを呼び出すテストトリガーを作成します。 「**新規トリガーを追加**」をクリックしてウィザードを起動し、次のフィールドに入力します（記載されていないフィールドは空白のままにすることができます）。名前と説明
@@ -8147,7 +8145,7 @@ Marketo設定ワークシートから、必要なすべての情報を入力し�
 
 ### データ分析式（DAX）
 
-一部のレポートでは、データをエンリッチメントまたは再フォーマットする必要があります。 Power Pivot データ分析式（DAX）を使用して、一部のカスタム計算を計算列およびメジャー（計算フィールドとも呼ばれます）として定義します。 DAX の詳細については、参照セクションの「DAX in Power Pivot」リンクを参照してください。 [Power Pivot] ウィンドウに計算領域が表示されていることを確認します。表示されていない場合は、[Power Pivot ホーム ] メニューから有効にします。  「**MktoLeads**」タブを選択し、リード計算領域の任意の場所に **リード数** メジャーを追加します：**リード数：=**&#x200B;**DISTINCTCOUNT**&#x200B;**&#x200B; （[id]）**。 この測定では、リストで使用可能な個別のリードを ID に基づいてカウントします。 また、レポートのコンテキストで実行される最終的なフィルターも考慮に入れます。 レポートはリード数を合計できるので、この測定は実際には必要ありませんが、「MktoLeads の合計」よりも優れた名前のリード数を使用するようにしました。 また、これは、特定のタイプのデータ入力（スコアが 50 を超えるすべてのリード、平均スコアなど）に対して平均、最小、最大を実行する、より複雑な測定を簡単に想像できる簡単な例です。 ...）..  次に、「**MktoWebActivities** タブを選択して、3 つの計算列を作成します。 テーブルの右端までスクロールし、列「列を追加」をクリックして、次の計算列を挿入します。 **Activity:** テーブル MktoActivtyTypes でアクティビティ ID を検索して、使いやすい Activity ラベルを取得します。 **\=**&#x200B;**LOOKUPVALUE**&#x200B;**&#x200B; （MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId]）**&#x200B;**Year-Month:** 一部のレポートにより適したパターン「YYYYmm」でアクティビティの日付を再フォーマットします。 **\=**&#x200B;**LEFT**&#x200B;**&#x200B; （[activityDate],4）&amp;**&#x200B;**MID**&#x200B;**&#x200B; （[activityDate],6,2）**&#x200B;**日付：** アクティビティの日付は、元のクエリの文字列で、適切な日付に変換します。 **\=**&#x200B;**DATE**&#x200B;**&#x200B; （**&#x200B;**LEFT**&#x200B;**&#x200B; （[activityDate],4）,**&#x200B;**MID**&#x200B;**&#x200B; （[activityDate],6,2）,**&#x200B;**MID**&#x200B;**&#x200B; （[activityDate],9,2））** 次に、「**MktoEmailActivities**」タブと 2 つの追加で 3 つの同じ測定値を作成します。**Campaign:** MktoCampaigns テーブルでキャンペーン ID を検索して、わかりやすいキャンペーン名をを取得します。 **\=**&#x200B;**LOOKUPVALUE**&#x200B;**&#x200B; （MktoCampaigns[name],MktoCampaigns[id],[campaignId]）**&#x200B;**プログラム：** MktoCampaigns テーブル内のキャンペーン ID を検索して、わかりやすいプログラム名を取得します。 MktoPrograms の表には、フォルダー、ワークスペースなど、プログラムに関する詳細が表示されます。 **\=**&#x200B;**LOOKUPVALUE**&#x200B;**&#x200B; （MktoCampaigns[programName],MktoCampaigns[id],[campaignId]）**
+一部のレポートでは、データをエンリッチメントまたは再フォーマットする必要があります。 Power Pivot データ分析式（DAX）を使用して、一部のカスタム計算を計算列およびメジャー（計算フィールドとも呼ばれます）として定義します。 DAX の詳細については、参照セクションの「DAX in Power Pivot」リンクを参照してください。 [Power Pivot] ウィンドウに計算領域が表示されていることを確認します。表示されていない場合は、[Power Pivot ホーム ] メニューから有効にします。  「**MktoLeads**」タブを選択し、リード計算領域の任意の場所に **リード数** メジャーを追加します：**リード数：=****DISTINCTCOUNT**** （[id]）**。 この測定では、リストで使用可能な個別のリードを ID に基づいてカウントします。 また、レポートのコンテキストで実行される最終的なフィルターも考慮に入れます。 レポートはリード数を合計できるので、この測定は実際には必要ありませんが、「MktoLeads の合計」よりも優れた名前のリード数を使用するようにしました。 また、これは、特定のタイプのデータ入力（スコアが 50 を超えるすべてのリード、平均スコアなど）に対して平均、最小、最大を実行する、より複雑な測定を簡単に想像できる簡単な例です。 ...）..  次に、「**MktoWebActivities** タブを選択して、3 つの計算列を作成します。 テーブルの右端までスクロールし、列「列を追加」をクリックして、次の計算列を挿入します。 **Activity:** テーブル MktoActivtyTypes でアクティビティ ID を検索して、使いやすい Activity ラベルを取得します。 **\=****LOOKUPVALUE**** （MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId]）****Year-Month:** 一部のレポートにより適したパターン「YYYYmm」でアクティビティの日付を再フォーマットします。 **\=****LEFT**** （[activityDate],4）&amp;****MID**** （[activityDate],6,2）****日付：** アクティビティの日付は、元のクエリの文字列で、適切な日付に変換します。 **\=****DATE**** （****LEFT**** （[activityDate],4）,****MID**** （[activityDate],6,2）,****MID**** （[activityDate],9,2））** 次に、「**MktoEmailActivities**」タブと 2 つの追加で 3 つの同じ測定値を作成します。**Campaign:** MktoCampaigns テーブルでキャンペーン ID を検索して、わかりやすいキャンペーン名をを取得します。 **\=****LOOKUPVALUE**** （MktoCampaigns[name],MktoCampaigns[id],[campaignId]）****プログラム：** MktoCampaigns テーブル内のキャンペーン ID を検索して、わかりやすいプログラム名を取得します。 MktoPrograms の表には、フォルダー、ワークスペースなど、プログラムに関する詳細が表示されます。 **\=****LOOKUPVALUE**** （MktoCampaigns[programName],MktoCampaigns[id],[campaignId]）**
 
 ### エンティティの関係
 
@@ -8163,7 +8161,7 @@ Marketo設定ワークシートから、必要なすべての情報を入力し�
 
 ### Emails Performance Pivot Chart
 
-この最初のレポートでは、標準の Excel ピボットグラフに基づいて、メールのパフォーマンス KPI を表示します。 業界やキャンペーン別にデータをフィルタリングできます。 「ピボットテーブル」セレクターから「ピボットグラフ」を選択すると、Power Pivot メニューから直接ピボットグラフを作成できます。  別の方法として、Excel スプレッドシートから直接ピボットグラフを作成し、「このワークブックのデータモデルを使用」オプションを選択します。  **MktoEmailActivities** および **MktoLeads** テーブルからフィールドをドラッグ&amp;ドロップします。例：**MktoEmailActivities.Activity →** **Legend** （これは、以前に **MktoEmailActivities** に実装した DAX 計算列を使用します） **MktoEmailActivities.Date →**&#x200B;**Axis** （**MktoEmailActivities** に以前に実装したした DAX 計算列をを使用します） **EMAILActivITIES.Id →** **∑→ → Values** **&#x200B;**&#x200B;**&#x200B;** **&#x200B;**&#x200B;**&#x200B;**
+この最初のレポートでは、標準の Excel ピボットグラフに基づいて、メールのパフォーマンス KPI を表示します。 業界やキャンペーン別にデータをフィルタリングできます。 「ピボットテーブル」セレクターから「ピボットグラフ」を選択すると、Power Pivot メニューから直接ピボットグラフを作成できます。  別の方法として、Excel スプレッドシートから直接ピボットグラフを作成し、「このワークブックのデータモデルを使用」オプションを選択します。  **MktoEmailActivities** および **MktoLeads** テーブルからフィールドをドラッグ&amp;ドロップします。例：**MktoEmailActivities.Activity →** **Legend** （これは、以前に **MktoEmailActivities** に実装した DAX 計算列を使用します） **MktoEmailActivities.Date →****Axis** （**MktoEmailActivities** に以前に実装したした DAX 計算列をを使用します） **EMAILActivITIES.Id →** **∑→ → Values** **** **** **** ****
 
 ドロップされた各フィールドで「値フィールド設定」を選択して、カスタム名を作成できます。 この例では、「メール アクティビティ ID」フィールドを「∑値」セクションにドロップし、カスタム名を「アクティビティの数」に編集しました。 次に、ピボットグラフを設定します。 グラフを右クリックし、コンテキストメニューの「グラフタイプを変更」オプションを選択します。 このようにして、すべてのデータシリーズに異なるグラフタイプを選択しました。
 
@@ -8171,11 +8169,11 @@ Marketo設定ワークシートから、必要なすべての情報を入力し�
 
 2 番目のレポートでは、リードと取引先責任者が地域別に世界地図上および業界別に表示されます。 このレポートには Power View が必要です。 Excel のメニューを有効にするには、以下の参照リンクに従ってください。 または、Excel の検索ボックスに「power view」と入力します。 [ パワービューレポートを挿入 ] を選択します。  空白の Power View レポートで、右側のパネルの **MktoLeads** テーブルを選択し、リードロケーションフィールド（例：**inferredCity**）をドラッグ&amp;ドロップします。 これで、メインメニューに「デザイン」メニューが表示されます。
 
-Power View の「デザイン」メニューで「マップ」を選択して、マップビジュアライゼーションに切り替えます。 **MktoLeads** テーブルからフィールドをドラッグ&amp;ドロップします（下図を参照）。**MktoLeads.industry →**&#x200B;**Color** **MktoLeads.inferredCity →**&#x200B;**Locations** **MktoLeads.Leads Count →** **∑ Size** （これは、**MktoLeads** 以前に実装した DAX 測定を使用します）。リードマップの準備がができました！ マップのサイズを調整し、タイトルと凡例をカスタマイズするだけです。 Power View を使用すると、1 つのスプレッドシートに複数のグラフを含む高度なダッシュボードを作成できます。 Power View を使用してさらに多くのダッシュボードコンポーネントを使用する方法については、以下の参照チュートリアル「[Amazing Power View レポートを作成 ](https://support.microsoft.com/en-us/article/Tutorial-Create-Amazing-Power-View-Reports-Part-1-e2842c8f-585f-4a07-bcbd-5bf8ff2243a7)」をご覧ください。
+Power View の「デザイン」メニューで「マップ」を選択して、マップビジュアライゼーションに切り替えます。 **MktoLeads** テーブルからフィールドをドラッグ&amp;ドロップします（下図を参照）。**MktoLeads.industry →****Color** **MktoLeads.inferredCity →****Locations** **MktoLeads.Leads Count →** **∑ Size** （これは、**MktoLeads** 以前に実装した DAX 測定を使用します）。リードマップの準備がができました！ マップのサイズを調整し、タイトルと凡例をカスタマイズするだけです。 Power View を使用すると、1 つのスプレッドシートに複数のグラフを含む高度なダッシュボードを作成できます。 Power View を使用してさらに多くのダッシュボードコンポーネントを使用する方法については、以下の参照チュートリアル「[Amazing Power View レポートを作成 ](https://support.microsoft.com/en-us/article/Tutorial-Create-Amazing-Power-View-Reports-Part-1-e2842c8f-585f-4a07-bcbd-5bf8ff2243a7)」をご覧ください。
 
 ### 3D マップ上でアニメーション化された Web アクティビティ
 
-この 3 番目のレポートは、業界別のリード web アクティビティを 3D の世界地図上に表示します。 このレポートには 3D マップが必要です。 Excel の検索ボックスに「3D」と入力し、「3D Map」を選択してください。 ポップアップウィンドウから新規ツアーを作成します。  右側のパネルでバブル・チャートを選択します。 **MktoLeads** および **MktoWebActivities** の各テーブルから、次の図のようにフィールドをドラッグ&amp;ドロップします。**MktoLeads.industry →**&#x200B;**Category**&#x200B;**MktoLeads.inferredCity →**&#x200B;**Location** **MktoWebActivities.Activity →**&#x200B;**Time** （これは、前に **MktoWebActivities** で実装した DAX 計算列を使用します。 ID フィールドは、アクティビティのカウントにも使用できます。） **MktoWebActivities.Date →** **Time** （これは、以前に **MktoWebActivities** で実装した DAX 計算列を使用します） **MktoWebActivities.Activity** も、様々なタイプの web アクティビティを除外するフィルターとして使用できます。
+この 3 番目のレポートは、業界別のリード web アクティビティを 3D の世界地図上に表示します。 このレポートには 3D マップが必要です。 Excel の検索ボックスに「3D」と入力し、「3D Map」を選択してください。 ポップアップウィンドウから新規ツアーを作成します。  右側のパネルでバブル・チャートを選択します。 **MktoLeads** および **MktoWebActivities** の各テーブルから、次の図のようにフィールドをドラッグ&amp;ドロップします。**MktoLeads.industry →****Category****MktoLeads.inferredCity →****Location** **MktoWebActivities.Activity →****Time** （これは、前に **MktoWebActivities** で実装した DAX 計算列を使用します。 ID フィールドは、アクティビティのカウントにも使用できます。） **MktoWebActivities.Date →** **Time** （これは、以前に **MktoWebActivities** で実装した DAX 計算列を使用します） **MktoWebActivities.Activity** も、様々なタイプの web アクティビティを除外するフィルターとして使用できます。
 
 「テーマ」ボタンを使用して、3D マップのカラースキームを変更します。 「シーンオプション」を開き、アニメーションをカスタマイズします。
 3D 世界地図を使えば、地球をアニメーション化し、そこからビデオを作成することができます。
@@ -8334,7 +8332,7 @@ Posted on _2017-06-16_ by _David_
 
 ## IFTTT と Zapier を使用したマーケター向けのモノのインターネット
 
-IoT （Internet of Things）とは、コネクテッド機器や家電、ウェアラブル機器、自動車などのネットワーク間を結ぶ技術のことです。 組み込みの電子機器、ソフトウェア、センサー、ネットワーク接続により、これらのオブジェクトはクラウド情報システムを使用してデータを収集および交換できます。 これらのテクノロジーは急速に成長し、トレンドが変化しているため、私たちの暮らし方、働き方、ビジネス方法にすぐに影響を与えます。 業界をリードするマーケティングエンゲージメントプラットフォームであるMarketoは、あらゆる形態のコミュニケーションチャネルを拡張し、やり取りする機能を備えた IoT に対応しています。 Marketoでは、既に 70 を超えるタイプのメール、web、モバイル、CRM に関連するアクティビティをトラッキングできます。また、サードパーティのシステムからフィードできる [ カスタムアクティビティ ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-activities/create-a-custom-activity.html?lang=ja) もサポートしています。 Marketo[ カスタムオブジェクト ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects.html?lang=ja) を使用すると、ビジネスに関連するすべての種類のサードパーティ指標を追跡でき、マーケターはMarketo スマートキャンペーンフィルターおよびトリガーからこれらの指標を直接活用できます。 コンシューマー向け IoT を導入するには、コンシューマーデバイスとやり取りするための一元化されたサーバーが必要になり、このサーバーは REST API、カスタムオブジェクト、カスタムアクティビティなどの機能を備えたMarketo オープンプラットフォームとデータを交換します。 - ドキュメント化 [ こちら ](http://eto.com/)。 ブログ投稿で示すのは簡単ではありません。 代わりに、IFTTT サービスをMarketoと統合して、マーケター向けの IoT の優れたユースケースを実現します。
+IoT （Internet of Things）とは、コネクテッド機器や家電、ウェアラブル機器、自動車などのネットワーク間を結ぶ技術のことです。 組み込みの電子機器、ソフトウェア、センサー、ネットワーク接続により、これらのオブジェクトはクラウド情報システムを使用してデータを収集および交換できます。 これらのテクノロジーは急速に成長し、トレンドが変化しているため、私たちの暮らし方、働き方、ビジネス方法にすぐに影響を与えます。 業界をリードするマーケティングエンゲージメントプラットフォームであるMarketoは、あらゆる形態のコミュニケーションチャネルを拡張し、やり取りする機能を備えた IoT に対応しています。 Marketoでは、既に 70 を超えるタイプのメール、web、モバイル、CRM に関連するアクティビティをトラッキングできます。また、サードパーティのシステムからフィードできる [ カスタムアクティビティ ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-activities/create-a-custom-activity.html) もサポートしています。 Marketo[ カスタムオブジェクト ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects.html?lang=ja) を使用すると、ビジネスに関連するすべての種類のサードパーティ指標を追跡でき、マーケターはMarketo スマートキャンペーンフィルターおよびトリガーからこれらの指標を直接活用できます。 コンシューマー向け IoT を導入するには、コンシューマーデバイスとやり取りするための一元化されたサーバーが必要になり、このサーバーは REST API、カスタムオブジェクト、カスタムアクティビティなどの機能を備えたMarketo オープンプラットフォームとデータを交換します。 - ドキュメント化 [ こちら ](http://eto.com/)。 ブログ投稿で示すのは簡単ではありません。 代わりに、IFTTT サービスをMarketoと統合して、マーケター向けの IoT の優れたユースケースを実現します。
 
 * オフィスで色付きのライトを点滅させることで、リードがロードショーに登録されるたびにマーケティングチームを元気づけます
 * 接続された電源プラグに接続されたベルを自動的に起動して、取引が成立するたびにセールス・チームを支援する
@@ -8610,12 +8608,12 @@ Posted on _2017-06-20_ by _Philippe_
 Google Cloud アカウントが必要です。 このチュートリアルを実行するのに十分なクレジットで GCP を無料で試すことができます。[GCP web サイト ](https://cloud.google.com/) の「無料で試す」ボタンをクリックするだけです。 Googleの [HTTP チュートリアル ](https://cloud.google.com/functions/docs/calling) の「始める前に」の節のすべての手順に従います。
 
 1. Cloud Platform プロジェクトを作成します。リソースを管理ページに移動します。
-1. プロジェクトの請求を有効化：[ 請求を有効化 ](https://cloud.google.com/billing/docs/how-to/modify-project?visit_id=638816637273392093-1926929734&amp;rd=1)
-1. クラウド関数 API を有効にします。[API を有効にします ](https://accounts.google.com/InteractiveLogin?continue=https://console.cloud.google.com/flows/enableapi?apiid%3Dcloudfunctions%26redirect%3Dhttps://cloud.google.com/functions/docs/tutorials/http&amp;followup=https://console.cloud.google.com/flows/enableapi?apiid%3Dcloudfunctions%26redirect%3Dhttps://cloud.google.com/functions/docs/tutorials/http&amp;osid=1&amp;passive=1209600&amp;service=cloudconsole&amp;ifkv=ASKV5Mh81NGNsqcJqhx7hst0KFnyA0MJ-2zay8ovyluBfpvDoM820nF9Wq_SKbC1m_sjQvvRNoKSuA)
+1. プロジェクトの請求を有効化：[ 請求を有効化 ](https://cloud.google.com/billing/docs/how-to/modify-project?visit_id=638816637273392093-1926929734&rd=1)
+1. クラウド関数 API を有効にします。[API を有効にします ](https://accounts.google.com/InteractiveLogin?continue=https://console.cloud.google.com/flows/enableapi?apiid%3Dcloudfunctions%26redirect%3Dhttps://cloud.google.com/functions/docs/tutorials/http&followup=https://console.cloud.google.com/flows/enableapi?apiid%3Dcloudfunctions%26redirect%3Dhttps://cloud.google.com/functions/docs/tutorials/http&osid=1&passive=1209600&service=cloudconsole&ifkv=ASKV5Mh81NGNsqcJqhx7hst0KFnyA0MJ-2zay8ovyluBfpvDoM820nF9Wq_SKbC1m_sjQvvRNoKSuA)
 1. [Cloud SDKのインストールと初期化 ](https://cloud.google.com/sdk/docs/)
 1. Gcloud コンポーネントの更新とインストール
 
-   **gcloud コンポーネントのアップデートと**&#x200B;**Gcloud コンポーネントのインストールベータ版**
+   **gcloud コンポーネントのアップデートと****Gcloud コンポーネントのインストールベータ版**
 
 1. Node.js 開発用の環境を準備します。[ セットアップガイドを参照してください ](https://cloud.google.com/nodejs/docs/setup)
 
@@ -8703,7 +8701,7 @@ Posted on _2017-11-21_ by _Philippe_
 
 ### Email 2.0 のHTMLを置換
 
-[ メールの完全なコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/createEmailFullContentUsingPOST) エンドポイントが追加され、HTML メールコンテンツのブロックを置き換えられるようになりました。 Marketo Email 2.0 エディターを使用してMarketo メールのHTML コードを編集すると、メールとそのテンプレートとの関係が壊れます。詳しくは、[ こちら ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html) を参照してください。 このエンドポイントを使用すると、関係が壊れたメールのHTMLのコンテンツをプログラムによって更新できます。 さらに、関係が壊れたメールと互換性を持たせるために、他のすべてのメールライフサイクル関連エンドポイントを変更しました。
+[ メールの完全なコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/createEmailFullContentUsingPOST) エンドポイントが追加され、HTML メールコンテンツのブロックを置き換えられるようになりました。 Marketo Email 2.0 エディターを使用してMarketo メールのHTML コードを編集すると、メールとそのテンプレートとの関係が壊れます。詳しくは、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html) を参照してください。 このエンドポイントを使用すると、関係が壊れたメールのHTMLのコンテンツをプログラムによって更新できます。 さらに、関係が壊れたメールと互換性を持たせるために、他のすべてのメールライフサイクル関連エンドポイントを変更しました。
 
 * メールのドラフトを承認
 * メールを未承認
@@ -8837,7 +8835,7 @@ Posted on _2018-10-12_ by _David_
 
 ### 機能強化
 
-* [Asset API](/help/rest-api/assets.md) のサポート [&#128279;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/email-cc) メール CC フィールド  を追加しました。 CC フィールドの設定は、承認/複製操作（メールまたはメールテンプレートのドラフト承認、メールまたはプログラムの複製）の間、期待どおりに反映されます。 すべてのメール関連エンドポイントは、**ccFields** プロパティで CC Fields 値を返すようになりました。 以下の応答を下にスクロールして、例を確認します。 この変更は、次のエンドポイントに影響します。[ID によるメールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByIdUsingGET)、[ 名前によるメールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByNameUsingGET)、[ メールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailUsingGET)、[ メールのドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST)、[ メールテンプレートのドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST_1)、[ メールの複製 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST)、[ プログラムの複製 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
+* [Asset API](/help/rest-api/assets.md) のサポート ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-cc) メール CC フィールド [ を追加しました。 CC フィールドの設定は、承認/複製操作（メールまたはメールテンプレートのドラフト承認、メールまたはプログラムの複製）の間、期待どおりに反映されます。 すべてのメール関連エンドポイントは、**ccFields** プロパティで CC Fields 値を返すようになりました。 以下の応答を下にスクロールして、例を確認します。 この変更は、次のエンドポイントに影響します。[ID によるメールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByIdUsingGET)、[ 名前によるメールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByNameUsingGET)、[ メールの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailUsingGET)、[ メールのドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST)、[ メールテンプレートのドラフトの承認 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST_1)、[ メールの複製 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST)、[ プログラムの複製 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
 
 ```json
 {
@@ -8982,7 +8980,7 @@ Posted on _2019-06-14_ by _David_
 1. スマートリスト定義を抽出するためのエンドポイントを追加しました。
    1. [ スマートキャンペーン ID によるスマートリストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getSmartListBySmartCampaignIdUsingGET) エンドポイントは、特定のスマートキャンペーン ID のスマートリストレコードを返します。
    1. [ プログラム ID によるスマート リストの取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getSmartListByProgramIdUsingGET) エンドポイントは、特定のプログラム ID のスマート リスト レコードを返します。
-1. [ メールコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/updateEmailContentUsingPOST) エンドポイントを強化し、テンプレートから（件名、名前、メールから、返信先）切れたメールのメールヘッダーフィールドを更新できるようになりました。 テンプレートからの離脱については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html&#39;sHTML-BreakinganEmailFromitsTemplate) で説明しています。
+1. [ メールコンテンツを更新 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/updateEmailContentUsingPOST) エンドポイントを強化し、テンプレートから（件名、名前、メールから、返信先）切れたメールのメールヘッダーフィールドを更新できるようになりました。 テンプレートからの離脱については、[ こちら ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html) で説明しています。
 
 ### 欠陥の解決
 
@@ -9013,7 +9011,7 @@ Posted on _2020-01-17_ by _David_
 
 ## すべてのカスタムオブジェクトの取得方法
 
-Marketo API を使用してすべての [ カスタムオブジェクト ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) （CO）のリストを取得する方法を尋ねられることがよくあります。 CO のクエリには、その名前よりも多くの情報が必要です。各 CO に関する _事前_ の知識も必要です。 API には知識を直接問い合わせる方法がないので、その知識を取得する方法は明確でない可能性があります。 Marketo Engageの多くの目標と同様に、スマートリストでは人物（リード）にリンクされた CO に対する回答を提供します。 スマートリストは会社との動作が異なり、会社がフィルターのオブジェクトのタイプにリンクされているすべてのユーザーのリストが表示されるので、目標に応じて会社の重複を排除する必要がある場合があります。 新しいカスタムオブジェクトが承認されるたびに、関連するフィルターが作成されます。 「**CO NAME**」という形式で名前が付けられます。 次の例では、カスタムオブジェクト名は「**Conference Track Subscription」で** そのフィルターの名前は「**Has Conference Track Subscription**」です。 スマートリストを作成したら、[ カスタムオブジェクトエンドポイント ](/help/rest-api/custom-objects.md) を使用して、関連付けられた CO のクエリを実行するために必要な情報を取得できます。 リンクされたフィールド（ID またはメールアドレス）が含まれていることを確認してリストをエクスポートします。 [ 一括リード抽出 API](/help/rest-api/bulk-lead-extract.md) フィルターの **smartListName** または **smartListId** フィルターによるフィルタリング、または [UI からの書き出し ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/managing-people-in-smart-lists/export-people-to-excel-from-a-list-or-smart-list) を使用して書き出すことができます。 次の手順では、リンクされた各フィールド値を使用して、関連するカスタムオブジェクトを個別にクエリします。 この例では、カスタムオブジェクトの名前は **&quot;Conference Track Subscription&quot;** で、API 名は **conferenceTrackSubscription_c** です。 API 名は、UI で「**API Name**」として見つけ、API を使用して「**name**」として見つけます。  Admin | Marketo カスタムオブジェクト [/caption] そして、[List Custom Objects API](https://developer.adobe.com/marketo-apis/api/mapi/#operation/listCustomObjectsUsingGET) エンドポイントによって返されるフラグメントは次のとおりです。
+Marketo API を使用してすべての [ カスタムオブジェクト ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) （CO）のリストを取得する方法を尋ねられることがよくあります。 CO のクエリには、その名前よりも多くの情報が必要です。各 CO に関する _事前_ の知識も必要です。 API には知識を直接問い合わせる方法がないので、その知識を取得する方法は明確でない可能性があります。 Marketo Engageの多くの目標と同様に、スマートリストでは人物（リード）にリンクされた CO に対する回答を提供します。 スマートリストは会社との動作が異なり、会社がフィルターのオブジェクトのタイプにリンクされているすべてのユーザーのリストが表示されるので、目標に応じて会社の重複を排除する必要がある場合があります。 新しいカスタムオブジェクトが承認されるたびに、関連するフィルターが作成されます。 「**CO NAME**」という形式で名前が付けられます。 次の例では、カスタムオブジェクト名は「**Conference Track Subscription」で** そのフィルターの名前は「**Has Conference Track Subscription**」です。 スマートリストを作成したら、[ カスタムオブジェクトエンドポイント ](/help/rest-api/custom-objects.md) を使用して、関連付けられた CO のクエリを実行するために必要な情報を取得できます。 リンクされたフィールド（ID またはメールアドレス）が含まれていることを確認してリストをエクスポートします。 [ 一括リード抽出 API](/help/rest-api/bulk-lead-extract.md) フィルターの **smartListName** または **smartListId** フィルターによるフィルタリング、または [UI からの書き出し ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/managing-people-in-smart-lists/export-people-to-excel-from-a-list-or-smart-list) を使用して書き出すことができます。 次の手順では、リンクされた各フィールド値を使用して、関連するカスタムオブジェクトを個別にクエリします。 この例では、カスタムオブジェクトの名前は **&quot;Conference Track Subscription&quot;** で、API 名は **conferenceTrackSubscription_c** です。 API 名は、UI で「**API Name**」として見つけ、API を使用して「**name**」として見つけます。  Admin | Marketo カスタムオブジェクト [/caption] そして、[List Custom Objects API](https://developer.adobe.com/marketo-apis/api/mapi/#operation/listCustomObjectsUsingGET) エンドポイントによって返されるフラグメントは次のとおりです。
 
 ```json
 {
@@ -9106,7 +9104,7 @@ Marketo API を使用してすべての [ カスタムオブジェクト ](https
 
 `GET /rest/v1/customobjects/session_c.json?filterType=subscriptionID&filterValues=4ad59184-6bf1-4eeb-a583-d82aeee68210,e5e0aba4-f27f-494d-93ed-9cb580989bf3,e65007cd-86b1-4c17-8d55-057c96e1788a,39d956b2-85e2-4c24-94e7-e9fa5a09d3d0,bf14218c-ae6a-42b3-a14e-f7182903cbcd`
 
-_脚注_ _1）**smartListName**&#x200B;および&#x200B;**smartListId**&#x200B;フィルタータイプが、一部の購読で使用できない。 サブスクリプションで利用できない場合は、書き出しリードジョブの作成エンドポイントを呼び出すとエラーが発生します（**「1035、ターゲットのサブスクリプションでサポートされていないフィルタータイプ」**）。 お客様は、Marketo サポートに連絡して、この機能をサブスクリプションで有効にすることができます。_
+_脚注_ _1）**smartListName**および&#x200B;**smartListId**フィルタータイプが、一部の購読で使用できない。 サブスクリプションで利用できない場合は、書き出しリードジョブの作成エンドポイントを呼び出すとエラーが発生します（**「1035、ターゲットのサブスクリプションでサポートされていないフィルタータイプ」**）。 お客様は、Marketo サポートに連絡して、この機能をサブスクリプションで有効にすることができます。_
 
 _2020-01-14_ に投稿しました：_Tony_
 
@@ -9460,7 +9458,6 @@ myForm.submit();
 
 </html>
 ```
-
    
 Posted on _2020-05-26_ by _Kenny_
 
@@ -9543,7 +9540,7 @@ Marketoでは、標準のオブジェクトとは別に、独自のカスタム�
 
 ### カスタムアクティビティ
 
-**誰かが組織とやり取りする方法はいくつかあります。 貴社のウェブサイトを訪問したり、展示会に参加したり、貴社から送信されたメールのリンクをクリックしたりする場合があります。 これらのアクションはアクティビティで** どのようなアクションを実行してもMarketoがそのアクションを取り込むため、マーケティングチームやセールスチームは、パーソナライズされた統一されたエンゲージメントに対するユーザーの行動をより深く理解できます。 **_カスタムアクティビティ_**&#x200B;_Marketo フォーム、メール、ランディングページに関連しないアクティビティを追跡するのに役立ちます_。 例えば、誰かが web サイトでビデオを閲覧した日時や調査を行った日時を追跡したい場合、カスタムアクティビティを使用します。 カスタムアクティビティは、カスタムオブジェクトとは異なります。値が変化する（例えば、「車の色」が青から赤に変化する）場合は、カスタムオブジェクトを使用します。発生したモーメントを追跡し、その詳細を変更できない場合（例：「購入車」）は、カスタムアクティビティを使用します。 デフォルトでは、定義できるカスタムアクティビティの最大数は 10 です。 これは、追加のサブスクリプション料金で増やすことができます。 [Marketo データ保持ポリシー ](https://nation.marketo.com/t5/knowledgebase/tkb-p/support_solutions-documents) に従い、カスタムアクティビティは 25 か月後に自動的に削除されます。
+**誰かが組織とやり取りする方法はいくつかあります。 貴社のウェブサイトを訪問したり、展示会に参加したり、貴社から送信されたメールのリンクをクリックしたりする場合があります。 これらのアクションはアクティビティで** どのようなアクションを実行してもMarketoがそのアクションを取り込むため、マーケティングチームやセールスチームは、パーソナライズされた統一されたエンゲージメントに対するユーザーの行動をより深く理解できます。 **_カスタムアクティビティ_**_Marketo フォーム、メール、ランディングページに関連しないアクティビティを追跡するのに役立ちます_。 例えば、誰かが web サイトでビデオを閲覧した日時や調査を行った日時を追跡したい場合、カスタムアクティビティを使用します。 カスタムアクティビティは、カスタムオブジェクトとは異なります。値が変化する（例えば、「車の色」が青から赤に変化する）場合は、カスタムオブジェクトを使用します。発生したモーメントを追跡し、その詳細を変更できない場合（例：「購入車」）は、カスタムアクティビティを使用します。 デフォルトでは、定義できるカスタムアクティビティの最大数は 10 です。 これは、追加のサブスクリプション料金で増やすことができます。 [Marketo データ保持ポリシー ](https://nation.marketo.com/t5/knowledgebase/tkb-p/support_solutions-documents) に従い、カスタムアクティビティは 25 か月後に自動的に削除されます。
 
 **カスタムアクティビティ：** Marketo内でトラッキングするMarketo以外のイベント。 **カスタムアクティビティ ID:** Marketoは、Marketo API を使用してアクティビティデータのプッシュ/プルを試みる際に使用できる数値 ID をカスタムアクティビティに割り当てます。 **カスタムアクティビティフィールド：** アクティビティメタデータは、アクティビティフィールドに保存できます。 例えば、ビデオのビューをトラッキングする場合、これらのフィールドはページ URL、ビデオタイトルなどです。 **カスタムアクティビティプライマリフィールド：** スマートリストファイラー条件として使用できるカスタムアクティビティフィールド。
 
@@ -9668,7 +9665,7 @@ MarketoのランディングページでMunchkin Betaを無効にするには、
 
 ### 外部ページでのMunchkin Betaの無効化
 
-Beta バージョンのMunchkin JavaScriptを外部の web ページにデプロイした場合、それが一般に提供されるまでこの変更を適用しないようにするには、Munchkin JS スニペットを変更して、**munchkin をターゲットにする必要があります。**&#x200B;munchkin-beta の代わりに&#x200B;**&#x200B;**&#x200B;js **&#x200B; ファイルを使用します。**&#x200B;**js** ファイル。 次の例では、これは 11 行目の **s.src** 変数の値です。 スニペットが例によく似ていなかったり、タグマネージャーによって外部ページにデプロイされたりする場合は、IT リソースや、Munchkin トラッキングを有効にして web サイトを管理するユーザーに連絡する必要がある可能性があります。
+Beta バージョンのMunchkin JavaScriptを外部の web ページにデプロイした場合、それが一般に提供されるまでこの変更を適用しないようにするには、Munchkin JS スニペットを変更して、**munchkin をターゲットにする必要があります。**munchkin-beta の代わりに****js** ファイルを使用します。****js** ファイル。 次の例では、これは 11 行目の **s.src** 変数の値です。 スニペットが例によく似ていなかったり、タグマネージャーによって外部ページにデプロイされたりする場合は、IT リソースや、Munchkin トラッキングを有効にして web サイトを管理するユーザーに連絡する必要がある可能性があります。
 
 ```javascript
 <script type="text/javascript">
@@ -9699,7 +9696,7 @@ Posted on _2021-01-08_ by _Kenny_
 
 ## 電子メール V1 の最終的な非推奨（廃止予定）
 
-[Email V1 の廃止はほぼ 2 年前に始まりました ](https://nation.marketo.com:443/t5/knowledgebase/email-editor-1-0-is-being-deprecated-june-18th/ta-p/250666)2021 年 3 月 17 日のロンドンとオランダのサブスクリプションおよび 2021 年 3 月 19 日の他のすべてのサブスクリプションへの 3 月のメンテナンスリリースを皮切りに、V1 メールのすべての API サポートが終了します。 このリリース以降、Asset API を使用して V1 メールでやり取りしようとすると、エラーが発生し、アクションは実行されません。 2021 年 2 月 24 日（PT）以降の既知の残りのすべてのユーザーに通知されましたが、これらのアセットとのやり取りを試みる統合がまだ存在する可能性があります。 影響を受ける統合の最も一般的なタイプは、デジタルアセット管理、翻訳、ローカライゼーションを提供するサービスです。 この変更の結果、統合エラーが発生した場合でも、[ 問題のあるアセットを編集して承認すれば、そのアセットをアップグレードできます ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/transitioning-to-email-editor-2-0)。 メールアセットを V2 にアップグレードすると、統合サービスで再開して使用できるようになります。
+[Email V1 の廃止はほぼ 2 年前に始まりました ](https://nation.marketo.com:443/t5/knowledgebase/email-editor-1-0-is-being-deprecated-june-18th/ta-p/250666)2021 年 3 月 17 日のロンドンとオランダのサブスクリプションおよび 2021 年 3 月 19 日の他のすべてのサブスクリプションへの 3 月のメンテナンスリリースを皮切りに、V1 メールのすべての API サポートが終了します。 このリリース以降、Asset API を使用して V1 メールでやり取りしようとすると、エラーが発生し、アクションは実行されません。 2021 年 2 月 24 日（PT）以降の既知の残りのすべてのユーザーに通知されましたが、これらのアセットとのやり取りを試みる統合がまだ存在する可能性があります。 影響を受ける統合の最も一般的なタイプは、デジタルアセット管理、翻訳、ローカライゼーションを提供するサービスです。 この変更の結果、統合エラーが発生した場合でも、[ 問題のあるアセットを編集して承認すれば、そのアセットをアップグレードできます ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/transitioning-to-email-editor-2-0)。 メールアセットを V2 にアップグレードすると、統合サービスで再開して使用できるようになります。
 
 Posted on _2021-03-17_ by _Kenny_
 
@@ -9709,10 +9706,10 @@ Posted on _2021-03-17_ by _Kenny_
 
 * プログラムメンバーシップレコードを取得、更新、削除できるプログラムメンバー API を追加しました。 詳しくは、[REST API/リードデータベース/プログラムメンバー ](/help/rest-api/program-members.md) を参照してください。
 * 一括カスタムオブジェクト抽出 API が追加され、1 対多の関係のリードに関連付けられた第 1 レベルのMarketo カスタムオブジェクトレコードを書き出せるようになりました。 詳しくは、[REST API/一括抽出/カスタムオブジェクトの一括抽出 ](/help/rest-api/bulk-custom-object-extract.md) を参照してください。
-* [Lead API](/help/rest-api/leads.md) と [Bulk Lead Extract API](/help/rest-api/bulk-lead-extract.md) の両方を強化して、Adobe Experience Cloud ID （ECID）を取得できるようになりました。 これにより、[Adobe Experience Cloudのオーディエンスを同期 ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html?lang=ja) したユーザーは、関連する ECID を持つリードを識別できます。 これにより、他のAdobe Experience Cloud製品との [ 統合の可能性 ](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024277392-Adobe-Experience-Cloud-Using-the-ECID-for-integration) が開きます。
+* [Lead API](/help/rest-api/leads.md) と [Bulk Lead Extract API](/help/rest-api/bulk-lead-extract.md) の両方を強化して、Adobe Experience Cloud ID （ECID）を取得できるようになりました。 これにより、[Adobe Experience Cloudのオーディエンスを同期 ](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html) したユーザーは、関連する ECID を持つリードを識別できます。 これにより、他のAdobe Experience Cloud製品との [ 統合の可能性 ](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024277392-Adobe-Experience-Cloud-Using-the-ECID-for-integration) が開きます。
 * [ 一括リード読み込み API](/help/rest-api/bulk-lead-import.md) が強化され、読み込みプロセス中に会社レコードへのリードを追加できるようになりました。 これを行うには、読み込みファイルに **externalCompanyId** フィールドを含めます。
 * Marketo Engage UI の機能と同等になるように、いくつかのプログラムエンドポイントを強化しました。 [ プログラムの作成 ](/help/rest-api/assets.md) エンドポイントと [ プログラムのクローン ](https://developer.adobe.com/marketo-apis/api/asset/) エンドポイントを強化し、イベントプログラムに対する作成、クローン、移動の操作を許可しました。 これは、イベントプログラムを他のプログラムタイプの下に「ネスト」して整理するユーザー向けです。 また、[ プログラムを削除 ](https://developer.adobe.com/marketo-apis/api/asset/) エンドポイントが強化され、ソーシャルAssetsが埋め込まれたプッシュ通知、アプリ内メッセージ、レポート、ランディングページなどのアセットを含むプログラムを削除できるようになりました。
-* Marketo管理者は、特定のフィールドを [ 機密」としてマークすることで ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) その値が [ フォームに事前入力されない ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/forms/form-fields/disable-pre-fill-for-a-form-field) ようにし、ユーザーの機密データを保護できます。 いくつかのフォームフィールドエンドポイントを拡張して、Marketo Engage UI にあるこの機能と同等の機能を提供しました。
+* Marketo管理者は、特定のフィールドを [ 機密」としてマークすることで ](https://experienceleague.adobe.com/ja/docs/marketo/using/home) その値が [ フォームに事前入力されない ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/forms/form-fields/disable-pre-fill-for-a-form-field) ようにし、ユーザーの機密データを保護できます。 いくつかのフォームフィールドエンドポイントを拡張して、Marketo Engage UI にあるこの機能と同等の機能を提供しました。
 
 ### 欠陥の解決
 
@@ -9757,11 +9754,11 @@ Posted on _2021-07-22_ by _David_
 ### メール
 
 * `earliestUpdatedAt`/`latestUpdatedAt` フィルターを追加して、メールの取得エンドポイントを強化しました。 これにより、「`updatedAt`」フィールドを使用してメールのサブセットのみを検索し、増分同期を可能にできます。
-* [ チャンピオンおよびチャレンジャー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/email-tests-champion-challenger/add-an-email-champion-challenger) タイプのメールレコードの取得をサポートするために、メールの取得、名前によるメールの取得、ID によるメールの取得エンドポイントを強化しました。
+* [ チャンピオンおよびチャレンジャー ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/email-tests-champion-challenger/add-an-email-champion-challenger) タイプのメールレコードの取得をサポートするために、メールの取得、名前によるメールの取得、ID によるメールの取得エンドポイントを強化しました。
 
 ### 欠陥の解決
 
-* ユーザーを取得エンドポイントの問題を修正しました。 [ マーケティングカレンダー ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/marketing-calendar/understanding-the-calendar/issue-revoke-a-marketing-calendar-license) ライセンスを発行されたユーザーは返されませんでした。 マーケティングカレンダーユーザーが正しく返されるようになりました。
+* ユーザーを取得エンドポイントの問題を修正しました。 [ マーケティングカレンダー ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/marketing-calendar/understanding-the-calendar/issue-revoke-a-marketing-calendar-license) ライセンスを発行されたユーザーは返されませんでした。 マーケティングカレンダーユーザーが正しく返されるようになりました。
 * 送信フォームエンドポイントに関する問題を修正しました。 リードレコードが重複する場合、送信フォームを使用して「1007、複数のリード一致検索条件」エラーが発生します。 送信フォームは、[Forms 2.0 API](/help/javascript-api/forms-api-reference.md) と同じ方法で、最近更新されたレコードを更新するようになりました。
 * リードフィールドの更新およびリードフィールドの作成エンドポイントから返される誤解を招くエラーメッセージをいくつか改善しました。 [LM-151890、LM-151888、LM-151889]
 * 名前によるリードフィールドの取得およびリードフィールドの取得エンドポイントの問題を修正しました。 両方のエンドポイントが、わずかに古い情報を返す可能性があります。 常に現在の情報を返すようになりました。
@@ -9790,7 +9787,7 @@ Posted on _2021-10-04_ by _Kenny_
 
 * [ 送信フォーム ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/SubmitFormUsingPOST) エンドポイントが強化され、フォーム送信の一環としてプログラムメンバーのカスタムフィールドをサポートするようになりました。 必要に応じて、フォームを追加するプログラムや、プログラムメンバーのカスタムフィールドを追加するプログラムとして、プログラムを指定することもできます [ こちら ](/help/rest-api/leads.md)。
 [ プログラムメンバーの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getProgramMembersUsingGET) エンドポイントが強化され、updatedAt 属性に基づいて日付範囲ベースのクエリをサポートするようになりました。 これは、[ こちら ](/help/rest-api/program-members.md) で説明しているように、開始および終了の datetime パラメーターを渡すことで行われます。
-* [ リードフィールド ](/help/rest-api/leads.md)API を拡張して、「機密フィールド [ をサポートするようにしました ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/mark-a-field-as-sensitive)。 [ 名前によるリードフィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldByNameUsingGET)、[ リードフィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldsUsingGET)、[ リードフィールドの作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) および [ リードフィールドの更新 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/updateLeadFieldUsingPOST) エンドポイントで isSensitive 属性がサポートされるようになりました。
+* [ リードフィールド ](/help/rest-api/leads.md)API を拡張して、「機密フィールド [ をサポートするようにしました ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/mark-a-field-as-sensitive)。 [ 名前によるリードフィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldByNameUsingGET)、[ リードフィールドの取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldsUsingGET)、[ リードフィールドの作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) および [ リードフィールドの更新 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/updateLeadFieldUsingPOST) エンドポイントで isSensitive 属性がサポートされるようになりました。
 
 ### 欠陥の解決
 
@@ -9813,7 +9810,7 @@ Posted on _2021-10-25_ by _David_
 ### 欠陥の解決
 
 * [ リードフィールドを作成 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) エンドポイントへの呼び出しの時間と、新しく作成されたリードフィールドがスマートリストで使用可能になった時間の間の待ち時間の問題を修正しました。 [LM-152838]
-* Marketo Engage UI で [ フォームにフィールドを追加 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) するために使用されるフォームフィールドドロップダウンリストで、作成したフィールドが使用できない [ リードフィールドを作成 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/forms/creating-a-form/add-a-field-to-a-form) エンドポイントの問題を修正しました。 [LM-158243]
+* Marketo Engage UI で [ フォームにフィールドを追加 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) するために使用されるフォームフィールドドロップダウンリストで、作成したフィールドが使用できない [ リードフィールドを作成 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/forms/creating-a-form/add-a-field-to-a-form) エンドポイントの問題を修正しました。 [LM-158243]
 * isTriggerable=true パラメーターが指定されている場合に、トリガー可能なキャンペーンが返されなかった [ キャンペーンを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getCampaignsUsingGET) エンドポイントの問題を修正しました。 [LM-158283]
 * [ リスト ID でリードを取得 ](https://developer.adobe.com/marketo-apis/api/mapi/#operation/deleteTokenByNameUsingPOST) エンドポイントが、特定の場合に「611、システムエラー」というエラーを返す問題を修正しました。 [LM-157214]
 * [ リードフィールドを更新 ](/help/rest-api/leads.md) エンドポイントから返される複数のエラーメッセージをクリーンアップしました。 [LM-151886、LM-151888、LM-151889]
@@ -9825,10 +9822,10 @@ Posted on _2022-01-27_ by _David_
 2022 年 3 月には、既存の REST API を強化し、いくつかの欠陥を解決しています。 以下のアップデートの完全なリストをご覧ください。
 
 * Bulk Activity Extract API で生成された書き出しファイルに **actionResult** フィールドを追加しました。 このフィールドは、成功、スキップ、失敗の各アクティビティを区別するために使用できます。
-* **Emails API** からの応答に「[isOpenTrackingDisabled](/help/rest-api/emails.md)」フィールドを追加しました。 このフィールドは、「[ 開封トラッキングを無効にする ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-editor-v2-0-overview) 機能が有効になっているかどうかを判断するために使用できます。
+* **Emails API** からの応答に「[isOpenTrackingDisabled](/help/rest-api/emails.md)」フィールドを追加しました。 このフィールドは、「[ 開封トラッキングを無効にする ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-editor-v2-0-overview) 機能が有効になっているかどうかを判断するために使用できます。
 * プログラムタグを選択的に管理できる 2 つのエンドポイントを追加しました。 [ プログラムタグを更新 ](/help/rest-api/programs.md) エンドポイントを使用すると、プログラムタグを選択的に更新できます。 [ プログラムタグを削除 ](/help/rest-api/programs.md) エンドポイントを使用すると、プログラムタグを選択的に削除できます。
 * **isExecutable** パラメーターを [Clone Smart Campaign](/help/rest-api/smart-campaigns.md) エンドポイントに追加しました。 このパラメーターを使用すると、プログラムを実行可能プログラムとして複製できます。
-* **headStart** フィールドを [Programs API](/help/rest-api/programs.md) に追加しました。 これにより、メールプログラムの [Head Start](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/head-start-for-email-programs) 設定を作成、更新、取得できます。
+* **headStart** フィールドを [Programs API](/help/rest-api/programs.md) に追加しました。 これにより、メールプログラムの [Head Start](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/head-start-for-email-programs) 設定を作成、更新、取得できます。
 
 ### 欠陥の解決
 
@@ -9838,7 +9835,7 @@ Posted on _2022-01-27_ by _David_
 
 ### Adobe IMSの統合
 
-* Adobe IMS [User](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview) にオンボーディングされたユーザーは、[Marketo User Management API](/help/rest-api/user-management.md) のすべてを使用することはできません。 Adobe IMSと統合されているMarketo インスタンスで呼び出されると、次のエンドポイントはエラーを返します。[ ユーザーを招待 ](https://developer.adobe.com/marketo-apis/api/user/#operation/inviteUserUsingPOST)、[ID で招待ユーザーを取得 ](https://developer.adobe.com/marketo-apis/api/user/#operation/getInvitedUserUsingGET)、[ ユーザー属性を更新 ](https://developer.adobe.com/marketo-apis/api/user/#operation/updateUserAttributeUsingPOST)、[ ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST)、および [ 招待ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteInvitedUserUsingPOST)。 代わりに、[Adobe User Management API](https://developer.adobe.com/umapi/) を使用してください。
+* Adobe IMS [User](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview) にオンボーディングされたユーザーは、[Marketo User Management API](/help/rest-api/user-management.md) のすべてを使用することはできません。 Adobe IMSと統合されているMarketo インスタンスで呼び出されると、次のエンドポイントはエラーを返します。[ ユーザーを招待 ](https://developer.adobe.com/marketo-apis/api/user/#operation/inviteUserUsingPOST)、[ID で招待ユーザーを取得 ](https://developer.adobe.com/marketo-apis/api/user/#operation/getInvitedUserUsingGET)、[ ユーザー属性を更新 ](https://developer.adobe.com/marketo-apis/api/user/#operation/updateUserAttributeUsingPOST)、[ ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST)、および [ 招待ユーザーを削除 ](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteInvitedUserUsingPOST)。 代わりに、[Adobe User Management API](https://developer.adobe.com/umapi/) を使用してください。
 
 Posted on _2022-03-14_ by _David_
 
@@ -9846,8 +9843,8 @@ Posted on _2022-03-14_ by _David_
 
 2022 年 5 月には、既存の REST API を強化し、いくつかの欠陥を解決しています。 以下のアップデートの完全なリストをご覧ください。
 
-* Marketo Engage インスタンスで [&#128279;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync)SFDC Sync[&#128279;](/help/rest-api/sales-persons.md) または [Microsoft Dynamics Sync](/help/rest-api/companies.md) が有効になっている場合に  会社 [&#128279;](/help/rest-api/opportunities.md)、&lbrace; 商談  および [ 営業担当者 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) のレコードを取得する機能が追加されました。
-* [ メールの動的コンテンツを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailDynamicContentUsingGET) エンドポイントを更新して、メールの件名から [ 動的コンテンツ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/using-dynamic-content-in-an-email) を取得できるようになりました。 これは、特定のメールがメールテンプレートにリンクされているかどうかに関係なく機能します。
+* Marketo Engage インスタンスで [SFDC Sync[ または [Microsoft Dynamics Sync](/help/rest-api/companies.md) が有効になっている場合に ](/help/rest-api/sales-persons.md) 会社 [ ](/help/rest-api/opportunities.md)、{ 商談 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) および [ 営業担当者 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) のレコードを取得する機能が追加されました。
+* [ メールの動的コンテンツを取得 ](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailDynamicContentUsingGET) エンドポイントを更新して、メールの件名から [ 動的コンテンツ ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/using-dynamic-content-in-an-email) を取得できるようになりました。 これは、特定のメールがメールテンプレートにリンクされているかどうかに関係なく機能します。
 
 `POST /rest/asset/v1/form/{id}/field/State.json?values=[{"label":"Alaska"},{"value":"AK"},{"label":"West Virginia","value":"WV"},{"label":"Wyoming","value":"WY"}]`
 
@@ -9869,8 +9866,8 @@ Posted on _2022-05-09_ by _David_
 
 * **programIds** フィルターを使用して、スループットの向上に役立つ最大 10 個のプログラム識別子を指定できます。
 * **isExhausted** フィルターを使用して、レコードを [ コンテンツを使い果たした人 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content) にフィルターを適用できます。
-* **nurtureCadence** フィルターを使用すると、[ エンゲージメントプログラム頻度 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/program-flow-actions/change-engagement-program-cadence) に基づいてレコードをフィルタリングできます。
-* **statusNames** フィルターは、1 つ以上の [ プログラムステータス ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-program-membership) のレコードをフィルタリングするために使用できます。
+* **nurtureCadence** フィルターを使用すると、[ エンゲージメントプログラム頻度 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/program-flow-actions/change-engagement-program-cadence) に基づいてレコードをフィルタリングできます。
+* **statusNames** フィルターは、1 つ以上の [ プログラムステータス ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-program-membership) のレコードをフィルタリングするために使用できます。
 * **updatedAt** フィルターを使用すると、日付範囲に基づいてレコードをフィルターできます。
 
 ### お知らせ
@@ -9884,7 +9881,7 @@ Posted on _2022-09-03_ by _David_
 2022 年 10 月に、既存の REST API を強化します。 以下のアップデートの完全なリストをご覧ください。
 
 * [ 一括リード読み込み API](/help/rest-api/bulk-lead-import.md) が強化され、読み込みプロセス中に販売担当者レコードにリードを追加できるようになりました。 これを行うには、インポートファイルに **externalSalesPersonId** フィールドを含めます。
-* スコアタイプフィールドの作成時に発生した [ リードフィールドを作成 ](/help/rest-api/leads.md) エンドポイントの問題を修正しました。 これらのフィールドは、Marketo Engage UI の [ スコアを変更 ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/change-score) フローアクションでは使用できませんでした。 [LM-166815]
+* スコアタイプフィールドの作成時に発生した [ リードフィールドを作成 ](/help/rest-api/leads.md) エンドポイントの問題を修正しました。 これらのフィールドは、Marketo Engage UI の [ スコアを変更 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/change-score) フローアクションでは使用できませんでした。 [LM-166815]
 
 ### お知らせ
 
@@ -9906,7 +9903,7 @@ Posted on _2022-11-04_ by _Kenny_
 
 ### リードの一括抽出
 
-* Marketo Engage管理 UI が強化され、サブスクリプションの Bulk Extract API の 1 日あたりの処理能力の配分を確認できるようになりました。 さらに、過去 7 日間の API ユーザーによる容量使用状況を表示できます。 詳しくは[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/bulk-export-api-information)をご覧ください。
+* Marketo Engage管理 UI が強化され、サブスクリプションの Bulk Extract API の 1 日あたりの処理能力の配分を確認できるようになりました。 さらに、過去 7 日間の API ユーザーによる容量使用状況を表示できます。 詳しくは[こちら](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/bulk-export-api-information)をご覧ください。
 
 ### 欠陥の解決
 

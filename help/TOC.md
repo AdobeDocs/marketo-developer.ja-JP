@@ -5,7 +5,7 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 43bcafd335a2fdc709e917ef74504500422c2889
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 98%
@@ -158,7 +158,7 @@ ht-degree: 98%
    - [応答マッピング](webhooks/response-mappings.md)
    - [Web フック](webhooks/webhooks.md)
 - [クライアントライブラリ](https://github.com/Marketo/Community-Supported-Client-Libraries)
-- [ データストリーム ](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)
+- [ データストリーム ](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams)
 - [メールスクリプト](email-scripting.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
