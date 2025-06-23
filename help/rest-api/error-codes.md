@@ -3,10 +3,10 @@ title: エラーコード
 feature: REST API
 description: Marketo エラーコードの説明。
 exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
-source-git-commit: d0750eab0a37df0b7f80c6252f46c95068975000
-workflow-type: ht
-source-wordcount: '2273'
-ht-degree: 100%
+source-git-commit: d44ec0442bc33e3e5cb7e2dd6ce3947036c7cd25
+workflow-type: tm+mt
+source-wordcount: '2283'
+ht-degree: 99%
 
 ---
 
@@ -287,8 +287,10 @@ GET リクエストの URI が 8 KB を超えると 414 が返されます。こ
 
 #### レコードレベルのエラーコード
 
-<table>
-  <tbody>
+>[!NOTE]
+>
+><table>
+<tbody>
     <tr>
       <td>応答コード</td>
       <td>説明</td>
@@ -430,10 +432,12 @@ GET リクエストの URI が 8 KB を超えると 414 が返されます。こ
       <td><ul>
           <li>キュー内のジョブが多すぎます</li>
           <li>書き出しの毎日の割り当て量を超えました</li>
+          <li>ジョブは既にキューに入っています</li>
         </ul></td>
       <td><ul>
           <li>サブスクリプションでは、一度にキュー内に最大 10 個の一括抽出ジョブが許可されます。</li>
           <li>デフォルトでは、抽出ジョブは 1 日あたり 500 MB に制限されます（毎日午前 12:00 CST にリセットされます）。</li>
+          <li>エクスポート ID は既にキューに登録されています。</li>
         </ul></td>
     </tr>
     <tr>
@@ -486,3 +490,4 @@ GET リクエストの URI が 8 KB を超えると 414 が返されます。こ
     </tr>
   </tbody>
 </table>
+
