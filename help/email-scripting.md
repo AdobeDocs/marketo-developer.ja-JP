@@ -3,8 +3,8 @@ title: メールスクリプト
 feature: Email Programs
 description: メールスクリプトの概要
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
+source-git-commit: 9012135dc7a295c2462574dad1aca2d06a9077ea
+workflow-type: tm+mt
 source-wordcount: '963'
 ht-degree: 100%
 
@@ -17,19 +17,19 @@ ht-degree: 100%
 [Apache Velocity](https://velocity.apache.org/) は、HTML コンテンツのテンプレートとスクリプトのために設計された、Java で作成された言語です。Marketo では、スクリプトトークンを使用することで、メールのコンテキストで使用できます。これにより、商談オブジェクトとカスタムオブジェクトに保存されているデータにアクセスして、メールで動的コンテンツを作成できます。Velocity では、if/else、for、for each を使用した標準的な高レベルの制御フローを提供し、コンテンツの条件付き反復操作を可能にします。正しい敬称を含む挨拶を印刷する簡単な例を以下に示します。
 
 ```java
-//check if the lead is male
-if(${lead.MarketoSocialGender} == "Male")
-    if the lead is male, use the salutation 'Mr.'
-    set($greeting = "Dear Mr. ${lead.LastName},")
-//check is the lead is female
-elseif(${lead.MarketoSocialGender} == "Female")
-    if female, use the salutation 'Ms.'
-    set($greeting = "Dear Ms. ${lead.LastName},")
-else
-    //otherwise, use the first name
-    set($greeting = "Dear ${lead.FirstName},")
-end
-print the greeting and some content
+##check if the lead is male
+#if(${lead.MarketoSocialGender} == "Male")
+    ##if the lead is male, use the salutation 'Mr.'
+    #set($greeting = "Dear Mr. ${lead.LastName},")
+##check is the lead is female
+#elseif(${lead.MarketoSocialGender} == "Female")
+    ##if female, use the salutation 'Ms.'
+    #set($greeting = "Dear Ms. ${lead.LastName},")
+#else
+    ##otherwise, use the first name
+    #set($greeting = "Dear ${lead.FirstName},")
+#end
+##print the greeting and some content
 ${greeting}
 
     Lorem ipsum dolor sit amet...
