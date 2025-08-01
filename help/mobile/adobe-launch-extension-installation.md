@@ -3,10 +3,10 @@ title: '[!DNL Adobe Launch] 拡張機能のインストール'
 feature: Mobile Marketing
 description: '[!DNL Adobe Launch] 拡張機能のインストールの概要'
 exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
-source-wordcount: '726'
-ht-degree: 100%
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
+source-wordcount: '725'
+ht-degree: 99%
 
 ---
 
@@ -64,7 +64,7 @@ func applicationDidBecomeActive(_ application: UIApplication)
 ## iOS テストデバイス
 
 1. **[!UICONTROL プロジェクト]**／**[!UICONTROL ターゲット]**／**[!UICONTROL 情報]**／**[!UICONTROL URL タイプ]**&#x200B;を選択します。
-1. ${PRODUCT_NAME} 識別子を追加します。
+1. 識別子を追加：${PRODUCT_NAME}
 1. URL スキーム mkto-&lt;S_ecret Key_> を設定します。
 1. `AppDelegate.m file`（Objective-C）に `application:openURL:sourceApplication:annotation:` を含めます。
 
@@ -76,8 +76,8 @@ func applicationDidBecomeActive(_ application: UIApplication)
 
 ```
 #ifdef __IPHONE_10_0
--(BOOL)application:(UIApplication *)application 
-           openURL:(NSURL *)url 
+-(BOOL)application:(UIApplication *)application
+           openURL:(NSURL *)url
            options:(NSDictionary *)options{
     return [[ALMarketo sharedInstance] application:application
                                          openURL:url
@@ -159,8 +159,8 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
 
 1. 最新の Marketo Android SDK を Android アプリに統合します。手順は [GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
-      1. が含まれる [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
+   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+      1. が含まれる [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「**[!UICONTROL Android アプリに Firebase を追加]**」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
@@ -187,8 +187,8 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
             ```
             dependencies {
               compile 'com.google.firebase:firebase-core:17.4.0'
-            } 
-            // Add to the bottom of the file 
+            }
+            // Add to the bottom of the file
             apply plugin: 'com.google.gms.google-services'
             ```
 
@@ -209,7 +209,7 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
         <intent-filter>
           <action android:name="com.google.android.c2dm.intent.RECEIVE" />
           <category android:name="<your-package-name> />
-        </intent-filter> 
+        </intent-filter>
       </receiver>
       ```
 
@@ -224,7 +224,7 @@ Firebase Cloud Messaging サポートに関するよくある質問です。
 
 **Q：Marketo Android SDK と統合された Android アプリを公開している既存の MME 顧客にはどのような影響がありますか？**&#x200B;次のように、Android 上の既存の GCM クライアントアプリを Firebase Cloud Messaging（FCM）に移行できます。
 
-1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)で、「**[!UICONTROL プロジェクトを追加]**」を選択します。
+1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)で、「**[!UICONTROL プロジェクトを追加]**」を選択します。
 1. 既存の Google Cloud プロジェクトのリストから GCM プロジェクトを選択し、「**[!UICONTROL Firebase を追加]**」を選択します。
 1. Firebase のスタートアップスクリーンで、「**[!UICONTROL Android アプリに Firebase を追加]**」を選択します。
 1. パッケージ名と SHA-1 を入力し、「**[!UICONTROL アプリを追加]**」を選択します。新しい google-services.json ファイル

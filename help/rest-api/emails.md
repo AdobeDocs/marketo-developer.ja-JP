@@ -3,8 +3,8 @@ title: メール
 feature: REST API
 description: メールアセットを操作するための API。
 exl-id: 6875730d-c74a-42cf-a3d2-dad7a3ac535d
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '1946'
 ht-degree: 100%
 
@@ -260,19 +260,19 @@ GET /rest/asset/v1/email/ccFields.json
 ```
 
 ```json
-{  
+{
    "success":true,
    "errors":[ ],
    "requestId":"e54b#16796fdbd4e",
    "warnings":[ ],
-   "result":[  
-      {  
+   "result":[
+      {
          "attributeId":"157",
          "objectName":"lead",
          "displayName":"Lead Owner Email Address",
          "apiName":"leadOwnerEmailAddress"
       },
-      {  
+      {
          "attributeId":"396",
          "objectName":"company",
          "displayName":"Account Owner Email Address",
@@ -345,7 +345,7 @@ name=My New Email 02 - deverly&folder={"id":1017,"type":"Program"}&template=24&d
             "isOpenTrackingDisabled": false,
             "version": 2,
             "autoCopyToText": false,
-            "ccFields": null,  
+            "ccFields": null,
             "preHeader": null
         }
     ]
@@ -411,7 +411,7 @@ description=This is an Email&name=Updated Email
             "isOpenTrackingDisabled": false,
             "version": 2,
             "autoCopyToText": false,
-            "ccFields": null,  
+            "ccFields": null,
             "preHeader": null
         }
     ]
@@ -535,7 +535,7 @@ GET /rest/asset/v1/email/{moduleId}/content.json
     {
       "htmlId": "video2",
       "value": {
-        
+
       },
       "contentType": "Video",
       "parentHtmlId": "video",

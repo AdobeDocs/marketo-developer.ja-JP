@@ -3,8 +3,8 @@ title: Web パーソナライゼーション
 description: Web パーソナライゼーション
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 100%
 
@@ -22,7 +22,7 @@ Web Personalization JavaScript API は、プラットフォームの Automated P
 RTP タグは、パーソナライズされたページのヘッダーに挿入する必要があります。
 
 ```javascript
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 (function(c,h,a,f,e,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 c[a].p=e;c[a].a=i;var g=h.createElement("script");g.async=true;g.type="text/javascript";
@@ -76,7 +76,7 @@ Web パーソナライゼーションプラットフォームにデータを送�
 以下のコード例では、Web パーソナライゼーションアクティビティから除外するボットの例として「Googlebot|msnbot」が使用されています。
 
 ```javascript
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 if(navigator.userAgent.match(/.(Googlebot|msnbot)./gi) == null){
     (function(c,h,a,f,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

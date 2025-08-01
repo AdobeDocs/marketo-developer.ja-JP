@@ -3,8 +3,8 @@ title: リッチメディアレコメンデーション
 description: リッチメディアレコメンデーション
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 100%
 
@@ -103,7 +103,7 @@ rtp("set", "rcmd", "richmedia","template1",
 ```javascript
 rtp("set", "rcmd", "richmedia",
     {
-        "template1": 
+        "template1":
         {
             "rcmd.title.text": "RECOMMENDED CONTENT",
             "rcmd.general.font.family": "arial",
@@ -164,7 +164,7 @@ rtp("set", "rcmd", "richmedia",
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RTP recommendation</title>
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 
 // This tag needs to be replaced with your account tag
@@ -196,7 +196,7 @@ rtp('get','rcmd', 'richmedia');
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RTP recommendation</title>
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 
 // This tag needs to be replaced with your account tag

@@ -3,8 +3,8 @@ title: プログラムメンバーの一括抽出
 feature: REST API
 description: メンバーデータ抽出のバッチ処理。
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 100%
 
@@ -334,9 +334,9 @@ POST /bulk/v1/program/members/export/create.json
 ```
 
 ```json
-{ 
+{
    "format": "CSV",
-   "fields": [ 
+   "fields": [
         "firstName",
         "lastName",
         "email",
@@ -350,7 +350,7 @@ POST /bulk/v1/program/members/export/create.json
         "pMCustomField01",
         "pMCustomField02"
    ],
-   "filter": { 
+   "filter": {
       "programId":1044
    }
 }

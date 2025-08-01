@@ -3,8 +3,8 @@ title: PhoneGap
 feature: Mobile Marketing
 description: モバイルデバイスでのMarketoと PhoneGap の使用
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 100%
 
@@ -51,7 +51,7 @@ Marketo PhoneGap プラグインの統合
 Cordova Android プラットフォームをビルドしたら、Android Studio でアプリを開き、 `dirs` 値 `Marketo.gradle` でファイルが見つかりました `com.marketo.plugin` フォルダー。
 
 ```
-repositories{    
+repositories{
   jcenter()
   flatDir{
       dirs '../app/src/main/aar'
@@ -73,7 +73,7 @@ repositories{
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
    1. [!UICONTROL プロジェクトの概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します
       1. 「**[!UICONTROL 一般]**」タブをクリックします。「google-services.json」ファイルをダウンロードします。
-      1. 「**[!UICONTROL Cloud Messaging]**」タブをクリックします。[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] をコピーします。これらの[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] を Marketo に指定します。
+      1. 「**[!UICONTROL Cloud Messaging]**」タブをクリックします。[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] をコピーします。 これらの[!UICONTROL サーバーキー]と[!UICONTROL 送信者 ID] を Marketo に指定します。
    1. Phonegap アプリでの FCM 変更の設定
       1. ダウンロードした「google-services.json」ファイルを Phonegap アプリモジュールのルートディレクトリに移動します
       1. の場所からファイル「MyFirebaseInstanceIDService」を削除します `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` （非推奨）
@@ -114,11 +114,11 @@ repositories{
             ```
 
 
-### 3. xCode でプッシュ通知を有効にする
+### &#x200B;3. xCode でプッシュ通知を有効にする
 
 xCode プロジェクトでプッシュ通知機能をオンにします。
 
-### 4. プッシュ通知のトラッキング
+### &#x200B;4. プッシュ通知のトラッキング
 
 次のコードをに貼り付けます。 `application:didFinishLaunchingWithOptions:` 関数。
 
@@ -146,7 +146,7 @@ sharedInstance.trackPushNotification(launchOptions)
 
 >[!ENDTABS]
 
-### 5. Marketo フレームワークの初期化
+### &#x200B;5. Marketo フレームワークの初期化
 
 Marketo フレームワークがアプリの起動時に確実に開始されるようにするには、以下のコードをアプリの `onDeviceReady` メイン JavaScript ファイルで機能します。
 
@@ -160,11 +160,11 @@ marketo.initialize(
   function() { console.log("MarketoSDK Init done."); },
   function(error) { console.log("an error occurred:" + error); },
   'YOUR_MUNCHKIN_ID',
-  'YOUR_SECRET_KEY', 
+  'YOUR_SECRET_KEY',
   'FRAMEWORK_TYPE'
 );
 
-// For session tracking, add following. 
+// For session tracking, add following.
 marketo.onStart(
   function(){ console.log("onStart."); },
   function(error){ console.log("Failed to report onStart." + error); }
@@ -178,7 +178,7 @@ marketo.onStart(
 - MUNCHKIN ID：登録時にMarketoから受信した Munchkin ID。
 - 秘密鍵：登録時にMarketoから受信した秘密鍵。
 
-### 6. Marketo プッシュ通知の初期化
+### &#x200B;6. Marketo プッシュ通知の初期化
 
 Marketoのプッシュ通知が開始されるようにするには、メインの JavaScript ファイルの initialize 関数の後に次のコードを追加します。
 

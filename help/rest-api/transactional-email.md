@@ -3,8 +3,8 @@ title: トランザクションメール
 feature: REST API
 description: リクエストキャンペーンのトランザクションメールについて扱います。
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
-source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '971'
 ht-degree: 100%
 
@@ -53,7 +53,7 @@ package dev.marketo.blog_request_campaign;
 
 import com.eclipsesource.json.JsonArray;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -108,7 +108,7 @@ public class RequestCampaign {
     private Auth auth;
     public ArrayList leads = new ArrayList();
     public ArrayList tokens = new ArrayList();
-    
+
     public RequestCampaign(Auth auth, int campaignId) {
         this.auth = auth;
         this.endpoint = this.auth.marketoInstance + "/rest/v1/campaigns/" + campaignId + "/trigger.json";
@@ -156,7 +156,7 @@ public class RequestCampaign {
         }
         return result;
     }
-    
+
     private JsonObject buildRequest(){
         JsonObject requestBody = new JsonObject(); //Create a new JsonObject for the Request Body
         JsonObject input = new JsonObject();
@@ -199,22 +199,22 @@ package dev.marketo.blog_request_campaign;
 
 import com.eclipsesource.json.JsonArray;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
         //Create an instance of Auth so that we can authenticate with our Marketo instance
         Auth auth = new Auth("Client ID - CHANGE ME", "Client Secret - CHANGE ME", "Host - CHANGE ME");
-        
+
         //Create and parameterize an instance of Leads
         Leads leadsRequest = new Leads(auth).setFilterType("email").addFilterValue("requestCampaign.test@marketo.com");
-        
+
         //get the inner results array of the response
         JsonArray leadsResult = leadsRequest.getData().get("result").asArray();
-        
+
         //get the id of the record indexed at 0
         int lead = leadsResult.get(0).asObject().get("id").asInt();
-        
+
         //Set the ID of our campaign from Marketo
         int campaignId = 1578;
         RequestCampaign rc = new RequestCampaign(auth, campaignId).addLead(lead);

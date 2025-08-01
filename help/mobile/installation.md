@@ -3,10 +3,10 @@ title: インストール
 feature: Mobile Marketing
 description: Mobile Marketo SDK のインストール方法
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '763'
-ht-degree: 100%
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
+source-wordcount: '762'
+ht-degree: 99%
 
 ---
 
@@ -96,7 +96,7 @@ sharedInstance.initialize(withMunchkinID: "munchkinAccountId", appSecret: "secre
 ## iOS テストデバイス
 
 1. プロジェクト／ターゲット／情報／URL タイプを選択します。
-1. ${PRODUCT_NAME} 識別子を追加します。
+1. 識別子を追加：${PRODUCT_NAME}
 1. URL スキーム `mkto-<Secret Key_>` を設定します。
 1. AppDelegate.m ファイルにアプリケーション :openURL:sourceApplication:annotation: を含めます（Objective-C）。
 
@@ -110,10 +110,10 @@ sharedInstance.initialize(withMunchkinID: "munchkinAccountId", appSecret: "secre
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-   
+
     return [[Marketo sharedInstance] application:app
                                          openURL:url
-                                         options:options];    
+                                         options:options];
 }
 ```
 
@@ -132,7 +132,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ### 前提条件
 
-1. [Marketo Admin でアプリケーションを追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)（アプリケーションの秘密鍵と Munchkin ID を取得します）
+1. [Marketo Admin でアプリケーションを追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)（アプリケーションの秘密鍵と Munchkin ID を取得）
 1. [プッシュ通知を設定](push-notifications.md#android_setup_push)（オプション）
 1. [Android 用 Marketo SDK をダウンロード](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 
@@ -208,8 +208,8 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
 
 1. 最新の Marketo Android SDK を Android アプリに統合します。手順は [GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase コンソール。
-      1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)で、`Add Project` を選択します。
+   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+      1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)で、`Add Project` を選択します。
       1. 既存の Google Cloud プロジェクトのリストから GCM プロジェクトを選択し、`Add Firebase` を選択します。
       1. Firebase のスタートアップスクリーンで、`Add Firebase to your Android App` を選択します。
       1. パッケージ名と SHA-1 を入力し、`Add App` を選択します。Firebase アプリの新しい `google-services.json` ファイルがダウンロードされます。
@@ -236,8 +236,8 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
             ```
             dependencies {
               compile 'com.google.firebase:firebase-core:17.4.0'
-            } 
-            // Add to the bottom of the file 
+            }
+            // Add to the bottom of the file
             apply plugin: 'com.google.gms.google-services'
             ```
 
@@ -258,6 +258,6 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
         <intent-filter>
           <action android:name="com.google.android.c2dm.intent.RECEIVE" />
           <category android:name="<your-package-name> />
-        </intent-filter> 
+        </intent-filter>
       </receiver>
       ```

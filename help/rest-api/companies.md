@@ -3,8 +3,8 @@ title: 会社
 feature: REST API
 description: Marketo API を使用して会社データを設定します。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 100%
 
@@ -27,63 +27,63 @@ GET /rest/v1/companies/describe.json
 ```
 
 ```json
-{  
+{
    "success":true,
    "requestId":"5847#14d44113ad7",
-   "result":[  
-      {  
+   "result":[
+      {
          "name":"Company",
          "description":"Company object",
          "createdAt":"2015-05-11T17:11:32Z",
          "updatedAt":"2015-05-11T17:11:32Z",
          "idField":"id",
-         "dedupeFields":[  
+         "dedupeFields":[
             "externalCompanyId"
          ],
-         "searchableFields":[  
-            [  
+         "searchableFields":[
+            [
                "externalCompanyId"
             ],
-            [  
+            [
                "id"
             ],
-            [  
+            [
                "company"
             ]
          ],
-         "fields":[  
-            {  
+         "fields":[
+            {
                "name":"createdAt",
                "displayName":"Created At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"externalCompanyId",
                "displayName":"External Company Id",
                "dataType":"string",
                "length":100,
                "updateable":false
             },
-            {  
+            {
                "name":"id",
                "displayName":"Id",
                "dataType":"integer",
                "updateable":false
             },
-            {  
+            {
                "name":"updatedAt",
                "displayName":"Updated At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"annualRevenue",
                "displayName":"Annual Revenue",
                "dataType":"currency",
                "updateable":true
             }
-            {  
+            {
                "name":"company",
                "displayName":"Company Name",
                "dataType":"string",
@@ -114,17 +114,17 @@ GET /rest/v1/companies.json?filterType=id&filterValues=3433,5345
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "id":3433,
          "externalCompanyId":"19UYA31581L000000",
          "company":"Google"
       },
-      {  
+      {
          "seq":1,
          "id":5345,
          "externalCompanyId":"29UYA31581L000000",
@@ -147,15 +147,15 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{
    "action":"createOrUpdate",
    "dedupeBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalCompanyId":"19UYA31581L000000",
          "company":"Google"
       },
-      {  
+      {
          "externalCompanyId":"29UYA31581L000000",
          "company":"Yahoo"
       }
@@ -164,16 +164,16 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "status":"updated",
          "id":1232
       },
-      {  
+      {
          "seq":1,
          "status":"created",
          "id":1323
@@ -223,7 +223,7 @@ GET /rest/v1/companies/schema/fields/industry.json
 
 #### 参照
 
-[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。デフォルトでは、最大 300 個のレコードが返されます。`batchSize` クエリパラメーターを使用して、この数を減らすことができます。`moreResult` 属性が true の場合、さらに多くの結果が使用できます。moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。この API から返される `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
+[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。デフォルトでは、最大 300 個のレコードが返されます。`batchSize` クエリパラメーターを使用して、この数を減らすことができます。`moreResult` 属性が true の場合、さらに多くの結果が使用可能です。moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。この API から返される `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
 
 ```
 GET /rest/v1/companies/schema/fields.json?batchSize=5
@@ -312,16 +312,16 @@ POST /rest/v1/companies/delete.json
 ```
 
 ```json
-{  
+{
    "deleteBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalCompanyId":"19UYA31581L000000"
       },
-      {  
+      {
          "externalCompanyId":"29UYA31581L000000"
       },
-      {  
+      {
          "externalCompanyId":"39UYA31581L000000"
       }
    ]
@@ -329,25 +329,25 @@ POST /rest/v1/companies/delete.json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "id":1234,
          "status":"deleted"
       },
-      {  
+      {
          "seq":1,
          "id":56456,
          "status":"deleted"
       },
-      {  
+      {
          "seq":2,
          "status":"skipped",
-         "reasons":[  
-            {  
+         "reasons":[
+            {
                "code":"1013",
                "message":"Record not found"
             }

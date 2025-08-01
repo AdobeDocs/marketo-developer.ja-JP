@@ -3,8 +3,8 @@ title: '[!DNL Ionic]'
 feature: Mobile Marketing
 description: モバイルデバイス用 Marketo を使用した  [!DNL Ionic]  の使用
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '606'
 ht-degree: 100%
 
@@ -52,7 +52,7 @@ ht-degree: 100%
 
 >[!BEGINTABS]
 
->[!TAB 目標 C]
+>[!TAB Objective C]
 
 ```
 Marketo *sharedInstance = [Marketo sharedInstance];
@@ -88,7 +88,7 @@ marketo.initialize(
   'FRAMEWORK_TYPE'
 );
 
-// For session tracking, add following. 
+// For session tracking, add following.
 marketo.onStart(
   function(){ console.log("onStart."); },
   function(error){ console.log("Failed to report onStart." + error); }
@@ -121,7 +121,7 @@ marketo.initializeMarketoPush(
 
 - Success Callback :Marketo プッシュ通知が正常に初期化された場合に実行する関数。
 - Failure Callback :Marketoのプッシュ通知が初期化に失敗した場合に実行する関数
-- GCM_PROJECT_ID :GCM プロジェクト ID が見つかりました [Google開発者コンソール](https://accounts.google.com/ServiceLogin?service=cloudconsole&amp;passive=1209600&amp;osid=1&amp;continue=https://console.cloud.google.com/apis/dashboard&amp;followup=https://console.cloud.google.com/apis/dashboard) アプリの作成後。
+- GCM_PROJECT_ID :GCM プロジェクト ID が見つかりました [Google開発者コンソール](https://accounts.google.com/ServiceLogin?service=cloudconsole&passive=1209600&osid=1&continue=https://console.cloud.google.com/apis/dashboard&followup=https://console.cloud.google.com/apis/dashboard) アプリの作成後。
 
 トークンは、ログアウト時に登録解除することもできます。
 

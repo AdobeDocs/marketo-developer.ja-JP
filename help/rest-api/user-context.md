@@ -3,8 +3,8 @@ title: ユーザコンテキスト
 feature: REST API
 description: ユーザコンテキストの概要と API の説明
 exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 100%
 
@@ -53,12 +53,12 @@ User Context JavaScript API は、複数のセッションをまたいでユー�
 ```javascript
 // Set and get customVars
 rtp('set', 'customVar1', 'foo');
- 
-// Read location 
+
+// Read location
 if (rtp.userContext.location.state == 'CA')  {
     // Do something
 }
- 
+
 // Check if user viewed campaign id 45:
 // The campaign id is exposed in the RTP UI when hovering over a campaign name.
 if (rtp.userContext.viewedCampaign('45')) {

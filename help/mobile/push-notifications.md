@@ -3,8 +3,8 @@ title: プッシュ通知
 feature: Mobile Marketing
 description: Marketo Mobile のプッシュ通知の有効化
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 100%
 
@@ -108,7 +108,7 @@ UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotification
 
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            
+
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound,    .badge]) { granted, error in
             if let error = error {
                 print("\(error.localizedDescription)")
@@ -118,7 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                 }
             }
         }
-        
+
         return true
 }
 ```
@@ -216,7 +216,7 @@ AppDelegate に次のメソッドを追加
 >[!TAB Swift]
 
 ```
-func userNotificationCenter(_ center: UNUserNotificationCenter, 
+func userNotificationCenter(_ center: UNUserNotificationCenter,
             willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (
     UNNotificationPresentationOptions) -> Void) {
     completionHandler([.alert, .sound,.badge])
@@ -430,13 +430,13 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    config.setNotificationLargeIcon(bitmap);
    
    // Required icon Resource ID
-   config.setNotificationSmallIcon(R.drawable.notification_small_icon); 
+   config.setNotificationSmallIcon(R.drawable.notification_small_icon);
    
-   // Set the configuration 
+   // Set the configuration
    //Use the static methods on ALMarketo class when using Adobe Extension
-   Marketo.getInstance(context).setNotificationConfig(config); 
+   Marketo.getInstance(context).setNotificationConfig(config);
    
-   // Get the configuration set 
+   // Get the configuration set
    Marketo.getInstance(context).getNotificationConfig();
    ```
 

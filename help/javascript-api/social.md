@@ -3,8 +3,8 @@ title: ソーシャル
 description: ソーシャル
 feature: Social, Javascript
 exl-id: 82d2b86f-5efe-4434-b617-d27f76515a79
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+workflow-type: tm+mt
 source-wordcount: '776'
 ht-degree: 100%
 
@@ -17,12 +17,12 @@ ht-degree: 100%
 ## 埋め込み共有ウィジェットのサンプル
 
 ```html
-<!-- Marketo Widget Loader Script --> 
+<!-- Marketo Widget Loader Script -->
 
 <script type="text/javascript" src="//b2c-mlm.marketo.com/jsloader/271d8232-1500-4305-b7ed-05d451b9ee0c/loader.php.js">
 </script>
 
- <!-- The Location of the Social Widget --> 
+ <!-- The Location of the Social Widget -->
 
 <divclass='cf_widgetloader cf_w_245d8f3c0955454cbd26abc39d0d874c'="" options="{&quot;outerHeight&quot;:400, &quot;outerWidth&quot;:600}">
 </divclass='cf_widgetloader'>
@@ -89,7 +89,7 @@ cf_scripts.afterload(function(){
 ## 基本イベントテーブル
 
 | イベント名 | 説明 | このイベントを使用するウィジェット | サポートされる引数（イベントコールバック関数に渡される） |
-| --- | --- | --- | --- | 
+| --- | --- | --- | --- |
 | share_sent | 共有リクエストが処理にサーバーに送信されるたびに発生します。 | 共有する機能を持つすべてのウィジェット。 | 1.&quot;share_sent&quot;（文字列）<br>2.送信されたパラメーター（オブジェクト） |
 | share_success | 共有リクエストが正常に処理された際に発生します。 | 共有する機能を持つすべてのウィジェット。 | 1.&quot;share_success&quot;（文字列）<br>2.送信されたメッセージと短縮 URL を含む共有応答オブジェクト（オブジェクト） |
 | vote_success | ユーザが調査に正常に投票した際に発生します。 | 調査と投票ウィジェット | 1.&quot;vote_success&quot;（文字列）<br>2.タイトル、説明、エンティティ識別子など、投票された項目（オブジェクト） |
