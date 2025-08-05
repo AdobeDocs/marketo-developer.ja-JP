@@ -3,8 +3,8 @@ title: Web フック
 feature: Webhooks
 description: Web フックの概要
 exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '586'
 ht-degree: 100%
 

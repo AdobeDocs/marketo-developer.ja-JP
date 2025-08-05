@@ -3,7 +3,7 @@ title: プログラムメンバーの一括抽出
 feature: REST API
 description: メンバーデータ抽出のバッチ処理。
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 100%
@@ -323,7 +323,6 @@ GET /rest/v1/programs/members/describe.json
 | フィールド | 配列[文字列] | はい | fields パラメーターは、文字列の JSON 配列を受け入れます。リストされたフィールドは、書き出されたファイルに含まれます。フィールドタイプ `LeadCustom`、`LeadProgram`、MemberCustom、`ProgramMember` を書き出すことができます。「リード 2 を説明」エンドポイントや「プログラムメンバーを説明」エンドポイントを使用して取得できる REST API 名を使用してフィールドを指定します。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。キーは、書き出しジョブに含まれるフィールドの名前にする必要があります。値は、このフィールドの書き出された列ヘッダーの名前です。 |
 | format | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定した場合、それぞれコンマ区切り値、タブ区切り値、またはスペース区切り値のファイルとしてレンダリングされます。未設定の場合は、デフォルトで CSV に設定されます。 |
-
 
 ## ジョブの作成
 

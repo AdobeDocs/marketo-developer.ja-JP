@@ -3,8 +3,8 @@ title: Munchkin API リファレンス
 description: Munchkin JavaScript API を使用して、Munchkin データをカスタマイズします。
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
-source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '414'
 ht-degree: 100%
 
@@ -40,7 +40,6 @@ Munchkin.init('299-BYM-827');
 | パラメーター名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
 | forceCreate | 必須 | ブール値 | `cookieAnon` が false に設定されている場合でも、cookie を作成します。 |
-
 
 ```javascript
 Munchkin.createTrackingCookie(true);

@@ -3,7 +3,7 @@ title: アクティビティの一括抽出
 feature: REST API
 description: Marketo からのアクティビティデータのバッチ処理。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 96%
@@ -105,7 +105,6 @@ Bulk Activity Extract API では、API ユーザに「読み取り専用アク�
 | format | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定済みの場合、それぞれコンマ区切り値、タブ区切り値、またはスペース区切り値のファイルとしてレンダリングされます。未設定の場合は、デフォルトで CSV に設定されます。 |
 | columnHeaderNames | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。キーは、書き出しジョブに含まれるフィールドの名前にする必要があります。値は、このフィールドの書き出された列ヘッダーの名前です。 |
 | フィールド | 配列[文字列] | いいえ | フィールド値を含む文字列のオプションの配列。リストされたフィールドは、書き出されたファイルに含まれます。デフォルトでは、次のフィールドが返されます。 <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>.このパラメーターは、上記のリストからサブセットを指定することで、返されるフィールドの数を減らすために使用できます。`"fields": ["leadId", "activityDate", "activityTypeId"]` 追加のフィールド `actionResult` を指定して、アクティビティ アクション `("succeeded", "skipped", or "failed")` を含めることができます。 |
-
 
 ## ジョブの作成
 

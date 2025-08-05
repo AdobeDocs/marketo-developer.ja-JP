@@ -3,7 +3,7 @@ title: Web パーソナライゼーション
 description: Web パーソナライゼーション
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 100%
@@ -12,7 +12,7 @@ ht-degree: 100%
 
 # Web パーソナライゼーション
 
-Web Personalization JavaScript API は、プラットフォームの Automated Personalization 機能を拡張します。これにより、web ページのイベントトラッキングと動的なカスタマイズが可能です。その他の機能：[カスタムデータイベント](custom-data-events.md)、[動的コンテンツ](web-personalization.md)、[訪問者データを取得](get-visitor-data.md)、[特定のボットのタグを除外](#exclude_tag_for_specific_bots)。
+Web パーソナライゼーション JavaScript API は、プラットフォームの自動パーソナライゼーション機能を拡張します。これにより、web ページのイベントトラッキングと動的なカスタマイズが可能です。その他の機能：[カスタムデータイベント](custom-data-events.md)、[動的コンテンツ](web-personalization.md)、[訪問者データを取得](get-visitor-data.md)、[特定のボットのタグを除外](#exclude_tag_for_specific_bots)。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
 - RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
@@ -41,7 +41,6 @@ g.src=f;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b)
 | &#39;setAccount&#39; | 必須 | 文字列 | メソッド名。 |
 | accountId | 必須 | 文字列 | アカウント ID。 |
 
-
 ```javascript
 var accountId = '561-HYG-937';
 rtp('setAccount', accountId);
@@ -58,7 +57,6 @@ rtp('setAccount', accountId);
 | &#39;send&#39; | 必須 | 文字列 | メソッドアクション。 |
 | &#39;view&#39; | 必須 | 文字列 | メソッド名。 |
 | ページ | オプション | 文字列 | 相対パスまたは完全なページの URL。 |
-
 
 ```javascript
 // Example for Default Page
@@ -103,7 +101,6 @@ Web パーソナライゼーションおよび予測コンテンツを使用す�
 | jquery.min.js | v1.8.3 | Marketo カスタマーサポートに連絡して無効にすることができます |
 | jquery-custom-ui-min.js | v1.9.2 | Marketo カスタマーサポートに連絡して無効にすることができます |
 | query-ui-1.8.17-dialog.js | v1.9.2* | Marketo カスタマーサポートに連絡して無効にすることができます |
-
 
 *jQuery UI にダイアログがない場合にのみ使用されます
 

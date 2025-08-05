@@ -3,8 +3,8 @@ title: トークン
 feature: REST API, Tokens
 description: Marketo でトークンを管理します。
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '297'
 ht-degree: 100%
 
@@ -28,7 +28,6 @@ Marketo のトークンは、実行時に別のデータに置き換えられる
 | score | 符号付き 32 ビット整数 |
 | sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
 | text | テキスト文字列 |
-
 
 これらは、API 経由でトークンを作成する際に使用できる唯一のデータタイプです。
 

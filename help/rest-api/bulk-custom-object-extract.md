@@ -3,7 +3,7 @@ title: カスタムオブジェクトの一括抽出
 feature: REST API, Custom Objects
 description: カスタム Marketo オブジェクトのバッチ処理。
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1298'
 ht-degree: 100%
@@ -16,7 +16,7 @@ ht-degree: 100%
 
 REST API のカスタムオブジェクトの一括抽出のセットには、Marketo から大量のカスタムオブジェクトレコードを取得するためのプログラムインターフェイスが用意されています。これは、ETL、データウェアハウス、アーカイブの目的で、Marketo と 1 つ以上の外部システム間で継続的にデータを交換する必要があるユースケースに推奨されるインターフェイスです。
 
-この API では、リードに直接リンクされている第 1 レベルの Marketo カスタムオブジェクトレコードの書き出しをサポートしています。カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。リスト内の各リードについて、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが、書き出しファイルに行として書き込まれます。カスタムオブジェクトデータは、Marketo UI のリード詳細ページの「[カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)」タブに表示されます。
+この API では、リードに直接リンクされている第 1 レベルの Marketo カスタムオブジェクトレコードの書き出しをサポートしています。カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。リスト内の各リードについて、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが、書き出しファイルに行として書き込まれます。カスタムオブジェクトデータは、Marketo UI のリード詳細ページの「[カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)」タブに表示されます。
 
 ## 権限
 
@@ -50,7 +50,6 @@ REST API のカスタムオブジェクトの一括抽出のセットには、Ma
 | `columnHeaderNames` | オブジェクト | いいえ | フィールド名と列ヘッダー名のキーと値のペアを含む JSON オブジェクト。キーは、書き出しジョブに含まれるフィールドの名前にする必要があります。値は、このフィールドの書き出された列ヘッダーの名前です。 |
 | `format` | 文字列 | いいえ | CSV、TSV、SSV のいずれかを受け入れます。書き出されたファイルは、設定した場合、それぞれコンマ区切り値、タブ区切り値、またはスペース区切り値のファイルとしてレンダリングされます。未設定の場合は、デフォルトで CSV に設定されます。 |
 
-
 ## ジョブの作成
 
 ジョブのパラメーターは、[カスタムオブジェクトを書き出しジョブを作成](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST)エンドポイントを使用して、書き出しの開始前に定義されます。
@@ -62,7 +61,6 @@ REST API のカスタムオブジェクトの一括抽出のセットには、Ma
 カスタムオブジェクトの定義
 
 ![カスタムオブジェクト](assets/custom-object-car.png)
-
 
 カスタムオブジェクトフィールド
 

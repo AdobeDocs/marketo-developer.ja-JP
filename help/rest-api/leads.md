@@ -3,7 +3,7 @@ title: リード
 feature: REST API
 description: Leads API 呼び出しの詳細
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '3338'
 ht-degree: 100%
@@ -430,7 +430,6 @@ name と `displayName` の命名にはいくつかのルールが関連付けら
 POST /rest/v1/leads/schema/fields.json
 ```
 
-
 ### 本文
 
 ```json
@@ -451,7 +450,6 @@ POST /rest/v1/leads/schema/fields.json
   ]
 }
 ```
-
 
 ### 応答
 

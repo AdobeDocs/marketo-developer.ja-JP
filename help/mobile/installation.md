@@ -3,10 +3,10 @@ title: インストール
 feature: Mobile Marketing
 description: Mobile Marketo SDK のインストール方法
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '762'
-ht-degree: 99%
+source-wordcount: '761'
+ht-degree: 98%
 
 ---
 
@@ -37,7 +37,7 @@ Marketo Mobile SDK のインストール手順です。プッシュ通知やア�
 
    ![依存関係の追加](assets/dependency-manager-add.png)
 
-1. このリポジトリから Marketo パッケージを追加します。このリポジトリの URL（https://github.com/Marketo/ios-sdk）を追加します。
+1. このリポジトリから Marketo パッケージを追加します。このリポジトリに次の URL を追加：<https://github.com/Marketo/ios-sdk>。
 
    ![リポジトリ URL](assets/dependency-manager-url.png)
 
@@ -208,7 +208,7 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
 
 1. 最新の Marketo Android SDK を Android アプリに統合します。手順は [GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
       1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)で、`Add Project` を選択します。
       1. 既存の Google Cloud プロジェクトのリストから GCM プロジェクトを選択し、`Add Firebase` を選択します。
       1. Firebase のスタートアップスクリーンで、`Add Firebase to your Android App` を選択します。

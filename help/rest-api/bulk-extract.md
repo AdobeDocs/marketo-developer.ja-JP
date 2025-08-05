@@ -3,10 +3,10 @@ title: 一括抽出
 feature: REST API
 description: Marketo データを抽出するバッチ操作。
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
-workflow-type: ht
-source-wordcount: '1683'
-ht-degree: 100%
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
+source-wordcount: '1682'
+ht-degree: 99%
 
 ---
 
@@ -36,7 +36,7 @@ Marketo には、一括抽出と呼ばれる、ユーザおよびユーザ関連
 - 同時書き出しジョブの最大数：2
 - キューに入れられた書き出しジョブの最大数（現在書き出し中のジョブを含む）：10
 - ファイル保持期間：7 日
-- デフォルトの毎日の書き出しの配分：500 MB（毎日午前 12:00 CST にリセットされます）。購入可能なものが増加します。
+- デフォルトの 1 日あたりのエクスポートの配分：500 MB （12:00AMCST で毎日リセットされます）。 購入可能なものが増加します。
 - 日付範囲フィルター（createdAt または updatedAt）の最大期間：31 日
 
 一部のサブスクリプションタイプでは、UpdatedAt およびスマートリストのリードの一括抽出フィルターは使用できません。使用できない場合、「リードを書き出しジョブを作成」エンドポイントへの呼び出しでは、「1035、ターゲットサブスクリプションでサポートされていないフィルタータイプ」というエラーを返します。顧客は、Marketo サポートに連絡して、サブスクリプションでこの機能を有効にすることができます。
@@ -122,7 +122,6 @@ POST /bulk/v1/leads/export/create.json
 | format | 文字列 | コンマ区切り値、タブ区切り値、セミコロン区切り値のオプションを使用して、抽出されたデータのファイル形式を決定します。CSV、SSV、TSV のいずれかを受け入れます。形式のデフォルトは CSV です。 |
 | columnHeaderNames | オブジェクト | 返されるファイルの列ヘッダーの名前を設定できます。各メンバーキーは、名前を変更する列ヘッダーの名前で、値は列ヘッダーの新しい名前です。例：&quot;columnHeaderNames&quot;: { &quot;firstName&quot;: &quot;First Name&quot;, &quot;lastName&quot;: &quot;Last Name&quot; }, |
 | filter | オブジェクト | 抽出ジョブに適用するフィルター。タイプとオプションは、ジョブタイプによって異なります。 |
-
 
 ## ジョブの取得
 

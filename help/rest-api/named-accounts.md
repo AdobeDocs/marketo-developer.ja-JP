@@ -3,10 +3,10 @@ title: 重点顧客
 feature: REST API
 description: API を通じて重点顧客を操作します。
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '679'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -390,5 +390,5 @@ Content-Type: application/json
 ## タイムアウト
 
 - 「重点顧客」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります
-   - 重点顧客を同期：120 秒
+   - 指定したアカウントを同期：120s
    - 重点顧客を削除：60 秒

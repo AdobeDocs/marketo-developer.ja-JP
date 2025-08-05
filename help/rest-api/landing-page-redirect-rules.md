@@ -3,8 +3,8 @@ title: ランディングページのリダイレクトルール
 feature: REST API, Landing Pages
 description: API を通じてランディングページのリダイレクトルールを設定します。
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '641'
 ht-degree: 100%
 
@@ -147,7 +147,6 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | &#39;get&#39; | 必須 | 文字列 | メソッドアクション。 |
 | &#39;visitor&#39; | 必須 | 文字列 | メソッド名。 |
 | callback | 必須 | 関数 | 返されるキャンペーンごとにトリガーされるコールバック関数。 |
-
 
 `redirectTo` パラメーターは、ターゲットランディングページを指定します。これは、ソースが Marketo ランディングページであるか、Marketo 以外のランディングページであるかを決定するタイプおよび値のペアを含む JSON オブジェクトです。`type` 属性は「landingPageId」または「url」のいずれかを指定できます。
 

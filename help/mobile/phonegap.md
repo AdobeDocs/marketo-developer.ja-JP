@@ -3,7 +3,7 @@ title: PhoneGap
 feature: Mobile Marketing
 description: モバイルデバイスでのMarketoと PhoneGap の使用
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '818'
 ht-degree: 100%
@@ -112,7 +112,6 @@ repositories{
             //to
             fs.writeFileSync("platforms/android/app/src/main/res/values/strings.xml", strings);
             ```
-
 
 ### &#x200B;3. xCode でプッシュ通知を有効にする
 

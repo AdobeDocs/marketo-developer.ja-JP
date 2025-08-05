@@ -3,10 +3,10 @@ title: プッシュ通知
 feature: Mobile Marketing
 description: Marketo Mobile のプッシュ通知の有効化
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1329'
-ht-degree: 100%
+ht-degree: 98%
 
 ---
 
@@ -285,7 +285,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1 を使用して FCM を設定します（Google は、2023年6月12日（PT）に [XMPP プロトコルを非推奨](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)にし、2024年6 月に削除する予定です）
+1. HTTPv1 を使用した FCM の設定（Googleは 2023 年 6 月 12 日に [ 非推奨の XMPP プロトコル ](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) を発表し、2024 年 6 月に削除されます）
 
 - Marketo 機能マネージャーで MME FCM HTTPv1 を有効にします ![](assets/feature-manager.png)
    - MLM のアプリのサービスアカウント JSON ファイルをアップロードします。
@@ -390,7 +390,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 ```
 
 1. Marketo プッシュを初期化します。上記の設定を保存したら、Marketo プッシュ通知を初期化する必要があります。アプリケーションクラスを作成するか開き、以下のコードをコピー＆ペーストします。Firebase コンソールから送信者 ID を取得できます。
-
 
    ```java
    Marketo marketoSdk = Marketo.getInstance(getApplicationContext());

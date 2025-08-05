@@ -3,8 +3,8 @@ title: カスタムサービス
 feature: REST API
 description: Marketo での認証資格情報。
 exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '985'
 ht-degree: 100%
 
@@ -43,7 +43,6 @@ ht-degree: 100%
 >[!MORELIKETHIS]
 >
 >API のみのユーザを作成するには、**[!UICONTROL 管理]**／**[!UICONTROL ユーザ＆ロール]**／**[!UICONTROL ユーザ]**&#x200B;メニューに移動し、「[!UICONTROL 新規ユーザを招待]」をクリックします。
-
 
 ![新規ユーザ情報](assets/new-user-info.png)
 

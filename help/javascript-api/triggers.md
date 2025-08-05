@@ -3,8 +3,8 @@ title: トリガー
 description: トリガー
 feature: Javascript
 exl-id: 588836fa-1e4d-41f3-aec5-5cd17eb16071
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 100%
 
@@ -24,7 +24,6 @@ User Context API を使用する前に、web パーソナライゼーション�
 |---------------------|-------------------|----------|----------------------|
 | &#39;triggerName&#39; | 必須 | 文字列 | メソッド名。 |
 | function_to_trigger | 必須 | 関数 | トリガーする関数。 |
-
 
 ### ユーザコンテキスト準備完了トリガー
 

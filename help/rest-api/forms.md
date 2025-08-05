@@ -3,8 +3,8 @@ title: フォーム
 feature: REST API, Forms
 description: API を通じてフォームを作成および管理します。
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '1598'
 ht-degree: 100%
 
@@ -305,7 +305,6 @@ GET /rest/asset/v1/form/{id}/fields.json
 | 通貨 | currency |
 | チェックボックス | single_checkbox |
 | スライダ | range |
-
 
 ### 依存関係
 
@@ -788,8 +787,6 @@ values=[{"label":"Select...","value":"","isDefault":true,"selected":true}, {"lab
   ]
 }
 ```
-
- 
 
 複雑なフォーム フィールドの書式設定方法を決定するには、「フォームにフィールドを追加」からの応答を確認します。
 

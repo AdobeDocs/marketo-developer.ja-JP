@@ -1,17 +1,17 @@
 ---
 title: データ取り込み
 description: Data Ingestion API の概要
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
-workflow-type: ht
-source-wordcount: '945'
-ht-degree: 100%
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
+source-wordcount: '940'
+ht-degree: 98%
 
 ---
 
 
 # データ取り込み
 
-Data Ingestion API は、大量のユーザおよびユーザ関連データの取り込みを効率的で最小限の遅延で処理するように設計された、大容量、低遅延、高可用性のサービスです。 
+Data Ingestion API は、大量のユーザおよびユーザ関連データの取り込みを効率的で最小限の遅延で処理するように設計された、大容量、低遅延、高可用性のサービスです。
 
 データは、非同期で実行されるリクエストを送信することで取り込まれます。リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/) からのイベントをサブスクライブすることで取得できます。
 
@@ -143,7 +143,7 @@ Data Ingestion API に一意の、3 つのセグメントで構成されるエ�
 
 | キー | データタイプ | 必須 | 値 | デフォルト値 |
 |---|---|---|---|---|
-| priority | 文字列 | いいえ | リクエストの優先度：通常または高 | 通常 |
+| priority | 文字列 | いいえ | リクエストの優先度 :normalhigh | 通常 |
 | partitionName | 文字列 | いいえ | 顧客パーティションの名前 | デフォルト |
 | dedupeFields | オブジェクト | いいえ | 重複排除する属性。1 つまたは 2 つの属性名が許可されます。AND 操作では、2 つの属性が使用されます。例えば、`email` と `firstName` の両方が指定されている場合、AND 操作を使用してユーザを検索するために両方が使用されます。サポートされている属性：`idemail`、`sfdcAccountId`、`sfdcContactId`、`sfdcLeadId`、`sfdcLeadOwnerIdCustom`、カスタム属性（「文字列」と「整数」タイプのみ） | email |
 | persons | オブジェクトの配列 | はい | ユーザの属性名と値のペアのリスト | - |
@@ -214,8 +214,8 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 
 | キー | データタイプ | 必須 | 値 | デフォルト値 |
 |---|---|---|---|---|
-| priority | 文字列 | いいえ | リクエストの優先度：通常または高 | 通常 |
-| dedupeBy | 文字列 | いいえ | 重複排除する属性：dedupeFieldsmarketoGUID | dedupeFields |
+| priority | 文字列 | いいえ | リクエストの優先度 :normalhigh | 通常 |
+| dedupeBy | 文字列 | いいえ | 重複排除する属性 :dedupeFieldsmarketoGUID | dedupeFields |
 | customObjects | オブジェクトの配列 | はい | オブジェクトの属性名と値のペアのリスト。 | - |
 
 | 権限 |

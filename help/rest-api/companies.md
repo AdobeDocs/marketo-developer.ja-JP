@@ -3,10 +3,10 @@ title: 会社
 feature: REST API
 description: Marketo API を使用して会社データを設定します。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '564'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -360,5 +360,5 @@ POST /rest/v1/companies/delete.json
 ## タイムアウト
 
 - 会社エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります。
-   - 会社を同期：60 秒
+   - 同期会社：60s
    - 会社を削除：60 秒

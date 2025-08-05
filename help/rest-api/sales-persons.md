@@ -3,7 +3,7 @@ title: セールス担当者
 feature: REST API
 description: セールス担当者に関するデータを読み取ります。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 100%

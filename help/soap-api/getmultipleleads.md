@@ -3,9 +3,9 @@ title: getMultipleLeads
 feature: SOAP
 description: getMultipleLeads SOAP 呼び出し
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '384'
+source-wordcount: '383'
 ht-degree: 100%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 100%
 | --- | --- | --- |
 | leadSelector | 必須 | `LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` の 3 つのタイプのいずれかを指定できます |
 | keyType | 必須 | クエリを実行する ID タイプ。値には、IDNUM、COOKIE、EMAIL、LEADOWNEREMAIL、SFDCACCOUNTID、SFDCCONTACTID、SFDCLEADID、SFDCLEADOWNERID、SFDCOPPTYID が含まれます。 |
-| keyValues／stringItem | 必須 | キー値のリスト。つまり、「lead@email.com」 |
+| keyValues／stringItem | 必須 | キー値のリスト。つまり、「<lead@email.com>」です。 |
 | LastUpdateAtSelector：leadSelector／oldestUpdatedAt | 必須 | 「since」条件を指定するタイムスタンプ。つまり、指定した時間以降に更新したすべてのリードが返されます。（W3C WSDL 日時形式） |
 | LastUpdateAtSelector：leadSelector／latestUpdatedAt | オプション | 「until」条件を指定するタイムスタンプ。つまり、指定した時間までに更新したすべてのリードが返されます。（W3C WSDL 日時形式） |
 | StaticListSelector：leadSelector／staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |

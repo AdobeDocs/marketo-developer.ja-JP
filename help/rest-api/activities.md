@@ -3,10 +3,10 @@ title: アクティビティ
 feature: REST API
 description: Marketo Engage アクティビティを管理するための API。
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '2029'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -435,7 +435,6 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 タイプは、標準の Marketo アセットと同様に、「カスタムアクティビティタイプを承認」、「カスタムアクティビティタイプのドラフトを破棄」、「カスタムアクティビティタイプを削除」を使用して管理できます。
 
-
 ## カスタムアクティビティタイプの属性
 
 各カスタムアクティビティタイプには、0～20 個のセカンダリ属性を指定できます。セカンダリ属性には、Marketo フィールドに有効な任意のフィールドタイプを指定できます。これらは親タイプとは別に追加、更新、削除されますが、アクティビティタイプの使用中に編集して承認できます。ライブタイプでフィールドを編集する際、承認後に作成されたこのタイプのすべてのアクティビティに新しいセカンダリ属性が指定されます。変更は、このタイプを共有する既存のアクティビティに遡って適用されることはありません。
@@ -450,7 +449,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 ### 属性の作成
 
-属性の作成には、必須の `apiName` パスパラメーターを使用します。また、`name` パラメーターと `dataType` パラメーターも必須です。` The description and` `isPrimary` パラメーターはオプションです。
+属性の作成には、必須の `apiName` パスパラメーターを使用します。また、`name` パラメーターと `dataType` パラメーターも必須です。`The description and` `isPrimary` パラメーターはオプションです。
 
 ```
 POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
@@ -709,5 +708,5 @@ POST /rest/v1/activities/external.json
 
 「アクティビティ」エンドポイントのタイムアウトは 30 秒です（以下に記載されている場合を除く）。
 
-* ページトークンを取得：300 秒
+* ページングトークンの取得：300 秒
 * カスタムを追加アクティビティ：90 秒

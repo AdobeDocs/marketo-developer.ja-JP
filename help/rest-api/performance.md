@@ -3,8 +3,8 @@ title: パフォーマンス
 feature: REST API
 description: Marketo API を操作するためのパフォーマンスのヒント。
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
-source-git-commit: 4e64b8a801e443471f52090b7f008b11e628012d
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 100%
 
@@ -37,5 +37,5 @@ Content-Encoding: gzip
 Curl を使用して[フィルタータイプによるリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET)エンドポイントを呼び出し、5 個のリードを取得する例を以下に示します。
 
 ```bash
-$ curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'
+curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'
 ```

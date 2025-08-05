@@ -3,9 +3,9 @@ title: getLeadChanges
 feature: SOAP
 description: getLeadChanges SOAP 呼び出し
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 100%
 
 ---
@@ -40,7 +40,7 @@ SOAP API バージョン 2_2 以降では、`leadSelector` を含めることが
 | startPosition／activityCreatedAt | オプション | activityCreatedAt 以降のアクティビティがあるリードのみを含めるように結果をフィルタリングするために使用されるタイムスタンプ。メモ：`activityCreatedAt` を指定するには、`LastUpdateAtSelector->latestUpdatedAt` タイムスタンプを使用できます。 |
 | leadSelector | オプション | `LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` の 3 つのタイプのいずれかを指定できます |
 | LeadKeySelector：leadSelector／keyType | 必須 | クエリを実行する ID タイプ。値には、`IDNUM`、`COOKIE`、`EMAIL`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` が含まれます。 |
-| LeadKeySelector：leadSelector／keyValues／stringItem | 必須 | キー値のリスト。つまり、「lead@email.com」 |
+| LeadKeySelector：leadSelector／keyValues／stringItem | 必須 | キー値のリスト。つまり、「<lead@email.com>」です。 |
 | StaticListSelector：leadSelector／staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |
 | StaticListSelector：leadSelector／staticListId | `leadSelector->staticListName` が存在する場合はオプション | 静的リストの ID |
 

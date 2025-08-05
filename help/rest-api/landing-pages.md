@@ -3,10 +3,10 @@ title: ランディングページ
 feature: REST API, Landing Pages
 description: Marketo のランディングページのクエリを実行します。
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '1000'
-ht-degree: 100%
+ht-degree: 98%
 
 ---
 
@@ -113,7 +113,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 
 ## 削除
 
-ランディングページを削除するには、まずそのページが使用されておらず、他の Marketo アセットによって参照されておらず、未承認である必要があります。ページは、[ランディングページを削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST)エンドポイントを使用して個別に削除されます。ソーシャルボタンが埋め込まれたランディングページは、この API を通じて削除できません。
+ランディングページを削除するには、まずそのページが使用されておらず、他の Marketo アセットによって参照されておらず、未承認である必要があります。ページは、[ランディングページを削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST)エンドポイントを使用して個別に削除されます。 ソーシャルボタンが埋め込まれたランディングページは、この API からは削除できません。
 
 ## 複製
 

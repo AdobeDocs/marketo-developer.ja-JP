@@ -3,10 +3,10 @@ title: 商談
 feature: REST API
 description: ' Marketo API を使用して商談を設定します。'
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '786'
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
@@ -338,5 +338,5 @@ POST /rest/v1/opportunities/delete.json
 ## タイムアウト
 
 - 「商談」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります。
-   - 商談を同期：60 秒
+   - 同期の機会：60 秒
    - 商談を削除：60 秒

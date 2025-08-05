@@ -3,10 +3,10 @@ title: scheduleCampaign
 feature: SOAP, Smart Campaigns
 description: scheduleCampaign SOAP 呼び出し
 exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '252'
-ht-degree: 100%
+ht-degree: 98%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 100%
 
 この関数は、バッチスマートキャンペーンをすぐに実行するか、今後の日付で実行するようにスケジュールします。正常に完了するには、既存のスマートキャンペーンが必要です。これを importToList と組み合わせて使用すると、リードのリストをアップロードし、新しく作成されたリストに対してバッチキャンペーンを実行できます。
 
-## オプションのプログラムトークン：
+## オプションのプログラムトークン
 
 requestCampaign 関数と同様に、既存のトークンを上書きするこの API 呼び出しにマイトークンの配列を渡すことができます。キャンペーンの実行後、トークンは破棄されます。
 

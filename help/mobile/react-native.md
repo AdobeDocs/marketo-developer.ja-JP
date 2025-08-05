@@ -3,10 +3,10 @@ title: React Native
 feature: Mobile Marketing
 description: Marketo 用 React Native のインストール
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '810'
-ht-degree: 99%
+ht-degree: 98%
 
 ---
 
@@ -393,7 +393,7 @@ const { RNMarketoModule } = NativeModules;
 
 上記のファイルを正しく配置すると、任意の js クラスに js モジュールを読み込み、このメソッドを直接呼び出すことができます。例：
 
-React Native アプリのフレームワークタイプとして「reactNative」を渡す必要があります。 
+React Native アプリのフレームワークタイプとして「reactNative」を渡す必要があります。
 
 ```
 // Initialize marketo SDK with Munchkin & Seretkey you have from step 1.
@@ -489,7 +489,6 @@ RNMarketoModule.registerForRemoteNotifications();
 
 export { requestPermission, registerForRemoteNotifications };
 ```
-
 
 プッシュ通知を許可するには、`App.tsx` を追加します。
 
@@ -595,7 +594,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 1. `AppDelegate.m` ファイル（Objective-C）に `application:openURL:sourceApplication:annotation:` を含めます。
 
-**iOS - AppDelegate でのカスタム URL タイプ／ディープリンクの処理**
+**iOS - AppDelegate でカスタム Url タイプ/ディープリンクを処理します**
 
 ```
 - (BOOL)application:(UIApplication *)app

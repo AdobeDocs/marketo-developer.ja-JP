@@ -3,9 +3,9 @@ title: importToList
 feature: SOAP
 description: importToList SOAP 呼び出し
 exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '387'
 ht-degree: 100%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 100%
 
 | メール | 名 | 姓 |
 | --- | --- | --- |
-| joe@company.com | Joe | Smith |
-| mary@company.com | Mary | Rodgers |
-| wanda@megacorp.com | Wanda | Williams |
+| <joe@company.com> | Joe | Smith |
+| <mary@company.com> | Mary | Rodgers |
+| <wanda@megacorp.com> | Wanda | Williams |
 
 `importFileHeader` では、`name` 値ではなく `displayName` 値を使用する必要があります。
 
@@ -30,9 +30,9 @@ ht-degree: 100%
 
 | メール | 名 | 姓 | {{my.specialToken}} | {{my.otherToken}} |
 | --- | --- | --- | --- | --- |
-| joe@company.com | Joe | Smith | 魚 | ブルー |
-| mary@company.com | Mary | Rodgers | 鶏肉 | ブラウン |
-| wanda@megacorp.com | Wanda | Williams | 野菜 | ヘーゼル |
+| <joe@company.com> | Joe | Smith | 魚 | ブルー |
+| <mary@company.com> | Mary | Rodgers | 鶏肉 | ブラウン |
+| <wanda@megacorp.com> | Wanda | Williams | 野菜 | ヘーゼル |
 
 **重要：**&#x200B;リードにトークンを追加する場合は、これらを使用するスマートキャンペーンを指定する必要があります。指定したスマートキャンペーンを次回実行する際には、通常のマイトークン値の代わりに、リストの値が使用されます。単一のキャンペーンを実行すると、トークンは破棄されます。
 

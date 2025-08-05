@@ -3,7 +3,7 @@ title: リードデータベース
 feature: REST API, Database
 description: メインのリードデータベースを操作します。
 exl-id: e62e381f-916b-4d56-bc3d-0046219b68d3
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1342'
 ht-degree: 97%
@@ -245,7 +245,7 @@ JSON オブジェクトの構造はほとんどフラットで、`filterValues` 
 
 リードデータベースレコードの作成と更新はすべて、JSON 本文を含む POST を通じて実行されます。商談、ロール、カスタムオブジェクト、会社、セールス担当者のインターフェイスはそれぞれ同じです。リードのインターフェイスは少し異なります。詳しくは、こちらを参照してください。
 
-唯一の必要なパラメーターは、最大 300 個のオブジェクトを含む `input` と呼ばれる配列です。各オブジェクトには、メンバーとして挿入／更新するフィールドが含まれます。オプションで、`createOnly`、`updateOnly`、`createOrUpdate` のいずれかの `action` パラメーターを含めることもできます。アクションを省略すると、モードはデフォルトで `createOrUpdate` になります。`dedupeBy` は、アクションが createOnly または `createOrUpdate` に設定されている場合に使用できる別のオプションパラメーターです。` dedupeBy` は、`idField` または `dedupeFields` のいずれかに指定できます。`idField` を選択した場合、説明にリストされている `idField` が重複排除に使用され、各レコードに含める必要があります。`idField` モードは、`createOnly` モードと互換性がありません。`dedupeFields` を選択した場合、オブジェクトの説明にリストされている `dedupeFields` が使用され、各レコードにそれぞれ含める必要があります。`dedupeBy` パラメーターを省略すると、モードはデフォルトで `dedupeFields` になります。
+唯一の必要なパラメーターは、最大 300 個のオブジェクトを含む `input` と呼ばれる配列です。各オブジェクトには、メンバーとして挿入／更新するフィールドが含まれます。オプションで、`createOnly`、`updateOnly`、`createOrUpdate` のいずれかの `action` パラメーターを含めることもできます。アクションを省略すると、モードはデフォルトで `createOrUpdate` になります。`dedupeBy` は、アクションが createOnly または `createOrUpdate` に設定されている場合に使用できる別のオプションパラメーターです。`dedupeBy` は、`idField` または `dedupeFields` のいずれかに指定できます。`idField` を選択した場合、説明にリストされている `idField` が重複排除に使用され、各レコードに含める必要があります。`idField` モードは、`createOnly` モードと互換性がありません。`dedupeFields` を選択した場合、オブジェクトの説明にリストされている `dedupeFields` が使用され、各レコードにそれぞれ含める必要があります。`dedupeBy` パラメーターを省略すると、モードはデフォルトで `dedupeFields` になります。
 
 フィールド値のリストを渡すと、`null` 値または空の文字列が `null` としてデータベースに書き込まれます。
 

@@ -3,10 +3,10 @@ title: 重点顧客リスト
 feature: REST API
 description: 重点顧客リストを設定します。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '696'
-ht-degree: 100%
+ht-degree: 96%
 
 ---
 
@@ -33,7 +33,6 @@ Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/ma
 | createdAt | 日時 | False | リストの作成日時。このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
 | updatedAt | 日時 | False | リストの最新の更新日時。このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
 | タイプ | 文字列 | False | リストのタイプ。&quot;default&quot; または &quot;external&quot;のいずれかの値を指定できます。外部リストは、CRM アカウントビューで作成されたリストです。 |
-
 
 ## クエリ
 
@@ -294,9 +293,9 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 ## タイムアウト
 
 - 「重点顧客リスト」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります
-   - 重点顧客リストを同期：60 秒
-   - 重点顧客リストを削除：60 秒
-   - 重点顧客リストを取得：60 秒
-   - 重点顧客リストメンバーを追加：60 秒
-   - 重点顧客リストメンバーを削除：60 秒
+   - 名前付きアカウント リストの同期：60s
+   - 重点顧客リストの削除：60s
+   - 名前付きアカウント リストの取得：60s
+   - 指定アカウント・リスト・メンバーの追加：60s
+   - 名前付きアカウント リスト メンバの削除：60s
    - 重点顧客リストメンバーを取得：60 秒

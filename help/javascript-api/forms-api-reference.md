@@ -3,8 +3,8 @@ title: Forms API リファレンス
 description: Forms API リファレンス
 feature: Forms, Javascript
 exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '1327'
 ht-degree: 100%
 
@@ -121,7 +121,6 @@ Forms 2.0 API を使用して操作する主なオブジェクトは 2 つあり
       <td></td>
     </tr>
 </table>
-
 
 ## Form メソッド
 

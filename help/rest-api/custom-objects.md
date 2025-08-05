@@ -3,7 +3,7 @@ title: カスタムオブジェクト
 feature: REST API, Custom Objects
 description: カスタム Marketo オブジェクトを作成および操作します。
 exl-id: 88e8829b-f8f1-46d7-a753-5aa6e20e2c40
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '2909'
 ht-degree: 99%
@@ -228,7 +228,6 @@ POST /rest/v1/customobjects/{apiName}.json?_method=GET
 }
 ```
 
-
 ```json
 {
    "requestId":"e42b#14272d07d78",
@@ -299,7 +298,6 @@ POST /rest/v1/customobjects/{apiName}.json
    ]
 }
 ```
-
 
 ```json
 {
@@ -892,7 +890,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 1 対多のカスタムオブジェクト構造の場合は、カスタムオブジェクトのリンクフィールドを使用して、標準オブジェクト（リードまたは会社）に接続します。[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)のMarketo 製品ドキュメントの自動車所有者の例を使用して、リードに接続する自動車関連情報を含むカスタムオブジェクトを作成します。
 
 1. **Car** オブジェクトを作成します
-1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead**&#x200B;***/Lead ID** にリンクします
+1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead*****/Lead ID** にリンクします
 1. **Car** オブジェクトを承認します
 
 最初に、自動車固有の情報を含めるカスタムオブジェクトタイプを作成します。
@@ -996,7 +994,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. **コース**&#x200B;にフィールドを追加します。**コース ID** で重複排除します
 1. **コース**&#x200B;を承認します
 1. **登録**&#x200B;ブリッジオブジェクトを作成します
-1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース**&#x200B;**/コース ID** フィールドへのリンク、**リード**&#x200B;**/リード ID** へのリンクで重複削除します
+1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース****/コース ID** フィールドへのリンク、**リード****/リード ID** へのリンクで重複削除します
 1. **登録**&#x200B;を承認します
 
 最初に、コース固有の情報を含めるエッジオブジェクトタイプを作成します。
@@ -1454,7 +1452,6 @@ GET /rest/v1/customobjects/schema/linkableObjects.json
 GET /rest/v1/customobjects/schema/{apiName}/dependentAssets.json
 ```
 
-
 ```json
 {
     "requestId": "71cf#16a21f30ed6",
@@ -1484,5 +1481,5 @@ GET /rest/v1/customobjects/schema/{apiName}/dependentAssets.json
 ## タイムアウト
 
 * 「カスタムオブジェクト」エンドポイントは、以下に記載されていない限り、30 秒でタイムアウトします
-   * カスタムオブジェクトを同期：120 秒 
+   * カスタム オブジェクトの同期：120 秒
    * カスタムオブジェクトを削除：60 秒

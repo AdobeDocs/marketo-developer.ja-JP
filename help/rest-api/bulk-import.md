@@ -3,8 +3,8 @@ title: 一括読み込み
 feature: REST API
 description: ユーザデータのバッチ読み込み。
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
-workflow-type: ht
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+workflow-type: tm+mt
 source-wordcount: '592'
 ht-degree: 100%
 
@@ -96,7 +96,6 @@ Easy,Fox,easyfox@marketo.com
 |---|---|---|
 | format | 文字列 | コンマ区切り値、タブ区切り値、セミコロン区切り値のオプションを使用して、読み込まれたデータのファイル形式を決定します。CSV、SSV、TSV のいずれかを受け入れます。形式のデフォルトは CSV です。 |
 | ファイル | 文字列 | データは、ファイル内の multipart フォームデータを通じて指定されます。 |
-
 
 ## ジョブステータスのポーリング
 

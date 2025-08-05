@@ -3,7 +3,7 @@ title: リッチメディアレコメンデーション
 description: リッチメディアレコメンデーション
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 100%
@@ -66,7 +66,6 @@ ht-degree: 100%
 | &#39;rcmd&#39; | 必須 | 文字列 | メソッド名。 |
 | &#39;richmedia&#39; | 必須 | 文字列 | サブメソッド名。 |
 
-
 ## テンプレート設定の変更
 
 このメソッドでは、テンプレートのデフォルト設定が変更されます。
@@ -84,7 +83,6 @@ ht-degree: 100%
 | &#39;richmedia&#39; | 必須 | 文字列 | サブメソッド名。 |
 | template_id | オプション | 文字列 | 設定変更のテンプレート ID。1 つのテンプレートのみの設定変更を指定するのに使用します。 |
 | conf_obj | 必須 | オブジェクト | 新しい設定。オブジェクトは、すべての設定をキーと値のペアとして保持します。 |
-
 
 ### 例
 
@@ -150,7 +148,6 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | ボタンのフォントカラーを変更します。このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;Push&quot; | ボタンのテキストを変更します。テキストは、すべてのボタンで同じです。 |
 | カテゴリ | &quot;category&quot; : [&quot;one category&quot;] | このテンプレートがサポートするレコメンデーションカテゴリを変更します。テンプレートには、この設定で指定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
-
 
 メモ：設定のサポートは、テンプレートごとに変更される場合があります。
 
