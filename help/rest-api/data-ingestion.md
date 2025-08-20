@@ -3,7 +3,7 @@ title: データ取り込み
 feature: REST API, Dynamic Content
 description: Marketo API を使用してデータを消費します。
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 4bac6968867f1fbee0846b1bcd75b5e34ad91dee
 workflow-type: tm+mt
 source-wordcount: '965'
 ht-degree: 99%
@@ -18,7 +18,9 @@ Data Ingestion API は、大量のユーザおよびユーザ関連データの�
 
 インターフェイスは、ユーザとカスタムオブジェクトの 2 つのオブジェクトタイプに対して提供されます。レコード操作は、「挿入または更新」のみです。
 
-Data Ingestion API は現在プライベートベータ版です。招待者には、[Marketo Engage パフォーマンス階層](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835)パッケージの資格が必要です。
+>[!NOTE]
+>
+>Data Ingestion API は現在プライベートベータ版です。招待者には、[Marketo Engage パフォーマンス階層](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835)パッケージの資格が必要です。
 
 ## 認証
 
