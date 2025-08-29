@@ -3,10 +3,10 @@ title: JavaScript API
 description: JavaScript API
 feature: Munchkin Tracking Code, Forms, Web Personalization, Predictive Content, Social, Javascript
 exl-id: 6129a467-be44-44bd-9e02-62009070c318
-source-git-commit: e63db409981d10cfea6206cf91340428e5d0b17f
-workflow-type: ht
-source-wordcount: '337'
-ht-degree: 100%
+source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
+workflow-type: tm+mt
+source-wordcount: '289'
+ht-degree: 92%
 
 ---
 
@@ -26,12 +26,9 @@ Marketo の [Munchkin JavaScript トラッキングコード](lead-tracking.md)�
 
 ## Web パーソナライゼーション
 
-[Marketo web パーソナライゼーション](web-personalization.md)は、ターゲット設定とパーソナライズ機能を実現するプラットフォームです。Web サイトを訪問する何千人もの見込み客に対し、その人物と行動に基づいてリアルタイムで引き付けることができます。
+[Marketo web パーソナライゼーション](web-personalization.md)は、ターゲティングとパーソナライズ機能を実現するプラットフォームです。Web サイトを訪問する何千人もの見込み客に対し、その人物と行動に基づいてリアルタイムで引き付けることができます。
 
 ## 予測コンテンツ
 
-[Marketo 予測コンテンツ](predictive-content.md)は、機械学習と予測分析を利用して、最も関連性の高いコンテンツで web 訪問者を引きつける機能です。テキストの説明や画像を使用してコンテンツを強化し、web サイトに複数のコンテンツレコメンデーションを埋め込みます。
+[Marketo予測コンテンツ ](predictive-content.md) を使用すると、機械学習と予測分析を活用して、最も関連性の高いコンテンツで web 訪問者を引き付けることができます。 テキストの説明や画像を使用してコンテンツを強化し、web サイトに複数のコンテンツレコメンデーションを埋め込みます。
 
-## ソーシャルマーケティング
-
-[Marketo ソーシャルマーケティング](social.md)では、マーケターは web サイトやランディングページにソーシャルウィジェットを埋め込むことができます。ソーシャルウィジェットには、投票、ソーシャル共有ボタン、ビデオ、懸賞、紹介オファーなどのプロモーションが含まれます。これらのウィジェットの表示はカスタマイズ可能であり、独自のユーザーエクスペリエンスを作成するのに取り込んだイベントもカスタマイズできます。
