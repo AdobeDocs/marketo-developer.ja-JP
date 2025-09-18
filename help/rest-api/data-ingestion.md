@@ -3,10 +3,10 @@ title: データ取り込み
 feature: REST API, Dynamic Content
 description: Marketo API を使用してデータを消費します。
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 4bac6968867f1fbee0846b1bcd75b5e34ad91dee
+source-git-commit: af2d0f266a271696dbf7d334f23bcd9962b9eba4
 workflow-type: tm+mt
-source-wordcount: '965'
-ht-degree: 99%
+source-wordcount: '957'
+ht-degree: 96%
 
 ---
 
@@ -14,13 +14,13 @@ ht-degree: 99%
 
 Data Ingestion API は、大量のユーザおよびユーザ関連データの取り込みを効率的で最小限の遅延で処理するように設計された、大容量、低遅延、高可用性のサービスです。
 
-データは、非同期で実行されるリクエストを送信することで取り込まれます。リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup) からのイベントをサブスクライブすることで取得できます。
+データは、非同期で実行されるリクエストを送信することで取り込まれます。リクエストのステータスは、[Marketo Observability Data Stream](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup) からイベントを登録することで取得できます。
 
 インターフェイスは、ユーザとカスタムオブジェクトの 2 つのオブジェクトタイプに対して提供されます。レコード操作は、「挿入または更新」のみです。
 
 >[!NOTE]
 >
->Data Ingestion API は現在プライベートベータ版です。招待者には、[Marketo Engage パフォーマンス階層](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835)パッケージの資格が必要です。
+>データ取得 API にアクセスするには、[Marketo Engage パフォーマンス層 ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) パッケージの使用権限が必要です。
 
 ## 認証
 
