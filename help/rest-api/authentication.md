@@ -3,7 +3,7 @@ title: 認証
 feature: REST API
 description: API の使用に関して Marketo ユーザを認証します。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 36e768d562e6f69aeb70a83253dfcf41653f217a
 workflow-type: tm+mt
 source-wordcount: '618'
 ht-degree: 80%
@@ -55,7 +55,7 @@ REST API メソッドを呼び出す場合は、呼び出しを正常に実行�
 
 >[!IMPORTANT]
 >
->`access_token` クエリパラメーターを使用した認証のサポートは、2025 年 10 月 31 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、[Authorization ヘッダー ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token) を使用するように直ちに更新する必要があります。 新規開発では、`Authorization` ヘッダーのみを使用する必要があります。
+>`access_token` クエリパラメーターを使用した認証のサポートは、2026 年 1 月 31 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、[Authorization ヘッダー ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token) を使用するように直ちに更新する必要があります。 新規開発では、`Authorization` ヘッダーのみを使用する必要があります。
 
 ### 認証ヘッダーへの切り替え
 

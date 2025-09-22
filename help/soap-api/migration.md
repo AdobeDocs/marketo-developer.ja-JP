@@ -3,7 +3,7 @@ title: REST API への移行
 feature: SOAP
 description: SOAP から REST API への移行
 exl-id: c2956db3-defe-4163-99f3-58654ce8ee2b
-source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+source-git-commit: 36e768d562e6f69aeb70a83253dfcf41653f217a
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 99%
@@ -12,7 +12,7 @@ ht-degree: 99%
 
 # REST API への移行
 
-Marketo Engage SOAP API は、2025年10月31日（PT）以降に廃止される予定です。サービスの中断を回避するために、SOAP API を使用したすべての既存の統合は、この日付までに廃止するか、[Marketo Engage REST API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api) に移行する必要があります。
+Marketo Engage SOAP API は、2026年1月31日（PT）以降に廃止される予定です。サービスの中断を回避するために、SOAP API を使用したすべての既存の統合は、この日付までに廃止するか、[Marketo Engage REST API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api) に移行する必要があります。
 
 ## 移行
 
@@ -107,7 +107,7 @@ SOAP API では、[リクエスト可能なスマートキャンペーンを選�
 
 REST ドキュメント：
 
-- [カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
+- [カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
 
 SOAP API では、カスタムオブジェクトの CRUD 操作のみをサポートしていました。
 
