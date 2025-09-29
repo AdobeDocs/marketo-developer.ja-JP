@@ -1,12 +1,12 @@
 ---
 title: インストール
 feature: Mobile Marketing
-description: Mobile Marketo SDK のインストール方法
+description: CocoaPods、Swift Package Manager、または Gradle を使用して、iOSとAndroidにMarketo Mobile SDKをインストールし初期化し、プッシュメッセージとアプリ内メッセージを有効にする方法についてのガイドです。
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '761'
-ht-degree: 98%
+source-wordcount: '779'
+ht-degree: 95%
 
 ---
 
@@ -208,7 +208,7 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
 
 1. 最新の Marketo Android SDK を Android アプリに統合します。手順は [GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
       1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)で、`Add Project` を選択します。
       1. 既存の Google Cloud プロジェクトのリストから GCM プロジェクトを選択し、`Add Firebase` を選択します。
       1. Firebase のスタートアップスクリーンで、`Add Firebase to your Android App` を選択します。

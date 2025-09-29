@@ -1,12 +1,12 @@
 ---
 title: Web フック
 feature: Webhooks
-description: Web フックの概要
+description: サードパーティのサービスの呼び出し、ペイロードテンプレート、エンコーディング、応答マッピング、トークン、カスタムヘッダー、ヒントなどを設定するMarketo Webhook の設定方法を説明します。
 exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 100%
+source-wordcount: '604'
+ht-degree: 96%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: アクティビティタイプフィルター
 feature: SOAP
-description: SOAP 呼び出しのアクティビティタイプフィルター。
+description: メールのクリック数とフォームの入力から、SOAP キャンペーンの変更とオポチュニティの更新に至るまで、SFDCの呼び出しでサポートされるすべてのアクティビティタイプフィルターを参照します。
 exl-id: d661bb41-5615-4394-ade0-29254e48f7eb
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '210'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '226'
+ht-degree: 90%
 
 ---
 

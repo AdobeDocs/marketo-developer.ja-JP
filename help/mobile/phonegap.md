@@ -1,12 +1,12 @@
 ---
 title: PhoneGap
 feature: Mobile Marketing
-description: モバイルデバイスでのMarketoと PhoneGap の使用
+description: Cordova を使用したMarketo PhoneGap プラグインの設定、Firebase Cloud Messaging の設定、iOSとAndroidのプッシュの有効化、通知のトラッキング、SDKの初期化を行います。
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '818'
-ht-degree: 100%
+source-wordcount: '834'
+ht-degree: 97%
 
 ---
 

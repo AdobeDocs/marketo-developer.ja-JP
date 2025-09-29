@@ -1,12 +1,12 @@
 ---
 title: リード
 feature: REST API
-description: Leads API 呼び出しの詳細
+description: 説明、ID またはフィルターによるクエリ、デフォルトフィールド、制限、ECID の取得など、Marketo Leads REST API の機能について説明します。
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '3338'
-ht-degree: 100%
+source-wordcount: '3351'
+ht-degree: 99%
 
 ---
 

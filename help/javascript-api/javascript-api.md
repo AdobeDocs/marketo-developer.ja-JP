@@ -1,12 +1,12 @@
 ---
 title: JavaScript API
-description: JavaScript API
+description: Marketo JavaScript API を埋め込みコードと共に使用して、Munchkin リードトラッキング、Forms 2.0、web Personalizationおよび予測コンテンツを処理する方法について説明します。
 feature: Munchkin Tracking Code, Forms, Web Personalization, Predictive Content, Social, Javascript
 exl-id: 6129a467-be44-44bd-9e02-62009070c318
-source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 92%
+source-wordcount: '309'
+ht-degree: 85%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: フィールド
 feature: REST API, Field Management
-description: サポートされているフィールド名のリスト。
+description: REST およびSOAP リードフィールドの命名、REST を使用したリストフィールドの説明リード、機能マッピング、sfdcId が null の理由について説明し、sfdcLeadId または sfdcContactId を使用します。
 exl-id: 9033f32a-c7cb-4bbf-abcf-38ca4112139f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '194'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '212'
+ht-degree: 88%
 
 ---
 

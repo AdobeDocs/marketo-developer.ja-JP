@@ -1,12 +1,12 @@
 ---
 title: メールスクリプト
 feature: Email Programs
-description: メールスクリプトの概要
+description: Apache Velocity トークン、変数、Velocity ツールを使用して動的なMarketo メールをスクリプト化し、サンプルとメールのプレビューを送信してテストする方法について説明します。
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: 9012135dc7a295c2462574dad1aca2d06a9077ea
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '963'
-ht-degree: 100%
+source-wordcount: '981'
+ht-degree: 97%
 
 ---
 

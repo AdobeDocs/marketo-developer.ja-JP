@@ -1,12 +1,12 @@
 ---
 title: Web パーソナライゼーション
-description: Web パーソナライゼーション
+description: ページビューイベント、アカウント設定、ボットの除外、コアスクリプトおよびオンデマンドスクリプトに関する Web Personalization JavaScript API および RTP タグのガイド
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 100%
+source-wordcount: '422'
+ht-degree: 94%
 
 ---
 

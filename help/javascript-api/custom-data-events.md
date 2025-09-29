@@ -1,12 +1,12 @@
 ---
 title: カスタムデータイベント
-description: 一意のイベントのトラッキングには、Custom Data Events Javascript API を使用します。
+description: Web Personalization用の RTP JavaScript API でカスタムイベントを送信し、パラメーター、最大 4 つの項目の文字列または配列データ、クリックベースのトリガーを含めます。
 feature: Javascript
 exl-id: ef7cab9c-3bd0-450e-9247-9324b1e6f9ab
-source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
-workflow-type: ht
-source-wordcount: '231'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '243'
+ht-degree: 90%
 
 ---
 

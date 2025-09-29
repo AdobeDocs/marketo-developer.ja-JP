@@ -1,12 +1,12 @@
 ---
 title: エラーコード
 feature: SOAP
-description: SOAP 呼び出しのエラーコード
+description: メッセージおよびメモと共にMarketo SOAP API エラーコードのリファレンスガイド。認証エラー、レートおよび同時実行制限、リクエストの問題について説明しています。
 exl-id: 71796520-7bd6-4a37-94e7-b073d17df06f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '390'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '407'
+ht-degree: 94%
 
 ---
 

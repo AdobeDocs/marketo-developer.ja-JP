@@ -1,12 +1,12 @@
 ---
 title: フォーム
 feature: REST API, Forms
-description: API を通じてフォームを作成および管理します。
+description: Marketo Forms REST API ガイドでは、フォームの作成と管理、ID または名前による取得、ステータスフィルターを使用した参照、フィールド、フィールドセット、ルールの管理をおこなうことができます。
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1598'
-ht-degree: 100%
+source-wordcount: '1616'
+ht-degree: 98%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: ランディングページのテンプレート
 feature: REST API, Landing Pages
-description: ランディングページのテンプレートを作成および編集します。
+description: 自由形式およびガイド付きタイプの REST API エンドポイントを使用したMarketo ランディングページテンプレートの管理、ID または名前によるクエリ、HTMLの作成、更新、クローン、Munchkin。
 exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '533'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '552'
+ht-degree: 95%
 
 ---
 

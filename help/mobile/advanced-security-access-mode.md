@@ -1,12 +1,12 @@
 ---
 title: 高度なセキュリティアクセスモード
 feature: Mobile Marketing
-description: 高度なセキュリティアクセスモードに関する詳細
+description: HMAC シグネチャの生成、サーバーエンドポイントの設定、デバイス ID の使用、iOSとAndroidの例を使用した、Marketo Mobile SDKの高度なセキュリティアクセスモードについて説明します
 exl-id: bd4730ff-708b-465e-b494-485a4dbf67ff
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '303'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '321'
+ht-degree: 92%
 
 ---
 

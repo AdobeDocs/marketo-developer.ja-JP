@@ -1,12 +1,12 @@
 ---
 title: メールテンプレート
 feature: REST API
-description: Marketo API を使用してメールテンプレートを作成します。
+description: Marketoの要件、ID または名前によるクエリ、フォルダーの参照など、HTML REST API のメールテンプレートを作成および管理する方法について説明します
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '569'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '585'
+ht-degree: 96%
 
 ---
 

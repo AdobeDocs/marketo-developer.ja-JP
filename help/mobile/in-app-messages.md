@@ -1,12 +1,12 @@
 ---
 title: アプリ内メッセージ
 feature: Mobile Marketing
-description: アプリ内メッセージの概要
+description: Marketoと Mobile SDKの連携によるアプリ内メッセージの設定、カスタムイベントトリガーの設定、タップアクティビティの追跡、アプリが最初に開く際の初期化の問題の修正を行います。
 exl-id: 73c9f862-d154-4b37-94ce-92311aa756e8
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '293'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '312'
+ht-degree: 92%
 
 ---
 

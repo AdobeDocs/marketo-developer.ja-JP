@@ -1,12 +1,12 @@
 ---
 title: リダイレクト
-description: リダイレクト
+description: RTP リダイレクト API を実装して、ABM、組織、場所、セグメントなどのフィールドと、例やヒントを使用して、セグメント化された訪問者をターゲット URL に送信します。
 feature: Javascript
 exl-id: bbf91245-42e5-47ae-a561-e522cc65ff49
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '457'
-ht-degree: 83%
+source-wordcount: '480'
+ht-degree: 79%
 
 ---
 

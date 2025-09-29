@@ -1,12 +1,12 @@
 ---
 title: セールス担当者
 feature: REST API
-description: セールス担当者に関するデータを読み取ります。
+description: externalSalesPersonId を使用してリードに関連付け、クエリ、アップサート、削除を実行する、SFDCまたは Dynamics 同期を使用した営業担当者レコードに関するMarketo REST API ガイド。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '303'
-ht-degree: 100%
+source-wordcount: '322'
+ht-degree: 92%
 
 ---
 

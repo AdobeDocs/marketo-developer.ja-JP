@@ -1,12 +1,12 @@
 ---
 title: requestCampaign
 feature: SOAP, Smart Campaigns
-description: requestCampaign SOAP 呼び出し
+description: パラメーターセット、トークン処理、100 件のリード制限、XML リクエスト、PHP Java の例など、SOAP requestCampaign を介してMarketo Smart Campaign でリードを実行します。
 exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '277'
-ht-degree: 100%
+source-wordcount: '298'
+ht-degree: 91%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 100%
 | --- | --- | --- |
 | leadList／leadKey／keyType | 必須 | `keyType` を使用すると、リードに対してクエリを実行するフィールドを指定できます。使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | leadList／leadKey／keyValue | 必須 | `keyValue` は、リードに対してクエリを実行する値です。 |
-| ソース | 必須 | キャンペーンソース。使用可能な値：`MKTOWS` または `SALES`。定義済みリストは、WSDL で定義されます。 |
+| ソース | 必須 | キャンペーンソース。使用可能な値：`MKTOWS` または `SALES`。列挙は、WSDL で定義されます。 |
 | campaignId | パラメーターサイトに `campaignName`、`programName`、`programTokenList` がまとめてある場合はオプションです。それ以外の場合は `campaignId` が必須です | キャンペーンの ID。メモ：`campaignID` と `campaignName` の両方が渡されると、「無効なパラメーター」エラーが発生します。 |
 | campaignName | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、programName、programTokenList としてセットで必須です | キャンペーンの名前 |
 | programName | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、programName、programTokenList としてセットで必須です | プログラムの名前 |

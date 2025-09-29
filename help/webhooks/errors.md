@@ -1,12 +1,12 @@
 ---
 title: エラー
 feature: Webhooks
-description: Webhook のエラーコード
+description: Marketo Webhook エラーコード、リードフィールドの更新に 2xx 応答が必要な理由、Webhook でエラーをキャッチして処理する方法を呼び出す方法について説明します。
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '235'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '256'
+ht-degree: 90%
 
 ---
 

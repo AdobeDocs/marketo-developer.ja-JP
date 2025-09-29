@@ -1,12 +1,12 @@
 ---
 title: アセット
 feature: REST API
-description: Marketo アセットを操作する API。
+description: Marketo Asset REST API の概要：ID または名前によるクエリ、ページングによる参照、フォルダー、メール、フォーム、テンプレート、ファイル、トークンの作成または更新に使用されます。
 exl-id: 4273a5b1-1904-46e8-b583-fc6f46b388d2
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '876'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '894'
+ht-degree: 97%
 
 ---
 

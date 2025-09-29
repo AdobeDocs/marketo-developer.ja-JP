@@ -1,12 +1,12 @@
 ---
 title: リードトラッキング
-description: Lead Tracking API
+description: Marketo Munchkin JavaScriptを埋め込み、訪問とクリック数を追跡し、既知のリードと匿名リードを管理し、クロスドメイン cookie を使用し、スマートキャンペーンのオプトアウトを行う方法について説明します。
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
-workflow-type: ht
-source-wordcount: '766'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '786'
+ht-degree: 97%
 
 ---
 

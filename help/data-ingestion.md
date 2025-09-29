@@ -1,10 +1,10 @@
 ---
 title: データ取り込み
-description: Data Ingestion API の概要
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+description: 人物やカスタムオブジェクトの大量の低遅延アップロード用のMarketo データ取り込み API、可観測性による非同期ステータス、OAuth ヘッダー認証、プライベートベータ版。
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '940'
-ht-degree: 98%
+source-wordcount: '960'
+ht-degree: 96%
 
 ---
 

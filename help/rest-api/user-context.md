@@ -1,12 +1,12 @@
 ---
 title: ユーザコンテキスト
 feature: REST API
-description: ユーザコンテキストの概要と API の説明
+description: Marketo RTP User Context API を有効にして使用することで、カスタム変数を設定し、複数の訪問をまたいでユーザーデータを読み取り、閲覧済みおよびクリック済みキャンペーンを追跡できる方法を説明します。
 exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '266'
-ht-degree: 100%
+source-wordcount: '286'
+ht-degree: 90%
 
 ---
 

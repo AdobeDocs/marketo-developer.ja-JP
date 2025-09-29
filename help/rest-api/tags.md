@@ -1,12 +1,12 @@
 ---
 title: タグ
 feature: REST API, Tags
-description: Marketo でプログラムのタグを管理します。
+description: タグのタイプをクエリし、名前で許容値を取得し、REST Asset API を使用してMarketoのプログラムタグを更新または削除し、リクエスト例を示します。
 exl-id: 64731d1a-a749-4d6f-b336-16c733d002f0
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '205'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '221'
+ht-degree: 90%
 
 ---
 

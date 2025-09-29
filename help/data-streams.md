@@ -1,11 +1,11 @@
 ---
 title: データストリーム
-description: データストリームの概要
+description: Marketo Engage データストリームの概要ほぼリアルタイムのリードアクティビティおよびユーザー監査イベントを有効にし、パフォーマンス層のお客様の API 制限を緩和
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1601'
-ht-degree: 98%
+source-wordcount: '1620'
+ht-degree: 96%
 
 ---
 

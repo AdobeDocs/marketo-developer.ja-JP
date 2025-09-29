@@ -1,12 +1,12 @@
 ---
 title: パターン一致
-description: パターン一致
+description: RTP rtp.checkPattern ユーティリティを使用して、パーセント ワイルドカードを使用した文字列パターンのテスト、同期の制限事項、使用例、URL の例、および必要な RTP タグのセットアップを参照してください。
 feature: Javascript
 exl-id: 4ebd13e3-375b-449b-850f-3b18f570ca75
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 94%
+source-wordcount: '155'
+ht-degree: 80%
 
 ---
 

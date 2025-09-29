@@ -1,12 +1,12 @@
 ---
 title: 重点顧客リスト
 feature: REST API
-description: 重点顧客リストを設定します。
+description: REST API を使用してMarketoの名前付きアカウントリストを管理する方法について説明します。これには、クエリ、作成、更新、削除を行う権限、フィールド、フィルタリング、エンドポイントが含まれます。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '696'
-ht-degree: 96%
+source-wordcount: '716'
+ht-degree: 92%
 
 ---
 

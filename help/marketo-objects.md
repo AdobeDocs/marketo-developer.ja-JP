@@ -1,10 +1,11 @@
 ---
 title: Marketo オブジェクト
 feature: Email Programs
-description: Velocity スクリプティングでのMarketo オブジェクトの使用の概要
-source-git-commit: 3ccb27a0d184e0c1314979d404022bc4e0794f7b
+description: リード、商談、カスタムオブジェクト、フィールドの読み込み、上位 10 件のリストアクセス、Marketoの関係、$TriggerObject とSFDC Velocity の使用に関するガイドです。
+exl-id: 88c63d72-7aa5-4550-9e1a-887a479872e1
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '530'
 ht-degree: 1%
 
 ---

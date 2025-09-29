@@ -1,12 +1,12 @@
 ---
 title: カスタムオブジェクト
 feature: REST API, Custom Objects
-description: カスタム Marketo オブジェクトを作成および操作します。
+description: エンドポイント、メタデータ、関係、フィールド、クエリのリストと記述など、REST API を介してMarketo カスタムオブジェクトを作成および管理する方法について説明します。
 exl-id: 88e8829b-f8f1-46d7-a753-5aa6e20e2c40
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '2909'
-ht-degree: 99%
+source-wordcount: '2925'
+ht-degree: 98%
 
 ---
 
@@ -890,7 +890,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 1 対多のカスタムオブジェクト構造の場合は、カスタムオブジェクトのリンクフィールドを使用して、標準オブジェクト（リードまたは会社）に接続します。[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)のMarketo 製品ドキュメントの自動車所有者の例を使用して、リードに接続する自動車関連情報を含むカスタムオブジェクトを作成します。
 
 1. **Car** オブジェクトを作成します
-1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead**&#x200B;***/Lead ID** にリンクします
+1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead*****/Lead ID** にリンクします
 1. **Car** オブジェクトを承認します
 
 最初に、自動車固有の情報を含めるカスタムオブジェクトタイプを作成します。
@@ -994,7 +994,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. **コース**&#x200B;にフィールドを追加します。**コース ID** で重複排除します
 1. **コース**&#x200B;を承認します
 1. **登録**&#x200B;ブリッジオブジェクトを作成します
-1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース**&#x200B;**/コース ID** フィールドへのリンク、**リード**&#x200B;**/リード ID** へのリンクで重複削除します
+1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース****/コース ID** フィールドへのリンク、**リード****/リード ID** へのリンクで重複削除します
 1. **登録**&#x200B;を承認します
 
 最初に、コース固有の情報を含めるエッジオブジェクトタイプを作成します。

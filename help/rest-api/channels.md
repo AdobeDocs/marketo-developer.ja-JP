@@ -1,12 +1,12 @@
 ---
 title: チャネル
 feature: REST API
-description: Marketo API を使用したチャネルデータの設定。
+description: Asset REST API を使用してMarketo チャネルをクエリする方法、ページネーションを使用して参照する方法または名前で取得する方法、進捗ステータスを表示する方法およびプログラムタイプルールを理解する方法について説明します。
 exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '125'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '144'
+ht-degree: 82%
 
 ---
 

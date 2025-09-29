@@ -1,12 +1,12 @@
 ---
 title: deleteMObjects
 feature: SOAP
-description: deleteMObjects SOAP 呼び出し
+description: 商談および OpportunityPersonRole を削除するMarketo SOAP deleteMObjects、リクエストおよび応答 XML、コード例、返す DELETED UNCHANGED 失敗。
 exl-id: 31511584-5366-4af1-975b-94417680c4d9
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '58'
-ht-degree: 100%
+source-wordcount: '74'
+ht-degree: 74%
 
 ---
 

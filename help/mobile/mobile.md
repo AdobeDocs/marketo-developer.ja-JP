@@ -1,12 +1,12 @@
 ---
 title: 携帯電話
 feature: Mobile Marketing
-description: Marketo Mobile の使用
+description: Marketo Mobile Engagement でモバイル SDKとモバイルマーケティングを使用して、プッシュおよびアプリ内メッセージを送信し、オーディエンスをターゲットに設定し、分析をトラッキングする方法について説明します。
 exl-id: d5fa5640-01f5-49a1-944a-9f81a1f83617
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '129'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '149'
+ht-degree: 84%
 
 ---
 

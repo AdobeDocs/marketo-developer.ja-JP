@@ -1,12 +1,12 @@
 ---
 title: ランディングページのリダイレクトルール
 feature: REST API, Landing Pages
-description: API を通じてランディングページのリダイレクトルールを設定します。
+description: Marketo Asset REST API を使用して、フィルター、ページネーション、ホスト名オプション、Marketo以外のターゲットを含むランディングページのリダイレクトルールを作成、クエリ、更新および削除します。
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '641'
-ht-degree: 100%
+source-wordcount: '655'
+ht-degree: 96%
 
 ---
 

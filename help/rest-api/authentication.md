@@ -1,12 +1,12 @@
 ---
 title: 認証
 feature: REST API
-description: API の使用に関して Marketo ユーザを認証します。
+description: 2 つのレッグを持つ OAuth 2.0 でMarketo REST API を認証し、アクセストークンを作成して使用し、Authorization ヘッダーに切り替え、有効期限を管理し、601 エラーと 602 エラーを処理します。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 36e768d562e6f69aeb70a83253dfcf41653f217a
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '618'
-ht-degree: 80%
+source-wordcount: '637'
+ht-degree: 77%
 
 ---
 

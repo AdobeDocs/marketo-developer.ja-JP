@@ -1,12 +1,12 @@
 ---
 title: トークン
 feature: REST API, Tokens
-description: Marketo でトークンを管理します。
+description: Asset REST API を使用したMarketo マイトークンの管理。 サポートされるデータタイプ、フォルダーまたはプログラムによる取得、フォームエンコードされた POST を使用した作成または更新、名前別の削除を参照してください。
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 100%
+source-wordcount: '320'
+ht-degree: 91%
 
 ---
 

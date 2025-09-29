@@ -1,11 +1,12 @@
 ---
 title: メールスクリプティングの例
 feature: Email Programs
-description: Marketoのメールスクリプティングの例
-source-git-commit: 3ccb27a0d184e0c1314979d404022bc4e0794f7b
+description: カスタムオブジェクトによるループ処理、日付の解析や書式設定、Marketoのエスケープ、URL ID の追加など、Velocity を使用したHTMLのメールスクリプトの例。
+exl-id: 7c801f1c-0ab3-49f0-8577-0c4dccc80d0b
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '52'
-ht-degree: 9%
+source-wordcount: '67'
+ht-degree: 7%
 
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: パートナーサンドボックス
-description: パートナーサンドボックスの概要
+description: プロビジョニング情報や、API 呼び出し、レコード、メール送信、カスタムオブジェクト、ユーザーの制限を含む、Marketo Engage パートナーサンドボックスの概要です。
 exl-id: a8f36cb5-d288-4b8b-b4bf-037faa3fe73f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '184'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '202'
+ht-degree: 89%
 
 ---
 

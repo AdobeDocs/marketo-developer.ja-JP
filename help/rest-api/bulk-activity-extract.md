@@ -1,12 +1,12 @@
 ---
 title: アクティビティの一括抽出
 feature: REST API
-description: Marketo からのアクティビティデータのバッチ処理。
+description: Marketo Bulk Activity Extract REST API :31 日間の日付範囲、ETL および CRM のアクティビティおよびプライマリ属性フィルターを使用して、大量のアクティビティデータを書き出します。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1332'
-ht-degree: 96%
+source-wordcount: '1351'
+ht-degree: 94%
 
 ---
 

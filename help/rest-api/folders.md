@@ -1,12 +1,12 @@
 ---
 title: フォルダー
 feature: REST API
-description: Marketo API を使用したフォルダーの操作。
+description: 作成、更新、削除、ID と名前によるクエリ、ルートでの一括参照、workspace、maxDepth、ページネーションについてカバーするフォルダー用のMarketo REST API ガイド。
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '1008'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '1025'
+ht-degree: 97%
 
 ---
 

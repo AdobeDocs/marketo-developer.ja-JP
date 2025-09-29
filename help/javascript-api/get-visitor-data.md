@@ -1,12 +1,12 @@
 ---
 title: 訪問者データを取得
-description: 訪問者データを取得
+description: パラメーター、コールバックの例、セグメント、ABM、場所のサンプル応答を含む RTP User Context API を使用して、リアルタイムの訪問者識別を取得します。
 feature: Javascript
 exl-id: 39a2446d-8a31-461e-bbe6-a7edf24b4d52
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '184'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '203'
+ht-degree: 89%
 
 ---
 

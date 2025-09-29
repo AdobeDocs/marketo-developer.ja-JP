@@ -1,12 +1,12 @@
 ---
 title: 商談
 feature: REST API
-description: ' Marketo API を使用して商談を設定します。'
+description: Marketo REST API でオポチュニティ、重複排除および検索可能なフィールド、制限、SFDCまたは Dynamics sync による読み取り専用動作を記述、クエリ、作成および更新できます。
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '786'
-ht-degree: 99%
+source-wordcount: '803'
+ht-degree: 96%
 
 ---
 

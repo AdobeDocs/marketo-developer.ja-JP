@@ -1,12 +1,12 @@
 ---
 title: getMObjects
 feature: SOAP
-description: getMObjects SOAP 呼び出し
+description: getMObjects を使用すると、ID、属性、関連付け、1 バッチあたり最大 100 個、streamPosition を使用したページ番号、および XML 例で、Marketo MObjects を取得できます。
 exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '226'
-ht-degree: 100%
+source-wordcount: '245'
+ht-degree: 91%
 
 ---
 

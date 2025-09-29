@@ -1,12 +1,12 @@
 ---
 title: getLeadActivity
 feature: SOAP
-description: getLeadActivity SOAP 呼び出し
+description: getLeadActivity SOAPを使用して、キー別のリードアクティビティ履歴の取得、アクティビティタイプのフィルタリング、バッチサイズの設定、XML 例を使用したストリームポジションでのページ番号の設定を行います。
 exl-id: f38dee95-235f-4dc2-8839-61d6008132a5
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '346'
-ht-degree: 100%
+source-wordcount: '366'
+ht-degree: 93%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: スマートリスト
 feature: REST API
-description: スマートリストを作成および編集します。
+description: Marketo REST API を使用して、ユーザーが作成したスマートリスト（ID、名前、キャンペーンおよびルールを使用したプログラム別のエンドポイントを含む）のクエリ、複製および削除を行う方法を説明します。
 exl-id: 4ba37e57-ee56-48c3-bb2b-b4ec8e907911
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '419'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '439'
+ht-degree: 94%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 100%
 
 Marketo は、スマートリストで操作を実行する一連の REST API を備えています。これらの API は、クエリ、削除、複製のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
-メモ：これらの API は、ユーザが作成したスマートリストに対してのみサポートされます。[組み込み／システムのスマートリスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)には使用できません。
+メモ：これらの API は、ユーザが作成したスマートリストに対してのみサポートされます。[ビルトイン／システムのスマートリスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)には使用できません。
 
 ## クエリ
 

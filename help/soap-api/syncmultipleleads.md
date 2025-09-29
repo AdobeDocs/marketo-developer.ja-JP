@@ -1,12 +1,12 @@
 ---
 title: syncMultipleLeads
 feature: SOAP
-description: syncMultipleLeads SOAP 呼び出し
+description: syncMultipleLeads を使用して、SOAP、キーと重複排除ルール、バッチサイズ制限、サンプル XML、PHP、Java コードを介して複数のMarketo リードをアップサートする方法を説明します。
 exl-id: 91980b82-dff9-48a7-b03e-20dce9d0d046
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '221'
-ht-degree: 100%
+source-wordcount: '244'
+ht-degree: 89%
 
 ---
 

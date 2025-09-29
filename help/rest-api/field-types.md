@@ -1,12 +1,12 @@
 ---
 title: フィールドのタイプ
 feature: REST API
-description: Marketo フィールドタイプのリスト
+description: ISO 8601 日時、テキスト領域制限、通貨、ブール値など、Marketoのフィールドの種類と定義、例、形式の包括的な一覧です。
 exl-id: a0ba9e02-ed42-4be3-9cdd-a97fee9a726e
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '307'
-ht-degree: 86%
+source-wordcount: '322'
+ht-degree: 80%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: プログラムメンバーの一括抽出
 feature: REST API
-description: メンバーデータ抽出のバッチ処理。
+description: Marketo Bulk Program Member Extract REST API を使用すると、権限とフィールドメタデータを含む、ETL、データウェアハウス、アーカイブ用の大きなメンバーレコードを書き出すことができます。
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1142'
-ht-degree: 100%
+source-wordcount: '1160'
+ht-degree: 97%
 
 ---
 

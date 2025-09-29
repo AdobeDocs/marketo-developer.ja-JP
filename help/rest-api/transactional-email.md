@@ -1,12 +1,12 @@
 ---
 title: トランザクションメール
 feature: REST API
-description: リクエストキャンペーンのトランザクションメールについて扱います。
+description: トランザクションメール用にMarketoを設定し、REST API リクエストキャンペーンを介してトリガーする方法を、設定手順と Java コード例と共に説明します。
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '971'
-ht-degree: 100%
+source-wordcount: '988'
+ht-degree: 97%
 
 ---
 

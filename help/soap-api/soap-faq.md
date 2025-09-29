@@ -1,12 +1,12 @@
 ---
 title: SOAP に関するよくある質問
 feature: SOAP
-description: SOAP に関するよくある質問
+description: Marketo SOAP API を使用して、getMObjects でプログラムをリストする方法、getMultipleLeads を最適化する方法、オポチュニティを作成する方法、パーソナライズされたメールを送信またはスケジュールする方法について説明します。
 exl-id: a2d8f144-cd5f-41bc-8231-29c42af935b8
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '333'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '353'
+ht-degree: 93%
 
 ---
 

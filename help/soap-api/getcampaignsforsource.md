@@ -1,12 +1,12 @@
 ---
 title: getCampaignsForSource
 feature: SOAP
-description: getCampaignsForSource SOAP 呼び出し
+description: Marketo SOAP getCampaignsForSource は、requestCampaign のソース別に適格なスマートキャンペーンを返します。キャンペーンはリクエストされたトリガー、XML および PHP の例が必要です。
 exl-id: bd8803ef-f462-4346-a381-73f40dc5d9ee
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '131'
-ht-degree: 100%
+source-wordcount: '148'
+ht-degree: 86%
 
 ---
 

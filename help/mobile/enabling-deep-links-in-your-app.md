@@ -1,12 +1,12 @@
 ---
 title: ディープリンクの有効化
 feature: Mobile Marketing
-description: ディープリンクを有効にする手順
+description: カスタム URI スキームを使用し、iOS、Android、PhoneGap のガイダンスとベストプラクティスに基づいて、Marketo プッシュメッセージに対してアプリでディープリンクを有効にする方法を説明します。
 exl-id: c3647416-d81d-4f15-b660-bcb3e54cb9bc
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '376'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '397'
+ht-degree: 93%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: カスタムアクション
 feature: Mobile Marketing
-description: カスタムアクションの概要
+description: iOSおよびAndroid用のMarketo Mobile SDKを使用してカスタムアクションを送信およびレポートする方法、オフラインでキューに入れる方法、スマートキャンペーンをトリガーで配信する方法、20 文字を満たす方法について説明します。
 exl-id: 8c2698ce-4e39-4b2b-9d36-0864c55be17a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '291'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '313'
+ht-degree: 92%
 
 ---
 

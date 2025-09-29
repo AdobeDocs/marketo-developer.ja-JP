@@ -1,12 +1,12 @@
 ---
 title: '[!DNL Adobe Launch] 拡張機能のインストール'
 feature: Mobile Marketing
-description: '[!DNL Adobe Launch] 拡張機能のインストールの概要'
+description: モバイル用Adobe Launch Marketo拡張機能をインストールします。 プッシュとアプリ内では、iOSとAndroidの設定、テストデバイス、権限、FCM の手順に従います。
 exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '725'
-ht-degree: 99%
+source-wordcount: '745'
+ht-degree: 96%
 
 ---
 
@@ -159,7 +159,7 @@ Android 向け MME Software Development Kit（SDK）は、Android アプリデ�
 
 1. 最新の Marketo Android SDK を Android アプリに統合します。手順は [GitHub](https://github.com/Marketo/android-sdk) で確認できます。
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
       1. が含まれる [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「**[!UICONTROL Android アプリに Firebase を追加]**」を選択します。

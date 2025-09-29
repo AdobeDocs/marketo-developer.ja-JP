@@ -1,12 +1,12 @@
 ---
 title: ベース URL
 feature: REST API
-description: Marketo の URL の設定方法について説明します。
+description: Marketo REST API リクエストの作成、ベース URL パスリソースおよびパラメーターの理解、一意のベース URL の検索について説明します。
 exl-id: 6c3f122c-3ace-4ed3-bed0-a6b89cedc99a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '142'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '156'
+ht-degree: 87%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: getCustomObjects
 feature: SOAP, Custom Objects
-description: getCustomObjects SOAP 呼び出し
+description: getCustomObjects を使用して、キー、includeAttributes、最大 100 のバッチサイズ、streamPosition ページネーションを備えたSOAPを介してMarketo カスタムオブジェクトを取得する方法を説明します。
 exl-id: 32ff208a-f824-4420-a26f-1fd969a2bc4c
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '156'
-ht-degree: 100%
+source-wordcount: '176'
+ht-degree: 86%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 100%
 
 0 または 1 つのカスタムオブジェクトキーで構成される条件の組み合わせを使用して、1 つ以上のカスタムオブジェクトを取得します。
 
-一致するカスタム オブジェクトのリスト（すべて単一タイプ、バッチで最大 100 個）と、後続のバッチを取得するための[ストリーム位置](stream-position.md)トークンを返します。
+一致するカスタムオブジェクトのリスト（すべて単一タイプ、バッチで最大 100 個）と、後続のバッチを取得するための[ストリーム位置](stream-position.md)トークンを返します。
 
 ## リクエスト
 

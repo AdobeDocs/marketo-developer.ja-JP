@@ -1,12 +1,12 @@
 ---
 title: 動的コンテンツ
 feature: REST API, Dynamic Content
-description: Marketo API を使用して動的コンテンツを設定します。
+description: セグメント化を使用してメール、ランディングページ、エンドポイントと例を含むスニペットをパーソナライズし、REST API を介してセクションレベルのMarketo動的コンテンツを設定します
 exl-id: 8ab97624-5fb5-4a41-911f-ec8616dd43c9
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '426'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '441'
+ht-degree: 95%
 
 ---
 

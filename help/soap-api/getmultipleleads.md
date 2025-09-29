@@ -1,12 +1,12 @@
 ---
 title: getMultipleLeads
 feature: SOAP
-description: getMultipleLeads SOAP 呼び出し
+description: Marketo SOAP getMultipleLeads を使用して、キー、静的リストまたは更新日、ストリーム位置を含むページ番号、フィルターフィールド別に最大 1,000 件のリードを取得する方法を説明します。
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '383'
-ht-degree: 100%
+source-wordcount: '407'
+ht-degree: 93%
 
 ---
 

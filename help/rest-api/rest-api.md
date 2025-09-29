@@ -1,12 +1,12 @@
 ---
 title: REST API
 feature: REST API
-description: REST API の概要
+description: Marketo REST API の使用方法、API ユーザーと LaunchPoint の設定方法、割り当て量と制限の表示方法、Authorization ヘッダーによる認証方法およびリードの取得方法について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
-workflow-type: ht
-source-wordcount: '808'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '828'
+ht-degree: 95%
 
 ---
 
@@ -20,7 +20,7 @@ Marketo は、システムの多くの機能をリモートで実行できる RE
 >SOAP API は非推奨（廃止予定）となり、2025年10月31日（PT）以降は使用できなくなります。すべての新規開発は、Marketo [REST API](./rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](../soap-api/migration.md)を参照してください。
 >
 
-- **毎日の割り当て量：**&#x200B;サブスクリプションには 1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日午前 12:00 CST にリセットされます）。アカウントマネージャーを通じて、毎日の割り当て量を増やすことができます。
+- **毎日の割り当て量：** 購読には、1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日 12:00AM CST にリセットされます）。 アカウントマネージャーを通じて、毎日の割り当て量を増やすことができます。
 - **レートの制限：**&#x200B;インスタンスあたりの API アクセスは、20 秒あたり 100 回の呼び出しに制限されます。
 - **同時実行の制限：**&#x200B;同時 API 呼び出しは最大 10 回までです。
 

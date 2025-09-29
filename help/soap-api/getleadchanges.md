@@ -1,12 +1,12 @@
 ---
 title: getLeadChanges
 feature: SOAP
-description: getLeadChanges SOAP 呼び出し
+description: Marketo SOAP getLeadChanges API を使用して、フィルター、leadSelector、ページネーション、XML 例を含んだリード変更アクティビティを取得する方法を説明します。
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 100%
+source-wordcount: '419'
+ht-degree: 94%
 
 ---
 

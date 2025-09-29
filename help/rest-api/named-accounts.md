@@ -1,12 +1,12 @@
 ---
 title: 重点顧客
 feature: REST API
-description: API を通じて重点顧客を操作します。
+description: ABM の指定アカウントに関するMarketo REST ガイド（説明、クエリ、更新例の作成、検索可能なフィールド、重複排除、リードリンクなし）。
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '679'
-ht-degree: 99%
+source-wordcount: '697'
+ht-degree: 95%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: 例
-description: フォームアクションを設定するための Marketo コードの例
+description: Marketo Forms 2.0 JavaScriptの例では、送信、設定および読み取りフィールド、カスタムエラーを使用した検証、lightbox、外部トリガーの非表示またはリダイレクトが行われます。
 feature: Javascript
 exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '211'
-ht-degree: 100%
+source-wordcount: '226'
+ht-degree: 89%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: 会社
 feature: REST API
-description: Marketo API を使用して会社データを設定します。
+description: Marketo会社 REST API を使用して、会社レコードの記述、クエリ、同期、フィールドの管理および externalCompanyId による重複排除を行い、CRM 同期を読み取り専用でメモします。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '564'
-ht-degree: 99%
+source-wordcount: '582'
+ht-degree: 95%
 
 ---
 

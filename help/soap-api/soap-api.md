@@ -1,12 +1,12 @@
 ---
 title: SOAP API
 feature: SOAP
-description: Marketo SOAP の概要
+description: Marketo SOAP API は 2025 年 10 月 31 日（PT）以降に非推奨（廃止予定）となります。 REST への移行、WSDL の取得、割り当て量、レート制限、認証設定について説明します。
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '244'
-ht-degree: 93%
+source-wordcount: '265'
+ht-degree: 84%
 
 ---
 

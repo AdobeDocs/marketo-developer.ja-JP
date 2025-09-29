@@ -1,12 +1,12 @@
 ---
 title: 標準フィールド
 feature: REST API, Field Management
-description: 標準の Marketo フィールドのテーブル。
+description: REST およびSOAPの名前、ラベルおよび説明と、Describe Lead API を使用して取得する方法が記載された、Marketo標準のリードフィールドの完全なリストを参照します。
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '1140'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '1161'
+ht-degree: 97%
 
 ---
 

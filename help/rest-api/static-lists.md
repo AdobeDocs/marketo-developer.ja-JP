@@ -1,12 +1,12 @@
 ---
 title: 静的リスト
 feature: REST API, Static Lists
-description: 静的リストに対して CRUD 操作を実行します。
+description: Marketo REST API を使用して、ID、名前、参照のエンドポイント、フォルダースコーピング、ページング、日付フィルターを含む、静的リストのクエリ、作成、更新、削除を行います。
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '741'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '760'
+ht-degree: 96%
 
 ---
 

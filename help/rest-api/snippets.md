@@ -1,12 +1,12 @@
 ---
 title: スニペット
 feature: REST API, Snippets
-description: Marketo API を通じたスニペットの管理。
+description: ID によるクエリとステータスによる参照に対応するスニペット用のMarketo Asset REST API。コンテンツの取得、HTML、テキスト、動的コンテンツの作成と更新を行います。
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '438'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '456'
+ht-degree: 94%
 
 ---
 

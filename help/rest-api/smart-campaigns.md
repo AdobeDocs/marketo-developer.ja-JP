@@ -1,12 +1,12 @@
 ---
 title: スマートキャンペーン
 feature: REST API, Smart Campaigns
-description: スマートキャンペーンの概要
+description: ID または名前でのクエリ、フィルターの参照、クローン削除の作成、トリガーのスケジュールやリクエストなど、スマートキャンペーンにMarketo REST API を使用する方法について説明します
 exl-id: 540bdf59-b102-4081-a3d7-225494a19fdd
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '989'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '1012'
+ht-degree: 97%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: ランディングページ
 feature: REST API, Landing Pages
-description: Marketo のランディングページのクエリを実行します。
+description: Marketo REST API を使用して、メタデータとコンテンツのクエリ、ランディングページの作成、更新、承認、削除、クローンの作成（ガイド付きタイプと自由形式タイプを含む）を行います。
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1000'
-ht-degree: 98%
+source-wordcount: '1018'
+ht-degree: 96%
 
 ---
 

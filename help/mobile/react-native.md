@@ -1,12 +1,12 @@
 ---
 title: React Native
 feature: Mobile Marketing
-description: Marketo 用 React Native のインストール
+description: Android Gradle とiOS CocoaPods のステップ、ネイティブモジュールブリッジング、プッシュ、リードの関連付けを使用して、React Native アプリにMarketo SDKをインストールして設定します。
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '810'
-ht-degree: 98%
+source-wordcount: '830'
+ht-degree: 95%
 
 ---
 

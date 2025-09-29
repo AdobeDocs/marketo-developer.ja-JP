@@ -1,12 +1,12 @@
 ---
 title: syncCustomObjects
 feature: SOAP
-description: syncCustomObjects SOAP 呼び出し
+description: Marketo syncCustomObjects SOAPを使用すると、1 回の呼び出しで最大 100 個のカスタムオブジェクトを挿入、更新、アップサートでき、レコードごとのステータス結果や XML および PHP の例も含まれます。
 exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '226'
-ht-degree: 100%
+source-wordcount: '248'
+ht-degree: 89%
 
 ---
 

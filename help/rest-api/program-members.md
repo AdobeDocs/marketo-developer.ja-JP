@@ -1,12 +1,12 @@
 ---
 title: プログラムメンバー
 feature: REST API
-description: プログラムメンバーを作成および管理します。
+description: Marketo REST API を使用して、プログラムメンバーの読み取り、作成、更新、削除、標準フィールドとカスタムフィールドの管理、検索可能なフィールドを使用したクエリを行います。
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1708'
-ht-degree: 98%
+source-wordcount: '1726'
+ht-degree: 97%
 
 ---
 

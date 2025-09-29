@@ -1,11 +1,11 @@
 ---
 title: ホーム
-description: Marketo Engage API ホームページ
+description: Marketo Engage API をマスターし、はじめに、REST、Webhook、クライアントライブラリ、メールスクリプティング、リードトラッキング、モバイルおよび web パーソナライゼーションのドキュメントを含めます。
 exl-id: a249945b-12f3-4b41-badc-ee7a72d5e7eb
-source-git-commit: 10c44753804db9e0556e5b644d12f457b1da2557
-workflow-type: ht
-source-wordcount: '114'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '131'
+ht-degree: 83%
 
 ---
 

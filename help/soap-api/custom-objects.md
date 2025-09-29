@@ -1,12 +1,12 @@
 ---
 title: カスタムオブジェクト
 feature: SOAP
-description: カスタムオブジェクトの作成。
+description: Marketo カスタムオブジェクトを 1 つのリードに多数のレコードをリンクする方法と、構造、制限、get、sync、delete およびスマートリストとメール使用のためのSOAP API 呼び出しについて説明します。
 exl-id: 29d65841-4b44-4d94-b14e-c583d433d015
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '231'
-ht-degree: 100%
+source-wordcount: '256'
+ht-degree: 89%
 
 ---
 

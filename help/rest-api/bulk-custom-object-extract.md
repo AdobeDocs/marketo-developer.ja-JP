@@ -1,12 +1,12 @@
 ---
 title: カスタムオブジェクトの一括抽出
 feature: REST API, Custom Objects
-description: カスタム Marketo オブジェクトのバッチ処理。
+description: Marketo Bulk Custom Object Extract REST API のガイド :updatedAt および list フィルター、選択されたフィールドなどを使用してリードにリンクされたカスタムオブジェクトを書き出す
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1298'
-ht-degree: 100%
+source-wordcount: '1315'
+ht-degree: 98%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 100%
 
 REST API のカスタムオブジェクトの一括抽出のセットには、Marketo から大量のカスタムオブジェクトレコードを取得するためのプログラムインターフェイスが用意されています。これは、ETL、データウェアハウス、アーカイブの目的で、Marketo と 1 つ以上の外部システム間で継続的にデータを交換する必要があるユースケースに推奨されるインターフェイスです。
 
-この API では、リードに直接リンクされている第 1 レベルの Marketo カスタムオブジェクトレコードの書き出しをサポートしています。カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。リスト内の各リードについて、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが、書き出しファイルに行として書き込まれます。カスタムオブジェクトデータは、Marketo UI のリード詳細ページの「[カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)」タブに表示されます。
+この API では、リードに直接リンクされている第 1 レベルの Marketo カスタムオブジェクトレコードの書き出しをサポートしています。カスタムオブジェクトの名前と、オブジェクトのリンク先となるリードのリストを渡します。リスト内の各リードについて、指定したカスタムオブジェクト名に一致するリンクされたカスタムオブジェクトレコードが、書き出しファイルに行として書き込まれます。カスタムオブジェクトデータは、Marketo UI のリード詳細ページの「[カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)」タブに表示されます。
 
 ## 権限
 

@@ -1,12 +1,12 @@
 ---
 title: ストリーム位置
 feature: SOAP
-description: ストリーム位置の概要
+description: SOAPでの時系列データのページ番号付けのストリームの位置、単純で複雑な形式、getLeadChanges や getLeadActivity での使用について説明します
 exl-id: c3a3fc1e-086b-4822-b2c7-2a7959db557c
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '138'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '156'
+ht-degree: 86%
 
 ---
 

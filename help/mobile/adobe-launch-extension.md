@@ -1,12 +1,12 @@
 ---
 title: ' [!DNL Adobe Launch] 用 Marketo Mobile 拡張機能'
 feature: Mobile Marketing
-description: ' [!DNL Adobe Launch]  用 Marketo Mobile 拡張機能の概要'
+description: プッシュ通知やアプリ内メッセージの設定など、iOSとAndroidのAdobe Launch にMarketo モバイルSDK拡張機能をインストールして設定します。
 exl-id: 2f8691ff-0442-45a5-aeba-c91c3af5c711
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '269'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '287'
+ht-degree: 91%
 
 ---
 

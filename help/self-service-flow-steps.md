@@ -1,11 +1,11 @@
 ---
 title: セルフサービスフローステップ
-description: セルフサービスフローステップの概要
+description: セルフサービスフローステップを使用すると、インテグレーターは、web API をMarketo フローステップとしてデプロイし、リードデータを処理したり、サービスを呼び出したり、リードおよびアクティビティのデータを書き戻したりできます
 exl-id: f4353692-9e6c-431c-b8b7-3ae96040cf3a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '80'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '101'
+ht-degree: 75%
 
 ---
 

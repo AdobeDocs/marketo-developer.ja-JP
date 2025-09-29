@@ -1,12 +1,12 @@
 ---
 title: 応答マッピング
 feature: Webhooks
-description: Marketo の応答マッピング
+description: Marketo Webhook では、JSON および XML の応答マッピング、SOAP API 名、ドットおよび配列表記、タイプの互換性を使用して属性をリードフィールドにマッピングします。
 exl-id: 95c6e33e-487c-464b-b920-3c67e248d84e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '461'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '481'
+ht-degree: 95%
 
 ---
 

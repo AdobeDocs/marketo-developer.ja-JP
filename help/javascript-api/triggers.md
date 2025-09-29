@@ -1,12 +1,12 @@
 ---
 title: トリガー
-description: トリガー
+description: Web Personalizationで RTP トリガーを使用して、構文、パラメーター、場所の例を含む userContextReady などの関数を rtp ステートで実行します。
 feature: Javascript
 exl-id: 588836fa-1e4d-41f3-aec5-5cd17eb16071
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '80'
-ht-degree: 100%
+source-wordcount: '100'
+ht-degree: 79%
 
 ---
 

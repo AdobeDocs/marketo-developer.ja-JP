@@ -1,12 +1,12 @@
 ---
 title: 一括抽出
 feature: REST API
-description: Marketo データを抽出するバッチ操作。
+description: Marketo Bulk Extract REST API を使用して、リード、アクティビティ、プログラムメンバー、カスタムオブジェクト（OAuth、ジョブキュー、1 日あたり 500 MB の制限あり）を書き出す方法を説明します。
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1682'
-ht-degree: 99%
+source-wordcount: '1702'
+ht-degree: 97%
 
 ---
 

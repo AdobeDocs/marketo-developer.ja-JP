@@ -1,12 +1,12 @@
 ---
 title: ユーザプロファイル
 feature: Mobile Marketing, Users and Roles
-description: Marketo Mobile でのユーザプロファイルの使用
+description: Objective C Swift および Java、標準フィールド、カスタムフィールド、associateLead を使用して、iOSとAndroidのMarketo Mobile SDKでユーザープロファイルを作成および更新する方法を説明します
 exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '83'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '103'
+ht-degree: 74%
 
 ---
 

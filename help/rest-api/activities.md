@@ -1,12 +1,12 @@
 ---
 title: アクティビティ
 feature: REST API
-description: Marketo Engage アクティビティを管理するための API。
+description: Marketo Engage Activities REST API を使用して、アクティビティタイプのリスト、ページングトークンを使用したリードアクティビティの取得、カスタムおよびデータ値の変更の処理を行います。
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '2029'
-ht-degree: 99%
+source-wordcount: '2046'
+ht-degree: 98%
 
 ---
 

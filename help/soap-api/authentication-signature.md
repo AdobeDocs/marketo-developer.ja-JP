@@ -1,12 +1,12 @@
 ---
 title: 認証署名
 feature: SOAP
-description: 認証署名を使用した API セキュリティ
+description: HTTPS 経由の HMAC-SHA1 を使用したMarketo SOAP API 認証、必須ヘッダーフィールド、タイムスタンプ形式、リクエストとエラーのサンプルレスポンスに関するガイド
 exl-id: d6bed8ee-77fa-440c-8f35-a71cf77f45d3
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '209'
-ht-degree: 100%
+source-wordcount: '225'
+ht-degree: 90%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: プッシュ通知
 feature: Mobile Marketing
-description: Marketo Mobile のプッシュ通知の有効化
+description: APN 証明書と Xcode の設定からMarketo SDKの統合、トークンの登録、処理まで、MarketoでiOS プッシュ通知を有効にするためのガイドです。
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1329'
-ht-degree: 98%
+source-wordcount: '1344'
+ht-degree: 96%
 
 ---
 

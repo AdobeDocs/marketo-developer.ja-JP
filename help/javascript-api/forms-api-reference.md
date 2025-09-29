@@ -1,12 +1,12 @@
 ---
 title: Forms API リファレンス
-description: Forms API リファレンス
+description: Marketo Forms 2.0 API の包括的なリファレンスで、フォームの読み込みとレンダリングのための MktoForms2 およびフォームメソッド、パラメーター、コールバック、戻り値の詳細を説明します。
 feature: Forms, Javascript
 exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1327'
-ht-degree: 100%
+source-wordcount: '1345'
+ht-degree: 98%
 
 ---
 

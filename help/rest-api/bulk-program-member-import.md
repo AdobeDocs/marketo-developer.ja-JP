@@ -1,12 +1,12 @@
 ---
 title: プログラムメンバーの一括読み込み
 feature: REST API
-description: メンバーデータのバッチ読み込み。
+description: 10MB 未満の CSV TSV または SSV ファイル、キューの制限、必要なパラメーター、ポーリングジョブステータスを使用して、Marketo REST API を介してプログラムメンバーを一括で読み込む方法について説明します。
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '837'
-ht-degree: 97%
+source-wordcount: '860'
+ht-degree: 94%
 
 ---
 

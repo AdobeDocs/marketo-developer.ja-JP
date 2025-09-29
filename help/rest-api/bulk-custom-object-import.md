@@ -1,12 +1,12 @@
 ---
 title: カスタムオブジェクトの一括読み込み
 feature: Custom Objects
-description: カスタムオブジェクトのバッチ読み込み。
+description: CSV、TSV、SSV の各ファイルを使用し、REST 経由でMarketoのカスタムオブジェクトを一括読み込みする方法について説明します。
 exl-id: e795476c-14bc-4e8c-b611-1f0941a65825
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
-workflow-type: ht
-source-wordcount: '855'
-ht-degree: 100%
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+workflow-type: tm+mt
+source-wordcount: '866'
+ht-degree: 98%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: メール
 feature: REST API
-description: メールアセットを操作するための API。
+description: Marketo Asset REST API を使用して、ID、名前、またはフォルダー参照でメールアセットをクエリおよび管理する方法を、予測コンテンツおよび A/B テストの制限に関するメモと共に説明します。
 exl-id: 6875730d-c74a-42cf-a3d2-dad7a3ac535d
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1946'
-ht-degree: 100%
+source-wordcount: '1971'
+ht-degree: 98%
 
 ---
 

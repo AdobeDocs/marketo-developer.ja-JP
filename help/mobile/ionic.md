@@ -1,12 +1,12 @@
 ---
 title: '[!DNL Ionic]'
 feature: Mobile Marketing
-description: モバイルデバイス用 Marketo を使用した  [!DNL Ionic]  の使用
+description: Marketo Cordova プラグインと Ionic の統合、プッシュ通知の有効化、SDKの初期化、セッションのトラッキング、リードの関連付けに関するステップバイステップガイド。
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '606'
-ht-degree: 100%
+source-wordcount: '620'
+ht-degree: 96%
 
 ---
 
