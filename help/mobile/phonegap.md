@@ -66,7 +66,7 @@ repositories{
 1. Firebase Cloud Messaging サポート
 
 1. Firebase コンソールで Firebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [&#128279;](https://console.firebase.google.com/)Firebase コンソール。
       1. が含まれる [Firebase コンソール](https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「Android アプリに Firebase を追加」を選択します。
