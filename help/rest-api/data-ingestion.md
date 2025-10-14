@@ -20,7 +20,7 @@ Data Ingestion API は、大量のユーザおよびユーザ関連データの�
 
 >[!NOTE]
 >
->データ取得 API にアクセスするには、[Marketo Engage パフォーマンス層 ](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) パッケージの使用権限が必要です。
+>データ取得 API にアクセスするには、[Marketo Engage パフォーマンス層 &#x200B;](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) パッケージの使用権限が必要です。
 
 ## 認証
 

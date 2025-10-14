@@ -55,7 +55,7 @@ REST API メソッドを呼び出す場合は、呼び出しを正常に実行�
 
 >[!IMPORTANT]
 >
->`access_token` クエリパラメーターを使用した認証のサポートは、2026 年 1 月 31 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、[Authorization ヘッダー ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token) を使用するように直ちに更新する必要があります。 新規開発では、`Authorization` ヘッダーのみを使用する必要があります。
+>`access_token` クエリパラメーターを使用した認証のサポートは、2026 年 1 月 31 日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、[Authorization ヘッダー &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token) を使用するように直ちに更新する必要があります。 新規開発では、`Authorization` ヘッダーのみを使用する必要があります。
 
 ### 認証ヘッダーへの切り替え
 

@@ -17,7 +17,7 @@ ht-degree: 96%
 ## 前提条件
 
 1. [Marketo Admin でアプリケーションを追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)（アプリケーションの秘密鍵と Munchkin ID を取得します）
-1. [ [!DNL Adobe Launch]  ポータルでプロパティを設定](https://experience.adobe.com/#/@amc/data-collection/home)
+1. [&#x200B; [!DNL Adobe Launch]  ポータルでプロパティを設定](https://experience.adobe.com/#/@amc/data-collection/home)
 1. [!DNL Adobe Launch] ポータルでプロパティのアプリケーション秘密鍵と Munchkin ID を設定
 1. [プッシュ通知を設定](push-notifications.md)（オプション）
 

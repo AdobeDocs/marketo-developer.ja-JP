@@ -285,7 +285,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1 を使用した FCM の設定（Googleは 2023 年 6 月 12 日に [ 非推奨の XMPP プロトコル ](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) を発表し、2024 年 6 月に削除されます）
+1. HTTPv1 を使用した FCM の設定（Googleは 2023 年 6 月 12 日に [&#x200B; 非推奨の XMPP プロトコル &#x200B;](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) を発表し、2024 年 6 月に削除されます）
 
 - Marketo 機能マネージャーで MME FCM HTTPv1 を有効にします ![](assets/feature-manager.png)
    - MLM のアプリのサービスアカウント JSON ファイルをアップロードします。
