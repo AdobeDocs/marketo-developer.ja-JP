@@ -6975,7 +6975,7 @@ $(function(){
 
 ## RTP を使用したローカル電話番号の動的な変更
 
-Personalizationがすべてです – 私たちは長い時間前にこれを考え出しました。 とはいえ、私が迅速な支援を必要とするたびに、関連する地域電話番号を web サイトで見つけるのが非常に難しいことは、まだ驚くべきことです。 [Marketo Real-Time Personalization](https://business.adobe.com/products/marketo/content-personalization.html) （RTP）が <https://business.adobe.com/products/marketo/adobe-marketo.html> にインストールされています。 [RTP Visitor API](/help/javascript-api/web-personalization.md) を活用して、web サイトの様々なセクションで web 訪問者に表示される電話番号を動的に変更できます。 すごい。信じられますか？ この魔法の使い方 まず、[&#x200B; こちら &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) に説明されているように、Web サイトに RTP をインストールする必要があります。 次に、以下の手順に従って、web サイトにJavaScript コードを実装します。
+Personalizationがすべてです – 私たちは長い時間前にこれを考え出しました。 とはいえ、私が迅速な支援を必要とするたびに、関連する地域電話番号を web サイトで見つけるのが非常に難しいことは、まだ驚くべきことです。 [Marketo Real-Time Personalization](https://business.adobe.com/jp/products/marketo/content-personalization.html) （RTP）が <https://business.adobe.com/jp/products/marketo/adobe-marketo.html> にインストールされています。 [RTP Visitor API](/help/javascript-api/web-personalization.md) を活用して、web サイトの様々なセクションで web 訪問者に表示される電話番号を動的に変更できます。 すごい。信じられますか？ この魔法の使い方 まず、[&#x200B; こちら &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) に説明されているように、Web サイトに RTP をインストールする必要があります。 次に、以下の手順に従って、web サイトにJavaScript コードを実装します。
 
 1. 国際電話番号を **defaultPhone** 設定に挿入します
 1. HTML要素 ID を **divIds** 設定に挿入します
@@ -9772,7 +9772,7 @@ Posted on _2021-10-04_ by _Kenny_
 
 ### 欠陥の解決
 
-* [User Management](/help/rest-api/user-management.md) API に関する問題を修正しました。 [Marketo](https://business.adobe.com/products/marketo/sales-insight.html) で使用するように設定されているセールスInsightユーザーに関連します。 これらのユーザーは [&#x200B; ユーザーを取得 &#x200B;](https://developer.adobe.com/marketo-apis/api/user/#operation/getUsersUsingGET) エンドポイントから返されるようになりました。また、これらのユーザーは [&#x200B; ユーザーを削除 &#x200B;](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) エンドポイントを使用して削除できるようになりました。 [LM-155864]
+* [User Management](/help/rest-api/user-management.md) API に関する問題を修正しました。 [Marketo](https://business.adobe.com/jp/products/marketo/sales-insight.html) で使用するように設定されているセールスInsightユーザーに関連します。 これらのユーザーは [&#x200B; ユーザーを取得 &#x200B;](https://developer.adobe.com/marketo-apis/api/user/#operation/getUsersUsingGET) エンドポイントから返されるようになりました。また、これらのユーザーは [&#x200B; ユーザーを削除 &#x200B;](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) エンドポイントを使用して削除できるようになりました。 [LM-155864]
 * [&#x200B; リッチテキストフィールド &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/addRichTextFieldUsingPOST) エンドポイントの追加に関する問題を修正しました。 メール、ランディングページ、スニペットまたはフォームに 65,000 文字を超えるリッチテキストフィールドを追加すると、「611、システムエラー」が返されました。 エラー「701、操作を完了できません。 &#39;content&#39;は最大長の 65,535 バイトを超えています。
 
 Posted on _2021-10-25_ by _David_
