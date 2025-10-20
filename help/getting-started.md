@@ -2,10 +2,10 @@
 title: はじめに
 description: Marketo Engage API とデータモデルの基本を学びます。これには、リード、アクティビティ、プログラム、タグ、リスト、REST ガイダンス、SOAP非推奨（廃止予定）通知が含まれます。
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 5f2dcb4864cdcd110ba9f199ef9c86dcee522335
 workflow-type: tm+mt
 source-wordcount: '1355'
-ht-degree: 98%
+ht-degree: 97%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 98%
 Marketo Engage は、マーケターが見込み客やお客様に対してパーソナライズされたマルチチャネルプログラムやキャンペーンを管理できるようにするマーケティングオートメーションプラットフォームです。Marketo Engage プラットフォームでは、統合ポイントを使用して拡張できます。コアエンティティとその関係を以下に示します。
 
 >[!NOTE]
->SOAP API は非推奨（廃止予定）となり、2025年10月31日（PT）以降は使用できなくなります。すべての新規開発は、Marketo [REST API](./rest-api/rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](./soap-api/migration.md)を参照してください。
+>SOAP API は非推奨（廃止予定）となっており、2026 年 1 月 31 日（PT）以降は利用できなくなります。 すべての新規開発は、Marketo [REST API](./rest-api/rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](./soap-api/migration.md)を参照してください。
 >
 
 Marketo Engage インスタンスでネイティブ SFDC接続または MS Dynamics CRM 接続が有効になっている場合、会社、商談、商談ロール、セールス担当者のオブジェクトは読み取り専用です

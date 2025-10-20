@@ -3,10 +3,10 @@ title: REST API
 feature: REST API
 description: Marketo REST API の使用方法、API ユーザーと LaunchPoint の設定方法、割り当て量と制限の表示方法、Authorization ヘッダーによる認証方法およびリードの取得方法について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 5f2dcb4864cdcd110ba9f199ef9c86dcee522335
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 95%
+source-wordcount: '844'
+ht-degree: 91%
 
 ---
 
@@ -17,7 +17,11 @@ Marketo は、システムの多くの機能をリモートで実行できる RE
 一般に、これらの API は、[リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi/)と[アセット](https://developer.adobe.com/marketo-apis/api/asset/)という 2 つの大きなカテゴリに分類されます。Lead Database API を使用すると、Marketo のユーザレコードや、商談や会社などの関連オブジェクトタイプを取得および操作できます。Asset API を使用すると、マーケティングの販促物やワークフロー関連のレコードとのインタラクションが可能になります。
 
 >[!NOTE]
->SOAP API は非推奨（廃止予定）となり、2025年10月31日（PT）以降は使用できなくなります。すべての新規開発は、Marketo [REST API](./rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](../soap-api/migration.md)を参照してください。
+>SOAP API は非推奨（廃止予定）となっており、2026 年 1 月 31 日（PT）以降は利用できなくなります。 すべての新規開発は、Marketo [REST API](./rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](../soap-api/migration.md)を参照してください。
+>
+
+>[!IMPORTANT]
+>API ゲートウェイ URL のダブルスラッシュの廃止については、この [ 国による投稿 ](https://nation.marketo.com/t5/product-blogs/rest-api-double-slash-deprecation/ba-p/358616) を参照してください。
 >
 
 - **毎日の割り当て量：** 購読には、1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日 12:00AM CST にリセットされます）。 アカウントマネージャーを通じて、毎日の割り当て量を増やすことができます。
