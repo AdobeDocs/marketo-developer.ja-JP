@@ -21,7 +21,7 @@ Marketo は、システムの多くの機能をリモートで実行できる RE
 >
 
 >[!IMPORTANT]
->API ゲートウェイ URL のダブルスラッシュの廃止については、この [ 国による投稿 ](https://nation.marketo.com/t5/product-blogs/rest-api-double-slash-deprecation/ba-p/358616) を参照してください。
+>API ゲートウェイ URL のダブルスラッシュの廃止については、この [&#x200B; 国による投稿 &#x200B;](https://nation.marketo.com/t5/product-blogs/rest-api-double-slash-deprecation/ba-p/358616) を参照してください。
 >
 
 - **毎日の割り当て量：** 購読には、1 日あたり 50,000 回の API 呼び出しが割り当てられます（毎日 12:00AM CST にリセットされます）。 アカウントマネージャーを通じて、毎日の割り当て量を増やすことができます。
