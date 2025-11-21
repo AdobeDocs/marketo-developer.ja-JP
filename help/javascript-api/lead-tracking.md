@@ -1,12 +1,12 @@
 ---
 title: リードトラッキング
-description: Marketo Munchkin JavaScriptを埋め込み、訪問とクリック数を追跡し、既知のリードと匿名リードを管理し、クロスドメイン cookie を使用し、スマートキャンペーンのオプトアウトを行う方法について説明します。
+description: Marketo Munchkin JavaScriptを埋め込み、訪問とクリック数を追跡し、既知のリードと匿名リードを管理し、クロスドメイン cookie を使用し、スマートキャンペーンをオプトアウトする方法について説明します。
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: c1b9763835b25584f0c085274766b68ddf5c7ae2
 workflow-type: tm+mt
-source-wordcount: '786'
-ht-degree: 97%
+source-wordcount: '787'
+ht-degree: 92%
 
 ---
 
@@ -70,13 +70,13 @@ Munchkin の動作は、Munchkin [設定](configuration.md)を使用して変更
 
 ## 既知および匿名のリード
 
-リードがドメイン上のページに初めて訪問すると、Marketo に新しい匿名リードレコードが作成されます。このレコードのプライマリキーは、ユーザのブラウザーで作成される Munchkin cookie（`_mkto_trk`）です。そのブラウザーでの後続のすべての web アクティビティは、この匿名レコードに対して記録されます。 Marketo の既知のレコードに関連付けるには、次のいずれかの条件を満たす必要があります。
+リードがドメイン上のページに初めて訪問すると、Marketo に新しい匿名リードレコードが作成されます。このレコードのプライマリキーは、ユーザのブラウザーで作成される Munchkin cookie（`_mkto_trk`）です。そのブラウザーでの後続のすべての web アクティビティは、この匿名レコードに対して記録されます。 Marketoの既知のレコードに関連付けるには、次のいずれかの操作を行う必要があります。
 
 - リードは、トラッキング対象の Marketo メールリンクからクエリ文字列に `mkt_tok` パラメーターを含む Munchkin トラッキング対象ページを訪問する必要があります。
 - リードは、Marketo フォームに入力する必要があります。
 - REST の[リードを関連付け](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST)呼び出しを送信する必要があります。
 
-これらの条件のいずれかが満たされると、cookie と関連するすべての web アクティビティが既知のリードに関連付けられます。
+これらの条件の 1 つが満たされると、cookie と、関連するすべての web アクティビティが既知のリードに関連付けられます。
 
 個々のブラウザーごとに新しい匿名の web アクティビティレコードが作成されるので、リードが新しいコンピューターやブラウザーを使用して初めてドメインを訪問する場合は、この関連付けを再度実行する必要があります。
 
@@ -90,11 +90,11 @@ Munchkin はドメインごとに個々の cookie を作成して追跡するの
 
 Munchkin cookie はキー `_mkto_trk` を使用し、次のパターンに従う値があります。
 
-`id:561\-HYG\-937&token:_mch\-marketo.com\-1374552656411\-90718`
+`id:561-HYG-937&token:_mch-marketo.com-1374552656411-90718`
 
-または
+Or
 
-`id:561\-HYG\-937&token:_mch\-marketo.com\-97bf4361ef4433921a6da262e8df45a`
+`id:561-HYG-937&token:_mch-marketo.com-97bf4361ef4433921a6da262e8df45a`
 
 Munchkin cookie は、第 2 レベルドメイン（`example.com`）ごとに固有です。cookie のデフォルトの有効期間は 2 年（730 日）です。
 
