@@ -3,10 +3,10 @@ title: 標準フィールド
 feature: REST API, Field Management
 description: REST およびSOAPの名前、ラベルおよび説明と、Describe Lead API を使用して取得する方法が記載された、Marketo標準のリードフィールドの完全なリストを参照します。
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: d674384b3ab979df2322ece3f02155259d05431a
 workflow-type: tm+mt
-source-wordcount: '1161'
-ht-degree: 97%
+source-wordcount: '727'
+ht-degree: 96%
 
 ---
 
@@ -47,33 +47,6 @@ REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/)エ
 | mainPhone | MainPhone | 代表電話 | リードの会社の代表電話番号 |
 | jigsawContactId | Marketo Jigsaw 取引先責任者 ID | Marketo Data.com ID | リードの Data.com ID（使用可能な場合） |
 | jigsawContactStatus | Marketo Jigsaw 取引先責任者ステータス | Marketo Data.com ステータス | リードの Data.com ステータス（使用可能な場合） |
-| facebookDisplayName | MarketoSocialFacebookDisplayName | Marketo ソーシャル Facebook の表示名 | リードの Facebook 表示名。ソーシャルログイン中にシステムが入力します |
-| facebookId | MarketoSocialFacebookId | Marketo ソーシャル Facebook ID | リードの Facebook ID。ソーシャルログイン中にシステムが入力します |
-| facebookPhotoURL | MarketoSocialFacebookPhotoURL | Marketo ソーシャル Facebook の画像 URL | リードの Facebook プロフィール写真の URL。 ソーシャルログイン中にシステムが入力します |
-| facebookProfileURL | MarketoSocialFacebookProfileURL | Marketo ソーシャル Facebook のプロファイル URL | リードの Facebook プロファイルの URL。ソーシャルログイン中にシステムが入力します |
-| facebookReach | MarketoSocialFacebookReach | Marketo ソーシャル Facebook のリーチ | リードの Facebook リーチ。ソーシャルログイン中にシステムが入力します |
-| facebookReferredEnrollments | MarketoSocialFacebookReferredEnrollments | Marketo ソーシャル Facebook を参照元とする登録数 | Facebook 経由のリードに帰属する参照元からの登録件数。システムが管理します |
-| facebookReferredVisits | MarketoSocialFacebookReferredVisits | Marketo ソーシャル Facebook を参照元とする訪問数 | Facebook 経由のリードに帰属する参照元からの訪問数。システムが管理します |
-| gender | MarketoSocialGender | Marketo ソーシャル性別 | リードの性別。ソーシャルログイン中にシステムが入力します |
-| lastReferredEnrollment | MarketoSocialLastReferredEnrollment | Marketo ソーシャルを最後の参照元とする登録 | 最終的な紹介が完了した日付。システムが管理します |
-| lastReferredVisit | MarketoSocialLastReferredVisit | Marketo ソーシャルの最後の参照訪問 | 最後の参照訪問の日付。システムが管理します |
-| linkedInDisplayName | MarketoSocialLinkedInDisplayName | Marketo ソーシャル LinkedIn の表示名 | リードの LinkedIn の表示名。ソーシャルログイン中にシステムが入力します |
-| linkedInId | MarketoSocialLinkedInId | Marketo ソーシャル LinkedIn Id | リードの LinkedIn ID。ソーシャルログイン中にシステムが入力します |
-| linkedInPhotoURL | MarketoSocialLinkedInPhotoURL | Marketo ソーシャル LinkedIn の画像 URL | リードの LinkedIn 画像 URL。ソーシャルログイン中にシステムが入力します |
-| linkedInProfileURL | MarketoSocialLinkedInProfileURL | Marketo ソーシャル LinkedIn のプロファイル URL | リードの LinkedIn プロファイル。ソーシャルログイン中にシステムが入力します |
-| linkedInReach | MarketoSocialLinkedInReach | Marketo ソーシャル LinkedIn のリーチ | リードの LinkedIn リーチ。ソーシャルログイン中にシステムが入力します |
-| linkedInReferredEnrollments | MarketoSocialLinkedInReferredEnrollments | Marketo ソーシャル LinkedIn を参照元とする登録数 | LinkedIn 経由のリードに帰属する参照元からの登録件数。システムが管理します |
-| linkedInReferredVisits | MarketoSocialLinkedInReferredVisits | Marketo ソーシャル LinkedIn を参照元とする訪問数 | LinkedIn 経由のリードに帰属する参照元からの訪問数。システムが管理します |
-| syndicationId | - | Marketo ソーシャル Syndication ID | リードの内部 Marketo ソーシャル ID。 システムが管理します |
-| totalReferredEnrollments | MarketoSocialTotalReferredEnrollments | Marketo ソーシャルを参照元とする合計登録数 | リードに帰属する完了済みのリファラル登録の合計数 |
-| totalReferredVisits | MarketoSocialTotalReferredVisits | Marketo ソーシャルを参照元とする合計訪問数 | リードに帰属する参照元からの訪問の合計数 |
-| twitterDisplayName | MarketoSocialTwitterDisplayName | Marketo ソーシャル Twitter の表示名 | リードの Twitter 表示名。ソーシャルログイン中にシステムが入力します |
-| twitterId | MarketoSocialTwitterId | Marketo ソーシャル Twitter Id | リードの Twitter ID。ソーシャルログイン中にシステムが入力します |
-| twitterPhotoURL | MarketoSocialTwitterPhotoURL | Marketo ソーシャル Twitter の画像 URL | リードの Twitter の画像 URL。ソーシャルログイン中にシステムが入力します |
-| twitterProfileURL | MarketoSocialTwitterProfileURL | Marketo ソーシャル Twitter のプロファイル URL | リードの Twitter プロファイル URL。ソーシャルログイン中にシステムが入力します |
-| twitterReach | MarketoSocialTwitterReach | Marketo ソーシャル Twitter のリーチ | リードの Twitter リーチ。ソーシャルログイン中にシステムが入力します |
-| twitterReferredEnrollments | MarketoSocialTwitterReferredEnrollments | Marketo ソーシャル Twitter を参照元とする登録数 | Twitter 経由でリードに帰属する参照元からの登録件数。システムが管理します |
-| twitterReferredVisits | MarketoSocialTwitterReferredVisits | Marketo ソーシャル Twitter を参照元とする訪問数 | Twitter 経由でリードに帰属する参照元からの訪問数。システムが管理します |
 | middleName | MiddleName | ミドルネーム | リードのミドルネーム |
 | mobilePhone | MobilePhone | 携帯電話番号 | リードの携帯電話番号 |
 | numberOfEmployees | NumberOfEmployees | 従業員数 | リードの会社の従業員数 |
@@ -85,7 +58,7 @@ REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/)エ
 | site | Site | Site |  |
 | state | State | State | リードの都道府県 |
 | title | Title | Job Title | リードの職位 |
-| unsubscribed | 登録解除済み | 登録解除済み | リードのメール登録解除済みステータス。部分的にシステムで管理されます。true に設定すると、運用以外のメールの受信が防止されます。 |
+| unsubscribed | 配信停止完了 | 配信停止完了 | リードのメール登録解除済みステータス。部分的にシステムで管理されます。true に設定すると、運用以外のメールの受信が防止されます。 |
 | unsubscribedReason | UnsubscribedReason | 登録解除の理由 | リードの登録解除済みステータスの理由。部分的にシステムで管理されます。リードが Marketo のメールから直接登録解除された場合、メール情報が入力されます。 |
 | website | Web サイト | Web サイト | リードの会社の web サイトの URL |
 | createdAt | - | 作成日時 | リードレコードの作成日時。システムが管理します |
