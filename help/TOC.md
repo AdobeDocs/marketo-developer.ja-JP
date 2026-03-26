@@ -5,15 +5,15 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
+source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 96%
+source-wordcount: '277'
+ht-degree: 91%
 
 ---
 
 
-# [!DNL Marketo] 開発者  {#marketo}
+# [!DNL Marketo] 開発者 {#marketo}
 
 - [ホーム](home.md)
 - [はじめに](getting-started.md)
@@ -30,7 +30,7 @@ ht-degree: 96%
    - [パターン一致](javascript-api/pattern-match.md)
    - [予測コンテンツ](javascript-api/predictive-content.md)
    - [リダイレクト](javascript-api/redirect.md)
-   - [Rich Media Recommendations](javascript-api/rich-media-recommendation.md)
+   - [Rich Media レコメンデーション](javascript-api/rich-media-recommendation.md)
    - [トリガー](javascript-api/triggers.md)
    - [Web パーソナライゼーション](javascript-api/web-personalization.md)
 - モバイル {#mobile}
@@ -102,6 +102,8 @@ ht-degree: 96%
       - [商談ロール](rest-api/opportunity-roles.md)
       - [プログラムメンバー](rest-api/program-members.md)
       - [セールス担当者](rest-api/sales-persons.md)
+      - [静的リスト](rest-api/list-membership.md)
+      - [使用方法](rest-api/usage.md)
    - [ページングトークン](rest-api/paging-tokens.md)
    - [パフォーマンス](rest-api/performance.md)
    - [参照アーキテクチャ](rest-api/reference-architectures.md)
@@ -156,11 +158,11 @@ ht-degree: 96%
    - [応答マッピング](webhooks/response-mappings.md)
    - [Web フック](webhooks/webhooks.md)
 - [クライアントライブラリ](https://github.com/Marketo/Community-Supported-Client-Libraries)
-- [&#x200B; データストリーム &#x200B;](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams)
+- [データストリーム](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams)
 - [メールスクリプト](email-scripting.md)
-- [メールスクリプティングの例](examples.md)
-- [Marketo オブジェクト &#x200B;](marketo-objects.md)
+- [メール作成の例](examples.md)
+- [Marketo オブジェクト ](marketo-objects.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
-- [ブログアーカイブ](blog.md)
+- [ブログのアーカイブ](blog.md)

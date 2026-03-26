@@ -1,11 +1,11 @@
 ---
 title: getMObjects
 feature: SOAP
-description: getMObjects を使用すると、ID、属性、関連付け、1 バッチあたり最大 100 個、streamPosition を使用したページ番号、および XML 例で、Marketo MObjects を取得できます。
+description: getMObjectsを使用すると、ID、属性、または関連付けによってMarketo MObjectsを取得できます。バッチごとに最大100個まで、streamPositionを使用してページ化でき、XMLの例も含まれます。
 exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '246'
 ht-degree: 91%
 
 ---
@@ -24,16 +24,16 @@ ht-degree: 91%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| タイプ | 必須 | クエリを実行するオブジェクトタイプ。`Opportunity`、`OpportunityPersonRole`、`Program` のいずれかを指定できます。 |
+| タイプ | 必須 | クエリを実行するオブジェクトタイプ。 `Opportunity`、`OpportunityPersonRole`、`Program` のいずれかを指定できます。 |
 | id | オプション | MObject の ID |
-| includeDetails | オプション | true の場合、指定した MObject のすべての属性が返されます。このパラメーターは、プログラム MObjects で使用する場合にのみ適用されます。 |
+| includeDetails | オプション | true の場合、指定した MObject のすべての属性が返されます。 このパラメーターは、プログラム MObjects で使用する場合にのみ適用されます。 |
 | mObjCriteriaList／mObjCriteria／attrName | オプション | `Name`、`Role`、`Type`、`Stage`、`CRM Id`、`Created At`、`Updated At` または `Tag Type`（指定できるのは 1 つのみ）、`Tag Value`、`Workspace Name`、`Workspace Id`、`Include Archive` の入力パラメーターの 1 つ以上を使用できます。 |
 | mObjCriteriaList／mObjCriteria／attrValue | オプション | フィルタリングに使用する値 |
 | mObjCriteriaList／mObjCriteria／comparison | オプション | `EQ`、`NE`、`LT`、`LE`、`GT`、`GE` のいずれか |
 | mObjAssociationList／mObjAssociation／mObjType | オプション |  |
 | mObjAssociationList／mObjAssociation／id | オプション | 関連付けられたオブジェクトの ID（リード／会社／商談） |
 | mObjAssociationList／mObjAssociation／externalKey | オプション | 関連付けられたオブジェクトのカスタム属性 |
-| streamPosition | オプション | 複数の結果セットをページ分割するのに使用されます。渡される値は、前の `getMObjects` 呼び出しによって返された値です。 |
+| streamPosition | オプション | 複数の結果セットをページ分割するのに使用されます。 渡される値は、前の `getMObjects` 呼び出しによって返された値です。 |
 
 ## リクエスト XML
 

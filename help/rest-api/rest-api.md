@@ -3,10 +3,10 @@ title: REST API
 feature: REST API
 description: Marketo REST APIの使用方法、API ユーザーとLaunchPointの設定、割り当てと制限の表示、認証ヘッダーによる認証、リードの取得について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: a0901d2c67aa42368f03494dc8157d2ae93b3dce
+source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
 workflow-type: tm+mt
-source-wordcount: '880'
-ht-degree: 91%
+source-wordcount: '897'
+ht-degree: 90%
 
 ---
 
@@ -112,3 +112,5 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 ## API 使用量
 
 各 API ユーザは API 使用量レポートで個別に報告されるので、web サービスをユーザごとに分割すると、各統合の使用量を簡単に把握できます。 インスタンスへの API 呼び出しの数が制限を超え、後続の呼び出しが失敗する場合は、この方法を使用すると、各サービスからのボリュームを把握し、問題を解決する方法を評価できます。 使用量を確認するには、**[!UICONTROL 管理]**／**[!UICONTROL 統合]**／**[!UICONTROL Web サービス]**&#x200B;に移動し、過去 7 日間の呼び出し回数をクリックします。
+
+毎日および過去7日間の使用状況とエラーの統計を返すREST エンドポイントについては、[使用状況](usage.md)を参照してください。

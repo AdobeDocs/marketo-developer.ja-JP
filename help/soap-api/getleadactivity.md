@@ -1,9 +1,9 @@
 ---
 title: getLeadActivity
 feature: SOAP
-description: getLeadActivity SOAPを使用して、キー別のリードアクティビティ履歴の取得、アクティビティタイプのフィルタリング、バッチサイズの設定、XML 例を使用したストリームポジションでのページ番号の設定を行います。
+description: getLeadActivity SOAPを使用して、キーによるリードアクティビティ履歴の取得、アクティビティタイプのフィルタリング、バッチサイズの設定、XMLの例によるストリーム位置のページネーションを行います。
 exl-id: f38dee95-235f-4dc2-8839-61d6008132a5
-source-git-commit: d674384b3ab979df2322ece3f02155259d05431a
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 93%
@@ -12,7 +12,7 @@ ht-degree: 93%
 
 # getLeadActivity
 
-この関数は、指定されたキーで識別される単一のリードのアクティビティ履歴を取得します。結果で返されるアクティビティタイプを指定できます。すべてのアクティビティタイプが必要な場合は、空の値を渡す必要があります。アクティビティタイプが複数ある場合は、アクティビティタイプのリストを渡します。複数のアクティビティをリクエストする場合、残りのカウントは正確な数値ではありませんが、残りのカウントが 0 より大きい場合はさらにアクティビティがあることを示すフラグとして処理する必要があります。
+この関数は、指定されたキーで識別される単一のリードのアクティビティ履歴を取得します。 結果で返されるアクティビティタイプを指定できます。 すべてのアクティビティタイプが必要な場合は、空の値を渡す必要があります。 アクティビティタイプが複数ある場合は、アクティビティタイプのリストを渡します。 複数のアクティビティをリクエストする場合、残りのカウントは正確な数値ではありませんが、残りのカウントが 0 より大きい場合はさらにアクティビティがあることを示すフラグとして処理する必要があります。
 
 [ストリーム位置](stream-position.md)を使用すると、大きな結果セットをページ分割できます。
 
@@ -20,15 +20,15 @@ ht-degree: 93%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadKey／keyType | 必須 | keyType を使用すると、リードに対してクエリを実行するフィールドを指定できます。使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadKey／keyType | 必須 | keyType を使用すると、リードに対してクエリを実行するフィールドを指定できます。 使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | leadKey／keyValue | 必須 | `keyValue` は、リードに対してクエリを実行する値です。 |
-| activityFilter／includeAttributes／activityType | オプション | 指定されたアクティビティタイプのみが含まれるように応答を制限します。すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 |
-| activityFilter／excludeAttributes／activityType | オプション | 指定されたアクティビティタイプが除外されるように応答を制限します。すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。メモ：同じ呼び出し内で `includeAttributes` と `excludeAttributes` の両方を指定できません。 |
-| batchSize | オプション | 返されるレコードの最大数。システムは 100 または `batchSize` のいずれか小さい方に制限されます。 |
-| startPosition／offset | オプション | 多数のアクティビティ応答をページ分割するために使用されます。オフセット値は、前の呼び出しの応答フィールド `newStartPosition->offset` によって返されます。 |
-| startPosition／activityCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。activityCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->activityCreatedAt` によって返されます。（W3C WSDL 日付形式）。 |
-| startPosition／latestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。latestCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->latestCreatedAt` によって返されます。（W3C WSDL 日付形式）。 |
-| startPosition／oldestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。oldestCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->oldestCreatedAt` によって返されます。（W3C WSDL 日付形式）。 |
+| activityFilter／includeAttributes／activityType | オプション | 指定されたアクティビティタイプのみが含まれるように応答を制限します。 すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 |
+| activityFilter／excludeAttributes／activityType | オプション | 指定されたアクティビティタイプが除外されるように応答を制限します。 すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 メモ：同じ呼び出し内で `includeAttributes` と `excludeAttributes` の両方を指定できません。 |
+| batchSize | オプション | 返されるレコードの最大数。 システムは 100 または `batchSize` のいずれか小さい方に制限されます。 |
+| startPosition／offset | オプション | 多数のアクティビティ応答をページ分割するために使用されます。 オフセット値は、前の呼び出しの応答フィールド `newStartPosition->offset` によって返されます。 |
+| startPosition／activityCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。 activityCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->activityCreatedAt` によって返されます。 （W3C WSDL 日付形式）。 |
+| startPosition／latestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。 latestCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->latestCreatedAt` によって返されます。 （W3C WSDL 日付形式）。 |
+| startPosition／oldestCreatedAt | オプション | 多数のアクティビティ応答をページ分割するために使用されます。 oldestCreatedAt は、前の呼び出しの応答フィールド `newStartPosition->oldestCreatedAt` によって返されます。 （W3C WSDL 日付形式）。 |
 
 ## リクエスト XML
 
@@ -668,7 +668,7 @@ ht-degree: 93%
 </SOAP-ENV:Envelope>
 ```
 
-`activityRecord` 要素内では、`id` 要素が一意の ID として `marketoGUID` 要素に置き換えられます。この変更は、2017年春のリリースで行われます。
+`activityRecord` 要素内では、`id` 要素が一意の ID として `marketoGUID` 要素に置き換えられます。  この変更は、2017年春のリリースで行われます。
 
 ## サンプルコード - PHP
 

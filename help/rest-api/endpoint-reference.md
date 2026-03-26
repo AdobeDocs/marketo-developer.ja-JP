@@ -1,12 +1,12 @@
 ---
 title: エンドポイント参照
 feature: REST API
-description: アクティビティ、一括書き出し、ID、リード、アセット、ユーザー全体でのメソッド、URI および必要な権限を含む包括的なMarketo REST API エンドポイントのリスト。
+description: アクティビティ、一括書き出し、ID、リード、アセット、ユーザーをまたいだメソッド、URI、必要な権限を含む包括的なMarketo REST API エンドポイントリスト。
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '4464'
-ht-degree: 75%
+source-wordcount: '4793'
+ht-degree: 77%
 
 ---
 
@@ -17,14 +17,14 @@ Marketo REST API 参照へのリンクを以下に示します。
 - [アセット](https://developer.adobe.com/marketo-apis/api/asset/)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
 - [リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi/)
-- [ユーザー管理](https://developer.adobe.com/marketo-apis/api/user/)
+- [ユーザ管理](https://developer.adobe.com/marketo-apis/api/user/)
 
 ## エンドポイントリスト {#endpoint_list}
 
 REST API エンドポイントの包括的なリストを以下に示します。
 
 | 名前 | グループ | メソッド | URI | 必須の権限 |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | カスタムアクティビティの追加 | アクティビティ | POST | /rest/v1/activities/external.json | 読み取り／書き込みアクティビティ |
 | カスタムアクティビティタイプを承認 | アクティビティ | POST | /rest/v1/activities/external/type/{apiName}/approve.json | 読み取り／書き込みアクティビティメタデータ |
 | カスタムアクティビティタイプの属性を作成 | アクティビティ | POST | /rest/v1/activities/external/type/{apiName}/attributes/create.json | 読み取り／書き込みアクティビティメタデータ |

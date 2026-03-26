@@ -1,9 +1,9 @@
 ---
 title: mergeLeads
 feature: SOAP
-description: mergeLeads をMarketo SOAPと使用して、リードレコードの勝敗を結合します。 リクエストフィールド、XML リクエストと応答、PHP と Java の例が含まれます。
+description: MergeLeadsとMarketo SOAPを使用して、勝者リードと敗者リードのレコードを結合します。 リクエストフィールド、XML リクエストとレスポンス、PHPとJavaの例が含まれます。
 exl-id: a667cb76-525d-4583-b26a-1181d320a68c
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '104'
 ht-degree: 76%
@@ -12,13 +12,13 @@ ht-degree: 76%
 
 # mergeLeads
 
-成功したリードのキーと複数の失敗したリードのキーを受け入れて、結合操作を実行します。リードの ID とステータスを返します。
+成功したリードのキーと複数の失敗したリードのキーを受け入れて、結合操作を実行します。 リードの ID とステータスを返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| winningLeadKeyList | 必須 | 成功したリードを識別するのに使用されるキー。使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| winningLeadKeyList | 必須 | 成功したリードを識別するのに使用されるキー。 使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | losingLeadKeyLists | 必須 | 失敗したリードを識別するのに使用されるキーのリスト。 |
 | mergeInSales | オプション | 「True」または「False」のいずれかとして、ブール値として渡されます。 |
 

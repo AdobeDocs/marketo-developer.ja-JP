@@ -1,12 +1,12 @@
 ---
 title: リッチメディアレコメンデーション
-description: Marketo予測コンテンツ RTP タグ、template1 template2 template3 div、GETを使用して、リッチメディアレコメンデーションを設定します。
+description: Marketoの予測コンテンツ RTP タグ、template1 template2 template3 div、GETを使用したリッチメディアのレコメンデーションの設定、カテゴリの設定を行うSET。
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '831'
-ht-degree: 97%
+source-wordcount: '854'
+ht-degree: 96%
 
 ---
 
@@ -26,9 +26,9 @@ ht-degree: 97%
 ## テンプレートタグ
 
 | 属性 | オプション／必須 | 説明 |
-|---|---|---|
+| --- | --- | --- |
 | クラス | 必須 | この div HTML 要素が RTP レコメンデーション div であることを指定します。 |
-| data-rtp-template-id | 必須 | テンプレート ID。これにより、レコメンデーションの配置が決定されます。水平方向の配置には「template1」、垂直方向の配置には「template2」、タイトルと説明のみを含む垂直方向の配置には「template3」を使用します。スクリプトは、template1、template2、template3 の `div.Permissible` 値に一致するテンプレートを挿入します。 |
+| data-rtp-template-id | 必須 | テンプレート ID。 これにより、レコメンデーションの配置が決定されます。 水平方向の配置には「template1」、垂直方向の配置には「template2」、タイトルと説明のみを含む垂直方向の配置には「template3」を使用します。 スクリプトは、template1、template2、template3 の `div.Permissible` 値に一致するテンプレートを挿入します。 |
 
 ### 例
 
@@ -61,7 +61,7 @@ ht-degree: 97%
 `rtp('get', 'rcmd', 'richmedia');`
 
 | パラメーター | オプション／必須 | タイプ | 説明 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | &#39;get&#39; | 必須 | 文字列 | メソッドアクション。 |
 | &#39;rcmd&#39; | 必須 | 文字列 | メソッド名。 |
 | &#39;richmedia&#39; | 必須 | 文字列 | サブメソッド名。 |
@@ -77,12 +77,12 @@ ht-degree: 97%
 `rtp('set', 'rcmd', 'richmedia', 'template_id', conf_obj);`
 
 | パラメーター | オプション／必須 | タイプ | 説明 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ‘set’ | 必須 | 文字列 | メソッドアクション。 |
 | &#39;rcmd&#39; | 必須 | 文字列 | メソッド名。 |
 | &#39;richmedia&#39; | 必須 | 文字列 | サブメソッド名。 |
-| template_id | オプション | 文字列 | 設定変更のテンプレート ID。1 つのテンプレートのみの設定変更を指定するのに使用します。 |
-| conf_obj | 必須 | オブジェクト | 新しい設定。オブジェクトは、すべての設定をキーと値のペアとして保持します。 |
+| template_id | オプション | 文字列 | 設定変更のテンプレート ID。 1 つのテンプレートのみの設定変更を指定するのに使用します。 |
+| conf_obj | 必須 | オブジェクト | 新しい設定。 オブジェクトは、すべての設定をキーと値のペアとして保持します。 |
 
 ### 例
 
@@ -117,7 +117,7 @@ rtp("set", "rcmd", "richmedia",
 );
 ```
 
-メモ：「category」を使用して、予測コンテンツレコメンデーションの結果に表示されるコンテンツをフィルタリングします。有効なすべてのコンテンツに予測コンテンツを適用するには、「category」を空のままにします。リッチメディアテンプレートの出力に特定のコンテンツのみを推奨する場合は、「コンテンツを設定」ページでコンテンツのカテゴリを追加し、レコメンデーションテンプレートコード内でこのカテゴリを関連付けます。Web サイトのセクション（製品やソリューション）に従って関連コンテンツを分類します。
+メモ：「category」を使用して、予測コンテンツレコメンデーションの結果に表示されるコンテンツをフィルタリングします。 有効なすべてのコンテンツに予測コンテンツを適用するには、「category」を空のままにします。 リッチメディアテンプレートの出力に特定のコンテンツのみを推奨する場合は、「コンテンツを設定」ページでコンテンツのカテゴリを追加し、レコメンデーションテンプレートコード内でこのカテゴリを関連付けます。 Web サイトのセクション（製品やソリューション）に従って関連コンテンツを分類します。
 
 このコードスニペットは、テンプレートに対して複数のテンプレート設定の指定を示しています。
 
@@ -136,24 +136,24 @@ rtp("set", "rcmd", "richmedia",
 #### 設定プロパティ
 
 | 設定 | 例 | 説明 |
-|---|---|---|
-| rcmd.general.font.family | &quot;rcmd.general.font.family&quot; : &quot;arial&quot; | テンプレート内のすべてのテキストのフォントファミリーを変更します。このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。ページに存在する場合は、カスタムフォントファミリーを使用できます。 |
-| rcmd.content.background.color | &quot;rcmd.content.background.color&quot; : &quot;black&quot; | テンプレートの内部ボックスの背景色を変更します。このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。 |
+| --- | --- | --- |
+| rcmd.general.font.family | &quot;rcmd.general.font.family&quot; : &quot;arial&quot; | テンプレート内のすべてのテキストのフォントファミリーを変更します。 このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。 ページに存在する場合は、カスタムフォントファミリーを使用できます。 |
+| rcmd.content.background.color | &quot;rcmd.content.background.color&quot; : &quot;black&quot; | テンプレートの内部ボックスの背景色を変更します。 このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。 |
 | rcmd.title.text | &quot;rcmd.title.text&quot; : &quot;RECOMMENDED CONTENT&quot; | テンプレートのタイトルを変更します。 |
-| rcmd.title.background.color | &quot;rcmd.title.background.color&quot; : &quot;blue&quot; | タイトルボックスの背景色を変更します。このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
-| rcmd.title.font.size | &quot;rcmd.title.font.size&quot; : &quot;26px&quot; | タイトルのフォントサイズを変更します。このプロパティは、使用可能なすべてのフォントサイズの CSS 値（px、em など）をサポートします。 |
-| rcmd.title.font.color | &quot;rcmd.title.font.color&quot; : &quot;white&quot; | タイトルのフォントカラーを変更します。このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
-| rcmd.description.font.color | &quot;rcmd.description.font.color&quot; : &quot;white&quot; | 説明のフォントカラーを変更します。このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
-| rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;green&quot; | ボタンの背景色を変更します。このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
-| rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | ボタンのフォントカラーを変更します。このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
-| rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;Push&quot; | ボタンのテキストを変更します。テキストは、すべてのボタンで同じです。 |
-| カテゴリ | &quot;category&quot; : [&quot;one category&quot;] | このテンプレートがサポートするレコメンデーションカテゴリを変更します。テンプレートには、この設定で指定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
+| rcmd.title.background.color | &quot;rcmd.title.background.color&quot; : &quot;blue&quot; | タイトルボックスの背景色を変更します。 このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
+| rcmd.title.font.size | &quot;rcmd.title.font.size&quot; : &quot;26px&quot; | タイトルのフォントサイズを変更します。 このプロパティは、使用可能なすべてのフォントサイズの CSS 値（px、em など）をサポートします。 |
+| rcmd.title.font.color | &quot;rcmd.title.font.color&quot; : &quot;white&quot; | タイトルのフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
+| rcmd.description.font.color | &quot;rcmd.description.font.color&quot; : &quot;white&quot; | 説明のフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
+| rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;green&quot; | ボタンの背景色を変更します。 このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
+| rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | ボタンのフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
+| rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;Push&quot; | ボタンのテキストを変更します。 テキストは、すべてのボタンで同じです。 |
+| カテゴリ | &quot;category&quot; : [&quot;one category&quot;] | このテンプレートがサポートするレコメンデーションカテゴリを変更します。 テンプレートには、この設定で指定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
 
 メモ：設定のサポートは、テンプレートごとに変更される場合があります。
 
 #### 基本的な例
 
-この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
+この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。 この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
 
 ```html
 <!DOCTYPE>
@@ -185,7 +185,7 @@ rtp('get','rcmd', 'richmedia');
 
 #### 高度な例
 
-この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。テンプレートのタイトルは「RECOMMENDED CONTENT」、ボタンのテキストは「Read More」になります。この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
+この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。 テンプレートのタイトルは「RECOMMENDED CONTENT」、ボタンのテキストは「Read More」になります。 この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
 
 ```html
 <!DOCTYPE>
@@ -241,4 +241,4 @@ rtp('get','rcmd', 'richmedia');
 
 #### リッチメディアレコメンデーションテンプレート #3 の例
 
-**名前**：template3 **説明**：タイトルと説明のみを含む垂直コンテンツ。ポインタを合わせると、ヘッダーのカラーが変わり、コンテンツ URL にハイパーリンクされます。また、説明は、カラーの変更を使用しないコンテンツにもリンクします。![リッチメディアテンプレート](assets/rich-media-template3.png)
+**名前**：template3 **説明**：タイトルと説明のみを含む垂直コンテンツ。 ポインタを合わせると、ヘッダーのカラーが変わり、コンテンツ URL にハイパーリンクされます。 また、説明は、色を変更せずにコンテンツにリンクします。![リッチメディアテンプレート ](assets/rich-media-template3.png)

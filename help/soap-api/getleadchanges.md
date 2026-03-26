@@ -1,46 +1,46 @@
 ---
 title: getLeadChanges
 feature: SOAP
-description: Marketo SOAP getLeadChanges API を使用して、フィルター、leadSelector、ページネーション、XML 例を含んだリード変更アクティビティを取得する方法を説明します。
+description: Marketo SOAP getLeadChanges APIを使用して、フィルター、leadSelector、ページネーション、XMLの例を使用してリード変更アクティビティを取得する方法を説明します。
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '418'
 ht-degree: 94%
 
 ---
 
 # getLeadChanges
 
-この API は `getLeadActivity` に似ていますが、一度に複数のリードに対して操作する点が異なります。この操作では、作成した新しいリード、リードフィールドの更新およびその他のアクティビティが確認されます。
+この API は `getLeadActivity` に似ていますが、一度に複数のリードに対して操作する点が異なります。 この操作では、作成した新しいリード、リードフィールドの更新およびその他のアクティビティが確認されます。
 
 結果には、変更の原因となったアクティビティと、大規模な結果セットをページ分割するための[ストリーム位置](stream-position.md)が含まれます。
 
-結果で返されるアクティビティフィルターを識別する入力パラメーターを含める必要があります。すべてのアクティビティが必要な場合は、空の値を渡すことができます。アクティビティフィルターが複数ある場合は、アクティビティフィルターのリストを渡します。
+結果で返されるアクティビティフィルターを識別する入力パラメーターを含める必要があります。 すべてのアクティビティが必要な場合は、空の値を渡すことができます。 アクティビティフィルターが複数ある場合は、アクティビティフィルターのリストを渡します。
 
 アクティビティタイプの例としては、「Web ページにアクセス」、「フォームに入力」、「リンクをクリック」などがあります。
 
 SOAP API バージョン 2_2 以降では、`leadSelector` を含めることができます。
 
-`LastUpdateAtSelector` の場合、`oldestUpdatedAt` 値は `startPosition` の `oldestCreatedAt` 値に対応します。また、`latestUpdatedAt` 値は、`startPosition` の `latestCreatedAt` 値に対応します。
+`LastUpdateAtSelector` の場合、`oldestUpdatedAt` 値は `startPosition` の `oldestCreatedAt` 値に対応します。 また、`latestUpdatedAt` 値は、`startPosition` の `latestCreatedAt` 値に対応します。
 
-メモ：`LeadKeySelector` でサポートされるリード数の制限は 100 です。リード数が 100 を超えると、API は不正なパラメーター例外をスローし、SOAP エラーを返します。
+メモ：`LeadKeySelector` でサポートされるリード数の制限は 100 です。 リード数が 100 を超えると、API は不正なパラメーター例外をスローし、SOAP エラーを返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| activityFilter／includeAttributes／activityType | オプション（非推奨）代わりに `activityNameFilter` を使用 | 指定されたアクティビティタイプのみが含まれるように応答を制限します。すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 |
-| activityFilter／excludeAttributes／activityType | オプション | 指定されたアクティビティタイプが除外されるように応答を制限します。すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。メモ：同じ呼び出し内で `includeAttributes` と `excludeAttributes` の両方を指定できません。 |
+| activityFilter／includeAttributes／activityType | オプション（非推奨）代わりに `activityNameFilter` を使用 | 指定されたアクティビティタイプのみが含まれるように応答を制限します。 すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 |
+| activityFilter／excludeAttributes／activityType | オプション | 指定されたアクティビティタイプが除外されるように応答を制限します。 すべてのアクティビティタイプについて詳しくは、WSDL を参照してください。 メモ：同じ呼び出し内で `includeAttributes` と `excludeAttributes` の両方を指定できません。 |
 | activityNameFilter | オプション | 指定されたアクティビティフィルターのみが含まれるように応答を制限します。 |
-| batchSize | オプション | 返されるレコードの最大数。1,000 または `batchSize` のいずれか小さい方に制限されます。 |
+| batchSize | オプション | 返されるレコードの最大数。 1,000 または `batchSize` のいずれか小さい方に制限されます。 |
 | startPosition | 必須 | 多数のアクティビティ応答をページ分割するために使用されます。 |
 | startPosition／offset | オプション | オフセット値は、前の呼び出し応答フィールド newStartPosition／offset によって返されます。 |
-| startPosition／oldestCreatedAt | オプション | oldestCreatedAt 以降に作成されたリードのみを含めるように結果をフィルタリングするために使用されるタイムスタンプ。メモ：`oldestCreatedAt` を指定するには、`LastUpdateAtSelector->oldestUpdatedAt` タイムスタンプを使用できます。 |
-| startPosition／activityCreatedAt | オプション | activityCreatedAt 以降のアクティビティがあるリードのみを含めるように結果をフィルタリングするために使用されるタイムスタンプ。メモ：`activityCreatedAt` を指定するには、`LastUpdateAtSelector->latestUpdatedAt` タイムスタンプを使用できます。 |
+| startPosition／oldestCreatedAt | オプション | oldestCreatedAt 以降に作成されたリードのみを含めるように結果をフィルタリングするために使用されるタイムスタンプ。 メモ：`oldestCreatedAt` を指定するには、`LastUpdateAtSelector->oldestUpdatedAt` タイムスタンプを使用できます。 |
+| startPosition／activityCreatedAt | オプション | activityCreatedAt 以降のアクティビティがあるリードのみを含めるように結果をフィルタリングするために使用されるタイムスタンプ。 メモ：`activityCreatedAt` を指定するには、`LastUpdateAtSelector->latestUpdatedAt` タイムスタンプを使用できます。 |
 | leadSelector | オプション | `LeadKeySelector`、`StaticListSelector`、`LastUpdateAtSelector` の 3 つのタイプのいずれかを指定できます |
-| LeadKeySelector：leadSelector／keyType | 必須 | クエリを実行する ID タイプ。値には、`IDNUM`、`COOKIE`、`EMAIL`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` が含まれます。 |
-| LeadKeySelector：leadSelector／keyValues／stringItem | 必須 | キー値のリスト。つまり、「<lead@email.com>」です。 |
+| LeadKeySelector：leadSelector／keyType | 必須 | クエリを実行する ID タイプ。 値には、`IDNUM`、`COOKIE`、`EMAIL`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` が含まれます。 |
+| LeadKeySelector：leadSelector／keyValues／stringItem | 必須 | キー値のリスト。 つまり、「<lead@email.com>」です。 |
 | StaticListSelector：leadSelector／staticListName | `leadSelector->staticListId` が存在する場合はオプション | 静的リストの名前 |
 | StaticListSelector：leadSelector／staticListId | `leadSelector->staticListName` が存在する場合はオプション | 静的リストの ID |
 

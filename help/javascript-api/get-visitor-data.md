@@ -1,11 +1,11 @@
 ---
 title: 訪問者データを取得
-description: パラメーター、コールバックの例、セグメント、ABM、場所のサンプル応答を含む RTP User Context API を使用して、リアルタイムの訪問者識別を取得します。
+description: パラメーター、コールバック例、セグメント、ABM、位置情報のサンプル応答を含むRTP ユーザーコンテキスト APIを使用して、リアルタイムの訪問者を特定します。
 feature: Javascript
 exl-id: 39a2446d-8a31-461e-bbe6-a7edf24b4d52
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '223'
 ht-degree: 89%
 
 ---
@@ -15,12 +15,12 @@ ht-degree: 89%
 このメソッドは、リアルタイムの訪問者識別データを取得するのに使用されます。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
-エラーが発生した場合、応答 JSON の一部としてエラーメッセージが表示されます。500 コードが返された場合は、リクエストをサポートにお問い合わせしてください。
+エラーが発生した場合、応答 JSON の一部としてエラーメッセージが表示されます。 500 コードが返された場合は、リクエストをサポートにお問い合わせしてください。
 
 | パラメーター | オプション／必須 | タイプ | 説明 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `get` | 必須 | 文字列 | メソッドアクション。 |
 | `visitor` | 必須 | 文字列 | メソッド名。 |
 | `callback` | 必須 | 関数 | 返されるキャンペーンごとにトリガーされるコールバック関数。 |

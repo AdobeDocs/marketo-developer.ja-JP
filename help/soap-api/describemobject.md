@@ -1,24 +1,24 @@
 ---
 title: describeMObject
 feature: SOAP
-description: Marketo SOAPで describeMObject を使用して、ActivityRecord、LeadRecord、Opportunity、OpportunityPersonRole のメタデータとフィールド属性を取得する方法を説明します。
+description: Marketo SOAPでdescribeMObjectを使用して、ActivityRecord、LeadRecord、Opportunity、OpportunityPersonRoleのメタデータとフィールド属性を取得する方法を説明します。
 exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '87'
-ht-degree: 78%
+ht-degree: 59%
 
 ---
 
 # describeMObject
 
-この関数は、標準 MObject および仮想 MObject のメタデータを返します。Marketo オブジェクトを入力として取り込み、このオブジェクトに関連付けられているフィールド属性を返します。
+この関数は、標準 MObject および仮想 MObject のメタデータを返します。 Marketo オブジェクトを入力として取り込み、このオブジェクトに関連付けられているフィールド属性を返します。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| objectName | 必須 | メタデータを取得する MObject の名前。`objectName` は、`ActivityRecord`、`LeadRecord`、`Opportunity`、`OpportunityPersonRole` のいずれかを指定できます。 |
+| objectName | 必須 | メタデータを取得するMObjectの名前。`objectName` `ActivityRecord`、`LeadRecord`、`Opportunity`、`OpportunityPersonRole`のいずれかにできます |
 
 ## リクエスト XML
 
