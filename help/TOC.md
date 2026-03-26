@@ -161,7 +161,7 @@ ht-degree: 91%
 - [データストリーム](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams)
 - [メールスクリプト](email-scripting.md)
 - [メール作成の例](examples.md)
-- [Marketo オブジェクト ](marketo-objects.md)
+- [Marketo オブジェクト &#x200B;](marketo-objects.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
