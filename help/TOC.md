@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+source-git-commit: 6dc068f92d5b0c94035ca484fd1508dfe87bbd76
 workflow-type: tm+mt
-source-wordcount: '277'
-ht-degree: 91%
+source-wordcount: '284'
+ht-degree: 89%
 
 ---
 
@@ -54,10 +54,13 @@ ht-degree: 91%
       - [アセット](rest-api/assets.md)
       - [動的コンテンツ](rest-api/dynamic-content.md)
       - [メール](rest-api/emails.md)
+      - [電子メール（新規）](rest-api/emails-new.md)
       - [メールテンプレート](rest-api/email-templates.md)
+      - [メールテンプレート（新規）](rest-api/email-templates-new.md)
       - [ファイル](rest-api/files.md)
       - [フォルダー](rest-api/folders.md)
       - [フォーム](rest-api/forms.md)
+      - [フラグメント（新規）](rest-api/fragments.md)
       - [ランディングページ](rest-api/landing-pages.md)
       - [ランディングページのリダイレクトルール](rest-api/landing-page-redirect-rules.md)
       - [ランディングページのテンプレート](rest-api/landing-page-templates.md)
@@ -161,7 +164,7 @@ ht-degree: 91%
 - [データストリーム](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams)
 - [メールスクリプト](email-scripting.md)
 - [メール作成の例](examples.md)
-- [Marketo オブジェクト &#x200B;](marketo-objects.md)
+- [Marketo オブジェクト](marketo-objects.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)

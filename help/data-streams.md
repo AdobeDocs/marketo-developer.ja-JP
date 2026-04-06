@@ -2,17 +2,17 @@
 title: データストリーム
 description: Marketo Engage Data Streamsの概要：ほぼリアルタイムのリードアクティビティとユーザー監査イベントを実現し、Performance Tierのお客様のAPI制限を緩和
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: 6dc068f92d5b0c94035ca484fd1508dfe87bbd76
 workflow-type: tm+mt
 source-wordcount: '1719'
-ht-degree: 95%
+ht-degree: 94%
 
 ---
 
 # データストリーム
 
 >[!NOTE]
-> データストリームに関する現在の情報は、[&#x200B; データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)で見つかりました。
+> データストリームに関する現在の情報は、[ データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams#)で見つかりました。
 >
 
 アドビのお客様のマーケティング組織は、ビジネスで上位の地位を保ち、競争力を維持することを目的に、タイムリーで焦点を当てたマーケティングキャンペーンに依存しています。 ペースの速い意思決定をサポートし、戦略的変更を迅速に実行できるようにするには、焦点を当てたターゲットキャンペーンを実現する重要な決定をサポートし、推進するデータを持つことが重要です。 また、Marketo Engage 内外の顧客セグメントのレベルでマーケティング活動を行うお客様もいます。 これらの様々な取り組みのサポートに、Marketo ではデータストリームを通じてほとんどリアルタイムで大量のデータを取得する機能を作成しました。
@@ -258,7 +258,7 @@ Marketo リードアクティビティデータストリームを使用するア
    1. この手順には、アドビ組織が必要です
    1. アドビ組織ユーザに開発者またはシステム管理者のロールが必要です
 
-Adobe IO を設定するには、公開ドキュメントの節の [Adobe IO を使用した Marketo ユーザ監査データストリームの設定](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup/)を参照してください。
+Adobe IO を設定するには、公開ドキュメントの節の [Adobe IO を使用した Marketo ユーザ監査データストリームの設定](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup#)を参照してください。
 
 ### Marketo でのユーザ監査データストリームの設定
 
