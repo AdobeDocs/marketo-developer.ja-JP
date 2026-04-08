@@ -3,10 +3,10 @@ title: プッシュ通知
 feature: Mobile Marketing
 description: APNs証明書とXcodeの設定からMarketo SDKの統合、トークン登録、処理まで、MarketoでiOS プッシュ通知を有効にする方法をガイドします。
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 9002bcd494ba125fdc7d3ef5f02385465b6eb5a6
+source-git-commit: 14ca3ca1f1aa07bb3e54802003190a4a2b4fbcb9
 workflow-type: tm+mt
 source-wordcount: '1338'
-ht-degree: 96%
+ht-degree: 95%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 96%
 
 ### Apple Developer アカウントでのプッシュ通知の設定
 
-1. Apple Developer [Member Center](http://developer.apple.com/membercenter) にログインします。
+1. Apple Developer [Member Center](https://developer.apple.com/membercenter) にログインします。
 1. 「Certificates, Identifiers &amp; Profiles」をクリックします。
 1. 「iOS, tvOS, watchOS」の下の「Certificates->All」フォルダーをクリックします。
 1. 画面左上の証明書の横にある「+」を選択します ![](assets/certificates-plus.png)

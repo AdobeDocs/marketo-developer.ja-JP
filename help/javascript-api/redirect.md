@@ -3,7 +3,7 @@ title: リダイレクト
 description: RTP リダイレクト APIを実装して、ABM、組織、場所、セグメントなどのフィールドを使用して、ターゲット URLにセグメント化された訪問者を送信します。例とヒントを説明します。
 feature: Javascript
 exl-id: bbf91245-42e5-47ae-a561-e522cc65ff49
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: 18d828b5d98c00f04739d417d043a33fcbb9c37a
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 80%
@@ -34,16 +34,16 @@ RTP Redirect API を使用すると、セグメント化されたオーディエ
 
 | 条件 | データ階層 | 例 |
 | --- | --- | --- |
-| 一致したセグメント（最初のクリック後にのみ機能） | matchedSegments.name | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.name&#39;, [&#39;Fortune 1,000&#39;, &#39;Enterprise&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| 一致したセグメント（最初のクリック後にのみ機能） | matchedSegments.id | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.id&#39;, [106 , 107 , 190] , &#39;<http://www.marketo.com>&#39;）; |
-| ABM リスト | abm.name | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;abm.name&#39;, [&#39;top_key_accounts&#39;, &#39;active_customers&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| ABM リスト | abm.code | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;abm.code&#39;, [13 , 15] , &#39;<http://www.marketo.com>&#39;）; |
-| 組織 | org | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;org&#39;, [&#39;ebay&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| 場所 | location.country | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.country&#39;, [&#39;United States&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| 場所 | location.state | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.state&#39;, [&#39;ca&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| 場所 | location.city | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.city&#39;, [&#39;San Mateo&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| 業界 | industries | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;industries&#39;, [&#39;Education&#39;], &#39;<http://www.marketo.com>&#39;）; |
-| ISP | isp | rtp （&#39;send&#39;, &#39;redirect&#39; , isp , [&#39;False&#39;], &#39;<http://www.marketo.com>&#39;）; |
+| 一致したセグメント（最初のクリック後にのみ機能） | matchedSegments.name | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.name&#39;, [&#39;Fortune 1,000&#39;, &#39;Enterprise&#39;], &#39;<https://www.example.com>&#39;）; |
+| 一致したセグメント（最初のクリック後にのみ機能） | matchedSegments.id | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.id&#39;, [106 , 107 , 190] , &#39;<https://www.example.com>&#39;）; |
+| ABM リスト | abm.name | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;abm.name&#39;, [&#39;top_key_accounts&#39;, &#39;active_customers&#39;], &#39;<https://www.example.com>&#39;）; |
+| ABM リスト | abm.code | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;abm.code&#39;, [13 , 15] , &#39;<https://www.example.com>&#39;）; |
+| 組織 | org | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;org&#39;, [&#39;ebay&#39;], &#39;<https://www.example.com>&#39;）; |
+| 場所 | location.country | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.country&#39;, [&#39;United States&#39;], &#39;<https://www.example.com>&#39;）; |
+| 場所 | location.state | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.state&#39;, [&#39;ca&#39;], &#39;<https://www.example.com>&#39;）; |
+| 場所 | location.city | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;location.city&#39;, [&#39;San Mateo&#39;], &#39;<https://www.example.com>&#39;）; |
+| 業界 | industries | rtp （&#39;send&#39;, &#39;redirect&#39;, &#39;industries&#39;, [&#39;Education&#39;], &#39;<https://www.example.com>&#39;）; |
+| ISP | isp | rtp （&#39;send&#39;, &#39;redirect&#39; , isp , [&#39;False&#39;], &#39;<https://www.example.com>&#39;）; |
 
 ## メモ
 
@@ -105,7 +105,7 @@ rtp('get','campaign');
 | &#39;send&#39; | 必須 | 文字列 | メソッドアクション。 |
 | &#39;redirect&#39; | 必須 | 文字列 | メソッド名。 |
 | field_name | 必須 | 文字列 | 照合対象のフィールド名。 例：&#39;abm.name&#39;（上記を参照）。 |
-| url_values_map | 必須 | オブジェクト | リダイレクト URL と値のリスト間でマッピングします。 例：{&#39;<http://marketo.com>&#39; : [&#39;first_abm&#39;, &#39;second_abm&#39;]} |
+| url_values_map | 必須 | オブジェクト | リダイレクト URL と値のリスト間でマッピングします。 例：{&#39;<https://www.example.com>&#39; : [&#39;first_abm&#39;, &#39;second_abm&#39;]} |
 
 #### 例
 

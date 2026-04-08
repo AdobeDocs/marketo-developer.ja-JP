@@ -1,19 +1,19 @@
 ---
 title: パートナーサンドボックス
-description: プロビジョニング情報や、API 呼び出し、レコード、メール送信、カスタムオブジェクト、ユーザーの制限を含む、Marketo Engage パートナーサンドボックスの概要です。
+description: Marketo Engage パートナーサンドボックスの概要（API呼び出し、レコード、メール送信、カスタムオブジェクト、ユーザーのプロビジョニング情報と制限あり）。
 exl-id: a8f36cb5-d288-4b8b-b4bf-037faa3fe73f
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 14ca3ca1f1aa07bb3e54802003190a4a2b4fbcb9
 workflow-type: tm+mt
-source-wordcount: '202'
-ht-degree: 89%
+source-wordcount: '206'
+ht-degree: 87%
 
 ---
 
 # パートナーサンドボックス
 
-パートナーサンドボックスは、ソフトウェア開発ライフサイクル中にパートナーが使用する Marketo Engage インスタンスです。パートナーは、サンドボックスを使用して Marketo Engage UI の詳細を学び、Marketo Engage API サービスにアクセスします。
+パートナーサンドボックスは、ソフトウェア開発ライフサイクル中にパートナーが使用する Marketo Engage インスタンスです。 パートナーは、サンドボックスを使用して Marketo Engage UI の詳細を学び、Marketo Engage API サービスにアクセスします。
 
-パートナーが [Adobe Exchange パートナープログラム、デジタルエクスペリエンス](http://partners.adobe.com/technologyprogram/experiencecloud.html)に受け入れられた後に、サンドボックスがプロビジョニングされます。ほとんどの点で、パートナーサンドボックスは機能的に実稼動インスタンスと同等です。パートナーサンドボックスにはアドオンモジュールがインストールされておらず、固定の容量制限が設定されています。よくある質問と、パートナーサンドボックスの機能の概要を以下に示します。
+パートナーが [Adobe Exchange パートナープログラム、デジタルエクスペリエンス](https://partners.adobe.com/technologyprogram/experiencecloud.html)に受け入れられた後に、サンドボックスがプロビジョニングされます。 ほとんどの点で、パートナーサンドボックスは機能的に本番稼働インスタンスと同等です。 パートナーサンドボックスにはアドオンモジュールがインストールされておらず、固定の容量制限が設定されています。 よくある質問と、パートナーサンドボックスの機能の概要を以下に示します。
 
 ## 機能の概要
 

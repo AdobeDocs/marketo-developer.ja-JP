@@ -6,7 +6,7 @@ exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
 source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '746'
-ht-degree: 92%
+ht-degree: 84%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 92%
 
 [名前付きアカウントリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、重点顧客のコレクションを表します。 分類、データエンリッチメント、スマートキャンペーンフィルタリングなど、様々なケースに使用できます。 Named Account List API を使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
+Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、重点顧客のコレクションを表します。 分類、データエンリッチメント、スマートキャンペーンフィルタリングなど、様々なケースに使用できます。 名前付きアカウントリスト APIを使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
 `Content`
 
 ## 権限
@@ -23,7 +23,7 @@ Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/ma
 
 ## モデル
 
-重点顧客リストでは、標準フィールドの数が制限され、カスタムフィールドで拡張できません。
+名前付きアカウントリストには、標準フィールドの数が限られており、カスタムフィールドで拡張することはできません。
 `Named Account List Field`
 
 | 名前 | データタイプ | 更新可能 | メモ |
@@ -177,9 +177,9 @@ POST /rest/v1/namedAccountLists/delete.json
 
 重点顧客リストのメンバーシップのクエリの実行は簡単で、アカウントリストの `i` のみが必要です。 オプションのパラメーターは次のとおりです。
 
--`field` - 応答レコードに含めるフィールドのコンマ区切りのリスト
--`nextPageToke` - 結果セットのページング用
--`batchSiz` - 返すレコード数の指定用
+- `field` – 応答レコードに含めるフィールドのコンマ区切りリスト
+- `nextPageToke` – 結果セットをページングする場合
+- `batchSiz` – 返すレコードの数を指定します
 
 `field` が未設定の場合は、`marketoGUI`、`nam`、`createdA`、`updatedA` が返されます。 `batchSiz` の最大値とデフォルト値は 300 です。
 
