@@ -1,9 +1,9 @@
 ---
 title: requestCampaign
 feature: SOAP, Smart Campaigns
-description: パラメーターセット、トークン処理、100 件のリード制限、XML リクエスト、PHP Java の例など、SOAP requestCampaign を介してMarketo Smart Campaign でリードを実行します。
+description: パラメーターセット、トークン処理、100件のリード制限、XML リクエスト、PHP Javaの例など、SOAP requestCampaignを介してMarketo Smart Campaignでリードを実行します。
 exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 91%
@@ -12,24 +12,24 @@ ht-degree: 91%
 
 # requestCampaign
 
-この機能は、Marketo スマートキャンペーンで既存の Marketo リードを実行します。スマートキャンペーンには、Web Service API ソースを使用した「キャンペーンをリクエスト」トリガーが必要です（以下を参照）。
+この機能は、Marketo スマートキャンペーンで既存の Marketo リードを実行します。 スマートキャンペーンには、Web Service API ソースを使用した「キャンペーンをリクエスト」トリガーが必要です（以下を参照）。
 
 ![Web Service API](assets/webserviceapi.png)
 
-使用できるパラメーターセットは 2 つあります。最初のケースでは、`campaignName` + `programName` + `programTokenList` を使用します。この場合、`programTokenList` は空に指定できます。2 番目のケースでは、`campaignId` のみを使用します。その他の組み合わせでは、不正なパラメーター例外がスローされます。
+使用できるパラメーターセットは 2 つあります。 最初のケースでは、`campaignName` + `programName` + `programTokenList` を使用します。 この場合、`programTokenList` は空に指定できます。 2 番目のケースでは、`campaignId` のみを使用します。 その他の組み合わせでは、不正なパラメーター例外がスローされます。
 
-メモ：1 回の呼び出しあたりの leadKey 値は 100 個までに制限されます。追加のキーは無視されます。
+メモ：1 回の呼び出しあたりの leadKey 値は 100 個までに制限されます。 追加のキーは無視されます。
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadList／leadKey／keyType | 必須 | `keyType` を使用すると、リードに対してクエリを実行するフィールドを指定できます。使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadList／leadKey／keyType | 必須 | `keyType` を使用すると、リードに対してクエリを実行するフィールドを指定できます。 使用可能な値：`IDNUM`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | leadList／leadKey／keyValue | 必須 | `keyValue` は、リードに対してクエリを実行する値です。 |
-| ソース | 必須 | キャンペーンソース。使用可能な値：`MKTOWS` または `SALES`。列挙は、WSDL で定義されます。 |
-| campaignId | パラメーターサイトに `campaignName`、`programName`、`programTokenList` がまとめてある場合はオプションです。それ以外の場合は `campaignId` が必須です | キャンペーンの ID。メモ：`campaignID` と `campaignName` の両方が渡されると、「無効なパラメーター」エラーが発生します。 |
+| ソース | 必須 | キャンペーンソース。 使用可能な値：`MKTOWS` または `SALES`。 列挙は、WSDL で定義されます。 |
+| campaignId | パラメーターサイトに `campaignName`、`programName`、`programTokenList` がまとめてある場合はオプションです。それ以外の場合は `campaignId` が必須です | キャンペーンの ID。 メモ：`campaignID` と `campaignName` の両方が渡されると、「無効なパラメーター」エラーが発生します。 |
 | campaignName | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、programName、programTokenList としてセットで必須です | キャンペーンの名前 |
 | programName | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、programName、programTokenList としてセットで必須です | プログラムの名前 |
-| programTokenList | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、`programName`、`programTokenList` としてセットで必須です | キャンペーンで使用されるトークンの配列。トークンを指定する場合、programName と `campaignName` が必須です。 |
-| programTokenList／attrib／name | オプション | 値を渡すプログラムトークンの名前。例：{{my.message}} |
+| programTokenList | campaignId が存在する場合はオプションです。それ以外の場合は、`campaignName`、`programName`、`programTokenList` としてセットで必須です | キャンペーンで使用されるトークンの配列。 トークンを指定する場合、programName と `campaignName` が必須です。 |
+| programTokenList／attrib／name | オプション | 値を渡すプログラムトークンの名前。 例：`{{my.message}}` |
 | programTokenList／attrib／value | オプション | 指定されたトークン名の値。 |
 
 ## リクエスト XML
