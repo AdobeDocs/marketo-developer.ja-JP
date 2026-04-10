@@ -16,7 +16,7 @@ ht-degree: 71%
 
 Marketo は、静的リストで CRUD 操作を実行する一連の REST API を備えています。 これらの API は、クエリ、作成、更新、削除のオプションを提供するアセット API の標準インターフェイスパターンに従います。
 
-リスト メンバーに対するリード データベース操作については、[ リスト メンバーシップ ](list-membership.md)を参照してください。
+リスト メンバーに対するリード データベース操作については、[&#x200B; リスト メンバーシップ &#x200B;](list-membership.md)を参照してください。
 
 ## クエリ
 
@@ -168,7 +168,7 @@ folder={"id":1034,"type":"Program"}&name=My Static List
 }
 ```
 
-[静的リスト ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/updateStaticListUsingPOST)の更新は、2つのオプションのパラメーターを持つ別のエンドポイントを通じて行われます。 `description` パラメーターは、静的リストの説明を更新するために使用できます。 `name` パラメーターは、静的リスト名を更新するために使用でき、一意である必要があります。
+[静的リスト &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/updateStaticListUsingPOST)の更新は、2つのオプションのパラメーターを持つ別のエンドポイントを通じて行われます。 `description` パラメーターは、静的リストの説明を更新するために使用できます。 `name` パラメーターは、静的リスト名を更新するために使用でき、一意である必要があります。
 
 ```http
 POST /rest/asset/v1/staticList/{id}.json
