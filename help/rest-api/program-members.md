@@ -3,7 +3,7 @@ title: プログラムメンバー
 feature: REST API
 description: Marketo REST APIを使用すると、プログラムメンバーの読み取り、作成、更新、削除、標準フィールドとカスタムフィールドの管理、検索可能なフィールドを使用したクエリを実行できます。
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1924'
 ht-degree: 97%
@@ -20,7 +20,7 @@ Marketo は、プログラムメンバーレコードの読み取り、作成、
 
 [プログラムメンバーを説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2)エンドポイントは、リードデータベースオブジェクトの標準パターンに従います。 `searchableFields` 配列は、クエリの実行に有効なフィールドのセットを提供します。 `fields` 配列には、REST API 名、表示名、フィールドの更新機能などのフィールドメタデータが含まれます。
 
-```
+```http
 GET /rest/v1/programs/members/describe.json
 ```
 
@@ -230,7 +230,7 @@ GET /rest/v1/programs/members/describe.json
 
 GET リクエストの合計長が8 KBを超えた場合、HTTP エラーが「414、URIが長すぎます」と返されます。 回避策として、GET を POST に変更し、`_method=GET` パラメーターを追加して、リクエスト本文にクエリ文字列を配置します。
 
-```
+```http
 GET /rest/v1/programs/{programId}/members.json?filterType=statusName&filterValues=Influenced
 ```
 
@@ -358,11 +358,11 @@ GET /rest/v1/programs/{programId}/members.json?filterType=statusName&filterValue
 
 呼び出しが成功すると、「プログラムステータスを変更」アクティビティがリードのアクティビティログに書き込まれます。
 
-```
+```http
 POST /rest/v1/programs/{programId}/members/status.json
 ```
 
-```
+```text
 Content-Type: application/json
 ```
 
@@ -424,11 +424,11 @@ Content-Type: application/json
 
 呼び出しが成功すると、「プログラムメンバーデータを変更」アクティビティがリードのアクティビティログに書き込まれます。
 
-```
+```http
 POST /rest/v1/programs/{programId}/members.json
 ```
 
-```
+```text
 Content-Type: application/json
 ```
 
@@ -494,7 +494,7 @@ Content-Type: application/json
 
 [名前によりプログラムメンバーフィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/getProgramMemberFieldByNameUsingGET)エンドポイントでは、プログラムメンバーオブジェクトの単一フィールドのメタデータを取得します。 必須の `fieldApiName` パスパラメーターは、フィールドの API 名を指定します。 応答は「プログラムメンバーを説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す `isCustom` 属性などの追加のメタデータが含まれます。
 
-```
+```http
 GET /rest/v1/programs/members/schema/fields/{fieldApiName}.json
 ```
 
@@ -523,7 +523,7 @@ GET /rest/v1/programs/members/schema/fields/{fieldApiName}.json
 
 [プログラムメンバーフィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/getProgramMemberFieldsUsingGET)エンドポイントは、プログラムメンバーオブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 個のレコードが返されます。 `batchSize` クエリパラメーターを使用して、この数を減らすことができます。 `moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。 この API から返される `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
 
-```
+```http
 GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 ```
 
@@ -605,7 +605,7 @@ API を使用して Marketo Engage の本番稼働インスタンスで作成す
 
 `name` と `displayName` の命名にはいくつかのルールが関連付けられています。 `name` 属性は一意にする必要があり、文字で始まり、文字、数字、またはアンダースコアのみを含める必要があります。 *`isplayName` は一意にする必要があり、特殊文字を含めることはできません。 一般的な命名規則では、`displayName` に[キャメルケース](https://en.wikipedia.org/wiki/Camel_case#)を適用して `name` を生成します。 例えば、`displayName` が「My Custom Field」の場合、 `name` は「myCustomField」 になります。
 
-```
+```http
 POST /rest/v1/programs/members/schema/fields.json
 ```
 
@@ -653,7 +653,7 @@ POST /rest/v1/programs/members/schema/fields.json
 
 必須の `fieldApiName` パスパラメーターは、更新するフィールドの API 名を指定します。 必須の `input` パラメーターは、単一のリードフィールドオブジェクトを含む配列です。 フィールドオブジェクトには、1 つ以上の属性が含まれています。
 
-```
+```http
 POST /rest/v1/programs/members/schema/fields/pMCFCustomField03.json
 ```
 
@@ -688,11 +688,11 @@ POST /rest/v1/programs/members/schema/fields/pMCFCustomField03.json
 
 エンドポイントは、&quot;deleted&quot; または &quot;skipped&quot; の `status` で応答します。 スキップ済みの場合は、`reasons` 配列も含まれます。 また、エンドポイントは、送信したレコードを応答の順序に関連付けるために使用できるインデックスである `seq` フィールドも返します。
 
-```
+```http
 POST /rest/v1/programs/{programId}/members/delete.json
 ```
 
-```
+```text
 Content-Type: application/json
 ```
 

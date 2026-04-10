@@ -3,7 +3,7 @@ title: 一括抽出
 feature: REST API
 description: Marketo Bulk Extract REST APIを使用して、OAuth、ジョブキュー、1日あたり500 MBの制限があるリード、アクティビティ、プログラムメンバー、カスタムオブジェクトを書き出す方法を説明します。
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1723'
 ht-degree: 97%
@@ -69,7 +69,7 @@ Marketo には、一括抽出と呼ばれる、ユーザおよびユーザ関連
 
 Marketo の一括抽出 API では、データ抽出を開始および実行するジョブの概念を使用します。 シンプルなリード書き出しジョブの作成を見てみましょう。
 
-```
+```http
 POST /bulk/v1/leads/export/create.json
 ```
 
@@ -127,7 +127,7 @@ POST /bulk/v1/leads/export/create.json
 
 場合によっては、最近のジョブを取得する必要があります。 これは、対応するオブジェクトタイプの「書き出しジョブを取得」を使用すると簡単に実行できます。 各「書き出しジョブを取得」エンドポイントでは、`status` フィルターフィールド、返されるジョブの数を制限する `batchSize`、大規模な結果セットをページングする `nextPageToken` をサポートしています。 ステータスフィルターでは、書き出しジョブの有効なステータス（作成済み、キュー済み、処理中、キャンセル済み、完了、失敗）をサポートしています。 batchSize の最大値とデフォルトは 300 です。 リード書き出しジョブのリストを取得しましょう。
 
-```
+```http
 GET /bulk/v1/leads/export.json?status=Completed,Failed
 ```
 
@@ -159,7 +159,7 @@ GET /bulk/v1/leads/export.json?status=Completed,Failed
 
 ジョブ ID を用意したら、ジョブを開始しましょう。
 
-```
+```http
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
 ```
 
@@ -171,7 +171,7 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 
 ステータスをポーリングできるのは、ジョブを作成した同じ API ユーザによって作成されたジョブのみです。
 
-```
+```http
 GET /bulk/v1/leads/export/{exportId}/status.json
 ```
 
@@ -202,7 +202,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ジョブが完了したら、ファイルを簡単に取得できます。
 
-```
+```http
 GET /bulk/v1/leads/export/{exportId}/file.json
 ```
 
@@ -210,13 +210,13 @@ GET /bulk/v1/leads/export/{exportId}/file.json
 
 抽出されたデータの部分的で再開にわかりやすい取得をサポートするには、ファイルエンドポイントは、オプションで `bytes` タイプの HTTP ヘッダー `Range` をサポートします（[RFC 7233](https://datatracker.ietf.org/doc/html/rfc7233) に準拠）。 ヘッダーが設定されていない場合は、コンテンツ全体が返されます。 ファイルの最初の 10,000 バイトを取得するには、次のヘッダーを GET リクエストの一部として、バイト 0 からエンドポイントに渡します。
 
-```
+```text
 Range: bytes=0-9999
 ```
 
 部分的なファイルを取得すると、エンドポイントはステータスコード 206 で応答し、Accept-ranges、Content-Length、Content-Range ヘッダーを返します。
 
-```
+```text
 Accept-Ranges: bytes
 Content-Length: 1000
 Content-Range: bytes 0-9999/123424
@@ -226,7 +226,7 @@ Content-Range: bytes 0-9999/123424
 
 ファイルは部分的に取得することも、`Range` ヘッダーを使用して後で再開することもできます。 ファイルの範囲はバイト 0 から始まり、`fileSize` から 1 を引いた値で終わります。 また、ファイルの長さは、「書き出しファイルを取得」エンドポイントを呼び出す際に、`Content-Range` 応答ヘッダーの値の分母としても報告されます。 取得が部分的に失敗した場合は、後で再開できます。 例えば、長さが 1000 バイトのファイルを取得しようとしたが、最初の 725 バイトしか受信されなかった場合、エンドポイントを再度呼び出して新しい範囲を渡すことで、失敗した時点から取得を再試行できます。
 
-```
+```text
 Range: bytes 724-999
 ```
 
@@ -255,7 +255,7 @@ Range: bytes 724-999
 
 sha256sum コマンドラインユーティリティを使用して、「bulk_lead_export.csv」という名前の取得したファイルの SHA-256 ハッシュを作成する例を以下に示します。
 
-```
+```bash
 $ sha256sum bulk_lead_export.csv
 83aca1351c9398d2770330e21a9e278880fd2f1eeaf8c8238bf7676d5c21d1c6 *bulk_lead_export.csv
 ```
@@ -264,7 +264,7 @@ $ sha256sum bulk_lead_export.csv
 
 ジョブが誤って設定されたり、不要になったりした場合は、簡単にキャンセルできます。
 
-```
+```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json
 ```
 

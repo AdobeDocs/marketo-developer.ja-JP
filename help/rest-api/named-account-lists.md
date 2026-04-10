@@ -3,7 +3,7 @@ title: 重点顧客リスト
 feature: REST API
 description: クエリ、作成、更新、削除する権限、フィールド、フィルタリング、エンドポイントなど、REST APIを使用してMarketoの名前付きアカウントリストを管理する方法について説明します。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '746'
 ht-degree: 84%
@@ -38,7 +38,7 @@ Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/ma
 
 アカウントリストのクエリの実行はシンプルで簡単です。 現在、重点顧客リストのクエリを実行するための有効な filterTypes は、&quot;dedupeFields&quot; と &quot;idField&quot; の 2 つだけです。 フィルタリングするフィールドは、クエリの `filterType` パラメーターで設定され、値はコンマ区切りのリストとして `filterValues as` に設定されます。 また、`nextPageToken` フィルターおよび `batchSize` フィルターもオプションのパラメーターです。
 
-```
+```http
 GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fb,dff23271-f996-47d7-984f-f2676861b5fc
 ```
 
@@ -77,7 +77,7 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 
 アクションが `updateOnly` の場合、オプションの `dedupeBy parameter` パラメーターを指定できます。  指定可能な値は、&quot;dedupeFields&quot;（&quot;name&quot; に対応）または idField&quot;（&quot;marketoGUID&quot; に対応）です。  `createOnly` モードでは、`dedupeBy` フィールドとして &quot;name&quot; のみが指定できます。 一度に最大 300 個のレコードを送信できます。
 
-```
+```http
 POST /rest/v1/namedAccountLists.json
 ```
 
@@ -119,7 +119,7 @@ POST /rest/v1/namedAccountLists.json
 
 重点顧客リストの削除は簡単で、リストの `name` または `marketoGUID` に基づいて実行できます。 使用するキーを選択するには、リクエストの `deleteB` メンバーで、名前に &quot;dedupeFields&quot; を渡すか、marketoGUID に &quot;idField&quot; を渡します。 未設定の場合、デフォルトは dedupeFields になります。 一度に最大 300 個のレコードを削除できます。
 
-```
+```http
 POST /rest/v1/namedAccountLists/delete.json
 ```
 
@@ -183,7 +183,7 @@ POST /rest/v1/namedAccountLists/delete.json
 
 `field` が未設定の場合は、`marketoGUI`、`nam`、`createdA`、`updatedA` が返されます。 `batchSiz` の最大値とデフォルト値は 300 です。
 
-```
+```http
 GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 ```
 
@@ -214,7 +214,7 @@ GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 重点顧客は、重点顧客リストに簡単に追加できます。 アカウントは、marketoGUID を使用してのみ追加できます。 一度に最大 300 個のレコードを追加できます。
 
-```
+```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 ```
 
@@ -254,7 +254,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 アカウントリストからレコードを削除するには、パスは異なりますが、インターフェイスは同じで、削除するレコードごとに `marketoGUI` が必要です。 一度に最大 300 個のレコードを削除できます。
 
-```
+```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 ```
 

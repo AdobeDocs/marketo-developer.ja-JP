@@ -3,7 +3,7 @@ title: トークン
 feature: REST API, Tokens
 description: Asset REST APIでMarketoのマイトークンを管理します。 サポートされているデータタイプ、フォルダーまたはプログラムによる取得、フォームエンコードされたPOSTを使用した作成または更新、名前による削除を参照してください。
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 91%
@@ -35,7 +35,7 @@ Marketo のトークンは、実行時に別のデータに置き換えられる
 
 [フォルダー ID によるトークンを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/getTokensByFolderIdUsingGET)では、プログラムタイプまたはフォルダータイプのパスパラメーターとして `id` を受け取ります。 このタイプは、`folderType` パラメーターで指定されます。
 
-```curl
+```http
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 ```
 
@@ -68,15 +68,15 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 [トークンを作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/addTokenTOFolderUsingPOST)エンドポイントでは、トークンを作成するか、トークンが存在する場合は送信された値でトークンを更新します。 トークンは、フォルダーまたはプログラムのコンテキストで作成されます。 必須の `id` パスパラメーターは、トークンが関連付けられるフォルダーの ID です。 `name`、`type`、`value`、`folderType` は、すべてトークンの必須パラメーターです。 データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。 トークンの `name` フィールドは 50 文字を超えることはできません。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}/tokens.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=April Fools&type=date&value=2015-04-01&folderType=Folder
 ```
 
@@ -109,15 +109,15 @@ name=April Fools&type=date&value=2015-04-01&folderType=Folder
 
 [名前によるトークンを削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens/operation/deleteTokenByNameUsingPOST)では、プログラムまたはフォルダータイプのパスパラメーターとして ID を受け取ります。 このタイプは、`folderType` パラメーターで指定されます。 トークンは、それぞれ必須である親フォルダー、`name`、トークンの `type` に基づいて削除されます。 データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}/tokens/delete.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=AprilFool - deverly&type=date&folderType=Program
 ```
 

@@ -3,7 +3,7 @@ title: アセット
 feature: REST API
 description: IDまたは名前によるクエリ、ページングによる参照、フォルダー、電子メール、フォーム、テンプレート、ファイル、トークンの作成または更新を行うためのMarketo Asset REST APIの概要。
 exl-id: 4273a5b1-1904-46e8-b583-fc6f46b388d2
-source-git-commit: 31a503b3892ed41b3defe3f4956cb5ee0c3d4c3e
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '898'
 ht-degree: 97%
@@ -42,7 +42,7 @@ Marketo アセットには、次のものが含まれます。
 
 ### ID 別
 
-```
+```http
 GET /rest/asset/v1/folder/{id}.json?type=Folder
 ```
 
@@ -83,7 +83,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 技術的な理由により、Asset API はコンマ（,）を含むアセット名を検索できません。  命名規則では、すべてのアセットタイプに対してコンマを除外することをお勧めします。
 
-```
+```http
 GET /rest/asset/v1/file/byName.json?name=My File
 ```
 
@@ -119,7 +119,7 @@ GET /rest/asset/v1/file/byName.json?name=My File
 - offset - 結果を返す整数のオフセット。
 - maxReturn - 返されるレコードの数を制限します。  未設定の場合のデフォルト値は 20 で、最大値は 200 です。
 
-```
+```http
 GET /rest/asset/v1/emailTemplates.json?offset=10&maxReturn=50
 ```
 
@@ -179,15 +179,15 @@ GET /rest/asset/v1/emailTemplates.json?offset=10&maxReturn=50
 
 例えば、トークンの作成方法を次に示します。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}/tokens.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=April Fools&value=2015-04-01&type=date&folderType=Folder
 ```
 
@@ -218,15 +218,15 @@ name=April Fools&value=2015-04-01&type=date&folderType=Folder
 
 フォルダーを更新するには、次の操作を実行します。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```sql
 type=Folder&description=This is a test (update 01)
 ```
 
@@ -271,15 +271,15 @@ type=Folder&description=This is a test (update 01)
 
 ランディングページでは、最初に親テンプレートを使用して、ランディングページアセットを作成する必要があります。  これにより、各コンテンツセクションのテンプレートのデフォルトコンテンツを含む新しいランディングページが作成されます。
 
-```
+```http
 POST rest/asset/v1/landingPages.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&description=this is a test&workspace=default&title=test create&keywords=awesome&formPrefill=false
 ```
 
@@ -320,7 +320,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 
 ランディングページのコンテンツを入力するには、コンテンツセクションのリストを取得し、テンプレートから外れたセクションに対して個別に更新を実行する必要があります。
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/content.json
 ```
 
@@ -352,7 +352,7 @@ GET /rest/asset/v1/landingPage/{id}/content.json
 
 #### セクションの更新
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/content/{contentId}.json?type=Form&value=1
 ```
 
@@ -374,7 +374,7 @@ POST /rest/asset/v1/landingPage/{id}/content/{contentId}.json?type=Form&value=1
 
 メール、ランディングページ、スニペット、フォームおよび対応するテンプレートを含む多くのアセットタイプには、関連するドラフトおよび承認システムがあります。  アセットを承認しようとすると、特定の検証ルールのセットに対してアセットが評価され、承認済み状態に設定される、失敗の理由が返されます。  これらのタイプのアセットの場合、特定のアセットのコンテンツを更新するたびに、アセットのドラフトに変更が行われ、承認済みバージョンには影響しません。  これにより、アセットのライブバージョンに影響を与えることなく、コンテンツを安全に変更できます。  その後、変更を、承認エンドポイントを使用してライブバージョンに適用できます。  また、これにより、追加の更新が適用されるまで、アセットのドラフト状態もクリアされます。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 ```
 
@@ -406,7 +406,7 @@ POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 
 また、ドラフトの破棄は、有効なアセットタイプごとにエンドポイントを通じても実行できます。  承認済みでドラフト状態のアセットにこれを使用すると、現在のドラフトと保留中の変更がすべて破棄されます。  現在承認済みのバージョンがないアセットに対してこれを使用しても、何も実行されず、エラーが返されます。  ドラフトのみのアセットは削除できますが、破棄できません。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/discardDraft.json
 ```
 
@@ -436,7 +436,7 @@ POST /rest/asset/v1/emailTemplate/{id}/discardDraft.json
 
 また、アセットが承認のみされている状態では、承認されていない状態になることもあります。  これにより、アセットのライブバージョンがすべて削除され、アセットがドラフトのみの状態に戻され、関連するドラフトも破棄されます。  このアクションは、アセットが Marketo 内のどこにも使用されていない場合にのみ、ほとんどのアセットに対して実行できます（例：メールが「メールを送信」フローステップで参照されていたり、スニペットがメールに埋め込まれていたりしない）。
 
-```
+```http
 POST /rest/asset/v1/email/{id}/unapprove.json
 ```
 
@@ -458,7 +458,7 @@ POST /rest/asset/v1/email/{id}/unapprove.json
 
 フォームを除き、承認およびドラフト状態のアセットは、承認されている間は削除できません。削除する前に未承認にする必要があります。  削除は通常、アセットの場合は未承認で使用されておらず、フォルダーの場合はアセットが空の場合にのみ実行できます。  注目すべき例外の 1 つはプログラムです。プログラムは、プログラムとそのコンテンツがプログラムの範囲外で使用されていない限り、すべての子コンテンツと共に削除できます。
 
-```
+```http
 POST /rest/asset/v1/program/{id}/delete.json
 ```
 

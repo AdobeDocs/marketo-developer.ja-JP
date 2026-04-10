@@ -1,20 +1,20 @@
 ---
 title: ファイル
 feature: REST API
-description: Marketo REST API ファイルのガイド - ID または名前でクエリ、フォルダーとオフセットで参照、マルチパートアップロードで作成または更新、insertOnly、MIME タイプ、ストリーミングなし
+description: Marketo REST API ファイルのガイド IDまたは名前によるクエリ、フォルダーとオフセットによる参照、マルチパートアップロードによる作成または更新、insertOnly、MIME タイプ、ストリーミングなし
 exl-id: 17361cdc-2309-442c-803c-34ce187aee1a
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 90%
+source-wordcount: '347'
+ht-degree: 91%
 
 ---
 
 # ファイル
 
-[ファイルエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
+[ファイル エンドポイント リファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
 
-Marketo サブスクリプションでは、画像、スクリプト、ドキュメント、スタイルシートなどの任意のファイルを保存できます。これらはすべて、REST API 経由でリモートで操作できます。Marketo サブスクリプションで使用できるストレージは、帯域幅を大量に消費するアプリケーション向けに最適化されていないので、適切なオーディオおよびビデオストリーミングアプリケーションには代替手段を使用する必要があります。
+Marketo サブスクリプションでは、画像、スクリプト、ドキュメント、スタイルシートなどの任意のファイルを保存できます。 これらはすべて、REST API 経由でリモートで操作できます。 Marketo サブスクリプションで使用できるストレージは、帯域幅を大量に消費するアプリケーション向けに最適化されていないので、適切なオーディオおよびビデオストリーミングアプリケーションには代替手段を使用する必要があります。
 
 ## クエリ
 
@@ -22,7 +22,7 @@ Marketo サブスクリプションでは、画像、スクリプト、ドキュ
 
 ### ID 別
 
-```
+```http
 GET /rest/asset/v1/file/{id}.json
 ```
 
@@ -55,7 +55,7 @@ GET /rest/asset/v1/file/{id}.json
 
 必須の `name` パラメーターを使用して、ファイルの名前を指定します。
 
-```
+```http
 GET /rest/asset/v1/file/byName.json?name=foo.png
 ```
 
@@ -93,7 +93,7 @@ GET /rest/asset/v1/file/byName.json?name=foo.png
 - offset - エントリの取得を開始する位置を指定する整数（デフォルトは 0）。maxReturn パラメーターと共に使用できます。
 - maxReturn - 返されるエントリの最大数を指定する整数（デフォルトは 20、最大は 200）
 
-```
+```http
 GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 ```
 
@@ -155,13 +155,13 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 作成と更新
 
-[ファイルの作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)は、multipart/form-data タイプのリクエストで実行されます。リクエストには、少なくとも名前、フォルダー、ファイルが必要です。説明はオプションで、insertOnly フラグは、作成呼び出しが同じ名前の既存のファイルを更新するのを防ぎます。file パラメーターの場合、name パラメーターに加えて、Content-Disposition ヘッダーに &quot;filename&quot; が必要です。また、ファイルの Content-Type ヘッダーも渡す必要があります。これは、Marketo がファイルを提供するために使用する MIME タイプになります。
+[ファイルの作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)は、multipart/form-data タイプのリクエストで実行されます。 リクエストには、少なくとも名前、フォルダー、ファイルが必要です。説明はオプションで、insertOnly フラグは、作成呼び出しが同じ名前の既存のファイルを更新するのを防ぎます。 file パラメーターの場合、name パラメーターに加えて、Content-Disposition ヘッダーに &quot;filename&quot; が必要です。 また、ファイルの Content-Type ヘッダーも渡す必要があります。これは、Marketo がファイルを提供するために使用する MIME タイプになります。
 
-```
+```http
 POST /rest/asset/v1/files.json
 ```
 
-```
+```html
 ------WebKitFormBoundary2VyWOacQSupl4gUL
 Content-Disposition: form-data; name="file"; filename="marketo.html"
 Content-Type: text/html
@@ -208,13 +208,13 @@ This is a test file
 }
 ```
 
-[ファイルの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/File-Contents/operation/updateContentUsingPOST)は、この ID に基づいて実行できます。唯一のパラメーターは、作成と同じ要件を持つ file パラメーターです。
+[ファイルの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/File-Contents/operation/updateContentUsingPOST)は、この ID に基づいて実行できます。 唯一のパラメーターは、作成と同じ要件を持つ file パラメーターです。
 
-```
+```http
 POST /rest/asset/v1/file/{id}/content.json
 ```
 
-```
+```html
 ------WebKitFormBoundary2VyWOacQSupl4gUL
 Content-Disposition: form-data; name="file"; filename="marketo.html"
 Content-Type: text/html

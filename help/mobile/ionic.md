@@ -1,18 +1,18 @@
 ---
 title: '[!DNL Ionic]'
 feature: Mobile Marketing
-description: Marketo Cordova プラグインと Ionic の統合、プッシュ通知の有効化、SDKの初期化、セッションのトラッキング、リードの関連付けに関するステップバイステップガイド。
+description: Marketo Cordova PluginとIonicを統合するステップバイステップガイド、プッシュ通知を有効にする、SDKを初期化する、セッションをトラッキングする、リードを関連付ける。
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '663'
 ht-degree: 96%
 
 ---
 
 # Ionic
 
-このトピックでは、Marketo Cordova プラグインを統合する方法について説明します。[!DNL Ionic] キャパシターは現在サポートされていません。
+このトピックでは、Marketo Cordova プラグインを統合する方法について説明します。 [!DNL Ionic] キャパシターは現在サポートされていません。
 
 ## 前提条件
 
@@ -54,7 +54,7 @@ ht-degree: 96%
 
 >[!TAB Objective C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 
 [sharedInstance trackPushNotification:launchOptions];
@@ -62,7 +62,7 @@ Marketo *sharedInstance = [Marketo sharedInstance];
 
 >[!TAB Swift]
 
-```
+```swift
 let sharedInstance: Marketo = Marketo.sharedInstance()
 
 sharedInstance.trackPushNotfication(launchOptions)
@@ -218,7 +218,7 @@ marketo.reportaction(
 
 ## セッションレポート
 
-次に示すように、「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントをレポートします。 これは、モバイルアプリケーションで費やした時間を追跡するために使用されます。メモ：これは Android で必要です。
+次に示すように、「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントをレポートします。 これは、モバイルアプリケーションで費やした時間を追跡するために使用されます。 メモ：これは Android で必要です。
 
 ```javascript
 //Add the following code in your www/js/index.js
@@ -249,6 +249,6 @@ onStart: function() {
 1. MARKETO REST API
 1. フォーム送信
 
-使用する方法に応じて、新しく作成したリードは様々なトリガーとフィルターによって認識されます。MME SDK または REST API を使用して作成されたリードは、「リードが作成されました」のトリガーおよびフィルターに表示されます。 フォーム送信によって作成されたリードは、「フォームに記入」トリガーとフィルターに表示されます。
+使用する方法に応じて、新しく作成したリードは様々なトリガーとフィルターによって認識されます。 MME SDK または REST API を使用して作成されたリードは、「リードが作成されました」のトリガーおよびフィルターに表示されます。 フォーム送信によって作成されたリードは、「フォームに記入」トリガーとフィルターに表示されます。
 
 ベストプラクティスは、リードを作成する際に Web アプリで使用される方法との一貫性を維持することです。 リードを作成するメカニズムとしてフォーム送信を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 リードを作成するメカニズムとして REST API を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 Web アプリでリードを作成するメカニズムとしてフォーム送信も REST API も使用していない場合は、MME SDK を使用してMarketoでリードを作成することを検討できます。

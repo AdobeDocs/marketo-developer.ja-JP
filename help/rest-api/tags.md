@@ -3,7 +3,7 @@ title: タグ
 feature: REST API, Tags
 description: タグタイプのクエリ、名前による許可される値の取得、REST Asset APIを介したMarketoのプログラムタグの更新または削除などを、リクエストサンプルを交えて実行できます。
 exl-id: 64731d1a-a749-4d6f-b336-16c733d002f0
-source-git-commit: b2b1027ccf8016c2e4c081753842a6febac832ec
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '258'
 ht-degree: 82%
@@ -22,7 +22,7 @@ ht-degree: 82%
 
 ### タグの取得
 
-```
+```http
 GET /rest/asset/v1/tagTypes.json
 ```
 
@@ -54,7 +54,7 @@ GET /rest/asset/v1/tagTypes.json
 
 ### 名前別
 
-```
+```http
 GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 ```
 
@@ -79,7 +79,7 @@ GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 
 [プログラムタグを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST)エンドポイントを使用すると、特定のタグタイプの値を更新できます。 エンドポイントは、プログラム ID と更新するタグタイプを指定する `id` および `tagType` パスパラメーターを受け取ります。 `tagValue` クエリパラメーターは、タグタイプの新しい値を指定するのに使用されます。 すべてのパラメーターは必須です。
 
-```
+```http
 POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 ```
 
@@ -97,13 +97,13 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-タグは、[&#x200B; プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用して一括で更新できます。 例は、[&#x200B; プログラムの更新セクション &#x200B;](programs.md#update)で確認できます。
+タグは、[ プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用して一括で更新できます。 例は、[ プログラムの更新セクション ](programs.md#update)で確認できます。
 
 ## 削除
 
 [プログラムタグを削除](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/deleteProgramUsingPOST)エンドポイントを使用すると、不要なタグタイプを削除できます。 エンドポイントは、プログラム ID と削除するタグタイプを指定する `id` および `tagType` パスパラメーターを受け取ります。
 
-```
+```http
 POST /rest/asset/v1/program/{id}/tag/{tagType}/delete.json
 ```
 

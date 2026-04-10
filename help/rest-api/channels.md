@@ -1,20 +1,20 @@
 ---
 title: チャネル
 feature: REST API
-description: Asset REST API を使用してMarketo チャネルをクエリする方法、ページネーションを使用して参照する方法または名前で取得する方法、進捗ステータスを表示する方法およびプログラムタイプルールを理解する方法について説明します。
+description: Asset REST APIを使用してMarketo チャネルをクエリする方法、ページネーションを使用して参照する方法、名前で取得する方法、進行状況ステータスを表示する方法、プログラムタイプルールについて説明します。
 exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 82%
+source-wordcount: '151'
+ht-degree: 81%
 
 ---
 
 # チャネル
 
-[チャネルエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
+[チャネル エンドポイント リファレンス](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
 
-チャネルは、すべてのプログラムタイプに標準の必須フィールドです。各タイプのチャネルは、指定された `applicableProgramType` タイプでのみ使用でき、各プログラムのプログラムメンバーに有効な使用可能なプログラムステータスのリストを提供します。プログラムの作成後にチャネルのプログラムステータスを変更した場合、リードが変更される可能性のあるプログラムステータスのリストは、その時点でチャネルによって提供されたリストと一致しますが、既存のプログラムメンバーシップレコードのプログラムステータスが遡及的に変更されることはありません。
+チャネルは、すべてのプログラムタイプに標準の必須フィールドです。 各タイプのチャネルは、指定された `applicableProgramType` タイプでのみ使用でき、各プログラムのプログラムメンバーに有効な使用可能なプログラムステータスのリストを提供します。 プログラムの作成後にチャネルのプログラムステータスを変更した場合、リードが変更される可能性のあるプログラムステータスのリストは、その時点でチャネルによって提供されたリストと一致しますが、既存のプログラムメンバーシップレコードのプログラムステータスが遡及的に変更されることはありません。
 
 ## クエリ
 
@@ -22,7 +22,7 @@ ht-degree: 82%
 
 ### 参照
 
-```
+```http
 GET /rest/asset/v1/channels.json?offset=10
 ```
 
@@ -120,7 +120,7 @@ GET /rest/asset/v1/channels.json?offset=10
 
 ### 名前別
 
-```
+```http
 GET /rest/asset/v1/channel/byName.json?name=Online Advertising
 ```
 

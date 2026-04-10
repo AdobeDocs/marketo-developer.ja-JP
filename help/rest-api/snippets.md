@@ -1,11 +1,11 @@
 ---
 title: スニペット
 feature: REST API, Snippets
-description: ID によるクエリとステータスによる参照に対応するスニペット用のMarketo Asset REST API。コンテンツの取得、HTML、テキスト、動的コンテンツの作成と更新を行います。
+description: Marketo Asset REST APIのスニペット用。ID別のクエリとステータス付きの参照、コンテンツの取得、HTML、テキスト、動的コンテンツの作成と更新が可能です。
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '511'
 ht-degree: 94%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 94%
 
 [スニペットエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets)
 
-スニペットは、メールやランディングページに埋め込むことができ、動的コンテンツ用にセグメント化できる再利用可能な HTML コンポーネントです。スニペットには関連するテンプレートがなく、Marketo 内の他のアセット内で作成およびデプロイできます。
+スニペットは、メールやランディングページに埋め込むことができ、動的コンテンツ用にセグメント化できる再利用可能な HTML コンポーネントです。 スニペットには関連するテンプレートがなく、Marketo 内の他のアセット内で作成およびデプロイできます。
 
 ## クエリ
 
-スニペットのクエリは、名前別メソッドがないことを除いて、アセットの標準パターンに従います。[ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetByIdUsingGET)メソッドと[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetUsingGET)メソッドの両方で、ステータスフィールドを使用して、スニペットの承認済みバージョンまたはドラフトバージョンを取得できます。
+スニペットのクエリは、名前別メソッドがないことを除いて、アセットの標準パターンに従います。 [ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetByIdUsingGET)メソッドと[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetUsingGET)メソッドの両方で、ステータスフィールドを使用して、スニペットの承認済みバージョンまたはドラフトバージョンを取得できます。
 
 ### ID 別
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}.json?status=approved
 ```
 
@@ -52,7 +52,7 @@ GET /rest/asset/v1/snippet/{id}.json?status=approved
 
 ### 参照
 
-```
+```http
 GET /rest/asset/v1/snippets.json?maxReturn=3
 ```
 
@@ -116,7 +116,7 @@ GET /rest/asset/v1/snippets.json?maxReturn=3
 
 特定のスニペットのコンテンツは、スニペット ID に基づいて取得できます。
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}/content.json
 ```
 
@@ -143,17 +143,17 @@ GET /rest/asset/v1/snippet/{id}/content.json
 
 ## 作成と更新
 
-スニペットは、複雑なアセット作成パターンに従います。[スニペットを作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST)の呼び出しとそのコンテンツは別々に行われるので、最初の呼び出しは、オプションの説明と共に作成エンドポイントに対して行う必要があります。データは JSON ではなく、x-www-form-urlencoded として渡されます。
+スニペットは、複雑なアセット作成パターンに従います。[スニペットを作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST)の呼び出しとそのコンテンツは別々に行われるので、最初の呼び出しは、オプションの説明と共に作成エンドポイントに対して行う必要があります。   データは JSON ではなく、x-www-form-urlencoded として渡されます。
 
-```
+```http
 POST /rest/asset/v1/snippets.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=This is a test snippet
 ```
 
@@ -183,17 +183,17 @@ name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=Thi
 }
 ```
 
-スニペット内のコンテンツの追加や置換は、ID によって行われます。コンテンツのタイプは、テキスト、HTML または DynamicContent のいずれかになります。タイプがテキストの場合、コンテンツパラメーターはプレーンテキストエンドポイントになりますが、HTML の場合は、目的のマークアップテキストになります。タイプを DynamicContent に設定した場合、コンテンツパラメーターは、スニペットに関連付けるセグメント化の ID に設定する必要があります。
+スニペット内のコンテンツの追加や置換は、ID によって行われます。 コンテンツのタイプは、テキスト、HTML または DynamicContent のいずれかになります。 タイプがテキストの場合、コンテンツパラメーターはプレーンテキストエンドポイントになりますが、HTML の場合は、目的のマークアップテキストになります。 タイプを DynamicContent に設定した場合、コンテンツパラメーターは、スニペットに関連付けるセグメント化の ID に設定する必要があります。
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/content.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 ```
 
@@ -211,17 +211,17 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[メタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST)も ID によって行われます。名前と説明のみ更新できます。
+[メタデータの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST)も ID によって行われます。 名前と説明のみ更新できます。
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet&description=New Description
 ```
 
@@ -253,9 +253,9 @@ name=Test Snippet&description=New Description
 
 ## 動的コンテンツ
 
-スニペットは動的コンテンツの標準パターンに従いますが、それ自体では 1 つのコンテンツセクション全体を表すだけなので、各スニペットには 1 つの動的セクションのみを含めることができ、使用されるセグメント化内の各セグメントに対してオプションで内部セクションのリストを含めることができます。スニペットには動的コンテンツセクションが 1 つしか存在しない場合があるので、動的コンテンツはスニペット ID のみでクエリを実行できます。
+スニペットは動的コンテンツの標準パターンに従いますが、それ自体では 1 つのコンテンツセクション全体を表すだけなので、各スニペットには 1 つの動的セクションのみを含めることができ、使用されるセグメント化内の各セグメントに対してオプションで内部セクションのリストを含めることができます。 スニペットには動的コンテンツセクションが 1 つしか存在しない場合があるので、動的コンテンツはスニペット ID のみでクエリを実行できます。
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 ```
 
@@ -308,11 +308,11 @@ GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 
 ## 承認
 
-スニペットには、標準のアセットパターンに従って、ドラフトを承認、未承認、破棄するエンドポイントがあります。スニペットを承認するには、スニペットがドラフトステータスである必要があります。
+スニペットには、標準のアセットパターンに従って、ドラフトを承認、未承認、破棄するエンドポイントがあります。 スニペットを承認するには、スニペットがドラフトステータスである必要があります。
 
 ### 承認
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/approveDraft.json
 ```
 
@@ -346,7 +346,7 @@ POST /rest/asset/v1/snippet/{id}/approveDraft.json
 
 `unapprove` エンドポイントは、承認済みスニペットに対してのみ使用できます。
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/unapprove.json
 ```
 
@@ -378,9 +378,9 @@ POST /rest/asset/v1/snippet/{id}/unapprove.json
 
 ### 下書きを破棄
 
-スニペットを破棄するには、メールがドラフトステータスである必要があります。承認済みスニペットは破棄できません。
+スニペットを破棄するには、メールがドラフトステータスである必要があります。  承認済みスニペットは破棄できません。
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/discardDraft.json
 ```
 
@@ -400,17 +400,17 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 複製
 
-API を使用して[スニペットを複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST)するのは簡単で、必須の名前、元のスニペットとフォルダーの ID、オプションの説明を含む標準パターンに従います。承認済みバージョンが存在しない場合は、ドラフトバージョンが複製されます。
+API を使用して[スニペットを複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST)するのは簡単で、必須の名前、元のスニペットとフォルダーの ID、オプションの説明を含む標準パターンに従います。  承認済みバージョンが存在しない場合は、ドラフトバージョンが複製されます。
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet Clone 3 - deverly&folder={"id":395,"type":"Folder"}&description=This is a test snippet
 ```
 

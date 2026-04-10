@@ -1,9 +1,9 @@
 ---
 title: ユーザプロファイル
 feature: Mobile Marketing, Users and Roles
-description: Objective C Swift および Java、標準フィールド、カスタムフィールド、associateLead を使用して、iOSとAndroidのMarketo Mobile SDKでユーザープロファイルを作成および更新する方法を説明します
+description: IOSおよびAndroid上のMarketo Mobile SDKで、目標C SwiftおよびJava、標準フィールドおよびカスタムフィールド、associateLeadを使用してユーザープロファイルを作成および更新する方法について説明します
 exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 74%
@@ -21,7 +21,7 @@ ht-degree: 74%
 
 次に示すように、ユーザフィールドを送信することで、リッチプロファイルを作成できます。
 
-```
+```objectivec
 MarketoLead *profile = [[MarketoLead alloc] init];
 
 // Get user profile from network and populate
@@ -43,7 +43,7 @@ MarketoLead *profile = [[MarketoLead alloc] init];
 [profile setTwitterId:@"twitterid"];
 ```
 
-```
+```swift
 let profile =  MarketoLead()
 
 // Get user profile from network and populate
@@ -71,7 +71,7 @@ profile.setTwitterId("twitterid")
 
 >[!TAB Objective C]
 
-```
+```objectivec
 // Add other custom fields
 [profile setFieldName:@"mobilePhone"withValue:@"123.456.7890"];
 [profile setFieldName:@"numberOfEmployees"withValue:@"10"];
@@ -80,7 +80,7 @@ profile.setTwitterId("twitterid")
 
 >[!TAB Swift]
 
-```
+```swift
 // Add other custom fields
 profile.setFieldName("mobilePhone" , withValue :"123.456.7890");
 profile.setFieldName("numberOfEmployees", withValue: "10");
@@ -95,7 +95,7 @@ profile.setFieldName("phone", withValue:"123.456.7890");
 
 >[!TAB Objective C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 
 // This method will update user profile
@@ -104,7 +104,7 @@ Marketo *sharedInstance = [Marketo sharedInstance];
 
 >[!TAB Swift]
 
-```
+```swift
 let marketo = Marketo.sharedInstance()
 
 // This method will update user profile

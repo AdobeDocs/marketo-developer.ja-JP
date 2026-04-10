@@ -3,7 +3,7 @@ title: フォルダー
 feature: REST API
 description: 作成、更新、削除、IDと名前によるクエリ、ルート、ワークスペース、maxDepth、ページネーションを使用した一括参照について説明するフォルダー向けのMarketo REST API ガイド。
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: 31a503b3892ed41b3defe3f4956cb5ee0c3d4c3e
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 87%
@@ -22,7 +22,7 @@ ht-degree: 87%
 
 ### ID 別
 
-```
+```http
 GET /rest/asset/v1/folder/{id}.json?type=Folder
 ```
 
@@ -72,7 +72,7 @@ type パラメーターは必須で、「フォルダー」または「プログ
 
 [名前別クエリ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByNameUsingGET)も許可されます。 名前別クエリエンドポイントでは、name が唯一の必須パラメーターです。 name は、インスタンス内のフォルダーの名前フィールドに対して正確な文字列一致を実行し、その名前に一致する各フォルダーの結果を返します。 また、オプションのクエリパラメーターとして、「フォルダー」または「プログラム」にすることができる「type」、検索するフォルダーの ID である「root」、または検索するワークスペースの名前である「workspace」があります。 root パラメーターが設定されている場合は、type パラメーターも設定する必要があります。
 
-```
+```http
 GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 ```
 
@@ -125,7 +125,7 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 - workSpace - フィルタリング先のワークスペースの名前。
 - maxDepth - フォルダー階層内をトラバースするレベルの最大数。 0 に設定すると、ルートで指定したフォルダーのみが返されます。 指定しない場合、デフォルト値は 2 です。
 
-```
+```http
 GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 ```
 
@@ -213,15 +213,15 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 [フォルダーの作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/createFolderUsingPOST)は簡単で、application/x-www-form-urlencoded POST で実行されます。この POST には、文字列の「name」とフォルダーを作成する親の「parent」という 2 つの必須パラメーターがあります。parent idは、id と type の 2 つのメンバーを持つ埋め込み JSON オブジェクトです。type は、対象フォルダのタイプに応じて Folder または Program のいずれかになります。 オプションで、「description」という文字列も含めることができ、最大 2000 文字まで指定できます。
 
-```
+```http
 POST /rest/asset/v1/folders.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 parent={"id":416,"type":"Folder"}&name=Test 10 - deverly&description=This is a test
 ```
 
@@ -260,15 +260,15 @@ parent={"id":416,"type":"Folder"}&name=Test 10 - deverly&description=This is a t
 
 フォルダーの更新は別のエンドポイントを通じて行われ、description、name および `isArchive` は更新用のオプションパラメーターです。 `isArchive` が更新によって変更された場合、Marketo UI でフォルダーがアーカイブされる（true に変更された場合）か、アーカイブ解除される（false に変更された場合）ことになります。 この API ではプログラムを更新できません。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```sql
 type=Folder&description=This is a test (update 01)
 ```
 
@@ -309,7 +309,7 @@ type=Folder&description=This is a test (update 01)
 
 フォルダーが空の場合、つまりアセットやサブフォルダーが含まれていない場合、単一のフォルダーに対して削除を行うことができます。 フォルダーのタイプがプログラムの場合や、isSystem フィールドが true に設定されている場合、この API ではフォルダーを削除できません。
 
-```
+```http
 POST /rest/asset/v1/folder/{id}/delete.json
 ```
 

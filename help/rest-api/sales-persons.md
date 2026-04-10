@@ -1,20 +1,20 @@
 ---
 title: セールス担当者
 feature: REST API
-description: externalSalesPersonId を使用してリードに関連付け、クエリ、アップサート、削除を実行する、SFDCまたは Dynamics 同期を使用した営業担当者レコードに関するMarketo REST API ガイド。
+description: externalSalesPersonIdを使用してリードに関連付け、クエリ、アップサート、削除を実行する、SFDCまたはDynamics同期を使用したセールス担当者レコードに関するMarketo REST API ガイド。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '396'
 ht-degree: 92%
 
 ---
 
 # セールス担当者
 
-[セールス担当者エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[営業担当者エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-Sales Person API は、[SFDC 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)が有効になっているサブスクリプションに対する読み取り専用アクセスです。セールス担当者は、リードレコードのセールス所有者であるユーザレコードのタイプです。各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられます。リードが、入力した externalSalesPersonId フィールドでセールス担当者に関連付けられると、Marketo のそのリードレコードに対応するリード所有者ルックアップフィールドが入力され、対応するフィルターとトークンの使用が可能になります。
+Sales Person API は、[SFDC 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)が有効になっているサブスクリプションに対する読み取り専用アクセスです。 セールス担当者は、リードレコードのセールス所有者であるユーザレコードのタイプです。 各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられます。 リードが、入力した externalSalesPersonId フィールドでセールス担当者に関連付けられると、Marketo のそのリードレコードに対応するリード所有者ルックアップフィールドが入力され、対応するフィルターとトークンの使用が可能になります。
 
 セールス担当者は、[リードを同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによってリードレコードに関連付けられます。
 
@@ -28,7 +28,7 @@ Sales Person API は、[SFDC 同期](https://experienceleague.adobe.com/ja/docs/
 
 セールス担当者レコードの説明は、リードデータベースオブジェクトの標準パターンに従います。
 
-```
+```http
 GET /rest/v1/salespersons/describe.json
 ```
 
@@ -99,9 +99,9 @@ GET /rest/v1/salespersons/describe.json
 
 ## クエリ
 
-シンプルなキーの標準クエリパターンを使用するセールス担当者。この例では、ユーザのメールは externalSalesPersonId として使用されています。デフォルトでは、クエリは、返されたレコードに対して入力されているすべてのフィールドを返します。
+シンプルなキーの標準クエリパターンを使用するセールス担当者。 この例では、ユーザのメールは externalSalesPersonId として使用されています。 デフォルトでは、クエリは、返されたレコードに対して入力されているすべてのフィールドを返します。
 
-```
+```http
 GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.com,sam@test.com
 ```
 
@@ -132,7 +132,7 @@ GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.c
 
 更新のパターンは標準です。
 
-```
+```http
 POST /rest/v1/salespersons.json
 ```
 
@@ -180,12 +180,12 @@ POST /rest/v1/salespersons.json
 
 削除のパターンは標準です。
 
-セールス担当者は、「使用中」の場合は削除できません。この場合、セールス担当者はスキップされます。例:
+セールス担当者は、「使用中」の場合は削除できません。 この場合、セールス担当者はスキップされます。 例:
 
 - セールス担当者がアクティブなリードに関連付けられている場合
 - セールス担当者が削除された会社に関連付けられている場合
 
-```
+```http
 POST /rest/v1/salespersons/delete.json
 ```
 

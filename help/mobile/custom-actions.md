@@ -1,20 +1,20 @@
 ---
 title: カスタムアクション
 feature: Mobile Marketing
-description: iOSおよびAndroid用のMarketo Mobile SDKを使用してカスタムアクションを送信およびレポートする方法、オフラインでキューに入れる方法、スマートキャンペーンをトリガーで配信する方法、20 文字を満たす方法について説明します。
+description: Marketo Mobile SDK iOSおよびAndroid版を使用してカスタムアクションを送信およびレポートし、オフラインでキューを作成し、スマートキャンペーンをトリガーし、20文字のユーザーに対応する方法を説明します。
 exl-id: 8c2698ce-4e39-4b2b-9d36-0864c55be17a
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '336'
 ht-degree: 92%
 
 ---
 
 # カスタムアクション
 
-カスタムアクションを送信することで、ユーザインタラクションを追跡できます。モバイルアプリが Marketo SDK を呼び出してカスタムアクションを送信すると、カスタムアクションは最初にデバイスに保存されます。次に、Marketo SDK では、カスタムアクションを送信する前に、適切なインターネット接続があるかどうかを確認します。その結果、カスタムアクションが送信されてから Marketo で受信されるまでの間に遅延が生じる場合があります。
+カスタムアクションを送信することで、ユーザインタラクションを追跡できます。 モバイルアプリが Marketo SDK を呼び出してカスタムアクションを送信すると、カスタムアクションは最初にデバイスに保存されます。 次に、Marketo SDK では、カスタムアクションを送信する前に、適切なインターネット接続があるかどうかを確認します。 その結果、カスタムアクションが送信されてから Marketo で受信されるまでの間に遅延が生じる場合があります。
 
-カスタムアクションは、スマートキャンペーンのトリガーおよびフィルターとして使用できます。詳しくは、[モバイルアプリのアクティビティ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)を参照してください。
+カスタムアクションは、スマートキャンペーンのトリガーおよびフィルターとして使用できます。 詳しくは、[モバイルアプリのアクティビティ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)を参照してください。
 
 ## iOS でのカスタムアクションの送信
 
@@ -24,14 +24,14 @@ ht-degree: 92%
 
 >[!TAB Objective C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 [sharedInstance reportAction:@"Login" withMetaData:nil];
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 sharedInstance.reportAction("Login", withMetaData:nil);
 ```
 
@@ -43,7 +43,7 @@ sharedInstance.reportAction("Login", withMetaData:nil);
 
 >[!TAB Objective C]
 
-```
+```objectivec
 MarketoActionMetaData *meta = [[MarketoActionMetaData alloc] init];
 [meta setType:@"Shopping"];
 [meta setDetails:@"RedShirt"];
@@ -55,7 +55,7 @@ MarketoActionMetaData *meta = [[MarketoActionMetaData alloc] init];
 
 >[!TAB Swift]
 
-```
+```swift
 let meta = MarketoActionMetaData()
 meta.setType("Shopping");
 meta.setDetails("RedShirt");
@@ -71,15 +71,15 @@ sharedInstance.reportAction("Bought Shirt", withMetaData:meta);
 
 >[!BEGINTABS]
 
->[!TAB 目標 C]
+>[!TAB Objective C]
 
-```
+```objectivec
 [sharedInstance reportAll];
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 sharedInstance.reportAll();
 ```
 
@@ -113,6 +113,6 @@ sharedInstance.reportAll();
 
 ## カスタムアクションのトラブルシューティング
 
-モバイルカスタムアクションの設定は簡単ですが、Mobile SDK から Marketo に送信できる文字数には制限があります。Mobile SDK を通じて Marketo に報告するカスタムアクションはすべて 20 文字未満であることを確認します。
+モバイルカスタムアクションの設定は簡単ですが、Mobile SDK から Marketo に送信できる文字数には制限があります。 Mobile SDK を通じて Marketo に報告するカスタムアクションはすべて 20 文字未満であることを確認します。
 
-**共有デバイスでの複数ユーザのユースケースに関するメモ：**&#x200B;ユーザが Marketo SDK と統合されたモバイルアプリにログインすると、リードとアプリのインストールを関連付ける最初の呼び出しが行われます。この呼び出しが正常に完了すると、アプリ内の後続のユーザアクティビティがリードのアクティビティログに表示されます。これは非同期呼び出しなので、ログイン直後にカスタムアクションが記録された場合、関連付け呼び出しが成功するまで、以前にログインしていたユーザに関連付けられる場合があります。
+**共有デバイスでの複数ユーザのユースケースに関するメモ：**&#x200B;ユーザが Marketo SDK と統合されたモバイルアプリにログインすると、リードとアプリのインストールを関連付ける最初の呼び出しが行われます。 この呼び出しが正常に完了すると、アプリ内の後続のユーザアクティビティがリードのアクティビティログに表示されます。 これは非同期呼び出しなので、ログイン直後にカスタムアクションが記録された場合、関連付け呼び出しが成功するまで、以前にログインしていたユーザに関連付けられる場合があります。

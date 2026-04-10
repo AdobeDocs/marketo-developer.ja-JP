@@ -3,7 +3,7 @@ title: ランディングページ
 feature: REST API, Landing Pages
 description: Marketo REST APIを使用して、メタデータとコンテンツのクエリ、作成、更新、承認、削除、ランディングページの複製（ガイド付きタイプやフリーフォームタイプを含む）をおこなえます。
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1221'
 ht-degree: 96%
@@ -22,7 +22,7 @@ ht-degree: 96%
 
 ランディングページのコンテンツのクエリを実行すると、ランディングページで使用可能なコンテンツセクションのリストが返されます。 コンテンツを更新するには、ページのコンテンツリストにセクションが存在している必要があります。
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/content.json
 ```
 
@@ -60,15 +60,15 @@ GET /rest/asset/v1/landingPage/{id}/content.json
 
 [ランディングページのコンテンツ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content)エンドポイントの有効なコンテンツタイプは、richText、HTML、Form、Image、Rectangle、Snippet です。
 
-```
+```http
 POST rest/asset/v1/landingPages.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&description=this is a test&workspace=default&title=test create&keywords=awesome&formPrefill=false
 ```
 
@@ -129,15 +129,15 @@ Marketo には、ランディングページを複製するための簡単な方
 
 オプションの `description` パラメーターは、新しいランディングページを説明するために使用されます。
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 ```
 
@@ -195,7 +195,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 動的コンテンツセクションを作成するには、このセクションがランディングページのコンテンツリストに既に存在している必要があります。 次に、[ランディングページのコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)エンドポイントを使用して、タイプを「DynamicContent」に設定する必要があります。 セクションを動的コンテンツに設定すると、コンテンツセクション内に基になる動的セクションが作成され、これらのセクションはすべて変換元の要素の基本タイプを継承します。 また、各動的セクションは、変換されたセクションのコンテンツも継承します。
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
 ```
 
@@ -231,15 +231,15 @@ GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
 
 個々のセグメントの[コンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageDynamicContentUsingPOST)は、セグメント ID に基づいて行われます。
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/dynamicContent/{dynamicContentId}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 segment=New Segment&value=New Content
 ```
 
@@ -280,7 +280,7 @@ segment=New Segment&value=New Content
 
 ランディングページ ID を「ランディングページの変数を取得」エンドポイントに渡して、ガイド付きランディングページの変数を取得します。
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/variables.json
 ```
 
@@ -316,7 +316,7 @@ GET /rest/asset/v1/landingPage/{id}/variables.json
 
 ランディングページ ID、変数 ID、変数値を「ランディングページの変数を更新」エンドポイントに渡して、ガイド付きランディングページの変数を更新します。
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/variable/{variableId}.json?value={newValue}
 ```
 
@@ -343,7 +343,7 @@ Marketo には、ブラウザーでレンダリングされるランディング
 - segmentation：segmentationId 属性と segmentId 属性を含む JSON オブジェクトの配列を受け入れます。 設定すると、これらのセグメントに一致するリードとしてランディングページをプレビューします。
 - leadId：リードの整数 ID を受け入れます。 設定すると、指定されたリードが表示したかのようにランディングページがプレビューされます。
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/fullContent.json?leadId=1001&segmentation=[{"segmentationId":1030,"segmentId":1103}]
 ```
 

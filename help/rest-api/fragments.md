@@ -3,7 +3,7 @@ title: フラグメント
 feature: REST API
 description: Marketo Asset REST APIを使用して、フラグメントの依存関係をクエリ、作成、更新、複製、削除、承認、検査します。
 exl-id: 9dd532d1-1dd7-4581-86dd-1943fab66cbb
-source-git-commit: 0e0a3e5a08e81f349044cbc327d1aba963ab30e4
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 11%
@@ -36,7 +36,7 @@ x-app-type: <app-type>
 
 #### リクエスト
 
-```text
+```http
 GET /rest/asset/v2/fragment/{id}
 ```
 
@@ -68,7 +68,7 @@ todo：これをテーブルにする
 
 #### リクエスト
 
-```text
+```http
 GET /rest/asset/v2/fragment/filter?workspaceId=1001&fragmentType=email&pageIndex=0&pageSize=20
 ```
 
@@ -98,7 +98,7 @@ JSON ペイロードを送信してフラグメントを作成します。 `name
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment
 Content-Type: application/json
 ```
@@ -155,7 +155,7 @@ Content-Type: application/json
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment/{id}/update
 Content-Type: application/json
 ```
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment/state/transition
 Content-Type: application/json
 ```
@@ -222,7 +222,7 @@ Content-Type: application/json
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment/clone
 Content-Type: application/json
 ```
@@ -245,7 +245,7 @@ Content-Type: application/json
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment/{id}/delete
 Content-Type: application/json
 ```
@@ -258,7 +258,7 @@ Content-Type: application/json
 
 ### リクエスト
 
-```text
+```http
 POST /rest/asset/v2/fragment/usedby
 Content-Type: application/json
 ```

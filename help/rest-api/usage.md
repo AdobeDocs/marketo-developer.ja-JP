@@ -2,7 +2,8 @@
 title: 使用状況
 feature: REST API
 description: ユーザーごとのカウントやエラーコードの合計など、毎日および過去7日間の統計エンドポイントを使用して、Marketo REST APIの使用状況とエラーをモニタリングします。
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+exl-id: 935a00a4-1e1e-4b48-ae9c-72c5e578312a
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 9%
@@ -32,7 +33,7 @@ ht-degree: 9%
 
 現在の日のAPI使用状況を取得します。
 
-```
+```http
 GET /rest/v1/stats/usage.json
 ```
 
@@ -69,7 +70,7 @@ GET /rest/v1/stats/usage.json
 
 過去7日間のAPI使用状況を取得します。 `result`配列内の各要素は1日を表します。
 
-```
+```http
 GET /rest/v1/stats/usage/last7days.json
 ```
 
@@ -77,7 +78,7 @@ GET /rest/v1/stats/usage/last7days.json
 
 現在の日付のAPI エラーを取得します。
 
-```
+```http
 GET /rest/v1/stats/errors.json
 ```
 
@@ -114,7 +115,7 @@ GET /rest/v1/stats/errors.json
 
 過去7日間のAPI エラーを取得します。 `result`配列内の各要素は1日を表します。
 
-```
+```http
 GET /rest/v1/stats/errors/last7days.json
 ```
 

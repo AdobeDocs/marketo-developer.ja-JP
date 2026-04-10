@@ -1,20 +1,20 @@
 ---
 title: メールテンプレート
 feature: REST API
-description: Marketoの要件、ID または名前によるクエリ、フォルダーの参照など、HTML REST API のメールテンプレートを作成および管理する方法について説明します
+description: Marketoの要件、IDまたは名前によるクエリ、参照フォルダーなど、HTML REST API メールテンプレートを作成および管理する方法について説明します
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '725'
 ht-degree: 96%
 
 ---
 
 # メールテンプレート
 
-[メールテンプレートエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
+[メールテンプレートエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
 
-メールテンプレートは、Marketo の各新規メールの基本を形成します。HTML 置換によってメールをテンプレートからリンク解除できますが、メールは最初にテンプレートを基本にして作成する必要があります。テンプレートは、名前や説明などのメタデータを含む純粋な HTML ドキュメントとして Marketo で作成されます。コンテンツに関する制限はほとんどありませんが、テンプレートの HTML を有効にし、[こちらで説明](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)している要件に従って編集可能なセクションを 1 つ以上含める必要があります。
+メールテンプレートは、Marketo の各新規メールの基本を形成します。  HTML 置換によってメールをテンプレートからリンク解除できますが、メールは最初にテンプレートを基本にして作成する必要があります。  テンプレートは、名前や説明などのメタデータを含む純粋な HTML ドキュメントとして Marketo で作成されます。  コンテンツに関する制限はほとんどありませんが、テンプレートの HTML を有効にし、[こちらで説明](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)している要件に従って編集可能なセクションを 1 つ以上含める必要があります。
 
 ## クエリ
 
@@ -22,7 +22,7 @@ ht-degree: 96%
 
 ### ID 別
 
-```
+```http
 GET /rest/asset/v1/emailTemplate/{id}.json
 ```
 
@@ -52,7 +52,7 @@ GET /rest/asset/v1/emailTemplate/{id}.json
 
 #### 名前別
 
-```
+```http
 GET /rest/asset/v1/emailTemplate/byName.json?name=Test Template
 ```
 
@@ -82,7 +82,7 @@ GET /rest/asset/v1/emailTemplate/byName.json?name=Test Template
 
 #### 参照
 
-```
+```http
 GET /rest/asset/v1/emailTemplates.json
 ```
 
@@ -188,19 +188,19 @@ GET /rest/asset/v1/emailTemplates.json
 }
 ```
 
-レコード自体に対してクエリを実行すると、レコードに関するメタデータのみが返されます。コンテンツを取得するには、#content の節を参照してください。
+レコード自体に対してクエリを実行すると、レコードに関するメタデータのみが返されます。 コンテンツを取得するには、#content の節を参照してください。
 
 ## 作成と更新
 
-テンプレートの[作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/createEmailTemplateUsingPOST)や[更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)は非常に簡単です。各テンプレートのコンテンツは、HTML ドキュメントとして保存され、POST の multipart/form-data タイプを使用して Marketo に渡す必要があります。[multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) および [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt) の RFC で説明されている境界を含む適切な Content-Type ヘッダーを渡す必要があります。
+テンプレートの[作成](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/createEmailTemplateUsingPOST)や[更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)は非常に簡単です。 各テンプレートのコンテンツは、HTML ドキュメントとして保存され、POST の multipart/form-data タイプを使用して Marketo に渡す必要があります。 [multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) および [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt) の RFC で説明されている境界を含む適切な Content-Type ヘッダーを渡す必要があります。
 
-テンプレートを作成するには、name、folder、content の 3 つのパラメーターを含める必要があります。オプションの description パラメーターを含めることができます。HTML ドキュメントはコンテンツパラメーターで渡されますが、このコンテンツパラメーターには、Content-Disposition ヘッダーの一部として従来のファイル名パラメーターも含める必要があります。
+テンプレートを作成するには、name、folder、content の 3 つのパラメーターを含める必要があります。 オプションの description パラメーターを含めることができます。  HTML ドキュメントはコンテンツパラメーターで渡されますが、このコンテンツパラメーターには、Content-Disposition ヘッダーの一部として従来のファイル名パラメーターも含める必要があります。
 
-```
+```http
 POST /rest/asset/v1/emailTemplates.json
 ```
 
-```
+```text
 Content-Type: multipart/form-data; boundary=mktoBoundary1480963323998
 ```
 
@@ -257,13 +257,13 @@ Create email template using API
 }
 ```
 
-コンテンツの更新は、メールテンプレートの ID を必要とする[個別のエンドポイント](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)を使用して行います。このエンドポイントでは、本文内のコンテンツパラメーターの送信のみが許可されます。更新を行うと、コンテンツパラメーターに渡された内容によって、承認済みバージョンを更新する場合は新しいドラフトのメールの既存のコンテンツが完全に置き換えられ、アセットがドラフトのみの状態の場合は現在のドラフトが置き換えられます。
+コンテンツの更新は、メールテンプレートの ID を必要とする[個別のエンドポイント](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)を使用して行います。 このエンドポイントでは、本文内のコンテンツパラメーターの送信のみが許可されます。 更新を行うと、コンテンツパラメーターに渡された内容によって、承認済みバージョンを更新する場合は新しいドラフトのメールの既存のコンテンツが完全に置き換えられ、アセットがドラフトのみの状態の場合は現在のドラフトが置き換えられます。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/content.json
 ```
 
-```
+```text
 Content-Type: multipart/form-data; boundary=mktoBoundaryEiJFFFPFKK2WovsT
 ```
 
@@ -301,15 +301,15 @@ Content-Type: text/html
 
 [テンプレートのメタデータ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/updateEmailTemplateUsingPOST)、名前、説明を更新するには、コンテンツを更新する場合と同じエンドポイントを使用できますが、代わりに、名前と説明のパラメーターを含む application/x-www-url-formencoded POST を渡します。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 description=Updated description&name=New Name
 ```
 
@@ -339,13 +339,13 @@ description=Updated description&name=New Name
 
 ## 承認
 
-メールテンプレートは、アセットレコードの承認の標準パターンに従います。それぞれのエンドポイントを通じて、メールテンプレートのドラフトを承認したり、承認済みバージョンを未承認にしたり、既存のドラフトを破棄したりできます。
+メールテンプレートは、アセットレコードの承認の標準パターンに従います。 それぞれのエンドポイントを通じて、メールテンプレートのドラフトを承認したり、承認済みバージョンを未承認にしたり、既存のドラフトを破棄したりできます。
 
 ### 承認
 
-承認エンドポイントを呼び出すと、メールは Marketo メールのルールに対して検証されます。メールを承認する前に、送信者名、送信元メール、返信先メール、件名を入力する必要があります。
+承認エンドポイントを呼び出すと、メールは Marketo メールのルールに対して検証されます。 メールを承認する前に、送信者名、送信元メール、返信先メール、件名を入力する必要があります。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 ```
 
@@ -377,7 +377,7 @@ POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 
 未承認エンドポイントは、承認済みテンプレートに対してのみ使用できます。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/unapprove.json
 ```
 
@@ -409,7 +409,7 @@ POST /rest/asset/v1/emailTemplate/{id}/unapprove.json
 
 承認済みメールを更新すると、テンプレートのドラフトバージョンが作成されます。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/discardDraft.json
 ```
 
@@ -439,7 +439,7 @@ POST /rest/asset/v1/emailTemplate/{id}/discardDraft.json
 
 ### 削除
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/delete.json
 ```
 
@@ -457,19 +457,19 @@ POST /rest/asset/v1/emailTemplate/{id}/delete.json
 }
 ```
 
-## 複製
+## クローン作成
 
-Marketo には、[メールテンプレートを複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/cloneTemplateUsingPOST)する簡単な方法が用意されています。作成とは異なり、このタイプのリクエストは application/x-www-url-formencoded POST を使用して行われ、name とfolder の 2 つの必須パラメーターおよび ID とタイプを含む埋め込み JSON オブジェクトを受け取ります。description もオプションのパラメーターです。
+Marketo には、[メールテンプレートを複製](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/cloneTemplateUsingPOST)する簡単な方法が用意されています。 作成とは異なり、このタイプのリクエストは application/x-www-url-formencoded POST を使用して行われ、name とfolder の 2 つの必須パラメーターおよび ID とタイプを含む埋め込み JSON オブジェクトを受け取ります。  description もオプションのパラメーターです。
 
-```
+```http
 POST /rest/asset/v1/emailTemplate/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=This is a sample template
 ```
 
@@ -501,11 +501,11 @@ name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=T
 
 ## メールの依存関係のクエリ
 
-[使用されるメールテンプレートを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET)エンドポイントを使用して、特定のメールテンプレートに依存するメールのリストを取得します。`id` パスパラメーターは、親メールテンプレートを指定します。
+[使用されるメールテンプレートを取得](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET)エンドポイントを使用して、特定のメールテンプレートに依存するメールのリストを取得します。  `id` パスパラメーターは、親メールテンプレートを指定します。
 
-2 つのオプションのパラメーターがあります。`maxReturn` は結果の数を制限する整数（デフォルトは 20、最大は 200）で、`offset` は大きな結果セットを読み取るために `maxReturn` と併用できる整数（デフォルトは 0）です。
+2 つのオプションのパラメーターがあります。 `maxReturn` は結果の数を制限する整数（デフォルトは 20、最大は 200）で、`offset` は大きな結果セットを読み取るために `maxReturn` と併用できる整数（デフォルトは 0）です。
 
-```
+```http
 GET /rest/asset/v1/emailTemplates/{id}/usedBy.json
 ```
 

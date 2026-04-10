@@ -3,7 +3,7 @@ title: REST API
 feature: REST API
 description: Marketo REST APIの使用方法、API ユーザーとLaunchPointの設定、割り当てと制限の表示、認証ヘッダーによる認証、リードの取得について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '897'
 ht-degree: 90%
@@ -76,7 +76,7 @@ Marketo への最初の呼び出しでは、リードレコードを取得しま
 
 REST API メソッドを呼び出す場合、呼び出しが成功するには、すべての呼び出しにアクセストークンを含める必要があります。 アクセストークンは、HTTP ヘッダーとして送信する必要があります。
 
-```
+```text
 Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 ```
 
@@ -86,7 +86,7 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 
 新しいブラウザータブを開き、適切な情報を使用して、[フィルタータイプによりリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET)を呼び出します。
 
-```
+```text
 <Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>
 ```
 
