@@ -3,16 +3,16 @@ title: メールテンプレート
 feature: REST API
 description: Marketo Asset REST APIを使用して、メールテンプレートの依存関係をクエリ、作成、更新、複製、削除、承認、検査します。
 exl-id: 50bb0047-d6ea-4c94-a900-18c37b17a147
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '292'
-ht-degree: 14%
+ht-degree: 11%
 
 ---
 
 # メールテンプレート
 
-[メールテンプレートエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
+[メールテンプレートエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates)
 
 メールテンプレートは、メール作成時に使用される構造と再利用可能なレイアウトを定義します。
 

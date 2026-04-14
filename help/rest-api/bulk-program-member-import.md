@@ -3,18 +3,18 @@ title: プログラムメンバーの一括読み込み
 feature: REST API
 description: 10 MB未満のCSV TSVまたはSSV ファイル、キューの制限、必須パラメーター、およびポーリングジョブステータスを使用して、Marketo REST APIを介してプログラムメンバーを一括で読み込む方法について説明します。
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '962'
-ht-degree: 94%
+ht-degree: 83%
 
 ---
 
 # プログラムメンバーの一括読み込み
 
-[一括プログラムメンバー読み込みエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members)
+[一括プログラムメンバー読み込みエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)
 
-大量のプログラムメンバーレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members) を使用してプログラムメンバーを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
+大量のプログラムメンバーレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members) を使用してプログラムメンバーを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
 
 ## 処理制限
 
@@ -22,7 +22,7 @@ ht-degree: 94%
 
 ## ファイルの読み込み
 
-ファイルの最初の行は、各行の値をマッピングするフィールドとして対応する REST API 名をリストするヘッダーにする必要があります。 REST API 名は、[リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2)エンドポイントや[プログラムメンバーを説明](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeProgramMemberUsingGET)エンドポイントを使用して取得できます。 レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
+ファイルの最初の行は、各行の値をマッピングするフィールドとして対応する REST API 名をリストするヘッダーにする必要があります。 REST API 名は、[リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2)エンドポイントや[プログラムメンバーを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeProgramMemberUsingGET)エンドポイントを使用して取得できます。 レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
 
 一般的なファイルは、次の基本パターンに従います。
 
@@ -37,7 +37,7 @@ test@example.com,John,Doe
 
 ## ジョブの作成
 
-[プログラムメンバーを読み込み](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST)エンドポイントでは、プログラムメンバーレコードを含むファイルを読み取り、指定したステータスでプログラムに追加します。 レコードには、リードフィールドとプログラムメンバーのカスタムフィールドの両方を含めることができます。 すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
+[プログラムメンバーを読み込み](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST)エンドポイントでは、プログラムメンバーレコードを含むファイルを読み取り、指定したステータスでプログラムに追加します。 レコードには、リードフィールドとプログラムメンバーのカスタムフィールドの両方を含めることができます。 すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
 
 `programId` パスパラメーターは、メンバーを追加するプログラムを指定します。
 
@@ -109,7 +109,7 @@ Lancel,Lannister,Lancel@Lannister.com,Lannister,House Lannister,0
 
 ## ジョブステータスのポーリング
 
-読み込みジョブを作成したら、このステータスのクエリを実行する必要があります。 インポートジョブを 5～30 秒ごとにポーリングするのがベストプラクティスです。 これを行うには、`batchId` パスパラメーターを[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)エンドポイントに渡します。
+読み込みジョブを作成したら、このステータスのクエリを実行する必要があります。 インポートジョブを 5～30 秒ごとにポーリングするのがベストプラクティスです。 これを行うには、`batchId` パスパラメーターを[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)エンドポイントに渡します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/status.json
@@ -139,7 +139,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 
 ## 失敗
 
-失敗は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsFailed` 属性によって示されます。 numOfRowsFailed がゼロより大きい場合、この値は発生した失敗の数を示します。
+失敗は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsFailed` 属性によって示されます。 numOfRowsFailed がゼロより大きい場合、この値は発生した失敗の数を示します。
 
 Get Import Program Member Failures エンドポイントを使用して、`batchId` パスパラメーターを渡すことにより、失敗した行のレコードと原因を取得します。
 
@@ -193,9 +193,9 @@ Aerys,Targaryen,Aerys@Targaryen.com,Targaryen,House Targaryen,TEXT_VALUE_IN_INTE
 
 ## 警告
 
-警告は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsWithWarning` 属性によって示されます。 `numOfRowsWithWarning` がゼロより大きい場合、この値は発生した警告の数を示します。
+警告は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsWithWarning` 属性によって示されます。 `numOfRowsWithWarning` がゼロより大きい場合、この値は発生した警告の数を示します。
 
-[プログラムメンバーを読み込み警告を取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET)エンドポイントを使用して、`batchId` パスパラメーターを渡すことで、警告した行のレコードと原因を取得します。
+[プログラムメンバーを読み込み警告を取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET)エンドポイントを使用して、`batchId` パスパラメーターを渡すことで、警告した行のレコードと原因を取得します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/warnings.json

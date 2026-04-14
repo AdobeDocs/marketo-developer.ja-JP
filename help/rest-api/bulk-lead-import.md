@@ -3,18 +3,18 @@ title: リードの一括読み込み
 feature: REST API
 description: CSV TSVまたはSSVを使用して、Marketoで非同期の一括リードインポートを作成および監視します。
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '825'
-ht-degree: 79%
+ht-degree: 76%
 
 ---
 
 # リードの一括読み込み
 
-[リードの一括読み込みエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads)
+[リードの一括読み込みエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads)
 
-大量のリードレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) を使用してリードを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
+大量のリードレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) を使用してリードを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
 
 ## 処理制限
 

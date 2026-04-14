@@ -3,7 +3,7 @@ title: エンドポイント参照
 feature: REST API
 description: アクティビティ、一括書き出し、ID、リード、アセット、ユーザーをまたいだメソッド、URI、必要な権限を含む包括的なMarketo REST API エンドポイントリスト。
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: 9c10469ffa3b763552d176329a426ef51eebe0f1
 workflow-type: tm+mt
 source-wordcount: '4793'
 ht-degree: 77%
@@ -14,9 +14,9 @@ ht-degree: 77%
 
 Marketo REST API 参照へのリンクを以下に示します。
 
-- [アセット](https://developer.adobe.com/marketo-apis/api/asset/)
+- [アセット](https://developer.adobe.com/marketo-apis/api/asset)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
-- [リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi/)
+- [リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi)
 - [ユーザ管理](https://developer.adobe.com/marketo-apis/api/user/)
 
 ## エンドポイントリスト {#endpoint_list}

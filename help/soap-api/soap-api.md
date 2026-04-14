@@ -3,10 +3,10 @@ title: SOAP API
 feature: SOAP
 description: Marketo SOAP APIは、2025年10月31日以降に非推奨（廃止予定）になります。 RESTへの移行、WSDLの取得、クォータ、レート制限、認証の設定を参照してください。
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
-source-git-commit: a0901d2c67aa42368f03494dc8157d2ae93b3dce
+source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
 workflow-type: tm+mt
 source-wordcount: '269'
-ht-degree: 78%
+ht-degree: 63%
 
 ---
 
@@ -36,10 +36,10 @@ WSDL で定義されているエンドポイントを使用しないでくださ
 
 ## Marketo での SOAP API 設定
 
-1. 「**[!UICONTROL 管理]**」セクションに移動し、「**[!UICONTROL Web サービス]**」をクリックします。
+1. **[!UICONTROL 管理者]** セクションに移動し、**[!UICONTROL Web サービス]**&#x200B;を選択します。
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 適切な[!UICONTROL 暗号化キー]を設定し、「**[!UICONTROL 変更を保存]**」をクリックし、SOAP API [!UICONTROL エンドポイント]、[!UICONTROL ユーザ ID]、[!UICONTROL 暗号化キー]の値を使用して、各 SOAP API 呼び出しの正しい[認証署名](authentication-signature.md)を生成します。
+1. 適切な[!UICONTROL 暗号化キー]を設定し、**[!UICONTROL 変更を保存]**&#x200B;を選択し、SOAP API [!UICONTROL  エンドポイント ]、[!UICONTROL  ユーザーID]、および[!UICONTROL 暗号化キー]の値を使用して、SOAP API呼び出しごとに正しい[認証シグネチャ ](authentication-signature.md)を生成します。
 
 ![admin-web-services3](assets/admin-web-services3.png)

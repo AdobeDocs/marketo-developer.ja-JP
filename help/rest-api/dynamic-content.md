@@ -3,10 +3,10 @@ title: 動的コンテンツ
 feature: REST API, Dynamic Content
 description: セグメンテーションを使用して、REST APIを介してセクションレベルのMarketo動的コンテンツを設定し、エンドポイントや例を使用してメール、ランディングページ、スニペットをパーソナライズします
 exl-id: 8ab97624-5fb5-4a41-911f-ec8616dd43c9
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '463'
-ht-degree: 95%
+ht-degree: 90%
 
 ---
 
@@ -24,7 +24,7 @@ Marketo は、複数のアセットタイプでのリードのセグメント化
 
 ## 例
 
-これを説明するために、地域（米国）のセグメントがあり、カリフォルニア州、ネバダ州、ユタ州、コロラド州、アリゾナ州、ニューメキシコ州のリードを含む南西部セグメントに該当するリードに対してのみイベントプロモーションを表示するメールの例を見てみましょう。 これを実行するには、ID「Q1-promotion-banner」を持つメール内の編集可能なセクションを DynamicContent セクションに作成します。 そのため、メールの[メールコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST)エンドポイントを使用する必要があります。 `value` パラメーターは、セグメントの ID を指定するために使用されます。
+これを説明するために、地域（米国）のセグメントがあり、カリフォルニア州、ネバダ州、ユタ州、コロラド州、アリゾナ州、ニューメキシコ州のリードを含む南西部セグメントに該当するリードに対してのみイベントプロモーションを表示するメールの例を見てみましょう。 これを実行するには、ID「Q1-promotion-banner」を持つメール内の編集可能なセクションを DynamicContent セクションに作成します。 そのため、メールの[メールコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailComponentContentUsingPOST)エンドポイントを使用する必要があります。 `value` パラメーターは、セグメントの ID を指定するために使用されます。
 
 メモ：メールとランディングページの両方が、このパターンに従います。 スニペットには異なるパターンがあります。詳しくは、Snippets API のドキュメントを参照してください。
 
@@ -52,7 +52,7 @@ type=DynamicContent&value=1001
 }
 ```
 
-個々のセグメントにコンテンツを追加するには、特定のセクションの[メール動的コンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailDynamicContentUsingPOST)エンドポイントを呼び出す必要があります。
+個々のセグメントにコンテンツを追加するには、特定のセクションの[メール動的コンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailDynamicContentUsingPOST)エンドポイントを呼び出す必要があります。
 
 次の例では、デフォルトではなく、南西部セグメントのリードに対して特別なバナー画像を表示するようにセクションを設定します。 より多くのセグメントに対してより多くのバリエーションを作成する場合は、各セグメントとセクションに対してこのエンドポイントを再度呼び出します。
 

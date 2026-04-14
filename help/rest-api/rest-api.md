@@ -3,10 +3,10 @@ title: REST API
 feature: REST API
 description: Marketo REST APIの使用方法、API ユーザーとLaunchPointの設定、割り当てと制限の表示、認証ヘッダーによる認証、リードの取得について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '897'
-ht-degree: 90%
+source-wordcount: '896'
+ht-degree: 70%
 
 ---
 
@@ -14,13 +14,15 @@ ht-degree: 90%
 
 Marketo は、システムの多くの機能をリモートで実行できる REST API を公開しています。 プログラムの作成からリードの一括読み込みまで、Marketo インスタンスの詳細な制御を可能にするオプションが多数あります。
 
-一般に、これらの API は、[リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi/)と[アセット](https://developer.adobe.com/marketo-apis/api/asset/)という 2 つの大きなカテゴリに分類されます。 Lead Database API を使用すると、Marketo のユーザレコードや、商談や会社などの関連オブジェクトタイプを取得および操作できます。 Asset API を使用すると、マーケティングの販促物やワークフロー関連のレコードとのインタラクションが可能になります。
+一般に、これらの API は、[リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi)と[アセット](https://developer.adobe.com/marketo-apis/api/asset)という 2 つの大きなカテゴリに分類されます。 Lead Database API を使用すると、Marketo のユーザレコードや、商談や会社などの関連オブジェクトタイプを取得および操作できます。 Asset API を使用すると、マーケティングの販促物やワークフロー関連のレコードとのインタラクションが可能になります。
 
 >[!NOTE]
+>
 >SOAP APIは非推奨（廃止予定）であり、2026年7月31日以降は使用できなくなります。 すべての新規開発は、Marketo [REST API](./rest-api.md) を使用して行う必要があり、サービスの中断を回避するのに既存のサービスはその日までに移行する必要があります。 SOAP API を使用するサービスがある場合、移行方法について詳しくは、SOAP API [移行ガイド](../soap-api/migration.md)を参照してください。
 >
 
 >[!IMPORTANT]
+>
 >API ゲートウェイ URLのダブルスラッシュの廃止については、この[国の投稿](https://nation.marketo.com/t5/product-blogs/rest-api-double-slash-deprecation/ba-p/358616)を参照してください。
 >
 
@@ -38,31 +40,31 @@ Marketo への最初の呼び出しでは、リードレコードを取得しま
 
 ![管理のユーザ＆ロール](assets/admin-users-and-roles.png)
 
-「**[!UICONTROL ロール]**」タブをクリックし、「新規ロール」をクリックして、Access API グループのロールに少なくとも「読み取り専用リード」（または「読み取り専用ユーザ」）権限を割り当てます。 わかりやすい名前を付けて、「**[!UICONTROL 作成]**」をクリックします。
+「**[!UICONTROL ロール]**」タブをクリックし、「新規ロール」をクリックして、Access API グループのロールに少なくとも「読み取り専用リード」（または「読み取り専用ユーザ」）権限を割り当てます。 わかりやすい名前を付けて、**[!UICONTROL 作成]**&#x200B;を選択してください。
 
 ![新規ロール](assets/new-role.png)
 
-次に、「[!UICONTROL ユーザ]」タブに戻り、「**[!UICONTROL 新規ユーザを招待]**」をクリックします。 ユーザに、API ユーザであることを示すわかりやすい名前とメールアドレスを指定して、「**[!UICONTROL 次へ]**」をクリックします。
+次に、[!UICONTROL  ユーザー] タブに戻り、**[!UICONTROL 新規ユーザーを招待]**&#x200B;を選択します。 ユーザーに、API ユーザーであることを示す説明的な名前と電子メールアドレスを指定し、**[!UICONTROL 次へ]**&#x200B;を選択します。
 
 ![新規ユーザ情報](assets/new-user-info.png)
 
-次に、「[!UICONTROL API のみ]」オプションをオンにして、作成した API ロールをユーザに付与し、「**[!UICONTROL 次へ]**」をクリックします。
+次に、[!UICONTROL APIのみ] オプションを確認し、作成したAPI ロールをユーザーに付与して、**[!UICONTROL 次へ]**&#x200B;を選択します。
 
 ![新規ユーザー権限](assets/new-user-permissions.png)
 
-ユーザ作成プロセスを完了するには、「**[!UICONTROL 送信]**」をクリックします。
+ユーザー作成プロセスを完了するには、**[!UICONTROL 送信]**&#x200B;を選択します。
 
 ![新規ユーザメッセージ](assets/new-user-message.png)
 
-次に、[!UICONTROL 管理]メニューに移動して、「**[!UICONTROL Launchpoint]**」をクリックします。
+次に、[!UICONTROL 管理者] メニューに移動し、**[!UICONTROL LaunchPoint]**&#x200B;を選択します。
 
 ![Launchpoint](assets/admin-launchpoint.png)
 
-**[!UICONTROL 新規]**&#x200B;メニューをクリックして、「**[!UICONTROL 新規サービス]**」を選択します。 サービスにわかりやすい名前を付け、[!UICONTROL サービス]ドロップダウンメニューから「**[!UICONTROL カスタム]**」を選択します。 説明を入力し、[!UICONTROL API のみのユーザ]ドロップダウンメニューから新規ユーザを選択して、「**[!UICONTROL 作成]**」をクリックします。
+**[!UICONTROL 新規]**&#x200B;メニューをクリックして、「**[!UICONTROL 新規サービス]**」を選択します。 サービスにわかりやすい名前を付け、[!UICONTROL サービス]ドロップダウンメニューから「**[!UICONTROL カスタム]**」を選択します。 説明を入力し、[!UICONTROL APIのみユーザー] ドロップダウンメニューから新しいユーザーを選択し、**[!UICONTROL 作成]**&#x200B;を選択します。
 
 ![新規 Launchpoint サービス](assets/admin-launchpoint-new-service.png)
 
-新しいサービスの「**[!UICONTROL 詳細を表示]**」をクリックして、クライアント ID とクライアント秘密鍵にアクセスします。 現時点では、「**[!UICONTROL トークンを取得]**」ボタンをクリックして、1 時間有効なアクセストークンを生成できます。 現時点では、トークンをメモに保存します。
+新しいサービスの&#x200B;**[!UICONTROL 詳細を表示]**&#x200B;を選択して、クライアント IDとクライアント秘密鍵にアクセスします。 今のところ、**[!UICONTROL トークンを取得]**&#x200B;を選択して、1時間有効なアクセストークンを生成できます。 現時点では、トークンをメモに保存します。
 
 ![トークンを取得](assets/get-token.png)
 
@@ -84,13 +86,13 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 >
 >**access_token** クエリパラメーターを使用した認証のサポートは、2025年6月30日（PT）に削除されます。 プロジェクトでアクセストークンを渡すのにクエリパラメーターを使用している場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新規開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
-新しいブラウザータブを開き、適切な情報を使用して、[フィルタータイプによりリードを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET)を呼び出します。
+新しいブラウザータブを開き、適切な情報を使用して、[フィルタータイプによりリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)を呼び出します。
 
 ```text
 <Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>
 ```
 
-データベース内に自分のメールアドレスを含むリードレコードがない場合は、存在すると分かっているレコードで代用します。 URL バーで Enter キーを押すと、次のような JSON 応答が返されます。
+データベースにメールアドレスが記載されたリードレコードがない場合は、そのメールアドレスを、既知のメールアドレスと置き換えます。 URL バーで Enter キーを押すと、次のような JSON 応答が返されます。
 
 ```json
 {

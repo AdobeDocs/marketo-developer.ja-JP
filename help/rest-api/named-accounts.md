@@ -3,16 +3,16 @@ title: 重点顧客
 feature: REST API
 description: 記述分析、クエリ分析、更新例の作成、検索可能なフィールド、重複排除ルール、リードリンクのないABM名前付きアカウントを活用したCRUDに関するMarketo REST ガイド。
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '730'
-ht-degree: 95%
+ht-degree: 91%
 
 ---
 
 # 重点顧客
 
-[名前付きアカウントエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts)
+[名前付きアカウントエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts)
 
 Marketo は、Marketo ABM で使用する重点顧客に対して CRUD 操作を実行する一連の API を備えています。 これらの API は、説明、作成／更新、削除、クエリのオプションを提供するリードデータベース API の標準インターフェイスパターンに従います。
 
@@ -224,7 +224,7 @@ Content-Type: application/json
 
 #### 名前別
 
-[名前による重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトの単一フィールドのメタデータを取得します。 必須の fieldApiName パスパラメーターは、フィールドの API 名を指定します。 応答は「重点顧客を説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す isCustom 属性などの追加のメタデータが含まれます。
+[名前による重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトの単一フィールドのメタデータを取得します。 必須の fieldApiName パスパラメーターは、フィールドの API 名を指定します。 応答は「重点顧客を説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す isCustom 属性などの追加のメタデータが含まれます。
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
@@ -252,7 +252,7 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 参照
 
-[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 個のレコードが返されます。 batchSize クエリパラメーターを使用して、この数を減らすことができます。 moreResult 属性が true の場合、さらに多くの結果が使用可能です。 moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。 この API から返される nextPageToken は、この呼び出しの次の反復で常に再利用する必要があります。
+[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 個のレコードが返されます。 batchSize クエリパラメーターを使用して、この数を減らすことができます。 moreResult 属性が true の場合、さらに多くの結果が使用可能です。 moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。 この API から返される nextPageToken は、この呼び出しの次の反復で常に再利用する必要があります。
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields.json?batchSize=5

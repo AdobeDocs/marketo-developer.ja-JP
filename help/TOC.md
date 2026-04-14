@@ -5,9 +5,9 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '286'
 ht-degree: 89%
 
 ---
@@ -165,6 +165,7 @@ ht-degree: 89%
 - [メールスクリプト](email-scripting.md)
 - [メール作成の例](examples.md)
 - [Marketo オブジェクト](marketo-objects.md)
+- [MCP サーバー](mcp-server.md)
 - [ライセンス](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)

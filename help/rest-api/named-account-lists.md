@@ -3,16 +3,16 @@ title: 重点顧客リスト
 feature: REST API
 description: クエリ、作成、更新、削除する権限、フィールド、フィルタリング、エンドポイントなど、REST APIを使用してMarketoの名前付きアカウントリストを管理する方法について説明します。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '746'
-ht-degree: 84%
+ht-degree: 83%
 
 ---
 
 # 重点顧客リスト
 
-[名前付きアカウントリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
+[名前付きアカウントリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
 Marketo の[重点顧客リスト](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、重点顧客のコレクションを表します。 分類、データエンリッチメント、スマートキャンペーンフィルタリングなど、様々なケースに使用できます。 名前付きアカウントリスト APIを使用すると、これらのリストアセットとそのメンバーシップをリモートで管理できます。
 `Content`

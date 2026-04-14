@@ -3,16 +3,16 @@ title: 商談ロール
 feature: REST API
 description: 説明、複合重複排除フィールドを含むクエリ、更新削除の作成、タイムアウト、CRM同期を含まないREST APIを介したMarketoの商談ロールの管理。
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '279'
-ht-degree: 89%
+ht-degree: 85%
 
 ---
 
 # 商談ロール
 
-[商談役割エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[商談役割エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
 リードは、中間の `opportunityRole` オブジェクトを通じて商談にリンクされます。
 

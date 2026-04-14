@@ -3,10 +3,10 @@ title: Marketo 統合のベストプラクティス
 feature: REST API
 description: Marketo API統合のベストプラクティスでは、割り当て量、レートおよび同時実行数の制限、バッチ処理、一括インポートおよびエクスポート、キャッシュ、レイテンシープランニングをカバーします。
 exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
 workflow-type: tm+mt
-source-wordcount: '1012'
-ht-degree: 96%
+source-wordcount: '1013'
+ht-degree: 89%
 
 ---
 
@@ -36,7 +36,7 @@ ht-degree: 96%
 
 ## 許容可能な待ち時間
 
-待ち時間の許容値、つまり、API 呼び出しを送信するまでに経過する最大時間を決定すると、Marketo への統合を設計する際に行った決定の多く（大部分ではない）が通知されます。 Marketo には、様々なユースケースや様々な待ち時間クラスに適した、様々な方法および設定オプションが用意されています。 例えば、体験版に新規登録したユーザをセールス担当者に通知するリアルタイム統合では、即時のフォローアップが必要な場合にのみ 1 つのバッチを送信できます。 ただし、ほとんどの場合、これは必要なく、追加の待ち時間を許容でき、呼び出しのキューとバッチ処理を通じてより効率的に管理できます。
+待ち時間の許容値、つまり、API 呼び出しを送信するまでに経過する最大時間を決定すると、Marketo への統合を設計する際に行った決定の多く（大部分ではない）が通知されます。 Marketo には、様々なユースケースや様々な待ち時間クラスに適した、様々な方法および設定オプションが用意されています。 例えば、体験版に新規登録したユーザをセールス担当者に通知するリアルタイム統合では、即時のフォローアップが必要な場合にのみ 1 つのバッチを送信できます。 ただし、ほとんどの場合、これを必要とせず、追加の待ち時間に耐えることができ、呼び出しのキューとバッチ処理を通じてより効率的に管理できます。
 
 | 許容可能な待ち時間 | 推奨される方法 | メモ |
 | --- | --- | --- |
@@ -48,15 +48,15 @@ ht-degree: 96%
 
 Marketo の各 API 対応インスタンスには、1 日あたり 10,000 回以上の REST API 呼び出し（通常は 50,000 件以上）と 500 MB 以上の一括抽出容量の毎日の割り当て量があります。 追加の毎日の容量は、Marketo サブスクリプションの一部として購入できますが、アプリケーション設計では Marketo サブスクリプションの一般的な制限を考慮する必要があります。
 
-容量はインスタンス内のすべての API サービスとユーザ間で共有されるので、冗長な呼び出しを排除し、レコードをできるだけ少ない呼び出しにバッチ処理することがベストプラクティスです。 レコードを読み込む最も呼び出し効率の高い方法は、[リード／ユーザ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)および[カスタムオブジェクト](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Snippets/operation/createSnippetUsingPOST)で使用できる Marketo の一括読み込み API を使用することです。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
+容量はインスタンス内のすべての API サービスとユーザ間で共有されるので、冗長な呼び出しを排除し、レコードをできるだけ少ない呼び出しにバッチ処理することがベストプラクティスです。 レコードを読み込む最も呼び出し効率の高い方法は、[リード／ユーザ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)および[カスタムオブジェクト](https://developer.adobe.com/marketo-apis/api/mapi#tag/Snippets/operation/createSnippetUsingPOST)で使用できる Marketo の一括読み込み API を使用することです。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
 
 ### キャッシュ
 
 次の操作の結果は、頻繁に変更されないので、通常はクライアントサイドで 1 日以上キャッシュできます。
 
 - 説明操作の結果
-- [アクティビティタイプ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)
-- [パーティション](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadPartitionsUsingGET)
+- [アクティビティタイプ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)
+- [パーティション](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadPartitionsUsingGET)
 
 プログラム、メール、フォルダーなどの特定のアセットタイプのキャッシュは、リードレコードやアクティビティレコードのデータエンリッチメントなどの特定のユースケースにも適しています。
 

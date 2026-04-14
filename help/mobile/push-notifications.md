@@ -3,10 +3,10 @@ title: プッシュ通知
 feature: Mobile Marketing
 description: APNs証明書とXcodeの設定からMarketo SDKの統合、トークン登録、処理まで、MarketoでiOS プッシュ通知を有効にする方法をガイドします。
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1338'
-ht-degree: 95%
+ht-degree: 94%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 95%
 1. 「Certificates, Identifiers &amp; Profiles」をクリックします。
 1. 「iOS, tvOS, watchOS」の下の「Certificates->All」フォルダーをクリックします。
 1. 画面左上の証明書の横にある「+」を選択します ![](assets/certificates-plus.png)
-1. 「Apple Push Notification service SSL (Sandbox &amp; Production)」チェックボックスを有効にし、「続行」をクリックします。
+1. 「Apple プッシュ通知サービス SSL （サンドボックスおよび実稼動）」チェックボックスをオンにして、「続行」を選択します。
 1. アプリケーションのビルドに使用しているアプリケーション識別子を選択します。![](assets/push-appid.png)
 1. CSR を作成してアップロードし、プッシュ証明書を生成します。![](assets/push-ssl.png)
 1. 証明書をローカルコンピューターにダウンロードし、ダブルクリックしてインストールします。![](assets/certificate-download.png)

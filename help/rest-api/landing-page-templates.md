@@ -3,16 +3,16 @@ title: ランディングページのテンプレート
 feature: REST API, Landing Pages
 description: REST API エンドポイントを使用して、フリーフォームとガイド付きタイプのMarketoランディングページテンプレートを管理し、IDまたは名前によるクエリを実行して、HTMLを作成、更新し、複製、Munchkinを実行できます。
 exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '703'
-ht-degree: 94%
+ht-degree: 84%
 
 ---
 
 # ランディングページのテンプレート
 
-[ランディングページテンプレートのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates)
+[ランディングページテンプレートのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates)
 
 ランディングページのテンプレートは、個々の Marketo ランディングページの親リソースおよび依存関係です。 ランディングページは、親テンプレートからコンテンツのスケルトンを派生します。
 
@@ -22,7 +22,7 @@ Marketo には、フリーフォームとガイド付きの 2 つのタイプの
 
 ## クエリ
 
-ランディングページのテンプレートは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)、[参照](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)のアセットに対する標準クエリタイプをサポートします。 これらのエンドポイントは、テンプレートのメタデータを返します。 テンプレートの HTML コンテンツの取得は、テンプレートごとに ID を通じて実行する必要があります。
+ランディングページのテンプレートは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)、[参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)のアセットに対する標準クエリタイプをサポートします。 これらのエンドポイントは、テンプレートのメタデータを返します。 テンプレートの HTML コンテンツの取得は、テンプレートごとに ID を通じて実行する必要があります。
 
 ## 作成と更新
 
@@ -66,11 +66,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-テンプレートのコンテンツは、「[ランディングページのテンプレートコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST)」エンドポイント経由で個別に入力する必要があります。
+テンプレートのコンテンツは、「[ランディングページのテンプレートコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST)」エンドポイント経由で個別に入力する必要があります。
 
 ### メタデータの更新
 
-ランディングページのテンプレートのメタデータは、「[ランディングページのテンプレートメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST)」エンドポイント経由で更新できます。 名前、説明、enableMunchkin 設定は、この方法で更新できます。
+ランディングページのテンプレートのメタデータは、「[ランディングページのテンプレートメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST)」エンドポイント経由で更新できます。 名前、説明、enableMunchkin 設定は、この方法で更新できます。
 
 ### コンテンツの更新
 

@@ -3,24 +3,24 @@ title: セールス担当者
 feature: REST API
 description: externalSalesPersonIdを使用してリードに関連付け、クエリ、アップサート、削除を実行する、SFDCまたはDynamics同期を使用したセールス担当者レコードに関するMarketo REST API ガイド。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '396'
-ht-degree: 92%
+ht-degree: 83%
 
 ---
 
 # セールス担当者
 
-[営業担当者エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[営業担当者エンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
 
 Sales Person API は、[SFDC 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)が有効になっているサブスクリプションに対する読み取り専用アクセスです。 セールス担当者は、リードレコードのセールス所有者であるユーザレコードのタイプです。 各リードレコードの externalSalesPersonId フィールドによってリードレコードに関連付けられます。 リードが、入力した externalSalesPersonId フィールドでセールス担当者に関連付けられると、Marketo のそのリードレコードに対応するリード所有者ルックアップフィールドが入力され、対応するフィルターとトークンの使用が可能になります。
 
-セールス担当者は、[リードを同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによってリードレコードに関連付けられます。
+セールス担当者は、[リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによってリードレコードに関連付けられます。
 
-セールス担当者は、[商談を同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって商談レコードに関連付けられます。
+セールス担当者は、[商談を同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって商談レコードに関連付けられます。
 
-セールス担当者は、[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって会社レコードに関連付けられます。
+セールス担当者は、[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST)エンドポイントを使用して externalSalesPersonId 属性を渡すことによって会社レコードに関連付けられます。
 
 セールス担当者レコードは、API 経由でのみ編集可能です。
 

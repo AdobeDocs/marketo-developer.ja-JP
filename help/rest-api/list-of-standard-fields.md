@@ -1,12 +1,12 @@
 ---
 title: 標準フィールド
 feature: REST API, Field Management
-description: REST およびSOAPの名前、ラベルおよび説明と、Describe Lead API を使用して取得する方法が記載された、Marketo標準のリードフィールドの完全なリストを参照します。
+description: RESTおよびSOAPの名前、ラベル、説明を含むMarketo標準リードフィールドの完全なリストと、リードの説明APIを使用してそれらのフィールドを取得する方法を参照します。
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
-source-git-commit: d674384b3ab979df2322ece3f02155259d05431a
+source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
 workflow-type: tm+mt
-source-wordcount: '727'
-ht-degree: 96%
+source-wordcount: '742'
+ht-degree: 94%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 96%
 
 API 経由でアクセスできる Marketo で使用可能な標準フィールドのリストを以下に示します。
 
-REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/)エンドポイントを使用して、リードレコードで使用可能なすべてのサポートされているフィールド名のリストを取得できます。
+REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi)エンドポイントを使用して、リードレコードで使用可能なすべてのサポートされているフィールド名のリストを取得できます。
 
 | REST API 名 | SOAP API 名 | わかりやすいラベル | 説明 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@ REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/)エ
 | department | Department | Department | リードの会社の部門 |
 | doNotCall | DoNotCall | 電話連絡拒否 | リードの電話連絡拒否の環境設定 |
 | doNotCallReason | DoNotCallReason | 電話連絡拒否の理由 | リードの電話連絡拒否の環境設定の説明 |
-| email | メール | メールアドレス | リードのメールアドレス。リードレコードの標準 Marketo キーフィールド |
+| メール | メール | メールアドレス | リードのメールアドレス。 リードレコードの標準 Marketo キーフィールド |
 | fax | FAX | FAX 番号 | リードの FAX 番号 |
 | firstName | FirstName | 名前（名） | リードの名前（名） |
 | industry | 業界 | 業界 | リードの業界 |
@@ -53,24 +53,24 @@ REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi/)エ
 | phone | 電話 | 電話番号 | リードの電話番号 |
 | postalCode | PostalCode | 郵便番号 | リードの郵便番号 |
 | rating | Rating | リード評価 | リードのマーケティング／セールス評価 |
-| salutation | 敬称 | 敬称 | リードが使用する敬称（Mr.、Mis. など）。 |
+| salutation | 敬称 | 敬称 | リードの好ましい挨拶、つまりミスター、ミス…などです |
 | sicCode | SICCode | SIC コード | リードの会社の標準産業分類コード |
 | site | Site | Site |  |
 | state | State | State | リードの都道府県 |
 | title | Title | Job Title | リードの職位 |
-| unsubscribed | 配信停止完了 | 配信停止完了 | リードのメール登録解除済みステータス。部分的にシステムで管理されます。true に設定すると、運用以外のメールの受信が防止されます。 |
-| unsubscribedReason | UnsubscribedReason | 登録解除の理由 | リードの登録解除済みステータスの理由。部分的にシステムで管理されます。リードが Marketo のメールから直接登録解除された場合、メール情報が入力されます。 |
+| unsubscribed | 配信停止完了 | 配信停止完了 | リードのメール登録解除済みステータス。 部分的にシステムで管理されます。 true に設定すると、運用以外のメールの受信が防止されます。 |
+| unsubscribedReason | UnsubscribedReason | 登録解除の理由 | リードの登録解除済みステータスの理由。 部分的にシステムで管理されます。 リードが Marketo のメールから直接登録解除された場合、メール情報が入力されます。 |
 | website | Web サイト | Web サイト | リードの会社の web サイトの URL |
-| createdAt | - | 作成日時 | リードレコードの作成日時。システムが管理します |
-| updatedAt | - | 更新日時 | リードレコードを最後に更新した日時。システムが管理します |
-| emailInvalid | - | メール無効 | メール無効ステータス。true に設定すると、そのアドレスへのすべてのメールがブロックされます。メールが無効であることを示すバウンスは、このフィールドを自動的に true に設定します。 |
-| emailInvalidCause | - | メール無効の理由 | メール無効ステータスの理由。メール無効を true に設定されている場合、原因となるバウンスメッセージがこのフィールドに記録されます。 |
-| inferredCity | - | 推測される市区町村 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市区町村。 |
-| inferredMetropolitanArea | - | 推測される都市圏 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都市圏。 |
-| inferredPhoneAreaCode | - | 推測される市外局番 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市外局番。 |
-| inferredPostalCode | - | 推測される郵便番号 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの郵便番号。 |
-| inferredStateRegion | - | 推測される都道府県／地域 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都道府県／地域。 |
-| isAnonymous | - | 匿名 | リードレコードの匿名ステータス。システムが管理します。 |
-| priority | - | 優先度 | リードのセールスインサイトの優先度。システムが管理します。 |
-| relativeScore | - | 相対スコア | リードのセールスインサイトの相対スコア。システムが管理します。 |
-| urgency | - | 緊急度 | リードのセールスインサイトの緊急度。システムが管理します。 |
+| createdAt |  - | 作成日時 | リードレコードの作成日時。 システムが管理します |
+| updatedAt |  - | 更新日時 | リードレコードを最後に更新した日時。 システムが管理します |
+| emailInvalid |  - | メール無効 | メール無効ステータス。 true に設定すると、そのアドレスへのすべてのメールがブロックされます。 メールが無効であることを示すバウンスは、このフィールドを自動的に true に設定します。 |
+| emailInvalidCause |  - | メール無効の理由 | メール無効ステータスの理由。 メール無効を true に設定されている場合、原因となるバウンスメッセージがこのフィールドに記録されます。 |
+| inferredCity |  - | 推測される市区町村 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市区町村。 |
+| inferredMetropolitanArea |  - | 推測される都市圏 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都市圏。 |
+| inferredPhoneAreaCode |  - | 推測される市外局番 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市外局番。 |
+| inferredPostalCode |  - | 推測される郵便番号 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの郵便番号。 |
+| inferredStateRegion |  - | 推測される都道府県／地域 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都道府県／地域。 |
+| isAnonymous |  - | 匿名 | リードレコードの匿名ステータス。 システムが管理します。 |
+| priority |  - | 優先度 | リードのセールスインサイトの優先度。 システムが管理します。 |
+| relativeScore |  - | 相対スコア | リードのセールスインサイトの相対スコア。 システムが管理します。 |
+| urgency |  - | 緊急度 | リードのセールスインサイトの緊急度。 システムが管理します。 |
