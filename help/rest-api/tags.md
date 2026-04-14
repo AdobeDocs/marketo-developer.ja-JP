@@ -97,7 +97,7 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-タグは、[ プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用して一括で更新できます。 例は、[ プログラムの更新セクション ](programs.md#update)で確認できます。
+タグは、[&#x200B; プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST) エンドポイントを使用して一括で更新できます。 例は、[&#x200B; プログラムの更新セクション &#x200B;](programs.md#update)で確認できます。
 
 ## 削除
 
