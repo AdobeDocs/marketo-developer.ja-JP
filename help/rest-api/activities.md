@@ -1,12 +1,12 @@
 ---
 title: アクティビティ
 feature: REST API
-description: Marketo Engage アクティビティ REST APIを使用して、アクティビティタイプの一覧表示、ページングトークンを使用したリードアクティビティの取得、カスタム値およびデータ値の変更の処理を行います。
+description: Use the Marketo Engage Activities REST API to list activity types, fetch lead activities with paging tokens, and handle custom and data value changes.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 5260338681c4ea670f6f1b1a1603e30f6acc0865
 workflow-type: tm+mt
-source-wordcount: '2139'
-ht-degree: 94%
+source-wordcount: '2218'
+ht-degree: 88%
 
 ---
 
@@ -77,7 +77,11 @@ GET /rest/v1/activities/types.json
 
 Marketo からアクティビティを取得するには、[リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET)エンドポイントを呼び出します。 最初に、アクティビティの取得を開始する日時のページングトークンを取得する必要があります。 次に、`nextPageToken` クエリパラメーターでページングトークンを渡します。 さらに、`activityTypeIds` クエリパラメーターに、最大 10 個のアクティビティタイプ ID をコンマ区切りのリストとして渡します。
 
-オプションで、listId クエリパラメーターを追加して、特定の静的リストに含まれるレコードのみに検索を絞り込むことも、leadIds クエリパラメーターを追加して、指定したリードセットのみのアクティビティを検索することもできます。 最大 30 個の leadId をコンマ区切りのリストとして渡すことができます。
+You can optionally include either a `listId` query parameter to narrow your search to only those records included in a specific static list, or a `leadIds` query parameter and search for activities from only a specified set of leads. You can pass up to 30 `leadIds` as a comma separated list.
+
+>[!CAUTION]
+>
+>Beginning 2026-12-30, calls to the `Get Lead Activities` and `Get Lead Changes` endpoints which includes the `listId` parameter will fail (error code 1003) if the target lists contain 10,000 or more leads. To avoid service disruptions, ensure that calls are properly scoped to avoid this limit.
 
 ```http
 GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK7JDSA3I3LCWXH3Y6IIZ7YSGQLXHCPVE5Q====
@@ -139,6 +143,10 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 * エンドポイントは、データ値変更アクティビティと新規リードアクティビティのみを返すので、`activityTypeIds` パラメーターはありません。
 * `fields` クエリパラメーターは必須です。ここでは、変更を取得するフィールドを示すために、コンマ区切りのフィールドリストを渡すことができます。
+
+>[!CAUTION]
+>
+>Beginning 2026-12-30, calls to the `Get Lead Activities` and `Get Lead Changes` endpoints which includes the `listId` parameter will fail (error code 1003) if the target lists contain 10,000 or more leads. To avoid service disruptions, ensure that calls are properly scoped to avoid this limit.
 
 ```http
 GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&fields=firstName,lastName,department
@@ -449,7 +457,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 ### 属性の作成
 
-属性の作成には、必須の `apiName` パスパラメーターを使用します。 `name`と`dataType`のパラメーターも必須です。`The description and` `isPrimary`個のパラメーターはオプションです。
+属性の作成には、必須の `apiName` パスパラメーターを使用します。 Also required are the `name` and `dataType` parameters.`The description and` `isPrimary` parameters are optional.
 
 ```http
 POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
@@ -708,5 +716,5 @@ POST /rest/v1/activities/external.json
 
 「アクティビティ」エンドポイントのタイムアウトは 30 秒です（以下に記載されている場合を除く）。
 
-* ページングトークンの取得：300秒
+* Get Paging Token: 300s
 * カスタムを追加アクティビティ：90 秒
