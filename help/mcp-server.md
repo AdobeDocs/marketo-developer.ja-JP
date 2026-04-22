@@ -2,16 +2,20 @@
 title: MCP サーバー
 description: MCP サーバーを使用してAI アシスタントをMarketoに接続する方法を説明します。 Marketoの資格情報を使用して、Claude Desktop、Cursor、Claude Code、またはVS Codeを設定します。
 hidefromtoc: true
-badgeBeta: label="ベータ版" type="informative" tooltip="この機能は現在、早期ベータリリースです"
+badgeBeta: label="ベータ版" type="informative" tooltip="この機能は現在、ベータ版のクローズドリリースです"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: b21ecb7a4dd2730807b0ad601b95fe387498f8f0
+source-git-commit: c21ba0db3115c453f8ec35e18d4a8fd4c1ad8745
 workflow-type: tm+mt
-source-wordcount: '1431'
+source-wordcount: '1428'
 ht-degree: 1%
 
 ---
 
 # [!DNL Marketo] MCP サーバー
+
+>[!NOTE]
+>
+>MCP サーバーは現在、クローズドベータリリースです。 現時点では、すべてのユーザーが利用できるわけではありません。
 
 モデルコンテキストプロトコル（MCP）は、AI ツールが外部サービスと通信できるようにするオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントと[!DNL Marketo]の間のブリッジとして機能します。 フォーム、プログラム、スマートキャンペーン、リード、メール、スニペット、リスト、フォルダーなど、100以上の業務を網羅しています。
 
@@ -222,7 +226,6 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 | エラー | 原因 | 修正 |
 | ------- | ------- | ----- |
-| 「Marketo エンドポイントが提供されていません」 | 設定に`X-Marketo-Endpoint` ヘッダーがありません。 | MCP設定を再確認し、4つのヘッダーがすべて存在することを確認します。 |
 | 「Marketo資格情報が提供されていません」 | `X-Marketo-Client-Id`、`X-Marketo-Client-Secret`または`X-Marketo-Munchkin-Id`のうち1つ以上が見つかりません。 | 4つのヘッダーがすべて設定に存在することを確認します。 |
 | 「認証エラー」 | 資格情報が無効または期限切れです。 | **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**&#x200B;でクライアント IDとクライアント シークレットを再確認します。 |
 | 「403禁止」 | Munchkin IDがサーバー許可リストにありません。 | Munchkin IDを追加するには、[!DNL Marketo] MCP管理者にお問い合わせください。 |
