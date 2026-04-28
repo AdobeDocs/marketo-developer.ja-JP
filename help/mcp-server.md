@@ -1,48 +1,47 @@
 ---
-title: MCP サーバー
-description: MCP サーバーを使用してAI アシスタントをMarketoに接続する方法を説明します。 Marketoの資格情報を使用して、Claude Desktop、Cursor、Claude Code、またはVS Codeを設定します。
-hidefromtoc: true
-badgeBeta: label="ベータ版" type="informative" tooltip="この機能は現在、ベータ版のクローズドリリースです"
+title: MCP Server
+description: Learn how to connect an AI assistant to Marketo using the MCP server. Configure Claude Desktop, Cursor, Claude Code, or VS Code with your Marketo credentials.
+badgeBeta: label="ベータ版" type="informative" tooltip="This feature is currently in a closed beta release"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: c21ba0db3115c453f8ec35e18d4a8fd4c1ad8745
+source-git-commit: 74f277aa200fa54bc386c067ec3302d144ec250a
 workflow-type: tm+mt
 source-wordcount: '1428'
 ht-degree: 1%
 
 ---
 
-# [!DNL Marketo] MCP サーバー
+# [!DNL Marketo] MCP Server
 
 >[!NOTE]
 >
->MCP サーバーは現在、クローズドベータリリースです。 現時点では、すべてのユーザーが利用できるわけではありません。
+>The MCP server is currently in a closed beta release. It is not available to all users at this time.
 
-モデルコンテキストプロトコル（MCP）は、AI ツールが外部サービスと通信できるようにするオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントと[!DNL Marketo]の間のブリッジとして機能します。 フォーム、プログラム、スマートキャンペーン、リード、メール、スニペット、リスト、フォルダーなど、100以上の業務を網羅しています。
+The Model Context Protocol (MCP) is an open standard that enables AI tools to communicate with external services. The [!DNL Marketo] MCP server acts as a bridge between your AI assistant and [!DNL Marketo]. It exposes more than 100 operations across forms, programs, smart campaigns, leads, emails, snippets, lists, and folders.
 
-AI ツールがMCP サーバーを呼び出すと、サーバーは各リクエストで指定した資格情報を使用して、対応するREST API呼び出しを代わりに実行します。 サーバーサイドソフトウェアをインストールしたり、デプロイしたり、実行したりする必要はありません。
+When your AI tool calls the MCP server, the server executes the corresponding REST API call on your behalf, using the credentials you provide in each request. You do not need to install, deploy, or run any server-side software.
 
 >[!IMPORTANT]
 >
 >Model Context Protocol （MCP）は新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが生じる可能性があります。 Adobe MCP サーバーの統合と関連ドキュメントは、いかなる保証も受けることなく、「現状のまま」提供されます。
->MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。 Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
->リスクを軽減するために、Adobeでは、本番稼働前にサンドボックス環境で統合をテストし、MCPで開始されるすべてのアクションと応答を慎重にレビューおよび検証してから、確認または依存することを推奨しています。
+>Connecting MCP clients or servers to Adobe products is a customer-elected configuration, and customers are responsible for evaluating the security and suitability of any MCP integration. Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
+>To reduce risk, Adobe encourages testing integrations in a sandbox environment prior to productive use and carefully reviewing and validating all MCP-initiated actions and responses before confirming or relying on them.
 
 ## 前提条件
 
-- REST API アクセスが有効になっている[!DNL Marketo] インスタンス
-- [!DNL Marketo] LaunchPointでAPI資格情報を作成するための管理者アクセス
-- 次のいずれかのAI ツール：Claude Desktop、Cursor、Claude Code （CLI）、またはVS Code with GitHub Copilot
-- MCP サーバーURLへのネットワーク アクセス：`https://marketo-mcp.adobe.io/mcp`
+- A [!DNL Marketo] instance with REST API access enabled
+- Admin access to create API credentials in [!DNL Marketo] LaunchPoint
+- One of the following AI tools: Claude Desktop, Cursor, Claude Code (CLI), or VS Code with GitHub Copilot
+- Network access to the MCP server URL: `https://marketo-mcp.adobe.io/mcp`
 
-## Marketo資格情報の取得
+## Get Marketo credentials
 
-[!DNL Marketo] インスタンスには次の値が必要です。
+You need the following values from your [!DNL Marketo] instance:
 
 - **クライアント ID**
 - **クライアント秘密鍵**
-- **Munchkin アカウント ID**
+- **Munchkin Account ID**
 
-既に使用している場合は、[AI ツールの設定](#configure-your-ai-tool)にスキップします。
+If you already have them, skip to [Configure your AI tool](#configure-your-ai-tool).
 
 ### クライアント IDとクライアント秘密鍵
 
@@ -226,29 +225,29 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 | エラー | 原因 | 修正 |
 | ------- | ------- | ----- |
-| 「Marketo資格情報が提供されていません」 | `X-Marketo-Client-Id`、`X-Marketo-Client-Secret`または`X-Marketo-Munchkin-Id`のうち1つ以上が見つかりません。 | 4つのヘッダーがすべて設定に存在することを確認します。 |
-| 「認証エラー」 | 資格情報が無効または期限切れです。 | **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**&#x200B;でクライアント IDとクライアント シークレットを再確認します。 |
-| 「403禁止」 | Munchkin IDがサーバー許可リストにありません。 | Munchkin IDを追加するには、[!DNL Marketo] MCP管理者にお問い合わせください。 |
-| 接続がタイムアウトしたか、拒否されました | MCP サーバーにネットワークからアクセスできません。 | お使いの環境からサーバーのURLにアクセスできることを確認します。 該当する場合は、VPNの要件を確認します。 |
-| ツール呼び出しは空の結果を返します | API ユーザーには、リクエストされたアセットタイプに対する権限がありません。 | [!DNL Marketo]管理者にAPI ユーザーの役割と権限の確認を依頼します。 |
+| &quot;Marketo credentials not provided&quot; | One or more of `X-Marketo-Client-Id`, `X-Marketo-Client-Secret`, or `X-Marketo-Munchkin-Id` is missing. | Verify all four headers are present in your configuration. |
+| &quot;Authentication Error&quot; | Your credentials are invalid or expired. | Re-check your Client ID and Client Secret in **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**. |
+| &quot;403 Forbidden&quot; | Your Munchkin ID is not on the server allowlist. | Contact your [!DNL Marketo] MCP administrator to add your Munchkin ID. |
+| Connection timeout or refused | The MCP server is unreachable from your network. | Confirm you can reach the server URL from your environment. Check VPN requirements if applicable. |
+| Tool calls return empty results | The API user lacks permissions for the requested asset type. | Ask your [!DNL Marketo] admin to review the API user role and permissions. |
 
 ## よくある質問
 
-+++自分のデータは安全か？
++++Is my data secure?
 
-認証情報は、個々のリクエストごとにHTTP ヘッダーで送信されます。 サーバーはセッション間で資格情報を保存またはキャッシュせず、各リクエストは完全に分離されます。
-
-+++
-
-+++複数の人が同時に使用できますか？
-
-はい。 サーバーはマルチテナントです。 各ユーザーは自分の資格情報に接続し、リクエストは互いに分離されます。
+Credentials are transmitted in HTTP headers with each individual request. The server does not store or cache credentials between sessions, and each request is fully isolated.
 
 +++
 
-+++アクセストークンの有効期限が切れた場合はどうなりますか？
++++Can multiple people use this at the same time?
 
-クライアント IDとクライアントシークレットを使用して認証を行うと、サーバーはトークンの更新を自動的に処理します。 アクションを起こす必要はありません。
+はい。 The server is multi-tenant. Each user connects with their own credentials, and requests are isolated from one another.
+
++++
+
++++What happens if my access token expires?
+
+When you authenticate using Client ID and Client Secret, the server handles token refresh automatically. You do not need to take any action.
 
 +++
 

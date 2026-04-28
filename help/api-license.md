@@ -3,8 +3,7 @@ title: API ライセンス
 description: Marketo API ライセンス契約（社内での開発とテスト用）。APIの制限、Marketoソリューションとの相互運用性、および非商用利用の詳細が記載されています。
 exl-id: f0720ba7-b15d-40c8-9145-d3fa3e064a0b
 hide: true
-hidefromtoc: true
-source-git-commit: 5260338681c4ea670f6f1b1a1603e30f6acc0865
+source-git-commit: 74f277aa200fa54bc386c067ec3302d144ec250a
 workflow-type: tm+mt
 source-wordcount: '3113'
 ht-degree: 81%
