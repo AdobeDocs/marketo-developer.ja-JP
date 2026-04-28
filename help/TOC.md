@@ -167,7 +167,7 @@ ht-degree: 88%
 - [メール作成の例](examples.md)
 - [Marketo オブジェクト](marketo-objects.md)
 - {hide-from-toc}[MCP サーバー](mcp-server.md)
-- {hide-from-toc}[ ライセンス ](api-license.md)
+- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)
