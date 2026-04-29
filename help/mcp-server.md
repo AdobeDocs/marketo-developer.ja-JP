@@ -1,53 +1,85 @@
 ---
-title: MCP Server
-description: Learn how to connect an AI assistant to Marketo using the MCP server. Configure Claude Desktop, Cursor, Claude Code, or VS Code with your Marketo credentials.
-badgeBeta: label="ベータ版" type="informative" tooltip="This feature is currently in a closed beta release"
+title: MCP サーバー
+description: MCP サーバーを使用してAI アシスタントをMarketoに接続する方法を説明します。 Marketoの資格情報を使用して、Claude Desktop、Cursor、Claude Code、またはVS Codeを設定します。
+badgeBeta: label="ベータ版" type="informative" tooltip="この機能は現在、ベータ版のクローズドリリースです"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: 74f277aa200fa54bc386c067ec3302d144ec250a
+source-git-commit: 1b33cacdd397b78292d8102b1222d0aa8c43c4b1
 workflow-type: tm+mt
-source-wordcount: '1428'
+source-wordcount: '1478'
 ht-degree: 1%
 
 ---
 
-# [!DNL Marketo] MCP Server
+# [!DNL Marketo] MCP サーバー
 
 >[!NOTE]
 >
->The MCP server is currently in a closed beta release. It is not available to all users at this time.
+>MCP サーバーは現在、クローズドベータリリースです。 現時点では、すべてのユーザーが利用できるわけではありません。
 
-The Model Context Protocol (MCP) is an open standard that enables AI tools to communicate with external services. The [!DNL Marketo] MCP server acts as a bridge between your AI assistant and [!DNL Marketo]. It exposes more than 100 operations across forms, programs, smart campaigns, leads, emails, snippets, lists, and folders.
+モデルコンテキストプロトコル（MCP）は、AI ツールが外部サービスと通信できるようにするオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントと[!DNL Marketo]の間のブリッジとして機能します。 フォーム、プログラム、スマートキャンペーン、リード、メール、スニペット、リスト、フォルダーなど、100以上の業務を網羅しています。
 
-When your AI tool calls the MCP server, the server executes the corresponding REST API call on your behalf, using the credentials you provide in each request. You do not need to install, deploy, or run any server-side software.
+AI ツールがMCP サーバーを呼び出すと、サーバーは各リクエストで指定した資格情報を使用して、対応するREST API呼び出しを代わりに実行します。 サーバーサイドソフトウェアをインストールしたり、デプロイしたり、実行したりする必要はありません。
 
 >[!IMPORTANT]
 >
 >Model Context Protocol （MCP）は新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが生じる可能性があります。 Adobe MCP サーバーの統合と関連ドキュメントは、いかなる保証も受けることなく、「現状のまま」提供されます。
->Connecting MCP clients or servers to Adobe products is a customer-elected configuration, and customers are responsible for evaluating the security and suitability of any MCP integration. Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
->To reduce risk, Adobe encourages testing integrations in a sandbox environment prior to productive use and carefully reviewing and validating all MCP-initiated actions and responses before confirming or relying on them.
+>MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。 Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
+>リスクを軽減するために、Adobeでは、本番稼働前にサンドボックス環境で統合をテストし、MCPで開始されるすべてのアクションと応答を慎重にレビューおよび検証してから、確認または依存することを推奨しています。
+
+## MCPの基本
+
+>「MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cがデバイスをさまざまな周辺機器やアクセサリに接続するための標準化された方法を提供するのと同様に、MCPはAI モデルをさまざまなデータソースやツールに接続するための標準化された方法を提供します。」 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+
+MCPでは、AI ツールを複数の外部サービスに同時に接続できます。 例えば、AI アシスタントは次のような能力を備えています。
+
+* ワードプロセッサーに接続して、AIを活用したドキュメント生成を実現
+* Blenderなどの3D モデリングアプリに接続してアニメーションを作成する
+* After Effectsに接続してビデオを編集
+
+MCPとは、任意のアプリケーションがデータとアクションをAI ツールに公開するために実装できるオープンスタンダードである通信プロトコルです。
+
+## [!DNL Marketo] MCPの機能と機能なし
+
+MCPの範囲を把握することで、AI ツールを導入する前に期待値を設定することができます。
+
+**MCP実行：**
+
+* 標準のREST APIを使用して、[!DNL Marketo]個のデータと機能へのアクセスを提供します
+* 各リクエストで指定した資格情報を使用して、API呼び出しを実行します
+* 複数の同時ユーザーをサポートし、それぞれが独自の資格情報で接続されています
+* OAuth トークンの更新を自動的に処理する – トークンの有効期限を管理する必要はありません
+* テナントが分離された環境内で運用できるため、データが他のユーザーのセッションと競合することはありません
+
+**MCPが次の操作を行っていません：**
+
+* AIまたはマシンラーニングモデルを使用、ホスティング、実行します。AI処理はすべて、MCPではなくAI ツールで行われます
+* 顧客データを含むあらゆるデータを活用する、または学習する
+* 予測、推奨事項、意思決定の生成：意思決定は、AI ツールやユーザーの責任です
+* リクエスト間で、資格情報、リクエストデータ、またはセッション状態を保存または保持する
+* サーバーサイドソフトウェアのインストール、デプロイ、管理が必要
 
 ## 前提条件
 
-- A [!DNL Marketo] instance with REST API access enabled
-- Admin access to create API credentials in [!DNL Marketo] LaunchPoint
-- One of the following AI tools: Claude Desktop, Cursor, Claude Code (CLI), or VS Code with GitHub Copilot
-- Network access to the MCP server URL: `https://marketo-mcp.adobe.io/mcp`
+* REST API アクセスが有効になっている[!DNL Marketo] インスタンス
+* [!DNL Marketo] LaunchPointでAPI資格情報を作成するための管理者アクセス
+* 次のいずれかのAI ツール：Claude Desktop、Cursor、Claude Code （CLI）、またはVS Code with GitHub Copilot
+* MCP サーバーURLへのネットワーク アクセス：`https://marketo-mcp.adobe.io/mcp`
 
-## Get Marketo credentials
+## Marketo資格情報の取得
 
-You need the following values from your [!DNL Marketo] instance:
+[!DNL Marketo] インスタンスには次の値が必要です。
 
-- **クライアント ID**
-- **クライアント秘密鍵**
-- **Munchkin Account ID**
+* **クライアント ID**
+* **クライアント秘密鍵**
+* **Munchkin アカウント ID**
 
-If you already have them, skip to [Configure your AI tool](#configure-your-ai-tool).
+既に使用している場合は、[AI ツールの設定](#configure-your-ai-tool)にスキップします。
 
 ### クライアント IDとクライアント秘密鍵
 
 1. **[!UICONTROL 管理者]** > **[!UICONTROL LaunchPoint]**&#x200B;に移動します。
-1. API サービスをクリックします。 お持ちでない場合は、**[!UICONTROL New]** > **[!UICONTROL New Service]**&#x200B;を選択し、サービスタイプとして&#x200B;**[!UICONTROL Custom]**&#x200B;を選択して、専用のAPI ユーザーを割り当てます。
-1. 「**[!UICONTROL 詳細を表示]**」をクリックし、**[!UICONTROL クライアント ID]**&#x200B;と&#x200B;**[!UICONTROL クライアントシークレット]**&#x200B;の値をコピーします。
+1. API サービスを選択します。 お持ちでない場合は、**[!UICONTROL New]** > **[!UICONTROL New Service]**&#x200B;を選択し、サービスタイプとして&#x200B;**[!UICONTROL Custom]**&#x200B;を選択して、専用のAPI ユーザーを割り当てます。
+1. **[!UICONTROL 詳細を表示]**&#x200B;を選択し、**[!UICONTROL クライアント ID]**&#x200B;および&#x200B;**[!UICONTROL クライアント秘密鍵]**&#x200B;の値をコピーします。
 
 ### Munchkin アカウント ID
 
@@ -58,13 +90,16 @@ If you already have them, skip to [Configure your AI tool](#configure-your-ai-to
 
 各AI ツールは、異なる場所からMCP サーバー設定を読み取ります。 以下のツールを見つけ、手順に従って[!DNL Marketo] MCP サーバーを追加します。
 
+>[!TIP]
+>
+>複数の[!DNL Marketo] インスタンスに接続するには、MCP設定内で、対応する資格情報を持つ一意の名前（例：`marketo-prod`と`marketo-staging`）を持つ個別のエントリを個別に追加します。
+
 ### Claude Desktop
 
 設定ファイルは`claude_desktop_config.json`です。 次のいずれかの場所から開きます。
 
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+* **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+* **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ファイルに他のMCP サーバーが既に含まれている場合は、`mcpServers`の下に`marketo` エントリを追加します。 次の例は、完全な`mcpServers` ブロックを示しています。
 
@@ -122,27 +157,23 @@ claude mcp add --transport http marketo \
 
 ### VS CodeとGitHub Copilot
 
-MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONTROL Cmd+Shift+P]**&#x200B;を押し、**[!UICONTROL Preferences: Open User Settings （JSON）]**&#x200B;を選択して、VS Code `settings.json`を開きます。 次の例を追加します。
+**[!UICONTROL Ctrl+Shift+P]** （またはmacOSの&#x200B;**[!UICONTROL Cmd+Shift+P]**）を押し、**[!UICONTROL MCP: Open User Configuration]**&#x200B;と入力してEnter キーを押します。 `mcp.json`が開きます。 `servers` オブジェクト内の`marketo` エントリを追加します。
 
 ```json
 {
-  "mcp": {
-    "servers": {
-      "marketo": {
-        "type": "http",
-        "url": "https://marketo-mcp.adobe.io/mcp",
-        "headers": {
-          "X-Marketo-Client-Id": "YOUR-CLIENT-ID",
-          "X-Marketo-Client-Secret": "YOUR-CLIENT-SECRET",
-          "X-Marketo-Munchkin-Id": "YOUR-MUNCHKIN-ID"
-        }
+  "servers": {
+    "marketo": {
+      "type": "http",
+      "url": "https://marketo-mcp.adobe.io/mcp",
+      "headers": {
+        "X-Marketo-Client-Id": "YOUR-CLIENT-ID",
+        "X-Marketo-Client-Secret": "YOUR-CLIENT-SECRET",
+        "X-Marketo-Munchkin-Id": "YOUR-MUNCHKIN-ID"
       }
     }
   }
 }
 ```
-
-**[!UICONTROL Ctrl+Shift+P]** （またはmacOSの&#x200B;**[!UICONTROL Cmd+Shift+P]**）を押し、**[!UICONTROL ウィンドウをリロード]**&#x200B;と入力してEnter キーを押します。
 
 >[!NOTE]
 >
@@ -158,9 +189,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「承認済みのすべてのフォームを表示」
-- 「問い合わせフォームをQ2 キャンペーンフォルダーに複製」
-- 「デモリクエストフォームに会社フィールドを追加」
+* 「承認済みのすべてのフォームを表示」
+* 「問い合わせフォームをQ2 キャンペーンフォルダーに複製」
+* 「デモリクエストフォームに会社フィールドを追加」
 
 ### スマートキャンペーン
 
@@ -168,9 +199,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「現在アクティブなスマートキャンペーンはどれですか？」
-- 「操作フォルダーのリードスコアリングアップデートと呼ばれる新しいスマートキャンペーンの作成」
-- 「ウェルカムメールキャンペーンのフローステップを表示する」
+* 「現在アクティブなスマートキャンペーンはどれですか？」
+* 「操作フォルダーのリードスコアリングアップデートと呼ばれる新しいスマートキャンペーンの作成」
+* 「ウェルカムメールキャンペーンのフローステップを表示する」
 
 ### リードとリスト
 
@@ -178,9 +209,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「電子メールでリードを探すjane@example.com」
-- 「第2四半期MQL リストにリード ID12345を追加」
-- 「サマーイベント参加者」という新しい静的リストの作成
+* 「電子メールでリードを探すjane@example.com」
+* 「第2四半期MQL リストにリード ID12345を追加」
+* 「サマーイベント参加者」という新しい静的リストの作成
 
 ### プログラム
 
@@ -188,9 +219,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「Q4 ウェビナープログラムを2026年イベントフォルダーに複製」
-- 「Campaigns フォルダーのサマーセールという新しいメールプログラムを作成する」
-- 「ウェビナーとしてタグ付けされたすべてのプログラムを表示する」
+* 「Q4 ウェビナープログラムを2026年イベントフォルダーに複製」
+* 「Campaigns フォルダーのサマーセールという新しいメールプログラムを作成する」
+* 「ウェビナーとしてタグ付けされたすべてのプログラムを表示する」
 
 ### メールとスニペット
 
@@ -198,9 +229,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「すべての下書きメールを表示」
-- 「ウェルカムメールのヘッダーセクションの更新」
-- 「どのようなアセットがホリデープロモーションスニペットを使用しますか？」
+* 「すべての下書きメールを表示」
+* 「ウェルカムメールのヘッダーセクションの更新」
+* 「どのようなアセットがホリデープロモーションスニペットを使用しますか？」
 
 ### インスタンス構造
 
@@ -208,9 +239,9 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「Marketoのすべてのフォルダーを一覧表示」
-- 「使用可能なすべてのチャネルを表示」
-- 「設定されているタグタイプは何ですか？」
+* 「Marketoのすべてのフォルダーを一覧表示」
+* 「使用可能なすべてのチャネルを表示」
+* 「設定されているタグタイプは何ですか？」
 
 ### 一括操作
 
@@ -218,68 +249,18 @@ MacOSで&#x200B;**[!UICONTROL Ctrl+Shift+P]**&#x200B;または&#x200B;**[!UICONT
 
 プロンプトの例：
 
-- 「過去30日間に作成されたリードの一括書き出しを作成」
-- 「書き出しジョブ xxのステータスを確認」
+* 「過去30日間に作成されたリードの一括書き出しを作成」
+* 「書き出しジョブ xxのステータスを確認」
 
 ## トラブルシューティング
 
 | エラー | 原因 | 修正 |
 | ------- | ------- | ----- |
-| &quot;Marketo credentials not provided&quot; | One or more of `X-Marketo-Client-Id`, `X-Marketo-Client-Secret`, or `X-Marketo-Munchkin-Id` is missing. | Verify all four headers are present in your configuration. |
-| &quot;Authentication Error&quot; | Your credentials are invalid or expired. | Re-check your Client ID and Client Secret in **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**. |
-| &quot;403 Forbidden&quot; | Your Munchkin ID is not on the server allowlist. | Contact your [!DNL Marketo] MCP administrator to add your Munchkin ID. |
-| Connection timeout or refused | The MCP server is unreachable from your network. | Confirm you can reach the server URL from your environment. Check VPN requirements if applicable. |
-| Tool calls return empty results | The API user lacks permissions for the requested asset type. | Ask your [!DNL Marketo] admin to review the API user role and permissions. |
-
-## よくある質問
-
-+++Is my data secure?
-
-Credentials are transmitted in HTTP headers with each individual request. The server does not store or cache credentials between sessions, and each request is fully isolated.
-
-+++
-
-+++Can multiple people use this at the same time?
-
-はい。 The server is multi-tenant. Each user connects with their own credentials, and requests are isolated from one another.
-
-+++
-
-+++What happens if my access token expires?
-
-When you authenticate using Client ID and Client Secret, the server handles token refresh automatically. You do not need to take any action.
-
-+++
-
-+++何かをインストールまたは実行する必要がありますか？
-
-いいえ、できません。 MCP サーバーはAdobeによってホストされます。 AI ツールを接続するために設定するだけです。
-
-+++
-
-+++API ユーザーに必要な[!DNL Marketo]権限は何ですか？
-
-API ユーザーは、管理するアセットタイプにアクセスする必要があります。 少なくとも、閲覧操作には読み取り専用の役割を割り当て、アセットの作成または変更には読み取り/書き込み役割を割り当てます。 [!DNL Marketo]管理者と協力して、適切な権限を割り当てます。
-
-+++
-
-+++レートの制限は何ですか？
-
-MCP サーバーは、[!DNL Marketo] インスタンスのAPI レート制限を継承します。 専用のAPI ユーザーを使用して、クォータ消費を追跡、管理します。
-
-+++
-
-+++サポートされているAI ツールは何ですか？
-
-Claude Desktop、Cursor、Claude Code （CLI）、VS CodeとGitHub Copilotの連携。 HTTP経由でモデルコンテキストプロトコルをサポートするすべてのAI ツールが機能する必要があります。
-
-+++
-
-+++複数の[!DNL Marketo] インスタンスに接続できますか？
-
-はい。 AI ツールのMCP設定に、それぞれ一意の名前と対応するインスタンスの資格情報を持つ複数のエントリを追加します。 例えば、`marketo-prod`と`marketo-staging`を個別のサーバーとして設定できます。
-
-+++
+| 「Marketo資格情報が提供されていません」 | `X-Marketo-Client-Id`、`X-Marketo-Client-Secret`または`X-Marketo-Munchkin-Id`のうち1つ以上が見つかりません。 | 4つのヘッダーがすべて設定に存在することを確認します。 |
+| 「認証エラー」 | 資格情報が無効または期限切れです。 | **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**&#x200B;でクライアント IDとクライアント シークレットを再確認します。 |
+| 「403禁止」 | Munchkin IDがサーバー許可リストにありません。 | Munchkin IDを追加するには、[!DNL Marketo] MCP管理者にお問い合わせください。 |
+| 接続がタイムアウトしたか、拒否されました | MCP サーバーにネットワークからアクセスできません。 | お使いの環境からサーバーのURLにアクセスできることを確認します。 該当する場合は、VPNの要件を確認します。 |
+| ツール呼び出しは空の結果を返します | API ユーザーには、リクエストされたアセットタイプに対する権限がありません。 | [!DNL Marketo]管理者にAPI ユーザーの役割と権限の確認を依頼します。 |
 
 ## セキュリティに関する検討事項
 
@@ -287,7 +268,8 @@ Claude Desktop、Cursor、Claude Code （CLI）、VS CodeとGitHub Copilotの連
 >
 >作業に必要な権限のみを持つ[!DNL Marketo]の専用API ユーザーを使用してください。 API アクセスに管理者資格情報を再利用しないでください。
 
-- **リクエストごとの資格情報。** クライアント ID、クライアントシークレット、Munchkin ID、およびREST API エンドポイントは、各リクエストでHTTP ヘッダーで送信されます。 サーバーはそれらを保存またはキャッシュしません。
-- **マルチテナント分離。** 各リクエストは、独自の資格情報セットを使用します。 このデータは、他のユーザーのセッションと相互作用しません。
-- **Munchkin IDが許可リストに加えるしました。** サーバーは、承認済みの[!DNL Marketo] インスタンスに対するリクエストのみを受け付けます。 権限のないMunchkin IDを使用したリクエストは、403 エラーで拒否されます。
-- **資格情報をバージョン管理から除外します。** AI ツールでサポートされている場合は、環境変数の補間（`${MARKETO_CLIENT_SECRET}`）を使用します。そのため、資格情報はリポジトリにコミットされたファイル内のプレーンテキストに保存されません。
+* **リクエストごとの資格情報。** クライアント ID、クライアントシークレット、Munchkin ID、およびREST API エンドポイントは、各リクエストでHTTP ヘッダーで送信されます。 サーバーはそれらを保存またはキャッシュしません。
+* **マルチテナント分離。** 各リクエストは、独自の資格情報セットを使用します。 このデータは、他のユーザーのセッションと相互作用しません。
+* **Munchkin IDが許可リストに加えるしました。** サーバーは、承認済みの[!DNL Marketo] インスタンスに対するリクエストのみを受け付けます。 権限のないMunchkin IDを使用したリクエストは、403 エラーで拒否されます。
+* **API レート制限。** MCP サーバーは、[!DNL Marketo] インスタンスのAPI レート制限を継承します。 専用のAPI ユーザーを使用して、クォータ消費を追跡、管理します。
+* **資格情報をバージョン管理から除外します。** AI ツールでサポートされている場合は、環境変数の補間（`${MARKETO_CLIENT_SECRET}`）を使用します。そのため、資格情報はリポジトリにコミットされたファイル内のプレーンテキストに保存されません。

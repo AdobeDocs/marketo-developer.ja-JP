@@ -1,64 +1,10 @@
 ---
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: f29a5b532704c5fef90812f464efde78d92c2dc4
 workflow-type: tm+mt
-source-wordcount: '521'
-ht-degree: 94%
+source-wordcount: '7'
+ht-degree: 0%
 
 ---
-# 記事のコントリビューション
+# アーカイブ
 
-アドビのコミュニティはもとより、ドキュメントチーム外部のアドビ従業員からのコントリビューションもお待ちしています。
-
-## アドビオープンソース行動規範
-
-このプロジェクトでは、[アドビのオープンソースの行動規範](code-of-conduct.md)または [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct)（英語）を採用しています。 詳しくは、[コントリビューション](contributing.md)の記事を参照してください。
-
-## アドビコンテンツへの投稿方法
-
-**アドビスタッフでない場合**&#x200B;は、外部からのコミュニティ投稿を送信できます。 コミュニティ投稿は社内システムに読み込まれ、編集されてパブリックリポジトリに結合されます。 パブリックリポジトリは、その後、最新の変更内容と同期され、プライベートリポジトリに結合されます。
-
-**アドビスタッフの場合**&#x200B;は、プライベート [Adobe GitHub リポジトリ](https://git.corp.adobe.com/AdobeDocs/)に直接投稿できます。 詳しくは、アドビスタッフ向けの Adobe Experience League オーサリングガイドを参照してください。
-
-## 外部コントリビューター
-
-### マイナーな変更
-
-マイナーな更新を投稿しようとしている場合：
-
-1. 編集するトピックに移動します。
-1. 「このコンテンツは役に立ちましたか？」 ブラウザーウィンドウの下部に表示されるバナーで、**詳細なフィードバックオプション**&#x200B;をクリックします。
-1. 「**編集を提案**」をクリックし、GitHub UIで変更を加えてプルリクエスト（PR）を送信します。
-
-   詳しくは、全般的な事項について説明した[アドビドキュメントのコントリビューターガイド](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ja)を参照してください。
-
-このリポジトリー内のドキュメントやコード例に対して提案される軽微な変更や補足説明には、アドビの利用規約が適用されます。
-
-### コミュニティからの大きな変更または新規トピック
-
-アドビコミュニティのメンバーで、新しいトピックの作成や大きな変更の送信を行う場合は、該当する Git リポジトリの「**Issues**」タブを使用してイシューを送信し、ドキュメントチームとの会話を開始してください。 計画が合意されたら、アドビライターと協力してリビジョンを公開します。
-
-**メモ：**&#x200B;ドキュメントやコード例に対する大幅な変更を含んだプルリクエストを送信すると、オンライン投稿ライセンス契約（CLA）を送信するように求めるメッセージがプルリクエストに表示されます。 アドビでプルリクエストをレビューできるように、まず、オンラインフォームに記入する必要があります。
-
-### ツール
-
-コミュニティのコントリビューターは、基本的な編集をするときには GitHub の UI を使用し、大きな変更を加えるときにはリポジトリーをフォークします。
-
-詳しくは、[アドビドキュメントのコントリビューターガイド](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ja)を参照してください。
-
-## 内部コントリビューター
-
-Adobe Experience Cloud ソリューションの製品チームのテクニカルライター、プログラムマネージャーまたは開発者で、技術的な記事に寄稿または作成する場合は、[プライベートリポジトリ](https://git.corp.adobe.com/AdobeDocs)を使用します。
-
-## トピックの形式設定
-
-このリポジトリの記事はすべて GitHub Flavored Markdown（GFM）を使用しています。 マークダウンについて詳しくは、次を参照してください。
-
-* [Markdown の基礎](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
-* [印刷可能なマークダウンのチートシート](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-
-## ラベル
-
-公開リポジトリーでは、プルリクエストに以下のような自動ラベルが割り当てられ、プルリクエストワークフローの管理とプルリクエストの処理状況の把握に役立ちます。
-
-* **Change sent to author**：保留中のプルリクエストの通知が作成者に送信されました。
-* **ready- to- merge**：プルリクエストレビューチームによるレビューの準備ができました。
+このリポジトリは<https://github.com/Adobe-Enterprise-Docs/marketo-developer.en>に移行されました。
