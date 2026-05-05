@@ -5,10 +5,11 @@ breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+author: Donald
+source-git-commit: d70e61cab3a0e929a85b8ac57836438470988944
 workflow-type: tm+mt
 source-wordcount: '286'
-ht-degree: 89%
+ht-degree: 88%
 
 ---
 
@@ -106,7 +107,7 @@ ht-degree: 89%
       - [プログラムメンバー](rest-api/program-members.md)
       - [セールス担当者](rest-api/sales-persons.md)
       - [静的リスト](rest-api/list-membership.md)
-      - [使用方法](rest-api/usage.md)
+      - [使用状況](rest-api/usage.md)
    - [ページングトークン](rest-api/paging-tokens.md)
    - [パフォーマンス](rest-api/performance.md)
    - [参照アーキテクチャ](rest-api/reference-architectures.md)
@@ -165,8 +166,8 @@ ht-degree: 89%
 - [メールスクリプト](email-scripting.md)
 - [メール作成の例](examples.md)
 - [Marketo オブジェクト](marketo-objects.md)
-- [MCP サーバー](mcp-server.md)
-- [ライセンス](api-license.md)
+- {hide-from-toc}[MCP サーバー](mcp-server.md)
+- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)

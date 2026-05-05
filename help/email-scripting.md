@@ -3,10 +3,10 @@ title: メールスクリプト
 feature: Email Programs
 description: Apache Velocity トークン、変数、Velocity ツールを使用して動的なMarketo メールをスクリプト化し、サンプル送信とメール送信プレビューを使用してテストする方法を説明します。
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: c21ba0db3115c453f8ec35e18d4a8fd4c1ad8745
+source-git-commit: 6b813020fec6727dc2fe3b4dfe1c98146447e704
 workflow-type: tm+mt
 source-wordcount: '1116'
-ht-degree: 74%
+ht-degree: 73%
 
 ---
 
@@ -32,7 +32,9 @@ $variablename ##outputs '$variablename'
 ${variable}name ##outputs 'valuename'
 ```
 
-また、`$` の後に `!` が含まれるクワイエット参照表記もあります。 通常、velocity で未定義の参照が検出されると、その参照を表す文字列はそのままになります。 クワイエット参照表記では、未定義の参照が検出されても、値は出力されません。
+
+
+また、`$` の後に `!` が含まれるクワイエット参照表記もあります。 通常、velocity で未定義の参照が検出されると、その参照を表す文字列はそのままになります。 静かなrkjeference表記法では、未定義の参照が発生した場合、値は出力されません。
 
 ```velocity
 ##Defined Reference
