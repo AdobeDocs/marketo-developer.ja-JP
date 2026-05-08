@@ -3,7 +3,9 @@ title: MCP サーバー
 description: MCP サーバーを使用してAI アシスタントをMarketoに接続する方法を説明します。 Marketoの資格情報を使用して、Claude Desktop、Cursor、Claude Code、またはVS Codeを設定します。
 badgeBeta: label="ベータ版" type="informative" tooltip="この機能は現在、ベータ版のクローズドリリースです"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: 738fabea9eefbc6aafee4ffa7972c9e3e2bd430c
+hidefromtoc: true
+hide: true
+source-git-commit: a8bf6680a212dd665841896e4550a755dcdf745d
 workflow-type: tm+mt
 source-wordcount: '1478'
 ht-degree: 1%
