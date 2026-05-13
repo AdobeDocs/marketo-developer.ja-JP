@@ -1,14 +1,18 @@
 ---
 title: ホーム
-description: Marketo Engage API をマスターし、はじめに、REST、Webhook、クライアントライブラリ、メールスクリプティング、リードトラッキング、モバイルおよび web パーソナライゼーションのドキュメントを含めます。
+description: Adobe Marketo Engage APIのマスタードキュメントには、入門、REST、Webhook、クライアントライブラリ、メールスクリプト、リードトラッキング、モバイル、web パーソナライゼーションなどが含まれます。
 exl-id: a249945b-12f3-4b41-badc-ee7a72d5e7eb
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/rv9rHVyjPuIXPr7DWq24hScZ8uQSEIi0HrRE3ADCoUY
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bccid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: e0eb8757-182f-49f3-94a4-1587d16f5094
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '131'
-ht-degree: 83%
+source-wordcount: 141
+ht-degree: 85%
 
 ---
-
 
 # Marketo Engage 開発者向けドキュメント
 

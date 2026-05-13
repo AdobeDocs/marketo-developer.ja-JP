@@ -1,42 +1,46 @@
 ---
 title: syncLead
 feature: SOAP
-description: Marketo SOAP syncLead を使用して、リクエストフィールド、XML および PHP の例を使用して、1 つのリードを挿入または更新し、識別子とワークスペースを処理する方法を説明します。
+description: Marketo SOAP syncLeadを使用して、1つのリードを挿入または更新し、IDとワークスペースを処理し、リクエストフィールド、XMLおよびPHPの例を含む方法を説明します。
 exl-id: e6cda794-a9d4-4153-a5f3-52e97a506807
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/SecUbvn0SKgWEGHMKbSNJqMvy1QoM3u-4tVchq-T3xQ
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: 540
 ht-degree: 95%
 
 ---
 
 # syncLead
 
-この関数は、単一のリードレコードを挿入または更新します。既存のリードを更新する場合、リードは次のいずれかのキーで識別されます。
+この関数は、単一のリードレコードを挿入または更新します。 既存のリードを更新する場合、リードは次のいずれかのキーで識別されます。
 
 - Marketo ID
 - 外部システム ID（`foreignSysPersonId` として実装）
 - Marketo cookie（Munchkin JS スクリプトで作成）
 - メール
 
-既存の一致が見つかった場合、呼び出しは更新を実行します。見つからない場合は、リードを挿入して作成します。匿名のリードは、Marketo cookie ID を使用して更新でき、更新時に認識されます。
+既存の一致が見つかった場合、呼び出しは更新を実行します。 見つからない場合は、リードを挿入して作成します。 匿名のリードは、Marketo cookie ID を使用して更新でき、更新時に認識されます。
 
-メールを除き、これらの識別子はすべて一意のキーとして処理されます。Marketo ID は、他のすべてのキーよりも優先されます。リードレコードに `foreignSysPersonId` と Marketo ID の両方が存在する場合、Marketo ID が優先され、そのリードの `foreignSysPersonId` が更新されます。`foreignSysPersonId` のみが指定された場合は、一意の ID として使用されます。`foreignSysPersonId` とメールの両方が存在するが、Marketo ID が存在しない場合は、`foreignSysPersonId` が優先され、そのリードのメールが更新されます。
+メールを除き、これらの識別子はすべて一意のキーとして処理されます。 Marketo ID は、他のすべてのキーよりも優先されます。 リードレコードに `foreignSysPersonId` と Marketo ID の両方が存在する場合、Marketo ID が優先され、そのリードの `foreignSysPersonId` が更新されます。 `foreignSysPersonId` のみが指定された場合は、一意の ID として使用されます。 `foreignSysPersonId` とメールの両方が存在するが、Marketo ID が存在しない場合は、`foreignSysPersonId` が優先され、そのリードのメールが更新されます。
 
 オプションで、コンテキストヘッダーを指定して、ターゲットワークスペースに名前を付けることができます。
 
 Marketo ワークスペースが有効で、ヘッダーが使用されている場合、次のルールが適用されます。
 
-- 割り当てルールが設定され、新しいリードが、設定されたルールのいずれかに該当する場合、割り当てルールによって定義されたパーティションに新しいリードが作成されます。それ以外の場合、新しいリードは名前付きワークスペースのプライマリパーティションに作成されます。
+- 割り当てルールが設定され、新しいリードが、設定されたルールのいずれかに該当する場合、割り当てルールによって定義されたパーティションに新しいリードが作成されます。 それ以外の場合、新しいリードは名前付きワークスペースのプライマリパーティションに作成されます。
 - Marketo リード ID、外部システム ID、または Marketo cookie に一致するリードは、指定されたワークスペースのプライマリパーティションに存在する必要があります。存在しない場合はエラーが返されます
 - 既存のリードがメールで一致した場合、指定されたワークスペースは無視され、リードは現在のパーティションで更新されます
 
 Marketo ワークスペースが有効で、ヘッダーが使用されていない場合、次のルールが適用されます。
 
-- 割り当てルールが設定され、新しいリードが、設定されたルールのいずれかに該当する場合、割り当てルールによって定義されたパーティションに新しいリードが作成されます。それ以外の場合、新しいリードは「デフォルト」ワークスペースのプライマリパーティションに作成されます。
+- 割り当てルールが設定され、新しいリードが、設定されたルールのいずれかに該当する場合、割り当てルールによって定義されたパーティションに新しいリードが作成されます。 それ以外の場合、新しいリードは「デフォルト」ワークスペースのプライマリパーティションに作成されます。
 - 既存のリードは、現在のパーティションで更新されます
 
-Marketo ワークスペースが有効になっていない場合、ターゲットワークスペースを「デフォルト」ワークスペースにする必要があります。ヘッダーを渡す必要はありません。
+Marketo ワークスペースが有効になっていない場合、ターゲットワークスペースを「デフォルト」ワークスペースにする必要があります。 ヘッダーを渡す必要はありません。
 
 ## リクエスト
 
@@ -45,7 +49,7 @@ Marketo ワークスペースが有効になっていない場合、ターゲッ
 | leadRecord／Id | 必須 - メールまたは `foreignSysPersonId` が存在しない場合のみ | リードレコードの Marketo ID |
 | leadRecord／Email | 必須 - ID または `foreignSysPersonId` が存在しない場合のみ | リードレコードに関連付けられたメールアドレス |
 | leadRecord／`foreignSysPersonId` | 必須 - ID またはメールが存在しない場合のみ | リードレコードに関連付けられた外部システム ID |
-| leadRecord／foreignSysType | オプション - `foreignSysPersonId` が存在する場合のみ必須 | 外部システムのタイプ。使用可能な値：CUSTOM、SFDC、NETSUITE |
+| leadRecord／foreignSysType | オプション - `foreignSysPersonId` が存在する場合のみ必須 | 外部システムのタイプ。 使用可能な値：CUSTOM、SFDC、NETSUITE |
 | leadRecord／leadAttributeList／attribute／attrName | 必須 | 値を更新するリード属性の名前。 |
 | leadRecord／leadAttributeList／attribute／attrValue | 必須 | attrName で指定されたリード属性に設定する値。 |
 | returnLead | 必須 | true の場合、更新時に更新された完全なリードレコードを返します。 |

@@ -3,9 +3,15 @@ title: Web フック
 feature: Webhooks
 description: MarketoのWebhookを設定して、サードパーティサービスの呼び出し、ペイロードテンプレート、エンコーディング、レスポンスマッピング、トークン、カスタムヘッダー、ヒントを設定する方法を説明します。
 exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
-source-git-commit: d84b9d0f60734500f16bba237bdd95692d22abbb
+TQID: https://experienceleague.adobe.com/r-GpAqhYPKvlDtMw5l23jeJWzlSqycP65eYJPA3m9EM
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+subfeature_v2: id: ad89fb33-8541-4339-afe7-bb13d1633714id: fc9b09fe-b844-4544-887b-e420c3b82065
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: 724
 ht-degree: 81%
 
 ---
@@ -27,7 +33,7 @@ Marketo では、web フックを使用してサードパーティの web サー
 - **[!UICONTROL 応答タイプ]** - サービスから受け取る応答の形式（JSON または XML）を選択します。 レスポンスのプロパティをMarketoのリードフィールドにマッピングするには、正しいレスポンスのタイプを選択する必要があります。
 - **[!UICONTROL カスタムヘッダー]** - **[!UICONTROL Webhook アクション]**/**[!UICONTROL カスタムヘッダーを設定]**&#x200B;経由でアクセスすると、このメニューでは、任意の数のカスタムキーと値のペアをHTTP ヘッダーとして追加できます。
 
-[応答マッピング &#x200B;](response-mappings.md)を使用して、web サービスの応答からリードにデータを書き戻すことができます。
+[応答マッピング ](response-mappings.md)を使用して、web サービスの応答からリードにデータを書き戻すことができます。
 
 ## トークン
 

@@ -3,9 +3,15 @@ title: カスタムオブジェクト
 feature: REST API, Custom Objects
 description: エンドポイント、メタデータ、リレーションシップ、フィールド、クエリなど、REST APIを使用してMarketo カスタムオブジェクトを作成および管理する方法について説明します。
 exl-id: 88e8829b-f8f1-46d7-a753-5aa6e20e2c40
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/NWm9CjFVqQdVDJRrnE4nA299-Lg53-JR7xvY-82dUqY
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: c5f60233-d5ea-4453-a799-0ad258b4d399id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+subfeature_v2: id: ea4e3ff5-e7b9-4b4c-a5a0-dc27cc3f4275
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '3346'
+source-wordcount: 3346
 ht-degree: 90%
 
 ---
@@ -263,7 +269,7 @@ POST /rest/v1/customobjects/{apiName}.json?_method=GET
 
 ## 作成と更新
 
-[カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST)エンドポイントを使用して、カスタムオブジェクトを作成または更新し、`action` パラメーターを使用して操作を指定できます。  1 回の呼び出しで最大 300 個のレコードを作成または更新できます。  `input` 配列で使用される値は、主に[カスタムオブジェクトを説明](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1)エンドポイントによって返される情報に基づいています。 例えば、car オブジェクトには、重複排除フィールド `vin` が 1 つだけあります。  dedupeFields モードを使用する際にレコードを更新または作成するには、入力配列の各レコードに 1 つ以上の `vin` フィールドを含める必要があります。
+[カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST)エンドポイントを使用して、カスタムオブジェクトを作成または更新し、`action` パラメーターを使用して操作を指定できます。  1 回の呼び出しで最大 300 個のレコードを作成または更新できます。  `input` 配列で使用される値は、主に[カスタムオブジェクトを説明](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1)エンドポイントによって返される情報に基づいています。 例えば、car オブジェクトには、重複排除フィールド `vin` が 1 つだけあります。  dedupeFields モードを使用する際にレコードを更新または作成するには、入力配列の各レコードに 1 つ以上の `vin` フィールドを含める必要があります。
 
 ```http
 POST /rest/v1/customobjects/{apiName}.json
@@ -890,7 +896,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 1 対多のカスタムオブジェクト構造の場合は、カスタムオブジェクトのリンクフィールドを使用して、標準オブジェクト（リードまたは会社）に接続します。 [こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)のMarketo 製品ドキュメントの自動車所有者の例を使用して、リードに接続する自動車関連情報を含むカスタムオブジェクトを作成します。
 
 1. **Car** オブジェクトを作成します
-1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead**&#x200B;***/Lead ID** にリンクします
+1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead*****/Lead ID** にリンクします
 1. **Car** オブジェクトを承認します
 
 最初に、自動車固有の情報を含めるカスタムオブジェクトタイプを作成します。
@@ -994,7 +1000,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. **コース**&#x200B;にフィールドを追加します。**コース ID** で重複排除します
 1. **コース**&#x200B;を承認します
 1. **登録**&#x200B;ブリッジオブジェクトを作成します
-1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース**&#x200B;**/コース ID** フィールドへのリンク、**リード**&#x200B;**/リード ID** へのリンクで重複削除します
+1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース****/コース ID** フィールドへのリンク、**リード****/リード ID** へのリンクで重複削除します
 1. **登録**&#x200B;を承認します
 
 最初に、コース固有の情報を含めるエッジオブジェクトタイプを作成します。

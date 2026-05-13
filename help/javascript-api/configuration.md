@@ -3,9 +3,14 @@ title: 設定
 description: JavaScript APIを使用してMarketo Munchkinを設定します。 altId、anonymizeIP、asyncOnly、cookie life、domainLevel、Beacon APIなどのMunchkin.initの設定を学びます。
 feature: Munchkin Tracking Code, Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/ip2cCGgoa83v8m9GYLYXe132veYxS1C6UWX1iLB6X5Q
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: 614
 ht-degree: 87%
 
 ---
@@ -36,7 +41,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | cookieAnon | ブール値 | false に設定すると、新しい匿名リードのトラッキングと cookie の作成が防止されます。 リードには cookie があり、Marketo フォームに入力した後や、Marketo メールからクリックスルーすることで追跡されます。 デフォルトは true です。 |
 | cookieLifeDays | 整数 | 新しく作成された Munchkin トラッキング cookie の有効期限を、この日数後に設定します。 デフォルトは 730 日（2 年）です。 |
 | customName | 文字列 | カスタムページ名。 システムのみで使用します。 |
-| <a name="domainlevel"></a>domainLevel | 整数 | cookieのドメイン属性を設定する際にページのドメインから使用する部分の数を設定します。例えば、現在のページドメインが「www.example.com」であるとします。domainLevel: 2は、cookie ドメイン属性を「.example.com」 domainLevel: 3に設定し、cookie ドメイン属性を「。www.example.com」 Background:Munchkinに設定すると、特定の2文字のトップレベルドメインが自動的に管理されます。 通常、上位レベルドメインが 3 文字の場合、これはデフォルトで 2 つの部分になります。 例えば、「www.example.com」の場合、右端の 2 つの部分「.example.com」が cookie の設定に使用されます。「.jp」、「.us」、「.cn」、「.uk」などの 2 文字の国コードの場合、コードはデフォルトで 3 つの部分になります。 例えば、「www.example.co.jp」は、右端の 3 つのドメイン部分「.example.co.jp」を使用します。ドメインパターンで異なる動作が必要な場合は、`domainLevel` パラメーターを使用してこれを指定する必要があります。 |
+| <a name="domainlevel"></a>domainLevel | 整数 | cookieのdomain属性を設定する際にページのドメインから使用するパーツの数を設定します。例えば、現在のページドメインが「www.example.com」であるとします。domainLevel: 2は、cookie ドメイン属性を「.example.com」 domainLevel: 3に設定し、cookie ドメイン属性を「。www.example.com」 Background:Munchkinに設定すると、特定の2文字のトップレベルドメインが自動的に管理されます。 通常、上位レベルドメインが 3 文字の場合、これはデフォルトで 2 つの部分になります。 例えば、「www.example.com」の場合、右端の 2 つの部分「.example.com」が cookie の設定に使用されます。「.jp」、「.us」、「.cn」、「.uk」などの 2 文字の国コードの場合、コードはデフォルトで 3 つの部分になります。 例えば、「www.example.co.jp」は、右端の 3 つのドメイン部分「.example.co.jp」を使用します。ドメインパターンで異なる動作が必要な場合は、`domainLevel` パラメーターを使用してこれを指定する必要があります。 |
 | domainSelectorV2 | ブール値 | true に設定すると、cookie ドメイン属性を設定する方法を決定するために改善した方法が利用されます。 |
 | httpsOnly | ブール値 | デフォルトは false です。 true に設定すると、追跡したページが https 経由で提供された際に、セキュア設定を使用する cookie が設定されます。 |
 | useBeaconAPI | ブール値 | デフォルトは false です。 true に設定すると、[XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) の代わりに、[Beacon API](https://developer.mozilla.org/ja/docs/Web/API/Beacon_API) を使用して、ブロック以外のリクエストを送信します。 ブラウザーがこの API をサポートしていない場合、Munchkin は XMLHttpRequest の使用にフォールバックします。 |

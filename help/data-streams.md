@@ -2,9 +2,13 @@
 title: データストリーム
 description: Marketo Engage Data Streamsの概要：ほぼリアルタイムのリードアクティビティとユーザー監査イベントを実現し、Performance Tierのお客様のAPI制限を緩和
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
+TQID: https://experienceleague.adobe.com/JnhN70HexjmNueZa9MAVrxjEhZ5yJatWqZiowl22quA
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: e1e0219c-f879-479f-8427-888ed2a6e9c2
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1721'
+source-wordcount: 1721
 ht-degree: 91%
 
 ---
@@ -13,7 +17,7 @@ ht-degree: 91%
 
 >[!NOTE]
 >
->データストリームに関する現在の情報は、[&#x200B; データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams#)で見つかりました。
+>データストリームに関する現在の情報は、[ データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams#)で見つかりました。
 >
 
 アドビのお客様のマーケティング組織は、ビジネスで上位の地位を保ち、競争力を維持することを目的に、タイムリーで焦点を当てたマーケティングキャンペーンに依存しています。 ペースの速い意思決定をサポートし、迅速な戦略的変化を可能にするために、焦点を絞ったキャンペーンを提供する重要な意思決定をサポートし、推進するためのデータを持つことが重要です。 また、Marketo Engage 内外の顧客セグメントのレベルでマーケティング活動を行うお客様もいます。 これらの様々な取り組みのサポートに、Marketo ではデータストリームを通じてほとんどリアルタイムで大量のデータを取得する機能を作成しました。

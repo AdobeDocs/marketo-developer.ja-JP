@@ -1,18 +1,22 @@
 ---
 title: listOperation
 feature: SOAP
-description: 静的リストメンバーシップを削除または確認するために追加するMarketo SOAP listOperation。 厳密なモード、XML の例、PHP および Java コードを使用して、1 回の呼び出しで最大 1000 リードをサポートします。
+description: Marketo SOAP listOperationを使用して、静的リストのメンバーシップを削除またはチェックします。 厳格なモード、XMLの例、PHPおよびJava コードを使用して、呼び出しごとに最大1000件のリードをサポートします。
 exl-id: 8332cc22-c5a9-43d6-9e92-8d62265cfab2
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/seGThNLWyN6Rk52a2GUvLRsnSq3WvbBj88WpDxvlpGw
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: 212
 ht-degree: 87%
 
 ---
 
 # listOperation
 
-このメソッドを使用すると、Marketo リードデータベース内で定義された静的リストに対して操作を実行できます。プログラム内で定義された静的リストのメンバーを追加または削除するには、[importToList](importtolist.md) を使用します。このエンドポイントへの各呼び出しには、呼び出しあたり 1000 リードの制限があります。
+このメソッドを使用すると、Marketo リードデータベース内で定義された静的リストに対して操作を実行できます。 プログラム内で定義された静的リストのメンバーを追加または削除するには、[importToList](importtolist.md) を使用します。 このエンドポイントへの各呼び出しには、呼び出しあたり 1000 リードの制限があります。
 
 操作タイプには、以下を含めることができます。
 
@@ -24,12 +28,12 @@ ht-degree: 87%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| listOperation | 必須 | 指定したリストに対して実行する操作のタイプ。使用可能な操作：`ADDTOLIST`、`ISMEMBEROFLIST`、`REMOVEFROMLIST` |
-| listKey／keyType | 必須 | 操作するリストのタイプ。使用可能な値：`MKTOLISTNAME`、`MKTOSALESUSERID`、`SFDCLEADOWNERID` |
+| listOperation | 必須 | 指定したリストに対して実行する操作のタイプ。 使用可能な操作：`ADDTOLIST`、`ISMEMBEROFLIST`、`REMOVEFROMLIST` |
+| listKey／keyType | 必須 | 操作するリストのタイプ。 使用可能な値：`MKTOLISTNAME`、`MKTOSALESUSERID`、`SFDCLEADOWNERID` |
 | listKey／keyValue | 必須 | 操作するリストの名前。 |
-| listMemberList／leadKey／keyType | 必須 | `keyType` を使用すると、リードを参照する ID を指定できます。使用可能な値：`IDNUM` |
+| listMemberList／leadKey／keyType | 必須 | `keyType` を使用すると、リードを参照する ID を指定できます。 使用可能な値：`IDNUM` |
 | listMemberList／leadKey／keyValue | 必須 | `keyValue` は、リストを操作する値です。 |
-| strict | オプション | 呼び出しのサブセットが失敗すると、操作全体で strict モードが失敗します。strict 以外のモードは、可能な限りすべてを完了し、失敗した場合はエラーを返します。 |
+| strict | オプション | 呼び出しのサブセットが失敗すると、操作全体で strict モードが失敗します。 strict 以外のモードは、可能な限りすべてを完了し、失敗した場合はエラーを返します。 |
 
 ## リクエスト XML
 

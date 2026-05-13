@@ -1,20 +1,24 @@
 ---
 title: getCampaignsForSource
 feature: SOAP
-description: Marketo SOAP getCampaignsForSource は、requestCampaign のソース別に適格なスマートキャンペーンを返します。キャンペーンはリクエストされたトリガー、XML および PHP の例が必要です。
+description: Marketo SOAP getCampaignsForSourceは、requestCampaignのソースごとに適格なスマートキャンペーンを返します。Campaignがリクエストされたトリガー、XMLおよびPHPの例が必要です。
 exl-id: bd8803ef-f462-4346-a381-73f40dc5d9ee
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/QKOB21gL-zcTvMkvG9fYTYnGtUJcxsjbuYbtDHc-I-Y
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: 148
 ht-degree: 86%
 
 ---
 
 # getCampaignsForSource
 
-この関数は、requestCampaign 関数への入力パラメーターとして使用できる、適格な Marketo キャンペーンのリストを返します。キャンペーンは、WSDL でカウントされるリクエストのソースによって分類されます。
+この関数は、requestCampaign 関数への入力パラメーターとして使用できる、適格な Marketo キャンペーンのリストを返します。 キャンペーンは、WSDL でカウントされるリクエストのソースによって分類されます。
 
-重要：スマートキャンペーンの対象になるには、「キャンペーンをリクエスト」トリガーが必要です。このソースには、Web Service API が含まれている必要があります。
+重要：スマートキャンペーンの対象になるには、「キャンペーンをリクエスト」トリガーが必要です。 このソースには、Web Service API が含まれている必要があります。
 
 ![campaign_is_requested_trigger](assets/campaign-is-requested-trigger.png)
 
@@ -22,8 +26,8 @@ ht-degree: 86%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| ソース | 必須 | ソースは、`MKTOWS` または `SALES` に指定できます。後者では、セールスインサイトで使用可能なキャンペーンのリストを提供します。 |
-| name | オプション | 名前でフィルタリングするには、これを使用します。これは、文字列の配列ではなく、単一の文字列です。 |
+| ソース | 必須 | ソースは、`MKTOWS` または `SALES` に指定できます。 後者では、セールスインサイトで使用可能なキャンペーンのリストを提供します。 |
+| name | オプション | 名前でフィルタリングするには、これを使用します。 これは、文字列の配列ではなく、単一の文字列です。 |
 | exactName | オプション | name パラメーターに完全一致が必要かどうかを示すブール値 |
 
 ## リクエスト XML
