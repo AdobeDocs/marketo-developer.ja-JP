@@ -4,9 +4,12 @@ feature: SOAP
 description: Marketo SOAP APIは、2025年10月31日以降に非推奨（廃止予定）になります。 RESTへの移行、WSDLの取得、クォータ、レート制限、認証の設定を参照してください。
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
 TQID: https://experienceleague.adobe.com/Atnarr7XLzW3B2R5I8nLtayeE5kt3Bd4T46K6yIPc-8
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 269
@@ -44,6 +47,6 @@ WSDL で定義されているエンドポイントを使用しないでくださ
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 適切な[!UICONTROL 暗号化キー]を設定し、**[!UICONTROL 変更を保存]**&#x200B;を選択し、SOAP API [!UICONTROL  エンドポイント ]、[!UICONTROL  ユーザーID]、および[!UICONTROL 暗号化キー]の値を使用して、SOAP API呼び出しごとに正しい[認証シグネチャ ](authentication-signature.md)を生成します。
+1. 適切な[!UICONTROL 暗号化キー]を設定し、**[!UICONTROL 変更を保存]**&#x200B;を選択し、SOAP API [!UICONTROL &#x200B; エンドポイント &#x200B;]、[!UICONTROL &#x200B; ユーザーID]、および[!UICONTROL 暗号化キー]の値を使用して、SOAP API呼び出しごとに正しい[認証シグネチャ &#x200B;](authentication-signature.md)を生成します。
 
 ![admin-web-services3](assets/admin-web-services3.png)

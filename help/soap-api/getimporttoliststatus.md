@@ -4,8 +4,10 @@ feature: SOAP
 description: getImportToListStatusを使用すると、Marketoの静的リストの読み込みステータス、必須フィールド、XML リクエストとレスポンス、PHPとJava コード、ポーリングのベストプラクティスを確認できます。
 exl-id: 17a62f65-dfa0-4f40-89b2-154f7734a2dc
 TQID: https://experienceleague.adobe.com/6pSW-VrcGNpPU5W2tRzwGsvmk7LwcYyfeMIPKh44Wz4
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 96
