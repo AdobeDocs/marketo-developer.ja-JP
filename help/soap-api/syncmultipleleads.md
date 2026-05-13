@@ -1,35 +1,40 @@
 ---
 title: syncMultipleLeads
 feature: SOAP
-description: syncMultipleLeads を使用して、SOAP、キーと重複排除ルール、バッチサイズ制限、サンプル XML、PHP、Java コードを介して複数のMarketo リードをアップサートする方法を説明します。
+description: syncMultipleLeadsを使用して、SOAP、キーと重複排除ルール、バッチサイズの制限、サンプル XML、PHP、Java コードを介して複数のMarketo リードをアップサートする方法を説明します。
 exl-id: 91980b82-dff9-48a7-b03e-20dce9d0d046
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/wKdqd4hC3soaYoZ4-Vsx5JLL-me-7PmU-VUn-nXFDpw
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: 247
 ht-degree: 89%
 
 ---
 
 # syncMultipleLeads
 
-この関数は、_複数_&#x200B;のリードレコードの挿入または更新（アップサート）操作をリクエストします。既存のリードを更新する場合、リードは次のいずれかのキーで識別できます。
+この関数は、_複数_&#x200B;のリードレコードの挿入または更新（アップサート）操作をリクエストします。 既存のリードを更新する場合、リードは次のいずれかのキーで識別できます。
 
 - Marketo ID
 - 外部システム ID
 - メール
 
-複数のキーが存在する場合、Marketo ID が `ForeignSysPersonId` よりも優先され、後者が更新されます。ただし、メールもキーとして存在する場合は、属性のリストで指定されていない限り更新されません。
+複数のキーが存在する場合、Marketo ID が `ForeignSysPersonId` よりも優先され、後者が更新されます。 ただし、メールもキーとして存在する場合は、属性のリストで指定されていない限り更新されません。
 
-バッチサイズは 300 を超えないようにすることをお勧めします。これより大きなサイズはサポートされず、タイムアウトや、極端な場合はスロットルが発生することがあります。
+バッチサイズは 300 を超えないようにすることをお勧めします。 これより大きなサイズはサポートされず、タイムアウトや、極端な場合はスロットルが発生することがあります。
 
-この関数呼び出しを使用して、重複排除機能をオフにすることができます。dedupEnabled が true に設定され、他の一意の ID（`foreignSysPersonId` または Marketo リード ID）が指定されていない場合、リードレコードはメールアドレスを使用して重複排除されます。false を渡すと、Marketo 内で重複が作成されます。
+この関数呼び出しを使用して、重複排除機能をオフにすることができます。 dedupEnabled が true に設定され、他の一意の ID（`foreignSysPersonId` または Marketo リード ID）が指定されていない場合、リードレコードはメールアドレスを使用して重複排除されます。 false を渡すと、Marketo 内で重複が作成されます。
 
 ## リクエスト
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadRecordList／leadRecord | 必須 | 同期する LeadRecords の配列。LeadRecords では、リード ID、メールまたは ForeignSysPersonId を指定する必要があります |
-| dedupEnabled | オプション | 重複排除機能をオフにできるオプションの値。`false` の値を渡すと、Marketo で重複が作成されます |
+| leadRecordList／leadRecord | 必須 | 同期する LeadRecords の配列。 LeadRecords では、リード ID、メールまたは ForeignSysPersonId を指定する必要があります |
+| dedupEnabled | オプション | 重複排除機能をオフにできるオプションの値。 `false` の値を渡すと、Marketo で重複が作成されます |
 
 ## リクエスト XML
 

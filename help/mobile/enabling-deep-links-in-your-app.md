@@ -1,18 +1,25 @@
 ---
 title: ディープリンクの有効化
 feature: Mobile Marketing
-description: カスタム URI スキームを使用し、iOS、Android、PhoneGap のガイダンスとベストプラクティスに基づいて、Marketo プッシュメッセージに対してアプリでディープリンクを有効にする方法を説明します。
+description: IOS、Android、PhoneGapのガイダンスとベストプラクティスを使用して、カスタム URI スキームを使用したMarketo プッシュメッセージのアプリでディープリンクを有効にする方法について説明します。
 exl-id: c3647416-d81d-4f15-b660-bcb3e54cb9bc
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/UswOvHXGlfTrTUqr4Gsf3j2Z7Xpv2FF2luXeygT4qE0
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: 420
 ht-degree: 93%
 
 ---
 
 # ディープリンクの有効化
 
-ディープリンクを使用すると、アプリ内の特定のコンテンツ（リソース）に人物をリダイレクトできます。例えば、ユーザが紫色の T シャツを広告するモバイルプッシュメッセージをクリックすると、アプリを開いて（ホームページではなく）紫色の T シャツのコンテンツを直接表示できます。
+ディープリンクを使用すると、アプリ内の特定のコンテンツ（リソース）に人物をリダイレクトできます。 例えば、ユーザが紫色の T シャツを広告するモバイルプッシュメッセージをクリックすると、アプリを開いて（ホームページではなく）紫色の T シャツのコンテンツを直接表示できます。
 
 プロセスは次のように機能します。
 
@@ -26,14 +33,14 @@ iOS の場合は、[アプリのカスタム URL スキームの定義](https://
 
 Android の場合は、[アプリコンテンツのディープリンクの有効化](https://developer.android.com/training/app-links/deep-linking)に関する Google ドキュメントを参照してください。
 
-PhoneGap アプリの場合、ディープリンクはネイティブ iOS または Android アプリほど簡単ではありませんが、ハイブリッドアプリが iOS と Android の両方でディープリンクのカスタム URL スキームとユニバーサル／アプリリンクに応答できるようにするプラグインがあります。[これらのプラグイン](https://cordova.apache.org/plugins/?q=deeplink)を考慮してください。
+PhoneGap アプリの場合、ディープリンクはネイティブ iOS または Android アプリほど簡単ではありませんが、ハイブリッドアプリが iOS と Android の両方でディープリンクのカスタム URL スキームとユニバーサル／アプリリンクに応答できるようにするプラグインがあります。 [これらのプラグイン](https://cordova.apache.org/plugins/?q=deeplink)を考慮してください。
 
 アプリでディープリンクを有効にした際は、カスタム URI を Marketo ユーザと共有して、プッシュメッセージのタップアクションに挿入できます。
 
-Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。詳しくは、インストールガイドの[テストデバイス](installation.md)の節を参照してください。
+Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。 詳しくは、インストールガイドの[テストデバイス](installation.md)の節を参照してください。
 
 ## URI 構造を定義するベストプラクティス
 
-ブランドに既存のモバイルサイトがある場合は、ディープリンク URI に対してもこの URL 構造に従うのがベストプラクティスです。例えば、`https://myappname.com/products/purple-shirt` が対象製品の web サイトアドレスである場合、`myappname://products/purple-shirt` はアプリで使用するのに適したディープリンク URI 構造になります。
+ブランドに既存のモバイルサイトがある場合は、ディープリンク URI に対してもこの URL 構造に従うのがベストプラクティスです。 例えば、`https://myappname.com/products/purple-shirt` が対象製品の web サイトアドレスである場合、`myappname://products/purple-shirt` はアプリで使用するのに適したディープリンク URI 構造になります。
 
-一般に、スキームはブランドに一意である必要があります。現在、スキームを世界中で一意にする規制はありませんが、スキームが一意であることを確保する 1 つの方法は、ドメイン名を逆にすることです（例：`org.companyname`）。
+一般に、スキームはブランドに一意である必要があります。 現在、スキームを世界中で一意にする規制はありませんが、スキームが一意であることを確保する 1 つの方法は、ドメイン名を逆にすることです（例：`org.companyname`）。

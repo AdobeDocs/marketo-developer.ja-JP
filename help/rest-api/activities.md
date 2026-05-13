@@ -1,11 +1,20 @@
 ---
 title: アクティビティ
 feature: REST API
-description: Use the Marketo Engage Activities REST API to list activity types, fetch lead activities with paging tokens, and handle custom and data value changes.
+description: Marketo Engage アクティビティ REST APIを使用して、アクティビティタイプの一覧表示、ページングトークンを使用したリードアクティビティの取得、カスタム値およびデータ値の変更の処理を行います。
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 5260338681c4ea670f6f1b1a1603e30f6acc0865
+TQID: https://experienceleague.adobe.com/62keaj4uNoxIPCzr9AQzKrIsfuHBvC25knYisZRUvF4
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '2218'
+source-wordcount: 2218
 ht-degree: 88%
 
 ---
@@ -77,11 +86,11 @@ GET /rest/v1/activities/types.json
 
 Marketo からアクティビティを取得するには、[リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET)エンドポイントを呼び出します。 最初に、アクティビティの取得を開始する日時のページングトークンを取得する必要があります。 次に、`nextPageToken` クエリパラメーターでページングトークンを渡します。 さらに、`activityTypeIds` クエリパラメーターに、最大 10 個のアクティビティタイプ ID をコンマ区切りのリストとして渡します。
 
-You can optionally include either a `listId` query parameter to narrow your search to only those records included in a specific static list, or a `leadIds` query parameter and search for activities from only a specified set of leads. You can pass up to 30 `leadIds` as a comma separated list.
+オプションで、`listId` クエリパラメーターを含めて、検索を特定の静的リストに含まれるレコードのみに絞り込むことができます。また、`leadIds` クエリパラメーターを含めて、指定されたリードのセットのみからアクティビティを検索することもできます。 最大30個の`leadIds`をコンマ区切りリストとして渡すことができます。
 
 >[!CAUTION]
 >
->Beginning 2026-12-30, calls to the `Get Lead Activities` and `Get Lead Changes` endpoints which includes the `listId` parameter will fail (error code 1003) if the target lists contain 10,000 or more leads. To avoid service disruptions, ensure that calls are properly scoped to avoid this limit.
+>2026-12-30以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む`Get Lead Activities`および`Get Lead Changes` エンドポイントへの呼び出しは失敗します（エラーコード 1003）。 サービスの中断を回避するには、この制限を回避するために、呼び出しが適切にスコープ設定されていることを確認します。
 
 ```http
 GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK7JDSA3I3LCWXH3Y6IIZ7YSGQLXHCPVE5Q====
@@ -146,7 +155,7 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 >[!CAUTION]
 >
->Beginning 2026-12-30, calls to the `Get Lead Activities` and `Get Lead Changes` endpoints which includes the `listId` parameter will fail (error code 1003) if the target lists contain 10,000 or more leads. To avoid service disruptions, ensure that calls are properly scoped to avoid this limit.
+>2026-12-30以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む`Get Lead Activities`および`Get Lead Changes` エンドポイントへの呼び出しは失敗します（エラーコード 1003）。 サービスの中断を回避するには、この制限を回避するために、呼び出しが適切にスコープ設定されていることを確認します。
 
 ```http
 GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&fields=firstName,lastName,department
@@ -457,7 +466,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 ### 属性の作成
 
-属性の作成には、必須の `apiName` パスパラメーターを使用します。 Also required are the `name` and `dataType` parameters.`The description and` `isPrimary` parameters are optional.
+属性の作成には、必須の `apiName` パスパラメーターを使用します。 `name`と`dataType`のパラメーターも必須です。`The description and` `isPrimary`個のパラメーターはオプションです。
 
 ```http
 POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
@@ -716,5 +725,5 @@ POST /rest/v1/activities/external.json
 
 「アクティビティ」エンドポイントのタイムアウトは 30 秒です（以下に記載されている場合を除く）。
 
-* Get Paging Token: 300s
+* ページングトークンの取得：300秒
 * カスタムを追加アクティビティ：90 秒

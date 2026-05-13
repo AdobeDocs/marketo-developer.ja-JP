@@ -3,9 +3,14 @@ title: 静的リスト
 feature: REST API, Static Lists
 description: Marketo REST APIを使用して、ID、名前、参照、フォルダー範囲、ページング、日付フィルターのエンドポイントを含む静的リストをクエリ、作成、更新、削除します。
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/DSV9h6d4F3ZrIUT-VtqlmFAnpdxOuTf05ajCqiGegqk
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: 496
 ht-degree: 51%
 
 ---

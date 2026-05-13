@@ -1,11 +1,16 @@
 ---
 title: deleteCustomObjects
 feature: SOAP, Custom Objects
-description: Marketo SOAP API で deleteCustomObjects を使用して、DELETED、UNCHANGED、FAILED の各ステータスに加えて、XML、PHP、Java を持つキー属性でカスタムオブジェクトを削除する方法を説明します。
+description: Marketo SOAP APIのdeleteCustomObjectsを使用して、DELETE、UNCHANGED、FAILEDのステータスに加え、XML、PHP、Javaを含む主要な属性でカスタムオブジェクトを削除する方法を説明します。
 exl-id: 214b7cd1-dc4e-45dc-a29a-91518a275e61
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/5ARV5AGPgRnLX9X3ychjeoMmZpW0jZlnNuILwArhzJI
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '99'
+source-wordcount: 99
 ht-degree: 75%
 
 ---
@@ -19,7 +24,7 @@ ht-degree: 75%
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
 | objTypeName | 必須 | カスタムオブジェクトの名前 |
-| customObjKeyLists／keyList／attribute | 必須 | 属性は、削除するカスタムオブジェクトを識別するために使用されるキーと値のペアです。customObjKeyLists では複数の属性を指定できます |
+| customObjKeyLists／keyList／attribute | 必須 | 属性は、削除するカスタムオブジェクトを識別するために使用されるキーと値のペアです。 customObjKeyLists では複数の属性を指定できます |
 
 ## リクエスト XML
 

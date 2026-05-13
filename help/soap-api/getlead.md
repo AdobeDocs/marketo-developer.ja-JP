@@ -1,18 +1,23 @@
 ---
 title: getLead
 feature: SOAP
-description: Marketo SOAP getLead を使用して、IDNUM、メール、cookie、SFDC ID ごとに 1 つのリードとすべてのフィールド値を取得します。リクエストおよび応答の XML と PHP サンプルも使用できます。
+description: Marketo SOAP getLeadを使用すると、リクエストとレスポンスのXMLとPHPのサンプルを含む、IDNUM、電子メール、Cookie、またはSFDC IDによって1つのリードとすべてのフィールド値を取得できます。
 exl-id: 1a3eab26-7994-455d-bc7a-80e43e6ef4a7
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/HJ28-Gr78FqFm2KuvDdoAclkHVBSV6GwDjnUwQcJqVw
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: 153
 ht-degree: 81%
 
 ---
 
 # getLead
 
-この関数は、指定したキー（LeadKey）で識別されるリードに対して、単一のリードレコードと、ビルトインのフィールドとカスタムフィールドのすべてのフィールド値を Marketo から取得します。入力パラメーターに基づいてリードが存在する場合、リードレコード属性が結果に返されます。
+この関数は、指定したキー（LeadKey）で識別されるリードに対して、単一のリードレコードと、ビルトインのフィールドとカスタムフィールドのすべてのフィールド値を Marketo から取得します。 入力パラメーターに基づいてリードが存在する場合、リードレコード属性が結果に返されます。
 
 メモ：文字列データタイプで空のリード属性は、応答の一部として返されません。
 
@@ -20,7 +25,7 @@ ht-degree: 81%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| leadKey／keyType | 必須 | keyType を使用すると、リードに対してクエリを実行するフィールドを指定できます。使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
+| leadKey／keyType | 必須 | keyType を使用すると、リードに対してクエリを実行するフィールドを指定できます。 使用可能な値：`IDNUM`、`COOKIE`、`EMAIL`、`SFDCLEADID`、`LEADOWNEREMAIL`、`SFDCACCOUNTID`、`SFDCCONTACTID`、`SFDCLEADID`、`SFDCLEADOWNERID`、`SFDCOPPTYID` |
 | leadKey／keyValue | 必須 | keyValue は、リードに対してクエリを実行する値です。 |
 
 ## リクエスト XML

@@ -3,10 +3,15 @@ title: Marketo オブジェクト
 feature: SOAP
 description: Marketo オブジェクトの概要（種類、属性、外部キーの動作、商談、プログラム、関連レコードのサポートされているSOAP APIなど）。
 exl-id: 99b9aed4-94e8-46e8-84d9-2cc5215b0c13
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/-G3BW9oFhPZL68yBUy-aNYycmgADhQCo8OclQAierrU
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '274'
-ht-degree: 77%
+source-wordcount: 274
+ht-degree: 83%
 
 ---
 
@@ -31,7 +36,7 @@ MObject は、次で構成されます。
 
 ### 外部キー
 
-外部キーは、Lead や Opportunity などの Marketo オブジェクトで定義されたカスタムフィールドです。 名前はフィールド名、値はフィールド値で、外部システムで生成されます。**Marketoはこれらの値に一意の制約を適用しません。** 値が一意であることを確認するのは、API ユーザーの責任です。 重複が発生した場合、Marketo では最後に追加されたオブジェクトを使用します。 これは、「メールアドレス」標準フィールドの動作に似ています。
+外部キーは、Lead や Opportunity などの Marketo オブジェクトで定義されたカスタムフィールドです。 名前はフィールド名で、値は外部システムで生成されたフィールド値です。 **Marketoはこれらの値に一意の制約を適用しません。** 値が一意であることを確認するのは、API ユーザーの責任です。 重複が発生した場合、Marketo では最後に追加されたオブジェクトを使用します。 これは、「メールアドレス」標準フィールドの動作に似ています。
 
 ### 使用可能な API
 

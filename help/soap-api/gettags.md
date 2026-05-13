@@ -1,11 +1,20 @@
 ---
 title: getTags
 feature: SOAP, Tags
-description: Marketo SOAP getTags は、オプションのタグフィルターに加えて、リクエストフィールドと完全な XML リクエスト応答サンプルを使用して、チャネル以外のタグタイプと値を取得します。
+description: Marketo SOAP getTagsは、オプションのタグフィルターに加えて、リクエストフィールドと完全なXML リクエスト応答サンプルを含む、非チャネルタグタイプと値を取得します。
 exl-id: 4fd9de1a-9362-479a-afe1-09ef0aaf5e6e
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/55CSoyxyyE1pAO5tdB9WmVudPo59ndDVS9pmY7onyBc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: e1e0219c-f879-479f-8427-888ed2a6e9c2
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '113'
+source-wordcount: 116
 ht-degree: 80%
 
 ---
@@ -23,7 +32,7 @@ ht-degree: 80%
 
 | フィールド名 | 必須／オプション | 説明 |
 | --- | --- | --- |
-| tagList／tag | オプション | クエリを実行するタグのリスト。各タグには、タイプと、文字列として値の配列を含めることができます。`<tagList>` を省略すると、すべてのチャネルに関する情報が表示されます |
+| tagList／tag | オプション | クエリを実行するタグのリスト。 各タグには、タイプと、文字列として値の配列を含めることができます。 `<tagList>` を省略すると、すべてのチャネルに関する情報が表示されます |
 
 ## リクエスト XML
 

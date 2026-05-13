@@ -1,26 +1,31 @@
 ---
 title: syncCustomObjects
 feature: SOAP
-description: Marketo syncCustomObjects SOAPを使用すると、1 回の呼び出しで最大 100 個のカスタムオブジェクトを挿入、更新、アップサートでき、レコードごとのステータス結果や XML および PHP の例も含まれます。
+description: Marketo syncCustomObjects SOAPを使用すると、レコードごとのステータス結果とXMLおよびPHPの例を含む、1回の呼び出しごとに最大100個のカスタムオブジェクトを挿入、更新、またはアップセルできます。
 exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/x-ijocpuVSFTNAQJY9zXVJMtVUZqI6YsjMPvKFNNA5g
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: 249
 ht-degree: 89%
 
 ---
 
 # syncCustomObjects
 
-作成または更新するカスタムオブジェクトの配列を、呼び出しごとに最大 100 個まで受け入れます。操作（CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）の結果（ステータス）と、処理されたカスタムオブジェクトを返します。API は、次の 3 つの操作モードのいずれかで呼び出されます。
+作成または更新するカスタムオブジェクトの配列を、呼び出しごとに最大 100 個まで受け入れます。 操作（CREATED、UPDATED、FAILED、UNCHANGED、SKIPPED）の結果（ステータス）と、処理されたカスタムオブジェクトを返します。 API は、次の 3 つの操作モードのいずれかで呼び出されます。
 
 1. INSERT - 新しいオブジェクトのみを挿入し、既存のオブジェクトはスキップします
 1. UPDATE - 既存のオブジェクトのみを更新し、新しいオブジェクトはスキップします。
 1. UPSERT - 新しいオブジェクトを挿入し、既存のオブジェクトを更新します
 
-1 回の API 呼び出しで、一部の更新は成功し、一部の更新は失敗する場合があります。失敗するたびにエラーメッセージが返されます。
+1 回の API 呼び出しで、一部の更新は成功し、一部の更新は失敗する場合があります。 失敗するたびにエラーメッセージが返されます。
 
-新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、UI で `dedupe` フィールドとして指定されているフィールドのみが `CustomObjKeyList` の属性として渡される可能性があります。`dedupe` フィールドではないリンクフィールドは、`customObjAttributeList` の属性として渡す必要があります。
+新しいカスタムオブジェクト UI でプロビジョニングされたカスタムオブジェクトの場合、UI で `dedupe` フィールドとして指定されているフィールドのみが `CustomObjKeyList` の属性として渡される可能性があります。 `dedupe` フィールドではないリンクフィールドは、`customObjAttributeList` の属性として渡す必要があります。
 
 ## リクエスト
 
@@ -28,7 +33,7 @@ ht-degree: 89%
 | --- | --- | --- |
 | operation | 必須 | 「INSERT」、「UPDATE」または「UPSERT」 |
 | objectTypeName | 必須 | カスタムオブジェクトの名前 |
-| customObjectList／customObject／customObjKeyList／attribute | 必須 | 属性は、カスタムオブジェクトを識別するのに使用されるキーと値のペアです。customObjKeyList には複数の属性を含めることができます。 |
+| customObjectList／customObject／customObjKeyList／attribute | 必須 | 属性は、カスタムオブジェクトを識別するのに使用されるキーと値のペアです。 customObjKeyList には複数の属性を含めることができます。 |
 | customObjectList／customObject／customObjAttributeList／attribute | 必須 | キーと値のペア。名前はフィールド名で、値は customObject に挿入する値です。 |
 
 ## リクエスト XML

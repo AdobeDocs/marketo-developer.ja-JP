@@ -1,22 +1,29 @@
 ---
-title: メールスクリプティングの例
+title: メール作成の例
 feature: Email Programs
-description: カスタムオブジェクトによるループ処理、日付の解析や書式設定、Marketoのエスケープ、URL ID の追加など、Velocity を使用したHTMLのメールスクリプトの例。
+description: Marketoのメールスクリプティングの例。カスタムオブジェクトのループ、日付解析/フォーマット、HTMLのエスケープ、URL IDの追加など、Velocityを使用しています。
 exl-id: 7c801f1c-0ab3-49f0-8577-0c4dccc80d0b
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/QFC8YeZV3rAZtsE-KU8kFdpG7W0nocHscDSfuTkrLIY
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '67'
+source-wordcount: 67
 ht-degree: 7%
 
 ---
 
 # 例
 
-以下に、実証的なメールスクリプティングの例を示します。
+以下に、いくつかのメールスクリプト例を示します。
 
 ## イベントのリスト
 
-この例では、仮想の Event カスタムオブジェクトを使用します。
+この例では、仮想のイベントカスタムオブジェクトを使用します。
 
 ```html
 ##declare an $EventsThisYear variable
@@ -72,7 +79,7 @@ Total Events ${lead.FirstName} attended this Year: $EventsThisYear
 ${formattedDate}
 ```
 
-## HTMLが安全でない可能性のある文字列をエスケープします
+## HTMLが安全でない可能性がある文字列をエスケープする
 
 ```html
 ##escape a string which may have HTML content
@@ -84,7 +91,7 @@ ${formattedDate}
 </div>
 ```
 
-## URL への ID の追加
+## URLへのIDの追加
 
 ### バッチキャンペーン
 
