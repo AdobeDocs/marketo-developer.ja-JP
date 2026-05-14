@@ -8,10 +8,10 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: e71bcf289229867bc969345d79c8f014761aaaf9
 workflow-type: tm+mt
-source-wordcount: 34
-ht-degree: 44%
+source-wordcount: 79
+ht-degree: 18%
 
 ---
 
@@ -21,3 +21,7 @@ ht-degree: 44%
 
 - [getLeadActivities](getleadactivity.md)
 - [getLeadChanges](getleadchanges.md)
+
+>[!CAUTION]
+>
+>2026-12-30以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む`Get Lead Activities`および`Get Lead Changes` エンドポイントへの呼び出しは失敗します（エラーコード 1003）。 サービスの中断を回避するには、この制限を回避するために、呼び出しが適切にスコープ設定されていることを確認します。 [移行ガイド &#x200B;](migration.md)を参照してください。
