@@ -26,7 +26,7 @@ ht-degree: 0%
 ユースケースに応じて、アプリケーションを移行するには、次の2つの基本的なオプションがあります。
 
 * アクティビティを抽出する静的リストは、最大10,000人のメンバーに制限します。 既存のリストのいずれかを小さなリストに分割して、アクティビティに対して同じオーディエンスを引き続きポーリングできます。
-* アクティビティの一括抽出またはデータストリームを使用してアクティビティまたはデータ値の変更を抽出し、その結果を[getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)の静的リストメンバーシップに結合します
+* アクティビティの一括抽出またはデータストリームを使用してアクティビティまたはデータ値の変更を抽出し、その結果を[getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)の静的リストメンバーシップに結合します
 
 ## 何もしないとどうなるの。
 
