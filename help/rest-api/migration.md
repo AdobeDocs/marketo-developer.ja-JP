@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # リード APIの更新を取得
 
-2026年9月30日から、[ リードアクティビティの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[ リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しが開始されます。このエンドポイントに`listId` パラメーターが含まれていると、ターゲットリストに10,000個以上のリードが含まれ、ターゲットスタティックリストにレコードが多すぎることを示すエラーコードが1003件ある場合、失敗します。 この変更の影響を受ける1つ以上のAPI呼び出しが最近行われました。 サービスの中断を回避するには、2026年9月30日（PT）までにアプリケーションとMarketoの統合方法を更新する必要があります。
+2026年9月30日から、[&#x200B; リードアクティビティの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[&#x200B; リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しが開始されます。このエンドポイントに`listId` パラメーターが含まれていると、ターゲットリストに10,000個以上のリードが含まれ、ターゲットスタティックリストにレコードが多すぎることを示すエラーコードが1003件ある場合、失敗します。 この変更の影響を受ける1つ以上のAPI呼び出しが最近行われました。 サービスの中断を回避するには、2026年9月30日（PT）までにアプリケーションとMarketoの統合方法を更新する必要があります。
 
 これらのタイプのクエリは、多くの場合、結果が出ない可能性のある検索や、結果が見つかる前にタイムアウトする検索を作成します。 セットのサイズを制限すると、これらのタイプのクエリの応答性が向上し、データセットの検索をタイムリーに完了できるようになります。
 
