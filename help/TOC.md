@@ -6,9 +6,9 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: d70e61cab3a0e929a85b8ac57836438470988944
+source-git-commit: e71bcf289229867bc969345d79c8f014761aaaf9
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 88%
 
 ---
@@ -100,6 +100,7 @@ ht-degree: 88%
       - [フィールドのタイプ](rest-api/field-types.md)
       - [リードデータベース](rest-api/lead-database.md)
       - [リード](rest-api/leads.md)
+      - [移行ガイド](rest-api/migration.md)
       - [重点顧客](rest-api/named-accounts.md)
       - [重点顧客リスト](rest-api/named-account-lists.md)
       - [商談](rest-api/opportunities.md)
@@ -167,7 +168,7 @@ ht-degree: 88%
 - [メール作成の例](examples.md)
 - [Marketo オブジェクト](marketo-objects.md)
 - {hide-from-toc}[MCP サーバー](mcp-server.md)
-- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
+- {hide-from-toc}[ ライセンス ](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)
