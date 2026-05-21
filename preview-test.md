@@ -1,10 +1,10 @@
 ---
 title: EXL プレビューテスト
 description: 拡張機能のプレビューをテストするためのAdobe EXL マークダウン構文の例。
-source-git-commit: 8f7ff2e1b6d0a4d8f63affb7bd1a2d0abbcc118c
+source-git-commit: 87d2584ed0ef2c1fa219f2a3ad120c91dc5491e0
 workflow-type: tm+mt
-source-wordcount: '343'
-ht-degree: 10%
+source-wordcount: '359'
+ht-degree: 13%
 
 ---
 
@@ -93,6 +93,14 @@ console.log(example);
 
 +++
 
+## コンテキストヘルプ
+
+コンテキストヘルプはプレビューから非表示になっています。 見て！
+>[!CONTEXTUALHELP]
+>id="models_insights_undefinedchannels"
+>title="未定義のチャネル"
+>abstract="未定義のチャネルが含まれますが、起因するコンバージョンはありません。"
+
 ## 埋め込みビデオ
 
 >[!VIDEO](https://video.tv.adobe.com/v/3427028/?quality=12&learn=on)
@@ -173,5 +181,6 @@ function greet(name) {
 
 | 列1 | 列2 | コラム 3 |
 | --- | --- | --- |
-| 行1、セル 1 | 行1、セル 2 | 行1、セル 3 |
+| [!UICONTROL 行1]、セル 1 | 行1、セル 2 | [!DNL Row 1, cell 3] |
 | 行2、セル 1 | 行2、セル 2 | 行2、セル 3 |
+

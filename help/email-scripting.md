@@ -13,16 +13,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 4fbd04f9942f903ab8b44e9740a806b74a4ffaf4
 workflow-type: tm+mt
 source-wordcount: 1116
-ht-degree: 73%
+ht-degree: 68%
 
 ---
 
 # メールスクリプト
 
-メモ：Velocity テンプレート言語の動作について詳しくは、[Velocity ユーザーガイド &#x200B;](https://velocity.apache.org/engine/devel/user-guide.html)を参照することを強くお勧めします。
+メモ：Velocity テンプレート言語の動作について詳しくは、[Velocity ユーザーガイド &#x200B;](https://velocity.apadche.org/engine/devel/user-guide.html)を参照することを強くお勧めします。
 
 [Apache Velocity](https://velocity.apache.org/) は、HTML コンテンツのテンプレートとスクリプトのために設計された、Java で作成された言語です。 Marketo では、スクリプトトークンを使用することで、メールのコンテキストで使用できます。 この機能を使用すると、商談とカスタムオブジェクトに保存されているデータにアクセスでき、メール内に動的コンテンツを作成できます。 Velocity では、if/else、for、for each を使用した標準的な高レベルの制御フローを提供し、コンテンツの条件付き反復操作を可能にします。
 
@@ -44,7 +44,7 @@ ${variable}name ##outputs 'valuename'
 
 
 
-また、`$` の後に `!` が含まれるクワイエット参照表記もあります。 通常、velocity で未定義の参照が検出されると、その参照を表す文字列はそのままになります。 静かなrkjeference表記法では、未定義の参照が発生した場合、値は出力されません。
+また、`$`の後に`!`が含まれているサイレント参照表記法もあります。 通常、velocity で未定義の参照が検出されると、その参照を表す文字列はそのままになります。 クワイエット参照表記では、未定義の参照が検出されても、値は出力されません。
 
 ```velocity
 ##Defined Reference
@@ -123,11 +123,11 @@ Marketo のメールデザイナー内の[!UICONTROL サンプルメールを送
 - リード、取引先責任者またはアカウントに接続されたカスタムオブジェクトは参照できますが、複数のオブジェクトは参照できません。
 - カスタムオブジェクトは、単一の接続、リード、取引先責任者またはアカウントを通じてのみ参照できます
 - 使用しているフィールドのスクリプトエディターのチェックボックスをオンにします。チェックボックスをオンにすると、フィールドは処理されません
-- 各カスタムオブジェクトに対して、ユーザ／取引先責任者ごとの最近更新された 10 個のレコードが実行時に使用可能であり、最新の更新（0 番目）から最も古い更新（9 番目）まで順番に並べられます。 [手順に従う](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)ことで、使用可能なレコードの数を増やすことができます。
+- カスタムオブジェクトごとに、個人/連絡先ごとに10個の最新に更新されたレコードを実行時に利用でき、最新に更新されたレコード（0）から最も古い更新されたレコード（9）に並べ替えられます。 [手順に従う](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)ことで、使用可能なレコードの数を増やすことができます。
 - メール内に複数のメールスクリプトを含める場合、スクリプトは上から下に向かって実行されます。 最初に実行するスクリプトで定義された変数の範囲は、後続のスクリプトで使用できます。
 - ツール参照：[https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 改行文字「\n」または「\r\n」を含むトークンに関する注意事項。 「サンプルを送信」またはバッチキャンペーン経由でメールを送信すると、トークン内の改行文字はスペースに置き換えられます。 トリガーキャンペーン経由でメールを送信すると、改行文字はそのままになります。
-- URL を適切に解析するには、パス全体を変数として設定してから出力する必要があります。また、変数は URL 参照内に出力しないでください。 プロトコル（http://またはhttps://）を含める必要があり、URL の残りの部分とは区別する必要があります。 また、URL は、完全な形式のアンカー (<a>) タグの一部にする必要があります。 リンクをトラッキングするには、スクリプトが完全な形式のアンカータグを出力する必要があります。 リンクは、for ループまたはforeach ループ内から出力された場合はトラッキングされません。
+- URL を適切に解析するには、パス全体を変数として設定してから出力する必要があります。また、変数は URL 参照内に出力しないでください。 プロトコル（http://またはhttps://）を含める必要があり、残りのURLとは別にする必要があります。 また、URL は、完全な形式のアンカー (<a>) タグの一部にする必要があります。 リンクをトラッキングするには、スクリプトが完全な形式のアンカータグを出力する必要があります。 リンクは、for ループまたはforeach ループ内から出力された場合はトラッキングされません。
 
 ```html
 <!-- Correct -->
