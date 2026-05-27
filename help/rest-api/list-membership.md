@@ -27,7 +27,7 @@ ht-degree: 54%
 
 ## リストに追加
 
-リストに追加[ リストに追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/addLeadsToListUsingPOST) エンドポイントは、1人以上のメンバーをリストに追加するために使用されます。 エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
+リストに追加[&#x200B; リストに追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/addLeadsToListUsingPOST) エンドポイントは、1人以上のメンバーをリストに追加するために使用されます。 エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
 
 応答には、リクエストで指定した各リード ID のステータスを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
@@ -60,7 +60,7 @@ POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 
 ## リストから削除
 
-リストから削除[ リストから削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE) エンドポイントは、リストから1人以上のメンバーを削除するために使用されます。 エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
+リストから削除[&#x200B; リストから削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE) エンドポイントは、リストから1人以上のメンバーを削除するために使用されます。 エンドポイントは、必須の `listId` パスパラメーターと、リード ID を含む 1 つ以上の `id` クエリパラメーター（最大許容値は 300）を受け取ります。
 
 応答には、リクエストで指定した各リード ID のステータスを含む JSON オブジェクトで構成された `result` 配列が含まれます。
 
