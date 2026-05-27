@@ -4,14 +4,9 @@ feature: REST API
 description: Marketo REST APIの使用方法、API ユーザーとLaunchPointの設定、割り当てと制限の表示、認証ヘッダーによる認証、リードの取得について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
 TQID: https://experienceleague.adobe.com/GqhWI816wWX-2zf89wWj-GXpg9i615HRFVl2ljdYVj0
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 896
@@ -53,7 +48,7 @@ Marketo への最初の呼び出しでは、リードレコードを取得しま
 
 ![新規ロール](assets/new-role.png)
 
-次に、[!UICONTROL &#x200B; ユーザー] タブに戻り、**[!UICONTROL 新規ユーザーを招待]**&#x200B;を選択します。 ユーザーに、API ユーザーであることを示す説明的な名前と電子メールアドレスを指定し、**[!UICONTROL 次へ]**&#x200B;を選択します。
+次に、[!UICONTROL  ユーザー] タブに戻り、**[!UICONTROL 新規ユーザーを招待]**&#x200B;を選択します。 ユーザーに、API ユーザーであることを示す説明的な名前と電子メールアドレスを指定し、**[!UICONTROL 次へ]**&#x200B;を選択します。
 
 ![新規ユーザ情報](assets/new-user-info.png)
 
