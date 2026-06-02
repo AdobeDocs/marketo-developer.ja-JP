@@ -1,5 +1,5 @@
 ---
-title: サポートされているMCP操作
+title: Marketo Engage MCPの操作
 description: AI アシスタントで使用できるMarketo Engage MCPの操作について説明します。
 autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
@@ -12,21 +12,21 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: bef569a714bfb797bcf8bb82a406ca6df26facb0
+source-git-commit: 08abe412b9750585f0b75364f20488bea767dcc2
 workflow-type: tm+mt
-source-wordcount: 234
-ht-degree: 47%
+source-wordcount: 231
+ht-degree: 48%
 
 ---
 
 
-# サポートされている[!DNL Marketo Engage] MCP操作
+# [!DNL Marketo Engage]個のMCP操作
 
 次の操作は、[!DNL Marketo Engage] MCP サーバーを通じて使用できます。 一般的に、読み取り専用または非破壊的なエンドポイントは使用できます。 `Delete`またはその他の破壊的な操作は、AI システムでは使用できません。
 
 >[!NOTE]
 >
->このリストは最終的なものではなく、ツールを追加するにつれて拡大し続けます。
+>ツールを追加しながら、このリストは拡大を続けます。
 
 ## 一括書き出し
 
