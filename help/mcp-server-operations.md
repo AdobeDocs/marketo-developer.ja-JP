@@ -3,19 +3,13 @@ title: Marketo Engage MCPの操作
 description: AI アシスタントで使用できるMarketo Engage MCPの操作について説明します。
 autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: dca84292-69e9-4116-a575-667d31fa060d
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-topic_v2:
-  - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 08abe412b9750585f0b75364f20488bea767dcc2
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: dca84292-69e9-4116-a575-667d31fa060did: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+topic_v2: id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
+source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
 workflow-type: tm+mt
-source-wordcount: 231
-ht-degree: 48%
+source-wordcount: 264
+ht-degree: 42%
 
 ---
 
@@ -27,6 +21,8 @@ ht-degree: 48%
 >[!NOTE]
 >
 >ツールを追加しながら、このリストは拡大を続けます。
+
+Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 ## 一括書き出し
 
@@ -40,7 +36,7 @@ ht-degree: 48%
 
 ## チャネルとタグ
 
-[&#x200B; チャネル API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels){target="_blank"} | [&#x200B; タグ API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags){target="_blank"}
+[ チャネル API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels){target="_blank"} | [ タグ API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags){target="_blank"}
 
 - `browse_channels`
 - `browse_tag_types`
