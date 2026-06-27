@@ -28,7 +28,7 @@ ht-degree: 42%
 >
 >ツールを追加しながら、このリストは拡大を続けます。
 
-Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 ## 一括書き出し
 

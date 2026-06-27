@@ -38,7 +38,7 @@ ht-degree: 1%
 
 AI ツールがMCP サーバーを呼び出すと、サーバーは各リクエストで指定した資格情報を使用して、対応するREST API呼び出しを代わりに実行します。 サーバーサイドソフトウェアをインストールしたり、デプロイしたり、実行したりする必要はありません。
 
-Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 >[!IMPORTANT]
 >
