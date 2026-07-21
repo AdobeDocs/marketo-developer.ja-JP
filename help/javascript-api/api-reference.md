@@ -4,26 +4,27 @@ description: Munchkin Javascript APIを使用して、init メソッド、create
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
 TQID: https://experienceleague.adobe.com/s97x6wVZijnnxZwS7HMIkQAKlxXkcfPXuSZG4KjXGoc
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 426
-ht-degree: 95%
+source-wordcount: 414
+ht-degree: 66%
 
 ---
 
 # Munchkin API リファレンス
 
-Munchkin は、JavaScript を通じて手動で呼び出すことができるいくつかの関数を提供します。 これにより、ビデオの再生やリンク以外のクリックなどのブラウザーイベントのカスタマイズされたトラッキングが可能になります。
+Munchkinには、ブラウザーイベントのトラッキングをカスタマイズするためのJavaScript機能が用意されています。 例えば、リンク以外の要素に対するビデオの再生またはクリックを追跡できます。
 
 ## 関数
 
-Munchkin API は、`init`、`createTrackingCookie`、`munchkinFunction` の各関数で構成されています。
+Munchkin APIには、次の関数が含まれています。
+
+- `init`
+- `createTrackingCookie`
+- `munchkinFunction`
 
 <a name="munchkin_init"></a>
 
@@ -42,7 +43,9 @@ Munchkin.init('299-BYM-827');
 
 ### Munchkin.createTrackingCookie()
 
-呼び出されると、ブラウザーに `_mkto_trk` cookie が存在するかどうかが確認され、存在しない場合は作成されます。 これは、`cookieAnon` が false に設定されている場合、登録やアセットのダウンロードなどの特定のアクション中のユーザのトラッキングに役立ちます。
+`Munchkin.createTrackingCookie()`は、`_mkto_trk` Cookieがブラウザーに存在するかどうかを確認します。 Cookieが存在しない場合、関数は1つを作成します。
+
+`cookieAnon`がfalseに設定されている場合、この関数を使用して、アセットの登録やダウンロードなどの特定のアクション中にユーザーを追跡します。
 
 | パラメーター名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
@@ -54,7 +57,7 @@ Munchkin.createTrackingCookie(true);
 
 ### Munchkin.munchkinFunction()
 
-ビデオプレーヤーの再生と一時停止、ハッシュコードなどの標準以外のナビゲーションのページ訪問などのカスタムトラッキング動作を生成するのに使用されます。
+`Munchkin.munchkinFunction()`を使用してカスタム トラッキング動作を作成します。 例えば、ハッシュ変更などの非標準ナビゲーションからビデオプレーヤーのアクティビティやページ訪問を追跡できます。
 
 | パラメーター名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
@@ -63,7 +66,7 @@ Munchkin.createTrackingCookie(true);
 
 #### visitWebPage
 
-`visitWebPage` で `munchkinFunction()` を呼び出すと、現在のユーザの「訪問」アクティビティが Marketo に送信されます。 2 番目の引数のデータオブジェクトと共に送信される URL と `querystring` をカスタマイズできます。
+`visitWebPage` で `munchkinFunction()` を呼び出すと、現在のユーザの「訪問」アクティビティが Marketo に送信されます。 2番目の引数のデータオブジェクトを使用して、URLと`querystring`をカスタマイズします。
 
 | データプロパティ名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
@@ -82,7 +85,7 @@ Munchkin.munchkinFunction('visitWebPage', {
 
 #### clickLink
 
-`clickLink` で `munchkinFunction()` を呼び出すと、現在のユーザのクリックアクティビティが Marketo に送信されます。 データオブジェクトの `href` プロパティを使用してクリック URL をカスタマイズできます。
+`clickLink` で `munchkinFunction()` を呼び出すと、現在のユーザのクリックアクティビティが Marketo に送信されます。 データオブジェクトの`href` プロパティを使用して、クリック URLをカスタマイズします。
 
 | データプロパティ名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |

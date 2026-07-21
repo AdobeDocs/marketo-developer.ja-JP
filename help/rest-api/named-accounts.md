@@ -4,18 +4,14 @@ feature: REST API
 description: 記述分析、クエリ分析、更新例の作成、検索可能なフィールド、重複排除ルール、リードリンクのないABM名前付きアカウントを活用したCRUDに関するMarketo REST ガイド。
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
 TQID: https://experienceleague.adobe.com/iY3UYVelm3aKuuDBCTxaVCbkXfwnJzDjV3Kvn9rcNbA
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 730
-ht-degree: 91%
+source-wordcount: 590
+ht-degree: 5%
 
 ---
 
@@ -23,13 +19,15 @@ ht-degree: 91%
 
 [名前付きアカウントエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts)
 
-Marketo は、Marketo ABM で使用する重点顧客に対して CRUD 操作を実行する一連の API を備えています。 これらの API は、説明、作成／更新、削除、クエリのオプションを提供するリードデータベース API の標準インターフェイスパターンに従います。
+Marketoには、Marketo ABMで使用する名前付きアカウントに対してCRUD操作を実行するためのAPIが用意されています。 これらのAPIは、標準のリードデータベースのインターフェイスパターンに従い、「説明」、「作成/更新」、「削除」、「クエリ」オプションを提供します。
 
-現在、Marketo の API 経由で使用できる ABM 関連機能は、重点顧客の CRUD 操作のみです。リードは、任意の API 経由で重点顧客にリンクできません。
+現在、Marketo APIでは、名前付きアカウントに対するCRUD操作のみがサポートされています。 APIを介してリードを名前付きアカウントにリンクすることはできません。
 
 ## 説明
 
-重点顧客を説明すると、クエリの実行時に有効で検索可能なフィールドのリストや、API の使用状況に対して使用できるすべてのフィールドのリストなど、Marketo の API 経由で重点顧客の使用状況に関連するメタデータが返されます。 重点顧客の `idField` は常に `marketoGUID` で、作成に使用できる唯一の `dedupeField` およびキーは、オブジェクトの `name` フィールドです。
+Describe Named Accountsは、Marketo APIを介して名前付きアカウントを使用するためのメタデータを返します。 応答には、有効な検索可能なフィールドと、APIで使用可能なすべてのフィールドが含まれます。
+
+名前付きアカウントの`idField`は常に`marketoGUID`です。 オブジェクトの`name` フィールドは、使用可能な唯一の`dedupeField`および作成キーです。
 
 ```http
 GET /rest/v1/namedaccounts/describe.json
@@ -144,7 +142,9 @@ GET /rest/v1/namedaccounts/describe.json
 
 ### クエリ
 
-重点顧客のクエリは、filterType と、最大 300 個のコンマ区切りの filterValues のセットの使用状況に基づいています。 `filterType` は、重点顧客の説明結果の `searchableFields` メンバーで返される任意の単一フィールドである場合がありますが、filterValues は、フィールドのデータタイプの有効な入力である場合があります。 特定のフィールドセットを返すには、fields パラメーターを渡す必要があります。値は、応答で返されるフィールドのコンマ区切りリストです。 他のクエリオプションと同様に、単一のクエリページのレコードの最大数は 300 で、セット内の追加のレコードは、呼び出しによって返される nextPageToken を使用してリクエストする必要があります。
+filterTypeと最大300個のコンマ区切りのfilterValuesを使用して、名前付きアカウントをクエリします。 filterTypeは、Describe応答の`searchableFields` メンバーで返される任意の単一フィールドにすることができます。 各filterValues エントリは、フィールドのデータタイプに対して有効な値である必要があります。
+
+特定のフィールドを返すには、fields パラメーターにフィールドのコンマ区切りリストを渡します。 クエリページには、最大300件のレコードが含まれます。 追加のレコードを取得するには、呼び出しによって返されるnextPageTokenを使用します。
 
 ```http
 GET /rest/v1/namedaccounts.json?filterType=name&filterValues=Google,Yahoo
@@ -175,7 +175,13 @@ GET /rest/v1/namedaccounts.json?filterType=name&filterValues=Google,Yahoo
 
 ### 作成と更新
 
-重点顧客の作成と更新は、標準のリードデータベースパターンに従います。 レコードは、POST リクエストの JSON 本文の入力メンバーに渡す必要があります。 `input` は唯一の必須メンバーで、`action` と `dedupeBy` はオプションのメンバーです。 入力には、最大 300 個のレコードを含めることができます。 アクションは、createOnly、updateOnly、createOrUpdate のいずれかです。 指定しない場合、アクションはデフォルトで createOrUpdate です。 dedupeBy は、アクションが updateOnly の場合にのみ指定でき、それぞれ name フィールドと marketoGUID フィールドに対応する dedupeFields または idField のいずれか 1 つだけを受け入れます。
+標準のリードデータベースパターンを使用して、名前付きアカウントを作成および更新します。 POST リクエストのJSON本文の入力メンバーにレコードを渡します。 最大300件のレコードを含めることができます。
+
+リクエストメンバーは次のとおりです。
+
+- `input`：必要なメンバーは1人だけです。
+- `action`: createOnly、updateOnly、またはcreateOrUpdateを受け入れるオプションのメンバー。 デフォルトはcreateOrUpdateです。
+- `dedupeBy`: アクションがupdateOnlyの場合にのみ使用できるオプションのメンバー。 名前フィールドとmarketoGUID フィールドにそれぞれ対応するdedupeFieldsまたはidFieldを使用できます。
 
 ```http
 POST /rest/v1/namedaccounts.json
@@ -223,17 +229,19 @@ Content-Type: application/json
 
 ### フィールド
 
-重点顧客オブジェクトには、一連のフィールドが含まれています。 各フィールド定義は、フィールドを説明する属性のセットで構成されます。 属性の例としては、表示名、API 名、dataType があります。 これらの属性はまとめてメタデータと呼ばれます。
+名前付きアカウントオブジェクトには、表示名、API名、dataTypeなどの属性で定義されたフィールドが含まれます。 これらの属性をメタデータと呼びます。
 
-次のエンドポイントを使用すると、会社オブジェクトのフィールドに対してクエリを実行できます。 これらの API では、所有する API ユーザに、「読み取り／書き込みスキーマ標準フィールド」権限または「読み取り／書き込みスキーマカスタムフィールド」権限のいずれかまたは両方を含むロールを用意する必要があります。
+次のエンドポイントは、会社オブジェクトのフィールドをクエリします。 API ユーザーには、読み取り/書き込みスキーマ標準フィールド権限、読み取り/書き込みスキーマカスタムフィールド権限、またはその両方を持つ役割が必要です。
 
 ### クエリフィールド
 
-重点顧客フィールドのクエリの実行は簡単です。 API 名で単一の重点顧客フィールドに対してクエリを実行することも、すべての会社フィールドのセットに対してクエリを実行することもできます。
+API名で1つの名前付きアカウントフィールドをクエリするか、すべての会社フィールドを取得します。
 
 #### 名前別
 
-[名前による重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトの単一フィールドのメタデータを取得します。 必須の fieldApiName パスパラメーターは、フィールドの API 名を指定します。 応答は「重点顧客を説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す isCustom 属性などの追加のメタデータが含まれます。
+[名前付きアカウントフィールドを名前付きアカウントオブジェクトで取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、名前付きアカウントオブジェクトの1つのフィールドのメタデータを取得します。 必須のfieldApiName パスパラメーターは、フィールドのAPI名を指定します。
+
+応答は、「名前付きアカウントを説明」応答に似ていますが、追加のメタデータが含まれています。 例えば、isCustom属性は、フィールドがカスタムかどうかを示します。
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
@@ -261,7 +269,9 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 参照
 
-[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 個のレコードが返されます。 batchSize クエリパラメーターを使用して、この数を減らすことができます。 moreResult 属性が true の場合、さらに多くの結果が使用可能です。 moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。 この API から返される nextPageToken は、この呼び出しの次の反復で常に再利用する必要があります。
+[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、batchSize クエリパラメーターを使用します。
+
+moreResult属性がtrueの場合、より多くの結果を使用できます。 返されたnextPageTokenでエンドポイントの呼び出しを続行し、moreResultがfalseになるまで呼び出します。
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields.json?batchSize=5
@@ -340,7 +350,9 @@ GET /rest/v1/namedaccounts/schema/fields.json?batchSize=5
 
 ### 削除
 
-削除は JSON POST リクエストを通じて実行され、必須の input メンバーとオプションの deleteBy メンバーがあります。 deleteBy は、それぞれ name または marketoGUID に対応する「dedupeFields」または「idField」のいずれかで、設定されていない場合はデフォルトで dedupeFields になります。 input メンバーは、deleteBy の設定に応じて、name または marketoGUID のいずれか 1 つのメンバーを含む最大 300 個のレコードの配列を受け入れます。
+JSON本文を使用してPOST リクエストを送信し、名前付きアカウントを削除します。 リクエストには、必須の入力メンバーとオプションのdeleteBy メンバーが含まれます。
+
+deleteBy メンバーは、それぞれnameおよびmarketoGUIDに対応する「dedupeFields」または「idField」を受け入れます。 未設定の場合、デフォルトでは重複排除フィールドになります。 入力メンバーは、最大300件のレコードを受け入れます。 各レコードには、deleteBy設定に応じて、名前またはmarketoGUIDが含まれます。
 
 ```http
 POST /rest/v1/namedaccounts/delete.json
@@ -398,6 +410,6 @@ Content-Type: application/json
 
 ## タイムアウト
 
-- 「重点顧客」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります
-   - 名前付きアカウントの同期：120秒
-   - 重点顧客を削除：60 秒
+- 名前付きアカウントエンドポイントのタイムアウトは、特に明記されていない限り30秒です。
+- 名前付きアカウントの同期のタイムアウトは120秒です。
+- 名前付きアカウントの削除のタイムアウトは60秒です。

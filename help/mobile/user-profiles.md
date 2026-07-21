@@ -4,27 +4,25 @@ feature: Mobile Marketing, Users and Roles
 description: IOSおよびAndroid上のMarketo Mobile SDKで、目標C SwiftおよびJava、標準フィールドおよびカスタムフィールド、associateLeadを使用してユーザープロファイルを作成および更新する方法について説明します
 exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
 TQID: https://experienceleague.adobe.com/famIZ1O17Z7TTe2SBHqWSLLL-pp6Vx9M6xXhy2SbB-0
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 103
-ht-degree: 74%
+source-wordcount: 116
+ht-degree: 25%
 
 ---
 
 # ユーザプロファイル
 
-ユーザプロファイルの作成方法
+IOSまたはAndroid用のMarketo Mobile SDKを使用して、ユーザープロファイルを作成または更新します。
 
 1. [iOS でのユーザプロファイルの作成](#ios_user_profiles)
 1. [Android でのユーザプロファイルの作成](#android_user_profiles)
 
 ## iOS でのユーザプロファイルの作成 {#ios_user_profiles}
 
-次に示すように、ユーザフィールドを送信することで、リッチプロファイルを作成できます。
+プロファイルを作成し、そのユーザーフィールドに入力します。
 
 ```objectivec
 MarketoLead *profile = [[MarketoLead alloc] init];
@@ -70,7 +68,7 @@ profile.setLinkedInId("linkedinid")
 profile.setTwitterId("twitterid")
 ```
 
-その他の[標準フィールド](../rest-api/list-of-standard-fields.md)を追加します。
+その他[標準フィールド ](../rest-api/list-of-standard-fields.md)を追加します。
 
 >[!BEGINTABS]
 
@@ -94,7 +92,7 @@ profile.setFieldName("phone", withValue:"123.456.7890");
 
 >[!ENDTABS]
 
-ユーザプロファイルを報告します。
+作成または更新するユーザープロファイルを報告します。
 
 >[!BEGINTABS]
 
@@ -120,9 +118,9 @@ marketo.associateLead(profile)
 
 ## Android でのユーザプロファイルの作成 {#android_user_profiles}
 
-1. ユーザプロファイルを作成します。
+1. ユーザープロファイルの作成。
 
-   次に示すように、ユーザフィールドを送信することで、リッチプロファイルを作成できます。
+   プロファイルを作成し、そのユーザーフィールドに入力します。
 
    ```java
    MarketoLead profile = new MarketoLead();
@@ -140,7 +138,7 @@ marketo.associateLead(profile)
    }
    ```
 
-1. その他の[標準フィールド](../rest-api/list-of-standard-fields.md)を追加します。
+1. その他[標準フィールド ](../rest-api/list-of-standard-fields.md)を追加します。
 
    ```java
    // Add other custom fields
@@ -157,7 +155,7 @@ marketo.associateLead(profile)
    profile.setCustomField("linkedInDisplayName", "Android");
    ```
 
-1. ユーザプロファイルを報告します。
+1. 作成または更新するユーザープロファイルを報告します。
 
    ```java
    MarketoLead profile = new MarketoLead();

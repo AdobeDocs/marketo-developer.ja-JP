@@ -4,18 +4,14 @@ feature: REST API
 description: CSV TSVまたはSSVを使用して、Marketoで非同期の一括リードインポートを作成および監視します。
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
 TQID: https://experienceleague.adobe.com/UamXYWis5J1ERqnp5lAnfUf3pFcgfSOLfKRXRB-Yg4I
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: e2290edd-b061-4880-9d79-dee306cf5aa9
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e2290edd-b061-4880-9d79-dee306cf5aa9
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 825
-ht-degree: 76%
+source-wordcount: 623
+ht-degree: 9%
 
 ---
 
@@ -23,30 +19,38 @@ ht-degree: 76%
 
 [リードの一括読み込みエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads)
 
-大量のリードレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) を使用してリードを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
+[bulk API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)を使用して、多数のリードレコードを非同期で読み込みます。 10 MB未満のコンマ、タブ、またはセミコロンで区切られたフラットファイルでレコードを指定します。
+
+リードの一括読み込みは、「挿入または更新」レコード操作のみをサポートします。
 
 ## 処理制限
 
-制限付きで、複数の一括読み込みリクエストを送信できます。 各リクエストは、ジョブとして FIFO キューに追加され、処理されます。 最大 2 つのジョブが同時に処理されます。 常に最大10個のジョブがキュー内で許可されます（現在処理中の2つを含む）。 ジョブの上限を10個を超えると、`1016, Too many imports` エラーが返されます。
+各一括読み込みリクエストは、ジョブとしてFIFO （先入れ先出し）キューに追加されます。 次の制限が適用されます。
+
+- 最大2つのジョブを同時に処理できます。
+- 処理中の2つのジョブを含め、最大10個のジョブをキューに入れることができます。
+
+10 ジョブの最大値を超えると、APIは`1016, Too many imports` エラーを返します。
 
 ## ファイルの読み込み
 
-ファイルの最初の行は、各行の値のマッピング先に対応する REST API フィールドをリストするヘッダーにする必要があります。 一般的なファイルは、次の基本パターンに従います。
+ファイルの最初の行は、各行の値がマップされるREST API フィールドをリストするヘッダーである必要があります。 一般的なファイルは、次のパターンに従います。
 
 ```csv
 email,firstName,lastName
 test@example.com,John,Doe
 ```
 
-`externalCompanyId` フィールドを使用すると、リードレコードを会社レコードにリンクできます。 `externalSalesPersonId` フィールドを使用すると、リードレコードをセールス担当者レコードにリンクできます。
+`externalCompanyId`を使用して、リード レコードを会社レコードにリンクします。 `externalSalesPersonId`を使用して、リード レコードを営業担当者レコードにリンクします。
 
-呼び出し自体は、`multipart/form-data` コンテンツタイプを使用して行われます。
-
-このリクエストタイプは実装が難しい場合があるので、既存のライブラリ実装を使用することを強くお勧めします。
+`multipart/form-data` コンテンツタイプを使用してリクエストを送信します。 既存のライブラリ実装を使用して、マルチパートリクエストを作成します。
 
 ## ジョブの作成
 
-一括読み込み要求を行うには、コンテンツタイプヘッダーを`multipart/form-data`に設定し、ファイルコンテンツに少なくとも`file` パラメーターと、ファイル形式を示す値`csv`、`tsv`または`ssv`を含む`format` パラメーターを含める必要があります。
+一括読み込みジョブを作成するには、コンテンツタイプを`multipart/form-data`に設定し、次のパラメーターを含めます。
+
+- `file`: インポートファイルのコンテンツ。
+- `format`: ファイル形式。 有効な値は`csv`、`tsv`、`ssv`です。
 
 ```http
 POST /bulk/v1/leads.json?format=csv
@@ -84,13 +88,13 @@ Easy,Fox,easyfox@marketo.com,Marketo
 }
 ```
 
-このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。 適切な使用を確実にするために、選択した言語にHTTP サポートライブラリを使用することをお勧めします。 次の例は、コマンドラインからcURLでこれを行う簡単な方法です。
+このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。 HTTP サポートライブラリを使用して、リクエストを正しく構築します。 次の例では、コマンドラインからcURLを使用します。
 
 ```bash
 curl -i -F format=csv -F file=@lead_data.csv -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/leads.json
 ```
 
-インポートファイル `lead_data.csv`には次のものが含まれます。
+この例では、`lead_data.csv`読み込みファイルに次のデータが含まれています。
 
 ```text
 firstName,lastName,email,company
@@ -99,13 +103,19 @@ Charlie,Dog,charliedog@marketo.com,Marketo
 Easy,Fox,easyfox@marketo.com,Marketo
 ```
 
-オプションで、リクエストに `lookupField`、`listId`、`partitionName` パラメーターを含めることもできます。 `lookupField` を使用すると、「リードを同期」と同様に重複排除する特定のフィールドを選択でき、デフォルトはメールになります。 「更新のみ」の操作を示すために、`id` を `lookupField` として指定できます。 `listId` を使用すると、リードのリストを読み込む静的リストを選択できます。これにより、読み込みによって作成されたリードや更新に加えて、リスト内のリードがこの静的リストのメンバーになります。 `partitionName` は、読み込み先の特定のパーティションを選択します。 詳しくは、「ワークスペースとパーティション」の節を参照してください。
+次のオプションのパラメーターも含めることができます。
 
-呼び出しに対する応答では、「リードを同期」のように成功または失敗のリストは表示されませんが、結果配列にはレコードの batchId とステータスフィールドが表示されます。 これは、この API が非同期で、ステータスとして &quot;Queued&quot;、&quot;Importing&quot;、または &quot;Failed&quot; が返される可能性があるからです。 読み込みジョブのステータスを取得し、完了時に失敗や警告を取得するには、batchId を保持する必要があります。 batchId は 7 日間有効です。
+- `lookupField`：重複排除に使用されるフィールドを選択し、デフォルトは`email`です。 「更新専用」操作を実行するには、`id`を指定します。
+- `listId`：静的リストを選択します。 インポートしたリードは、インポートで作成または更新されたレコードに加えて、このリストのメンバーになります。
+- `partitionName`: インポート先のパーティションを選択します。 詳しくは、「ワークスペースとパーティション」の節を参照してください。
+
+APIは非同期なので、応答には個々の成功と失敗ではなく`batchId`と`status`のフィールドが含まれます。 ステータスは`Queued`、`Importing`、または`Failed`です。
+
+ジョブの状態を確認し、完了後にエラーまたは警告を取得するには、`batchId`を保持します。 `batchId` は 7 日間有効です。
 
 ## ジョブステータスのポーリング
 
-読み込みジョブのステータスを確認するには、必要な待ち時間と API 呼び出しの制限に応じて、5～30 秒ごとにジョブをポーリングするのがベストプラクティスです。 これを行うには、Get Import Lead Status API を使用します。
+Get Import Lead Status APIを使用して、待ち時間の要件とAPI呼び出しの制限に応じて、5～30秒ごとにジョブをポーリングします。
 
 ```http
 GET /bulk/v1/leads/batch/{id}.json
@@ -128,35 +138,35 @@ GET /bulk/v1/leads/batch/{id}.json
 }
 ```
 
-この応答は、完了した読み込みを示しますが、ステータスは次のいずれかになります。
+この応答は、完了した読み込みを示しています。 ステータスは、次のいずれかの値にすることができます。
 
 - Complete
 - 待機中
 - 読み込み
 - 失敗
 
-ジョブが完了したら、処理された行数、失敗した行数、警告のあった行数のリストが表示されます。 ステータスが失敗の場合、メッセージパラメーターによって失敗メッセージも返されることがあります。
+ジョブが完了すると、応答には、処理された行、失敗した行、および警告を伴って処理された行の数が一覧表示されます。 `message` パラメーターは、ステータスが`Failed`の場合にエラーのメッセージを提供することもできます。
 
 ## 失敗
 
-失敗は、リードを読み込みステータスを取得の応答の `numOfRowsFailed` 属性によって示されます。 `numOfRowsFailed` がゼロより大きい場合、この値は発生した失敗の数を示します。
+Get Import Lead Status応答の`numOfRowsFailed`属性は、失敗した行の数を示します。 0より大きい値は、エラーが発生したことを意味します。
 
-失敗した行のレコードと原因を取得するには、失敗ファイルを取得する必要があります。
+失敗したレコードとその原因を取得するには、失敗ファイルをリクエストします。
 
 ```http
 GET /bulk/v1/leads/batch/{id}/failures.json
 ```
 
-API は、失敗した行を示すファイルと、レコードが失敗した理由を示すメッセージで応答します。 ファイルの形式は、ジョブ作成時に `format` パラメーターで指定されたものと同じです。 各レコードに、失敗の説明を含む追加フィールドが追加されます。
+APIは、失敗した各行を識別し、レコードが失敗した理由を説明するファイルを返します。 このファイルは、ジョブ作成時に`format` パラメーターで指定された形式を使用します。 各レコードの追加フィールドは、失敗を説明します。
 
 ## 警告
 
-警告は、「リードのステータスを取り込む」応答の`numOfRowsWithWarning` アトリビュートによって示されます。 `numOfRowsWithWarning`が0より大きい場合、その値は発生した警告の数を示します。
+Get Import Lead Status応答の`numOfRowsWithWarning`属性は、警告を含む行数を示します。 0より大きい値は、警告が発生したことを意味します。
 
-警告の行のレコードと原因を取得するには、警告ファイルを取得します。
+影響を受けるレコードとその原因を取得するには、警告ファイルをリクエストします。
 
 ```http
 GET /bulk/v1/leads/batch/{id}/warnings.json
 ```
 
-API は、警告が発生した行を示すファイルと、レコードが失敗した理由を示すメッセージで応答します。 ファイルの形式は、ジョブ作成時に `format` パラメーターで指定されたものと同じです。 各レコードに、警告の説明を含む追加フィールドが追加されます。
+APIは、警告を含む各行を識別し、警告が発生した理由を説明するファイルを返します。 このファイルは、ジョブ作成時に`format` パラメーターで指定された形式を使用します。 各レコードの追加フィールドは、警告を表します。

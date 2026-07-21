@@ -4,18 +4,14 @@ feature: REST API
 description: Marketo Companies REST APIを使用して、会社レコードの記述、クエリ、同期、フィールドの管理、externalCompanyIdによる重複排除、CRM同期の読み取り専用へのメモ作成を行います。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
 TQID: https://experienceleague.adobe.com/LdJYN4lx9JfcE-02zTz8ktfYXm4EdPtxMYOx9gGR0sg
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 676
-ht-degree: 86%
+source-wordcount: 582
+ht-degree: 14%
 
 ---
 
@@ -23,13 +19,15 @@ ht-degree: 86%
 
 [会社エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
 
-会社は、リードレコードが属する組織を表します。 リードは、[リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)エンドポイントまたは[リードの一括読み込み](bulk-lead-import.md)エンドポイントを使用して、対応する「`externalCompanyId`」フィールドに入力することで会社に追加されます。 リードを会社に追加すると、この会社からリードを削除できません（リードを別の会社に追加しない限り）。 会社レコードにリンクされたリードは、リード自身のレコードに値が存在するかのように、会社レコードから値を直接継承します。
+企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[ リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)または[ リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
 
-Company API は、[SFDC 同期](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ja)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ja)が有効になっているサブスクリプションに対して読み取り専用アクセスです。
+別の会社にリードを追加しない限り、会社からリードを削除することはできません。 会社レコードにリンクされたリードは、そのレコードから値を継承し、その値がリードレコードに存在するかのように処理します。
+
+企業APIは、[Microsoft Dynamics Sync](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ja)または[SFDC Sync](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ja)が有効になっているサブスクリプションに対して、読み取り専用アクセスを提供します。
 
 ## 説明
 
-会社オブジェクトを説明すると、そのオブジェクトとやり取りするのに必要なすべての情報が得られます。
+会社レコードを操作するために必要な情報を取得する会社オブジェクトを記述します。
 
 ```http
 GET /rest/v1/companies/describe.json
@@ -107,11 +105,16 @@ GET /rest/v1/companies/describe.json
 
 ## クエリ
 
-[会社のクエリ実行](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompaniesUsingGET)のパターンは、リード API のパターンに密接に従いますが、`filterType` パラメーターが「会社を説明」呼び出しの searchableFields 配列にリストされているフィールドや、dedupeFields を受け入れるという追加の制限があります。
+[企業](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompaniesUsingGET)のクエリのパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、Describe Companies レスポンスまたはdedupeFieldsのsearchableFields配列にリストされているフィールドのみを受け入れます。
 
-`filterType` と `filterValues` は、必須のクエリパラメーターです。  `fields`、`nextPageToken`、`batchSize` は、オプションのパラメーターです。  パラメーターは、Leads API と Opportunity API の対応するパラメーターと同様に機能します。 `fields` のリストをリクエストする際に、特定のフィールドがリクエストされたが返されない場合、その値は null であると見なされます。
+クエリパラメーターは次のとおりです。
 
-fields パラメーターを省略した場合、返されるフィールドのデフォルトセットは次のようになります。
+- `filterType`と`filterValues`：必須パラメーター。
+- `fields`、`nextPageToken`、および`batchSize`: リードと商談APIの対応するパラメーターと同様に機能するオプションのパラメーター。
+
+`fields`のリストをリクエストする場合、返されないリクエストされたフィールドの暗黙的な値はnullです。
+
+fields パラメーターを省略すると、応答はデフォルトで次のフィールドを返します。
 
 - id
 - dedupeFields
@@ -145,7 +148,11 @@ GET /rest/v1/companies.json?filterType=id&filterValues=3433,5345
 
 ## 作成と更新
 
-[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST)エンドポイントでは、会社オブジェクトの配列を含む必須の `input` パラメーターを受け入れます。 商談と同様に、会社を作成および更新するモードには、createOnly、updateOnly、createOrUpdate の 3 つがあります。  モードは、リクエストの `action` パラメーターで指定されます。 `dedupeBy` パラメーターと `action` パラメーターは両方ともオプションで、デフォルトはそれぞれ dedupeFields モードと createOrUpdate モードになります。
+[Sync Companies](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントは、会社オブジェクトの配列を含む必須の`input` パラメーターを受け入れます。
+
+商談と同様に、エンドポイントは3つの作成モードと更新モード（createOnly、updateOnly、createOrUpdate）をサポートしています。 リクエストの`action` パラメーターでモードを指定します。
+
+`dedupeBy`および`action` パラメーターはオプションです。 デフォルトでは、それぞれdedupeFieldsとcreateOrUpdateです。
 
 ```http
 POST /rest/v1/companies.json
@@ -193,17 +200,19 @@ Content-Type: application/json
 
 ### フィールド
 
-会社オブジェクトには、一連のフィールドが含まれています。 各フィールド定義は、フィールドを説明する属性のセットで構成されます。 属性の例としては、表示名、API 名、dataType があります。 これらの属性はまとめてメタデータと呼ばれます。
+company オブジェクトには、表示名、API名、dataTypeなどの属性で定義されたフィールドが含まれます。 これらの属性をメタデータと呼びます。
 
-次のエンドポイントを使用すると、会社オブジェクトのフィールドに対してクエリを実行できます。 これらの API では、所有する API ユーザに、`Read-Write Schema Standard Field` 権限または `Read-Write Schema Custom Field` 権限のいずれかまたは両方を含むロールを用意する必要があります。
+次のエンドポイントは、会社オブジェクトのフィールドをクエリします。 API ユーザーには、`Read-Write Schema Standard Field`権限、`Read-Write Schema Custom Field`権限、またはその両方を持つ役割が必要です。
 
 ### クエリフィールド
 
-会社フィールドのクエリの実行は簡単です。 API 名で単一の会社フィールドに対してクエリを実行することも、すべての会社フィールドのセットに対してクエリを実行することもできます。
+API名で1つの会社フィールドをクエリするか、すべての会社フィールドを取得します。
 
 #### 名前別
 
-[名前による会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldByNameUsingGET)エンドポイントでは、会社オブジェクトの単一フィールドのメタデータを取得します。 必須の `fieldApiName` パスパラメーターは、フィールドの API 名を指定します。 応答は「会社を説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す `isCustom` 属性などの追加のメタデータが含まれます。
+[名前で会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
+
+応答はDescribe Company応答に似ていますが、追加のメタデータが含まれています。 例えば、`isCustom`属性は、フィールドがカスタムかどうかを示します。
 
 ```http
 GET /rest/v1/companies/schema/fields/industry.json
@@ -232,7 +241,9 @@ GET /rest/v1/companies/schema/fields/industry.json
 
 #### 参照
 
-[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大 300 個のレコードが返されます。 `batchSize` クエリパラメーターを使用して、この数を減らすことができます。 `moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。 この API から返される `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
+[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
+
+`moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 `moreResult`がfalseになるまで、返された`nextPageToken`でエンドポイントの呼び出しを続行します。
 
 ```http
 GET /rest/v1/companies/schema/fields.json?batchSize=5
@@ -310,7 +321,9 @@ GET /rest/v1/companies/schema/fields.json?batchSize=5
 
 ### 削除
 
-削除条件は、検索値のリストを含む `input` 配列で指定します。  削除メソッドは、`deleteBy` パラメーターで指定されます。  指定できる値は、dedupeFields、idField です。  デフォルトは dedupeFields です。
+削除条件を`input`配列内の検索値のリストとして指定します。 `deleteBy` パラメーターで削除方法を指定します。
+
+許可される値はdedupeFieldsとidFieldです。 デフォルトはdedupeFieldsです。
 
 ```text
 Content-Type: application/json
@@ -368,6 +381,6 @@ POST /rest/v1/companies/delete.json
 
 ## タイムアウト
 
-- 会社エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります。
-   - Sync Companies: 60s
-   - 会社を削除：60 秒
+- 特に明記されていない限り、企業エンドポイントのタイムアウトは30秒です。
+- Sync Companiesのタイムアウトは60秒です。
+- Delete Companiesのタイムアウトは60秒です。

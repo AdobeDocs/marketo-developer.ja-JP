@@ -4,14 +4,12 @@ feature: REST API, Tokens
 description: Asset REST APIでMarketoのマイトークンを管理します。 サポートされているデータタイプ、フォルダーまたはプログラムによる取得、フォームエンコードされたPOSTを使用した作成または更新、名前による削除を参照してください。
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
 TQID: https://experienceleague.adobe.com/uqOpu2vDuiQiZhILKuxZJQGadd0K14zwIaAdmNfK1-I
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 364
-ht-degree: 81%
+source-wordcount: 290
+ht-degree: 20%
 
 ---
 
@@ -19,7 +17,9 @@ ht-degree: 81%
 
 [トークンエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens)
 
-Marketo のトークンは、実行時に別のデータに置き換えられるショートコードに類似した特殊な文字列です。 Marketo で使用できるトークンにはいくつかのタイプのトークンがありますが、API 経由で編集できるのはマイトークンのみです。 マイトークンは、特定のフォルダーまたはプログラムに対してローカルな子トークンです。 トークンは、API 経由で読み取り、作成、削除できます。
+トークンは、Marketoが実行時に他のデータと置き換える文字列です。 APIは、フォルダーまたはプログラムにローカルな子トークンであるマイトークンのみを編集できます。
+
+トークン APIを使用して、マイトークンを読み取り、作成、更新、削除します。
 
 ## データタイプ
 
@@ -34,11 +34,11 @@ Marketo のトークンは、実行時に別のデータに置き換えられる
 | sfdc campaign | Salesforce キャンペーン管理の統合で使用 |
 | text | テキスト文字列 |
 
-これらは、API 経由でトークンを作成する際に使用できる唯一のデータタイプです。
+APIは、トークンの作成時にこれらのデータタイプのみをサポートします。
 
 ## クエリ
 
-[フォルダー ID によるトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/getTokensByFolderIdUsingGET)では、プログラムタイプまたはフォルダータイプのパスパラメーターとして `id` を受け取ります。 このタイプは、`folderType` パラメーターで指定されます。
+[ フォルダーIDでトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/getTokensByFolderIdUsingGET)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType` パラメーターを使用して、型を指定します。
 
 ```http
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
@@ -71,7 +71,9 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 ## 作成と更新
 
-[トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/addTokenTOFolderUsingPOST)エンドポイントでは、トークンを作成するか、トークンが存在する場合は送信された値でトークンを更新します。 トークンは、フォルダーまたはプログラムのコンテキストで作成されます。 必須の `id` パスパラメーターは、トークンが関連付けられるフォルダーの ID です。 `name`、`type`、`value`、`folderType` は、すべてトークンの必須パラメーターです。 データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。 トークンの `name` フィールドは 50 文字を超えることはできません。
+[ トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/addTokenTOFolderUsingPOST) エンドポイントは、送信された値でトークンを作成するか、既存のトークンを更新します。 トークンはフォルダーまたはプログラムに属します。
+
+`id` パス パラメーターは、親フォルダーを識別します。 `name`、`type`、`value`および`folderType`のパラメーターが必要です。 データをJSONではなくPOST `x-www-form-urlencoded`として渡します。 トークン `name`は50文字を超えることはできません。
 
 ```http
 POST /rest/asset/v1/folder/{id}/tokens.json
@@ -112,7 +114,9 @@ name=April Fools&type=date&value=2015-04-01&folderType=Folder
 
 ## 削除
 
-[名前によるトークンを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/deleteTokenByNameUsingPOST)では、プログラムまたはフォルダータイプのパスパラメーターとして ID を受け取ります。 このタイプは、`folderType` パラメーターで指定されます。 トークンは、それぞれ必須である親フォルダー、`name`、トークンの `type` に基づいて削除されます。 データは、JSON ではなく、POST x-www-form-urlencoded として渡されます。
+[名前でトークンを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/deleteTokenByNameUsingPOST)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType`を使用してタイプを指定します。
+
+親フォルダー、トークン `name`およびトークン `type`が必要です。 データをJSONではなくPOST `x-www-form-urlencoded`として渡します。
 
 ```http
 POST /rest/asset/v1/folder/{id}/tokens/delete.json

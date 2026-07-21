@@ -3,10 +3,10 @@ title: フラグメント
 feature: REST API
 description: Marketo Asset REST APIを使用して、フラグメントの依存関係をクエリ、作成、更新、複製、削除、承認、検査します。
 exl-id: 9dd532d1-1dd7-4581-86dd-1943fab66cbb
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '272'
-ht-degree: 11%
+source-wordcount: '282'
+ht-degree: 10%
 
 ---
 
@@ -61,10 +61,18 @@ GET /rest/asset/v2/fragment/{id}
 
 ### フィルター
 
-フィルターエンドポイントは、ワークスペース内での検索と、追加のクエリパラメーターによる結果の絞り込みをサポートします。 `workspaceId`が必要です。
+フィルターエンドポイントは、ワークスペース内を検索します。 `workspaceId` パラメーターが必要です。
 
-todo：これをテーブルにする
-サポートされているフィルターには、`folderId`、繰り返し`folderIds`、繰り返し`status`、`pageIndex`、`pageSize`、`createdBy`、`createdAtStart`、`createdAtEnd`、`modifiedBy`、`modifiedAtStart`、`modifiedAtEnd`、`name`、`fragmentType`、`sortKey`、`sortOrder`、`isCreatedByMe`、`isModifiedByMe`、`scriptEngine`、`isValueNonNullable`および`includeArchived`が含まれます。
+次のオプションのパラメーターを使用して、結果を絞り込んだり整理したりします。
+
+* フォルダー：`folderId`または繰り返し`folderIds`
+* ステータス：繰り返し`status`
+* Pagination: `pageIndex`および`pageSize`
+* 作成：`createdBy`、`createdAtStart`、`createdAtEnd`、`isCreatedByMe`
+* 変更：`modifiedBy`、`modifiedAtStart`、`modifiedAtEnd`、および`isModifiedByMe`
+* フラグメントのプロパティ：`name`、`fragmentType`、`scriptEngine`、および`isValueNonNullable`
+* 並べ替え：`sortKey`および`sortOrder`
+* アーカイブ済みコンテンツ：`includeArchived`
 
 #### リクエスト
 

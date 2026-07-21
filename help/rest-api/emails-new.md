@@ -3,9 +3,9 @@ title: メール
 feature: REST API
 description: Marketo Asset REST APIを使用して、メールアセットのクエリ、作成、更新、複製、削除、承認、依存関係の検査を行います。
 exl-id: b41a3ae5-2b25-4103-84b4-320fc2c44bd6
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '492'
 ht-degree: 6%
 
 ---
@@ -32,7 +32,7 @@ x-app-type: <app-type>
 
 ## クエリ
 
-アセット `id`またはフィルターエンドポイントを使用して、メールのメタデータを取得できます。
+アセット `id`またはフィルターエンドポイントを使用して、メールのメタデータを取得します。
 
 ### ID 別
 
@@ -63,7 +63,7 @@ GET /rest/asset/v2/email/{id}
 
 ### フィルター
 
-フィルターエンドポイントは、ワークスペース内での検索と、追加のクエリパラメーターによる結果の絞り込みをサポートします。
+フィルターエンドポイントは、ワークスペース内を検索し、追加のクエリパラメーターをサポートします。
 
 `workspaceId`が必要です。
 

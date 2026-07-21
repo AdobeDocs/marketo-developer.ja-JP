@@ -4,14 +4,12 @@ feature: REST API, Static Lists
 description: Marketo REST APIを使用して、ID、名前、参照、フォルダー範囲、ページング、日付フィルターのエンドポイントを含む静的リストをクエリ、作成、更新、削除します。
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
 TQID: https://experienceleague.adobe.com/DSV9h6d4F3ZrIUT-VtqlmFAnpdxOuTf05ajCqiGegqk
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 496
-ht-degree: 51%
+source-wordcount: 360
+ht-degree: 3%
 
 ---
 
@@ -19,17 +17,17 @@ ht-degree: 51%
 
 [静的リストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists)
 
-Marketo は、静的リストで CRUD 操作を実行する一連の REST API を備えています。 これらの API は、クエリ、作成、更新、削除のオプションを提供するアセット API の標準インターフェイスパターンに従います。
+静的リスト REST APIを使用して、静的リストをクエリ、作成、更新、削除します。
 
-リスト メンバーに対するリード データベース操作については、[&#x200B; リスト メンバーシップ &#x200B;](list-membership.md)を参照してください。
+リスト メンバーに対するリード データベース操作については、[ リスト メンバーシップ ](list-membership.md)を参照してください。
 
 ## クエリ
 
-静的リストのクエリは、アセットに対する標準のクエリタイプ（[IDによるクエリ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET)、[名前によるクエリ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET)、および[参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListsUsingGET)）に従います。
+静的リスト [をID](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET)別、[名前](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET)別、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListsUsingGET)別にクエリします。
 
 ### ID 別
 
-[ID によるクエリ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET)は、単一の静的リスト `id` をパスパラメーターとして受け取り、単一の静的リストレコードを返します。
+[IDによるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET)は、1つの静的リスト `id` パス パラメーターを受け取り、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/staticList/{id}.json
@@ -58,7 +56,7 @@ GET /rest/asset/v1/staticList/{id}.json
 
 #### 名前別
 
-[名前によるクエリ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET)は、静的リスト `name` をパラメーターとして受け取り、単一の静的リストレコードを返します。 インスタンス内のすべての静的リスト名に対して正確な文字列一致検索が実行され、その名前に一致する静的リストの結果が返されます。
+[名前によるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET)は、静的リスト `name` パラメーターを使用します。 エンドポイントは、静的リスト名に対して完全一致を実行し、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/staticList/byName.json?name=Foundation Seed List
@@ -87,7 +85,9 @@ GET /rest/asset/v1/staticList/byName.json?name=Foundation Seed List
 
 #### 参照
 
-静的リストは、[バッチで取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListsUsingGET)することもできます。 `folder` パラメーターを使用して、クエリを実行する親フォルダーを指定できます。このフォルダーは、`id`と`type`を含むJSON オブジェクトとしてフォーマットされます。 他の一括アセット取得エンドポイントと同様に、`offset` と `maxReturn` はページングに使用できるオプションパラメーターです。 `earliestUpdatedAt` および `latestUpdatedAt` パラメーターを使用すると、指定した範囲内で作成または更新された静的リストを返すための日時の日時透かし（低および高）を設定できます。 Datetime値は、有効なISO-8601文字列である必要があり、ミリ秒を含めないでください。
+参照エンドポイントを使用して、[一括で静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListsUsingGET)。 オプションの`folder` パラメーターは、クエリを親フォルダーにスコープします。 フォルダーを`id`と`type`を含むJSON オブジェクトとして渡します。
+
+ページネーションに`offset`と`maxReturn`を使用します。 `earliestUpdatedAt`と`latestUpdatedAt`を低い日時と高い日時の境界として使用します。 これらのパラメーターは、範囲内で作成または更新されたリストを返します。 ミリ秒なしでISO-8601値を使用します。
 
 ```http
 GET /rest/asset/v1/staticLists.json?folder={"id":13,"type":"Folder"}
@@ -138,7 +138,9 @@ GET /rest/asset/v1/staticLists.json?folder={"id":13,"type":"Folder"}
 
 ## 作成と更新
 
-[静的リストの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/createStaticListUsingPOST)は、2つの必須パラメーターを含む`application/x-www-form-urlencoded` POSTで実行されます。 `folder` パラメーターは、静的リストを作成する親フォルダーを指定するために使用され、`id`と`type`を含むJSON オブジェクトとしてフォーマットされます。 `name` パラメーターは、静的リストに名前を付けるために使用され、一意である必要があります。 オプションで、`description` パラメーターを使用して静的リストについて説明することもできます。
+`application/x-www-form-urlencoded` POST リクエストを[静的リストの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/createStaticListUsingPOST)に送信します。 `folder`および`name` パラメーターが必要です。
+
+`folder`を`id`と`type`を含むJSON オブジェクトとして渡します。 `name`は一意である必要があります。 オプションの`description` パラメーターは、リストを記述します。
 
 ```http
 POST /rest/asset/v1/staticLists.json
@@ -173,7 +175,7 @@ folder={"id":1034,"type":"Program"}&name=My Static List
 }
 ```
 
-[静的リスト &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/updateStaticListUsingPOST)の更新は、2つのオプションのパラメーターを持つ別のエンドポイントを通じて行われます。 `description` パラメーターは、静的リストの説明を更新するために使用できます。 `name` パラメーターは、静的リスト名を更新するために使用でき、一意である必要があります。
+更新エンドポイントを使用して[静的リストを変更](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/updateStaticListUsingPOST)します。 オプションの`description` パラメーターによって説明が変更されます。 オプションの`name` パラメーターは名前を変更し、一意である必要があります。
 
 ```http
 POST /rest/asset/v1/staticList/{id}.json
@@ -211,7 +213,7 @@ description=This is a static list used for testing
 
 ## 削除
 
-[静的リストの削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/deleteStaticListByIdUsingPOST)では、パスパラメーターとして単一の静的リスト `id` を受け取ります。 読み込みまたは書き出し操作で使用されている静的リストや、他のアセットで使用されている静的リストは削除できません。
+静的リスト ](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/deleteStaticListByIdUsingPOST)を[削除するには、その`id`をパスパラメーターとして渡します。 読み込み、書き出し、または別のアセットで使用されているリストは削除できません。
 
 ```http
 POST /rest/asset/v1/staticList/{id}/delete.json

@@ -3,10 +3,10 @@ title: メールテンプレート
 feature: REST API
 description: Marketo Asset REST APIを使用して、メールテンプレートの依存関係をクエリ、作成、更新、複製、削除、承認、検査します。
 exl-id: 50bb0047-d6ea-4c94-a900-18c37b17a147
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '292'
-ht-degree: 11%
+source-wordcount: '307'
+ht-degree: 10%
 
 ---
 
@@ -63,9 +63,18 @@ GET /rest/asset/v2/emailtemplate/{id}
 
 ### フィルター
 
-フィルターエンドポイントは、ワークスペース内での検索と、追加のクエリパラメーターによる結果の絞り込みをサポートします。 `workspaceId`が必要です。
+フィルターエンドポイントは、ワークスペース内を検索します。 `workspaceId` パラメーターが必要です。
 
-サポートされているフィルターには、`folderId`、繰り返し`folderIds`、繰り返し`status`、`pageIndex`、`pageSize`、`createdBy`、`createdAtStart`、`createdAtEnd`、`modifiedBy`、`modifiedAtStart`、`modifiedAtEnd`、`name`、`sortKey`、`sortOrder`、`isCreatedByMe`、`isModifiedByMe`、`scriptEngine`、`isValueNonNullable`、および`includeArchived`が含まれます。
+次のオプションのパラメーターを使用して、結果を絞り込んだり整理したりします。
+
+- フォルダー：`folderId`または繰り返し`folderIds`
+- ステータス：繰り返し`status`
+- Pagination: `pageIndex`および`pageSize`
+- 作成：`createdBy`、`createdAtStart`、`createdAtEnd`、`isCreatedByMe`
+- 変更：`modifiedBy`、`modifiedAtStart`、`modifiedAtEnd`、および`isModifiedByMe`
+- テンプレートのプロパティ：`name`、`scriptEngine`、`isValueNonNullable`
+- 並べ替え：`sortKey`および`sortOrder`
+- アーカイブ済みコンテンツ：`includeArchived`
 
 #### リクエスト
 

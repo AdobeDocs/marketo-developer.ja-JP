@@ -4,30 +4,21 @@ feature: REST API
 description: アクティビティ、一括書き出し、ID、リード、アセット、ユーザーをまたいだメソッド、URI、必要な権限を含む包括的なMarketo REST API エンドポイントリスト。
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
 TQID: https://experienceleague.adobe.com/6A-gCvxkWibX5fi3zZw-nbdVRtszX2qoJtDTBSdxFzQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-subfeature_v2:
-  - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+subfeature_v2: id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 4793
-ht-degree: 77%
+source-wordcount: 4807
+ht-degree: 76%
 
 ---
 
 # エンドポイント参照
 
-Marketo REST API 参照へのリンクを以下に示します。
+次の参照を使用して、各Marketo REST API グループのリクエストパラメーター、応答スキーマ、および例を検索します。
 
 - [アセット](https://developer.adobe.com/marketo-apis/api/asset)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
@@ -36,7 +27,7 @@ Marketo REST API 参照へのリンクを以下に示します。
 
 ## エンドポイントリスト {#endpoint_list}
 
-REST API エンドポイントの包括的なリストを以下に示します。
+次の表に、REST API エンドポイント、HTTP メソッド、URI、および必要な権限を示します。
 
 | 名前 | グループ | メソッド | URI | 必須の権限 |
 | --- | --- | --- | --- | --- |

@@ -2,32 +2,34 @@
 title: リード APIの更新を取得
 feature: REST API
 description: リード活動の取得とリード変更のエンドポイントの制限の変更について説明します。
-source-git-commit: e71bcf289229867bc969345d79c8f014761aaaf9
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
 
 # リード APIの更新を取得
 
-2026年9月30日から、[&#x200B; リードアクティビティの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[&#x200B; リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しが開始されます。このエンドポイントに`listId` パラメーターが含まれていると、ターゲットリストに10,000個以上のリードが含まれ、ターゲットスタティックリストにレコードが多すぎることを示すエラーコードが1003件ある場合、失敗します。 この変更の影響を受ける1つ以上のAPI呼び出しが最近行われました。 サービスの中断を回避するには、2026年9月30日（PT）までにアプリケーションとMarketoの統合方法を更新する必要があります。
+2026年9月30日以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む[ リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[ リード変更を取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しは失敗します。 エンドポイントは、ターゲットの静的リストにレコードが多すぎることを示す1003 エラーコードを返します。
 
-これらのタイプのクエリは、多くの場合、結果が出ない可能性のある検索や、結果が見つかる前にタイムアウトする検索を作成します。 セットのサイズを制限すると、これらのタイプのクエリの応答性が向上し、データセットの検索をタイムリーに完了できるようになります。
+1つ以上の最近のAPI呼び出しは、この変更の影響を受けます。 サービスの中断を回避するには、2026年9月30日（PT）までにアプリケーションとMarketoの統合方法を更新する必要があります。
+
+こうしたクエリでは、検索結果が表示されない場合や、検索結果が見つかる前にタイムアウトする場合がよくあります。 設定サイズを制限することで、クエリの応答性が向上し、タイムリーに検索を完了できるようになります。
 
 ## 自分が影響を受けているかどうかはどのように判断できますか？
 
-この変更は、少数のMarketo Engage インスタンスにのみ影響します。 影響を受けるサブスクリプションの管理者には、変更が適用される前にアプリケーション内で通知されます。
+この変更は、少数のMarketo Engage インスタンスにのみ影響します。 影響を受けるサブスクリプションの管理者は、変更が適用される前に、アプリケーション内通知を受け取ります。
 
 ## どうすればよいですか？
 
-このドキュメントは、Marketo Engage統合の担当者またはチームと共有する必要があります。
+このドキュメントを、Marketo Engage統合の担当者またはチームと共有します。
 
-ユースケースに応じて、アプリケーションを移行するには、次の2つの基本的なオプションがあります。
+ユースケースに応じて、次のいずれかの移行オプションを使用します。
 
-* アクティビティを抽出する静的リストは、最大10,000人のメンバーに制限します。 既存のリストのいずれかを小さなリストに分割して、アクティビティに対して同じオーディエンスを引き続きポーリングできます。
-* アクティビティの一括抽出またはデータストリームを使用してアクティビティまたはデータ値の変更を抽出し、その結果を[getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)の静的リストメンバーシップに結合します
+* アクティビティ抽出に使用する静的リストの数を10,000人に制限します。 既存のリストをより小さなリストに分割し、アクティビティに対して同じオーディエンスを引き続きポーリングします。
+* 一括アクティビティ抽出またはデータストリームを使用して、アクティビティを抽出するか、データ値の変更を抽出します。 [getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)を使用して、結果を静的リスト メンバーシップに結合します。
 
 ## 何もしないとどうなるの。
 
-多数のメンバーを持つ静的リストからアクティビティをクエリする際に、処理できないエラーが発生し、API統合の機能が中断される場合があります。
+多数のメンバーを持つ静的リストからアクティビティをクエリする際に、API統合が処理されないエラーによって中断される可能性があります。

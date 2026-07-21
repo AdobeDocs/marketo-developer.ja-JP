@@ -4,24 +4,22 @@ feature: Webhooks
 description: MarketoのWebhook エラーコード、リードフィールドの更新に2xx応答が必要な理由、Webhookでエラーを検出して処理する方法を説明します。
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
 TQID: https://experienceleague.adobe.com/N2jNA4EUMMTUFL9uJHZhOor6Tlz4-EXWciwoXrPml48
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 255
-ht-degree: 72%
+source-wordcount: 213
+ht-degree: 22%
 
 ---
 
 # エラー
 
-このページには、Marketo の webhook エラー応答コードがリストされています。
+このページでは、Marketo Webhookのエラー応答コードについて説明し、Webhook エラーの処理方法について説明します。
 
-1000 と 1001 は Marketo によって生成され、2xx ～ 5xx は Marketo webhook が呼び出しているシステムから返されるエラーです。
+Marketoは、エラーコード 1000と1001を生成します。 Marketo Webhookによって呼び出されるシステムは、2xxから5xxの応答コードを返します。
 
-Marketoが値をフィールドにマッピングし直すには、Webhook応答コードが2xxのバリエーションである必要があります。 Webhook の目的が、応答を通じて Marketo リードレコードの値を変更することである場合、呼び出される web サービスは 2xx を返す必要があります。その他のすべての応答コードでは、リードレコードの値を更新する目的で webhook は無視されます。
+Marketoは、web サービスが2xxの応答コードを返す場合にのみ、応答値をフィールドにマッピングします。 Webhook応答がMarketo リードレコードの値を変更することを意図している場合、他のすべての応答コードにより、フィールド更新の応答がMarketoで無視されます。
 
 | 応答コード | 説明 |
 | --- | --- |
@@ -30,11 +28,11 @@ Marketoが値をフィールドにマッピングし直すには、Webhook応答
 
 ## Webhook エラーのキャッチ
 
-Webhook からのエラーは、**[!UICONTROL Webhook 呼び出し]**&#x200B;トリガーによってキャッチおよび処理されます。
+**[!UICONTROL Webhook is Called]** トリガーを使用して、Webhook エラーを検出および処理します。
 
 ![Webhook 呼び出し](assets/webhook-called.png)
 
-* **応答** – 応答は、リクエストによって受信されたリテラル応答ペイロードです。
-* **エラーの種類** – これは、HTTP ステータス メッセージのReason-Phraseに対応します。
+* **Response** - リクエストで受信したリテラル応答ペイロード。
+* **エラーの種類** - HTTP ステータス メッセージの理由フレーズ。
 
-これらは、予測可能なエラーや例外を処理し、対応するために使用できます。 統合するサービスによっては、特定のクラスのエラーを自動的に復元できる場合があり、予期しないエラーをユーザに通知するアラートを作成することもできます。
+これらの値を使用して、予測可能なエラーと例外に対応します。 統合サービスに応じて、一部のエラークラスから自動的に回復し、予期しないエラーに対するアラートを作成できます。
