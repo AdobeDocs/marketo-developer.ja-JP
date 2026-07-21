@@ -294,7 +294,7 @@ POST /rest/v1/customobjects/{apiName}.json?_method=GET
 
 カスタムオブジェクトを作成または更新するには、[&#x200B; カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) エンドポイントを使用します。 操作を`action` パラメーターで指定します。 各呼び出しは、最大300件のレコードを作成または更新できます。
 
-`input`配列の値は、[&#x200B; カスタムオブジェクトの記述](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1) エンドポイントによって返される情報に基づきます。 例のcar オブジェクトでは、重複排除フィールドは`vin`のみです。 dedupeFields モードを使用してレコードを作成または更新する場合は、入力配列内の各オブジェクトに少なくとも`vin` フィールドを含めます。
+`input`配列の値は、[&#x200B; カスタムオブジェクトの記述](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1) エンドポイントによって返される情報に基づきます。 例のcar オブジェクトでは、重複排除フィールドは`vin`のみです。 dedupeFields モードを使用してレコードを作成または更新する場合は、入力配列内の各オブジェクトに少なくとも`vin` フィールドを含めます。
 
 ```http
 POST /rest/v1/customobjects/{apiName}.json

@@ -28,7 +28,7 @@ ht-degree: 0%
 ユースケースに応じて、次のいずれかの移行オプションを使用します。
 
 * アクティビティ抽出に使用する静的リストの数を10,000人に制限します。 既存のリストをより小さなリストに分割し、アクティビティに対して同じオーディエンスを引き続きポーリングします。
-* 一括アクティビティ抽出またはデータストリームを使用して、アクティビティを抽出するか、データ値の変更を抽出します。 [getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)を使用して、結果を静的リスト メンバーシップに結合します。
+* 一括アクティビティ抽出またはデータストリームを使用して、アクティビティを抽出するか、データ値の変更を抽出します。 [getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1)または[Bulk リード抽出](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)を使用して、結果を静的リスト メンバーシップに結合します。
 
 ## 何もしないとどうなるの。
 
