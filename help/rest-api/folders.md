@@ -4,9 +4,15 @@ feature: REST API
 description: 作成、更新、削除、IDと名前によるクエリ、ルート、ワークスペース、maxDepth、ページネーションを使用した一括参照について説明するフォルダー向けのMarketo REST API ガイド。
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
 TQID: https://experienceleague.adobe.com/OxCNdy8qW6jwq8u57RF9mqVKPVvH99UmuiOBjFprHCM
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: d65b4a73-87a3-4d56-b638-74e74d9939ceid: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: d65b4a73-87a3-4d56-b638-74e74d9939ce
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 806
@@ -80,7 +86,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 ### 名前別
 
-名前による[ クエリ ](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) エンドポイントには`name`が必要です。このエンドポイントは、フォルダー名と完全に一致し、一致するすべてのフォルダーを返します。
+名前による[&#x200B; クエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) エンドポイントには`name`が必要です。このエンドポイントは、フォルダー名と完全に一致し、一致するすべてのフォルダーを返します。
 
 エンドポイントは、次のオプションのパラメーターも受け入れます。
 
@@ -129,7 +135,7 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 
 ### 参照
 
-また、[ フォルダーを一括で取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)することもできます。 クエリする親フォルダーを指定するには、`root` パラメーターを使用します。 2つのメンバーを持つ埋め込みJSON オブジェクトとして`root`を渡します。
+また、[&#x200B; フォルダーを一括で取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)することもできます。 クエリする親フォルダーを指定するには、`root` パラメーターを使用します。 2つのメンバーを持つ埋め込みJSON オブジェクトとして`root`を渡します。
 
 1. `id`: フォルダーまたはプログラムのID。
 1. `type`: ルートフォルダーのタイプに応じて、`Folder`または`Program`のいずれかです。
@@ -231,7 +237,7 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 作成と更新
 
-フォルダー](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST)を[作成するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
+フォルダー[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST)を作成するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
 
 - `name`: フォルダー名を含む必要な文字列。
 - `parent`: `id`と`type`を含む必須の埋め込みJSON オブジェクト。 親に応じて、タイプは`Folder`または`Program`です。

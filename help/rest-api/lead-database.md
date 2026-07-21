@@ -4,10 +4,14 @@ feature: REST API, Database
 description: オブジェクト、CRUDおよび記述方法、クエリパターン、バッチ制限、CRM統合の制限について説明するMarketo リードデータベース APIのガイドです。
 exl-id: e62e381f-916b-4d56-bc3d-0046219b68d3
 TQID: https://experienceleague.adobe.com/7lGbhE92lvIE-XkMyUIaK9GrreZVRdM-WVZTpHARhxE
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 1058
@@ -39,7 +43,7 @@ Marketo Lead Database APIは、Marketoと個人および人物関連のデータ
 
 ## API
 
-リードデータベース API エンドポイント、パラメーター、モデリング情報の完全なリストについては、[ リードデータベース API エンドポイント リファレンス ](https://developer.adobe.com/marketo-apis/api/mapi)を参照してください。
+リードデータベース API エンドポイント、パラメーター、モデリング情報の完全なリストについては、[&#x200B; リードデータベース API エンドポイント リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi)を参照してください。
 
 インスタンスにネイティブのMicrosoft DynamicsまたはSalesforce.com CRM統合がある場合、会社、商談、商談ロール、および営業担当者のAPIは無効になります。 CRMはこれらのレコードを管理するため、Marketo APIを通じてレコードにアクセスしたり更新したりすることはできません。
 
@@ -165,7 +169,7 @@ GET /rest/v1/{type}.json?filterType={field to query}&filterValues={comma-separat
 また、次のオプションのクエリパラメーターも含めることができます。
 
 - `batchSize`：返す結果の数を指定する整数。 デフォルト値と最大値は300です。
-- `nextPageToken`: ページングの前の呼び出しから返されたトークン。 詳しくは、[ トークンのページング ](paging-tokens.md)を参照してください。
+- `nextPageToken`: ページングの前の呼び出しから返されたトークン。 詳しくは、[&#x200B; トークンのページング &#x200B;](paging-tokens.md)を参照してください。
 - `fields`：各レコードに対して返されるフィールド名のコンマ区切りリスト。 有効なフィールドについては、対応する説明を参照してください。 返されないフィールドをリクエストした場合、その値はnullであることが暗黙的に示されます。
 - `_method`: POST HTTP メソッドを使用してクエリを送信します。 使用方法については、_method=GET セクションを参照してください。
 
@@ -206,7 +210,7 @@ GET /rest/v1/opportunities.json?filterType=idField&filterValues=dff23271-f996-47
 
 オブジェクトの説明で`idField`と`dedupeFields`によって識別されたフィールドまたはフィールドセットは、クエリに対して常に有効な`filterTypes`です。 この呼び出しは、filterValuesのGUIDに一致するレコードを返します。 一致するレコードがない場合、応答は成功を示し、空の結果配列を返します。
 
-一致するレコードセットが300または指定された`batchSize`のいずれか小さい方を超える場合、応答には値がtrueの`moreResult`と`nextPageToken`が含まれます。 その後の呼び出しにトークンを含めて、より多くのレコードを取得します。 詳しくは、[ トークンのページング ](paging-tokens.md)を参照してください。
+一致するレコードセットが300または指定された`batchSize`のいずれか小さい方を超える場合、応答には値がtrueの`moreResult`と`nextPageToken`が含まれます。 その後の呼び出しにトークンを含めて、より多くのレコードを取得します。 詳しくは、[&#x200B; トークンのページング &#x200B;](paging-tokens.md)を参照してください。
 
 ### 長い URI
 
@@ -336,7 +340,7 @@ POST /rest/v1/opportunities.json
 
 リード APIを除き、create呼び出しとupdate呼び出しは、`result`配列内の各オブジェクトの`seq` フィールドを返します。 この番号は、リクエスト内の更新されたレコードの位置に対応します。
 
-各結果は、オブジェクトタイプの`idField`値と、「作成済み」、「更新」、「スキップ済み」の`status`も返します。 ステータスがスキップされた場合、結果には「reasons」配列が含まれます。 理由オブジェクトには、レコードがスキップされた理由を説明するコードとメッセージが含まれています。 詳しくは、[ エラーコード ](error-codes.md)を参照してください。
+各結果は、オブジェクトタイプの`idField`値と、「作成済み」、「更新」、「スキップ済み」の`status`も返します。 ステータスがスキップされた場合、結果には「reasons」配列が含まれます。 理由オブジェクトには、レコードがスキップされた理由を説明するコードとメッセージが含まれています。 詳しくは、[&#x200B; エラーコード &#x200B;](error-codes.md)を参照してください。
 
 ### 削除
 

@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # リード APIの更新を取得
 
-2026年9月30日以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む[ リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[ リード変更を取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しは失敗します。 エンドポイントは、ターゲットの静的リストにレコードが多すぎることを示す1003 エラーコードを返します。
+2026年9月30日以降、ターゲットリストに10,000人以上のリードが含まれる場合、`listId` パラメーターを含む[&#x200B; リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)または[&#x200B; リード変更を取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントへの呼び出しは失敗します。 エンドポイントは、ターゲットの静的リストにレコードが多すぎることを示す1003 エラーコードを返します。
 
 1つ以上の最近のAPI呼び出しは、この変更の影響を受けます。 サービスの中断を回避するには、2026年9月30日（PT）までにアプリケーションとMarketoの統合方法を更新する必要があります。
 

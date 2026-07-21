@@ -3,9 +3,12 @@ title: データストリーム
 description: Marketo Engage Data Streamsの概要：ほぼリアルタイムのリードアクティビティとユーザー監査イベントを実現し、Performance Tierのお客様のAPI制限を緩和
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
 TQID: https://experienceleague.adobe.com/JnhN70HexjmNueZa9MAVrxjEhZ5yJatWqZiowl22quA
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: e1e0219c-f879-479f-8427-888ed2a6e9c2
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: e1e0219c-f879-479f-8427-888ed2a6e9c2
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 1347
@@ -17,7 +20,7 @@ ht-degree: 54%
 
 >[!NOTE]
 >
->データストリームに関する現在の情報は、[ データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams#)で見つかりました。
+>データストリームに関する現在の情報は、[&#x200B; データストリームの使用](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams#)で見つかりました。
 >
 
 データストリームは、大量のMarketo Engageデータを外部システムにほぼリアルタイムで配信します。 ストリーミングデータを使用して、タイムリーな意思決定、ターゲットを絞った施策、外部マーケティングプロセス、監査を実施できます。
@@ -252,7 +255,7 @@ app.listen(port,()=>{
 })
 ```
 
-サンプルアプリケーションコードについては、[ リードアクティビティデータストリームコンシューマーの例](https://github.com/ihgrant/activity-stream-consumer-example)を参照してください。
+サンプルアプリケーションコードについては、[&#x200B; リードアクティビティデータストリームコンシューマーの例](https://github.com/ihgrant/activity-stream-consumer-example)を参照してください。
 
 ### ユーザ監査データストリームと通知データストリーム
 

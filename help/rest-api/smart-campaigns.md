@@ -4,10 +4,16 @@ feature: REST API, Smart Campaigns
 description: IDや名前によるクエリ、フィルターの参照、クローン削除の作成、トリガーのスケジュールまたはリクエストなど、Marketo REST APIをスマートキャンペーンに使用する方法について説明します
 exl-id: 540bdf59-b102-4081-a3d7-225494a19fdd
 TQID: https://experienceleague.adobe.com/iysRjtqd9plkreyIMuNjAF3YVFHtDUIrc-GInB4V8mg
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-subfeature_v2: id: ad89fb33-8541-4339-afe7-bb13d1633714id: d0251300-e25f-466f-9856-7e11ce8fa7aa
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: a7170d27-32ab-462b-a333-269abc654483
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+subfeature_v2:
+  - id: ad89fb33-8541-4339-afe7-bb13d1633714
+  - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 1009
@@ -25,7 +31,7 @@ Smart Campaign REST APIを使用して、スマートキャンペーンのクエ
 
 ## クエリ
 
-ID](#by_id)で[、名前](#by_name)で[、または[閲覧](#browse)でスマートキャンペーンをクエリします。
+ID[&#128279;](#by_id)で[、名前](#by_name)で、または[閲覧](#browse)でスマートキャンペーンをクエリします。
 
 ### ID 別
 
@@ -190,7 +196,7 @@ GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:
 
 ## 作成
 
-`application/x-www-form-urlencoded` POST リクエストを[ スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
+`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
 
 オプションで、`description` パラメーターを使用してスマートキャンペーンを説明することもできます（最大 2,000 文字）。
 
@@ -244,7 +250,7 @@ name=Smart Campaign 02&folder={"type": "folder","id": 640}&description=This is a
 
 ## 更新
 
-`application/x-www-form-urlencoded` POST リクエストを[ スマートキャンペーンの更新](https://developer.adobe.com/marketo-apis/api/asset) エンドポイントに送信します。 スマートキャンペーン `id` パスパラメーターが必要です。 `name`を使用して名前を変更するか、`description`を使用して説明を変更します。
+`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの更新](https://developer.adobe.com/marketo-apis/api/asset) エンドポイントに送信します。 スマートキャンペーン `id` パスパラメーターが必要です。 `name`を使用して名前を変更するか、`description`を使用して説明を変更します。
 
 ```http
 POST /rest/asset/v1/smartCampaign/{id}.json
@@ -376,7 +382,7 @@ POST /rest/asset/v1/smartCampaign/{id}/delete.json
 
 ## スケジュール
 
-[ キャンペーンのスケジュール ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
+[&#x200B; キャンペーンのスケジュール &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
 
 `tokens`配列は、この実行の既存のプログラムのマイトークンを上書きします。 Marketoは、キャンペーンの実行後にオーバーライドを破棄します。 各項目には名前と値のペアが含まれており、トークン名には`{{my.name}}`形式を使用する必要があります。
 

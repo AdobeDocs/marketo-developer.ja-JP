@@ -4,10 +4,14 @@ feature: REST API
 description: Marketo Bulk Program Member Extract REST APIを使用すると、権限やフィールドメタデータを使用して、ETL、データウェアハウス、アーカイブ用の大規模なメンバーレコードをエクスポートできます。
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
 TQID: https://experienceleague.adobe.com/w4qaVTKSe0EORaSiURB6WbJXi29JUdEgfkb2dnfuVFw
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 1024
@@ -27,7 +31,7 @@ API ユーザーには、読み取り専用リード権限、読み取り/書き
 
 ## 説明
 
-[ プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
+[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
 
 ```http
 GET /rest/v1/programs/members/describe.json
@@ -483,7 +487,7 @@ Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブや不要になったジョブをキャンセルするには、[ プログラム メンバーのエクスポート ジョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブや不要になったジョブをキャンセルするには、[&#x200B; プログラム メンバーのエクスポート ジョブをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json

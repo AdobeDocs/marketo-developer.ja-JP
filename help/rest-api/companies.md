@@ -4,10 +4,14 @@ feature: REST API
 description: Marketo Companies REST APIを使用して、会社レコードの記述、クエリ、同期、フィールドの管理、externalCompanyIdによる重複排除、CRM同期の読み取り専用へのメモ作成を行います。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
 TQID: https://experienceleague.adobe.com/LdJYN4lx9JfcE-02zTz8ktfYXm4EdPtxMYOx9gGR0sg
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 582
@@ -19,7 +23,7 @@ ht-degree: 14%
 
 [会社エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
 
-企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[ リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)または[ リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
+企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)または[&#x200B; リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
 
 別の会社にリードを追加しない限り、会社からリードを削除することはできません。 会社レコードにリンクされたリードは、そのレコードから値を継承し、その値がリードレコードに存在するかのように処理します。
 

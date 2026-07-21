@@ -4,9 +4,12 @@ feature: REST API
 description: externalSalesPersonIdを使用してリードに関連付け、クエリ、アップサート、削除を実行する、SFDCまたはDynamics同期を使用したセールス担当者レコードに関するMarketo REST API ガイド。
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
 TQID: https://experienceleague.adobe.com/JwLNgM0zgztyoYJotCiSdGxMixnzA0kvkFbvq8kEkzE
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 369
@@ -24,7 +27,7 @@ ht-degree: 16%
 
 externalSalesPersonId属性を対応するエンドポイントに渡すことにより、セールス担当者を他のレコードに関連付けます。
 
-- リードレコード：[ リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)。
+- リードレコード：[&#x200B; リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)。
 - 商談レコード：[商談の同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST)。
 - 会社レコード：[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST)。
 

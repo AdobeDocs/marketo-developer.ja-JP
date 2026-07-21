@@ -4,10 +4,15 @@ feature: REST API, Landing Pages
 description: Marketo REST APIを使用して、メタデータとコンテンツのクエリ、作成、更新、承認、削除、ランディングページの複製（ガイド付きタイプやフリーフォームタイプを含む）をおこなえます。
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
 TQID: https://experienceleague.adobe.com/NssOtB6BEMGOQzzauLI7AszLpN3fVcEeJcr9VNTkpJE
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 917
@@ -63,9 +68,9 @@ GET /rest/asset/v1/landingPage/{id}/content.json
 
 ## 作成と更新
 
-テンプレートから[ ランディングページ ](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/createLandingPageUsingPOST)を作成します。 ページ名、テンプレート ID、宛先フォルダーが必要です。 オプションのメタデータについては、エンドポイントリファレンスを参照してください。
+テンプレートから[&#x200B; ランディングページ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/createLandingPageUsingPOST)を作成します。 ページ名、テンプレート ID、宛先フォルダーが必要です。 オプションのメタデータについては、エンドポイントリファレンスを参照してください。
 
-[ ランディングページコンテンツ ](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content) エンドポイントは、次のコンテンツタイプをサポートしています：`richText`、`HTML`、`Form`、`Image`、`Rectangle`、および`Snippet`。
+[&#x200B; ランディングページコンテンツ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content) エンドポイントは、次のコンテンツタイプをサポートしています：`richText`、`HTML`、`Form`、`Image`、`Rectangle`、および`Snippet`。
 
 ```http
 POST rest/asset/v1/landingPages.json
@@ -120,7 +125,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 
 ## 削除
 
-ランディングページを削除する前に、そのランディングページが承認されていないこと、および他のMarketo アセットが参照していないことを確認します。 [ ランディングページを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) エンドポイントを使用して、ページを個別に削除します。 このAPIを使用して、ソーシャルボタンが埋め込まれたページを削除することはできません。
+ランディングページを削除する前に、そのランディングページが承認されていないこと、および他のMarketo アセットが参照していないことを確認します。 [&#x200B; ランディングページを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) エンドポイントを使用して、ページを個別に削除します。 このAPIを使用して、ソーシャルボタンが埋め込まれたページを削除することはできません。
 
 ## 複製
 
@@ -180,7 +185,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 ## コンテンツセクションの管理
 
-コンテンツセクションは、`index` プロパティで並べ替えられ、クライアントのCSS ルールに従って表示されます。 [Add](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST)、[Update](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)、[Delete](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) エンドポイントを使用して、セクションを管理します。 [ ランディングページのコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)を使用してクエリを実行します。
+コンテンツセクションは、`index` プロパティで並べ替えられ、クライアントのCSS ルールに従って表示されます。 [Add](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST)、[Update](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)、[Delete](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) エンドポイントを使用して、セクションを管理します。 [&#x200B; ランディングページのコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)を使用してクエリを実行します。
 
 各セクションには`type`と`value`個のパラメーターがあります。 `type`によって、想定される`value`が決定されます。 これらのエンドポイントにデータをJSONではなくPOST `x-www-form-urlencoded`として渡します。
 
@@ -200,11 +205,11 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 フリーフォームページの場合は、必要な各コンテンツセクションを追加します。 Marketoは、ID `mktoContent`を持つ`div`要素にそれらを埋め込みます。
 
-ガイド付きページには、[ ランディングページコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)によって返される定義済み要素を含めることができます。 対応するエンドポイントを使用して、要素を追加するか、コンテンツを[更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)します。
+ガイド付きページには、[&#x200B; ランディングページコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)によって返される定義済み要素を含めることができます。 対応するエンドポイントを使用して、要素を追加するか、コンテンツを[更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)します。
 
 ### 動的コンテンツ
 
-セクションを動的にするには、まず、ランディングページのコンテンツリストにセクションが表示されていることを確認します。 次に、[ ランディングページコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)を使用して、そのタイプを`DynamicContent`に設定します。
+セクションを動的にするには、まず、ランディングページのコンテンツリストにセクションが表示されていることを確認します。 次に、[&#x200B; ランディングページコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)を使用して、そのタイプを`DynamicContent`に設定します。
 
 Marketoは、変換された要素の基本タイプとコンテンツを継承する基礎となる動的セクションを作成します。
 
@@ -351,7 +356,7 @@ POST /rest/asset/v1/landingPage/{id}/variable/{variableId}.json?value={newValue}
 
 ## ランディングページのプレビュー
 
-[ ランディングページの完全なコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageFullContentUsingGET)を使用して、ブラウザーでレンダリングされたプレビューを取得します。 ランディングページ `id` パス パラメーターが必要です。 エンドポイントは、次の2つのオプションのクエリパラメーターも受け入れます。
+[&#x200B; ランディングページの完全なコンテンツを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageFullContentUsingGET)を使用して、ブラウザーでレンダリングされたプレビューを取得します。 ランディングページ `id` パス パラメーターが必要です。 エンドポイントは、次の2つのオプションのクエリパラメーターも受け入れます。
 
 - `segmentation`: `segmentationId`と`segmentId`を含むJSON オブジェクトの配列。 プレビューは、これらのセグメントに一致するリードを表します。
 - `leadId`：整数リード ID。 プレビューは、指定されたリードを表します。

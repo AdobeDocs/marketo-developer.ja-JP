@@ -4,8 +4,10 @@ feature: REST API
 description: Marketo Bulk Lead Extract REST APIを使用して、日付、リスト、スマートリストのフィルター、カスタムフィールド、CSV/TSV形式でリードを一括エクスポートする方法を説明します。
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
 TQID: https://experienceleague.adobe.com/4eMJR87fHDdccrVid3wHtspvBVQmrBGHYMlIwFCSdEI
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 1037
@@ -167,7 +169,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## データの取得
 
-完了したリード書き出しを取得するには、[ リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
+完了したリード書き出しを取得するには、[&#x200B; リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -186,7 +188,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[ リードジョブのエクスポートをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[&#x200B; リードジョブのエクスポートをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json

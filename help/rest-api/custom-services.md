@@ -4,10 +4,14 @@ feature: REST API
 description: Marketo カスタムサービスを作成し、APIのみの役割と権限を設定し、LaunchPointでクライアント IDとクライアントシークレットを取得し、アクセストークンを取得します。
 exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
 TQID: https://experienceleague.adobe.com/lvT-8bYucf-K5LYxb5jQ7BHc137W71SvsGg7cWJlxEs
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 894
@@ -17,7 +21,7 @@ ht-degree: 29%
 
 # カスタムサービス
 
-カスタムサービスは、Marketoで認証し、Marketo [ID サービス ](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)からアクセストークンを取得するために使用される資格情報を提供します。 各カスタムサービスは、1つのAPIのみのユーザーにスコープが設定され、そのユーザーから権限が取得されます。
+カスタムサービスは、Marketoで認証し、Marketo [ID サービス &#x200B;](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)からアクセストークンを取得するために使用される資格情報を提供します。 各カスタムサービスは、1つのAPIのみのユーザーにスコープが設定され、そのユーザーから権限が取得されます。
 
 ## ロール
 
@@ -39,7 +43,7 @@ API ユーザーには、「Access API」グループの権限のみが適用さ
 
 役割を作成する場合は、アプリケーションが実行する必要があるアクションを特定します。 これらのアクションに必要な最小権限のみを割り当てます。 不必要な権限を設定すると、サブスクリプション内で不要なアクションを実行する統合機能を利用できるようになります。
 
-[権限ツール ](endpoint-reference.md)を使用して、権限の最小セットを決定します。 詳しくは、[権限](#permission_list)の完全なリストを参照してください。
+[権限ツール &#x200B;](endpoint-reference.md)を使用して、権限の最小セットを決定します。 詳しくは、[権限](#permission_list)の完全なリストを参照してください。
 
 ## ユーザ
 
@@ -75,7 +79,7 @@ API ユーザーには、「Access API」グループの権限のみが適用さ
 
 サービスは、「詳細を表示」オプションを使用してLaunchPoint サービスのリストに表示されます。 「詳細を表示」を選択して、クライアント ID、クライアントシークレット、所有ユーザー、トークンを取得オプションにアクセスします。
 
-短期間のテストには、Get Tokenを使用します。 トークンの有効期間は、[ID サービス ](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)から取得したトークンと同じで、作成後3,600秒間有効です。
+短期間のテストには、Get Tokenを使用します。 トークンの有効期間は、[ID サービス &#x200B;](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)から取得したトークンと同じで、作成後3,600秒間有効です。
 
 ![トークンを取得](assets/get-token.png)
 

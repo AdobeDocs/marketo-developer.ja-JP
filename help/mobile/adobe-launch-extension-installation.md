@@ -4,10 +4,15 @@ feature: Mobile Marketing
 description: Adobe Launch Marketoのモバイル向け拡張機能をインストールします。 IOSとAndroidの設定に従い、プッシュおよびアプリ内のデバイス、権限、FCMの手順をテストします。
 exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
 TQID: https://experienceleague.adobe.com/UZRHaRBISIZsE6E25Ee7CnnYwyZwi6w2YgOQJ-JL00U
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: e0eb8757-182f-49f3-94a4-1587d16f5094
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+  - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: e0eb8757-182f-49f3-94a4-1587d16f5094
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 753
@@ -22,15 +27,15 @@ ht-degree: 43%
 ## 前提条件
 
 1. [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
-1. [ ポータル  [!DNL Adobe Launch] でプロパティを設定します](https://experience.adobe.com/#/@amc/data-collection/home)。
+1. [&#x200B; ポータル  [!DNL Adobe Launch] でプロパティを設定します](https://experience.adobe.com/#/@amc/data-collection/home)。
 1. [!DNL Adobe Launch] ポータルのプロパティのアプリケーション秘密鍵とMunchkin IDを設定します。
-1. オプション：[ プッシュ通知を設定](push-notifications.md)。
+1. オプション：[&#x200B; プッシュ通知を設定](push-notifications.md)。
 
 ## iOS に Marketo 拡張機能をインストールする方法
 
 ### Swift ブリッジングヘッダーの設定
 
-1. [!UICONTROL  ファイル ] > [!UICONTROL 新規] > [!UICONTROL  ファイル ]に移動し、**[!UICONTROL ヘッダーファイル]**&#x200B;を選択します。
+1. [!UICONTROL &#x200B; ファイル &#x200B;] > [!UICONTROL 新規] > [!UICONTROL &#x200B; ファイル &#x200B;]に移動し、**[!UICONTROL ヘッダーファイル]**&#x200B;を選択します。
 
 1. ファイルに「&lt;_ProjectName_>-Bridging-Header」という名前を付けます。
 
@@ -163,16 +168,16 @@ MME SDK for Androidは、Googleの[Firebase Cloud Messaging](https://firebase.go
 
 1. 最新のMarketo Android SDKをAndroid アプリに統合します。 [GitHub](https://github.com/Marketo/android-sdk)の手順を参照してください。
 1. Firebase ConsoleでFirebase アプリを設定します。
-   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソールでプロジェクトを作成または追加します。
+   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソールでプロジェクトを作成または追加します。
       1. が含まれる [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「**[!UICONTROL Android アプリに Firebase を追加]**」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
       1. 「**[!UICONTROL 続行]**」を選択し、Android Studio に Google サービスプラグインを追加する詳細な手順に従います。
 
-   1. [!UICONTROL  プロジェクト概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します。
+   1. [!UICONTROL &#x200B; プロジェクト概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します。
       1. 「**[!UICONTROL 一般]**」タブを選択し、`google-services.json`をダウンロードします。
-      1. 「**[!UICONTROL クラウドメッセージ]**」タブを選択します。 [!UICONTROL  サーバーキー]と[!UICONTROL 送信者ID]をコピーし、Marketoに提供します。
+      1. 「**[!UICONTROL クラウドメッセージ]**」タブを選択します。 [!UICONTROL &#x200B; サーバーキー]と[!UICONTROL 送信者ID]をコピーし、Marketoに提供します。
    1. Android アプリでFCMを設定します。
       1. Android Studioのプロジェクトビューに切り替えて、プロジェクトのルートディレクトリを表示します。
          1. ダウンロードした`google-services.json` ファイルをAndroid アプリモジュールのルートディレクトリに移動します。
@@ -221,7 +226,7 @@ MME SDK for Androidは、Googleの[Firebase Cloud Messaging](https://firebase.go
 
 これらの質問では、Firebase Cloud Messagingのサポートについて説明します。
 
-**Q: MME SDKの最新バージョンに更新する手順はどこで確認できますか？** Marketo Developer サイトの[ インストール手順](installation.md)を参照してください。
+**Q: MME SDKの最新バージョンに更新する手順はどこで確認できますか？** Marketo Developer サイトの[&#x200B; インストール手順](installation.md)を参照してください。
 
 **Q：最新バージョンのSDKにアップデートする場合、既存のユーザーに対してAndroid アプリケーションの更新バージョンを公開する必要がありますか？** いいえ、できません。
 

@@ -4,10 +4,15 @@ feature: Mobile Marketing
 description: CordovaでMarketo PhoneGap プラグインを設定し、Firebase Cloud Messagingを設定し、iOSとAndroidのプッシュを有効にし、通知をトラッキングし、SDKを初期化します。
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
 TQID: https://experienceleague.adobe.com/eFAwR7r5IE6vKigsEWrJdCmC3VrfB-nl0h8x7Vgt1VY
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 775
@@ -71,14 +76,14 @@ repositories{
 1. Firebase Cloud Messaging サポート
 
 1. Firebase ConsoleでFirebase アプリを設定します。
-   1. [](https://console.firebase.google.com/)Firebase コンソールでプロジェクトを作成または追加します。
+   1. [&#128279;](https://console.firebase.google.com/)Firebase コンソールでプロジェクトを作成または追加します。
       1. が含まれる [Firebase コンソール](https://console.firebase.google.com/)を選択 **[!UICONTROL プロジェクトを追加]**.
       1. 既存のGoogle Cloud プロジェクトのリストから GCM プロジェクトを選択して、を選択します。 **[!UICONTROL Firebase の追加]**.
       1. Firebase のスタートアップスクリーンで、「Android アプリに Firebase を追加」を選択します。
       1. パッケージ名と SHA-1 を指定し、を選択します。 **[!UICONTROL アプリを追加]**. 新品 `google-services.json` firebase アプリのファイルがダウンロードされます。
-   1. [!UICONTROL  プロジェクト概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します。
+   1. [!UICONTROL &#x200B; プロジェクト概要]の&#x200B;**[!UICONTROL プロジェクト設定]**&#x200B;に移動します。
       1. 「**[!UICONTROL 一般]**」タブを選択し、「google-services.json」ファイルをダウンロードします。
-      1. 「**[!UICONTROL クラウドメッセージ]**」タブを選択します。 [!UICONTROL  サーバーキー]と[!UICONTROL 送信者ID]をコピーし、Marketoに提供します。
+      1. 「**[!UICONTROL クラウドメッセージ]**」タブを選択します。 [!UICONTROL &#x200B; サーバーキー]と[!UICONTROL 送信者ID]をコピーし、Marketoに提供します。
    1. PhoneGap アプリでFCMを設定します。
       1. ダウンロードした「google-services.json」ファイルをPhoneGap アプリモジュールのルートディレクトリに移動します。
       1. の場所からファイル「MyFirebaseInstanceIDService」を削除します `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` （非推奨）
