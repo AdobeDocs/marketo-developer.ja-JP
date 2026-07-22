@@ -17,22 +17,24 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 3346
-ht-degree: 90%
+source-wordcount: 2938
+ht-degree: 13%
 
 ---
 
 # カスタムオブジェクト
 
-[**カスタムオブジェクトエンドポイント参照**](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects) Marketo では、ユーザは Marketo 標準オブジェクト（リード、会社）またはその他の Marketo カスタムオブジェクトに関連する Marketo カスタムオブジェクトを定義できます。  Marketo カスタムオブジェクトは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)の説明に従って Marketo UI を使用して作成することや、以下の説明に従って Custom Object Metadata API を使用して作成することができます。
+[**カスタムオブジェクトエンドポイント参照**](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects)
 
-Custom Object Metadata API にアクセスするには、適切な Marketo サブスクリプションタイプが必要です。  詳しくは、CSM にお問い合わせください。
+Marketo カスタムオブジェクトは、リードや会社などのMarketo標準オブジェクトや、その他のMarketo カスタムオブジェクトに関連付けることができます。 [Marketo UI](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)で、または本ドキュメントに記載されているカスタムオブジェクトメタデータ APIを使用して、Marketo カスタムオブジェクトを作成します。
+
+カスタムオブジェクトメタデータ APIにアクセスするには、適切なMarketo サブスクリプションタイプが必要です。 詳細については、CSMにお問い合わせください。
 
 ## リスト
 
-リードデータベースオブジェクトで使用できる標準の説明、クエリ、更新、削除呼び出しに加えて、カスタムオブジェクトでは[リスト呼び出し](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)も使用できます。  このエンドポイントを呼び出すと、宛先インスタンスで使用可能なカスタムオブジェクトのリストと、オブジェクトに関する追加のメタデータを含む応答が返されます。
+リードデータベースオブジェクトに対する標準の説明、クエリ、更新、削除の呼び出しに加えて、カスタムオブジェクトは[&#x200B; リスト呼び出しを提供します](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)。 エンドポイントは、宛先インスタンスで使用可能なカスタムオブジェクトと、各オブジェクトに関するメタデータを返します。
 
 ```http
 GET /rest/v1/customobjects.json
@@ -71,11 +73,18 @@ GET /rest/v1/customobjects.json
 }
 ```
 
-応答には、各オブジェクトに存在する関係のリストが提供されます。  関係には、リンク値を保持するオブジェクトのフィールドを示す `field` メンバー、関係が親タイプオブジェクトか子タイプオブジェクトかを示す `type` メンバー、関連オブジェクトの名前とそのオブジェクトのリンクフィールドを示す `relatedTo` オブジェクトが含まれます。
+応答には、各オブジェクトの関係が一覧表示されます。 各関係には次のものが含まれます。
+
+- `field`: リンク値を保持するオブジェクトのフィールド。
+- `type`：関連オブジェクトが親オブジェクトか子オブジェクトかのどちらかです。
+- `relatedTo`：関連するオブジェクトの名前とそのリンクフィールド。
 
 ## 説明
 
-カスタム オブジェクトの[説明呼び出し](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1)は、商談および会社の場合と同じパターンに従いますが、応答に `relationships` 配列が追加され、説明するカスタムオブジェクトタイプの API 名を取得する URI の `apiName` パスパラメーターが追加されます。  リスト呼び出しと同様に、これにより、このカスタムオブジェクトタイプで使用可能なすべての関係が一覧表示されます。
+カスタムオブジェクトの[Describe呼び出し](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1)は、商談と企業と同じパターンに従い、次の2つの追加が含まれています。
+
+- `apiName` path パラメーターは、記述するカスタムオブジェクトタイプのAPI名を指定します。
+- 応答には、カスタムオブジェクトタイプで使用可能な関係をリストする`relationships`配列が含まれています。
 
 ```http
 GET /rest/v1/customobjects/{apiName}/describe.json
@@ -182,7 +191,11 @@ GET /rest/v1/customobjects/{apiName}/describe.json
 
 ## クエリ
 
-[カスタムオブジェクトのクエリ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)は、他のLead Database API とは少し異なり、describe と同様に `apiName` パスパラメーターを取ります。  通常の filterType パラメーターの場合、クエリは他のタイプのレコードのクエリと同様にシンプルな GET で、`filterType` と `filterValues` が必要です。  オプションで、`**fields**`、`batchSize`、`nextPageToken` パラメーターを受け取ります。  フィールドのリストをリクエストする際に、特定のフィールドがリクエストされたが返されない場合、その値は null であると見なされます。
+[&#x200B; カスタムオブジェクトのクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)は、他のリードデータベースオブジェクトのクエリとは若干異なります。 説明と同様に、リクエストは`apiName` パスパラメーターを使用します。
+
+通常のfilterTypeの場合は、必要な`filterType`および`filterValues` パラメーターを指定してGET リクエストを送信します。 オプションの`**fields**`、`batchSize`および`nextPageToken` パラメーターを含めることもできます。
+
+フィールドのリストをリクエストする場合、返されないリクエストされたフィールドの暗黙的な値はnullになります。
 
 ```http
 GET /rest/v1/customobjects/{apiName}.json?filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fa,dff23271-f996-47d7-984f-f2676861b5fb
@@ -211,7 +224,9 @@ GET /rest/v1/customobjects/{apiName}.json?filterType=idField&filterValues=dff232
 }
 ```
 
-または、複合キーを使用してクエリを実行する際、API は Opportunity Roles API のように動作し、JSON 本文を含む POST を受け取ります。  JSON 本文には、`filterValues` を除いて、GET クエリと同じメンバーが含まれる場合があります。  フィルター値の代わりに、各オブジェクトタイプの `dedupeFields` の名前が付けられたメンバーを含むオブジェクトを受け取る `input` 配列があります。
+複合キーを使用してクエリを実行すると、APIは商談ロール APIと同様に動作し、JSON本文を使用してPOST リクエストを受け入れます。 本文には、`filterValues`を除くGET クエリと同じメンバーを含めることができます。
+
+フィルター値の代わりに、`input`個のオブジェクト配列を指定します。 各オブジェクトには、オブジェクトタイプの`dedupeFields`の各フィールドのメンバーが含まれます。
 
 ```http
 POST /rest/v1/customobjects/{apiName}.json?_method=GET
@@ -277,7 +292,9 @@ POST /rest/v1/customobjects/{apiName}.json?_method=GET
 
 ## 作成と更新
 
-[カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST)エンドポイントを使用して、カスタムオブジェクトを作成または更新し、`action` パラメーターを使用して操作を指定できます。  1 回の呼び出しで最大 300 個のレコードを作成または更新できます。  `input` 配列で使用される値は、主に[カスタムオブジェクトを説明](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1)エンドポイントによって返される情報に基づいています。 例えば、car オブジェクトには、重複排除フィールド `vin` が 1 つだけあります。  dedupeFields モードを使用する際にレコードを更新または作成するには、入力配列の各レコードに 1 つ以上の `vin` フィールドを含める必要があります。
+カスタムオブジェクトを作成または更新するには、[&#x200B; カスタムオブジェクトを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) エンドポイントを使用します。 操作を`action` パラメーターで指定します。 各呼び出しは、最大300件のレコードを作成または更新できます。
+
+`input`配列の値は、[&#x200B; カスタムオブジェクトの記述](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1) エンドポイントによって返される情報に基づきます。 例のcar オブジェクトでは、重複排除フィールドは`vin`のみです。 dedupeFields モードを使用してレコードを作成または更新する場合は、入力配列内の各オブジェクトに少なくとも`vin` フィールドを含めます。
 
 ```http
 POST /rest/v1/customobjects/{apiName}.json
@@ -342,11 +359,13 @@ POST /rest/v1/customobjects/{apiName}.json
 }
 ```
 
-`idField` モードを通じて更新を実行する場合、`idField` は常に `marketoGUID` になるので、各レコードには常に `marketoGUID` フィールドが必要になります。  `idField` は常にシステムで管理されるので、updateOnly アクションタイプに対してのみ有効です。  応答には、結果配列内の各レコードの&#x200B;**ステータス**&#x200B;と、個々のレコードに対する操作が成功したかどうかに応じて `marketoGUID` または `reasons` 配列のいずれかが含まれます。
+`idField` モードでレコードを更新すると、`idField`は常に`marketoGUID`になります。 すべてのレコードに`marketoGUID` フィールドを含めます。
+
+このフィールドはシステムで管理されているため、`idField`はupdateOnly アクションタイプに対してのみ有効です。 結果の配列には、各レコードの&#x200B;**status**&#x200B;が含まれます。 また、正常な操作の`marketoGUID`または失敗した操作の`reasons`配列も含まれます。
 
 ## 削除
 
-[レコードの削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST)は非常に簡単です。  `deleteBy` モード（`idField` または `dedupeFields`）を選択し、`input` 配列の各レコードの対応するフィールドを含めるだけです。 1 回の呼び出しあたり最大 300 個のレコードが許可されます。
+[&#x200B; レコードを削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST)するには、`idField`または`dedupeFields`のいずれかの`deleteBy` モードを選択します。 `input`配列の各レコードに対応するフィールドを含めます。 各呼び出しでは、最大300件のレコードを使用できます。
 
 ```http
 POST /rest/v1/customobjects/{apiName}/delete.json
@@ -396,24 +415,31 @@ POST /rest/v1/customobjects/{apiName}/delete.json
 }
 ```
 
-更新の場合と同様に、結果には各レコードのステータスと、削除が成功したかどうかに応じて `marketoGUID` または `reasons` 配列が含まれます。
+更新と同様に、結果には各レコードのステータスが含まれます。 また、削除が成功した場合は`marketoGUID`、削除が失敗した場合は`reasons`配列が含まれます。
 
 ## カスタムオブジェクトタイプ
 
-Custom Object Metadata API を使用すると、カスタムオブジェクトスキーマをリモートで管理できます。  この API を使用すると、新しいカスタムオブジェクトタイプを作成したり、既存のカスタムオブジェクトタイプを変更したりできます。  カスタムオブジェクトタイプを作成または変更したら、使用するために承認を受ける必要があります。  カスタムオブジェクトについて詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/home)にある製品ドキュメントを参照してください。
+カスタムオブジェクトメタデータ APIを使用すると、カスタムオブジェクトスキーマをリモートで管理できます。 カスタムオブジェクトタイプを作成したり、既存のオブジェクトタイプを変更したりするのに使用します。 タイプを作成または変更した後、使用する前にタイプを承認します。
 
-* API で作成したカスタムオブジェクトタイプは、Marketo UI を使用して変更できません
-* 許可されるカスタムオブジェクトタイプの最大数は 10 です
-* 許可されるカスタムオブジェクトフィールドの最大数はタイプあたり 50 です
-* カスタムオブジェクトタイプの API 名と表示名には、英数字とアンダースコア「_」を含めることができます。
+詳しくは、[&#x200B; カスタムオブジェクト製品ドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/home)を参照してください。
+
+- APIで作成したカスタムオブジェクトタイプをMarketo UIで変更することはできません。
+- カスタムオブジェクトタイプの最大数は10です。
+- カスタムオブジェクトフィールドの最大数は、タイプごとに50です。
+- カスタムオブジェクトタイプ API名と表示名には、英数字とアンダースコア文字「_」を含めることができます。
 
 ### クエリタイプ
 
-カスタムオブジェクトタイプのメタデータを取得する方法は 2 つあります。「カスタムオブジェクトタイプを説明」は、単一のカスタムオブジェクトタイプのレコードを返す機能で、承認状態によるフィルタリングが可能です。「カスタムオブジェクトタイプをリスト」は、サブスクリプション内のすべてのカスタムオブジェクトタイプのリストを返す機能で、名前と承認状態によるフィルタリングが可能です。
+次のいずれかの方法で、カスタムオブジェクトタイプのメタデータを取得します。
+
+- 「カスタムオブジェクトタイプを記述」は、1つのカスタムオブジェクトタイプレコードを返し、承認状態によるフィルタリングをサポートします。
+- カスタムオブジェクトタイプのリストは、サブスクリプション内のすべてのカスタムオブジェクトタイプを返し、名前と承認状態によるフィルタリングをサポートします。
 
 ### 説明タイプ
 
-[カスタムオブジェクトタイプを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1)エンドポイントは、単一のカスタムオブジェクトタイプのメタデータを返します。 必須の `apiName` パスパラメーターは、説明するカスタムオブジェクトタイプの API 名です。  承認済みバージョンが存在する場合は、それが返されます。  それ以外の場合は、ドラフトバージョンが返されます。  オプションの `state` パラメーターは、返されるバージョン（`draft`、`approved`、`approvedWithDraft`）を指定するために使用されます。
+[&#x200B; カスタムオブジェクトタイプの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1) エンドポイントは、1つのカスタムオブジェクトタイプのメタデータを返します。 必須の`apiName` パス パラメーターは、記述するタイプのAPI名を指定します。
+
+承認されたバージョンが存在する場合、エンドポイントはそれを返します。 それ以外の場合は、ドラフトバージョンを返します。 オプションの`state` パラメーターを使用して、`draft`、`approved`、または`approvedWithDraft`をリクエストします。
 
 ```http
 GET /rest/v1/customobjects/schema/{apiName}/describe.json?state=approved
@@ -524,15 +550,22 @@ GET /rest/v1/customobjects/schema/{apiName}/describe.json?state=approved
 }
 ```
 
-ここでは、次の属性を確認できます。
+応答には次が含まれます。
 
-* メタデータ：state、displayName、description、apiName、idField、createdAt、updatedAt、dedupeFields、searchableFields、relationships
-* 標準フィールド：marketoGUID、createdAt、updatedAt
-* カスタムフィールド：leadId、vin、make、model、year
+- メタデータ：状態、displayName、説明、apiName、idField、createdAt、updatedAt、dedupeFields、searchableFields、relationships。
+- 標準フィールド：marketoGUID、createdAt、updatedAt
+- カスタムフィールド：leadId、vin、make、model、year
 
 ### リストタイプ
 
-[カスタムオブジェクトタイプをリスト](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/listCustomObjectTypesUsingGET)エンドポイントは、宛先インスタンスで使用可能なすべてのカスタムオブジェクトタイプのメタデータを返します。  このエンドポイントは、[カスタムオブジェクトをリスト](https://experienceleague.adobe.com/docs/marketo-developer/marketo/soap/custom-objects/custom-objects.html?lang=ja)に似ていますが、より包括的で、状態、関係、フィールドなどの追加のメタデータが含まれています。 承認済みバージョンが存在する場合は、それが返されます。  それ以外の場合は、ドラフトバージョンが返されます。  オプションの **state** パラメーターは、返されるカスタムオブジェクトタイプのバージョン（**draft**、**approved**、**approvedWithDraft**）を指定するために使用されます。  オプションの **names** パラメーターは、返されるカスタムオブジェクトタイプの特定の名前を指定するために使用されます。これは、API 名のコンマ区切りリストとして構造化されています。
+[カスタムオブジェクトタイプをリスト](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/listCustomObjectTypesUsingGET)エンドポイントは、宛先インスタンスで使用可能なすべてのカスタムオブジェクトタイプのメタデータを返します。 [&#x200B; カスタムオブジェクトのリスト &#x200B;](https://experienceleague.adobe.com/docs/marketo-developer/marketo/soap/custom-objects/custom-objects.html?lang=ja)と似ていますが、状態、関係、フィールドなどの追加のメタデータが含まれます。
+
+承認されたバージョンが存在する場合、エンドポイントはそれを返します。 それ以外の場合は、ドラフトバージョンを返します。
+
+オプションのパラメーターは次のとおりです。
+
+- **状態**：返すバージョンを指定します。 有効な値は&#x200B;**draft**、**approved**、**approvedWithDraft**&#x200B;です。
+- **names**: API名のコンマ区切りリストとして返すカスタムオブジェクトタイプを指定します。
 
 ```http
 GET /rest/v1/customobjects/schema.json?names=purchaseHistory
@@ -711,11 +744,19 @@ GET /rest/v1/customobjects/schema.json?names=purchaseHistory
 
 #### タイプの作成
 
-[カスタムオブジェクトタイプを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST)エンドポイントは、カスタムオブジェクトタイプを作成または更新するために使用されます。  実行するレコード操作は、**createOnly**、**createOrUpdate** または **updateOnly** に指定できるオプションの **action** 属性によって制御されます。  デフォルト設定は createOrUpdate です。 アクションとして updateOnly を使用する場合を除き、**displayName** 属性と **apiName** 属性は必須です。   お客様がプロビジョニングしたタイプとの競合を避けるために、両方とも一意である必要があります。  Launchpoint パートナーの場合は、これらの名前の前に代表的な名前空間を追加する必要があります。  apiName の場合、規則では、他のテキスト文字列を区別しやすくするために、小文字または camelCase を使用します。 オプションの **pluralName** 属性は、displayName の複数形を指定します。  オプションの **description** 属性は、カスタムオブジェクトタイプを説明するために使用されます。  オプションの **showInLeadDetail** ブール値属性は、Marketo UI のリードデータベースページ内でカスタムオブジェクトデータを表示できるようにするために使用されます。  デフォルト設定は false です。
+カスタムオブジェクトタイプを作成または更新するには、[&#x200B; カスタムオブジェクトタイプを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) エンドポイントを使用します。
 
-カスタムオブジェクトに名前を付ける場合は注意してください。 新しいカスタムオブジェクトを作成する際は、名前の前に会社名を示す文字列（英数字またはアンダースコアが使用可能）を付けることをお勧めします。 これにより、カスタムオブジェクトを MLM UI で簡単に検索でき、名前が一意であることも確認できます。
+属性は次のとおりです。
 
-API 名「transaction」を使用して新しいカスタムオブジェクトタイプを作成する例を以下に示します。
+- **action**: レコード操作を制御するオプションの属性。 有効な値は&#x200B;**createOnly**、**createOrUpdate**、**updateOnly**&#x200B;です。 デフォルトはcreateOrUpdateです。
+- **displayName**&#x200B;および&#x200B;**apiName**: アクションがupdateOnlyでない限り必須です。 お客様がプロビジョニングしたタイプとの競合を避けるために、両方とも一意である必要があります。 LaunchPoint パートナーは、代表的な名前空間を先頭に追加する必要があります。 apiNameの場合、小文字またはcamelCaseを使用して、他のテキスト文字列と区別します。
+- **pluralName**: displayNameの複数形を指定するオプションの属性。
+- **description**: カスタムオブジェクトタイプを説明するオプションの属性。
+- **showInLeadDetail**: Marketo UIのリードデータベースページでカスタムオブジェクトデータを有効にする、オプションのBoolean属性。 デフォルトはfalseです。
+
+カスタムオブジェクト名は慎重に選択してください。 新しいカスタムオブジェクト名の前には、会社を識別する文字列を付けます。 接頭辞には、英数字またはアンダースコアを含めることができます。 この規則により、オブジェクトはMLM UIで見つけやすくなり、名前が一意であることを確認するのに役立ちます。
+
+次の例では、「transaction」というAPI名でカスタムオブジェクトタイプを作成します。
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -738,7 +779,7 @@ POST /rest/v1/customobjects/schema.json
 }
 ```
 
-新しく作成されたタイプを説明する後続の呼び出しを以下に示します。
+次のリクエストは、新しく作成されたタイプを説明します。
 
 ```http
 GET /rest/v1/customobjects/schema/transaction/describe.json
@@ -791,14 +832,16 @@ GET /rest/v1/customobjects/schema/transaction/describe.json
 }
 ```
 
-ここでは、次のカスタムオブジェクト関連データを確認できます。
+応答には次が含まれます。
 
-* メタデータ：state、displayName、description、apiName、idField、createdAt、updatedAt、dedupeFields、searchableFields、relationships
-* 標準フィールド：marketoGUID、createdAt、updatedAt
+- メタデータ：状態、displayName、説明、apiName、idField、createdAt、updatedAt、dedupeFields、searchableFields、relationships。
+- 標準フィールド：marketoGUID、createdAt、updatedAt
 
 #### タイプの更新
 
-API 名が「transaction」である既存のタイプの説明を更新する例を以下に示します。  **apiName** 属性は必須です。  ここでは、タイプが既に存在すると想定し、オプションの **action** 属性に updateOnly を使用します。  **apiName** とは別に、作成に使用できる属性は更新される場合があります。
+次の例では、API名が「transaction」の既存のタイプの説明を更新します。 **apiName** 属性は必須です。 タイプは既に存在するため、リクエストではオプションの&#x200B;**action**&#x200B;属性にupdateOnlyが使用されます。
+
+**apiName**&#x200B;以外にも、作成中に使用可能な属性を更新できます。
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -822,19 +865,25 @@ POST /rest/v1/customobjects/schema.json
 
 ## タイプの承認
 
-カスタムオブジェクトタイプは、使用する前に承認する必要があります。 [カスタムオブジェクトタイプを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectTypeUsingPOST)エンドポイントを使用して新しいカスタムオブジェクトタイプを作成すると、ドラフトバージョンとして作成されます。 カスタムフィールドの追加が完了したら、ドラフトバージョンを承認する必要があります。 これにより、承認済みバージョンが作成され、ドラフトバージョンが削除されます。 「カスタムオブジェクトタイプを同期」エンドポイントを使用するか、「カスタムオブジェクトタイプフィールドを追加／更新／削除」エンドポイントのいずれかを使用して既存のカスタムオブジェクトタイプを変更すると、ドラフトバージョンが作成されます。 タイプまたはそのフィールドに対するすべての変更は、ドラフトバージョンにのみ影響します。 変更が完了したら、ドラフトバージョンを承認する必要があります。 これにより、承認済みバージョンがドラフトバージョンに置き換えられ、ドラフトバージョンが削除されます。 カスタムオブジェクトの承認について詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/approve-a-custom-object)にある製品ドキュメントを参照してください。
+カスタムオブジェクトタイプを使用する前に承認します。 [Sync Custom Object Type](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectTypeUsingPOST) エンドポイントを使用して型を作成すると、Marketoは下書き版を作成します。 カスタムフィールドを追加したら、ドラフトを承認します。 承認により、承認済みバージョンが作成され、ドラフトが削除されます。
+
+カスタムオブジェクトタイプを同期またはカスタムオブジェクトタイプフィールドエンドポイントの追加/更新/削除を使用して既存のタイプを変更すると、Marketoはドラフトを作成します。 タイプまたはそのフィールドの変更は、ドラフトバージョンにのみ影響します。 変更を加えたら、ドラフトを承認します。 承認は、承認されたバージョンをドラフトに置き換え、ドラフトを削除します。
+
+詳しくは、[&#x200B; カスタムオブジェクトの承認に関するドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/approve-a-custom-object)を参照してください。
 
 カスタムオブジェクトタイプを承認すると、次の操作は実行できなくなります。
 
-* `displayName` または `apiName` を更新
-* リンクフィールドを追加または削除
-* 重複排除フィールドを追加または削除
+- `displayName`または`apiName`を更新します。
+- リンクフィールドを追加または削除します。
+- 重複排除フィールドの追加または削除。
 
-これらの理由から、使用する予定のスキーマと命名規則を慎重に検討することが重要です。
+タイプを承認する前に、スキーマと命名規則を慎重に計画してください。
 
 ### タイプの承認
 
-[カスタムオブジェクトタイプを承認](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/approveCustomObjectTypeUsingPOST)エンドポイントを使用して、ドラフトバージョンを新しい承認済みバージョンとして公開します。  **apiName** は、パスパラメーターとして唯一の必須パラメーターです。  タイプは、ドラフト状態で、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/approve-a-custom-object)で説明する一連の検証ルールを満たしていない限り、承認できません。
+[&#x200B; カスタムオブジェクトタイプを承認](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/approveCustomObjectTypeUsingPOST) エンドポイントを使用して、ドラフトを新しい承認済みバージョンとして公開します。 必須パラメーターは&#x200B;**apiName** パスパラメーターのみです。
+
+タイプは、ドラフト状態で、文書化された[検証ルール &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/approve-a-custom-object)を満たす場合にのみ承認できます。
 
 ```http
 POST /rest/v1/customobjects/schema/{apiName}/approve.json
@@ -850,7 +899,9 @@ POST /rest/v1/customobjects/schema/{apiName}/approve.json
 
 ### タイプの破棄
 
-[カスタムオブジェクトタイプのドラフトを破棄](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/discardCustomObjectTypeUsingPOST)エンドポイントを使用して、ドラフトバージョンを削除します。 `apiName` は、パスパラメーターとして唯一の必須パラメーターです。 タイプを破棄するには、ドラフト状態にする必要があります。つまり、承認されたタイプを破棄することはできません。
+[カスタムオブジェクトタイプのドラフトを破棄](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/discardCustomObjectTypeUsingPOST)エンドポイントを使用して、ドラフトバージョンを削除します。 必須パラメーターは`apiName` パス パラメーターのみです。
+
+ドラフト状態では、タイプのみを破棄できます。 承認済みタイプは破棄できません。
 
 ```http
 POST /rest/v1/customobjects/schema/{apiName}/discardDraft.json
@@ -866,7 +917,9 @@ POST /rest/v1/customobjects/schema/{apiName}/discardDraft.json
 
 ### タイプの削除
 
-[カスタムオブジェクトタイプを削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST)エンドポイントを使用して、承認済みバージョンを削除します。  `apiName` は、パスパラメーターとして必要な唯一のパラメーターです。  これは破壊的な操作であり、元に戻すことはできません。  タイプは、トリガーやフィルターなどのアセットから使用が解除されていない限り削除できません。  「カスタムオブジェクト依存アセットを取得」エンドポイントは、特定のタイプの依存アセットのリストを取得するために使用できます。
+[カスタムオブジェクトタイプを削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST)エンドポイントを使用して、承認済みバージョンを削除します。 必須パラメーターは`apiName` パス パラメーターのみです。
+
+この操作は破壊的であり、元に戻すことはできません。 タイプを削除する前に、トリガーやフィルターなどのアセットからタイプの使用を削除します。 カスタムオブジェクト依存Assets エンドポイントを取得を使用して、タイプの依存アセットを取得します。
 
 POST /rest/v1/customobjects/schema/{apiName}/delete.json
 
@@ -882,32 +935,45 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 
 デフォルトでは、すべてのカスタムオブジェクトタイプに次の標準フィールドが含まれます。
 
-* Marketo GUID - カスタムオブジェクトタイプの一意の ID
-* 作成日時 - カスタムオブジェクトタイプを作成した日時
-* 更新日時 - カスタムオブジェクトタイプを最後に更新した日時
+- Marketo GUID: カスタムオブジェクトタイプの一意のID。
+- 作成日時：カスタムオブジェクトタイプが作成された日時。
+- 更新日時：カスタムオブジェクトタイプが最後に更新された日時。
 
-以下に説明するエンドポイントを使用して、カスタムフィールドを自由に追加、変更、削除できます。
+カスタムフィールドを追加、変更、削除するには、次のエンドポイントを使用します。
 
-* 許可されるフィールドの最大数は 50 です
-* カスタムオブジェクトを承認した後、カスタムオブジェクトに最大 20 個の追加フィールドを追加できます
-* 1 つ以上の重複排除フィールドが必要です。最大 3 つまで許可されます。
-* フィールドの API 名と表示名には、英数字とアンダースコア「_」を含めることができます。
+- フィールドの最大数は50です。
+- カスタムオブジェクトを承認した後、最大20個のフィールドを追加できます。
+- 少なくとも1つの重複排除フィールドが必要です。 最大3つの重複排除フィールドが許可されます。
+- フィールド API名と表示名には、英数字とアンダースコア文字「_」を含めることができます。
 
-カスタムオブジェクトフィールドについて詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)にある製品ドキュメントを参照してください。
+詳しくは、[&#x200B; カスタムオブジェクトフィールドのドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)を参照してください。
 
 ### フィールドの追加
 
-[カスタムオブジェクトタイプフィールドを追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/addCustomObjectTypeFieldsUsingPOST)エンドポイントを使用すると、カスタムオブジェクトに 1 つ以上のフィールドを追加できます。  リクエスト本体には、1 つ以上の要素を含む `input` 配列が含まれます。  各要素は、フィールドを説明する属性を持つ JSON オブジェクトです。 必須の `name` 属性はフィールドの API 名で、カスタムオブジェクトに対して一意である必要があります。   規則では、他のテキスト文字列を区別しやすくするために、すべて小文字または camelCase を使用します。 必須の `displayName` 属性は、人間が読み取り可能なフィールドの名前で、カスタムオブジェクトに対して一意である必要があります。 必須の `dataType` 属性は、フィールドのデータタイプです。  許可されるデータタイプのリストは、[カスタムオブジェクトタイプフィールドデータタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET)エンドポイントを呼び出すことによって取得できます。  カスタムオブジェクトには、データタイプが &quot;link&quot; のフィールドを含めることができます。  リンクフィールドは、カスタムオブジェクトとシステム内の他のオブジェクトタイプ（リード、会社など）との関係を確立するために使用されます。  リンクフィールドについて詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)を参照してください。 オプションの `description` 属性は、フィールドの説明です。 オプションの `isDedupeField` ブール値属性は、カスタムオブジェクトの更新操作中にフィールドが重複排除に使用されるかどうかを指定します。  デフォルト設定は false です。  1 対多の関係の場合、重複排除フィールドは必須です。 オプションの `relatedTo` オブジェクト属性は、リンクフィールドを指定します。  1 対多の関係の場合、このオブジェクトには、リンク先の「リンクオブジェクト」または親オブジェクトである `name` 属性と、キー属性として使用する親オブジェクト内の「リンクフィールド」または `field` 属性が含まれます。  許可されるリンクオブジェクトのリストを取得するには、[カスタムオブジェクトリンク可能オブジェクトを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET)エンドポイントを呼び出します。  リンクフィールドについて詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)にある製品ドキュメントを参照してください。 カスタムオブジェクトは、既存のリンクフィールドを持つ別のカスタムオブジェクトにはリンクできません。
+カスタムオブジェクトに1つ以上のフィールドを追加するには、[&#x200B; カスタムオブジェクトタイプフィールドを追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/addCustomObjectTypeFieldsUsingPOST) エンドポイントを使用します。 リクエスト本体には、1 つ以上の要素を含む `input` 配列が含まれます。 各要素は、フィールドを説明する属性を持つ JSON オブジェクトです。
+
+フィールド属性は次のとおりです。
+
+- `name`：必須。 フィールドのAPI名。カスタムオブジェクトに固有である必要があります。 名前を他のテキスト文字列と区別するには、小文字またはキャメルケースを使用します。
+- `displayName`：必須。 人間が判読可能なフィールド名。カスタムオブジェクトに固有である必要があります。
+- `dataType`：必須。 フィールドのデータタイプ。 [&#x200B; カスタムオブジェクトタイプフィールドデータタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) エンドポイントを使用して、許可されたデータタイプを取得します。
+- `description`：オプション。 フィールドの説明。
+- `isDedupeField`: カスタムオブジェクトの更新操作中にフィールドを重複排除に使用するかどうかを指定するオプションのブール値です。 デフォルトはfalseです。 1対多の関係には重複排除フィールドが必要です。
+- `relatedTo`: リンクフィールドを指定するオプションのオブジェクト。 1対多の関係の場合、`name`は「リンクオブジェクト」または親オブジェクトを識別し、`field`は親オブジェクトの「リンクフィールド」またはキーフィールドを識別します。
+
+カスタムオブジェクトには、データタイプ「リンク」のフィールドを含めることができます。 リンクフィールドは、カスタムオブジェクトと、リードや会社などの他のオブジェクトタイプとの関係を確立します。 リンクフィールドについて詳しくは、[&#x200B; カスタムオブジェクトフィールドのドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)を参照してください。 許可されたリンクオブジェクトを取得するには、[&#x200B; カスタムオブジェクトのリンク可能オブジェクトを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) エンドポイントを使用します。
+
+カスタムオブジェクトは、既存のリンクフィールドを持つ別のカスタムオブジェクトにはリンクできません。 詳しくは、[&#x200B; リンクフィールドのドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)を参照してください。
 
 ### 1 対多の関係
 
-1 対多のカスタムオブジェクト構造の場合は、カスタムオブジェクトのリンクフィールドを使用して、標準オブジェクト（リードまたは会社）に接続します。 [こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)のMarketo 製品ドキュメントの自動車所有者の例を使用して、リードに接続する自動車関連情報を含むカスタムオブジェクトを作成します。
+1対多のカスタムオブジェクト構造の場合は、リンクフィールドを使用して、カスタムオブジェクトを標準のリードオブジェクトまたは会社オブジェクトに接続します。 次のワークフローでは、[自動車所有者の例](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)を使用して、自動車情報を保存し、リードに接続するカスタムオブジェクトを作成します。
 
-1. **Car** オブジェクトを作成します
-1. **Car** オブジェクトにフィールドを追加します。**VIN** で重複を削除し、**Lead**&#x200B;***/Lead ID** にリンクします
-1. **Car** オブジェクトを承認します
+1. **Car** オブジェクトを作成します。
+1. **Car** オブジェクトにフィールドを追加します：**VIN**&#x200B;に重複排除し、**リード**&#x200B;**/リード ID**&#x200B;にリンクします。
+1. **Car** オブジェクトを承認します。
 
-最初に、自動車固有の情報を含めるカスタムオブジェクトタイプを作成します。
+まず、自動車固有の情報を含むカスタムオブジェクトタイプを作成します。
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -932,7 +998,9 @@ POST /rest/v1/customobjects/schema.json
 }
 ```
 
-次に、Car カスタムオブジェクトタイプにフィールドを追加します。 リンクフィールドを使用して、接続するオブジェクトとフィールドの両方を指定します。 この場合、リンクオブジェクトはリードで、リンクフィールドは ID です。 重複排除（VIN）には文字列フィールドを使用します。  追加の自動車属性（メーカー、モデル、年式）を保存するために、さらに 3 つのフィールドを追加します。
+次に、Car カスタムオブジェクトタイプにフィールドを追加します。 リンクフィールドを使用して、接続するオブジェクトとフィールドの両方を指定します。 この例では、リンクオブジェクトはリードで、リンクフィールドはIDです。
+
+重複排除（VIN）には文字列フィールドを使用します。 さらに3つのフィールドを追加して、Make、Model、Year属性を保存します。
 
 ```http
 POST /rest/v1/customobjects/schema/car/addField.json
@@ -1002,16 +1070,20 @@ POST /rest/v1/customobjects/schema/course/approve.json
 
 ### 多対多の関係
 
-多対多の関係は、リードや会社などの標準カスタムオブジェクトと「エッジ」カスタムオブジェクトの間にある「ブリッジ」または中間カスタムオブジェクトを使用して表されます。 エッジオブジェクトは、説明的な属性（フィールド）を含むプライマリエンティティです。 ブリッジオブジェクトには、2 つのリンクフィールドを使用してオブジェクトの関係を解決するためのデータが含まれています。  1 つのリンクフィールドは、1 対多の関係設定と同様に、親の標準オブジェクトを指します。  もう一方のリンクフィールドは、リンクのないカスタムオブジェクトであるエッジオブジェクトを指します。  ブリッジオブジェクトには、説明的な属性（フィールド）も含まれる場合があります。 [こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)にある Marketo 製品ドキュメントの大学コース登録の例を使用して、コース関連情報を含むエッジカスタムオブジェクトと、コースとリードを接続するために使用される登録ブリッジオブジェクトを作成します。 手順は次の通りです。
+多対多の関係では、リードや会社などの標準オブジェクトと「エッジ」カスタムオブジェクトの間に「ブリッジ」カスタムオブジェクトを使用します。 エッジオブジェクトはプライマリエンティティであり、説明フィールドを含みます。
 
-1. **コース**&#x200B;エッジオブジェクトを作成します
-1. **コース**&#x200B;にフィールドを追加します。**コース ID** で重複排除します
-1. **コース**&#x200B;を承認します
-1. **登録**&#x200B;ブリッジオブジェクトを作成します
-1. **登録**&#x200B;にフィールドを追加します。**登録 ID**、**コース**&#x200B;**/コース ID** フィールドへのリンク、**リード**&#x200B;**/リード ID** へのリンクで重複削除します
-1. **登録**&#x200B;を承認します
+ブリッジオブジェクトは、2つのリンクフィールドとの関係を解決します。 1つのフィールドは、1対多の関係と同様に、親の標準オブジェクトを指します。 もう1つは、リンクのないカスタムオブジェクトであるエッジオブジェクトを指しています。 ブリッジオブジェクトには記述的なフィールドを含めることもできます。
 
-最初に、コース固有の情報を含めるエッジオブジェクトタイプを作成します。
+次のワークフローでは、[大学コース登録例](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)を使用しています。 コース エッジ オブジェクトと、コースとリードを接続する登録ブリッジ オブジェクトが作成されます。
+
+1. **コース** エッジ オブジェクトを作成します。
+1. **コース ID**&#x200B;で&#x200B;**コース：**&#x200B;の重複排除にフィールドを追加します。
+1. **コース**&#x200B;を承認します。
+1. **登録** ブリッジオブジェクトを作成します。
+1. **登録：**&#x200B;にフィールドを追加して、**登録ID**&#x200B;に重複排除し、**コース**&#x200B;**/コース ID** フィールドにリンクし、**&#x200B; リード &#x200B;**&#x200B;**/リード ID**&#x200B;にリンクします。
+1. **登録**&#x200B;を承認します。
+
+最初に、コース固有の情報を含むエッジオブジェクトタイプを作成します。
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -1036,7 +1108,7 @@ POST /rest/v1/customobjects/schema.json
 }
 ```
 
-次に、エッジオブジェクトタイプにカスタムフィールドを追加します。  この例では、大学のコースをモデル化するために、コース ID、コースインストラクター、コースの場所、コース名の 4 つのカスタムフィールドを追加します。  1 つ以上の重複排除フィールドが必須なので、コース ID を重複排除フィールドとして指定します。
+次に、大学コースをモデル化する4つのカスタムフィールド（コース ID、コースインストラクター、コースの場所、コース名）を追加します。 少なくとも1つの重複排除フィールドが必要なため、「コース ID」を「重複排除」フィールドとして指定します。
 
 ```http
 POST /rest/v1/customobjects/schema/course/addField.json
@@ -1078,7 +1150,7 @@ POST /rest/v1/customobjects/schema/course/addField.json
 }
 ```
 
-ここで、後でブリッジオブジェクトタイプにリンクする際に参照できるように、エッジオブジェクトタイプを承認する必要があります。  カスタムオブジェクトタイプは、リンクオブジェクトとして選択できるように承認する必要があります。
+エッジ オブジェクト タイプを承認して、ブリッジ オブジェクト タイプにリンクするときに参照できるようにします。 カスタムオブジェクトタイプは、リンクオブジェクトとして選択する前に承認する必要があります。
 
 ```http
 POST /rest/v1/customobjects/schema/course/approve.json
@@ -1092,7 +1164,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 }
 ```
 
-エッジオブジェクトが完成しました。  次に、登録固有の情報を含むブリッジオブジェクトタイプの作成に進みます。
+エッジオブジェクトが完了したら、登録固有の情報を含むブリッジオブジェクトタイプを作成します。
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -1117,7 +1189,9 @@ POST /rest/v1/customobjects/schema.json
 }
 ```
 
-ブリッジオブジェクトタイプにカスタムフィールドを追加するには、2 つのリンクフィールドを追加します。1 つはリードオブジェクトにリンクし、もう 1 つは先ほど作成したコースオブジェクトにリンクします。 リードオブジェクトにリンクするには、「リード ID」フィールドを使用します。 コースオブジェクトにリンクするには、「コース ID」フィールドを使用します。  次に、1 つ以上の重複排除フィールドが必要なので、重複排除フィールドとして登録 ID の一意の ID を追加します。 最後に、学生の成績を追跡するための「成績」フィールドを追加します。
+2つのリンクフィールドをブリッジオブジェクトタイプに追加します。1つはリードオブジェクトにリンクし、もう1つはコースオブジェクトにリンクします。 「リード ID」フィールドを使用してリードにリンクし、「コース ID」フィールドを使用してコースにリンクします。
+
+少なくとも1つの重複排除フィールドが必要なため、重複排除フィールドとして登録IDを追加します。 次に、「成績」フィールドを追加して、学生のパフォーマンスを追跡します。
 
 ```http
 POST /rest/v1/customobjects/schema/enrollment/addField.json
@@ -1185,11 +1259,18 @@ POST /rest/v1/customobjects/schema/enrollment/approve.json
 }
 ```
 
-[カスタムオブジェクトを同期](#create_and_update)または[カスタムオブジェクトの一括読み込み](https://experienceleague.adobe.com/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import.html?lang=ja)を使用して、カスタムオブジェクトレコードをプログラムで入力できます。 または、Marketo UI 機能の[カスタムオブジェクトデータを読み込み](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/import-custom-object-data)を使用することもできます。
+[&#x200B; カスタムオブジェクトの同期](#create_and_update)または[&#x200B; カスタムオブジェクトの一括読み込み](https://experienceleague.adobe.com/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import.html?lang=ja)を使用して、カスタムオブジェクトレコードをプログラムで入力します。 または、Marketo UIで[&#x200B; カスタムオブジェクトデータの読み込み](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/import-custom-object-data)を使用します。
 
 ## フィールドの更新
 
-[カスタムオブジェクトタイプフィールドを更新](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/updateCustomObjectTypeFieldUsingPOST)エンドポイントを使用すると、ドラフトのカスタムオブジェクトのフィールドを更新できます。  必須のパスパラメーター `apiName` は、カスタムオブジェクトタイプの API 名です。  必須のパスパラメーター `fieldAPIName` は、カスタムオブジェクトタイプフィールドの API 名です。  リクエスト本文には、更新するフィールド属性を指定するキーと値のペアを含む JSON オブジェクトが含まれます。
+ドラフトカスタムオブジェクトのフィールドを更新するには、[&#x200B; カスタムオブジェクトタイプフィールドを更新](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/updateCustomObjectTypeFieldUsingPOST) エンドポイントを使用します。
+
+必要なパスパラメーターは次のとおりです。
+
+- `apiName`: カスタムオブジェクトタイプのAPI名。
+- `fieldAPIName`: カスタムオブジェクトタイプフィールドのAPI名。
+
+リクエスト本文には、更新するフィールド属性を指定するキーと値のペアを持つJSON オブジェクトが含まれています。
 
 ```http
 POST /rest/v1/customobjects/schema/{apiName}/{fieldApiName}/updateField.json
@@ -1212,7 +1293,9 @@ POST /rest/v1/customobjects/schema/{apiName}/{fieldApiName}/updateField.json
 
 ## フィールドの削除
 
-[カスタムオブジェクトタイプフィールドを削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectTypeFieldsUsingPOST)エンドポイントを使用すると、カスタムオブジェクトから 1 つ以上のフィールドを削除できます。  必須のパスパラメーター `apiName` は、カスタムオブジェクトタイプの API 名です。  リクエスト本体には、1 つ以上の要素を含む `input` 配列を持つ JSON オブジェクトが含まれます。  各要素は、削除するフィールドの API 名を指定する `name` 属性を持つ JSON オブジェクトです。
+カスタムオブジェクトから1つ以上のフィールドを削除するには、[&#x200B; カスタムオブジェクトタイプフィールドを削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectTypeFieldsUsingPOST) エンドポイントを使用します。 必須の`apiName` パスパラメーターは、カスタムオブジェクトタイプのAPI名を指定します。
+
+リクエスト本文には、1つ以上の要素の`input`配列を持つJSON オブジェクトが含まれています。 各要素は、`name`属性で削除するフィールドのAPI名を指定するJSON オブジェクトです。
 
 ```http
 POST /rest/v1/customobjects/schema/{apiName}/deleteField.json
@@ -1242,7 +1325,7 @@ POST /rest/v1/customobjects/schema/{apiName}/deleteField.json
 
 ## フィールドデータタイプのリスト
 
-[カスタムオブジェクトタイプフィールドデータタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET)エンドポイントは、許可されるすべてのフィールドデータタイプのリストを返します。 これは、カスタムオブジェクトタイプをモデル化して、サポートされているカスタムフィールドデータタイプを識別する際に役立ちます。
+[&#x200B; カスタムオブジェクトタイプフィールドデータタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) エンドポイントは、許可されているすべてのフィールドデータタイプを返します。 このエンドポイントを使用して、カスタムオブジェクトタイプをモデル化する際に使用できるカスタムフィールドデータタイプを特定します。
 
 ```http
 GET /rest/v1/customobjects/schema/fieldDataTypes.json
@@ -1270,7 +1353,7 @@ GET /rest/v1/customobjects/schema/fieldDataTypes.json
 
 ## リンク可能なカスタムオブジェクトのリスト
 
-[カスタムオブジェクトリンク可能オブジェクトを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET)エンドポイントは、許可されているすべてのリンクオブジェクトとそのリンクフィールドのリストを返します。  リストには、標準オブジェクト（リード、会社）と、インスタンスで作成されたカスタムオブジェクトが含まれます。
+[&#x200B; カスタムオブジェクトの取得リンク可能オブジェクト &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) エンドポイントは、許可されているすべてのリンクオブジェクトとそのリンクフィールドを返します。 応答には、リードや会社などの標準オブジェクトと、インスタンスで作成されたカスタムオブジェクトが含まれます。
 
 ```http
 GET /rest/v1/customobjects/schema/linkableObjects.json
@@ -1460,7 +1543,7 @@ GET /rest/v1/customobjects/schema/linkableObjects.json
 
 ## カスタムオブジェクト依存アセットを取得
 
-[カスタムオブジェクト依存アセットを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeDependentAssetsUsingGET)エンドポイントは、インスタンス内の場所を含む、カスタムオブジェクトタイプの依存アセットのリストを返します。  これは、統合を削除し、カスタムオブジェクトタイプが使用されているすべての場所を識別する必要がある際に役立ちます。
+[&#x200B; カスタムオブジェクト依存Assetsを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeDependentAssetsUsingGET) エンドポイントは、カスタムオブジェクトタイプとそのインスタンス内の場所の依存アセットを返します。 統合を削除する際に、カスタムオブジェクトタイプが使用されているすべての場所を識別するために使用します。
 
 ```http
 GET /rest/v1/customobjects/schema/{apiName}/dependentAssets.json
@@ -1494,6 +1577,6 @@ GET /rest/v1/customobjects/schema/{apiName}/dependentAssets.json
 
 ## タイムアウト
 
-* 「カスタムオブジェクト」エンドポイントは、以下に記載されていない限り、30 秒でタイムアウトします
-   * カスタムオブジェクトの同期：120秒
-   * カスタムオブジェクトを削除：60 秒
+- 特に明記されていない限り、カスタムオブジェクトエンドポイントのタイムアウトは30秒です。
+- カスタムオブジェクトの同期のタイムアウトは120秒です。
+- カスタムオブジェクトの削除のタイムアウトは60秒です。

@@ -1,6 +1,6 @@
 ---
 title: リッチメディアレコメンデーション
-description: Marketoの予測コンテンツ RTP タグ、template1 template2 template3 div、GETを使用したリッチメディアのレコメンデーションの設定、カテゴリの設定を行うSET。
+description: Marketoの予測コンテンツ RTP タグ、template1 template2 template3のdiv、GETを使用した入力、SETを使用したリッチメディアのレコメンデーションを設定してカテゴリを設定します。
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
 TQID: https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI
@@ -10,58 +10,58 @@ feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 854
-ht-degree: 97%
+source-wordcount: 814
+ht-degree: 48%
 
 ---
 
 # リッチメディアレコメンデーション
 
-リッチメディアレコメンデーションテンプレートを表示するページで、次のタグと API 呼び出しを設定する必要があります。
+リッチメディアのレコメンデーションテンプレートを表示するには、必要なタグとAPI呼び出しをページに追加します。
 
-1. ページヘッダー内
-   1. RTP タグをインストール
-   1. GET 呼び出しをページに追加して、レコメンデーションに入力
-   1. SET 呼び出しを追加して、テンプレートを設定
-1. ページ本文内
-   1. テンプレートを表示する場所にテンプレートタグ（div クラス）を配置
+1. ページヘッダーで次の操作を行います。
+   1. RTP タグをインストールします。
+   1. レコメンデーションを入力するGET呼び出しを追加します。
+   1. テンプレートを設定するSET呼び出しを追加します。
+1. ページ本文：
+   1. テンプレートを表示する場所にテンプレートタグ（div クラス）を配置します。
 
-詳しくは、[こちら](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)を参照してください。
+詳しくは、[Web リッチメディアの予測コンテンツを有効にする](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)を参照してください。
 
 ## テンプレートタグ
 
 | 属性 | オプション／必須 | 説明 |
 | --- | --- | --- |
-| クラス | 必須 | この div HTML 要素が RTP レコメンデーション div であることを指定します。 |
-| data-rtp-template-id | 必須 | テンプレート ID。 これにより、レコメンデーションの配置が決定されます。 水平方向の配置には「template1」、垂直方向の配置には「template2」、タイトルと説明のみを含む垂直方向の配置には「template3」を使用します。 スクリプトは、template1、template2、template3 の `div.Permissible` 値に一致するテンプレートを挿入します。 |
+| クラス | 必須 | div HTML要素をRTP レコメンデーション divとして識別します。 |
+| data-rtp-template-id | 必須 | レコメンデーションの整合性を決定します。 水平方向の整列には「template1」、垂直方向の整列には「template2」、タイトルと説明のみを含む垂直方向の整列には「template3」を使用します。 スクリプトは、一致するテンプレートをこの`div`に挿入します。 使用可能な値：template1、template2、template3。 |
 
 ### 例
 
-レコメンデーションを水平方向の配置に表示するには、「template1」を使用します。
+「template1」を使用して、レコメンデーションを水平方向に表示します。
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
 ```
 
-レコメンデーションを垂直方向の配置に表示するには、「template2」を使用します。
+レコメンデーションを垂直方向に表示するには、「template2」を使用します。
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template2"></div>
 ```
 
-レコメンデーションをタイトルと説明のみで垂直方向の配置に表示するには、「template3」を使用します。
+「template3」を使用すると、タイトルと説明のみでレコメンデーションを垂直方向に表示できます。
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template3"></div>
 ```
 
-テンプレートの配置のスクリーンショットについて詳しくは、[こちら](#example_of_rich_media_recommendation_template_1)を参照してください。
+[&#x200B; テンプレートの整列の例](#example_of_rich_media_recommendation_template_1)を参照してください。
 
 ## レコメンデーションの入力
 
-この方法では、ページ上のすべてのリッチメディア `<divs>` にレコメンデーションが入力されます。
+このメソッドは、ページ上のすべてのリッチメディア `<divs>`にレコメンデーションを入力します。
 
 ### 使用方法
 
@@ -75,9 +75,9 @@ ht-degree: 97%
 
 ## テンプレート設定の変更
 
-このメソッドでは、テンプレートのデフォルト設定が変更されます。
+このメソッドは、デフォルトのテンプレート設定を変更します。
 
-メモ：このメソッドを使用する場合は、rtp(&#39;get&#39;,&#39;rcmd&#39;, &#39;richmedia&#39;); を呼び出す前に、これを呼び出す必要があります。
+rtp （&#39;get&#39;,&#39;rcmd&#39;, &#39;richmedia&#39;）を呼び出す前に、このメソッドを呼び出してください。
 
 ### 使用方法
 
@@ -93,7 +93,7 @@ ht-degree: 97%
 
 ### 例
 
-このコードスニペットは、テンプレートのタイトルテキストを変更します。
+次の使用例は、テンプレートのタイトル テキストを変更します。
 
 ```javascript
 rtp("set", "rcmd", "richmedia","template1",
@@ -103,7 +103,7 @@ rtp("set", "rcmd", "richmedia","template1",
 );
 ```
 
-このコードスニペットは、テンプレートに対して複数の設定を持つ設定カテゴリを示しています。
+次の使用例は、テンプレートのカテゴリと複数の設定プロパティを設定します。
 
 ```javascript
 rtp("set", "rcmd", "richmedia",
@@ -124,9 +124,11 @@ rtp("set", "rcmd", "richmedia",
 );
 ```
 
-メモ：「category」を使用して、予測コンテンツレコメンデーションの結果に表示されるコンテンツをフィルタリングします。 有効なすべてのコンテンツに予測コンテンツを適用するには、「category」を空のままにします。 リッチメディアテンプレートの出力に特定のコンテンツのみを推奨する場合は、「コンテンツを設定」ページでコンテンツのカテゴリを追加し、レコメンデーションテンプレートコード内でこのカテゴリを関連付けます。 Web サイトのセクション（製品やソリューション）に従って関連コンテンツを分類します。
+予測コンテンツレコメンデーションに表示されるコンテンツをフィルタリングするには、「カテゴリ」を使用します。 有効なすべてのコンテンツに予測コンテンツを使用するには、「カテゴリ」を空のままにします。
 
-このコードスニペットは、テンプレートに対して複数のテンプレート設定の指定を示しています。
+リッチメディアテンプレート内の特定のコンテンツのみをレコメンデーションするには、コンテンツの設定ページでコンテンツのカテゴリを追加します。 その後、そのカテゴリをレコメンデーションテンプレートコードに関連付けます。 たとえば、web サイトの製品セクションやソリューションセクションごとに、関連コンテンツを分類します。
+
+次の使用例は、テンプレートに複数の設定プロパティを設定します。
 
 ```javascript
 rtp("set", "rcmd", "richmedia",
@@ -156,11 +158,11 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;Push&quot; | ボタンのテキストを変更します。 テキストは、すべてのボタンで同じです。 |
 | カテゴリ | &quot;category&quot; : [&quot;one category&quot;] | このテンプレートがサポートするレコメンデーションカテゴリを変更します。 テンプレートには、この設定で指定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
 
-メモ：設定のサポートは、テンプレートごとに変更される場合があります。
+設定のサポートはテンプレートによって異なります。
 
 #### 基本的な例
 
-この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。 この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
+次の使用例は、1つのテンプレートに3つの推奨事項を表示します。 この例をHTML ページにコピーし、RTP タグをタグに置き換えます。
 
 ```html
 <!DOCTYPE>
@@ -192,7 +194,7 @@ rtp('get','rcmd', 'richmedia');
 
 #### 高度な例
 
-この例には、3 つのレコメンデーションを含む 1 つのテンプレートがあります。 テンプレートのタイトルは「RECOMMENDED CONTENT」、ボタンのテキストは「Read More」になります。 この例を HTML ページにコピーしてから、RTP タグを自分のタグに置き換えます。
+次の使用例は、1つのテンプレートに3つの推奨事項を表示します。 テンプレートタイトルは「おすすめコンテンツ」、ボタンテキストは「続きを読む」です。 この例をHTML ページにコピーし、RTP タグをタグに置き換えます。
 
 ```html
 <!DOCTYPE>
@@ -236,16 +238,24 @@ rtp('get','rcmd', 'richmedia');
 
 #### リッチメディアレコメンデーションテンプレート #1 の例
 
-**名前**：template1 **説明**：画像、タイトル、説明、コールトゥアクションボタンを含む水平コンテンツ。
+**名前**: template1
+
+**説明**：画像、タイトル、説明、call-to-action ボタンを含む横方向のコンテンツ。
 
 ![リッチメディアテンプレート](assets/rich-media-template1.png)
 
 #### リッチメディアレコメンデーションテンプレート #2 の例
 
-**名前**：template2 **説明**：画像、タイトル、説明、コールトゥアクションボタンを含む垂直コンテンツ。
+**名前**: template2
+
+**説明**：画像、タイトル、説明、call-to-action ボタンを含む縦方向のコンテンツ。
 
 ![リッチメディアテンプレート](assets/rich-media-template2.png)
 
 #### リッチメディアレコメンデーションテンプレート #3 の例
 
-**名前**：template3 **説明**：タイトルと説明のみを含む垂直コンテンツ。 ポインタを合わせると、ヘッダーのカラーが変わり、コンテンツ URL にハイパーリンクされます。 また、説明は、カラーの変更を使用しないコンテンツにもリンクします。 ![リッチメディアテンプレート](assets/rich-media-template3.png)
+**名前**: template3
+
+**説明**: タイトルと説明のみを含む垂直方向のコンテンツ。 マウスカーソルを合わせると、ヘッダーの色が変わり、コンテンツ URLへのリンクが表示されます。 また、説明は色を変更せずにコンテンツにリンクされます。
+
+![リッチメディアテンプレート](assets/rich-media-template3.png)

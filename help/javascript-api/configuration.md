@@ -13,16 +13,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 614
-ht-degree: 87%
+source-wordcount: 541
+ht-degree: 43%
 
 ---
 
 # 設定
 
-Munchkin は、動作をカスタマイズする様々な設定を受け入れることができます。 設定は、[Munchkin.init()](api-reference.md#munchkin_init) を呼び出す際に 2 番目のパラメーターとして渡される JavaScript オブジェクトのプロパティです。
+Munchkinでは、ビヘイビアーをカスタマイズする設定を受け付けています。 設定を[Munchkin.init （） &#x200B;](api-reference.md#munchkin_init)の2番目のパラメーターにJavaScript オブジェクトのプロパティとして渡します。
 
 ```json
 Munchkin.init("AAA-BBB-CCC", {
@@ -32,25 +32,25 @@ Munchkin.init("AAA-BBB-CCC", {
 );
 ```
 
-設定オブジェクトには、次の表に示す任意の数のプロパティを含めることができます。
+構成設定オブジェクトには、次の表の任意の数のプロパティを含めることができます。
 
 ## プロパティ
 
 | 名前 | データタイプ | 説明 |
 | --- | --- | --- |
-| altIds | 配列 | Munchkin ID 文字列の配列を受け入れます。 有効にすると、Munchkin ID に基づいて、すべての web アクティビティがターゲットのサブスクリプションに複製されます。 |
+| altIds | 配列 | Munchkin ID 文字列の配列を受け入れます。 これを有効にすると、すべてのweb アクティビティが、Munchkin IDで識別されたサブスクリプションに複製されます。 |
 | anonymizeIP | ブール値 | 新規訪問者の Marketo に記録された IP アドレスを匿名化します。 |
 | apiOnly | ブール値 | true に設定すると、`Munchkin.Init()` 関数は `visitsWebPage` を呼び出しません。 これは、すべての `visitsWebPage` イベントに対して完全に制御する必要がある単一ページの web アプリケーションに役立ちます。 |
-| asyncOnly | ブール値 | true に設定すると、XMLHttpRequest が非同期で送信されます。 デフォルトは false です。 |
-| clickTime | 整数 | クリックの追跡リクエストを許可するのに、クリック後にブロックする時間を設定します（ミリ秒単位）。 これを減らすと、クリックの追跡の精度が低下します。 デフォルトは 350 ミリ秒です。 |
-| cookieAnon | ブール値 | false に設定すると、新しい匿名リードのトラッキングと cookie の作成が防止されます。 リードには cookie があり、Marketo フォームに入力した後や、Marketo メールからクリックスルーすることで追跡されます。 デフォルトは true です。 |
+| asyncOnly | ブール値 | trueに設定すると、XMLHttpRequestsが非同期で送信されます。 デフォルトは false です。 |
+| clickTime | 整数 | クリック後にブロックする時間をミリ秒単位で設定し、クリックトラッキングリクエストを完了できるようにします。 この値を小さくすると、クリックトラッキングの精度が低下します。 デフォルトは 350 ミリ秒です。 |
+| cookieAnon | ブール値 | falseに設定すると、新しい匿名リードのトラッキングとCookieの作成が防止されます。 リードはCookieを受け取り、Marketoフォームを送信するか、Marketoのメールをクリックした後に追跡されます。 デフォルトは true です。 |
 | cookieLifeDays | 整数 | 新しく作成された Munchkin トラッキング cookie の有効期限を、この日数後に設定します。 デフォルトは 730 日（2 年）です。 |
 | customName | 文字列 | カスタムページ名。 システムのみで使用します。 |
-| <a name="domainlevel"></a>domainLevel | 整数 | cookieのdomain属性を設定する際にページのドメインから使用するパーツの数を設定します。例えば、現在のページドメインが「www.example.com」であるとします。domainLevel: 2は、cookie ドメイン属性を「.example.com」 domainLevel: 3に設定し、cookie ドメイン属性を「。www.example.com」 Background:Munchkinに設定すると、特定の2文字のトップレベルドメインが自動的に管理されます。 通常、上位レベルドメインが 3 文字の場合、これはデフォルトで 2 つの部分になります。 例えば、「www.example.com」の場合、右端の 2 つの部分「.example.com」が cookie の設定に使用されます。「.jp」、「.us」、「.cn」、「.uk」などの 2 文字の国コードの場合、コードはデフォルトで 3 つの部分になります。 例えば、「www.example.co.jp」は、右端の 3 つのドメイン部分「.example.co.jp」を使用します。ドメインパターンで異なる動作が必要な場合は、`domainLevel` パラメーターを使用してこれを指定する必要があります。 |
+| <a name="domainlevel"></a>domainLevel | 整数 | Cookieのdomain属性に使用するページドメインの部分の数を設定します。<br><br>www.example.comの場合、`domainLevel: 2`はcookie ドメインを&quot;.example.com&quot;に設定し、`domainLevel: 3`は&quot;.www.example.com&quot;に設定します。<br><br> デフォルトでは、最上位ドメインに3文字がある場合、Munchkinは2つの部分を使用します。 例えば、「www.example.com」は「.example.com」を使用します。<br><br>2文字の国コード（「.jp」、「.us」、「.cn」、「.uk」など）の場合、Munchkinは3つの部分を使用します。 例えば、「www.example.co.jp」は「.example.co.jp」を使用します。<br><br> ドメインパターンで異なる動作が必要な場合は、`domainLevel` パラメーターを使用します。 |
 | domainSelectorV2 | ブール値 | true に設定すると、cookie ドメイン属性を設定する方法を決定するために改善した方法が利用されます。 |
 | httpsOnly | ブール値 | デフォルトは false です。 true に設定すると、追跡したページが https 経由で提供された際に、セキュア設定を使用する cookie が設定されます。 |
-| useBeaconAPI | ブール値 | デフォルトは false です。 true に設定すると、[XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) の代わりに、[Beacon API](https://developer.mozilla.org/ja/docs/Web/API/Beacon_API) を使用して、ブロック以外のリクエストを送信します。 ブラウザーがこの API をサポートしていない場合、Munchkin は XMLHttpRequest の使用にフォールバックします。 |
-| wsInfo | 文字列 | ワークスペースをターゲットにする文字列を受け取ります。 このワークスペース ID は、管理／統合／Munchkin メニューでワークスペースを選択することで取得されます。 この設定は、匿名リードレコードの初期作成にのみ適用されます。 リードレコードに対して Munchkin cookie 値が確立されると、wsInfo パラメーターを使用してこのパーティションを変更できません。 この設定は、匿名リードにのみ影響するので、パーティション固有の [web レポートの匿名訪問者](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)にのみ関連します。 |
+| useBeaconAPI | ブール値 | デフォルトは false です。 true に設定すると、[XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest) の代わりに、[Beacon API](https://developer.mozilla.org/ja/docs/Web/API/Beacon_API) を使用して、ブロック以外のリクエストを送信します。 ブラウザーがBeacon APIをサポートしていない場合、MunchkinはXMLHttpRequestを使用します。 |
+| wsInfo | 文字列 | ワークスペースをターゲットにします。 管理者/統合/Munchkin メニューでワークスペースを選択して、ワークスペース IDを取得します。<br><br>この設定は、匿名のリード レコードが最初に作成された場合にのみ適用されます。 そのリードレコードに対してMunchkin cookie値を設定した後、wsInfo パラメーターはそのパーティションを変更できません。<br><br>この設定は匿名リードにのみ影響するため、Web レポートのパーティション固有の[匿名訪問者](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)にのみ関連します。 |
 
 ## 例
 
@@ -86,7 +86,7 @@ Munchkin.init("AAA-BBB-CCC", {
 
 ### 非同期へのトラッキングの設定
 
-この例では、メインスレッドから非同期的に送信する、すべての XMLHttpRequest を適用します。
+次の使用例は、すべてのXMLHttpRequestをメイン スレッドから非同期的に送信します。
 
 ```javascript
 <script type="text/javascript">

@@ -12,17 +12,17 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 264
-ht-degree: 42%
+source-wordcount: 260
+ht-degree: 43%
 
 ---
 
 
 # [!DNL Marketo Engage]個のMCP操作
 
-次の操作は、[!DNL Marketo Engage] MCP サーバーを通じて使用できます。 一般的に、読み取り専用または非破壊的なエンドポイントは使用できます。 `Delete`またはその他の破壊的な操作は、AI システムでは使用できません。
+次の操作は、[!DNL Marketo Engage] MCP サーバーを通じて使用できます。 通常、サーバーは読み取り専用または非破壊的なエンドポイントを提供します。 AI システムは`Delete`またはその他の破壊的な操作を使用できません。
 
 >[!NOTE]
 >

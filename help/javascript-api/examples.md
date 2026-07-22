@@ -10,20 +10,20 @@ feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 228
-ht-degree: 89%
+source-wordcount: 234
+ht-degree: 28%
 
 ---
 
 # 例
 
-実証的な Forms 2.0 web フォームのセットの例を以下に示します。
+これらの例では、Forms 2.0の一般的なweb フォームワークフローを示します。
 
 ## 送信成功後にフォームを非表示にする
 
-この例では、訪問者をフォローアップページに移動させたり、現在のページをリロードしたりしません。
+次の使用例は、送信が成功した後、訪問者を現在のページに残します。 フォローアップページを開いたり、現在のページを再読み込みしたりしません。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -39,7 +39,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## ユーザ定義 URL に訪問者を移動させる
 
-この例では、送信成功後に、設定されたサンキューページではなく、JavaScript によって決定された URL へと訪問者を誘導します。
+次の使用例は、送信に成功した後、JavaScriptで定義されたURLに訪問者を送信します。 JavaScriptのURLは、設定済みのサンキューページに置き換わります。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -66,7 +66,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## フォーム送信時にフォームフィールド値を読み取る
 
-この例では、フォーム送信時にフォームフィールドを読み取ります。
+次の使用例は、フォームの送信時にフォームフィールドの値を読み取ります。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -84,7 +84,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## フォームクリック以外のイベントでフォームを送信する
 
-この例では、フォームの一部ではない他の要素またはイベントのクリックイベントに基づいてフォームを送信します。
+次の使用例は、訪問者がフォーム以外の要素を選択したときに、フォームを送信します。
 
 ```javascript
 // Load the form normally
@@ -102,7 +102,7 @@ btn.onclick = function() {
 
 ## ユーザによるフォームの送信を防止する
 
-この例では、フォームの送信ボタンが機能する前に、クリックカウンターボタンを 3 回以上クリックする必要があります。
+この例では、訪問者はフォームの送信ボタンが機能する前に、クリックカウンターボタンを少なくとも3回選択する必要があります。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) {
@@ -144,7 +144,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 
 ## ライトボックスでフォームを表示する
 
-この例では、URL にパラメーター `lightboxForm=true` が含まれている場合に、ライトボックススタイルのダイアログにフォームを表示します。
+次の使用例は、URLに`lightboxForm=true` パラメーターが含まれている場合、ライトボックス形式のダイアログにフォームを表示します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) {
@@ -156,7 +156,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 
 ## カスタムエラーメッセージの表示
 
-この例では、カスタムビジネスロジックに基づいて送信時にカスタムエラーメッセージを表示します。
+この例では、送信時にカスタムビジネスロジックを適用し、値が必要な条件を満たさない場合にカスタムエラーメッセージを表示します。
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) {

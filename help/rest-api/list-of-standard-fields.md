@@ -11,18 +11,18 @@ feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 742
-ht-degree: 94%
+source-wordcount: 745
+ht-degree: 88%
 
 ---
 
 # 標準フィールド
 
-API 経由でアクセスできる Marketo で使用可能な標準フィールドのリストを以下に示します。
+次の表に、APIを通じて使用可能な標準Marketo フィールドを示します。 各フィールドのREST API名、SOAP API名、ラベル、説明が含まれます。
 
-REST [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi)エンドポイントを使用して、リードレコードで使用可能なすべてのサポートされているフィールド名のリストを取得できます。
+REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
 
 | REST API 名 | SOAP API 名 | わかりやすいラベル | 説明 |
 | --- | --- | --- | --- |

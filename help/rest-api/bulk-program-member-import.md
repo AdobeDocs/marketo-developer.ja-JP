@@ -12,10 +12,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 962
-ht-degree: 83%
+source-wordcount: 771
+ht-degree: 11%
 
 ---
 
@@ -23,34 +23,47 @@ ht-degree: 83%
 
 [一括プログラムメンバー読み込みエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)
 
-大量のプログラムメンバーレコードの場合は、[一括 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members) を使用してプログラムメンバーを非同期的に読み込めます。 これにより、区切り文字（コンマ、タブ、またはセミコロン）を含むフラットファイルを使用して、レコードのリストを Marketo に読み込めます。 ファイルの合計サイズが 10 MB 未満であれば、ファイルには任意の数のレコードを含めることができます。 レコード操作は、「挿入または更新」のみです。
+[bulk API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)を使用して、多数のプログラムメンバーレコードを非同期で読み込みます。 10 MB未満のコンマ、タブ、またはセミコロンで区切られたフラットファイルでレコードを指定します。
+
+プログラムメンバーの一括読み込みは、「挿入または更新」レコード操作のみをサポートします。
 
 ## 処理制限
 
-制限付きで、複数の一括読み込みリクエストを送信できます。 各リクエストは、ジョブとして FIFO キューに追加され、処理されます。 最大 2 つのジョブが同時に処理されます。 任意の時点でキューに入れることができるジョブの数は最大 10 個です（現在処理中の 2 個を含む）。 ジョブの最大数が 10 を超えると、「1016、読み込みが多すぎます」というエラーが返されます。
+各一括読み込みリクエストは、ジョブとしてFIFO （先入れ先出し）キューに追加されます。 次の制限が適用されます。
+
+- 最大2つのジョブを同時に処理できます。
+- 処理中の2つのジョブを含め、最大10個のジョブをキューに入れることができます。
+
+10 ジョブの最大値を超えると、APIは`1016, Too many imports` エラーを返します。
 
 ## ファイルの読み込み
 
-ファイルの最初の行は、各行の値をマッピングするフィールドとして対応する REST API 名をリストするヘッダーにする必要があります。 REST API 名は、[リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2)エンドポイントや[プログラムメンバーを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeProgramMemberUsingGET)エンドポイントを使用して取得できます。 レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
+ファイルの最初の行は、各行の値がマップされるREST API フィールド名をリストするヘッダーである必要があります。 これらの名前は、[&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2)および[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeProgramMemberUsingGET) エンドポイントを使用して取得します。
 
-一般的なファイルは、次の基本パターンに従います。
+レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
+
+一般的なファイルは、次のパターンに従います。
 
 ```text
 email,firstName,lastName
 test@example.com,John,Doe
 ```
 
-呼び出し自体は、`multipart/form-data` コンテンツタイプを使用して行われます。
-
-このリクエストタイプは実装が難しい場合があるので、既存のライブラリ実装を使用することを強くお勧めします。
+`multipart/form-data` コンテンツタイプを使用してリクエストを送信します。 既存のライブラリ実装を使用して、マルチパートリクエストを作成します。
 
 ## ジョブの作成
 
-[プログラムメンバーを読み込み](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST)エンドポイントでは、プログラムメンバーレコードを含むファイルを読み取り、指定したステータスでプログラムに追加します。 レコードには、リードフィールドとプログラムメンバーのカスタムフィールドの両方を含めることができます。 すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
+[&#x200B; プログラムメンバーの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST) エンドポイントは、ファイルからプログラムメンバーレコードを読み取り、指定されたステータスのプログラムに追加します。 レコードには、リードフィールドとカスタムプログラムメンバーフィールドを含めることができます。
+
+すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
 
 `programId` パスパラメーターは、メンバーを追加するプログラムを指定します。
 
-必須のクエリパラメーターは 3 つあります。 `format` パラメーターは読み込みファイルの形式（CSV、TSV または SSV）を指定し、`programMemberStatus` パラメーターはプログラムに追加されるメンバーのプログラムステータスを指定し、`file` パラメーターにはプログラムメンバーレコードを含む読み込みファイルの名前が含まれます。
+リクエストには、次の3つのクエリパラメーターが必要です。
+
+- `format`: インポート ファイル形式（`CSV`、`TSV`、または`SSV`）。
+- `programMemberStatus`：読み込まれたメンバーに割り当てられたプログラムのステータス。
+- `file`: プログラムメンバーレコードを含むファイルの名前。
 
 ```http
 POST /bulk/v1/program/{programId}/members/import.json?format=csv&programMemberStatus=On List
@@ -94,15 +107,17 @@ Lancel,Lannister,Lancel@Lannister.com,Lannister,House Lannister,0
 }
 ```
 
-呼び出しに対する応答では、結果配列のレコードの `batchId` と `status` フィールドが表示されます。 このエンドポイントは非同期なので、キュー済み、読み込み中、または失敗のステータスを返すことができます。 読み込みジョブのステータスを取得し、完了時に失敗や警告を取得するには、`batchId` を保持する必要があります。 `batchId` は 7 日間有効です。
+エンドポイントは非同期なので、応答には`batchId`と`status`のフィールドが含まれます。 ステータスは`Queued`、`Importing`、または`Failed`です。
 
-上記の例を使用すると、エンドポイントを呼び出す簡単な方法は、コマンドラインから cURL を使用することです。
+`batchId`を保持して、読み込みステータスを確認し、完了後にエラーまたは警告を取得します。 `batchId` は 7 日間有効です。
+
+次のコマンドライン cURL リクエストは、ジョブの例を送信します。
 
 ```bash
 curl -i -F format='csv' -F programMemberStatus='On List' -F file='@Lead-House-Lannister.csv' -F access_token='<Access Token>' <REST API Endpoint Base URL>/bulk/v1/program/{programId}/members/import.json
 ```
 
-読み込みファイル「Lead-House-Lannister.csv」には次の内容が含まれます。
+この例では、`Lead-House-Lannister.csv`読み込みファイルに次のデータが含まれています。
 
 ```text
 firstName,lastName,email,title,company,leadScore
@@ -118,7 +133,7 @@ Lancel,Lannister,Lancel@Lannister.com,Lannister,House Lannister,0
 
 ## ジョブステータスのポーリング
 
-読み込みジョブを作成したら、このステータスのクエリを実行する必要があります。 インポートジョブを 5～30 秒ごとにポーリングするのがベストプラクティスです。 これを行うには、`batchId` パスパラメーターを[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)エンドポイントに渡します。
+インポートジョブを作成したら、5～30秒ごとにポーリングします。 `batchId` パス パラメーターを[読み込みプログラム メンバーのステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) エンドポイントに渡します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/status.json
@@ -142,21 +157,21 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 }
 ```
 
-この応答は、完了した読み込みを示しています。 ステータスは、完了、キュー済み、読み込み中、失敗のいずれかです。
+この応答は、完了した読み込みを示しています。 ステータスは`Complete`、`Queued`、`Importing`、または`Failed`です。
 
-ジョブが完了したら、処理された行数、失敗した行数、警告のあった行数のリストが表示されます。 ステータスが失敗の場合、メッセージパラメーターによって失敗メッセージも返されることがあります。
+ジョブが完了すると、応答には、処理された行、失敗した行、および警告を伴って処理された行の数が一覧表示されます。 `message` パラメーターは、ステータスが`Failed`の場合にエラーのメッセージを提供することもできます。
 
 ## 失敗
 
-失敗は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsFailed` 属性によって示されます。 numOfRowsFailed がゼロより大きい場合、この値は発生した失敗の数を示します。
+[Get Import Program Member Status](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の`numOfRowsFailed`属性は、失敗した行の数を示します。 0より大きい値は、エラーが発生したことを意味します。
 
-Get Import Program Member Failures エンドポイントを使用して、`batchId` パスパラメーターを渡すことにより、失敗した行のレコードと原因を取得します。
+`batchId` パス パラメーターをGet Import Program Member Failures エンドポイントに渡して、失敗したレコードとその原因を取得します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/failures.json
 ```
 
-エンドポイントは、失敗した行を示すファイルと、レコードが失敗した理由を示すメッセージで応答します。 ファイルの形式は、ジョブ作成時に `format` パラメーターで指定されたものと同じです。 各レコードに、失敗の説明を含む追加フィールドが追加されます。
+エンドポイントは、失敗した各行を識別し、レコードが失敗した理由を説明するファイルを返します。 このファイルは、ジョブ作成時に`format` パラメーターで指定された形式を使用します。 各レコードの追加フィールドは、失敗を説明します。
 
 例えば、無効なリードスコアを含む次のファイルを読み込むとします。
 
@@ -165,7 +180,7 @@ firstName,lastName,email,title,company,leadScore
 Aerys,Targaryen,Aerys@Targaryen.com,Targaryen,House Targaryen,TEXT_VALUE_IN_INTEGER_FIELD
 ```
 
-ジョブのステータスを確認すると、`numOfRowsFailed` が 1 になっており、失敗が発生したことが示されています。
+ジョブのステータスは`numOfRowsFailed`を1として返し、エラーが発生したことを示します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/status.json
@@ -189,7 +204,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 }
 ```
 
-次に、失敗に関する追加の詳細を確認するのに、失敗ファイルを取得します。
+詳細については、障害ファイルを取得します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/failures.json
@@ -202,15 +217,15 @@ Aerys,Targaryen,Aerys@Targaryen.com,Targaryen,House Targaryen,TEXT_VALUE_IN_INTE
 
 ## 警告
 
-警告は、[プログラムメンバーを読み込みステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の `numOfRowsWithWarning` 属性によって示されます。 `numOfRowsWithWarning` がゼロより大きい場合、この値は発生した警告の数を示します。
+[読み込みプログラムメンバーのステータスを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET)応答の`numOfRowsWithWarning`属性は、警告が発生した行数を示します。 0より大きい値は、警告が発生したことを意味します。
 
-[プログラムメンバーを読み込み警告を取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET)エンドポイントを使用して、`batchId` パスパラメーターを渡すことで、警告した行のレコードと原因を取得します。
+`batchId` パス パラメーターを[読み込みプログラムメンバーの警告を取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET) エンドポイントに渡して、影響を受けるレコードとその原因を取得します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/warnings.json
 ```
 
-エンドポイントは、警告が発生した行を示すファイルと、レコードが警告を生成した理由を示すメッセージで応答します。 ファイルの形式は、ジョブ作成時に `format` パラメーターで指定されたものと同じです。 各レコードに、警告の説明を含む追加フィールドが追加されます。
+エンドポイントは、警告を含む各行を識別し、警告が発生した理由を説明するファイルを返します。 このファイルは、ジョブ作成時に`format` パラメーターで指定された形式を使用します。 各レコードの追加フィールドは、警告を表します。
 
 例えば、無効なメールアドレスを含む次のファイルを読み込むとします。
 
@@ -219,7 +234,7 @@ firstName,lastName,email,title,company,leadScore
 Aerys,Targaryen,INVALID_EMAIL,Targaryen,House Targaryen,0
 ```
 
-ジョブのステータスを確認すると、`numOfRowsWithWarning` が 1 になっており、警告が発生したことが示されています。
+ジョブのステータスは`numOfRowsWithWarning`を1として返し、警告が発生したことを示します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/status.json
@@ -243,7 +258,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 }
 ```
 
-次に、警告に関する追加の詳細を確認する警告ファイルを取得します。
+詳細については、警告ファイルを取得します。
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/warnings.json

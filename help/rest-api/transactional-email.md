@@ -11,50 +11,52 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1092
-ht-degree: 77%
+source-wordcount: 897
+ht-degree: 52%
 
 ---
 
 # トランザクションメール
 
-Marketo API の一般的なユースケースは、[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) API 呼び出しを通じて特定のレコードへのトランザクションメールの送信をトリガーすることです。 Marketo REST API を使用して必要な呼び出しを実行するには、Marketo にいくつかの設定要件があります。
+[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) APIを使用して、特定のMarketo レコードにトランザクションメールを送信します。 リクエストを行う前に、メールとトリガーキャンペーンを設定します。
 
-- .受信者は、Marketo 内にレコードを持っている必要があります。
-- Marketo インスタンスでトランザクションメールを作成して承認する必要があります。
-- メールを送信するように設定された、「キャンペーンをリクエスト、1. ソース：Web Service API」を含むアクティブなトリガーキャンペーンが存在する必要があります。
+- 受信者がMarketo レコードを持っていることを確認します。
+- Marketo インスタンスでトランザクションメールを作成して承認します。
+- 「Campaign is Requested, 1.」を使用するトリガーキャンペーンをアクティブ化します。 Source: Web Service API」を呼び出し、メールを送信します。
 
-最初に[メールを作成して承認します](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja)。 メールが実際にトランザクション用である場合は、運用に設定する必要がありますが、法的に運用として選定されていることを確認します。 これは、編集画面のメールアクション／メール設定から設定します。
+最初に、[電子メールを作成して承認](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ja)します。 電子メールが正式に運用可能と認定された場合は、電子メールアクション/電子メール設定で運用可能として設定します。
 
 ![リクエスト-キャンペーンのメール-設定](assets/request-campaign-email-settings.png)
 
 ![リクエスト-キャンペーン-運用](assets/request-campaign-operational.png)
 
-承認してください。キャンペーンを作成する準備が整いました：
+キャンペーンを作成する前にメールを承認します。
 
 ![リクエストキャンペーン-承認-ドラフト](assets/request-campaign-approve-draft.png)
 
-キャンペーンの作成に慣れていない場合は、[新しいスマートキャンペーンの作成](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ja)の記事をご覧ください。 キャンペーンを作成したら、次の手順に従う必要があります。 「キャンペーンをリクエスト」トリガーでスマートリストを設定します。
+必要に応じて、[新しいスマートキャンペーンの作成](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ja)を参照してください。 キャンペーンのスマートリストを「キャンペーンはリクエスト済み」トリガーで設定します。
 
 ![リクエスト-キャンペーン-スマート-リスト](assets/request-campaign-smart-list.png)
 
-次に、「メールを送信」ステップを、アドビのメール宛に指定するようフローを設定する必要があります。
+トランザクションメールを参照するメール送信フローステップを設定します。
 
 ![リクエスト-キャンペーン-フロー](assets/request-campaign-flow.png)
 
-アクティブ化の前に、「スケジュール」タブでいくつかの設定を決定する必要があります。 この特定のメールを特定のレコードに 1 回だけ送信する場合は、選定の設定はそのままにしておきます。 ただし、複数回メールを受信する必要がある場合は、毎回または使用可能な頻度のいずれかに調整する必要があります。
+アクティベーションの前に、「スケジュール」タブで資格設定を設定します。 各レコードが1回だけ電子メールを受信する必要がある場合は、デフォルト設定を維持します。 そうでない場合は、受信者が毎回または利用可能な頻度でクオリフィケーションを行えるようにします。
 
-次に、アクティベートする準備が整います。
+キャンペーンをアクティブ化します。
 
 ![リクエスト-キャンペーン-スケジュール](assets/request-campaign-schedule.png)
 
 ## API 呼び出しの送信
 
-**メモ：**&#x200B;以下の Java の例では、コード内の JSON 表現を処理するために [minimal-json パッケージ](https://github.com/ralfstx/minimal-json)を使用しています。
+Javaの例では、[minimal-json パッケージ &#x200B;](https://github.com/ralfstx/minimal-json)を使用してJSON表現を処理します。
 
-API を通じてトランザクションメールを送信する最初の部分は、対応するメールアドレスのレコードが Marketo インスタンスに存在し、このリード ID へのアクセス権があることを確認するものです。 この投稿では、メールアドレスが既に Marketo に存在するものと想定し、レコードの ID を取得するだけで済みます。 このため、[フィルタータイプでリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)呼び出しを使用しています。 キャンペーンをリクエストするための main メソッドを見てみましょう。
+メールを送信する前に、メールアドレスにMarketo レコードが存在することを確認し、そのリード IDを取得します。 この例では、メールアドレスが既に存在することを前提としています。
+
+フィルターの種類[&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)で リードを取得を使用して、IDを取得します。 次のメインメソッドは、キャンペーンをリクエストします。
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -88,14 +90,14 @@ public class App
 }
 ```
 
-leadsRequest の JsonObject 応答からこれらの結果を取得するには、いくつかのコードを記述する必要があります。 配列の最初の結果を取得するには、JsonObject から配列を抽出し、インデックス 0 のオブジェクトを取得する必要があります。
+`JsonObject`応答から結果配列を抽出し、インデックス 0のオブジェクトを取得します。
 
 ```java
 JsonArray leadsResult = leadsRequest.getData().get("result").asArray();
 int leadId = leadsResult.get(0).asObject().get("id").asInt();
 ```
 
-ここからは、リクエストキャンペーンの呼び出しだけを行うだけです。 これには、リクエストの URL 内の ID と、1つのメンバー &quot;id&quot; を含む JSON オブジェクトの配列が必要です。 このコードを見てみましょう。
+リクエスト URLにキャンペーン IDを含むコールリクエストキャンペーン。 リクエスト本文には、`id` メンバーを持つJSON オブジェクトの配列が含まれています。
 
 ```java
 package dev.marketo.blog_request_campaign;

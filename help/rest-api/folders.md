@@ -13,10 +13,10 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1099
-ht-degree: 80%
+source-wordcount: 806
+ht-degree: 3%
 
 ---
 
@@ -24,11 +24,13 @@ ht-degree: 80%
 
 [フォルダーエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders)
 
-フォルダーは、Marketo のコア組織のアセットです。他のすべてのタイプのアセットには親として 1 つ以上のフォルダーがあります。 この親フォルダーは、純粋に組織的なフォルダーや、他のアセットタイプと機能的な関係があり、他のアセットの親になることもできるプログラムのいずれかになる場合があります。 フォルダーは、API を通じて作成、クエリ、更新、削除を実行でき、またフォルダーのコンテンツのリストを取得することもできます。 プログラムは、Folders API に対するクエリを通じて返すことができますが、プログラムの作成、更新、削除は、Programs API を通じて実行する必要があります。
+フォルダーは、Marketoの主要な組織アセットです。 他のすべてのアセットタイプには、フォルダーまたはプログラムのいずれかの親が少なくとも1つあります。 フォルダーは純粋な組織ですが、プログラムは他のアセットタイプと機能的な関係を持ち、アセットを含めることもできます。
+
+フォルダーAPIを使用して、フォルダーを作成、クエリ、更新、削除したり、フォルダーの内容を取得したりします。 フォルダークエリはプログラムを返すことができますが、プログラム APIを使用してプログラムを作成、更新、または削除する必要があります。
 
 ## クエリ
 
-フォルダーのクエリは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET)および[参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)のアセットに対する標準のクエリタイプに従います。
+フォルダーは、標準のアセットクエリパターンをサポートしています：[ID別](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET)、および[閲覧別](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)。
 
 ### ID 別
 
@@ -69,7 +71,11 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 }
 ```
 
-type パラメーターは必須で、「フォルダー」または「プログラム」のいずれかである必要があります。  タイプは、フォルダーへの検索がフォルダーIDとプログラム IDのどちらに対して実行されるかを示します。 このエンドポイントの場合、結果の配列には 1 つのレコードのみが返されます。 応答に`folderType` パラメーターをメモします。 このパラメーターは、様々なタイプのフォルダーを示すことができます。 Marketo アクティビティフォルダーには、マーケティングフォルダーまたはプログラムのいずれかのタイプがあり、様々なタイプのアセットを含めることができます。一方、デザインスタジオフォルダーには、保持できるアセットタイプに対応するタイプがあります。 例えば、「電子メール」の`folderType`を持つフォルダーには、電子メールのみ、または電子メールまたは電子メールテンプレートの`folderType`を持つ他のサブフォルダーのみを含めることができます。 タイプには、以下を含めることができます。
+`type` パラメーターは必須で、`Folder`または`Program`である必要があります。 エンドポイントがフォルダーIDとプログラム IDのどちらを検索するかを決定します。 エンドポイントは、結果配列内の1つのレコードを返します。
+
+応答`folderType`は、フォルダーに含めることができる内容を識別します。 マーケティングアクティビティフォルダーには、マーケティングフォルダーまたはプログラムのタイプがあり、複数のアセットタイプを含めることができます。 Design Studio フォルダーには、含めることができるアセットに対応するタイプがあります。 例えば、メールフォルダーには、メールテンプレートのフォルダータイプを持つメールとサブフォルダーを含めることができます。
+
+フォルダーの種類は次のとおりです。
 
 - メール
 - メールテンプレート
@@ -80,7 +86,13 @@ type パラメーターは必須で、「フォルダー」または「プログ
 
 ### 名前別
 
-[名前別クエリ](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET)も許可されます。 名前別クエリエンドポイントでは、name が唯一の必須パラメーターです。 name は、インスタンス内のフォルダーの名前フィールドに対して正確な文字列一致を実行し、その名前に一致する各フォルダーの結果を返します。 また、オプションのクエリパラメーターとして、「フォルダー」または「プログラム」にすることができる「type」、検索するフォルダーの ID である「root」、または検索するワークスペースの名前である「workspace」があります。 root パラメーターが設定されている場合は、type パラメーターも設定する必要があります。
+名前による[&#x200B; クエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) エンドポイントには`name`が必要です。このエンドポイントは、フォルダー名と完全に一致し、一致するすべてのフォルダーを返します。
+
+エンドポイントは、次のオプションのパラメーターも受け入れます。
+
+- `type`: フォルダータイプ （`Folder`または`Program`）。
+- `root`：検索するフォルダーのID。 `root`を設定する場合は、`type`も設定する必要があります。
+- `workspace`：検索するワークスペースの名前。
 
 ```http
 GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
@@ -119,21 +131,21 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 }
 ```
 
-名前別で検索する場合、マーケティングアクティビティとデザインスタジオはどちらも独自のルートフォルダーなので、名前別で取得して、宛先インスタンスの残りのフォルダー階層をトラバースするために使用できます。
+マーケティングアクティビティとDesign Studioはルートフォルダーです。 いずれかのルートを名前で取得し、そのルートを使用して宛先インスタンスのフォルダー階層をトラバースします。
 
 ### 参照
 
-フォルダーは、[一括で取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)することもできます。 「root」パラメーターは、クエリが実行される親フォルダーを指定するために使用でき、クエリパラメーターの値として埋め込まれた JSON オブジェクトとして書式設定されます。 ルートには次の 2 つのメンバーがあります。
+また、[&#x200B; フォルダーを一括で取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)することもできます。 クエリする親フォルダーを指定するには、`root` パラメーターを使用します。 2つのメンバーを持つ埋め込みJSON オブジェクトとして`root`を渡します。
 
-1. id - フォルダーまたはプログラムの ID。
-1. type - ブラウザーのルートフォルダーのタイプに応じて、フォルダーまたはプログラムのいずれか。
+1. `id`: フォルダーまたはプログラムのID。
+1. `type`: ルートフォルダーのタイプに応じて、`Folder`または`Program`のいずれかです。
 
-ルートフォルダーが不明な場合や、特定の領域内のすべてのフォルダーを取得することが目的である場合は、ルートを「マーケティングアクティビティ」、「デザインスタジオ」、または「リードデータベース」領域として指定できます。 それぞれの ID は、[Get Folder By Name](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) API を使用して、目的の領域の名前を指定して取得できます。
+ルートフォルダーがわからない場合、またはエリア内のすべてのフォルダーを取得する場合は、Marketing Activities、Design Studio、またはLead Database ルートを使用します。 エリア名を[名前でフォルダーを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) APIに渡して、ルート IDを取得します。
 
-他のアセットの一括取得エンドポイントと同様に、 offset と maxReturn はページングのオプションパラメーターです。   他のオプションのパラメーターは次のとおりです。
+他の一括アセット取得エンドポイントと同様に、ページネーションにはオプションの`offset`および`maxReturn` パラメーターを使用します。 他のオプションのパラメーターは次のとおりです。
 
-- workSpace - フィルタリング先のワークスペースの名前。
-- maxDepth - フォルダー階層内をトラバースするレベルの最大数。 0 に設定すると、ルートで指定したフォルダーのみが返されます。 指定しない場合、デフォルト値は 2 です。
+- `workSpace`：フィルタリングするワークスペースの名前。
+- `maxDepth`: フォルダー階層内でトラバースするレベルの最大数。 値0は、`root`で指定されたフォルダーのみを返します。 デフォルトは2です。
 
 ```http
 GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
@@ -215,13 +227,21 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 応答構造
 
-フォルダー応答構造の多くは自明ですが、いくつかのフィールドは個別に注目する価値があります。 `folderId` フィールドと parent フィールドは、フォルダー自体の明示的な ID とタイプを含む JSON オブジェクトです。 このタイプは、フォルダーのフォルダータイプとプログラムタイプ間の適切な区別を確保するために、API によってクエリ、ルート、親パラメーターで使用されるタイプです。 `folderType`は、「マーケティングフォルダー」、「プログラム」、「電子メール」、「メールテンプレート」、「ランディングページテンプレート」、「スニペット」、「画像」、「ゾーン」、または「ファイル」のいずれかであるフォルダーの使用状況を反映しています。  マーケティングフォルダーとプログラムのタイプは、それらがマーケティングアクティビティに存在し、複数のタイプのアセットを含めることができることを示します。 他のタイプは、該当する場合はそのタイプのアセット、サブフォルダーおよびこのタイプのテンプレートバージョンのみを含めることができることを示します。 「ゾーン」タイプは、マーケティングアクティビティにあるルートレベルのフォルダーを表します。
+`folderId`および`parent` フィールドは、フォルダーIDとタイプを含むJSON オブジェクトです。 APIは、このタイプをクエリ、`root`、および`parent` パラメーターで使用して、フォルダーとプログラムフォルダーのタイプを区別します。
 
-フォルダーのパスは、Unix スタイルのパスと同様に、フォルダーツリー内の階層を表示します。 パスの最初のエントリは、常にマーケティングアクティビティまたはデザインスタジオになります。 ターゲットインスタンスにワークスペースがある場合、パスの 2 番目のエントリは所有ワークスペースの名前になります。 `url` フィールドには、指定したインスタンス内のアセットの明示的な URL が表示されます。 これはユニバーサルリンクではないので、正しく機能するにはユーザとして認証される必要があります。 `isSystem` は、フォルダーがシステムフォルダーであるかどうかを示します。 これを true に設定すると、フォルダー自体は読み取り専用になりますが、その子としてフォルダーを作成できます。
+`folderType` フィールドは、フォルダーの使用方法を説明します。 その値は、マーケティングフォルダー、プログラム、電子メール、メールテンプレート、ランディングページ、ランディングページテンプレート、スニペット、画像、ゾーン、ファイルのいずれかです。 マーケティングフォルダーとプログラムはマーケティングアクティビティに存在し、複数のアセットタイプを含めることができます。 その他のフォルダータイプには、対応するアセットタイプ、サブフォルダー、および該当する場合はそのアセットタイプのテンプレートバージョンのみが含まれます。 ゾーンは、マーケティングアクティビティのルートレベルのフォルダーを表します。
+
+フォルダー`path`は、その階層をUnix スタイルのパスとして表示します。 最初のエントリは、常に「マーケティング活動」または「デザインスタジオ」です。 インスタンスにワークスペースがある場合、2番目のエントリは所有ワークスペース名です。
+
+`url` フィールドには、指定されたインスタンスのアセット URLが含まれています。 ユニバーサルリンクではなく、ユーザー認証が必要です。 `isSystem` フィールドは、フォルダーが読み取り専用のシステムフォルダーであるかどうかを示します。 システムフォルダーの下に子フォルダーを作成できます。
 
 ## 作成と更新
 
-[フォルダーの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST)は簡単で、application/x-www-form-urlencoded POST で実行されます。この POST には、文字列の「name」とフォルダーを作成する親の「parent」という 2 つの必須パラメーターがあります。parent idは、id と type の 2 つのメンバーを持つ埋め込み JSON オブジェクトです。type は、対象フォルダのタイプに応じて Folder または Program のいずれかになります。 オプションで、「description」という文字列も含めることができ、最大 2000 文字まで指定できます。
+フォルダー[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST)を作成するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
+
+- `name`: フォルダー名を含む必要な文字列。
+- `parent`: `id`と`type`を含む必須の埋め込みJSON オブジェクト。 親に応じて、タイプは`Folder`または`Program`です。
+- `description`：最大2000文字のオプション文字列。
 
 ```http
 POST /rest/asset/v1/folders.json
@@ -268,7 +288,9 @@ parent={"id":416,"type":"Folder"}&name=Test 10 - deverly&description=This is a t
 }
 ```
 
-フォルダーの更新は別のエンドポイントを通じて行われ、description、name および `isArchive` は更新用のオプションパラメーターです。 `isArchive` が更新によって変更された場合、Marketo UI でフォルダーがアーカイブされる（true に変更された場合）か、アーカイブ解除される（false に変更された場合）ことになります。 この API ではプログラムを更新できません。
+更新エンドポイントを使用して、オプションの`description`、`name`または`isArchive` パラメーターを変更します。 `isArchive`を`true`に設定すると、Marketo UIにフォルダーがアーカイブされます。 `false`に設定すると、フォルダーがアーカイブから削除されます。
+
+このAPIを使用してプログラムを更新することはできません。
 
 ```http
 POST /rest/asset/v1/folder/{id}.json
@@ -317,7 +339,7 @@ type=Folder&description=This is a test (update 01)
 
 ### 削除
 
-フォルダーが空の場合、つまりアセットやサブフォルダーが含まれていない場合、単一のフォルダーに対して削除を行うことができます。 フォルダーのタイプがプログラムの場合や、isSystem フィールドが true に設定されている場合、この API ではフォルダーを削除できません。
+1つのフォルダーを削除できるのは、アセットまたはサブフォルダーが含まれていない場合のみです。 このAPIを使用して、`isSystem` フィールドが`true`のプログラムまたはフォルダーを削除することはできません。
 
 ```http
 POST /rest/asset/v1/folder/{id}/delete.json

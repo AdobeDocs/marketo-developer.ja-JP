@@ -10,16 +10,18 @@ feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1352
-ht-degree: 95%
+source-wordcount: 1337
+ht-degree: 93%
 
 ---
 
 # Forms API リファレンス
 
-Forms 2.0 API を使用して操作する主なオブジェクトは 2 つあります。 `MktoForms2` オブジェクトと `Form` オブジェクトです。 `MktoForms2` オブジェクトは、Forms2 機能の上位レベルの公開名前空間であり、Form オブジェクトを作成、読み込み、取得するための関数が含まれています。
+Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトがあります。
+
+`MktoForms2`は、Forms2機能のトップレベルのパブリック名前空間です。 `Form` オブジェクトを作成、読み込み、取得する関数が含まれています。
 
 ## MktoForms2 メソッド
 

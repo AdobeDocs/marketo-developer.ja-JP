@@ -8,28 +8,30 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 666
-ht-degree: 78%
+source-wordcount: 528
+ht-degree: 10%
 
 ---
 
 # 認証
 
-MarketoのREST APIは、2 レッグ OAuth 2.0で認証されます。 クライアント IDとクライアントシークレットは、定義したカスタムサービスによって提供されます。 各カスタムサービスは、サービスが特定のアクションを実行することを許可するロールと権限のセットを持つ API 専用ユーザによって所有されます。 アクセストークンは、単一のカスタムサービスに関連付けられます。 アクセストークンの有効期限は、インスタンス内に存在する場合がある他のカスタムサービスに関連付けられたトークンとは独立しています。
+Marketo REST APIでは、認証に2 レッグ OAuth 2.0を使用します。 カスタムサービスは、アクセストークンの取得に使用するクライアント IDとクライアントシークレットを提供します。
+
+各カスタムサービスは、APIのみのユーザーに属します。 ユーザーの役割と権限により、特定のアクションを実行するサービスが許可されます。 アクセストークンは1つのカスタムサービスに属し、その有効期限はインスタンス内の他のカスタムサービスのトークンから独立しています。
 
 ## アクセストークンの生成
 
-`Client ID` と `Client Secret` は、カスタムサービスを選択し、「**[!UICONTROL 詳細を表示]**」をクリックすると、**[!UICONTROL 管理]**／**[!UICONTROL 統合]**／**[!UICONTROL Launchpoint]** メニューに表示されます。
+`Client ID`と`Client Secret`を見つけるには、**[!UICONTROL 管理者]** > **[!UICONTROL 統合]** > **[!UICONTROL LaunchPoint]**&#x200B;に移動します。 カスタムサービスを選択し、**[!UICONTROL 詳細を表示]**&#x200B;を選択します。
 
 ![REST サービスの詳細を取得](assets/authentication-service-view-details.png)
 
 ![Launchpoint 資格情報](assets/admin-launchpoint-credentials.png)
 
-`Identity URL` は、**[!UICONTROL 管理]**／**[!UICONTROL 統合]**／**[!UICONTROL Web サービス]**&#x200B;メニューの「REST API」セクションに表示されます。
+`Identity URL`を見つけるには、**[!UICONTROL 管理者]** > **[!UICONTROL 統合]** > **[!UICONTROL Web サービス]**&#x200B;に移動します。 URLはREST API セクションに表示されます。
 
-次のように、HTTP GET（または POST）リクエストを使用してアクセストークンを作成します。
+HTTP GETまたはPOST リクエストを使用してアクセストークンを作成します。
 
 ```http
 GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client Id>&client_secret=<Client Secret>
@@ -46,33 +48,32 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 }
 ```
 
-応答の定義
+応答には、次のフィールドが含まれます。
 
-- `access_token` - ターゲットインスタンスで認証するのに後続の呼び出しで渡すトークン。
-- `token_type` - OAuth 認証方法。
-- `expires_in` - 秒単位での現在のトークンの残り有効期間（これを超えると無効になります）。 アクセストークンを最初に作成した際の有効期間は 3600 秒または 1 時間です。
-- `scope` - 認証に使用されたカスタムサービスの所有ユーザ。
+- `access_token`: ターゲットインスタンスで認証するために後続の呼び出しで渡すトークン。
+- `token_type`: OAuth認証方法。
+- `expires_in`：現在のトークンの残りの有効期間（秒単位）。 新しいアクセストークンの有効期間は3,600秒、つまり1時間です。
+- `scope`：認証に使用するカスタムサービスを所有するユーザー。
 
 ## アクセストークンの使用
 
-REST API メソッドを呼び出す場合、呼び出しが成功するには、すべての呼び出しにアクセストークンを含める必要があります。
-アクセストークンは、HTTP ヘッダーとして送信する必要があります。
+すべてのREST API呼び出しには、HTTP ヘッダーにアクセストークンを含める必要があります。
 
 >[!IMPORTANT]
 >
->`access_token` クエリパラメーターを使用した認証のサポートは、2026年7月31日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く[認証ヘッダー](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)を使用するように更新する必要があります。 新しい開発では、`Authorization` ヘッダーのみを使用する必要があります。
+>`access_token` クエリパラメーターを使用した認証のサポートは、2026年8月31日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く[認証ヘッダー](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)を使用するように更新する必要があります。 新しい開発では、`Authorization` ヘッダーのみを使用する必要があります。
 
 ### 認証ヘッダーへの切り替え
 
-`access_token` クエリパラメーターの使用から認証ヘッダーに切り替えるには、小さなコード変更が必要です。
+`access_token` クエリパラメーターを認証ヘッダーに置き換えるには、リクエストがトークンを送信する方法を更新します。
 
-CURLを例として使用すると、このコードは`access_token`値をフォームパラメーター（ – F フラグ）として送信します。
+次のcURLの例では、`access_token`値を`-F` フラグ付きのフォームパラメーターとして送信します。
 
 ```bash
 curl ...  -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/apiCall.json
 ```
 
-このコードは、`Authorization: Bearer` http ヘッダー（ – H フラグ）と同じ値を送信します。
+次の例では、`-H` フラグを使用して、`Authorization: Bearer` HTTP ヘッダーに同じ値を送信します。
 
 ```bash
 curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/bulk/v1/apiCall.json
@@ -80,12 +81,19 @@ curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/
 
 ## ヒントとベストプラクティス
 
-アクセストークンの有効期限を管理することは、統合がスムーズに機能し、通常の操作中に予期しない認証エラーが発生するのを防ぐために重要です。 統合の認証を設計する際は、ID 応答に含まれるトークンと有効期限を保存します。
+ID応答からのアクセストークンと有効期限を保存します。 トークンの有効期限を管理することで、通常の操作中に予期しない認証エラーが発生するのを防ぐことができます。
 
-REST 呼び出しを行う前に、トークンの残りの有効期間に基づいてトークンの有効性を確認する必要があります。 トークンの有効期限が切れている場合は、[ID](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) エンドポイントを呼び出して更新します。 これにより、トークンの有効期限が切れていることが原因で REST 呼び出しが失敗することがなくなります。 これは、エンドユーザ向けアプリケーションにとって重要な、予測可能な方法で REST 呼び出しの待ち時間を管理するのに役立ちます。
+REST呼び出しを行う前に、トークンの残りの有効期間を確認します。 トークンの有効期限が切れている場合は、[ID](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) エンドポイントを呼び出してトークンを更新します。 事前対応的な更新により、期限切れのトークンに起因するエラーを防ぎ、REST呼び出しの遅延をより予測可能にします。これは、エンドユーザー向けアプリケーションにとって重要です。
 
-有効期限が切れているトークンを使用して REST 呼び出しを認証すると、REST 呼び出しは失敗し、602 エラーコードが返されます。 無効なトークンを使用して REST 呼び出しを認証すると、601 エラーコードが返されます。 これらのコードのいずれかを受信すると、クライアントは ID エンドポイントを呼び出してトークンを更新する必要があります。
+認証エラーは、次のコードを返します。
 
-トークンの有効期限が切れる前に ID エンドポイントを呼び出すと、同じトークンと残りの有効期間が応答で返されます。
+- `602`: アクセストークンの有効期限が切れています。
+- `601`: アクセストークンが無効です。
 
-アクセストークンは、ユーザベースではなく、カスタムサービスベースで所有されます。 2 つの ID 応答のスコープが同じユーザに設定されている場合でも、2 つの異なるサービスからの資格情報を使用して作成された場合、アクセストークンと有効期限は互いに独立しています。 同じアプリケーションに複数の資格情報のセットがある場合は、クライアント ID が個別に管理する便利なキーになります。
+クライアントがいずれかのコードを受信した場合は、ID エンドポイントを呼び出してトークンを更新します。
+
+トークンの有効期限が切れる前にID エンドポイントを呼び出すと、応答は同じトークンとその残りの有効期間を返します。
+
+アクセストークンは、ユーザーではなくカスタムサービスに属します。 2つの異なるサービスからの資格情報が同じユーザーに対するID応答を生成する場合、そのアクセストークンと有効期限は独立したままになります。
+
+アプリケーションが複数の資格情報セットを使用する場合は、クライアント IDをキーとして使用して、各トークンを個別に管理します。

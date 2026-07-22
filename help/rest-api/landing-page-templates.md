@@ -12,10 +12,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 703
-ht-degree: 84%
+source-wordcount: 519
+ht-degree: 20%
 
 ---
 
@@ -23,19 +23,23 @@ ht-degree: 84%
 
 [ランディングページテンプレートのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates)
 
-ランディングページのテンプレートは、個々の Marketo ランディングページの親リソースおよび依存関係です。 ランディングページは、親テンプレートからコンテンツのスケルトンを派生します。
+ランディングページテンプレートは、Marketo ランディングページの親リソースです。 各ランディングページは、親テンプレートから初期コンテンツ構造を導き出します。
 
 ## テンプレートタイプ
 
-Marketo には、フリーフォームとガイド付きの 2 つのタイプのランディングページのテンプレートがあります。 フリーフォームのランディングページのテンプレートは、そのテンプレートから派生したページに対して大まかに構造化された編集エクスペリエンスを提供します。 ガイド付きテンプレートは、要素のタイプと場所をテンプレートレベルで制限できる、高度に構造化されたエクスペリエンスを提供します。 違いについて詳しくは、[このドキュメント](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
+Marketoには、フリーフォームとガイド付きのランディングページテンプレートが用意されています。 自由形式テンプレートを使用すると、緩やかに構造化された編集体験を提供できます。 ガイド付きテンプレートを使用すると、テンプレートレベルでエレメントの種類と場所を制限できます。
+
+詳細な比較については、[&#x200B; フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
 
 ## クエリ
 
-ランディングページのテンプレートは、[ID 別](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)、[名前別](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)、[参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)のアセットに対する標準クエリタイプをサポートします。 これらのエンドポイントは、テンプレートのメタデータを返します。 テンプレートの HTML コンテンツの取得は、テンプレートごとに ID を通じて実行する必要があります。
+ランディングページテンプレート [をID](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)で、[を名前](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)で、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)でクエリします。 これらのエンドポイントは、テンプレートメタデータを返します。 IDでテンプレートごとにHTML コンテンツを個別に取得します。
 
 ## 作成と更新
 
-テンプレートは、関連付けられたメタデータを持つ空のアセットとして作成されます。 テンプレートを作成する際は、名前とフォルダーに加えて、オプションの説明、templateType パラメーター、enableMunchkin パラメーターも含める必要があります。 templateType は、freeform または guided のいずれかで、デフォルトは freeForm です。 タイプ間の違いについては、「ガイド付きフォームとフリーフォーム」の節を参照してください。 enableMunchkin のデフォルトは false です。有効にすると、テンプレートの子ランディングページで Munchkin トラッキングが実行されなくなります。
+テンプレートは、メタデータを含む空のアセットとして作成されます。 `name`および`folder` パラメーターが必要です。 `description`、`templateType`および`enableMunchkin` パラメーターはオプションです。
+
+`templateType`の値は`freeform`または`guided`で、デフォルトは`freeForm`です。 `enableMunchkin`の値はデフォルトで`false`です。 有効にすると、テンプレートの子ランディングページでMunchkin トラッキングが実行されなくなります。
 
 ```http
 POST /rest/asset/v1/landingPageTemplates.json
@@ -75,15 +79,15 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-テンプレートのコンテンツは、「[ランディングページのテンプレートコンテンツを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST)」エンドポイント経由で個別に入力する必要があります。
+[&#x200B; ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
 
 ### メタデータの更新
 
-ランディングページのテンプレートのメタデータは、「[ランディングページのテンプレートメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST)」エンドポイント経由で更新できます。 名前、説明、enableMunchkin 設定は、この方法で更新できます。
+[&#x200B; ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
 
 ### コンテンツの更新
 
-ランディングページのテンプレートのコンテンツは、HTML コンテンツ全体に対する破壊的な更新として作成されます。 コンテンツは multipart/form-data として渡す必要があり、パラメーターは content という名前だけになります。
+テンプレートコンテンツを更新すると、既存のすべてのHTML コンテンツが置き換えられます。 `content` パラメーターに`multipart/form-data`として置換を渡します。
 
 ```http
 POST /rest/asset/v1/landingPageTemplate/286/content.json
@@ -121,15 +125,15 @@ Content-Type: text/plain
 
 ## 複製
 
-Marketo には、ランディングページのテンプレートを複製するための簡単な方法が用意されています。 これは、application/x-www-url-formencoded POST リクエストです。
+`application/x-www-url-formencoded` POST リクエストを使用してランディングページテンプレートを複製します。
 
-`id` パスパラメーターは、複製するソースランディングページのテンプレートの ID を指定します。
+`id` パス パラメーターは、ソース ランディングページ テンプレートを指定します。
 
-`name` パラメーターは、新しいランディングページのテンプレートの名前を指定するために使用されます。
+`name` パラメーターは、新しいランディングページテンプレートの名前を指定します。
 
-`folder` パラメーターは、新しいランディングページのテンプレートが存在する親フォルダーを指定するために使用されます。 これは、`id` と `type` を含む埋め込み JSON オブジェクトの形式です。
+`folder` パラメーターは、新しいテンプレートの親フォルダーを指定します。 `id`と`type`を含む埋め込みJSON オブジェクトとして渡します。
 
-オプションの `description` パラメーターは、新しいランディングページのテンプレートを説明するために使用されます。
+オプションの`description` パラメーターは、新しいテンプレートを説明します。
 
 ```http
 POST /rest/asset/v1/landingPageTemplate/{id}/clone.json
@@ -172,9 +176,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 ## 承認
 
-ランディングページのテンプレートは、ドラフトバージョンや承認済みバージョンを指定できる標準のドラフト承認済みモデルに従います。 テンプレートに更新を適用するたびに、常に最初にドラフトバージョンに適用され、テンプレートが承認された場合にのみライブで表示されます。
+ランディングページテンプレートでは、標準のドラフトと承認済みモデルを使用します。 更新は最初にドラフトに適用され、テンプレートが承認された後にのみ公開されます。
 
-テンプレートが承認されるには、ガイド付きまたはフリーフォームのいずれかのタイプのルールに準拠している必要があります。 それぞれのタイプのテンプレートの作成と承認の要件について詳しくは、次のそれぞれの作成ドキュメントを参照してください。
+承認する前に、テンプレートは、ガイド付き形式または自由形式の形式の要件を満たしている必要があります。 次のリソースを参照してください。
 
 - [フリーフォームのランディングページテンプレート](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
 - [ガイド付きランディングページテンプレート](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
@@ -182,4 +186,4 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 ## 削除
 
-テンプレートを削除するには、そのテンプレートが未使用かつ未承認である必要があります。つまり、子ランディングページでそのテンプレートを参照できません。  ソーシャルボタンが埋め込まれたランディングページのテンプレートは、この API では削除できません。
+テンプレートを削除するには、テンプレートが承認されておらず、子ランディングページがテンプレートを参照していないことを確認します。 このAPIを使用して、ソーシャルボタンが埋め込まれたランディングページテンプレートを削除することはできません。

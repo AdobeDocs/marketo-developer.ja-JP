@@ -12,10 +12,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 879
-ht-degree: 92%
+source-wordcount: 708
+ht-degree: 16%
 
 ---
 
@@ -23,13 +23,15 @@ ht-degree: 92%
 
 [商談エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities)
 
-Marketo は、商談レコードの読み取り、書き込み、作成、更新の API を公開します。 Marketo では、商談レコードは中間の商談ロールオブジェクトを通じてリードレコードと取引先責任者レコードにリンクされるので、商談は多数の個別のリードにリンクされる場合があります。  これらのオブジェクトタイプは、両方とも API を通じて公開され、ほとんどのリードデータベースオブジェクトタイプと同様に、どちらにも対応する Describe 呼び出しがあり、オブジェクトタイプに関するメタデータを返します。
+Marketoには、商談レコードの読み取り、書き込み、作成、更新のためのAPIが用意されています。 Marketoでは、中間のOpportunity Role オブジェクトは、商談レコードをリードおよび連絡先レコードにリンクします。 商談は、多くの個々のリードにリンクできます。
 
-Opportunity API は、[SFDC 同期](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ja)または [Microsoft Dynamics 同期](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ja)が有効になっているサブスクリプションに対して読み取り専用アクセスです。
+APIは両方のオブジェクトタイプを公開します。 ほとんどのリードデータベースオブジェクトタイプと同様に、各オブジェクトタイプには、オブジェクトメタデータを返す対応するDescribe呼び出しがあります。
+
+商談APIは、[Microsoft Dynamics Sync](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ja)または[SFDC Sync](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ja)が有効になっているサブスクリプションに対して、読み取り専用アクセスを提供します。
 
 ## 説明
 
-商談レコードの説明は、リードデータベースオブジェクトの標準パターンに従います。
+リード データベース オブジェクトの標準パターンを使用して、商談レコードを記述します。
 
 ```http
 GET /rest/v1/opportunities/describe.json
@@ -90,11 +92,17 @@ GET /rest/v1/opportunities/describe.json
 }
 ```
 
-この応答タイプで最も重要なフィールドは、`idField`、`dedupeFields` および `searchableFields` です。  idField は、商談のプライマリキーである marketoGUID を示します。  これは、システムによって生成された一意のキーで、読み取りと更新の操作に使用できますが、システムで管理されているので、挿入には使用できません。  dedupeFields 配列は、挿入操作の有効なキーであるフィールドを示します。商談の場合、これは externalOpportunityId のみです。  searchableFields 配列は、クエリの実行に有効なフィールドのセットの externalOpportunityId および marketoGUID を提供します。
+キー応答フィールドは次のとおりです。
+
+- `idField`：商談のプライマリキーであるmarketoGUIDを特定します。 このシステム生成キーは、読み取りと更新の操作をサポートしていますが、挿入はサポートしていません。
+- `dedupeFields`：挿入操作の有効なキーを特定します。 商談の場合、唯一のキーはexternalOpportunityIdです。
+- `searchableFields`: クエリに有効なフィールドを特定します。 これらのフィールドはexternalOpportunityIdおよびmarketoGUIDです。
 
 ## クエリ
 
-[商談のクエリ実行](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunitiesUsingGET)のパターンは、リード API のパターンに密接に従いますが、`filterType` パラメーターが `searchableFields` 配列や対応する説明呼び出しまたは dedupeFields にリストされているフィールドを受け入れるという追加の制限があります。  カスタム商談フィールドを使用している場合、searchableFields 配列には文字列または整数タイプのカスタム商談フィールドのみがリストされます。
+[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
+
+カスタム商談フィールドの場合、検索可能なFields配列に表示されるのは、String型またはInteger型のフィールドのみです。
 
 ```http
 GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f996-47d7-984f-f2676861b5fa&dff23271-f996-47d7-984f-f2676861b5fc,dff23271-f996-47d7-984f-f2676861b5fb
@@ -127,13 +135,25 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 }
 ```
 
-また、追加の商談フィールドを返すオプションのクエリパラメーター `fields` や、バッチサイズ `batchSize`（デフォルトは 300、最大値は 300）より大きいセットをページングする `nextPageToken` を含めることもできます。  `fields` のリストをリクエストする際に、特定のフィールドがリクエストされたが返されない場合、その値は null であると見なされます。
+次のオプションのクエリパラメーターを含めることができます。
+
+- `fields`：追加の商談フィールドを返します。
+- `nextPageToken`: バッチサイズよりも大きい結果セットをページ化します。
+- `batchSize`: バッチサイズを指定します。 デフォルト値と最大値は300です。
+
+`fields`のリストをリクエストする場合、返されないリクエストされたフィールドの暗黙的な値はnullです。
 
 ## 作成と更新
 
-商談は、リード API パターンに密接に従っていますが、いくつかの制限があります。  `action` に使用できる値は、createOnly、createOrUpdate、updateOnly です。  createOnly または createOrUpdate モードを使用する場合は、各レコードに externalOpportunityId フィールドを含める必要があります。  updateOnly モードの場合、marketoGUID または externalOpportunityId のいずれかを使用できます。  指定しない場合、モードはデフォルトで createOrUpdate です。
+オポチュニティは、リード API パターンに従い、いくつかの制限があります。 `action`の値は、createOnly、createOrUpdate、およびupdateOnlyです。
 
-リード API の `lookupField` パラメーターは使用できず、アクションが updateOnly の場合にのみ有効な dedupeBy パラメーターに置き換えられます。  dedupeBy に使用できる値は、&quot;dedupeFields&quot; または &quot;idField&quot; のいずれかで、describe 呼び出しによってそれぞれ externalOpportunityId と marketoGUID として指定されます。  dedupeBy を指定しない場合、デフォルトで dedupeFields モードになります。  「name」フィールドは null にしないでください。
+- createOnly モードまたはcreateOrUpdate モードの場合は、各レコードにexternalOpportunityId フィールドを含めます。
+- updateOnly モードには、marketoGUIDまたはexternalOpportunityIdのいずれかを使用します。
+- 指定しない場合、モードはデフォルトでcreateOrUpdateになります。
+
+リード APIの`lookupField` パラメーターは使用できません。 dedupeBy パラメーターは、アクションがupdateOnlyの場合にのみ有効です。
+
+dedupeByの値は「dedupeFields」と「idField」で、Describeの応答はそれぞれexternalOpportunityIdとmarketoGUIDとして識別されます。 dedupeBy を指定しない場合、デフォルトで dedupeFields モードになります。 「name」フィールドは null にしないでください。
 
 一度に最大 300 個のレコードを送信できます。
 
@@ -183,21 +203,27 @@ POST /rest/v1/opportunities.json
 }
 ```
 
-API は、各レコードの `marketoGUID` と、各レコードの個別の成功または失敗を示す「`status`」フィールド、送信したレコードを応答順序の関連付け使用される「`seq`」フィールドで応答します。  フィールドの数値は、リクエストで送信したレコードのインデックスです。
+応答には、各レコードに次の値が含まれます。
+
+- `marketoGUID`: レコード ID。
+- `status`：個々のレコードの成功または失敗。
+- `seq`：送信されたレコードのインデックス。リクエスト レコードと応答順序を関連付けます。
 
 ### フィールド
 
-会社オブジェクトには、一連のフィールドが含まれています。  各フィールド定義は、フィールドを説明する属性のセットで構成されます。  属性の例としては、表示名、API 名、dataType があります。  これらの属性はまとめてメタデータと呼ばれます。
+company オブジェクトには、表示名、API名、dataTypeなどの属性で定義されたフィールドが含まれます。 これらの属性をメタデータと呼びます。
 
-次のエンドポイントを使用すると、会社オブジェクトのフィールドに対してクエリを実行できます。 これらの API では、所有する API ユーザに、`Read-Write Schema Standard Field` 権限または `Read-Write Schema Custom Field` 権限のいずれかまたは両方を含むロールを用意する必要があります。
+次のエンドポイントは、会社オブジェクトのフィールドをクエリします。 API ユーザーには、`Read-Write Schema Standard Field`権限、`Read-Write Schema Custom Field`権限、またはその両方を持つ役割が必要です。
 
 ### クエリフィールド
 
-商談フィールドのクエリの実行は簡単です。  API 名で単一の会社フィールドに対してクエリを実行することも、すべての会社フィールドのセットに対してクエリを実行することもできます。
+API名で1つの会社フィールドをクエリするか、すべての会社フィールドを取得します。
 
 #### 名前別
 
-[名前による商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldByNameUsingGET)エンドポイントでは、会社オブジェクトの単一フィールドのメタデータを取得します。  必須の `fieldApiName` パスパラメーターは、フィールドの API 名を指定します。  応答は「商談を説明」エンドポイントに似ていますが、フィールドがカスタムフィールドであるかどうかを示す `isCustom` 属性などの追加のメタデータが含まれます。
+[名前で商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
+
+応答はDescribe Opportunity応答に似ていますが、追加のメタデータが含まれています。 例えば、`isCustom`属性は、フィールドがカスタムかどうかを示します。
 
 ```http
 GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
@@ -226,7 +252,9 @@ GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
 
 #### 参照
 
-[商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。  デフォルトでは、最大 300 個のレコードが返されます。  `batchSize` クエリパラメーターを使用して、この数を減らすことができます。  `moreResult` 属性が true の場合、さらに多くの結果が使用可能です。  moreResult 属性が false を返すまで、つまり使用可能な結果が存在しなくなるまで、このエンドポイントを引き続き呼び出します。  この API から返される `nextPageToken` は、この呼び出しの次の反復で常に再利用する必要があります。
+[商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
+
+`moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 返された`nextPageToken`でエンドポイントの呼び出しを続行し、moreResultがfalseになるまで呼び出します。
 
 ```http
 GET /rest/v1/opportunities/schema/fields.json?batchSize=5
@@ -305,7 +333,9 @@ GET /rest/v1/opportunities/schema/fields.json?batchSize=5
 
 #### 削除
 
-商談は、重複排除フィールドまたは ID フィールドで削除できます。 dedupeFields または idField のいずれかの値を持つ `deleteBy` パラメーターを使用して指定します。 指定しない場合、デフォルトは dedupeFields です。 リクエスト本文には、削除する商談の `input` 配列が含まれます。 1 回の呼び出しにつき最大 300 個の商談が許可されます。
+重複排除フィールドまたはID フィールドで商談を削除します。 `deleteBy` パラメーターをdedupeFieldsまたはidFieldのいずれかに設定します。 デフォルトはdedupeFieldsです。
+
+リクエスト本文には、削除する商談の `input` 配列が含まれます。 1回の呼び出しごとに最大300件の商談を許可します。
 
 ```http
 POST /rest/v1/opportunities/delete.json
@@ -346,6 +376,6 @@ POST /rest/v1/opportunities/delete.json
 
 ## タイムアウト
 
-- 「商談」エンドポイントは、以下に記載されていない限り、タイムアウトが 30 秒になります。
-   - 同期の機会：60秒
-   - 商談を削除：60 秒
+- 特に明記されていない限り、商談エンドポイントのタイムアウトは30秒です。
+- Sync Opportunitiesのタイムアウトは60秒です。
+- Delete Opportunitiesのタイムアウトは60秒です。

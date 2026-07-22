@@ -11,25 +11,25 @@ role_v2:
 topic_v2:
   - id: c13ff12d-60f1-49cd-833a-d43359628223
   - id: c18d9e03-ac7d-4811-9c92-3e92ddc70ade
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 165
-ht-degree: 85%
+source-wordcount: 134
+ht-degree: 15%
 
 ---
 
 # 携帯電話
 
-Marketo モバイルエンゲージメントを使用すると、マーケターはモバイルデバイスで顧客の話を聞いて回答し、魅力的なモバイルエクスペリエンスを簡単に提供できます。
+Marketo Mobile Engagementは、マーケターがモバイルエクスペリエンスを配信し、モバイルデバイスでの顧客のアクティビティに対応することを支援します。
 
-Marketo モバイルエンゲージメントは、次の 2 つのコンポーネントで構成されます。
+Marketo Mobile Engagementには、次の2つのコンポーネントがあります。
 
 1. Mobile SDK
 
-   Marketo Mobile SDK は、お使いのモバイルアプリケーションに統合されており、強力なマーケティングの提供や分析の収集を担当するエンジンです。
+   Marketo Mobile SDKをモバイルアプリケーションに統合し、マーケティングコンテンツを配信して分析を収集します。
 
 1. モバイルマーケティング
 
-   マーケターは、Marketoを使用して、オーディエンスの定義、通知の作成、ターゲット設定されたメッセージングキャンペーンの開始、詳細な顧客分析の表示などを行います。
+   Marketoなら、オーディエンスの定義、通知の作成、ターゲットを絞ったメッセージング施策の実施、顧客分析の確認などに利用できます。
 
-Marketo SDK をモバイルアプリケーションに組み込むと、Marketoから、モバイルプッシュ通知とアプリ内メッセージの両方を顧客に送信できるようになります。 Marketo内でモバイルメッセージを設定およびデプロイする方法については、以下を参照してください。 [モバイルマーケティング](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) の節を参照してください。
+Marketo SDKをモバイルアプリケーションに統合した後、Marketoからモバイルプッシュ通知やアプリ内メッセージを送信できます。 モバイルメッセージを設定してデプロイするには、製品ドキュメントの[&#x200B; モバイルマーケティング &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)を参照してください。

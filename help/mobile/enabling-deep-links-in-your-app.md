@@ -10,37 +10,41 @@ feature_v2:
   - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 420
-ht-degree: 93%
+source-wordcount: 363
+ht-degree: 28%
 
 ---
 
 # ディープリンクの有効化
 
-ディープリンクを使用すると、アプリ内の特定のコンテンツ（リソース）に人物をリダイレクトできます。 例えば、ユーザが紫色の T シャツを広告するモバイルプッシュメッセージをクリックすると、アプリを開いて（ホームページではなく）紫色の T シャツのコンテンツを直接表示できます。
+ディープリンクを利用すれば、アプリ内の特定のコンテンツにオーディエンスを誘導できます。 例えば、オーディエンスが紫のT シャツを広告するモバイルプッシュメッセージを選択すると、ホームページの代わりに紫のT シャツコンテンツをアプリで開くことができます。
 
 プロセスは次のように機能します。
 
-1. Marketo ユーザは、プッシュメッセージのタップアクションにカスタム URI を配置します。
+1. Marketo ユーザーは、プッシュメッセージのタップアクションにカスタム URIを配置します。
 1. ユーザがデバイス上でプッシュメッセージをタップすると、Marketo MME SDK はカスタム URI を使用してイベントをトリガーします。
-1. その後、アプリはイベントを処理し、ユーザをアプリ内の適切なコンテンツにリダイレクトします。
+1. アプリがイベントを処理し、そのユーザーを対応するコンテンツに誘導します。
 
-これには、アプリのカスタム URI 構造を定義し、アプリのマニフェスト内にスキームを登録し、ディープリンクイベントを処理してアプリ内の適切な場所にルーティングするコードを追加する必要があります。
+このプロセスを有効にするには：
 
-iOS の場合は、[アプリのカスタム URL スキームの定義](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)に関する Apple ドキュメントを参照してください。
+1. アプリのカスタム URI構造を定義します。
+1. アプリマニフェストにスキームを登録します。
+1. ディープリンクイベントを処理し、ユーザーを対応するコンテンツにルーティングするコードを追加します。
 
-Android の場合は、[アプリコンテンツのディープリンクの有効化](https://developer.android.com/training/app-links/deep-linking)に関する Google ドキュメントを参照してください。
+IOSについては、[&#x200B; アプリのカスタム URL スキームの定義](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)に関するAppleのドキュメントを参照してください。
 
-PhoneGap アプリの場合、ディープリンクはネイティブ iOS または Android アプリほど簡単ではありませんが、ハイブリッドアプリが iOS と Android の両方でディープリンクのカスタム URL スキームとユニバーサル／アプリリンクに応答できるようにするプラグインがあります。 [これらのプラグイン](https://cordova.apache.org/plugins/?q=deeplink)を考慮してください。
+Androidについては、[&#x200B; アプリ コンテンツのディープリンクの有効化](https://developer.android.com/training/app-links/deep-linking)に関するGoogleのドキュメントを参照してください。
+
+PhoneGap アプリの場合は、プラグインを使用して、iOSとAndroidのカスタム URL スキームとユニバーサル/アプリリンクに対応するハイブリッド アプリを有効にします。 使用可能な[&#x200B; ディープリンクプラグイン &#x200B;](https://cordova.apache.org/plugins/?q=deeplink)を参照してください。
 
 アプリでディープリンクを有効にした際は、カスタム URI を Marketo ユーザと共有して、プッシュメッセージのタップアクションに挿入できます。
 
-Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。 詳しくは、インストールガイドの[テストデバイス](installation.md)の節を参照してください。
+Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。 詳しくは、[&#x200B; インストールガイド &#x200B;](installation.md)の「デバイスのテスト」を参照してください。
 
 ## URI 構造を定義するベストプラクティス
 
-ブランドに既存のモバイルサイトがある場合は、ディープリンク URI に対してもこの URL 構造に従うのがベストプラクティスです。 例えば、`https://myappname.com/products/purple-shirt` が対象製品の web サイトアドレスである場合、`myappname://products/purple-shirt` はアプリで使用するのに適したディープリンク URI 構造になります。
+ブランドにモバイルサイトがある場合は、ディープリンク URIを定義するときに、そのURL構造に従います。 例えば、製品URLが`https://myappname.com/products/purple-shirt`の場合、対応するディープリンク URIとして`myappname://products/purple-shirt`を使用します。
 
-一般に、スキームはブランドに一意である必要があります。 現在、スキームを世界中で一意にする規制はありませんが、スキームが一意であることを確保する 1 つの方法は、ドメイン名を逆にすることです（例：`org.companyname`）。
+自社ブランドに固有のスキームを使用します。 スキームをグローバルに一意にする必要はありませんが、`org.companyname`のようにドメイン名を逆転させることで、一意のスキームを作成できます。

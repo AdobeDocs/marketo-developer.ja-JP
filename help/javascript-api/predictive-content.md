@@ -8,13 +8,13 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 44
-ht-degree: 59%
+ht-degree: 9%
 
 ---
 
 # 予測コンテンツ
 
-Predictive Content JavaScript API は、プラットフォームの予測コンテンツを拡張します。 [リッチメディアレコメンデーション](rich-media-recommendation.md)を通じて web ページを動的にカスタマイズできます。
+予測コンテンツ JavaScript APIは、[&#x200B; リッチメディアのレコメンデーション &#x200B;](rich-media-recommendation.md)を使用してweb ページを動的にカスタマイズします。 APIを使用して、プラットフォームの予測コンテンツ機能を拡張します。

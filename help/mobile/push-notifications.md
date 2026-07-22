@@ -12,16 +12,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: c1579802-ddd4-4214-8a91-97b2066abe11
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1338
-ht-degree: 94%
+source-wordcount: 1162
+ht-degree: 23%
 
 ---
 
 # プッシュ通知
 
-プッシュ通知を有効にする方法
+Marketo Mobile SDKを使用するiOSまたはAndroid アプリケーションのプッシュ通知を有効にします。
 
 ## iOS でのプッシュ通知の設定
 
@@ -29,33 +29,33 @@ ht-degree: 94%
 
 1. Apple Developer アカウントでプッシュ通知を設定します。
 1. xCode でプッシュ通知を有効にします。
-1. Marketo SDK を使用して、アプリでプッシュ通知を有効にします。
+1. Marketo SDKを使用して、アプリでプッシュ通知を有効にします。
 
 ### Apple Developer アカウントでのプッシュ通知の設定
 
-1. Apple Developer [Member Center](https://developer.apple.com/membercenter) にログインします。
-1. 「Certificates, Identifiers &amp; Profiles」をクリックします。
-1. 「iOS, tvOS, watchOS」の下の「Certificates->All」フォルダーをクリックします。
-1. 画面左上の証明書の横にある「+」を選択します ![](assets/certificates-plus.png)
-1. 「Apple プッシュ通知サービス SSL （サンドボックスおよび実稼動）」チェックボックスをオンにして、「続行」を選択します。
-1. アプリケーションのビルドに使用しているアプリケーション識別子を選択します。![](assets/push-appid.png)
-1. CSR を作成してアップロードし、プッシュ証明書を生成します。![](assets/push-ssl.png)
-1. 証明書をローカルコンピューターにダウンロードし、ダブルクリックしてインストールします。![](assets/certificate-download.png)
-1. 「キーチェーンアクセス」を開き、証明書を右クリックして2つの項目を`.p12` ファイルに書き出します。![key_chain](assets/key-chain.png)
+1. Apple Developer [&#x200B; メンバーセンター](https://developer.apple.com/membercenter)にログインします。
+1. 「証明書、識別子、プロファイル」を選択します。
+1. 「iOS、tvOS、watchOS」の下にある「証明書 – >すべて」フォルダーを選択します。
+1. 左上隅の証明書の横にある「+」を選択します。![](assets/certificates-plus.png)
+1. 「Apple プッシュ通知サービス SSL （サンドボックスおよび実稼動）」を選択し、「続行」を選択します。
+1. アプリの構築に使用するアプリケーション IDを選択します。![](assets/push-appid.png)
+1. CSRを作成してアップロードし、プッシュ証明書を生成します。![](assets/push-ssl.png)
+1. 証明書をダウンロードし、ダブルクリックしてインストールします。![](assets/certificate-download.png)
+1. 「キーチェーンアクセス」を開き、証明書を右クリックして、両方の項目を`.p12` ファイルに書き出します。![key_chain](assets/key-chain.png)
 1. 通知を設定するには、Marketo Admin Console を通じてこのファイルをアップロードします。
 1. アプリのプロビジョニングプロファイルを更新します。
 
 ### xCode でのプッシュ通知の有効化
 
-xCode プロジェクトでプッシュ通知機能をオンにします。![](assets/push-xcode.png)
+xCode プロジェクトでプッシュ通知機能を有効にします。![](assets/push-xcode.png)
 
 ### Marketo SDK を使用したアプリでのプッシュ通知の有効化
 
-顧客のデバイスにプッシュ通知を配信するには、`AppDelegate.m` ファイルに次のコードを追加します。
+次のコードを`AppDelegate.m` ファイルに追加して、顧客デバイスにプッシュ通知を配信します。
 
-**メモ** - [!DNL Adobe Launch] 拡張機能を使用する場合は、クラス名として `ALMarketo` を使用します
+**注** - [!DNL Adobe Launch]拡張機能を使用する場合は、クラス名として`ALMarketo`を使用します。
 
-`AppDelegate.h` に次を読み込みます。
+次のインポートを`AppDelegate.h`に追加します。
 
 >[!BEGINTABS]
 
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 
 >[!ENDTABS]
 
-プッシュ通知サービスを開始します。 プッシュ通知を有効にするには、次のコードを追加します。
+プッシュ通知サービスを初期化するには、次のコードを追加します。
 
 >[!BEGINTABS]
 
@@ -134,11 +134,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 >[!ENDTABS]
 
-Apple Push Service による登録プロセスを開始するには、このメソッドを呼び出します。 登録に成功した場合、アプリはアプリデリゲートオブジェクトの `application:didRegisterForRemoteNotificationsWithDeviceToken:` メソッドを呼び出し、デバイストークンを渡します。
+Apple プッシュサービスへの登録を開始するには、このメソッドを呼び出します。 登録が成功すると、アプリはApp デリゲート オブジェクトの`application:didRegisterForRemoteNotificationsWithDeviceToken:` メソッドを呼び出し、デバイストークンを渡します。
 
 登録に失敗した場合、アプリは代わりにアプリデリゲートの `application:didFailToRegisterForRemoteNotificationsWithError:` メソッドを呼び出します。
 
-Marketo にプッシュトークンを登録します。 Marketo からプッシュ通知を受信するには、デバイストークンを Marketo に登録する必要があります。
+Marketoにプッシュトークンを登録します。 Marketoからプッシュ通知を受信するには、デバイストークンを登録する必要があります。
 
 >[!BEGINTABS]
 
@@ -162,7 +162,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 >[!ENDTABS]
 
-ユーザがログアウトした際に、トークンを登録解除することもできます。
+また、ユーザーがログアウトしたときにトークンを登録解除することもできます。
 
 >[!BEGINTABS]
 
@@ -180,9 +180,9 @@ Marketo.sharedInstance().unregisterPushDeviceToken
 
 >[!ENDTABS]
 
-プッシュトークンを再登録するには、手順 3 のコードを AppDelegate メソッドに抽出し、ViewController ログインメソッドから呼び出します。
+プッシュトークンを再登録するには、手順3のコードをAppDelegate メソッドに抽出します。 ViewController ログインメソッドからそのメソッドを呼び出します。
 
-プッシュ通知を処理します。 Marketo からプッシュ通知を受信するには、デバイストークンを Marketo に登録する必要があります。
+デバイストークンをMarketoに登録した後、プッシュ通知を処理します。
 
 >[!BEGINTABS]
 
@@ -205,9 +205,9 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 >[!ENDTABS]
 
-AppDelegate に次のメソッドを追加
+AppDelegateに次のメソッドを追加します。
 
-この方法を使用すると、アプリがフォアグラウンドにある間、アラートやサウンドを出力したり、バッジを増やしたりすることができます。 このメソッドでは、選択した completionHandler を呼び出す必要があります。
+この方法を使用すると、アプリがフォアグラウンドにいる間にアラートを表示したり、サウンドを再生したり、バッジを上げたりできます。 このメソッドで適切なcompletionHandlerを呼び出します。
 
 >[!BEGINTABS]
 
@@ -234,9 +234,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 >[!ENDTABS]
 
-AppDelegate で新しく受信したプッシュ通知を処理
+AppDelegateで新しく受信したプッシュ通知を処理します。
 
-このメソッドは、ユーザがアプリケーションを開いたり、通知を却下したり、UNNotificationAction を選択したりして通知に応答した際に、デリゲートで呼び出されます。 デリゲートは、アプリケーションが applicationDidFinishLaunching: から戻る前に設定する必要があります。
+デリゲートは、ユーザーがアプリケーションを開いたり、通知を閉じたり、UNNotificationActionを選択したりして通知に応答する際に、このメソッドを呼び出します。 applicationDidFinishLaunching：からアプリケーションが返される前に、デリゲートを設定します。
 
 >[!BEGINTABS]
 
@@ -262,15 +262,15 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 >[!ENDTABS]
 
-プッシュ通知のトラッキング
+プッシュ通知の追跡：
 
-アプリがバックグラウンドで実行されている場合（またはアクティブでない場合）、デバイスは次に示すようなプッシュ通知を受信します。 Marketo は、ユーザが通知をタップしたタイミングを追跡します。
+アプリがバックグラウンドまたは非アクティブの場合、デバイスは次に示すようにプッシュ通知を受け取ります。 Marketoは、ユーザーが通知を選択したときにトラッキングします。
 
 ![mobile8](assets/mobile8.png)
 
-デバイスがプッシュ通知を受信すると、アプリのデリゲートの `application:didReceiveRemoteNotification:` コールバックに渡されます。
+デバイスがプッシュ通知を受信すると、アプリのデリゲートの`application:didReceiveRemoteNotification:` コールバックに通知が渡されます。
 
-次に、アプリイベントとプッシュ通知イベントを表示する Marketo からの Marketo アクティビティログを示します。
+次のMarketo アクティビティログは、アプリイベントとプッシュ通知イベントを示しています。
 
 ![mobile9](assets/mobile9.png)
 
@@ -278,7 +278,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 1. アプリケーションタグ内に次の権限を追加します。
 
-   `AndroidManifest.xml` を開き、次の権限を追加します。 アプリでは、「INTERNET」および「ACCESS_NETWORK_STATE」権限をリクエストする必要があります。 アプリで既にこれらの権限をリクエストしている場合は、この手順をスキップしてください。
+   `AndroidManifest.xml`を開き、次の権限を追加します。 アプリでは、「INTERNET」および「ACCESS_NETWORK_STATE」権限をリクエストする必要があります。 アプリが既にリクエストしている場合は、この手順をスキップします。
 
    ```xml
    <uses‐permission android:name="android.permission.INTERNET"/>
@@ -294,16 +294,16 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1を使用したFCMの設定
+1. HTTPv1でFCMを設定します。
 
-- Marketo 機能マネージャーで MME FCM HTTPv1 を有効にします ![](assets/feature-manager.png)
-   - MLM のアプリのサービスアカウント JSON ファイルをアップロードします。
-   - サービスアカウント Json ファイルは、Firebase コンソールからダウンロードできます。   ![](assets/fcm-console.png)
-   - Marketo にサービスアカウント JSON ファイルをアップロードした後、プッシュ通知を送信する前に 1 時間ほど待ってください。  
+   - Marketo feature managerでMME FCM HTTPv1を有効にします。![](assets/feature-manager.png)
+   - アプリのサービスアカウント Json ファイルをMLMにアップロードします。
+   - Firebase Consoleからサービスアカウント Json ファイルをダウンロードします。![](assets/fcm-console.png)
+   - プッシュ通知を送信する前に、Marketoでサービスアカウント Json ファイルをアップロードしてから1時間待ちます。
 
 ## Android テストデバイス
 
-アプリケーションタグ内のマニフェストファイルに Marketo アクティビティを追加します。
+アプリケーションタグ内のマニフェストファイルにMarketo アクティビティを追加します。
 
 ```xml
 <activity android:name="com.marketo.MarketoActivity"  android:configChanges="orientation|screenSize">
@@ -318,7 +318,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ## Marketo プッシュサービスの登録
 
-1. Marketo からプッシュ通知を受信するには、`AndroidManifest.xml` に Firebase メッセージサービスを追加する必要があります。 アプリケーションの終了タグの前に追加します。
+1. 終了アプリケーション タグの前にFirebase メッセージング サービスを`AndroidManifest.xml`に追加します。
 
    ```xml
    <meta-data
@@ -332,7 +332,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    </service>
    ```
 
-1. 次のように、`MyFirebaseMessagingService` ファイルに Marketo SDK メソッドを追加します
+1. 次のように、`MyFirebaseMessagingService`にMarketo SDK メソッドを追加します。
 
    ```java
    import com.marketo.Marketo;
@@ -357,7 +357,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-   **メモ** - Adobe 拡張機能を使用する場合は、次のように追加します
+   **メモ** - Adobe拡張機能を使用する場合は、次のコードを追加します。
 
    ```java
    import com.marketo.Marketo;
@@ -380,7 +380,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-**メモ**：FCM SDK では、必要なすべての権限と必要な受信者機能が自動的に追加されます。 以前のバージョンの SDK を使用している場合は、アプリのマニフェストから次の古い（メッセージの重複を引き起こす可能性があるので、潜在的に有害な）要素を削除します
+**メモ**: FCM SDKは、必要な権限と受信者の機能を自動的に追加します。 以前のSDK バージョンを使用していた場合は、メッセージの重複を引き起こす可能性のある、次の古い要素を削除します。
 
 ```xml
 <receiver android:name="com.marketo.MarketoBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -398,7 +398,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 <service android:name="com.marketo.MarketoIntentService"/>
 ```
 
-1. Marketo プッシュを初期化します。上記の設定を保存したら、Marketo プッシュ通知を初期化する必要があります。 アプリケーションクラスを作成するか開き、以下のコードをコピー＆ペーストします。 Firebase コンソールから送信者 ID を取得できます。
+1. Marketo プッシュを初期化します。 設定を保存したら、アプリケーションクラスを作成または開き、次のコードを追加します。 Firebase Consoleから送信者IDを取得します。
 
    ```java
    Marketo marketoSdk = Marketo.getInstance(getApplicationContext());
@@ -407,7 +407,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    marketoSdk.initializeMarketoPush(SENDER_ID,"ChannelName");
    ```
 
-   [!DNL Adobe Launch] 拡張機能を使用する場合は、次の手順に従います
+   [!DNL Adobe Launch]拡張機能を使用する場合は、次のコードを使用します。
 
    ```java
    // Enable push notification here. The push notification channel name can by any string
@@ -416,21 +416,21 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
    [このチュートリアル](https://developers.google.com/cloud-messaging/)で詳しく説明されている手順を実行して、Google Cloud Messaging サービスを有効にします。
 
-   ユーザがログアウトした際に、トークンを登録解除することもできます。
+   また、ユーザーがログアウトしたときにトークンを登録解除することもできます。
 
    ```java
    marketoSdk.uninitializeMarketoPush();
    ```
 
-   [!DNL Adobe Launch] 拡張機能を使用する場合は、次の手順に従います
+   [!DNL Adobe Launch]拡張機能を使用する場合は、次のコードを使用します。
 
    ```java
    ALMarketo.uninitializeMarketoPush();
    ```
 
-   メモ：プッシュトークンを再登録するには、手順 3 のコードを AppDelegate メソッドに抽出し、ViewController ログインメソッドから呼び出します。
+   注：プッシュトークンを再登録するには、手順3のコードをAppDelegate メソッドに抽出します。 ViewController ログインメソッドからそのメソッドを呼び出します。
 
-1. 通知アイコンを設定します（オプション）。カスタム通知アイコンを設定するには、次のメソッドを呼び出す必要があります。
+1. オプション：通知アイコンを設定します。 次のメソッドを呼び出して、カスタム通知アイコンを設定します。
 
    ```java
    MarketoConfig.Notification config = new MarketoConfig.Notification();
@@ -450,37 +450,35 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ## トラブルシューティング
 
-モバイルプッシュメッセージの設定には、多くの手順と、開発者とマーケターの調整が必要です。 問題が発生した場合は、いくつかの簡単な確認事項があります。
-
-簡単な確認事項に問題がないことを確認したら、プログラミングの詳細について詳しく調べてください。
+モバイルプッシュメッセージが期待どおりに機能しない場合は、実装の詳細を調査する前に、一般的な設定の問題を確認してください。
 
 ### プッシュメッセージが表示されない
 
-最初に、ハンドセットでプッシュメッセージが無効になっているかどうかを確認します。 モバイルユーザは、特定のアプリのメッセージを受信するかどうかを制御できます。 多くの場合、開発者（およびマーケター）は開発中のある時点でこれらのメッセージを無効にします。 したがって、最初に確認するのは、受信者がアプリのプッシュメッセージを無効にしているかどうかです。
+デバイスでプッシュメッセージが無効になっているかどうかを確認します。 モバイルユーザーは、アプリごとにメッセージを受信するかどうかを制御でき、開発者やマーケターは、開発中にメッセージを無効にする場合があります。
 
-2 番目に、アプリはデバイス上で既に開いていてアクティブかどうかです。 アプリがデバイス上でアクティブなアプリである場合、モバイルプッシュメッセージは画面にポップアップされません。 代わりに、アプリの「ローカル通知」領域に表示されます。
+アプリが開いていてアクティブかどうかを確認します。 アプリがアクティブな場合、モバイルプッシュメッセージは画面に表示されません。 代わりに、アプリの「ローカル通知」エリアに表示されます。
 
 ### Marketo でのアクティビティログの表示
 
-エラーを追跡する際に最初に確認する場所は、Marketo アクティビティログです。 アクティビティログを使用して、メッセージが送信されたことを確認できます。
+Marketo アクティビティログを使用して、メッセージが送信されたことを確認します。
 
-アクティビティログで、メッセージを受信する予定だったユーザのアクティビティレコードを確認します。 メッセージを送信した場合は、アクティビティログにレコードが残ります。 そうでない場合、Marketo 内の iOS 証明書または Android API キーの設定により問題が発生している可能性があります。
+メッセージを受信する必要があるユーザーのアクティビティレコードを確認します。 メッセージが送信された場合、アクティビティログにはレコードが含まれます。 レコードが存在しない場合は、MarketoでiOS証明書またはAndroid API キー設定を確認します。
 
 ### 証明書またはキーが無効
 
-設定を再確認して、サンドボックスまたは本番環境に適切な証明書が読み込まれていることを確認します。 開発者に証明書（iOS）またはキー（Android）を再度書き出してもらい、Marketo にリロードして正しいことを確認する方が良い場合があります。
+サンドボックスまたは実稼動用に正しい証明書が読み込まれていることを確認します。 必要に応じて、iOS証明書またはAndroid キーを再度書き出して、Marketoに再読み込みします。
 
 ### .p12 ファイルに証明書またはキーが欠落している（iOS）
 
-証明書を書き出す際は、キー&#x200B;_と_&#x200B;証明書を書き出します。
+証明書をエクスポートする場合は、キーと証明書の両方をエクスポートします。
 
 ### プロファイルのプロビジョニングが最新ではない（iOS）
 
-新しいデバイスを追加するたびに、プロビジョニングプロファイルを更新し、新しい証明書を生成する必要があります。 Xcode プロジェクトが正しいプロファイルと証明書を指していることを確認し、これらの証明書を Marketo に読み込みます。
+デバイスを追加したら、プロビジョニングプロファイルを更新し、新しい証明書を生成します。 Xcode プロジェクトを正しいプロファイルと証明書に指定し、証明書をMarketoにインポートします。
 
 ### iOS 証明書をアップロードできない（iOS）
 
-証明書を書き出す間に使用するパスワードにスペースが含まれていないことを確認します。  例えば、次は使用しないでください。
+証明書の書き出しに使用するパスワードにスペースが含まれていないことを確認します。 例えば、次は使用しないでください。
 
 `Hello World 123`
 
@@ -490,11 +488,11 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### iOS 証明書のトラブルシューティング
 
-サンドボックスアプリケーションの場合、「開発者」証明書または「ユニバーサル」証明書のいずれかを使用できます。 ただし、本番稼働アプリケーションの場合は、有効な「ディストリビューション」証明書または「ユニバーサル」証明書をアップロードする必要があります。
+サンドボックスアプリケーションの場合は、「開発者」または「ユニバーサル」証明書を使用します。 実稼動アプリケーションの場合は、有効な「配布」または「ユニバーサル」証明書をアップロードします。
 
 ### プッシュバウンス／無効なトークン
 
-既存の登録トークンは、次を含む多くのシナリオで無効になる場合があります。
+登録トークンは、次のシナリオで無効になる可能性があります。
 
 - クライアントアプリが GCM を登録解除した場合。
 - クライアントアプリが自動的に登録解除される場合。これは、ユーザがアプリケーションをアンインストールした場合に発生することがあります。 例えば、iOS では、APNS フィードバックサービスが APNS トークンを無効として報告した場合です。

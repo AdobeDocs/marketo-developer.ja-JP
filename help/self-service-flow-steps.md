@@ -11,13 +11,21 @@ subfeature_v2:
   - id: ad89fb33-8541-4339-afe7-bb13d1633714
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 112
-ht-degree: 76%
+source-wordcount: 98
+ht-degree: 16%
 
 ---
 
 # セルフサービスフローステップ
 
-セルフサービスフローステップは、インテグレーターが Marketo スマートキャンペーンのフローステップとして使用できる web API をデプロイできるようにする機能セットです。 フローステップサービスでは、リードやその他の関連データを受信し、他の web サービスの呼び出しを含む必要な処理を実行して、コールバックを通じてリードとアクティビティのデータを Marketo に書き込むことができます。 開発者向けドキュメントについて詳しくは、[GitHub](https://github.com/adobe/Marketo-SSFS-Service-Provider-Interface) を参照してください。
+セルフサービスフローステップを使用すると、インテグレータはMarketo Smart Campaignsのフローステップとしてweb APIをデプロイできます。
+
+フローステップサービスでは、次のことが可能です。
+
+- リードと関連データを受け取る。
+- 他のweb サービスの呼び出しを含む、データを処理します。
+- コールバックを通じて、リードとアクティビティのデータをMarketoに書き込みます。
+
+実装の詳細については、GitHub[&#128279;](https://github.com/adobe/Marketo-SSFS-Service-Provider-Interface)に関する開発者ドキュメントを参照してください。

@@ -18,16 +18,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 4793
-ht-degree: 77%
+source-wordcount: 4807
+ht-degree: 76%
 
 ---
 
 # エンドポイント参照
 
-Marketo REST API 参照へのリンクを以下に示します。
+次の参照を使用して、各Marketo REST API グループのリクエストパラメーター、応答スキーマ、および例を検索します。
 
 - [アセット](https://developer.adobe.com/marketo-apis/api/asset)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
@@ -36,7 +36,7 @@ Marketo REST API 参照へのリンクを以下に示します。
 
 ## エンドポイントリスト {#endpoint_list}
 
-REST API エンドポイントの包括的なリストを以下に示します。
+次の表に、REST API エンドポイント、HTTP メソッド、URI、および必要な権限を示します。
 
 | 名前 | グループ | メソッド | URI | 必須の権限 |
 | --- | --- | --- | --- | --- |

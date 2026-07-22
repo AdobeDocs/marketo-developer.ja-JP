@@ -12,32 +12,32 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 663
-ht-degree: 96%
+source-wordcount: 581
+ht-degree: 22%
 
 ---
 
 # Ionic
 
-このトピックでは、Marketo Cordova プラグインを統合する方法について説明します。 [!DNL Ionic] キャパシターは現在サポートされていません。
+Marketo Cordova プラグインを[!DNL Ionic] アプリと統合します。[!DNL Ionic] Capacitorは現在サポートされていません。
 
 ## 前提条件
 
-1. [Marketo Admin でのアプリケーションの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) （アプリケーションの秘密鍵と Munchkin ID を取得します）。
-1. プッシュ通知の設定（[iOS](push-notifications.md) | [Android](push-notifications.md)）。
-1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) と [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/) のインストール。
+1. [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
+1. [Android](push-notifications.md)または[iOS](push-notifications.md)のプッシュ通知を設定します。
+1. [[!DNL Ionic]](https://ionicframework.com/getting-started/)と[Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)をインストールします。
 
 ## インストール手順
 
 ### Marketo [!DNL Ionic] プラグインの設定
 
-1. Cordova CLI がインストールされている場合は、[!DNL Ionic] アプリケーションディレクトリに移動し、次のコマンドを実行して Marketo プラグインをアプリケーションに追加します。
+1. [!DNL Ionic] アプリケーションディレクトリに移動し、次のコマンドを実行してMarketo プラグインを追加します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
-1. プラグインがアプリケーションに追加されたことを確認するには、次のコマンドを実行します。
+1. 次のコマンドを実行して、プラグインが追加されたことを確認します。
 
    `$ ionic plugin list com.marketo.plugin 0.X.0 "MarketoPlugin"`
 
@@ -47,13 +47,13 @@ ht-degree: 96%
 
    `$ ionic plugin remove com.marketo.plugin`
 
-1. プラグインを再追加するには、次のコマンドを実行します。
+1. プラグインを再度追加するには、次のコマンドを実行します。
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
 ### xCode でのプッシュ通知の有効化
 
-1. xCode プロジェクトでプッシュ通知機能をオンにします。![通知機能](assets/notification-capability.png)
+1. xCode プロジェクトのプッシュ通知機能をオンにします。![通知機能](assets/notification-capability.png)
 
 ### プッシュ通知のトラッキング
 
@@ -81,9 +81,9 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 ### Marketo フレームワークの初期化
 
-Marketo フレームワークをアプリの起動時に開始するには、以下のコードをアプリのメインの JavaScript ファイル内の `onDeviceReady` 関数に追加してください。
+アプリの起動時にMarketo フレームワークを初期化するには、メインのJavaScript ファイルの`onDeviceReady`関数に次のコードを追加します。
 
-[!DNL Ionic] Cordova アプリのフレームワークタイプとして `ionicCordova` を渡す必要があります。
+`ionicCordova`を[!DNL Ionic]個のCordova アプリのフレームワークタイプとして渡します。
 
 #### 構文
 
@@ -106,14 +106,14 @@ marketo.onStart(
 
 #### パラメーター
 
-- Success Callback :Marketo フレームワークが正常に初期化された場合に実行する関数。
-- Failure Callback :Marketo フレームワークを初期化できない場合に実行する関数
-- MUNCHKIN ID：登録時にMarketoから受信した Munchkin ID。
-- 秘密鍵：登録時にMarketoから受信した秘密鍵。
+- Success Callback: Marketo フレームワークが正常に初期化された場合に実行する関数。
+- Failure Callback: Marketo フレームワークが初期化に失敗した場合に実行する関数。
+- MUNCHKIN ID：登録時にMarketoから受信したMunchkin ID。
+- 秘密鍵：登録時にMarketoから秘密鍵を受信しました。
 
 ### Marketo プッシュ通知の初期化
 
-Marketo プッシュ通知を開始するには、メインの JavaScript ファイルの初期化関数の後に次のコードを追加します。
+Marketo プッシュ通知を初期化するには、メインのJavaScript ファイルのinitialize関数の後に次のコードを追加します。
 
 #### 構文
 
@@ -128,11 +128,11 @@ marketo.initializeMarketoPush(
 
 #### パラメーター
 
-- Success Callback :Marketo プッシュ通知が正常に初期化された場合に実行する関数。
-- Failure Callback :Marketoのプッシュ通知が初期化に失敗した場合に実行する関数
-- GCM_PROJECT_ID :GCM プロジェクト ID が見つかりました [Google開発者コンソール](https://accounts.google.com/ServiceLogin?service=cloudconsole&passive=1209600&osid=1&continue=https://console.cloud.google.com/apis/dashboard&followup=https://console.cloud.google.com/apis/dashboard) アプリの作成後。
+- Success Callback: Marketo プッシュ通知が正常に初期化された場合に実行する関数。
+- Failure Callback: Marketo プッシュ通知が初期化に失敗した場合に実行する関数。
+- GCM_PROJECT_ID: アプリの作成後、[Google Developers Console](https://accounts.google.com/ServiceLogin?service=cloudconsole&passive=1209600&osid=1&continue=https://console.cloud.google.com/apis/dashboard&followup=https://console.cloud.google.com/apis/dashboard)にGCM プロジェクト IDが見つかりました。
 
-トークンは、ログアウト時に登録解除することもできます。
+ログアウト時にトークンを登録解除することもできます。
 
 ```javascript
 marketo.uninitializeMarketoPush(
@@ -141,9 +141,9 @@ marketo.uninitializeMarketoPush(
 );
 ```
 
-## リードを関連付け
+## リードの関連付け
 
-associateLead 関数を呼び出すことで、Marketo リードを作成できます。
+associateLead関数を呼び出して、Marketo リードを作成します。
 
 ### 構文
 
@@ -157,9 +157,9 @@ marketo.associateLead(
 
 ### パラメーター
 
-- Success Callback :Marketo Framework がリードを正常に関連付けたときに実行する関数。
-- Failure Callback :Marketo フレームワークがリードを関連付けられなかった場合に実行する関数
-- リードデータ :JSON 文字列形式のリードデータ。
+- Success Callback: Marketo フレームワークがリードを正常に関連付ける場合に実行する関数。
+- 失敗コールバック：Marketo フレームワークがリードの関連付けに失敗した場合に実行する関数。
+- リードデータ：JSON文字列形式のリードデータ。
 
 ### 例
 
@@ -186,7 +186,7 @@ marketo.associateLead(
 
 ## 報告書アクション
 
-ユーザーがアクションを実行した場合は、 `reportaction` 関数。
+`reportaction`関数を呼び出して、ユーザーアクションを報告します。
 
 ### 構文
 
@@ -201,10 +201,10 @@ marketo.reportaction(
 
 ### パラメーター
 
-- Success Callback :Marketo フレームワークがアクションを正常にレポートした場合に実行する関数。
-- Failure Callback :Marketo フレームワークがアクションのレポートに失敗した場合に実行する関数。
+- Success Callback: Marketo フレームワークがアクションを正常に報告した場合に実行する関数。
+- Failure Callback: Marketo フレームワークがアクションのレポートに失敗した場合に実行する関数。
 - アクション名：アクション名。
-- アクションデータ :JSON 文字列形式のアクションデータ。
+- アクションデータ：JSON文字列形式のアクションデータ。
 
 ### 例
 
@@ -227,7 +227,7 @@ marketo.reportaction(
 
 ## セッションレポート
 
-次に示すように、「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントをレポートします。 これは、モバイルアプリケーションで費やした時間を追跡するために使用されます。 メモ：これは Android で必要です。
+「一時停止」および「再開」イベントタイプをバインドして、開始イベントと停止イベントを報告します。 これらのイベントは、モバイルアプリケーションで費やした時間を追跡し、Androidで必要です。
 
 ```javascript
 //Add the following code in your www/js/index.js
@@ -258,6 +258,9 @@ onStart: function() {
 1. MARKETO REST API
 1. フォーム送信
 
-使用する方法に応じて、新しく作成したリードは様々なトリガーとフィルターによって認識されます。 MME SDK または REST API を使用して作成されたリードは、「リードが作成されました」のトリガーおよびフィルターに表示されます。 フォーム送信によって作成されたリードは、「フォームに記入」トリガーとフィルターに表示されます。
+新しいリードを識別するトリガーとフィルターは、作成方法によって異なります。
 
-ベストプラクティスは、リードを作成する際に Web アプリで使用される方法との一貫性を維持することです。 リードを作成するメカニズムとしてフォーム送信を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 リードを作成するメカニズムとして REST API を使用する web アプリが既にある場合は、ハイブリッドアプリでリードを作成する際に同じメカニズムを使用します。 Web アプリでリードを作成するメカニズムとしてフォーム送信も REST API も使用していない場合は、MME SDK を使用してMarketoでリードを作成することを検討できます。
+- MME SDKまたはREST APIで作成されたリードは、「作成されたリード」トリガーおよびフィルターに表示されます。
+- フォーム送信によって作成されたリードは、「フォームに入力」トリガーとフィルターに表示されます。
+
+ハイブリッドアプリとweb アプリでも、同様のリード作成方法を使用できます。 Web アプリでフォーム送信またはREST APIを使用する場合は、ハイブリッドアプリでそのメソッドを使用します。 Web アプリでどちらのメソッドも使用しない場合は、MME SDKを使用してMarketoでリードを作成することを検討してください。
