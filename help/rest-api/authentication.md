@@ -8,10 +8,10 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: 6d9408d07557d4b7426ad72d2a886220d622fb78
 workflow-type: tm+mt
-source-wordcount: 528
-ht-degree: 10%
+source-wordcount: 526
+ht-degree: 8%
 
 ---
 
@@ -83,7 +83,7 @@ curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/
 
 ID応答からのアクセストークンと有効期限を保存します。 トークンの有効期限を管理することで、通常の操作中に予期しない認証エラーが発生するのを防ぐことができます。
 
-REST呼び出しを行う前に、トークンの残りの有効期間を確認します。 トークンの有効期限が切れている場合は、[ID](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) エンドポイントを呼び出してトークンを更新します。 事前対応的な更新により、期限切れのトークンに起因するエラーを防ぎ、REST呼び出しの遅延をより予測可能にします。これは、エンドユーザー向けアプリケーションにとって重要です。
+REST呼び出しを行う前に、トークンの残りの有効期間を確認します。 トークンの有効期限が切れている場合は、[ID](https://developer.adobe.com/marketo-apis/api/identity#tag/Identity) エンドポイントを呼び出してトークンを更新します。 事前対応的な更新により、期限切れのトークンに起因するエラーを防ぎ、REST呼び出しの遅延をより予測可能にします。これは、エンドユーザー向けアプリケーションにとって重要です。
 
 認証エラーは、次のコードを返します。
 
