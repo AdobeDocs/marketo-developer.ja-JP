@@ -4,17 +4,13 @@ feature: REST API
 description: 記述分析、クエリ分析、更新例の作成、検索可能なフィールド、重複排除ルール、リードリンクのないABM名前付きアカウントを活用したCRUDに関するMarketo REST ガイド。
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
 TQID: https://experienceleague.adobe.com/iY3UYVelm3aKuuDBCTxaVCbkXfwnJzDjV3Kvn9rcNbA
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 590
+source-wordcount: 584
 ht-degree: 5%
 
 ---
@@ -243,7 +239,7 @@ API名で1つの名前付きアカウントフィールドをクエリするか�
 
 #### 名前別
 
-[名前付きアカウントフィールドを名前付きアカウントオブジェクトで取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、名前付きアカウントオブジェクトの1つのフィールドのメタデータを取得します。 必須のfieldApiName パスパラメーターは、フィールドのAPI名を指定します。
+[名前付きアカウントフィールドを名前付きアカウントオブジェクトで取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getNamedAccountFieldByNameUsingGET) エンドポイントは、名前付きアカウントオブジェクトの1つのフィールドのメタデータを取得します。 必須のfieldApiName パスパラメーターは、フィールドのAPI名を指定します。
 
 応答は、「名前付きアカウントを説明」応答に似ていますが、追加のメタデータが含まれています。 例えば、isCustom属性は、フィールドがカスタムかどうかを示します。
 
@@ -273,7 +269,7 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 参照
 
-[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、batchSize クエリパラメーターを使用します。
+[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、batchSize クエリパラメーターを使用します。
 
 moreResult属性がtrueの場合、より多くの結果を使用できます。 返されたnextPageTokenでエンドポイントの呼び出しを続行し、moreResultがfalseになるまで呼び出します。
 

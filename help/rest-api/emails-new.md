@@ -3,16 +3,16 @@ title: メール
 feature: REST API
 description: Marketo Asset REST APIを使用して、メールアセットのクエリ、作成、更新、複製、削除、承認、依存関係の検査を行います。
 exl-id: b41a3ae5-2b25-4103-84b4-320fc2c44bd6
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '490'
 ht-degree: 6%
 
 ---
 
 # メール
 
-[メールエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails_New)
+[メールエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset)
 
 メールは、メッセージのメタデータ、コンテンツ設定、設定、承認状態を定義するアセットレコードです。
 

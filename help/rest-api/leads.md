@@ -4,20 +4,13 @@ feature: REST API
 description: Marketoが提供するREST APIの機能には、説明、IDまたはフィルターによるクエリ、デフォルトフィールド、制限、ECIDの取得などがあります。
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
 TQID: https://experienceleague.adobe.com/jZ-ecWTmHwq9gvp4fMaeuuGba6cgwYx0QCCyfkrEDHQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 2728
+source-wordcount: 2733
 ht-degree: 11%
 
 ---
@@ -72,7 +65,7 @@ GET /rest/v1/leads/describe.json
 
 実際の応答では、結果の配列にフィールドが追加されます。 各項目は、リードレコードで使用可能なフィールドを表し、少なくともID、displayName、およびデータタイプを含みます。
 
-rest オブジェクトとsoap子オブジェクトは、対応するAPIに対してフィールドが有効な場合にのみ表示されます。 `readOnly` プロパティは、対応するAPIがフィールドを更新できるかどうかを示します。 存在する場合、length プロパティは最大フィールド長を与え、dataType プロパティはフィールドのデータタイプを与えます。
+REST子オブジェクトは、フィールドが対応するAPIに対して有効な場合にのみ表示されます。 `readOnly` プロパティは、対応するAPIがフィールドを更新できるかどうかを示します。 存在する場合、length プロパティは最大フィールド長を与え、dataType プロパティはフィールドのデータタイプを与えます。
 
 ## クエリ
 
@@ -177,7 +170,7 @@ Adobe Experience Cloud オーディエンス共有が有効になっている場
 
 >[!NOTE]
 >
-> [リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)エンドポイントを使用した会社フィールドの更新はサポートされていません。 代わりに、[会社の同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST)エンドポイントを使用します。
+> [リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)エンドポイントを使用した会社フィールドの更新はサポートされていません。 代わりに、[会社の同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST)エンドポイントを使用します。
 
 >[!NOTE]
 >
@@ -863,7 +856,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 }
 ```
 
-Cookieが既に既知のリードに関連付けられている場合、別のリードにこのAPIを使用すると、新しいレコードに対して新しいweb アクティビティが記録されます。既存のWeb アクティビティは、新しいレコードに移動しません。
+Cookieが既に既知のリードに関連付けられている場合、別のリードにこのAPIを使用すると、新しいレコードに対して新しいweb アクティビティが記録されます。 既存のWeb アクティビティは、新しいレコードに移動しません。
 メンバーシップ
 
 静的リストまたはプログラムのメンバーシップに基づいてリードレコードを取得します。 特定のリードを含むあらゆる静的リスト、プログラム、スマートキャンペーンを取得することもできます。

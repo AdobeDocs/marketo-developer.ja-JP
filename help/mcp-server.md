@@ -5,25 +5,13 @@ badgeBeta: label="限定提供" type="informative" tooltip="この機能は、�
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
 autotag-review: '2026-06-02T13:31:15.329Z'
 TQID: 'https://experienceleague.adobe.com/PJJm7yv8HmbwMB2fsnfDCXs8zprDJK5Q5z2uiiCJRZI'
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-  - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
-  - id: dca84292-69e9-4116-a575-667d31fa060d
-  - id: e2290edd-b061-4880-9d79-dee306cf5aa9
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: af0a3c77654f74d7cb5d2077518d764468a53ae0
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: c2dbad80-0f5c-4d96-a798-2a65f93b8721id: dca84292-69e9-4116-a575-667d31fa060did: e2290edd-b061-4880-9d79-dee306cf5aa9id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
+source-git-commit: 2019d398e32790d76735ef672e9ca4b48b8dd2bb
 workflow-type: tm+mt
-source-wordcount: 2018
+source-wordcount: 2216
 ht-degree: 1%
 
 ---
@@ -32,23 +20,27 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
-> この機能は限定的に利用できます。 アクセスをリクエストするには、[このフォーム &#x200B;](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4Y-uSf63sAxCmWyqMJg8eMFUMVZSVExSNDA3T0I4SEcwRDFSVTBGWU01Uy4u&origin=QRCode){target="_blank"}に入力してください。 サブスクリプションのMunchkin IDの準備が整っていることを確認します。
+> この機能は限定的に利用できます。 アクセスをリクエストするには、[このフォーム ](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4Y-uSf63sAxCmWyqMJg8eMFUMVZSVExSNDA3T0I4SEcwRDFSVTBGWU01Uy4u&origin=QRCode){target="_blank"}に入力してください。 サブスクリプションのMunchkin IDの準備が整っていることを確認します。
+
+>[!NOTE]
+>
+>MCP サーバーチームは、スマートリストおよびスマートキャンペーンアセット APIをMCP サーバーと連携させることに取り組んでいます。 アクティビティ、アクション、ルールの許可リストに加えるを含むこの作業の大部分は、2026年第3四半期に完了する予定です。
 
 モデルコンテキストプロトコル（MCP）は、AI ツールを外部サービスに接続するオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントを[!DNL Marketo]に接続します。 フォーム、プログラム、スマートキャンペーン、リード、メール、スニペット、リスト、フォルダーなど、100以上の処理を実行できます。
 
 AI ツールがMCP サーバーを呼び出すと、サーバーはそのリクエストの資格情報を使用して、対応するREST API呼び出しを実行します。 サーバーサイドソフトウェアをインストール、デプロイ、または実行する必要はありません。
 
-Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 >[!IMPORTANT]
 >
->Model Context Protocol （MCP）は新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが生じる可能性があります。Adobe MCP サーバーの統合と関連ドキュメントは、いかなる保証も受けることなく、「現状のまま」提供されます。
->MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
-> リスクを軽減するために、Adobeでは、実稼働的に使用する前にサンドボックス環境で統合をテストし、MCPが開始するすべてのアクションと応答を慎重にレビューおよび検証してから、確認または依存することを推奨しています。
+>Model Context Protocol （MCP）は新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが生じる可能性があります。 Adobe MCP サーバーの統合と関連ドキュメントは、いかなる保証も受けることなく、「現状のまま」提供されます。
+>MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。 Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
+>リスクを軽減するために、Adobeでは、本番稼働前にサンドボックス環境で統合をテストし、MCPで開始されるすべてのアクションと応答を慎重にレビューおよび検証してから、確認または依存することを推奨しています。
 
 ## MCPの基本
 
->MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [&#x200B; モデル コンテキスト プロトコル &#x200B;](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCPでは、AI ツールを複数の外部サービスに同時に接続することができます。 例えば、AI アシスタントは次のことが可能です。
 
@@ -161,7 +153,7 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 ### カーソル {#cursor}
 
 カーソル MCP設定に既に他のサーバーが含まれている場合は、`mcpServers`の下に`marketo` エントリを追加します。
-次の例は、プロジェクトディレクトリの&#x200B;**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
+次の例は、プロジェクトディレクトリの**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
 
 >[!BEGINTABS]
 
@@ -304,7 +296,7 @@ claude mcp add --transport http marketo \
 
 ### Glean {#glean}
 
-GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム &#x200B;](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
+GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム ](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
 
 | ヘッダー | 値 |
 | ------ | ----- |
@@ -314,8 +306,8 @@ GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチ�
 
 ### 他社製品 {#other-tools}
 
-Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで公開します。ストリーミング可能なHTTP トランスポート経由でリモートサーバーをサポートするMCP クライアントは、接続できます。
-ツール固有のブリッジやローカルにインストールされたソフトウェアは必要ありません。お使いのツールが上記に記載されていない場合は、以下の接続の詳細を使用して手動で設定します。
+Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで公開します。 ストリーミング可能なHTTP トランスポート経由でリモートサーバーをサポートするMCP クライアントは、接続できます。
+ツール固有のブリッジやローカルにインストールされたソフトウェアは必要ありません。 お使いのツールが上記に記載されていない場合は、以下の接続の詳細を使用して手動で設定します。
 
 **接続の詳細：**
 
@@ -347,11 +339,11 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 
 >[!ENDTABS]
 
-ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
+ツールがJSON設定を受け入れる場合は、[ カーソル ](#cursor)または[VS コード ](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
 
 ## 使用可能な操作
 
-接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 ### フォーム
 

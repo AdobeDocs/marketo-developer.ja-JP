@@ -4,17 +4,13 @@ feature: REST API
 description: Marketo Companies REST APIを使用して、会社レコードの記述、クエリ、同期、フィールドの管理、externalCompanyIdによる重複排除、CRM同期の読み取り専用へのメモ作成を行います。
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
 TQID: https://experienceleague.adobe.com/LdJYN4lx9JfcE-02zTz8ktfYXm4EdPtxMYOx9gGR0sg
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 582
+source-wordcount: 572
 ht-degree: 14%
 
 ---
@@ -23,7 +19,7 @@ ht-degree: 14%
 
 [会社エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
 
-企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)または[&#x200B; リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
+企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[ リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)または[ リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
 
 別の会社にリードを追加しない限り、会社からリードを削除することはできません。 会社レコードにリンクされたリードは、そのレコードから値を継承し、その値がリードレコードに存在するかのように処理します。
 
@@ -109,7 +105,7 @@ GET /rest/v1/companies/describe.json
 
 ## クエリ
 
-[企業](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompaniesUsingGET)のクエリのパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、Describe Companies レスポンスまたはdedupeFieldsのsearchableFields配列にリストされているフィールドのみを受け入れます。
+[企業](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompaniesUsingGET)のクエリのパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、Describe Companies レスポンスまたはdedupeFieldsのsearchableFields配列にリストされているフィールドのみを受け入れます。
 
 クエリパラメーターは次のとおりです。
 
@@ -152,7 +148,7 @@ GET /rest/v1/companies.json?filterType=id&filterValues=3433,5345
 
 ## 作成と更新
 
-[Sync Companies](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) エンドポイントは、会社オブジェクトの配列を含む必須の`input` パラメーターを受け入れます。
+[Sync Companies](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST) エンドポイントは、会社オブジェクトの配列を含む必須の`input` パラメーターを受け入れます。
 
 商談と同様に、エンドポイントは3つの作成モードと更新モード（createOnly、updateOnly、createOrUpdate）をサポートしています。 リクエストの`action` パラメーターでモードを指定します。
 
@@ -214,7 +210,7 @@ API名で1つの会社フィールドをクエリするか、すべての会社�
 
 #### 名前別
 
-[名前で会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
+[名前で会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompanyFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
 
 応答はDescribe Company応答に似ていますが、追加のメタデータが含まれています。 例えば、`isCustom`属性は、フィールドがカスタムかどうかを示します。
 
@@ -245,7 +241,7 @@ GET /rest/v1/companies/schema/fields/industry.json
 
 #### 参照
 
-[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
+[会社フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompanyFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
 
 `moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 `moreResult`がfalseになるまで、返された`nextPageToken`でエンドポイントの呼び出しを続行します。
 

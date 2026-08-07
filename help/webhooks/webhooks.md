@@ -4,24 +4,15 @@ feature: Webhooks
 description: MarketoのWebhookを設定して、サードパーティサービスの呼び出し、ペイロードテンプレート、エンコーディング、レスポンスマッピング、トークン、カスタムヘッダー、ヒントを設定する方法を説明します。
 exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
 TQID: https://experienceleague.adobe.com/r-GpAqhYPKvlDtMw5l23jeJWzlSqycP65eYJPA3m9EM
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
-  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-subfeature_v2:
-  - id: ad89fb33-8541-4339-afe7-bb13d1633714
-  - id: fc9b09fe-b844-4544-887b-e420c3b82065
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+subfeature_v2: id: ad89fb33-8541-4339-afe7-bb13d1633714id: fc9b09fe-b844-4544-887b-e420c3b82065
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
 workflow-type: tm+mt
-source-wordcount: 614
-ht-degree: 30%
+source-wordcount: 613
+ht-degree: 28%
 
 ---
 
@@ -39,12 +30,12 @@ Webhookを作成してスマートキャンペーンに追加する手順につ�
 
 - **[!UICONTROL URL]** - web サービスリクエストを送信するURL。
 - **[!UICONTROL リクエストタイプ]** - HTTP メソッド。
-- **[!UICONTROL ペイロードテンプレート]** - POST本文で送信される情報のテンプレート。 XML、JSON、SOAP など、HTTP POST をサポートする任意のデータ形式を使用します。 シリアル化形式では、文字列を二重引用符で囲むことができる必要があります。 トークンを挿入するには、**[!UICONTROL トークンを挿入]**&#x200B;を選択します。 Marketoでは、文字列タイプトークンが二重引用符で囲まれます。
+- **[!UICONTROL ペイロードテンプレート]** - POST本文で送信される情報のテンプレート。 XMLやJSONなど、HTTP POSTをサポートするあらゆるデータ形式を使用できます。 シリアル化形式では、文字列を二重引用符で囲むことができる必要があります。 トークンを挿入するには、**[!UICONTROL トークンを挿入]**&#x200B;を選択します。 Marketoでは、文字列タイプトークンが二重引用符で囲まれます。
 - **[!UICONTROL 要求トークンエンコーディング]** - アンパサンドや「&amp;」などの特殊文字を含むトークン値をエンコードするために使用される、JSONまたはForm/Urlのリクエスト形式。 WebhookがWeb サービスと正しく通信するように、正しいボディエンコーディングを選択します。
 - **[!UICONTROL 応答タイプ]** – 応答の形式（JSONまたはXML）。 Marketoのリードフィールドに応答プロパティをマッピングする正しいタイプを選択します。
 - **[!UICONTROL カスタムヘッダー]** - キーと値のペアが&#x200B;**[!UICONTROL Webhook アクション]** > **[!UICONTROL カスタムヘッダーを設定]**&#x200B;を通じてHTTP ヘッダーとして追加されました。 任意の数のカスタムヘッダーを追加できます。
 
-[応答マッピング &#x200B;](response-mappings.md)を使用して、web サービス応答からリードにデータを書き込みます。
+[応答マッピング ](response-mappings.md)を使用して、web サービス応答からリードにデータを書き込みます。
 
 ## トークン
 

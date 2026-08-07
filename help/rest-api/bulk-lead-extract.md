@@ -4,13 +4,11 @@ feature: REST API
 description: Marketo Bulk Lead Extract REST APIを使用して、日付、リスト、スマートリストのフィルター、カスタムフィールド、CSV/TSV形式でリードを一括エクスポートする方法を説明します。
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
 TQID: https://experienceleague.adobe.com/4eMJR87fHDdccrVid3wHtspvBVQmrBGHYMlIwFCSdEI
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1037
+source-wordcount: 1017
 ht-degree: 8%
 
 ---
@@ -35,8 +33,8 @@ Bulk Lead Extractを使用すれば、ETL、データウェアハウス、アー
 
 | フィルタータイプ | データタイプ | メモ |
 | --- | --- | --- |
-| createdAt | 日付範囲 | `startAt`と`endAt`人のメンバーを持つJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 ISO-8601の日付と時刻の値をミリ秒なしで使用します。 範囲は 31日以内にする必要があります。 このジョブは、日付範囲内で作成されたすべてのアクセス可能なレコードを返します。 |
-| updatedAt* | 日付範囲 | `startAt`と`endAt`人のメンバーを持つJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 ISO-8601の日付と時刻の値をミリ秒なしで使用します。 範囲は 31日以内にする必要があります。 このフィルターでは、標準フィールドの更新のみを反映する表示可能な`updatedAt` フィールドは使用されません。 その代わりに、最新のフィールド更新時間をリードレコードに使用します。 このジョブは、日付範囲内で最近更新されたすべてのアクセス可能なレコードを返します。 |
+| createdAt | 日付範囲 | `startAt`と`endAt`人のメンバーを持つJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 ISO-8601の日付と時刻の値をミリ秒なしで使用します。 範囲は最大 31 日までです。 このジョブは、日付範囲内で作成されたすべてのアクセス可能なレコードを返します。 |
+| updatedAt* | 日付範囲 | `startAt`と`endAt`人のメンバーを持つJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 ISO-8601の日付と時刻の値をミリ秒なしで使用します。 範囲は最大 31 日までです。 このフィルターでは、標準フィールドの更新のみを反映する表示可能な`updatedAt` フィールドは使用されません。 その代わりに、最新のフィールド更新時間をリードレコードに使用します。 このジョブは、日付範囲内で最近更新されたすべてのアクセス可能なレコードを返します。 |
 | staticListName | 文字列 | 静的リストの名前。 ジョブは、ジョブの処理開始時に、静的リストのメンバーであるアクセス可能なすべてのレコードを返します。 リストの取得エンドポイントを使用して、静的リスト名を取得します。 |
 | staticListId | 整数 | 静的リストのID。 ジョブは、ジョブの処理開始時に、静的リストのメンバーであるアクセス可能なすべてのレコードを返します。 リストの取得エンドポイントを使用して、静的リスト IDを取得します。 |
 | smartListName* | 文字列 | スマートリストの名前。 ジョブは、ジョブの処理開始時に、スマートリストのメンバーであるアクセス可能なすべてのレコードを返します。 スマートリストの取得エンドポイントを使用して、スマートリスト名を取得します。 |
@@ -56,7 +54,7 @@ Bulk Lead Extractを使用すれば、ETL、データウェアハウス、アー
 
 ## ジョブの作成
 
-[書き出しリードジョブの作成](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) エンドポイントを使用して、書き出しジョブを定義します。 書き出す`fields`、1つの`filter` タイプとそのパラメーター、ファイル `format`、および任意のカスタム列ヘッダー名を指定します。
+[書き出しリードジョブの作成](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportLeadsUsingPOST) エンドポイントを使用して、書き出しジョブを定義します。 書き出す`fields`、1つの`filter` タイプとそのパラメーター、ファイル `format`、および任意のカスタム列ヘッダー名を指定します。
 
 ```http
 POST /bulk/v1/leads/export/create.json
@@ -104,7 +102,7 @@ POST /bulk/v1/leads/export/create.json
 }
 ```
 
-応答は、ジョブが作成されたが開始されていないことを確認します。 ジョブを開始するには、作成応答から`exportId`を含む[Enqueue Export Lead Job](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) エンドポイントを呼び出します。
+応答は、ジョブが作成されたが開始されていないことを確認します。 ジョブを開始するには、作成応答から`exportId`を含む[Enqueue Export Lead Job](https://developer.adobe.com/marketo-apis/api/mapi#operation/enqueueExportLeadsUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
@@ -132,7 +130,7 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 
 同じAPI ユーザーが作成したジョブに対してのみ、ステータスを取得できます。
 
-リード書き出しジョブは非同期で実行されます。 [Get Export Lead Job Status](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) エンドポイントをポーリングして、ジョブの進行状況を追跡します。
+リード書き出しジョブは非同期で実行されます。 [Get Export Lead Job Status](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsStatusUsingGET) エンドポイントをポーリングして、ジョブの進行状況を追跡します。
 
 ステータスは60秒ごとに1回だけ更新されます。 より頻繁に調査しないでください。ほとんどの場合、その間隔はまだ過剰です。
 
@@ -160,7 +158,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 `status` フィールドは、次のいずれかの値を返すことができます。
 
-- 作成済み
+- 作成日
 - 待機中
 - 処理中
 - キャンセル済み
@@ -169,7 +167,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## データの取得
 
-完了したリード書き出しを取得するには、[&#x200B; リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
+完了したリード書き出しを取得するには、[ リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -188,7 +186,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[&#x200B; リードジョブのエクスポートをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[ リードジョブのエクスポートをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json

@@ -4,18 +4,14 @@ feature: REST API, Landing Pages
 description: REST API エンドポイントを使用して、フリーフォームとガイド付きタイプのMarketoランディングページテンプレートを管理し、IDまたは名前によるクエリを実行して、HTMLを作成、更新し、複製、Munchkinを実行できます。
 exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
 TQID: https://experienceleague.adobe.com/U9K1MG-q2gIgJMgfM3lt1S4olETt8ln9seOIKZUncBY
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 519
-ht-degree: 20%
+source-wordcount: 499
+ht-degree: 21%
 
 ---
 
@@ -29,11 +25,11 @@ ht-degree: 20%
 
 Marketoには、フリーフォームとガイド付きのランディングページテンプレートが用意されています。 自由形式テンプレートを使用すると、緩やかに構造化された編集体験を提供できます。 ガイド付きテンプレートを使用すると、テンプレートレベルでエレメントの種類と場所を制限できます。
 
-詳細な比較については、[&#x200B; フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
+詳細な比較については、[ フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
 
 ## クエリ
 
-ランディングページテンプレート [をID](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET)で、[を名前](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET)で、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)でクエリします。 これらのエンドポイントは、テンプレートメタデータを返します。 IDでテンプレートごとにHTML コンテンツを個別に取得します。
+ランディングページテンプレート [をID](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplateByIdUsingGET)で、[を名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplateByNameUsingGET)で、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplatesUsingGET)でクエリします。 これらのエンドポイントは、テンプレートメタデータを返します。 IDでテンプレートごとにHTML コンテンツを個別に取得します。
 
 ## 作成と更新
 
@@ -79,11 +75,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-[&#x200B; ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
+[ ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
 
 ### メタデータの更新
 
-[&#x200B; ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
+[ ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
 
 ### コンテンツの更新
 

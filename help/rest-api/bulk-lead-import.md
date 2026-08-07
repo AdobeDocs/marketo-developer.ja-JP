@@ -4,17 +4,13 @@ feature: REST API
 description: CSV TSVまたはSSVを使用して、Marketoで非同期の一括リードインポートを作成および監視します。
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
 TQID: https://experienceleague.adobe.com/UamXYWis5J1ERqnp5lAnfUf3pFcgfSOLfKRXRB-Yg4I
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: e2290edd-b061-4880-9d79-dee306cf5aa9
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e2290edd-b061-4880-9d79-dee306cf5aa9
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 623
+source-wordcount: 619
 ht-degree: 9%
 
 ---
@@ -23,7 +19,7 @@ ht-degree: 9%
 
 [リードの一括読み込みエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads)
 
-[bulk API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)を使用して、多数のリードレコードを非同期で読み込みます。 10 MB未満のコンマ、タブ、またはセミコロンで区切られたフラットファイルでレコードを指定します。
+[bulk API](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)を使用して、多数のリードレコードを非同期で読み込みます。 10 MB未満のコンマ、タブ、またはセミコロンで区切られたフラットファイルでレコードを指定します。
 
 リードの一括読み込みは、「挿入または更新」レコード操作のみをサポートします。
 
@@ -111,7 +107,7 @@ Easy,Fox,easyfox@marketo.com,Marketo
 
 - `lookupField`：重複排除に使用されるフィールドを選択し、デフォルトは`email`です。 「更新専用」操作を実行するには、`id`を指定します。
 - `listId`：静的リストを選択します。 インポートしたリードは、インポートで作成または更新されたレコードに加えて、このリストのメンバーになります。
-- `partitionName`: インポート先のパーティションを選択します。 詳しくは、「ワークスペースとパーティション」の節を参照してください。
+- `partitionName`: インポート先のパーティションを選択します。 詳しくは、ワークスペースとパーティションの節を参照してください。
 
 APIは非同期なので、応答には個々の成功と失敗ではなく`batchId`と`status`のフィールドが含まれます。 ステータスは`Queued`、`Importing`、または`Failed`です。
 

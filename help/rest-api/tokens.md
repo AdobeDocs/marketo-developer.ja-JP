@@ -4,13 +4,11 @@ feature: REST API, Tokens
 description: Asset REST APIでMarketoのマイトークンを管理します。 サポートされているデータタイプ、フォルダーまたはプログラムによる取得、フォームエンコードされたPOSTを使用した作成または更新、名前による削除を参照してください。
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
 TQID: https://experienceleague.adobe.com/uqOpu2vDuiQiZhILKuxZJQGadd0K14zwIaAdmNfK1-I
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 290
+source-wordcount: 284
 ht-degree: 20%
 
 ---
@@ -40,7 +38,7 @@ APIは、トークンの作成時にこれらのデータタイプのみをサ�
 
 ## クエリ
 
-[&#x200B; フォルダーIDでトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/getTokensByFolderIdUsingGET)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType` パラメーターを使用して、型を指定します。
+[ フォルダーIDでトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getTokensByFolderIdUsingGET)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType` パラメーターを使用して、型を指定します。
 
 ```http
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
@@ -73,7 +71,7 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 ## 作成と更新
 
-[&#x200B; トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/addTokenTOFolderUsingPOST) エンドポイントは、送信された値でトークンを作成するか、既存のトークンを更新します。 トークンはフォルダーまたはプログラムに属します。
+[ トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/addTokenTOFolderUsingPOST) エンドポイントは、送信された値でトークンを作成するか、既存のトークンを更新します。 トークンはフォルダーまたはプログラムに属します。
 
 `id` パス パラメーターは、親フォルダーを識別します。 `name`、`type`、`value`および`folderType`のパラメーターが必要です。 データをJSONではなくPOST `x-www-form-urlencoded`として渡します。 トークン `name`は50文字を超えることはできません。
 
@@ -116,7 +114,7 @@ name=April Fools&type=date&value=2015-04-01&folderType=Folder
 
 ## 削除
 
-[名前でトークンを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/deleteTokenByNameUsingPOST)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType`を使用してタイプを指定します。
+[名前でトークンを削除](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteTokenByNameUsingPOST)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType`を使用してタイプを指定します。
 
 親フォルダー、トークン `name`およびトークン `type`が必要です。 データをJSONではなくPOST `x-www-form-urlencoded`として渡します。
 

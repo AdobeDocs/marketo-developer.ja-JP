@@ -4,18 +4,13 @@ feature: REST API
 description: Marketoの要件、IDまたは名前によるクエリ、参照フォルダーなど、HTML REST API メールテンプレートを作成および管理する方法について説明します
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
 TQID: https://experienceleague.adobe.com/jKQpibaRP7nAyIsDdjMf8VkNPi5AMFbe7I4Iiy3MGc0
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-  - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 570
+source-wordcount: 543
 ht-degree: 10%
 
 ---
@@ -30,7 +25,7 @@ Marketoでは、新しい電子メールはすべてメールテンプレート�
 
 ## クエリ
 
-メールテンプレートは、標準のアセットクエリパターン（[id](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getTemplateByIdUsingGET)によって、[名前](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getTemplateByNameUsingGET)によって、および[&#x200B; フォルダーを参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getEmailTemplatesUsingGET)によって）をサポートしています。
+メールテンプレートは、標準のアセットクエリパターン（[id](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByIdUsingGET)によって、[名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByNameUsingGET)によって、および[ フォルダーを参照](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplatesUsingGET)によって）をサポートしています。
 
 ### ID 別
 
@@ -204,7 +199,7 @@ GET /rest/asset/v1/emailTemplates.json
 
 ## 作成と更新
 
-テンプレートを[create](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/createEmailTemplateUsingPOST)または[update](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)するには、`multipart/form-data`件のPOST リクエストでHTML ドキュメントを送信します。 `Content-Type` ヘッダーには、[multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)および[multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt)のRFCで説明されている境界を含める必要があります。
+テンプレートを[create](https://developer.adobe.com/marketo-apis/api/asset#operation/createEmailTemplateUsingPOST)または[update](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)するには、`multipart/form-data`件のPOST リクエストでHTML ドキュメントを送信します。 `Content-Type` ヘッダーには、[multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)および[multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt)のRFCで説明されている境界を含める必要があります。
 
 テンプレートを作成するには、次のパラメーターが必要です。
 
@@ -275,7 +270,7 @@ Create email template using API
 }
 ```
 
-テンプレートコンテンツを更新するには、メールテンプレート IDで[&#x200B; コンテンツエンドポイント &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)を呼び出します。 リクエスト本文は`content` パラメーターのみを受け入れます。
+テンプレートコンテンツを更新するには、メールテンプレート IDで[ コンテンツエンドポイント ](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)を呼び出します。 リクエスト本文は`content` パラメーターのみを受け入れます。
 
 送信されたコンテンツは、既存のテンプレートコンテンツに完全に置き換わります。 承認済みバージョンを更新すると、新しいドラフトが作成されます。 ドラフトのみのアセットを更新すると、現在のドラフトが置き換えられます。
 
@@ -319,7 +314,7 @@ Content-Type: text/html
 
 ## メタデータの更新
 
-テンプレートのメタデータ [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateUsingPOST)を更新するには、`name`と`description`のパラメーターを含む`application/x-www-form-urlencoded` POST リクエストを送信します。
+テンプレートのメタデータ ](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateUsingPOST)を[更新するには、`name`と`description`のパラメーターを含む`application/x-www-form-urlencoded` POST リクエストを送信します。
 
 ```http
 POST /rest/asset/v1/emailTemplate/{id}.json
@@ -393,7 +388,7 @@ POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 }
 ```
 
-### 承認を取消
+### 承認取消
 
 承認されたテンプレートに対してのみ、承認されないエンドポイントを使用します。
 
@@ -479,7 +474,7 @@ POST /rest/asset/v1/emailTemplate/{id}/delete.json
 
 ## 複製
 
-メールテンプレートを[複製](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/cloneTemplateUsingPOST)するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
+メールテンプレートを[複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneTemplateUsingPOST)するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
 
 - `name`：必須。 複製されたテンプレート名。
 - `folder`：必須。 `id`と`type`を含む埋め込みJSON オブジェクト。
@@ -525,7 +520,7 @@ name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=T
 
 ## メールの依存関係のクエリ
 
-テンプレートに依存する電子メールを取得するには、[Get Email Template Used By](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET) エンドポイントを使用します。 `id` パスパラメーターは、親メールテンプレートを識別します。
+テンプレートに依存する電子メールを取得するには、[Get Email Template Used By](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplateUsedByUsingGET) エンドポイントを使用します。 `id` パスパラメーターは、親メールテンプレートを識別します。
 
 エンドポイントは、次の2つのオプションのページネーションパラメーターをサポートしています。
 
