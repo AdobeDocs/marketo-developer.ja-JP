@@ -4,10 +4,14 @@ feature: REST API
 description: Marketo REST APIを使用して、SFDCまたはDynamics syncで商談の記述、クエリ、作成、更新、重複排除および検索可能なフィールド、制限、読み取り専用の動作を実行できます。
 exl-id: 46451285-4125-4857-890a-575069a68288
 TQID: https://experienceleague.adobe.com/rBDJcXWQrN5qyKRWHyzVC-sc9BH2mQFLm7fKUk-NUn8
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
 source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: 702
@@ -96,7 +100,7 @@ GET /rest/v1/opportunities/describe.json
 
 ## クエリ
 
-[商談のクエリ ](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
+[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
 
 カスタム商談フィールドの場合、検索可能なFields配列に表示されるのは、String型またはInteger型のフィールドのみです。
 

@@ -4,9 +4,12 @@ feature: Webhooks
 description: Marketo Webhookは、JSONおよびXMLのレスポンスマッピング、リードフィールドへの属性のマッピング、ドットと配列の表記法、タイプの互換性をサポートします。
 exl-id: 95c6e33e-487c-464b-b920-3c67e248d84e
 TQID: https://experienceleague.adobe.com/-OGDeKLPS1KmWGIKj6BGq5DGXoCSj5ip-dVr7-kKDro
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
 workflow-type: tm+mt
 source-wordcount: 370
@@ -107,4 +110,4 @@ elementListの最初の子からfooの値を取得するには、応答属性`el
 
 ## タイプ
 
-属性をフィールドにマッピングする場合は、Webhook応答タイプがターゲットフィールドと互換性があることを確認します。 例えば、Marketoは、文字列応答値をinteger型のフィールドに書き込みません。 詳しくは、[ フィールドタイプ ](../rest-api/field-types.md)を参照してください。
+属性をフィールドにマッピングする場合は、Webhook応答タイプがターゲットフィールドと互換性があることを確認します。 例えば、Marketoは、文字列応答値をinteger型のフィールドに書き込みません。 詳しくは、[&#x200B; フィールドタイプ &#x200B;](../rest-api/field-types.md)を参照してください。

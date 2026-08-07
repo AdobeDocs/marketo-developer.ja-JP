@@ -4,9 +4,14 @@ feature: REST API
 description: Marketo REST APIの使用方法、API ユーザーとLaunchPointの設定、割り当てと制限の表示、認証ヘッダーによる認証、リードの取得について説明します。
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
 TQID: https://experienceleague.adobe.com/GqhWI816wWX-2zf89wWj-GXpg9i615HRFVl2ljdYVj0
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: 764
@@ -20,7 +25,7 @@ Marketo REST APIでは、多くのシステム機能にリモートアクセス�
 
 REST APIは、大きく分けて次のふたつのカテゴリーに分類されます。
 
-- [ リードデータベース ](https://developer.adobe.com/marketo-apis/api/mapi) APIは、Marketoの個人レコードと、商談や企業などの関連するオブジェクトタイプを取得して操作します。
+- [&#x200B; リードデータベース &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi) APIは、Marketoの個人レコードと、商談や企業などの関連するオブジェクトタイプを取得して操作します。
 - [Asset](https://developer.adobe.com/marketo-apis/api/asset)のAPIは、マーケティング資料およびワークフロー関連のレコードを操作します。
 
 >[!NOTE]
@@ -53,7 +58,7 @@ REST APIは、大きく分けて次のふたつのカテゴリーに分類され
 
 ![新規ロール](assets/new-role.png)
 
-[!UICONTROL  ユーザー] タブに戻り、**[!UICONTROL 新規ユーザーの招待]**&#x200B;を選択します。 ユーザーをAPI ユーザーとして識別する記述的な名前を入力し、電子メールアドレスを入力して、**[!UICONTROL 次へ]**&#x200B;を選択します。
+[!UICONTROL &#x200B; ユーザー] タブに戻り、**[!UICONTROL 新規ユーザーの招待]**&#x200B;を選択します。 ユーザーをAPI ユーザーとして識別する記述的な名前を入力し、電子メールアドレスを入力して、**[!UICONTROL 次へ]**&#x200B;を選択します。
 
 ![新規ユーザ情報](assets/new-user-info.png)
 
@@ -69,7 +74,7 @@ REST APIは、大きく分けて次のふたつのカテゴリーに分類され
 
 ![Launchpoint](assets/admin-launchpoint.png)
 
-**[!UICONTROL 新規]** > **[!UICONTROL 新規サービス]**&#x200B;を選択します。 わかりやすい名前と説明を入力し、[!UICONTROL  サービス ] メニューから&#x200B;**[!UICONTROL カスタム]**&#x200B;を選択します。 [!UICONTROL APIのみユーザー] メニューから新しいユーザーを選択し、**[!UICONTROL 作成]**&#x200B;を選択します。
+**[!UICONTROL 新規]** > **[!UICONTROL 新規サービス]**&#x200B;を選択します。 わかりやすい名前と説明を入力し、[!UICONTROL &#x200B; サービス &#x200B;] メニューから&#x200B;**[!UICONTROL カスタム]**&#x200B;を選択します。 [!UICONTROL APIのみユーザー] メニューから新しいユーザーを選択し、**[!UICONTROL 作成]**&#x200B;を選択します。
 
 ![新規 Launchpoint サービス](assets/admin-launchpoint-new-service.png)
 
@@ -95,7 +100,7 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 >
 >**access_token** クエリパラメーターを使用した認証のサポートは、2025年6月30日（PT）に削除されます。 プロジェクトでアクセストークンを渡すのにクエリパラメーターを使用している場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新規開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
-新しいブラウザータブを開き、次のURLを入力します。 プレースホルダーをインスタンスのエンドポイントとメールアドレスに置き換えて、[ フィルタータイプでリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)を呼び出します。
+新しいブラウザータブを開き、次のURLを入力します。 プレースホルダーをインスタンスのエンドポイントとメールアドレスに置き換えて、[&#x200B; フィルタータイプでリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)を呼び出します。
 
 ```text
 <Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>

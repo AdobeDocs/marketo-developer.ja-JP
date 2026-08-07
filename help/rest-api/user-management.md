@@ -4,10 +4,16 @@ feature: REST API
 description: ユーザー、ヘッダーベースの認証、ロールとワークスペース、ステータスコードの処理、日付時形式、クエリエンドポイントに関するCRUD用Marketo User Management APIのガイドです。
 exl-id: 2a58f496-0fe6-4f7e-98ef-e9e5a017c2de
 TQID: https://experienceleague.adobe.com/V1NzpIl-peHBi9rqy8YwdJDh3O-dViIdF0cBsDSI-w8
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: d65b4a73-87a3-4d56-b638-74e74d9939ce
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+  - id: d65b4a73-87a3-4d56-b638-74e74d9939ce
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
 source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: 1404
@@ -23,8 +29,8 @@ Marketo User Management エンドポイントは、ユーザーレコードに�
 
 User Management API を使用する際、他の Marketo REST API とは次の点が異なります。
 
-- HTTP ヘッダーにアクセストークンを送信します。 アクセストークンをクエリ文字列パラメーターとして渡すことはできません。 [認証ガイド ](authentication.md)を参照してください。
-- REST API [ カスタムサービス ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)のユーザーロールを作成する際に、次の各グループから権限を選択します。
+- HTTP ヘッダーにアクセストークンを送信します。 アクセストークンをクエリ文字列パラメーターとして渡すことはできません。 [認証ガイド &#x200B;](authentication.md)を参照してください。
+- REST API [&#x200B; カスタムサービス &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)のユーザーロールを作成する際に、次の各グループから権限を選択します。
   1. [管理にアクセス](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions)グループの「ユーザにアクセス」権限
   1. [Access API](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) グループの「Access User Management API」
 - 応答本文に「success」ブール属性が含まれていないため、HTTP応答ステータスコードを評価します。 呼び出しが成功すると、ステータスコード 200が返されます。 失敗した呼び出しは、200以外のステータスコードと、エラーコードと説明メッセージを含む標準の「errors」配列を返します。
@@ -101,7 +107,7 @@ GET /userservice/management/v1/users/{userid}/invite.json
 
 ### ID 別のロールとワークスペース
 
-Id](https://developer.adobe.com/marketo-apis/api/user#operation/getUserRolesAndWorkspacesUsingGET)による役割とワークスペースの取得エンドポイントは、1つの`userid` パスパラメーターを取り、ユーザーの役割とワークスペースレコードを返します。 [応答配列内の各オブジェクトには、役割とワークスペース IDおよび名前が含まれます。
+Id[&#128279;](https://developer.adobe.com/marketo-apis/api/user#operation/getUserRolesAndWorkspacesUsingGET)による役割とワークスペースの取得エンドポイントは、1つの`userid` パスパラメーターを取り、ユーザーの役割とワークスペースレコードを返します。 応答配列内の各オブジェクトには、役割とワークスペース IDおよび名前が含まれます。
 
 ```http
 GET /userservice/management/v1/users/{userid}/roles.json
@@ -310,7 +316,7 @@ GET /userservice/management/v1/users/workspaces.json
 
 [Invite User](https://developer.adobe.com/marketo-apis/api/user#operation/inviteUserUsingPOST) エンドポイントは、新しいユーザーに「Welcome to Marketo」のメール招待状を送信します。 このメールには、「Marketoにログイン」リンクが含まれています。 受信者はリンクを選択し、パスワードを作成してMarketoにアクセスできます。
 
-受信者が招待を受け入れるまで、そのステータスは「保留中」であり、ユーザーレコードを編集することはできません。 保留中の招待状は、送信されてから7日後に有効期限が切れます。 詳しくは、[Marketo ユーザー管理ドキュメント ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)を参照してください。
+受信者が招待を受け入れるまで、そのステータスは「保留中」であり、ユーザーレコードを編集することはできません。 保留中の招待状は、送信されてから7日後に有効期限が切れます。 詳しくは、[Marketo ユーザー管理ドキュメント &#x200B;](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)を参照してください。
 
 リクエスト本文にパラメーターを`application/json`形式で渡します。
 
@@ -350,7 +356,7 @@ Content-Type: application/json
 true
 ```
 
-次の図は、新規ユーザーに送信された「Marketoへようこそ」電子メールを示しています。 件名は「Marketo Login Information」です。 送信者は、[REST API カスタムサービス ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)に関連付けられたAPI専用ユーザーの電子メールアドレスです。 firstName、lastName、emailAddressの各パラメーターで受信者を指定します。
+次の図は、新規ユーザーに送信された「Marketoへようこそ」電子メールを示しています。 件名は「Marketo Login Information」です。 送信者は、[REST API カスタムサービス &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)に関連付けられたAPI専用ユーザーの電子メールアドレスです。 firstName、lastName、emailAddressの各パラメーターで受信者を指定します。
 
 ![ユーザ招待メール](assets/invite-user-email.png)
 

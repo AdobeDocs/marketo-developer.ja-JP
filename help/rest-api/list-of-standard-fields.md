@@ -4,9 +4,13 @@ feature: REST API, Field Management
 description: REST名、ラベル、説明を含むMarketo標準リードフィールドの完全なリストと、リードの説明APIを使用してそれらのフィールドを取得する方法を参照します。
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
 TQID: https://experienceleague.adobe.com/vu2wGk36XJ243vwavhfLE7Vc9vMIJKGx6vmVqMRgEDA
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
 workflow-type: tm+mt
 source-wordcount: 688
@@ -18,7 +22,7 @@ ht-degree: 88%
 
 次の表に、APIを通じて使用可能な標準Marketo フィールドを示します。 各フィールドのREST API名、ラベル、説明が含まれます。
 
-REST [ リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
+REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
 
 | REST API 名 | わかりやすいラベル | 説明 |
 | --- | --- | --- |

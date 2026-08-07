@@ -4,10 +4,17 @@ feature: REST API
 description: Marketo API統合のベストプラクティスでは、割り当て量、レートおよび同時実行数の制限、バッチ処理、一括インポートおよびエクスポート、キャッシュ、レイテンシープランニングをカバーします。
 exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
 TQID: https://experienceleague.adobe.com/Ld-rmFCwKSx-0W2-ceYICu0FQHK8BKAC1QgqtiOWDn4
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+  - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
 source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: 866
@@ -33,7 +40,7 @@ Marketo インスタンスの共通API制限に関する統合機能を設計し
 
 - アプリケーションは割り当て量、レート、同時実行リソースを他のアプリケーションと共有するため、保守的な使用制限を設定します。
 - 利用可能な場合は、Marketoの一括方式とバッチ方式を使用します。 必要な場合にのみ、単一レコードまたは単一の結果の呼び出しを使用します。
-- レートまたは同時実行の制限により失敗したAPI呼び出しを再試行するには、[指数的バックオフ ](https://en.wikipedia.org/wiki/Exponential_backoff)を使用します。
+- レートまたは同時実行の制限により失敗したAPI呼び出しを再試行するには、[指数的バックオフ &#x200B;](https://en.wikipedia.org/wiki/Exponential_backoff)を使用します。
 - ユースケースに利益をもたらす場合を除き、同時API呼び出しを避けます。
 
 ## バッチ処理
@@ -58,7 +65,7 @@ API対応の各Marketo インスタンスには、毎日10,000件以上のREST A
 
 キャパシティは、インスタンス内のすべてのAPI サービスとユーザーによって共有されます。 冗長な呼び出しとバッチレコードを排除し、できるだけ少ない呼び出しを実現します。
 
-最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[ リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)および[ カスタムオブジェクト ](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
+最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[&#x200B; リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)および[&#x200B; カスタムオブジェクト &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
 
 ### キャッシュ
 
@@ -86,6 +93,6 @@ Marketoでは、処理中で返されていない呼び出しがカウントさ�
 
 ## エラー
 
-まれに、API リクエストはHTTP ステータスコード 200を返します。 ビジネスロジックエラーも200を返しますが、応答本文に詳細が含まれます。 詳しくは、[ エラーコード ](error-codes.md)を参照してください。
+まれに、API リクエストはHTTP ステータスコード 200を返します。 ビジネスロジックエラーも200を返しますが、応答本文に詳細が含まれます。 詳しくは、[&#x200B; エラーコード &#x200B;](error-codes.md)を参照してください。
 
 HTTP理由フレーズはオプションであり、変更される可能性があるため、評価しないでください。

@@ -3,10 +3,19 @@ title: はじめに
 description: リード、アクティビティ、プログラム、タグ、リスト、REST ガイダンス、SOAPの非推奨化に関する通知など、Marketo Engage APIとデータモデルの基本を学びましょう。
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
 TQID: https://experienceleague.adobe.com/0lfzor5EQJ0VqIh4fqlK29OiPmRCy6fnEtncJ38r-OM
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c954475c-8548-4e33-a0b8-6b550d956115id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: ea90ebee-5c84-42d9-8b21-006bdabc95a3
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: aa2f3246-cb95-4b30-8899-fdf7d73550ccid: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: c954475c-8548-4e33-a0b8-6b550d956115
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+  - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
 source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: 1201
@@ -49,7 +58,7 @@ Marketoは、id フィールドによってリードを一意に識別します�
 
 アクティビティは常にリードに関連付けられます。
 
-カスタムアクティビティを定義することもできます。 カスタムアクティビティを作成して公開したら、Marketo APIを使用してカスタムアクティビティのインスタンスを追加できます。 詳しくは、[ カスタムアクティビティについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)を参照してください。
+カスタムアクティビティを定義することもできます。 カスタムアクティビティを作成して公開したら、Marketo APIを使用してカスタムアクティビティのインスタンスを追加できます。 詳しくは、[&#x200B; カスタムアクティビティについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities)、[JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
@@ -69,7 +78,7 @@ Marketoは、id フィールドによってリードを一意に識別します�
 
 Marketo管理者は、プログラムの作成時にユーザーが選択する必須およびオプションのタグタイプを作成できます。 会社のレポート要件に基づいて、各タグタイプで可能な値を定義します。
 
-例えば、NortheastやSoutheastなどの値を持つカスタムの「Region」タグタイプを作成して、どの地域が最も多くのリードを生み出しているかを分析します。 「所有者」タグのタイプを作成して、リードと機会の作成に最も大きな影響を与えるプログラム所有者（Maria、David、Johnなど）を比較します。 詳細については、「[ タグについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)」を参照してください。
+例えば、NortheastやSoutheastなどの値を持つカスタムの「Region」タグタイプを作成して、どの地域が最も多くのリードを生み出しているかを分析します。 「所有者」タグのタイプを作成して、リードと機会の作成に最も大きな影響を与えるプログラム所有者（Maria、David、Johnなど）を比較します。 詳細については、「[&#x200B; タグについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)」を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/asset)
 
@@ -80,7 +89,7 @@ Marketo管理者は、プログラムの作成時にユーザーが選択する�
 - 静的リストとは、マーケターがリードを追加または削除できる固定のコレクションです。
 - スマートリストとは、定義された特性にもとづく動的なコレクションです。
 
-例えば、「web サイトの価格ページを訪問した全リード」という名前のスマートリストは、そのページに訪問するリードが増えるにつれて増加し続けます。 詳しくは、[Marketo Engageのドキュメント ](https://experienceleague.adobe.com/ja/docs/marketo/using/home)を参照してください。
+例えば、「web サイトの価格ページを訪問した全リード」という名前のスマートリストは、そのページに訪問するリードが増えるにつれて増加し続けます。 詳しくは、[Marketo Engageのドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/home)を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists)
 
@@ -118,7 +127,7 @@ Assetsには、プログラムで使用されるランディングページ、�
 - 継承：キャンペーンフォルダーレベルで作成され、そのフォルダー内のすべてのプログラムで使用できます。
 - 上書き：プログラムフォルダーレベルで親のマイトークン値を変更せずに、プログラムレベルでカスタム値で変更しました。
 
-マイトークンでは、トークン名の先頭に「my」という単語が付いた命名規則`{{my.My Token}}`が使用されます。 例えば、EventDateという名前の日付タイプのMy Tokenには、トークン名`{{my.EventDate}}`があります。 詳細については、「[ プログラム内のマイトークンについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)」を参照してください。
+マイトークンでは、トークン名の先頭に「my」という単語が付いた命名規則`{{my.My Token}}`が使用されます。 例えば、EventDateという名前の日付タイプのMy Tokenには、トークン名`{{my.EventDate}}`があります。 詳細については、「[&#x200B; プログラム内のマイトークンについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)」を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens)
 
@@ -126,7 +135,7 @@ Assetsには、プログラムで使用されるランディングページ、�
 
 Marketo カスタムオブジェクトは、Marketo リードとカスタムオブジェクトレコードの間に1対多または多対多（Edge-Bridge-Edge）のリレーションシップを作成します。
 
-Marketo カスタムオブジェクトを作成して公開すると、Marketo APIを使用してCRUD操作を実行できます。 新しいレコードが追加されたら、スマートリストトリガーを使用して応答できます。 カスタムオブジェクトデータは、セグメント化のためのスマートリストフィルターとして、または[ メールスクリプティング ](email-scripting.md)を通じたメールで使用することもできます。 カスタムオブジェクトの作成について詳しくは、[Marketo Engage ドキュメント ](https://experienceleague.adobe.com/ja/docs/marketo/using/home)を参照してください。
+Marketo カスタムオブジェクトを作成して公開すると、Marketo APIを使用してCRUD操作を実行できます。 新しいレコードが追加されたら、スマートリストトリガーを使用して応答できます。 カスタムオブジェクトデータは、セグメント化のためのスマートリストフィルターとして、または[&#x200B; メールスクリプティング &#x200B;](email-scripting.md)を通じたメールで使用することもできます。 カスタムオブジェクトの作成について詳しくは、[Marketo Engage ドキュメント &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/home)を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects)
 
@@ -134,6 +143,6 @@ Marketo カスタムオブジェクトを作成して公開すると、Marketo A
 
 ネイティブのCRM統合が有効になっていない場合は、Marketoで営業担当者のレコードとそのリードの関係を管理できます。 これらのレコードには、名前、メールアドレス、役職などの情報が含まれます。 営業担当者がリードを所有している場合、この情報をフィルタリングやトークンに使用できます。
 
-「externalSalesPersonId」フィールドを使用して、リードレベルの営業担当者との関係を管理します。 [ リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) APIを使用してこのフィールドを更新します。
+「externalSalesPersonId」フィールドを使用して、リードレベルの営業担当者との関係を管理します。 [&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) APIを使用してこのフィールドを更新します。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
