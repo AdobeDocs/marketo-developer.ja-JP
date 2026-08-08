@@ -18,10 +18,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
 workflow-type: tm+mt
-source-wordcount: 614
-ht-degree: 30%
+source-wordcount: 613
+ht-degree: 28%
 
 ---
 
@@ -39,7 +39,7 @@ Webhookを作成してスマートキャンペーンに追加する手順につ�
 
 - **[!UICONTROL URL]** - web サービスリクエストを送信するURL。
 - **[!UICONTROL リクエストタイプ]** - HTTP メソッド。
-- **[!UICONTROL ペイロードテンプレート]** - POST本文で送信される情報のテンプレート。 XML、JSON、SOAP など、HTTP POST をサポートする任意のデータ形式を使用します。 シリアル化形式では、文字列を二重引用符で囲むことができる必要があります。 トークンを挿入するには、**[!UICONTROL トークンを挿入]**&#x200B;を選択します。 Marketoでは、文字列タイプトークンが二重引用符で囲まれます。
+- **[!UICONTROL ペイロードテンプレート]** - POST本文で送信される情報のテンプレート。 XMLやJSONなど、HTTP POSTをサポートするあらゆるデータ形式を使用できます。 シリアル化形式では、文字列を二重引用符で囲むことができる必要があります。 トークンを挿入するには、**[!UICONTROL トークンを挿入]**&#x200B;を選択します。 Marketoでは、文字列タイプトークンが二重引用符で囲まれます。
 - **[!UICONTROL 要求トークンエンコーディング]** - アンパサンドや「&amp;」などの特殊文字を含むトークン値をエンコードするために使用される、JSONまたはForm/Urlのリクエスト形式。 WebhookがWeb サービスと正しく通信するように、正しいボディエンコーディングを選択します。
 - **[!UICONTROL 応答タイプ]** – 応答の形式（JSONまたはXML）。 Marketoのリードフィールドに応答プロパティをマッピングする正しいタイプを選択します。
 - **[!UICONTROL カスタムヘッダー]** - キーと値のペアが&#x200B;**[!UICONTROL Webhook アクション]** > **[!UICONTROL カスタムヘッダーを設定]**&#x200B;を通じてHTTP ヘッダーとして追加されました。 任意の数のカスタムヘッダーを追加できます。

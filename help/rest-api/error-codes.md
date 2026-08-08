@@ -17,10 +17,10 @@ topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
   - id: cc72dcf1-72e1-48cc-b434-e7c27d62d67c
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 2255
-ht-degree: 63%
+source-wordcount: 2332
+ht-degree: 67%
 
 ---
 
@@ -69,7 +69,7 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
     <tr>
       <td><a name="414"></a>414</td>
       <td>リクエスト URI が長すぎます</td>
-      <td>リクエストの URI が 8 K を超えました。 リクエストは、URL にパラメーター `_method=GET` を含め、リクエストの本文に残りのクエリ文字列を含めて POST として再試行する必要があります。</td>
+      <td>リクエストの URI が 8K を超えました。 リクエストは、URL にパラメーター `_method=GET` を含め、リクエストの本文に残りのクエリ文字列を含めて POST として再試行する必要があります。</td>
     </tr>
   </tbody>
 </table>
@@ -152,7 +152,7 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
     </tr>
     <tr>
       <td><a name="606"></a>606</td>
-      <td>「%s」秒以内に最大レート制限「%s」を超えました</td>
+      <td>最大レート制限「%s」、「%s」秒以内に超過しました</td>
       <td>過去 20 秒間の呼び出し回数が 100 を超えました</td>
     </tr>
     <tr>
@@ -198,7 +198,7 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
     <tr>
       <td><a name="615"></a>615</td>
       <td>同時アクセス制限に達しました</td>
-      <td>最大で、リクエストはサブスクリプションごとに一度に 10 個処理されます。 既に 10 個のリクエストが進行中の場合、このエラーが返されます。</td>
+      <td>最大で、どのサブスクリプションでもリクエストは一度に 10 個まで処理されます。 既に 10 個のリクエストが進行中の場合、このエラーが返されます。</td>
     </tr>
     <tr>
       <td><a name="616"></a>616</td>
@@ -208,13 +208,13 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
     <tr>
       <td><a name="701"></a>701</td>
       <td>%s は空白にできません</td>
-      <td>リクエストでは、報告されたフィールドを空にすることはできません</td>
+      <td>リクエストでは、指定されたフィールドを空にしてはいけません。</td>
     </tr>
     <tr>
       <td><a name="702"></a>702</td>
       <td>指定された検索シナリオのデータが見つかりません</td>
       <td>指定された検索パラメーターに一致するレコードはありません。
-        注意：失敗した検索操作の多くは、「success = true」を返し、エラーはなく、警告の情報文字列を設定します。</td>
+        注意：失敗した検索操作の多くは「success = true」を返し、エラーは返さず、警告情報文字列を設定します。</td>
     </tr>
     <tr>
       <td><a name="703"></a>703</td>
@@ -232,7 +232,7 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
     <tr>
       <td><a name="709"></a>709</td>
       <td>ビジネスルール違反</td>
-      <td>テンプレートなしで電子メールを作成しようとするなど、アセットを作成または更新する要件に違反しているため、呼び出しを実行できません。次の操作を行おうとすると、このエラーが表示される場合もあります。
+      <td>テンプレートを使用せずにメールを作成しようとするなど、アセットの作成または更新の要件に違反しているので、呼び出しを実行できません。 また、次の操作を実行しようとした際にも、このエラーが発生する可能性があります。
         <ul>
           <li>ソーシャルコンテンツを含むランディングページのコンテンツを取得。</li>
           <li>特定のアセットタイプを含むプログラムを複製（詳しくは、<a href="programs.md#clone">プログラムの複製</a>を参照してください）。</li>
@@ -379,13 +379,13 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
 >    <tr>
 >      <td><a name="1011"></a>1011</td>
 >      <td>フィールド「%s」はサポートされていません</td>
->      <td>ルックアップフィールドまたは「filterType」がサポートされていない標準フィールド（例：firstName、lastName）で指定されている場合</td>
+>      <td>ルックアップフィールドまたは `filterType` がサポートされていない標準フィールド（例：firstName、lastName）で指定されている場合</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1012"></a>1012</td>
 >      <td>無効な cookie 値「%s」</td>
->      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/associateLeadUsingPOST"> リードを関連付け</a>を呼び出す際に、「cookie」パラメーターの値が無効な場合に発生する可能性があります。
->        これは、「filterType=cookies」と「filterValues」パラメーターの無効な値を使用して<a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET"> フィルタータイプでリードを取得</a>を呼び出す場合にも発生します。</td>
+>      <td>「cookie」パラメーターに無効な値を指定して、<a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/associateLeadUsingPOST">リードを関連付け</a>を呼び出した場合に発生する可能性があります。
+>        このエラーは、「filterType=cookies」と、「filterValues」パラメーターの無効な値を使用して、<a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET">フィルタータイプによるリードを取得</a>を呼び出した場合にも発生します。</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1013"></a>1013</td>
@@ -420,17 +420,17 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
 >    <tr>
 >      <td><a name="1019"></a>1019</td>
 >      <td>読み込み進行中</td>
->      <td>ターゲットリストは既に読み込まれています</td>
+>      <td>ターゲットリストは既に読み込み処理の対象になっています</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1020"></a>1020</td>
 >      <td>プログラムする複製が多すぎます</td>
->      <td>サブスクリプションは、その日のスケジュールプログラムで割り当てられた「cloneToProgramName」の使用量に達しました</td>
+>      <td>サブスクリプションは、その日のスケジュールプログラムで割り当てられた `cloneToProgramName` の使用上限に達しました</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1021"></a>1021</td>
->      <td>会社の更新は許可されていません</td>
->      <td>syncLead 中に会社の更新は許可されません</td>
+>      <td>会社情報の更新は許可されていません</td>
+>      <td>syncLead 実行中は会社情報の更新は許可されません</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1022"></a>1022</td>
@@ -498,29 +498,29 @@ GET リクエストのURIが8 KBを超えると、Marketoは414を返します�
 >    <tr>
 >      <td><a name="1049"></a>1049</td>
 >      <td>アクティビティを作成できませんでした</td>
->      <td>属性配列が長すぎます。
->        レコードに渡された属性の配列が、65536 バイトの最大長を超えています</td>
+>      <td>属性の配列が長すぎます。
+>        レコードに渡された属性の配列が最大長の 65536 バイトを超えました</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1076"></a>1076</td>
->      <td>mergeInCRM フラグを使用した<a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/mergeLeadsUsingPOST">リードを結合</a>呼び出しは 4 です。</td>
->      <td>重複したレコードを作成しています。代わりに、既存のレコードを使用することをお勧めします。
->        これは、MarketoがSalesforceで結合する際に受け取るエラーメッセージです。</td>
+>      <td>mergeInCRM フラグを使用した<a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/mergeLeadsUsingPOST">リードを結合</a>呼び出しは 4 です。</td>
+>      <td>重複したレコードを作成しています。 代わりに既存のレコードを使用することをお勧めします。
+>        これは、Salesforce で結合する際に Marketo が受信するエラーメッセージです。</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1077"></a>1077</td>
->      <td>「SFDC フィールド」の長さが原因で、<a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/mergeLeadsUsingPOST">リードを結合</a>呼び出しに失敗しました</td>
->      <td>mergeInCRM が true に設定された「リードを結合」呼び出しは、「SFDC フィールド」が許可された文字数の制限を超えたので失敗しました。 修正するには、「SFDC フィールド」の長さを短くするか、mergeInCRM を false に設定します。</td>
+>      <td>「SFDC フィールド」の長さが原因で、<a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/mergeLeadsUsingPOST">リードを結合</a>呼び出しに失敗しました</td>
+>      <td>mergeInCRM が true に設定された「リードを結合」呼び出しは、`SFDC Field` が許可された文字数の制限を超えたため失敗しました。 修正するには、`SFDC Field` の長さを短くするか、mergeInCRM を false に設定します。</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1078"></a>1078</td>
->      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/mergeLeadsUsingPOST"> リードを結合</a>呼び出しは、削除されたエンティティ、リード/取引先責任者、またはフィールドフィルター条件が一致しないため失敗しました。</td>
+>      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/mergeLeadsUsingPOST"> リードを結合</a>呼び出しは、削除されたエンティティ、リード/取引先責任者、またはフィールドフィルター条件が一致しないため失敗しました。</td>
 >      <td>結合エラー。ネイティブに同期されたCRMで結合操作を実行できません
 >        これは、Salesforce で結合する際に Marketo が受信するエラーメッセージです。</td>
 >    </tr>
 >    <tr>
 >      <td><a name="1079"></a>1079</td>
->      <td>重複レコードのパーソナライズ URLの競合により、<a href="https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/mergeLeadsUsingPOST"> リードの結合</a>呼び出しが失敗しました</td>
+>      <td>重複レコードのパーソナライズ URLの競合により、<a href="https://developer.adobe.com/marketo-apis/api/mapi#operation/mergeLeadsUsingPOST"> リードの結合</a>呼び出しが失敗しました</td>
 >      <td>結合リード呼び出しは、同じパーソナライズされたURLを持つ多くのリードを指定しました。 この問題を解決するには、Marketo Engageのユーザーインターフェイスを使用して、これらのレコードを結合します。</td>
 >    </tr>
 >  </tbody>

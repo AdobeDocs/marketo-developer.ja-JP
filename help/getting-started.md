@@ -16,9 +16,9 @@ role_v2:
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1228
+source-wordcount: 1201
 ht-degree: 10%
 
 ---
@@ -31,8 +31,7 @@ Marketo Engageは、見込み顧客や顧客向けにパーソナライズされ
 
 >[!NOTE]
 >
->SOAP APIは非推奨（廃止予定）であり、2026年7月31日以降は使用できなくなります。 すべての新規開発にMarketo [REST API](./rest-api/rest-api.md)を使用します。 サービスの中断を避けるために、その日までに既存のサービスを移行します。 サービスがSOAP APIを使用する場合は、SOAP API [移行ガイド &#x200B;](./soap-api/migration.md)を参照してください。
->
+>2026年7月31日（PT）をもって、SOAP APIは非推奨（廃止予定）となり、使用できなくなります。 すべての新規開発にMarketo [REST API](./rest-api/rest-api.md)を使用します。
 
 Marketo Engage インスタンスでNative SFDCまたはMS Dynamics CRM接続が有効になっている場合、これらのオブジェクトは読み取り専用です。
 
@@ -144,6 +143,6 @@ Marketo カスタムオブジェクトを作成して公開すると、Marketo A
 
 ネイティブのCRM統合が有効になっていない場合は、Marketoで営業担当者のレコードとそのリードの関係を管理できます。 これらのレコードには、名前、メールアドレス、役職などの情報が含まれます。 営業担当者がリードを所有している場合、この情報をフィルタリングやトークンに使用できます。
 
-「externalSalesPersonId」フィールドを使用して、リードレベルの営業担当者との関係を管理します。 [&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) APIを使用してこのフィールドを更新します。
+「externalSalesPersonId」フィールドを使用して、リードレベルの営業担当者との関係を管理します。 [&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) APIを使用してこのフィールドを更新します。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)

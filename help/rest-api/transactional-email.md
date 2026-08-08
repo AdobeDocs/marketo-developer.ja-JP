@@ -11,16 +11,16 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 897
-ht-degree: 52%
+source-wordcount: 891
+ht-degree: 53%
 
 ---
 
 # トランザクションメール
 
-[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) APIを使用して、特定のMarketo レコードにトランザクションメールを送信します。 リクエストを行う前に、メールとトリガーキャンペーンを設定します。
+[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#operation/triggerCampaignUsingPOST) APIを使用して、特定のMarketo レコードにトランザクションメールを送信します。 リクエストを行う前に、メールとトリガーキャンペーンを設定します。
 
 - 受信者がMarketo レコードを持っていることを確認します。
 - Marketo インスタンスでトランザクションメールを作成して承認します。
@@ -56,7 +56,7 @@ Javaの例では、[minimal-json パッケージ &#x200B;](https://github.com/ra
 
 メールを送信する前に、メールアドレスにMarketo レコードが存在することを確認し、そのリード IDを取得します。 この例では、メールアドレスが既に存在することを前提としています。
 
-フィルターの種類[&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)で リードを取得を使用して、IDを取得します。 次のメインメソッドは、キャンペーンをリクエストします。
+フィルターの種類[&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)で リードを取得を使用して、IDを取得します。 次のメインメソッドは、キャンペーンをリクエストします。
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -274,4 +274,4 @@ Result:
 
 ## まとめ
 
-この方法は、様々な方法で拡張可能で、個々のレイアウトセクション内またはメール外部のメールのコンテンツを変更し、カスタム値をタスクや注目のアクションに渡すことができます。 プログラム内からトークンを使用できる場所はすべて、この方法を使用してカスタマイズできます。 また、同様の機能は、[キャンペーンをスケジュール](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/scheduleCampaignUsingPOST)呼び出しでも使用でき、バッチキャンペーン全体をまたいでトークンを処理できます。 これらはリードごとにカスタマイズすることはできませんが、幅広いリードを対象にコンテンツをカスタマイズするのに役立ちます。
+この方法は様々な形で拡張可能で、個々のレイアウトセクション内やメール以外の場所のコンテンツを変更したり、カスタム値をタスクや注目のアクションに渡したりすることができます。 プログラム内からトークンを使用できる場所はすべて、この方法を使用してカスタマイズできます。 また、同様の機能は、[キャンペーンをスケジュール](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)呼び出しでも使用でき、バッチキャンペーン全体をまたいでトークンを処理できます。 これらはリードごとにカスタマイズすることはできませんが、幅広いリードを対象にコンテンツをカスタマイズするのに役立ちます。

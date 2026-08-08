@@ -14,10 +14,10 @@ subfeature_v2:
   - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1009
-ht-degree: 40%
+source-wordcount: 978
+ht-degree: 41%
 
 ---
 
@@ -35,7 +35,7 @@ ID[&#128279;](#by_id)で[、名前](#by_name)で、または[閲覧](#browse)で
 
 ### ID 別
 
-[ID によるスマートキャンペーンの取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/getSmartCampaignByIdUsingGET)エンドポイントは、単一のスマートキャンペーン `id` をパスパラメーターとして受け取り、単一のスマートキャンペーンレコードを返します。
+[ID によるスマートキャンペーンの取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartCampaignByIdUsingGET)エンドポイントは、単一のスマートキャンペーン `id` をパスパラメーターとして受け取り、単一のスマートキャンペーンレコードを返します。
 
 ```http
 GET /rest/asset/v1/smartCampaign/{id}.json
@@ -77,7 +77,7 @@ GET /rest/asset/v1/smartCampaign/{id}.json
 
 ### 名前別
 
-[名前によるスマートキャンペーンの取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/getSmartCampaignByNameUsingGET)エンドポイントは、単一のスマートキャンペーン `name` をパラメーターとして受け取り、単一のスマートキャンペーンレコードを返します。
+[名前によるスマートキャンペーンの取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartCampaignByNameUsingGET)エンドポイントは、単一のスマートキャンペーン `name` をパラメーターとして受け取り、単一のスマートキャンペーンレコードを返します。
 
 ```http
 GET /rest/asset/v1/smartCampaign/byName.json?name=Test Trigger Campaign
@@ -123,7 +123,7 @@ GET /rest/asset/v1/smartCampaign/byName.json?name=Test Trigger Campaign
 
 ### 参照
 
-[Get Smart Campaigns](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/getAllSmartCampaignsGET) エンドポイントは、フィルターとページネーションのオプションのクエリパラメーターをサポートしています。
+[Get Smart Campaigns](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllSmartCampaignsGET) エンドポイントは、フィルターとページネーションのオプションのクエリパラメーターをサポートしています。
 
 `earliestUpdatedAt` パラメーターと `latestUpdatedAt` パラメーターは、ISO-8601 形式（ミリ秒単位なし）で `datetimes` を受け付けます。 両方が設定されている場合は、earliestUpdatedAt が latestUpdatedAt の前に置かれる必要があります。
 
@@ -196,7 +196,7 @@ GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:
 
 ## 作成
 
-`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
+`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
 
 オプションで、`description` パラメーターを使用してスマートキャンペーンを説明することもできます（最大 2,000 文字）。
 
@@ -302,7 +302,7 @@ name=Smart Campaign 02 Update&description=This is a smart campaign update test.
 
 ## 複製
 
-`application/x-www-form-urlencoded` POST リクエストを[Clone Smart Campaign](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントに送信します。 `id`、`name`および`folder` パラメーターが必要です。 ソースキャンペーン、新しいキャンペーン名、親フォルダーを指定します。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
+`application/x-www-form-urlencoded` POST リクエストを[Clone Smart Campaign](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSmartCampaignUsingPOST) エンドポイントに送信します。 `id`、`name`および`folder` パラメーターが必要です。 ソースキャンペーン、新しいキャンペーン名、親フォルダーを指定します。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
 
 オプションで、`description` パラメーターを使用してスマートキャンペーンを説明することもできます（最大 2,000 文字）。
 
@@ -356,7 +356,7 @@ name=Test Trigger Campaign Clone&folder={"type": "folder","id": 640}&description
 
 ## 削除
 
-[スマートキャンペーンを削除](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/deleteSmartCampaignUsingPOST)エンドポイントは、パスパラメーターとして単一のスマートキャンペーン `id` を受け取ります。
+[スマートキャンペーンを削除](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteSmartCampaignUsingPOST)エンドポイントは、パスパラメーターとして単一のスマートキャンペーン `id` を受け取ります。
 
 ```http
 POST /rest/asset/v1/smartCampaign/{id}/delete.json
@@ -382,7 +382,7 @@ POST /rest/asset/v1/smartCampaign/{id}/delete.json
 
 ## スケジュール
 
-[&#x200B; キャンペーンのスケジュール &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
+[&#x200B; キャンペーンのスケジュール &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
 
 `tokens`配列は、この実行の既存のプログラムのマイトークンを上書きします。 Marketoは、キャンペーンの実行後にオーバーライドを破棄します。 各項目には名前と値のペアが含まれており、トークン名には`{{my.name}}`形式を使用する必要があります。
 
@@ -390,7 +390,7 @@ POST /rest/asset/v1/smartCampaign/{id}/delete.json
 
 この API 経由でスケジュールされたキャンペーンは、実行される前に常に最低 5 分間待機します。
 
-`cloneToProgram` 文字列パラメーターには、結果として得られるプログラムの名前が含まれます。  設定すると、キャンペーン、親プログラムおよびそのすべてのアセットが、結果として得られる新しい名前で作成されます。 親プログラムが複製され、新しく作成されたキャンペーンがスケジュールされます。 結果として得られるプログラムは、親の下に作成されます。 スニペット、プッシュ通知、アプリ内メッセージ、静的リスト、レポート、ソーシャルアセットを含むプログラムは、この方法では複製できません。 このエンドポイントを使用する場合、1 日あたりの呼び出し回数は 20 回に制限されます。 代替として[プログラムを複製](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5)エンドポイントを使用することをお勧めします。
+`cloneToProgram` 文字列パラメーターには、結果として得られるプログラムの名前が含まれます。  設定すると、キャンペーン、親プログラムおよびそのすべてのアセットが、結果として得られる新しい名前で作成されます。 親プログラムが複製され、新しく作成されたキャンペーンがスケジュールされます。 結果として得られるプログラムは、親の下に作成されます。 スニペット、プッシュ通知、アプリ内メッセージ、静的リスト、レポート、ソーシャルアセットを含むプログラムは、この方法では複製できません。 このエンドポイントを使用する場合、1 日あたりの呼び出し回数は 20 回に制限されます。 代替として[プログラムを複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneProgramUsingPOST)エンドポイントを使用することをお勧めします。
 
 ```http
 POST /rest/v1/campaigns/{id}/schedule.json
@@ -433,7 +433,7 @@ POST /rest/v1/campaigns/{id}/schedule.json
 
 ### リクエスト
 
-[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST)を使用して、リードをトリガーキャンペーンのフローに渡します。 キャンペーンでは、Web サービス APIをソースとするCampaign is Requested トリガーを使用する必要があります。
+[Request Campaign](https://developer.adobe.com/marketo-apis/api/mapi#operation/triggerCampaignUsingPOST)を使用して、リードをトリガーキャンペーンのフローに渡します。 キャンペーンでは、Web サービス APIをソースとするCampaign is Requested トリガーを使用する必要があります。
 
 キャンペーン `id` パス パラメーターとリード IDの`leads`整数配列が必要です。 各呼び出しは、最大100件のリードを受け付けます。
 
@@ -485,7 +485,7 @@ POST /rest/v1/campaigns/{id}/trigger.json
 
 ### 有効化
 
-[スマートキャンペーンをアクティブ化](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/activateSmartCampaignUsingPOST)エンドポイントは簡単です。 `id` パスパラメーターは必須です。 アクティブ化を成功させるには、キャンペーンに対して次の条件を満たす必要があります。
+[スマートキャンペーンをアクティブ化](https://developer.adobe.com/marketo-apis/api/asset#operation/activateSmartCampaignUsingPOST)エンドポイントは簡単です。 `id` パスパラメーターは必須です。 アクティブ化を成功させるには、キャンペーンに対して次の条件を満たす必要があります。
 
 - キャンペーンが非アクティブ化されました。
 - キャンペーンには、少なくとも1つのトリガーと1つのフローステップがあります。
@@ -510,7 +510,7 @@ POST /rest/asset/v1/smartCampaign/{id}/activate.json
 
 ### 非アクティブ化
 
-[スマートキャンペーンの非アクティブ化](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns/operation/deactivateSmartCampaignUsingPOST)は簡単です。 `id` パスパラメーターは必須です。 非アクティブ化を成功させるには、キャンペーンをアクティブ化する必要があります。
+[スマートキャンペーンの非アクティブ化](https://developer.adobe.com/marketo-apis/api/asset#operation/deactivateSmartCampaignUsingPOST)は簡単です。 `id` パスパラメーターは必須です。 非アクティブ化を成功させるには、キャンペーンをアクティブ化する必要があります。
 
 ```http
 POST /rest/asset/v1/smartCampaign/{id}/deactivate.json

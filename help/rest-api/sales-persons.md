@@ -10,9 +10,9 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 369
+source-wordcount: 363
 ht-degree: 16%
 
 ---
@@ -27,9 +27,9 @@ ht-degree: 16%
 
 externalSalesPersonId属性を対応するエンドポイントに渡すことにより、セールス担当者を他のレコードに関連付けます。
 
-- リードレコード：[&#x200B; リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST)。
-- 商談レコード：[商談の同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST)。
-- 会社レコード：[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST)。
+- リードレコード：[&#x200B; リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)。
+- 商談レコード：[商談の同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncOpportunitiesUsingPOST)。
+- 会社レコード：[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST)。
 
 セールス担当者レコードは、API 経由でのみ編集可能です。
 

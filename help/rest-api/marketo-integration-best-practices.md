@@ -15,10 +15,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 882
-ht-degree: 24%
+source-wordcount: 866
+ht-degree: 25%
 
 ---
 
@@ -34,7 +34,6 @@ Marketo インスタンスの共通API制限に関する統合機能を設計し
 - **バッチサイズ：** リード DBは300 レコードをサポートしています。アセットクエリは200 レコードをサポートしています。
 - **REST API ペイロード サイズ：** 1 MB。
 - **一括読み込みファイル サイズ：** 10 MB。
-- **SOAPの最大バッチサイズ：** 300 レコード。
 - **一括抽出ジョブ：** 2件の実行と10件のキューに入りました（含む）。
 
 ## クイックヒント
@@ -66,15 +65,15 @@ API対応の各Marketo インスタンスには、毎日10,000件以上のREST A
 
 キャパシティは、インスタンス内のすべてのAPI サービスとユーザーによって共有されます。 冗長な呼び出しとバッチレコードを排除し、できるだけ少ない呼び出しを実現します。
 
-最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[&#x200B; リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)および[&#x200B; カスタムオブジェクト &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Snippets/operation/createSnippetUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
+最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[&#x200B; リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)および[&#x200B; カスタムオブジェクト &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
 
 ### キャッシュ
 
 次の操作の結果は、頻繁に変更されないので、通常はクライアントサイドで 1 日以上キャッシュできます。
 
 - 説明操作の結果
-- [アクティビティタイプ](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)
-- [パーティション](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadPartitionsUsingGET)
+- [アクティビティタイプ](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET)
+- [パーティション](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadPartitionsUsingGET)
 
 リードやアクティビティのデータエンリッチメントなどのユースケースでは、プログラム、メール、フォルダーなどのアセットタイプをキャッシュすることもできます。
 

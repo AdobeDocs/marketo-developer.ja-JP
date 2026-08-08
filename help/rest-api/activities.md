@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1758
+source-wordcount: 1740
 ht-degree: 6%
 
 ---
@@ -33,7 +33,7 @@ Marketoは、リードレコードに関連する多くのアクティビティ�
 
 ## 説明
 
-「[&#x200B; アクティビティタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)」エンドポイントを使用して、インスタンスで使用可能なアクティビティタイプとその定義を取得します。
+「[&#x200B; アクティビティタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET)」エンドポイントを使用して、インスタンスで使用可能なアクティビティタイプとその定義を取得します。
 
 ```
 GET /rest/v1/activities/types.json
@@ -88,7 +88,7 @@ GET /rest/v1/activities/types.json
 
 ## クエリ
 
-アクティビティを取得するには、[&#x200B; リードアクティビティの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET) エンドポイントを使用します。 まず、アクティビティの取得を開始する日時のページングトークンを取得します。 このトークンを`nextPageToken` クエリパラメーターに渡します。
+アクティビティを取得するには、[&#x200B; リードアクティビティの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) エンドポイントを使用します。 まず、アクティビティの取得を開始する日時のページングトークンを取得します。 このトークンを`nextPageToken` クエリパラメーターに渡します。
 
 最大10個のアクティビティタイプ IDを、`activityTypeIds` クエリパラメーターのコンマ区切りリストとして渡します。
 
@@ -157,7 +157,7 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 ### データ値変更
 
-[&#x200B; リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadChangesUsingGET) エンドポイントを使用して、リードフィールドのデータ値変更レコードを取得します。 そのインターフェイスは、次の2つの方法でリード アクティビティを取得APIとは異なります。
+[&#x200B; リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) エンドポイントを使用して、リードフィールドのデータ値変更レコードを取得します。 そのインターフェイスは、次の2つの方法でリード アクティビティを取得APIとは異なります。
 
 - エンドポイントには`activityTypeIds` パラメーターがありません。これは、データ値の変更と新しいリードアクティビティのみを返すためです。
 - 必須の`fields` クエリパラメーターは、変更を取得するフィールドのコンマ区切りリストを受け入れます。
@@ -216,7 +216,7 @@ GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQG
 
 ### 削除されたリード
 
-[削除されたリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getDeletedLeadsUsingGET) エンドポイントを使用して、削除されたリードアクティビティをMarketoから取得します。
+[削除されたリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET) エンドポイントを使用して、削除されたリードアクティビティをMarketoから取得します。
 
 ```http
 GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ
@@ -270,13 +270,13 @@ GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQ
 - カスタムアクティビティの最大数：10
 - カスタムアクティビティあたりの最大属性：20
 
-[&#x200B; リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET) APIを使用して、標準アクティビティを取得するのと同じ方法で、カスタムアクティビティデータを取得します。
+[&#x200B; リードアクティビティを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) APIを使用して、標準アクティビティを取得するのと同じ方法で、カスタムアクティビティデータを取得します。
 
 ## クエリタイプ
 
-[&#x200B; カスタムアクティビティタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getCustomActivityTypeUsingGET)を使用して、Marketo インスタンスでプロビジョニングされたタイプに関する詳細を取得します。 [&#x200B; カスタムアクティビティタイプの説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/describeCustomActivityTypeUsingGET)を使用して、特定のタイプの属性メタデータを取得します。
+[&#x200B; カスタムアクティビティタイプを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomActivityTypeUsingGET)を使用して、Marketo インスタンスでプロビジョニングされたタイプに関する詳細を取得します。 [&#x200B; カスタムアクティビティタイプの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeCustomActivityTypeUsingGET)を使用して、特定のタイプの属性メタデータを取得します。
 
-標準の[Get Activity Types](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET) エンドポイントは、カスタムアクティビティのメタデータも返しますが、タイプがカスタムであるかどうかも識別しません。
+標準の[Get Activity Types](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET) エンドポイントは、カスタムアクティビティのメタデータも返しますが、タイプがカスタムであるかどうかも識別しません。
 
 ### タイプの取得
 
@@ -653,7 +653,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/delete.json
 
 カスタムアクティビティとは、個人レコードの過去のアクティビティを一度だけ書き込むレコードです。 Marketoの管理者は、Marketoでスキーマを管理できます。また、API統合では、スキーマをリモートで管理できます。
 
-カスタムアクティビティをリードレコードに追加するには、[&#x200B; カスタムアクティビティを追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/addCustomActivityUsingPOST) エンドポイントを使用します。 `leadId` フィールドは、各アクティビティをリードに関連付けます。 リードのアクティビティログでカスタムアクティビティを表示するか、カスタムアクティビティタイプ IDを指定してリードアクティビティを取得を通じて取得します。
+カスタムアクティビティをリードレコードに追加するには、[&#x200B; カスタムアクティビティを追加](https://developer.adobe.com/marketo-apis/api/mapi#operation/addCustomActivityUsingPOST) エンドポイントを使用します。 `leadId` フィールドは、各アクティビティをリードに関連付けます。 リードのアクティビティログでカスタムアクティビティを表示するか、カスタムアクティビティタイプ IDを指定してリードアクティビティを取得を通じて取得します。
 
 更新または上書きされない1人のユーザーに関連するデータに対して、カスタムアクティビティを使用します。 例えば、イベントへの参加を「出席イベント」アクティビティとして記録します。
 
@@ -743,4 +743,4 @@ POST /rest/v1/activities/external.json
 アクティビティ エンドポイントのタイムアウトは30秒です。ただし、次のエンドポイントは例外です。
 
 - ページングトークンの取得：300秒
-- カスタムを追加アクティビティ：90 秒
+- カスタムアクティビティを追加：90 秒

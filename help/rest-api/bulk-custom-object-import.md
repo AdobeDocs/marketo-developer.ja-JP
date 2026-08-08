@@ -12,10 +12,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 736
-ht-degree: 9%
+source-wordcount: 714
+ht-degree: 10%
 
 ---
 
@@ -150,7 +150,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## ジョブの作成
 
-一括読み込みジョブを作成するには、[&#x200B; カスタムオブジェクトの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#tag/Identity/operation/identityUsingPOST) エンドポイントへのパスにカスタムオブジェクト API名を含めます。 次のパラメーターを含めます。
+一括読み込みジョブを作成するには、[&#x200B; カスタムオブジェクトの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST) エンドポイントへのパスにカスタムオブジェクト API名を含めます。 次のパラメーターを含めます。
 
 - `file`: インポートファイルの名前。
 - `format`: ファイル区切り文字の形式（`csv`、`tsv`、または`ssv`）。
@@ -215,7 +215,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## ジョブステータスのポーリング
 
-インポートジョブを作成したら、5～30秒ごとにポーリングします。 カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのステータスを取り込む](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) エンドポイントに渡します。
+インポートジョブを作成したら、5～30秒ごとにポーリングします。 カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのステータスを取り込む](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectStatusUsingGET) エンドポイントに渡します。
 
 ```http
 GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
@@ -247,9 +247,9 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 
 ## 失敗
 
-[&#x200B; カスタムオブジェクトステータスの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET)応答の`numOfRowsFailed`属性は、失敗した行数を示します。 0より大きい値は、エラーが発生したことを意味します。
+[&#x200B; カスタムオブジェクトステータスの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectStatusUsingGET)応答の`numOfRowsFailed`属性は、失敗した行数を示します。 0より大きい値は、エラーが発生したことを意味します。
 
-カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのインポート失敗](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) エンドポイントに渡します。 エンドポイントは、エラーの詳細を含むファイルを返します。 エラーファイルが存在しない場合は、HTTP 404 ステータスコードが返されます。
+カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのインポート失敗](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectFailuresUsingGET) エンドポイントに渡します。 エンドポイントは、エラーの詳細を含むファイルを返します。 エラーファイルが存在しない場合は、HTTP 404 ステータスコードが返されます。
 
 エラーを示すには、`vin`を` vin`に変更し、コンマと`vin`の間にスペースを追加して、ヘッダーを変更します。
 
@@ -302,7 +302,7 @@ blue,bmw,325i,WBS3U9C52HP970604,missing.dedupe.fields
 
 カスタムオブジェクトステータスの取得応答の`numOfRowsWithWarning`属性は、警告を含む行数を示します。 0より大きい値は、警告が発生したことを意味します。
 
-カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのインポート警告を取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectWarningsUsingGET) エンドポイントに渡します。 エンドポイントは、警告の詳細を含むファイルを返します。 警告ファイルが存在しない場合は、HTTP 404 ステータスコードが返されます。
+カスタムオブジェクト API名と`batchId`をパスの[&#x200B; カスタムオブジェクトのインポート警告を取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectWarningsUsingGET) エンドポイントに渡します。 エンドポイントは、警告の詳細を含むファイルを返します。 警告ファイルが存在しない場合は、HTTP 404 ステータスコードが返されます。
 
 ```http
 GET /bulk/v1/customobjects/car_c/import/{batchId}/warnings.json

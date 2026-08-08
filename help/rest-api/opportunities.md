@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 708
+source-wordcount: 702
 ht-degree: 16%
 
 ---
@@ -100,7 +100,7 @@ GET /rest/v1/opportunities/describe.json
 
 ## クエリ
 
-[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
+[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
 
 カスタム商談フィールドの場合、検索可能なFields配列に表示されるのは、String型またはInteger型のフィールドのみです。
 
@@ -221,7 +221,7 @@ API名で1つの会社フィールドをクエリするか、すべての会社�
 
 #### 名前別
 
-[名前で商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
+[名前で商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunityFieldByNameUsingGET) エンドポイントは、会社オブジェクトの1つのフィールドのメタデータを取得します。 必須の`fieldApiName` パスパラメーターは、フィールドのAPI名を指定します。
 
 応答はDescribe Opportunity応答に似ていますが、追加のメタデータが含まれています。 例えば、`isCustom`属性は、フィールドがカスタムかどうかを示します。
 
@@ -252,7 +252,7 @@ GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
 
 #### 参照
 
-[商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
+[商談フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunityFieldsUsingGET)エンドポイントでは、会社オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
 
 `moreResult` 属性が true の場合、さらに多くの結果が使用可能です。 返された`nextPageToken`でエンドポイントの呼び出しを続行し、moreResultがfalseになるまで呼び出します。
 

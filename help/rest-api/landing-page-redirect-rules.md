@@ -10,10 +10,10 @@ feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 626
-ht-degree: 28%
+source-wordcount: 596
+ht-degree: 29%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 28%
 
 ### ID 別
 
-ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET)による ランディングページ取得リダイレクトルール エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取り、一致するレコードを返します。
+ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageRedirectRuleByIdUsingGET)による ランディングページ取得リダイレクトルール エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取り、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/redirectRule/{id}.json
@@ -66,7 +66,7 @@ GET /rest/asset/v1/redirectRule/{id}.json
 
 ### 参照
 
-[&#x200B; ランディングページリダイレクトルールを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) エンドポイントは、ランディングページリダイレクトルールレコードを返します。
+[&#x200B; ランディングページリダイレクトルールを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageRedirectRulesUsingGET) エンドポイントは、ランディングページリダイレクトルールレコードを返します。
 
 オプションのクエリパラメーターを使用して、結果をフィルタリングします。
 
@@ -143,7 +143,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 
 ## 作成
 
-`application/x-www-form-urlencoded` POST リクエストを使用して、[&#x200B; ランディングページリダイレクトルールの作成](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) エンドポイントを呼び出します。 リクエストには3つの必須パラメーターがあります。
+`application/x-www-form-urlencoded` POST リクエストを使用して、[&#x200B; ランディングページリダイレクトルールの作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createLandingPageRedirectRuleUsingPOST) エンドポイントを呼び出します。 リクエストには3つの必須パラメーターがあります。
 
 `hostname` パラメーターは、ランディングページのホスト名を指定します。 ブランディングドメインまたはエイリアスに属している必要があり、255文字を超えることはできません。
 
@@ -205,7 +205,7 @@ hostname=calqeauto.com&redirectFrom={"type":"landingPageId", "value":"5483"}&red
 
 ## アップデート
 
-[&#x200B; ランディングページリダイレクトルールの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取ります。 更新を`application/x-www-form-urlencoded` POST リクエストとして送信します。
+[&#x200B; ランディングページリダイレクトルールの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageRedirectRuleUsingPOST) エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取ります。 更新を`application/x-www-form-urlencoded` POST リクエストとして送信します。
 
 更新する属性を選択するには、次の1つ以上のパラメーターを渡します：`hostname`、`redirectFrom`または`redirectTo`。
 
@@ -252,7 +252,7 @@ redirectTo={"type":"landingPageId", "value":"5561"}
 
 ## 削除
 
-ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST)による ランディングページリダイレクトルールの削除エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取ります。
+ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteLandingPageRedirectRuleUsingPOST)による ランディングページリダイレクトルールの削除エンドポイントは、1つのリダイレクトルール `id` パスパラメーターを取ります。
 
 ```http
 POST /rest/asset/v1/redirectRule/{id}/delete.json
@@ -274,7 +274,7 @@ POST /rest/asset/v1/redirectRule/{id}/delete.json
 
 ## ランディングページのドメインの参照
 
-[&#x200B; ランディングページドメインを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) エンドポイントは、ランディングページドメインレコードを返します。
+[&#x200B; ランディングページドメインを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageDomainsUsingGET) エンドポイントは、ランディングページドメインレコードを返します。
 
 2つのオプションのクエリパラメーターを使用して結果をフィルタリングします。
 

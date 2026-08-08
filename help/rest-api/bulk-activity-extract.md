@@ -14,10 +14,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1268
-ht-degree: 23%
+source-wordcount: 1212
+ht-degree: 25%
 
 ---
 
@@ -35,21 +35,21 @@ API ユーザーには、「読み取り専用アクティビティ」または�
 
 | フィルタータイプ | データタイプ | 必須 | メモ |
 | --- | --- | --- | --- |
-| `createdAt` | 日付範囲 | はい | `startAt`と`endAt`を含むJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 範囲は 31日以内にする必要があります。 このジョブは、日付範囲内で作成されたすべてのアクセス可能なレコードを返します。 ミリ秒なしでISO-8601日時値を使用します。 |
-| `activityTypeIds` | 配列\[整数\] | いいえ | リクエストされたアクティビティタイプの整数の配列。 「リードを削除」アクティビティはサポートされていません。 代わりに、[削除されたリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getDeletedLeadsUsingGET) エンドポイントを使用してください。 [&#x200B; アクティビティタイプの取得エンドポイント &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)を使用して、アクティビティタイプ IDを取得します。 |
-| [`primaryAttributeValueIds`](#primaryattributevalueids-options) | 配列\[整数\] | いいえ | プライマリ属性に対して最大50個のIDを受け入れる配列。 各IDは、リードフィールドまたはアセットを一意に識別します。 適切なREST API エンドポイントを呼び出してIDを取得します。 例えば、「フォームに入力」アクティビティの特定のフォームをフィルタリングするには、フォーム名を[名前によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET)エンドポイントに渡してフォーム ID を取得します。 サポートされているアクティビティタイプについては、[primaryAttributeValueIds オプション &#x200B;](#primaryattributevalueids-options)を参照してください。 |
-| [`primaryAttributeValues`](#primaryattributevalues-options) | 配列\[文字列\] | いいえ | プライマリ属性の名前を50個まで指定できる配列。 各名前は、リードフィールドまたはアセットを一意に識別します。 適切なREST API エンドポイントを呼び出して、名前を取得します。 例えば、「フォームに入力」アクティビティの特定のフォームをフィルタリングするには、フォーム ID を [ID によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByIdUsingGET)エンドポイントに渡してフォーム名を取得します。 サポートされているアクティビティタイプについては、[primaryAttributeValues オプション &#x200B;](#primaryattributevalues-options)を参照してください。 |
+| `createdAt` | 日付範囲 | はい | `startAt`と`endAt`を含むJSON オブジェクト。 `startAt`は透かしの少ない日時で、`endAt`は透かしの多い日時です。 範囲は最大 31 日までです。 このジョブは、日付範囲内で作成されたすべてのアクセス可能なレコードを返します。 ミリ秒なしでISO-8601日時値を使用します。 |
+| `activityTypeIds` | 配列\[整数\] | いいえ | リクエストされたアクティビティタイプの整数の配列。 「リードを削除」アクティビティはサポートされていません。 代わりに、[削除されたリードを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET) エンドポイントを使用してください。 [&#x200B; アクティビティタイプの取得エンドポイント &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET)を使用して、アクティビティタイプ IDを取得します。 |
+| [`primaryAttributeValueIds`](#primaryattributevalueids-options) | 配列\[整数\] | いいえ | プライマリ属性に対して最大50個のIDを受け入れる配列。 各IDは、リードフィールドまたはアセットを一意に識別します。 適切なREST API エンドポイントを呼び出してIDを取得します。 例えば、「フォームに入力」アクティビティの特定のフォームをフィルタリングするには、フォーム名を[名前によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByNameUsingGET)エンドポイントに渡してフォーム ID を取得します。 サポートされているアクティビティタイプについては、[primaryAttributeValueIds オプション &#x200B;](#primaryattributevalueids-options)を参照してください。 |
+| [`primaryAttributeValues`](#primaryattributevalues-options) | 配列\[文字列\] | いいえ | プライマリ属性の名前を50個まで指定できる配列。 各名前は、リードフィールドまたはアセットを一意に識別します。 適切なREST API エンドポイントを呼び出して、名前を取得します。 例えば、「フォームに入力」アクティビティの特定のフォームをフィルタリングするには、フォーム ID を [ID によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByIdUsingGET)エンドポイントに渡してフォーム名を取得します。 サポートされているアクティビティタイプについては、[primaryAttributeValues オプション &#x200B;](#primaryattributevalues-options)を参照してください。 |
 
 ### primaryAttributeValueIds オプション {#primaryattributevalueids-options}
 
 | アクティビティのタイプ | プライマリ属性値 ID | 取得エンドポイント | アセットグループ |
 | --- | --- | --- | --- |
-| データ値を変更 | リードフィールド ID | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 属性名 |
-| スコアを変更 | リードフィールド ID | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 属性名 |
-| 進行状況のステータスを変更 | プログラム ID | [名前によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByNameUsingGET) | マーケティングプログラム |
-| リストに追加 | 静的リスト ID | [名前による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 静的リスト |
-| リストから削除 | 静的リスト ID | [名前による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 静的リスト |
-| フォームに入力 | フォーム ID | [名前によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET) | Web フォーム |
+| データ値を変更 | リードフィールド ID | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2) | 属性名 |
+| スコアを変更 | リードフィールド ID | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2) | 属性名 |
+| 進行状況のステータスを変更 | プログラム ID | [名前によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByNameUsingGET) | マーケティングプログラム |
+| リストに追加 | 静的リスト ID | [名前による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByNameUsingGET) | 静的リスト |
+| リストから削除 | 静的リスト ID | [名前による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByNameUsingGET) | 静的リスト |
+| フォームに入力 | フォーム ID | [名前によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByNameUsingGET) | Web フォーム |
 
 `primaryAttributeValueIds`を使用する場合は、`activityTypeIds` フィルターも含める必要があります。 このフィルターには、対応するアセットグループに一致するアクティビティ IDのみを含めることができます。 例えば、Web フォームアセットをフィルタリングする場合、`activityTypeIds`には「フォームに入力」アクティビティタイプ IDのみを含めることができます。
 
@@ -78,12 +78,12 @@ API ユーザーには、「読み取り専用アクティビティ」または�
 
 | アクティビティのタイプ | プライマリ属性値 | 取得エンドポイント | アセットグループ |
 | --- | --- | --- | --- |
-| データ値を変更 | リードフィールド displayName | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 属性名 |
-| スコアを変更 | リードフィールド displayName | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 属性名 |
-| 進行状況のステータスを変更 | プログラム名 | [ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByIdUsingGET) | マーケティングプログラム |
-| リストに追加 | 静的リスト名 | [ID による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 静的リスト |
-| リストから削除 | 静的リスト名 | [ID による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 静的リスト |
-| フォームに入力 | フォーム名 | [ID によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByIdUsingGET) | Web フォーム |
+| データ値を変更 | リードフィールド displayName | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2) | 属性名 |
+| スコアを変更 | リードフィールド displayName | [リードを説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2) | 属性名 |
+| 進行状況のステータスを変更 | プログラム名 | [ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByIdUsingGET) | マーケティングプログラム |
+| リストに追加 | 静的リスト名 | [ID による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByIdUsingGET) | 静的リスト |
+| リストから削除 | 静的リスト名 | [ID による静的リストを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByIdUsingGET) | 静的リスト |
+| フォームに入力 | フォーム名 | [ID によるフォームを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByIdUsingGET) | Web フォーム |
 
 `&lt;program&gt;.&lt;asset&gt;`表記法を使用して、マーケティングプログラム、静的リスト、およびWeb フォームアセットグループの名前を指定します。 例えば、「GL_OP_ALL_2021」プログラムの「MPS Outbound」フォームを「GL_OP_ALL_2021.MPS Outbound」と指定します。
 
@@ -121,7 +121,7 @@ API ユーザーには、「読み取り専用アクティビティ」または�
 
 ## ジョブの作成
 
-取得するレコードを定義するエクスポート ジョブを作成します。 [書き出しアクティビティ ジョブの作成](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) エンドポイントを使用します。
+取得するレコードを定義するエクスポート ジョブを作成します。 [書き出しアクティビティ ジョブの作成](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportActivitiesUsingPOST) エンドポイントを使用します。
 
 すべてのジョブには`createdAt` フィルターが必要です。 その`startAt`および`endAt`日時パラメーターは、許可されたアクティビティの作成日の最も早い日付と最も新しい日付を定義します。 関連しないアクティビティタイプを除外するには、オプションの`activityTypeIds` フィルターも含めます。
 
@@ -166,7 +166,7 @@ POST /bulk/v1/activities/export/create.json
 
 応答は、`exportId`とステータス「作成済み」を返します。 作成されたジョブはまだ処理キューにありません。
 
-ジョブをキューに追加するには、作成応答から`exportId`を含む[Enqueue Export Activity Job](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) エンドポイントを呼び出します。
+ジョブをキューに追加するには、作成応答から`exportId`を含む[Enqueue Export Activity Job](https://developer.adobe.com/marketo-apis/api/mapi#operation/enqueueExportActivitiesUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
@@ -194,7 +194,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 
 ジョブステータスを取得できるのは、同じ API ユーザによって作成されたジョブのみです。
 
-一括アクティビティ抽出では、ジョブを非同期で処理します。 [Get Export Activity Job Status](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) エンドポイントをポーリングして、ジョブがいつ完了したかを判断します。
+一括アクティビティ抽出では、ジョブを非同期で処理します。 [Get Export Activity Job Status](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportActivitiesStatusUsingGET) エンドポイントをポーリングして、ジョブがいつ完了したかを判断します。
 
 ```http
 GET /bulk/v1/activities/export/{exportId}/status.json
@@ -232,7 +232,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 ## データの取得
 
-ジョブのステータスが「完了」の場合、[書き出しアクティビティファイルを取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) エンドポイントを使用して、書き出したデータを取得します。
+ジョブのステータスが「完了」の場合、[書き出しアクティビティファイルを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportActivitiesFileUsingGET) エンドポイントを使用して、書き出したデータを取得します。
 
 ```http
 GET /bulk/v1/activities/export/{exportId}/file.json
@@ -254,7 +254,7 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブや不要なジョブを停止するには、[書き出しアクティビティ ジョブをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブや不要なジョブを停止するには、[書き出しアクティビティ ジョブをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportActivitiesUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/activities/export/{exportId}/cancel.json

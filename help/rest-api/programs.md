@@ -15,10 +15,10 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: ebde5b41-29c9-4f5e-9ef6-1197e85409e3
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 741
-ht-degree: 12%
+source-wordcount: 718
+ht-degree: 13%
 
 ---
 
@@ -46,11 +46,11 @@ Marketo には、5 つのコアとなるプログラムタイプがあります�
 
 ## クエリ
 
-ID、名前、ブラウジング、またはタグの種類と値でプログラムをクエリします。 [&#x200B; タグの種類を取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags/operation/getTagTypesUsingGET)して、使用可能なタグと値を取得します。
+ID、名前、ブラウジング、またはタグの種類と値でプログラムをクエリします。 [&#x200B; タグの種類を取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getTagTypesUsingGET)して、使用可能なタグと値を取得します。
 
 ### ID 別
 
-[ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5)エンドポイントには、`id` パスパラメーターが必要です。
+[ID によるプログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByIdUsingGET)エンドポイントには、`id` パスパラメーターが必要です。
 
 プログラム IDは、`https://app-\*\*\*.marketo.com/#PG1001A1`などのUI URLから取得できます。 この例では、最初と2番目の文字セットの間のIDは`1001`です。
 
@@ -140,13 +140,13 @@ GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
 
 ### 参照
 
-プログラムを参照するには、[&#x200B; プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) エンドポイントを使用します。
+プログラムを参照するには、[&#x200B; プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/browseProgramsUsingGET) エンドポイントを使用します。
 
 オプションの`status` パラメーターは、エンゲージメントおよびメールプログラムをステータス別にフィルタリングします。 有効な値は、エンゲージメントプログラムでは`on`と`off`、メールプログラムでは`unlocked`です。
 
 オプションの`maxReturn` パラメーターは、返されるプログラムの数を制御します。 デフォルトは20、最大は200です。 ページネーションにはオプションの`offset` パラメーターを使用します。デフォルトは0です。
 
-このエンドポイントはプログラムタグを返しません。 ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByIdUsingGET)または[名前](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByNameUsingGET)でプログラムを取得 プログラムを取得する タグを取得します。
+このエンドポイントはプログラムタグを返しません。 ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByIdUsingGET)または[名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByNameUsingGET)でプログラムを取得 プログラムを取得する タグを取得します。
 
 ```http
 GET /rest/asset/v1/programs.json
@@ -201,7 +201,7 @@ GET /rest/asset/v1/programs.json
 
 ### 日付範囲別
 
-`earliestUpdatedAt`および`latestUpdatedAt` パラメーターと[&#x200B; プログラムの取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5)を使用して、低い日時と高い日時の境界を設定します。 エンドポイントは、範囲内で作成または更新されたプログラムを返します。
+`earliestUpdatedAt`および`latestUpdatedAt` パラメーターと[&#x200B; プログラムの取得](https://developer.adobe.com/marketo-apis/api/asset#operation/browseProgramsUsingGET)を使用して、低い日時と高い日時の境界を設定します。 エンドポイントは、範囲内で作成または更新されたプログラムを返します。
 
 ```http
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00
@@ -292,7 +292,7 @@ GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&lat
 
 ### タグタイプ別
 
-タグ別[&#x200B; プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramListByTagUsingGET) エンドポイントは、指定されたタグの種類と値に一致するプログラムを返します。
+タグ別[&#x200B; プログラムを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramListByTagUsingGET) エンドポイントは、指定されたタグの種類と値に一致するプログラムを返します。
 
 `tagType`および`tagValue` パラメーターが必要です。 オプションの整数`maxReturn`は、返されるプログラムの数を制御します。デフォルトは20、最大値は200です。 ページネーションにはオプションの整数`offset`を使用します。デフォルトは0です。 結果はランダムな順序で返されます。
 
@@ -334,9 +334,9 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 作成と更新
 
-[&#x200B; プログラムを](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/createProgramUsingPOST)作成するには、`folder`、`name`、`type`および`channel`が必要です。 オプションのパラメーターは`description`、`costs`および`tags`です。 一部のサブスクリプションでは、特定のプログラムタイプにタグが必要です。 Get Tagsを使用して、インスタンスの要件を確認します。
+[&#x200B; プログラムを](https://developer.adobe.com/marketo-apis/api/asset#operation/createProgramUsingPOST)作成するには、`folder`、`name`、`type`および`channel`が必要です。 オプションのパラメーターは`description`、`costs`および`tags`です。 一部のサブスクリプションでは、特定のプログラムタイプにタグが必要です。 Get Tagsを使用して、インスタンスの要件を確認します。
 
-[更新中](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST)に変更できるのは、説明、名前、`tags`および`costs`のみです。 チャネルとタイプは、作成時にのみ設定できます。 `costsDestructiveUpdate`を`true`に設定すると、既存のコストがすべてクリアされ、リクエストに含まれるコストに置き換えられます。
+[更新中](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST)に変更できるのは、説明、名前、`tags`および`costs`のみです。 チャネルとタイプは、作成時にのみ設定できます。 `costsDestructiveUpdate`を`true`に設定すると、既存のコストがすべてクリアされ、リクエストに含まれるコストに置き換えられます。
 
 メールプログラムを作成または更新する際に、`startDate` と `endDate` を UTC 日時として渡すこともできます。
 
@@ -503,7 +503,7 @@ POST /rest/asset/v1/program/{id}/unapprove.json
 
 ## 複製
 
-[&#x200B; プログラムの複製](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/cloneProgramUsingPOST)には、新しい名前と親フォルダーが必要です。 説明はオプションです。 `name`はグローバルに一意である必要があり、255文字を超えることはできません。
+[&#x200B; プログラムの複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneProgramUsingPOST)には、新しい名前と親フォルダーが必要です。 説明はオプションです。 `name`はグローバルに一意である必要があり、255文字を超えることはできません。
 
 `folder` パラメーターのtype属性を`Folder`に設定します。 ターゲットフォルダーは、ソースプログラムと同じワークスペースにある必要があります。
 

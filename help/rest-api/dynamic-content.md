@@ -10,9 +10,9 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 329
+source-wordcount: 325
 ht-degree: 8%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 8%
 
 この例では、地域（米国）セグメントを使用して、南西セグメントのリードにイベントプロモーションを表示します。 このセグメントには、カリフォルニア州、ネバダ州、ユタ州、コロラド州、アリゾナ州、ニューメキシコ州のリードが含まれます。
 
-[電子メールコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailComponentContentUsingPOST) エンドポイントを使用して、ID `Q1-promotion-banner`の編集可能セクションを`DynamicContent` セクションに変更します。 `value` パラメーターは、セグメント IDを指定します。
+[電子メールコンテンツセクションを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailComponentContentUsingPOST) エンドポイントを使用して、ID `Q1-promotion-banner`の編集可能セクションを`DynamicContent` セクションに変更します。 `value` パラメーターは、セグメント IDを指定します。
 
 電子メールやランディングページは、このパターンに従っています。 スニペットでは、スニペット API ドキュメントに記載されている様々なパターンを使用します。
 
@@ -63,7 +63,7 @@ type=DynamicContent&value=1001
 }
 ```
 
-[&#x200B; メール動的コンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailDynamicContentUsingPOST) エンドポイントを呼び出して、特定のセクションのセグメントにコンテンツを追加します。
+[&#x200B; メール動的コンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailDynamicContentUsingPOST) エンドポイントを呼び出して、特定のセクションのセグメントにコンテンツを追加します。
 
 次のリクエストでは、南西セグメントのリードのデフォルトコンテンツではなく、特別なバナーが表示されます。 さらにバリエーションを作成するには、各セグメントとセクションのエンドポイントを呼び出します。
 

@@ -3,9 +3,9 @@ title: リストメンバーシップ（静的リスト）
 feature: REST API, Static Lists
 description: Marketo Lead Database REST APIを使用して、リードを静的リストに追加し、リードを削除し、リストメンバーを取得し、リストメンバーシップを確認します。
 exl-id: b8f74bcf-834a-44db-81fd-621048afeba4
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '415'
 ht-degree: 8%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 8%
 
 ## リストに追加
 
-リストに追加[&#x200B; リストに追加](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/addLeadsToListUsingPOST) エンドポイントを使用して、1人以上のメンバーをリストに追加します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
+リストに追加[&#x200B; リストに追加](https://developer.adobe.com/marketo-apis/api/mapi#operation/addLeadsToListUsingPOST) エンドポイントを使用して、1人以上のメンバーをリストに追加します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
 
 応答には、リクエスト内の各リード IDのステータスを含む`result`配列が含まれています。
 
@@ -65,7 +65,7 @@ POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 
 ## リストから削除
 
-リストから[&#x200B; リストから削除](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE) エンドポイントを使用して、1人以上のメンバーをリストから削除します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
+リストから[&#x200B; リストから削除](https://developer.adobe.com/marketo-apis/api/mapi#operation/removeLeadsFromListUsingDELETE) エンドポイントを使用して、1人以上のメンバーをリストから削除します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
 
 応答には、リクエスト内の各リード IDのステータスを含む`result`配列が含まれています。
 
@@ -102,7 +102,7 @@ DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
 
 ## リスト ID によるリードを取得
 
-リスト ID [&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/getLeadsByListIdUsingGET)でリードを取得エンドポイントを使用して、リストのメンバーを取得します。 必要な`listId` パスパラメーターを渡します。 オプションのクエリパラメーターを渡して、フィルタリング条件を指定することもできます。
+リスト ID [&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET)でリードを取得エンドポイントを使用して、リストのメンバーを取得します。 必要な`listId` パスパラメーターを渡します。 オプションのクエリパラメーターを渡して、フィルタリング条件を指定することもできます。
 
 オプションのクエリパラメーターは次のとおりです。
 
@@ -152,7 +152,7 @@ GET /rest/v1/lists/{listId}/leads.json?batchSize=3
 
 ## リストのメンバー
 
-リストの[&#x200B; メンバー](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/areLeadsMemberOfListUsingGET) エンドポイントを使用して、1つ以上のリードがリストのメンバーであるかどうかを判断します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
+リストの[&#x200B; メンバー](https://developer.adobe.com/marketo-apis/api/mapi#operation/areLeadsMemberOfListUsingGET) エンドポイントを使用して、1つ以上のリードがリストのメンバーであるかどうかを判断します。 必要な`listId` パスパラメーターと、リード IDを含む1つ以上の`id` クエリパラメーターを渡します。 リード IDの最大数は300です。
 
 応答には、リクエスト内の各リード IDのステータスを含む`result`配列が含まれています。
 

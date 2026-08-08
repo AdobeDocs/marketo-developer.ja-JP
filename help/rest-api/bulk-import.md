@@ -10,10 +10,10 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 538
-ht-degree: 30%
+source-wordcount: 526
+ht-degree: 31%
 
 ---
 
@@ -57,7 +57,7 @@ RFC 2399ごとにHTTP `multipart/form-data`を使用してファイルをアッ�
 
 ## ジョブの作成
 
-[&#x200B; リードの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) エンドポイントを呼び出して、リード読み込みジョブを作成します。 このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。
+[&#x200B; リードの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST) エンドポイントを呼び出して、リード読み込みジョブを作成します。 このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。
 
 任意の言語のHTTP サポートライブラリを使用して、マルチパートリクエストを作成します。 [curl](https://curl.se/)を使用して開始することもできます。
 
@@ -112,7 +112,7 @@ Easy,Fox,easyfox@marketo.com
 
 ## ジョブステータスのポーリング
 
-`batchId`を[読み込みリードステータスの取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) エンドポイントに渡して、ジョブのステータスを取得します。
+`batchId`を[読み込みリードステータスの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportLeadStatusUsingGET) エンドポイントに渡して、ジョブのステータスを取得します。
 
 ```http
 GET /bulk/v1/leads/batch/{batchId}.json
@@ -144,7 +144,7 @@ GET /bulk/v1/leads/batch/{batchId}.json
 
 Get Import Lead Status応答の`numOfRowsFailed`属性は、失敗した行の数を示します。 0より大きい値は、エラーが発生したことを意味します。
 
-失敗したレコードとその原因を取得するには、[読み込み失敗の取得](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) エンドポイントを使用します。
+失敗したレコードとその原因を取得するには、[読み込み失敗の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportLeadFailuresUsingGET) エンドポイントを使用します。
 
 ```http
 GET /bulk/v1/leads/batch/{batchId}/failures.json
