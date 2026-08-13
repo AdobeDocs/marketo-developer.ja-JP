@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 2019d398e32790d76735ef672e9ca4b48b8dd2bb
+source-git-commit: 4d690179b0ff8da03b6eb7d11566f511d491f369
 workflow-type: tm+mt
-source-wordcount: 2216
+source-wordcount: 2214
 ht-degree: 1%
 
 ---
@@ -379,7 +379,7 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 
 ### リードとリスト
 
-メールアドレスでリードを検索し、リードレコードを作成または更新して、静的リストのメンバーシップを管理できます。
+メールアドレスでリードを検索し、リードレコードを作成し、静的リストのメンバーシップを管理します。
 
 プロンプトの例：
 
