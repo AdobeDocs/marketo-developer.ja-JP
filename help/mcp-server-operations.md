@@ -3,19 +3,13 @@ title: Marketo Engage MCPの操作
 description: AI アシスタントで使用できるMarketo Engage MCPの操作について説明します。
 autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: dca84292-69e9-4116-a575-667d31fa060d
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-topic_v2:
-  - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: dca84292-69e9-4116-a575-667d31fa060did: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+topic_v2: id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
+source-git-commit: 066dff918cae70ccf4284b626ccb44d47a31c386
 workflow-type: tm+mt
-source-wordcount: 280
-ht-degree: 4%
+source-wordcount: 1249
+ht-degree: 49%
 
 ---
 
@@ -28,7 +22,7 @@ ht-degree: 4%
 >
 >MCP サーバーチームは、スマートリストおよびスマートキャンペーンアセット APIをMCP サーバーと連携させることに取り組んでいます。 この作業は、商品の許可リストに加えるを含め、2026年第3四半期に完了する予定です。
 
-Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 ## 一括書き出し
 
@@ -42,7 +36,7 @@ Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法
 
 ## チャネルとタグ
 
-[&#x200B; チャネル API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [&#x200B; タグ API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
+[ チャネル API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [ タグ API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
 
 - `browse_channels`
 - `browse_tag_types`
@@ -222,3 +216,11 @@ Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法
 - `delete_token`
 - `get_calendar_tokens`
 - `get_tokens_by_folder`
+
+## MCP フローステップツールが有効
+
+| フローステップ | トリガー | フィルター（アクティビティ） | フィルター（属性） |
+| --- | --- | --- | --- |
+| <ul><li>フィールドセットに追加</li><li>リストに追加</li><li>Microsoft キャンペーンに追加</li><li>育成に追加</li><li>SFDC キャンペーンに追加&#x200B;</li><li>Web フックの呼び出し</li><li>データ値の変更</li><li>リードのパーティションを変更</li><li>育成ケイデンスを変更</li><li>育成トラックを変更</li><li>所有者を変更</li><li>Microsoft の所有者の変更</li><li>プログラムデータの変更</li><li>プログラムメンバーのデータの変更</li><li>売上高ステージの変更</li><li>スコアの変更</li><li>セグメントの変更</li><li>進行状況のステータスを変更</li><li>SFDC キャンペーンのステータスを変更</li><li>リードを変換</li><li>タスクの作成</li><li>Microsoft でタスクを作成</li><li>リードの削除</li><li>Microsoftからリードを削除</li><li>SFDC からリードを削除</li><li>キャンペーンの実行</li><li>注目のアクション</li><li>フィールドセットから削除</li><li>フローから削除</li><li>リストから削除</li><li>Microsoft キャンペーンから削除</li><li>SFDC キャンペーンから削除</li><li>キャンペーンのリクエスト</li><li>アラートの送信</li><li>メールの送信</li><li>リードをMicrosoftに同期</li><li>リードを SFDC に同期</li><li>待機</li></ul> | <ul><li>アクティビティの記録</li><li>アクティビティの更新</li><li>リストに追加</li><li>Microsoft Campaignに追加しました</li><li>ナーチャリングに追加しました</li><li>商談に追加</li><li>商談（アカウント）に追加</li><li>商談（連絡先）に追加</li><li>SFDC キャンペーンに追加</li><li>イベント中に質問する</li><li>イベントへの参加</li><li>キャンペーンをリクエスト</li><li>リンクをクリック</li><li>メール内リンクのクリック</li><li>セールスメール内のリンクをクリック</li><li>SMS メッセージのリンクをクリック</li><li>リンクのクリック数</li><li>データ値変更</li><li>アセットをダウンロード</li><li>バウンスメール</li><li>ソフトバウンスメール</li><li>メール配信完了</li><li>対話型フローでエンゲージ</li><li>ダイアログを使用する</li><li>会話フローでエージェントとエンゲージ</li><li>ダイアログでエージェントとエンゲージ</li><li>フォームの入力</li><li>注目のアクションあり</li><li>対話型フローでのドキュメントの操作</li><li>ダイアログでのドキュメントの操作</li><li>セールスメール送信</li><li>リードがコンバージョン済み</li><li>リードが作成されました</li><li>Microsoftからリードが削除されました</li><li>SFDCからリードが削除されました</li><li>リードはMarketoにプッシュされます</li><li>リードはMicrosoftに同期されます</li><li>リードはSFDCに同期されます</li><li>リードパーティションの変更</li><li>手動ステージの変更</li><li>ケイデンスの変更の育成</li><li>ナーチャリングトラックの変更</li><li>メールを開く</li><li>セールスメールを開く</li><li>商談（アカウント）が更新されました</li><li>商談（連絡先）が更新されました</li><li>商談更新</li><li>所有者の変更</li><li>Microsoftでのオーナーの変更</li><li>プログラムメンバーデータが変更されました</li><li>進捗ステータスが変更されました</li><li>ダイアログの目標を達成</li><li>対話型フローで目標を達成</li><li>転送メール（友達宛て）を受信</li><li>リストから削除</li><li>Microsoft キャンペーンから削除</li><li>商談から削除</li><li>商談（アカウント）から削除されました</li><li>商談（連絡先）から削除されました</li><li>SFDC キャンペーンから削除</li><li>営業用メールへの返信</li><li>アンケートへの回答</li><li>アンケートへの回答</li><li>収益ステージの変更</li><li>セールスメールのバウンス</li><li>セールスメールの受信</li><li>対話型フローでスケジュール会議を開催</li><li>ダイアログでのスケジュールミーティング</li><li>スコア変更</li><li>セグメント変更</li><li>アラート送信</li><li>転送メール（友達宛て）を送信</li><li>SMS メッセージバウンス</li><li>SMS メッセージが配信される</li><li>SFDC キャンペーンでステータスが変更された</li><li>メール配信停止</li><li>Web ページにアクセス</li><li>ウェブフックの呼び出し中</li></ul> | <ul><li>活動が記録済み</li><li>活動が更新済み</li><li>アラートを送信済み</li><li>キャンペーンが実行されました</li><li>キャンペーンをリクエスト済み</li><li>リンクをクリック</li><li>メール内リンクをクリック済み</li><li>セールスメール内のリンクをクリック済み</li><li>SMS メッセージのクリックリンク</li><li>リンクをクリックしました</li><li>データ値変更済み</li><li>アセットをダウンロード済み</li><li>バウンスしたメール</li><li>ソフトバウンスしたメール</li><li>会話フローにエンゲージ済み</li><li>ダイアログでエンゲージ済み</li><li>対話型フローでエージェントとエンゲージ</li><li>ダイアログでエージェントとエンゲージ済み</li><li>フォーム入力完了</li><li>過去に注目のアクションあり</li><li>イベント中に質問済み</li><li>イベントに参加済み</li><li>対話型フローでのドキュメントの操作</li><li>ダイアログでドキュメントを操作済み</li><li>変更されたリード パーティション</li><li>リードがコンバージョンしました</li><li>リードが作成されました</li><li>Microsoftからリードが削除されました</li><li>SFDCからリードが削除されました</li><li>リードはMarketoにプッシュされました</li><li>リードがMicrosoftに同期されました</li><li>リードがSFDCに同期されました</li><li>ナーチャリングの頻度が変更されました</li><li>ナーチャリングトラックが変更されました</li><li>メール開封済み</li><li>セールスメール開封済み</li><li>商談（アカウント）が更新されました</li><li>商談（連絡先）が更新されました</li><li>商談は更新済み</li><li>所有者が変更済み</li><li>Microsoftでオーナーが変更されました</li><li>プログラムメンバーデータが変更されました</li><li>進捗ステータスが変更されました</li><li>ダイアログの目標達成済み</li><li>対話型フローで目標を達成</li><li>転送メール（友達宛て）を受信</li><li>セールスメールに返信</li><li>アンケートへの回答</li><li>アンケートへの回答</li><li>収益ステージを変更済み</li><li>セールスメールバウンス</li><li>セールスメール受信済み</li><li>対話型フローでスケジュールされたミーティング</li><li>ダイアログでミーティングをスケジュール</li><li>スコアを変更済み</li><li>セグメント変更済み</li><li>転送メール（友達宛て）を送信</li><li>SMS メッセージのバウンス</li><li>メール購読解除済み</li><li>ウェブページにアクセス済み</li><li>リストに追加済み</li><li>ナーチャリングに追加されました</li><li>商談に追加済み</li><li>さんが商談（アカウント）に追加されました</li><li>さんが商談（連絡先）に追加されました</li><li>メール配信済み</li><li>SMS メッセージが配信されました</li><li>リストから削除済み</li><li>商談から削除済み</li><li>商談（アカウント）から削除されました</li><li>が商談（連絡先）から削除されました</li><li>メールを送信済み</li><li>セールスメールを送信済み</li><li>ウェブフックの呼び出し中</li></ul> | <ul><li>アカウント所有者のメール</li><li>アカウント所有者の名</li><li>アカウント所有者の姓</li><li>取得日</li><li>新規顧客獲得プログラム</li><li>新規顧客獲得プログラム名</li><li>住所</li><li>年間収益</li><li>匿名 IP</li><li>請求先住所</li><li>請求先住所（市区町村）</li><li>請求先住所 (国)</li><li>請求先住所（郵便番号）</li><li>請求先住所（都道府県）</li><li>ブロックリストに登録済み</li><li>市区町村</li><li>企業の Microsoft のタイプ</li><li>企業名</li><li>国</li><li>作成日時</li><li>生年月日</li><li>部門</li><li>電話連絡拒否</li><li>電話連絡拒否の理由</li><li>重複フィールド</li><li>メールアドレス</li><li>メール無効</li><li>メール無効の理由</li><li>メールの中断</li><li>メールの中断時刻</li><li>メールの中断原因</li><li>ファックス番号</li><li>名前（名）</li><li>氏名</li><li>商談あり</li><li>業種</li><li>推測される市区町村</li><li>推測される企業</li><li>推測される国</li><li>推測される都市圏</li><li>推測される市外局番</li><li>推測される郵便番号</li><li>推測される都道府県／地域</li><li>顧客</li><li>パートナー</li><li>役職</li><li>名前（姓）</li><li>リード所有者のメールアドレス</li><li>リード所有者の名（名）</li><li>リード所有者の役職名</li><li>リード所有者の姓</li><li>リード所有者の電話番号</li><li>リード パーティション名</li><li>リード評価</li><li>リードのスコア</li><li>リードのソース</li><li>リードのステータス</li><li>代表電話</li><li>マーケティングを中断したリード</li><li>フィールドセットのメンバー</li><li>リストのメンバー</li><li>Nurtureのメンバー</li><li>プログラムのメンバー</li><li>収益モデルのメンバー</li><li>収益ステージのメンバー</li><li>SFDC キャンペーンのメンバー</li><li>スマートキャンペーンのメンバー</li><li>スマートリストのメンバー</li><li>Microsoft アカウント番号</li><li>Microsoft による作成日</li><li>Microsoft 削除済み</li><li>Microsoft のタイプ</li><li>ミドルネーム</li><li>携帯電話番号</li><li>メモ</li><li>従業員数</li><li>商談数</li><li>訪問者の参照元</li><li>参照元検索エンジン</li><li>参照元検索フレーズ</li><li>参照元のソース情報</li><li>参照元のソースのタイプ</li><li>親会社名</li><li>顧客のタイムゾーン</li><li>電話番号</li><li>郵便番号</li><li>ランダム サンプル</li><li>登録ソース情報</li><li>登録ソースのタイプ</li><li>ロール</li><li>敬称</li><li>SFDC アカウント番号</li><li>SFDC 作成日</li><li>SFDC 削除済み</li><li>SFDC のタイプ</li><li>SIC コード</li><li>サイト</li><li>ステート</li><li>合計商談数</li><li>商談の合計収益予測</li><li>配信停止完了</li><li>登録解除の理由</li><li>更新時刻</li><li>Web サイト</li></ul> |
+
+{style="table-layout:auto"}
