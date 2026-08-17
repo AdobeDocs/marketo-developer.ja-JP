@@ -6,9 +6,9 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: 066dff918cae70ccf4284b626ccb44d47a31c386
+source-git-commit: ece6e257d28839582be659daf0b8ba1a6b6a5c3c
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '256'
 ht-degree: 85%
 
 ---
@@ -125,9 +125,9 @@ ht-degree: 85%
 - [メールスクリプト](email-scripting.md)
 - [メール作成の例](examples.md)
 - [Marketo オブジェクト](marketo-objects.md)
+- [MCPの操作](mcp-server-operations.md)
 - [MCP サーバー](mcp-server.md)
-- [サポートされているMCP操作](mcp-server-operations.md)
-- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
+- {hide-from-toc}[ ライセンス ](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)
