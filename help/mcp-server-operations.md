@@ -28,7 +28,7 @@ ht-degree: 49%
 >
 >MCP サーバーチームは、スマートリストおよびスマートキャンペーンアセット APIをMCP サーバーと連携させることに取り組んでいます。 この作業は、商品の許可リストに加えるを含め、2026年第3四半期に完了する予定です。
 
-Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 ## 一括書き出し
 
