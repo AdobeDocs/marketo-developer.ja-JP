@@ -127,7 +127,7 @@ ht-degree: 85%
 - [Marketo オブジェクト](marketo-objects.md)
 - [MCP サーバー](mcp-server.md)
 - [サポートされているMCP操作](mcp-server-operations.md)
-- {hide-from-toc}[ ライセンス ](api-license.md)
+- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)
