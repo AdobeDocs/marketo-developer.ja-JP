@@ -1,7 +1,6 @@
 ---
 title: Marketo Engage MCP サーバー
 description: Marketo Engage MCP サーバーを使用して、AI アシスタントをMarketoに接続する方法を説明します。 Marketoの資格情報を使用して、Claude Desktop、Cursor、Claude Code、またはVS Codeを設定します。
-badgeBeta: label="限定提供" type="informative" tooltip="この機能は、現在、限定ベータ版リリース中です"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
 autotag-review: '2026-06-02T13:31:15.329Z'
 TQID: 'https://experienceleague.adobe.com/PJJm7yv8HmbwMB2fsnfDCXs8zprDJK5Q5z2uiiCJRZI'
@@ -21,22 +20,19 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 4d690179b0ff8da03b6eb7d11566f511d491f369
+source-git-commit: 8fc4e9a161decdc0b39a7e98bdb17de035538a6a
 workflow-type: tm+mt
-source-wordcount: 2214
-ht-degree: 1%
+source-wordcount: 2144
+ht-degree: 4%
 
 ---
 
-# [!DNL Marketo Engage] MCP サーバー
 
->[!AVAILABILITY]
->
-> この機能は限定的に利用できます。 アクセスをリクエストするには、[このフォーム &#x200B;](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4Y-uSf63sAxCmWyqMJg8eMFUMVZSVExSNDA3T0I4SEcwRDFSVTBGWU01Uy4u&origin=QRCode){target="_blank"}に入力してください。 サブスクリプションのMunchkin IDの準備が整っていることを確認します。
+# [!DNL Marketo Engage] MCP サーバー
 
 >[!NOTE]
 >
->MCP サーバーチームは、スマートリストおよびスマートキャンペーンアセット APIをMCP サーバーと連携させることに取り組んでいます。 アクティビティ、アクション、ルールの許可リストに加えるを含むこの作業の大部分は、2026年第3四半期に完了する予定です。
+>スマートリストとスマートキャンペーン `create`および`update` ツールは、2026年9月のリリースを対象としています。
 
 モデルコンテキストプロトコル（MCP）は、AI ツールを外部サービスに接続するオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントを[!DNL Marketo]に接続します。 フォーム、プログラム、スマートキャンペーン、リード、メール、スニペット、リスト、フォルダーなど、100以上の処理を実行できます。
 
@@ -46,8 +42,8 @@ Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法につ
 
 >[!IMPORTANT]
 >
->Model Context Protocol （MCP）は新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが生じる可能性があります。 Adobe MCP サーバーの統合と関連ドキュメントは、いかなる保証も受けることなく、「現状のまま」提供されます。
->MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。 Adobeは、設定ミス、MCPの誤用、サードパーティ実装の脆弱性、またはMCP対応ワークフローを通じて実行された意図しないアクションから生じる問題については責任を負いません。
+>Model Context Protocol（MCP）は、新しいオープンソースの標準であり、セキュリティや信頼性に関するリスクが発生する場合があります。 Adobe MCP サーバーの統合および関連ドキュメントは、「現状のまま」でいかなる保証もなく提供されません。
+>MCP クライアントまたはサーバーをAdobe製品に接続することは、お客様が選択した設定であり、お客様はMCP統合のセキュリティと適合性を評価する責任があります。 アドビは、設定ミス、MCP の誤用、サードパーティ実装の脆弱性、または MCP 対応ワークフローを通じて実行された意図しないアクションから発生する問題について、一切の責任を負いません。
 >リスクを軽減するために、Adobeでは、本番稼働前にサンドボックス環境で統合をテストし、MCPで開始されるすべてのアクションと応答を慎重にレビューおよび検証してから、確認または依存することを推奨しています。
 
 ## MCPの基本
