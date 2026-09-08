@@ -4,14 +4,12 @@ feature: REST API
 description: 2つのレッグ OAuth 2.0でMarketo REST APIを認証し、アクセストークンを作成して使用し、認証ヘッダーに切り替え、有効期限を管理し、601および602 エラーを処理します。
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
 TQID: https://experienceleague.adobe.com/cIeI0m61CyIWq4HEosZ-QAsxzZb0WcrQRpCud2qysfY
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 6d9408d07557d4b7426ad72d2a886220d622fb78
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 1a442b6008fbb8f05ad346f1b7185a5b2e22f0e4
 workflow-type: tm+mt
-source-wordcount: 526
-ht-degree: 8%
+source-wordcount: 487
+ht-degree: 6%
 
 ---
 
@@ -61,7 +59,7 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 
 >[!IMPORTANT]
 >
->`access_token` クエリパラメーターを使用した認証のサポートは、2026年8月31日（PT）に削除されます。 プロジェクトでクエリパラメーターを使用してアクセストークンを渡す場合は、できるだけ早く[認証ヘッダー](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)を使用するように更新する必要があります。 新しい開発では、`Authorization` ヘッダーのみを使用する必要があります。
+>`access_token` クエリパラメーターを使用した認証のサポートは、2026年8月31日に削除されました。 新しい開発では、`Authorization` ヘッダーのみを使用する必要があります。
 
 ### 認証ヘッダーへの切り替え
 
