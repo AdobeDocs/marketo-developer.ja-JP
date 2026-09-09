@@ -10,10 +10,10 @@ feature_v2:
   - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: 1a442b6008fbb8f05ad346f1b7185a5b2e22f0e4
 workflow-type: tm+mt
-source-wordcount: 1549
-ht-degree: 16%
+source-wordcount: 1525
+ht-degree: 15%
 
 ---
 
@@ -43,14 +43,14 @@ Marketo Bulk Extractは、個人および人物関連の大量のデータを取
 
 >[!IMPORTANT]
 >
->**access_token** クエリパラメーターを使用した認証のサポートは、2026年8月31日に削除されます。 プロジェクトでアクセストークンを渡すのにクエリパラメーターを使用している場合は、できるだけ早く **Authorization** ヘッダーを使用するように更新する必要があります。 新規開発では、**Authorization** ヘッダーのみを使用する必要があります。
+>**access_token** クエリパラメーターを使用した認証のサポートは、2026年8月31日に削除されました。 新規開発では、**Authorization** ヘッダーのみを使用する必要があります。
 
 ## 制限
 
 - 最大同時エクスポート ジョブ数：2
 - 現在エクスポート中のジョブを含む、キューに入った最大エクスポート ジョブ数：10
 - ファイル保持期間：7日間
-- デフォルトの1日の書き出し割り当て：500 MB。 割り当ては、CSTの午前12:00に毎日リセットされます。 増加は購入可能です。
+- 割り当ては、夏時間に応じて、CST/CDTの午前12:00に毎日リセットされます。 増加は購入可能です。
 - 日付範囲フィルター（`createdAt`または`updatedAt`）の最大期間：31日
 
 一部のサブスクリプションタイプでは、UpdatedAt およびスマートリストのリードの一括抽出フィルターは使用できません。 これらのフィルターが使用できない場合、Create Export Lead Job エンドポイントは「1035, Unsupported filter type for target subscription」というエラーを返します。 Marketo サポートに連絡して、サブスクリプションでこの機能を有効にします。
