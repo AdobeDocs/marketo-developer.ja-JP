@@ -6,9 +6,7 @@ source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: '65301'
 ht-degree: 2%
-
 ---
-
 # ブログのアーカイブ
 
 >[!INFO]
@@ -18,7 +16,7 @@ ht-degree: 2%
 >
 
 >[!IMPORTANT]
->2026年7月31日（PT）をもって、SOAP APIは非推奨（廃止予定）となり、使用できなくなります。 新しい開発はすべてMarketo REST APIで行い、サービスの中断を避けるために、その日までに既存のサービスを移行する必要があります。 SOAP APIを使用するサービスがある場合は、移行方法について[SOAP API Migration Guide](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/soap/migration)を参照してください。
+>2026年7月31日（PT）をもって、SOAP APIは非推奨（廃止予定）となり、使用できなくなります。 新しい開発はすべてMarketo REST APIで行い、サービスの中断を避けるために、その日までに既存のサービスを移行する必要があります。 SOAP APIを使用するサービスがある場合は、移行方法について[SOAP API Migration Guide](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration)を参照してください。
 >
 
 >[!IMPORTANT]
@@ -1048,7 +1046,7 @@ puts response
 
 ## Marketoでカスタムフィールドを作成し、AP経由でこのフィールドを更新する
 
-例えば、Adobe Marketoの標準フィールドに収まらないリードに関する追加データがあるとします。 たとえば、このカスタムフィールドはサードパーティスコアにすることができます。 サードパーティスコア用にMarketoでカスタムフィールドを作成し、Marketo [REST API](https://developer.adobe.com/marketo-apis/)または[SOAP API](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/soap/activity-type-filters)のいずれかを使用して、このフィールドの値を更新できます。 最初にMarketoでカスタムフィールドを作成する方法を示し、2番目にREST APIを使用してこのフィールドを更新する方法を示します。
+例えば、Adobe Marketoの標準フィールドに収まらないリードに関する追加データがあるとします。 たとえば、このカスタムフィールドはサードパーティスコアにすることができます。 サードパーティスコア用にMarketoでカスタムフィールドを作成し、Marketo [REST API](https://developer.adobe.com/marketo-apis/)または[SOAP API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activity-type-filters)のいずれかを使用して、このフィールドの値を更新できます。 最初にMarketoでカスタムフィールドを作成する方法を示し、2番目にREST APIを使用してこのフィールドを更新する方法を示します。
 
 ### Marketoでのカスタムフィールドの作成方法
 
@@ -4771,7 +4769,7 @@ Result:
 
 ### まとめ
 
-この方法は様々な形で拡張可能で、個々のレイアウトセクション内やメール以外の場所のコンテンツを変更したり、カスタム値をタスクや注目のアクションに渡したりすることができます。 プログラム内からトークンを使用できる場所はすべて、この方法を使用してカスタマイズできます。 また、同様の機能は、[キャンペーンをスケジュール](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)呼び出しでも使用でき、バッチキャンペーン全体をまたいでトークンを処理できます。 これらは、リードごとにカスタマイズすることはできませんが、幅広いリードを対象としたコンテンツのカスタマイズに非常に役立ちます。
+この方法は、様々な方法で拡張可能で、個々のレイアウトセクション内またはメール外部のメールのコンテンツを変更し、カスタム値をタスクや注目のアクションに渡すことができます。 プログラム内からトークンを使用できる場所はすべて、この方法を使用してカスタマイズできます。 また、同様の機能は、[キャンペーンをスケジュール](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)呼び出しでも使用でき、バッチキャンペーン全体をまたいでトークンを処理できます。 これらは、リードごとにカスタマイズすることはできませんが、幅広いリードを対象としたコンテンツのカスタマイズに非常に役立ちます。
 
 投稿日：_2015-07-24_ by _Kenny_
 
