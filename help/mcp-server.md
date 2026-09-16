@@ -6,27 +6,37 @@ autotag-review: '2026-06-02T13:31:15.329Z'
 TQID: 'https://experienceleague.adobe.com/PJJm7yv8HmbwMB2fsnfDCXs8zprDJK5Q5z2uiiCJRZI'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
+    internal-label: Assets
   - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+    internal-label: Developer
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 8fc4e9a161decdc0b39a7e98bdb17de035538a6a
+    internal-label: Artificial intelligence
+source-git-commit: b12faeb0cb1a3680f6e0e7a522c54931b3de2c5d
 workflow-type: tm+mt
-source-wordcount: 2144
+source-wordcount: '2099'
 ht-degree: 4%
-
 ---
-
 
 # [!DNL Marketo Engage] MCP サーバー
 
@@ -38,7 +48,7 @@ ht-degree: 4%
 
 AI ツールがMCP サーバーを呼び出すと、サーバーはそのリクエストの資格情報を使用して、対応するREST API呼び出しを実行します。 サーバーサイドソフトウェアをインストール、デプロイ、または実行する必要はありません。
 
-Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 >[!IMPORTANT]
 >
@@ -48,7 +58,7 @@ Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法につ
 
 ## MCPの基本
 
->MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [&#x200B; モデル コンテキスト プロトコル &#x200B;](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCPでは、AI ツールを複数の外部サービスに同時に接続することができます。 例えば、AI アシスタントは次のことが可能です。
 
@@ -161,28 +171,7 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 ### カーソル {#cursor}
 
 カーソル MCP設定に既に他のサーバーが含まれている場合は、`mcpServers`の下に`marketo` エントリを追加します。
-次の例は、プロジェクトディレクトリの&#x200B;**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
-
->[!BEGINTABS]
-
->[!TAB IMS トークン ]
-
-```json
-{
-  "mcpServers": {
-    "marketo": {
-      "type": "http",
-      "url": "https://marketo-mcp.adobe.io/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR-IMS-TOKEN",
-        "x-gw-ims-org-id": "YOUR-IMS-ORG-ID"
-      }
-    }
-  }
-}
-```
-
->[!TAB Marketo クライアント資格情報]
+次の例は、プロジェクトディレクトリの**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
 
 ```json
 {
@@ -200,26 +189,11 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 }
 ```
 
->[!ENDTABS]
-
 カーソルを再起動します。
 
 ### Claude Code （CLI） {#claude-code}
 
 ターミナルで次のコマンドを実行し、資格情報を代入します。
-
->[!BEGINTABS]
-
->[!TAB IMS トークン ]
-
-```bash
-claude mcp add --transport http marketo \
-  https://marketo-mcp.adobe.io/mcp \
-  --header "Authorization: Bearer YOUR-IMS-TOKEN" \
-  --header "x-gw-ims-org-id: YOUR-IMS-ORG-ID"
-```
-
->[!TAB Marketo クライアント資格情報]
 
 ```bash
 claude mcp add --transport http marketo \
@@ -229,28 +203,15 @@ claude mcp add --transport http marketo \
   --header "X-Marketo-Munchkin-Id: YOUR-MUNCHKIN-ID"
 ```
 
->[!ENDTABS]
-
 ### OpenAI Codex {#codex}
 
 1. 設定 / MCP サーバー/ サーバーの追加に移動します。
 1. サーバーURLを追加します：`https://marketo-mcp.adobe.io/mcp`。
 1. 認証方法のヘッダーを追加します。
 
->[!BEGINTABS]
-
->[!TAB IMS トークン ]
-
-* Authorization: &quot;Bearer YOUR-IMS-TOKEN&quot;
-* x-gw-ims-org-id: &quot;YOUR-IMS-ORG-ID&quot;
-
->[!TAB Marketo クライアント資格情報]
-
 * X-Marketo-Client-Id: &quot;YOUR-CLIENT-ID&quot;
 * X-Marketo-Client-Secret: &quot;YOUR-CLIENT-SECRET&quot;
 * X-Marketo-Munchkin-Id: &quot;YOUR-MUNCHKIN-ID&quot;
-
->[!ENDTABS]
 
 1. 「保存」を選択して、プロセスを完了します。
 
@@ -258,27 +219,6 @@ claude mcp add --transport http marketo \
 ### VS CodeとGitHub Copilot {#vscode}
 
 **[!UICONTROL Ctrl+Shift+P]** （またはmacOSの&#x200B;**[!UICONTROL Cmd+Shift+P]**）を押し、**[!UICONTROL MCP: Open User Configuration]**&#x200B;と入力してEnter キーを押します。 `mcp.json`が開きます。 `servers` オブジェクト内の`marketo` エントリを追加します。
-
->[!BEGINTABS]
-
->[!TAB IMS トークン ]
-
-```json
-{
-  "servers": {
-    "marketo": {
-      "type": "http",
-      "url": "https://marketo-mcp.adobe.io/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR-IMS-TOKEN",
-        "x-gw-ims-org-id": "YOUR-IMS-ORG-ID"
-      }
-    }
-  }
-}
-```
-
->[!TAB Marketo クライアント資格情報]
 
 ```json
 {
@@ -296,15 +236,13 @@ claude mcp add --transport http marketo \
 }
 ```
 
->[!ENDTABS]
-
 >[!NOTE]
 >
 >セキュリティ上の理由から、資格情報を直接貼り付ける代わりに、環境変数の補間を設定ファイルで使用します。 `${MARKETO_CLIENT_SECRET}`のような構文を使用して変数を参照し、環境に設定できます。 これにより、バージョン管理ファイルに資格情報をプレーンテキストで保存できなくなります。
 
 ### Glean {#glean}
 
-GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム &#x200B;](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
+GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム ](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
 
 | ヘッダー | 値 |
 | ------ | ----- |
@@ -328,30 +266,17 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 
 リクエストごとに、次のいずれかの認証方法のヘッダーを送信します。 サーバーのURLとヘッダーを入力する場所は、ツールによって異なりますので、そのMCP ドキュメントを参照してください。
 
->[!BEGINTABS]
-
->[!TAB IMS トークン ]
-
-| ヘッダー | 値 |
-| ------ | ----- |
-| `Authorization` | `Bearer YOUR-IMS-TOKEN` |
-| `x-gw-ims-org-id` | あなたのIMS組織ID |
-
->[!TAB Marketo クライアント資格情報]
-
 | ヘッダー | 値 |
 | ------ | ----- |
 | `X-Marketo-Client-Id` | クライアント ID |
 | `X-Marketo-Client-Secret` | クライアント秘密鍵 |
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
 
->[!ENDTABS]
-
-ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
+ツールがJSON設定を受け入れる場合は、[ カーソル ](#cursor)または[VS コード ](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
 
 ## 使用可能な操作
 
-接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 ### フォーム
 
