@@ -58,7 +58,7 @@ Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法につ
 
 ## MCPの基本
 
->MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [&#x200B; モデル コンテキスト プロトコル &#x200B;](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCPでは、AI ツールを複数の外部サービスに同時に接続することができます。 例えば、AI アシスタントは次のことが可能です。
 
@@ -171,7 +171,7 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 ### カーソル {#cursor}
 
 カーソル MCP設定に既に他のサーバーが含まれている場合は、`mcpServers`の下に`marketo` エントリを追加します。
-次の例は、プロジェクトディレクトリの**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
+次の例は、プロジェクトディレクトリの&#x200B;**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
 
 ```json
 {
@@ -242,7 +242,7 @@ claude mcp add --transport http marketo \
 
 ### Glean {#glean}
 
-GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム ](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
+GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム &#x200B;](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
 
 | ヘッダー | 値 |
 | ------ | ----- |
@@ -272,11 +272,11 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 | `X-Marketo-Client-Secret` | クライアント秘密鍵 |
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
 
-ツールがJSON設定を受け入れる場合は、[ カーソル ](#cursor)または[VS コード ](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
+ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
 
 ## 使用可能な操作
 
-接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 ### フォーム
 
