@@ -125,7 +125,7 @@ SOAP API では、[リクエスト可能なスマートキャンペーンを選�
 
 REST ドキュメント：
 
-- [カスタムオブジェクト](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
+- [カスタムオブジェクト](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
 
 SOAP API では、カスタムオブジェクトの CRUD 操作のみをサポートしていました。
 
