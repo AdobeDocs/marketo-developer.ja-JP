@@ -1,18 +1,16 @@
 ---
 user-guide-title: '[!DNL Marketo] 開発者ガイド'
-user-guide-description: このガイドでは、 [!DNL Marketo]  API の使用方法について説明します。
+user-guide-description: このガイドでは、[!DNL Marketo] API の使用方法を説明します。
 breadcrumb-title: '[!DNL Marketo] 開発者ガイド'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: ece6e257d28839582be659daf0b8ba1a6b6a5c3c
+source-git-commit: 4dffbef0e0ea16393a9e30f5f8e1021331ca9a37
 workflow-type: tm+mt
-source-wordcount: '256'
-ht-degree: 85%
-
+source-wordcount: '262'
+ht-degree: 86%
 ---
-
 
 # [!DNL Marketo] 開発者 {#marketo}
 
@@ -115,6 +113,8 @@ ht-degree: 85%
   - [タグ](rest-api/tags.md)
   - [ユーザコンテキスト](rest-api/user-context.md)
   - [ユーザ管理](rest-api/user-management.md)
+- SOAP {#soap}
+  - [REST API への移行](soap-api/migration.md)
 - [SOAP に関するよくある質問](soap-faq.md)
 - Web フック {#webhooks}
   - [エラー](webhooks/errors.md)
@@ -127,7 +127,7 @@ ht-degree: 85%
 - [Marketo オブジェクト](marketo-objects.md)
 - [MCPの操作](mcp-server-operations.md)
 - [MCP サーバー](mcp-server.md)
-- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
+- {hide-from-toc}[ ライセンス ](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)
