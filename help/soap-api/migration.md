@@ -34,7 +34,7 @@ Marketo Engage SOAP API は、2026年3月31日（PT）以降に廃止される�
 
 ## 移行
 
-SOAP APIは、[REST AP](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api)Iと比較して、限られた範囲のユースケースをサポートしています。 ユースケースをマッピングするエンドポイントを決定する際は、[Marketo統合のベストプラクティス ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)に従ってください
+SOAP APIは、[REST AP](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/rest-api)Iと比較して、限られた範囲のユースケースをサポートしています。 ユースケースをマッピングするエンドポイントを決定する際は、[Marketo統合のベストプラクティス &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)に従ってください
 
 [CRM 同期](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=ja)および[データウェアハウスの書き出し](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=ja)のユースケースでは、[参照アーキテクチャ](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/rest/reference-architectures)が使用できます。
 
