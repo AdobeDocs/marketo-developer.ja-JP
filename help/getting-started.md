@@ -5,24 +5,31 @@ exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
 TQID: https://experienceleague.adobe.com/0lfzor5EQJ0VqIh4fqlK29OiPmRCy6fnEtncJ38r-OM
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: c954475c-8548-4e33-a0b8-6b550d956115
+    internal-label: Marketing automation
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+    internal-label: Reporting
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Administration
+source-git-commit: 8e1497d0d018bacb210b202d488e285a798e9dcf
 workflow-type: tm+mt
-source-wordcount: 1201
+source-wordcount: '1193'
 ht-degree: 10%
-
 ---
-
 # はじめに
 
 Marketo Engageは、見込み顧客や顧客向けにパーソナライズされたマルチチャネルプログラムやキャンペーンを管理するためのマーケティングオートメーションプラットフォームです。 統合ポイントを通じてプラットフォームを拡張できます。
@@ -44,11 +51,11 @@ Marketo Engage インスタンスでNative SFDCまたはMS Dynamics CRM接続が
 
 ## ユーザ（リード）
 
-従業員は、MAの基礎となります。 Marketoでは、営業担当者がリードをリード、見込み客、容疑者、連絡先とみなすかどうかに関係なく、営業担当者でなくても、あらゆるリードとして個人の記録を指します。
+MAの基礎となるのは、人です。 Marketoでは、営業担当者がリードをリード、見込み客、容疑者、連絡先とみなすかどうかに関係なく、営業担当者ではないあらゆるレコードをリードと呼びます。
 
-リードオブジェクトには、電子メール、名、姓などの標準フィールドが含まれます。 他の情報を格納するフィールドを追加したり、標準フィールドと同じ方法でカスタム属性を読み取ったり書き込んだりできます。 Marketoの&#x200B;**[!UICONTROL Admin]** > **[!UICONTROL Field Management]**&#x200B;の下にある完全なフィールドリストを検索します。
+リードオブジェクトには、電子メール、名、姓などの標準フィールドが含まれます。 他の情報を保存するには、フィールドを追加し、標準フィールドと同じ方法でカスタム属性を読み取りおよび書き込むことができます。 Marketoの&#x200B;**[!UICONTROL Admin]** > **[!UICONTROL Field Management]**&#x200B;の下にある完全なフィールドリストを検索します。
 
-Marketoは、id フィールドによってリードを一意に識別します。 システム外の他の一意のキーを適用する必要があります。
+Marketoは、id フィールドによってリードを一意に識別します。 システム外のその他の一意のキーを適用します。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads)、[JavaScript](javascript-api/lead-tracking.md#lead-tracking-api)
 
@@ -64,11 +71,11 @@ Marketoは、id フィールドによってリードを一意に識別します�
 
 ## プログラムとキャンペーン
 
-プログラムは、マーケターの関連するマーケティング活動を1か所で整理するものです。 たとえば、メールの一斉配信はプログラムにすることができます。
+プログラムは、マーケターの関連するマーケティング活動を1か所で整理するものです。 例えば、メールキャンペーンはプログラムにすることができます。
 
-リードは、プログラムに関連する複数のアクションやアクティビティを実行できます。 このプロセスはリードプログレッションと呼ばれます。 メールの一斉送信プログラムの場合、進行状況は、Marketoがメールを送信した時点、そのユーザーがメールを開いた時点、およびそのユーザーがリンクをクリックしたかどうかを記録できます。
+リードは、プログラムに関連する複数のアクションやアクティビティを実行できます。 このプロセスはリードプログレッションと呼ばれます。 メールキャンペーンプログラムの場合、進捗状況は、Adobe Marketoが電子メールを送信した時点、開封時間、リンクをクリックしたかどうかを記録できます。
 
-キャンペーンは、プログラム内の特定の目的と目標を果たします。 たとえば、キャンペーンではリードグループを選択して、メールの一斉配信を送信できます。 また、リードが電子メールのリンクをクリックすると、セールス担当者に通知することができます。
+キャンペーンは、プログラム内の特定の目的と目標を果たします。 たとえば、キャンペーンではリードグループを選択して、メールの一斉配信を送信できます。 別の施策では、リードがメールキャンペーンのリンクをクリックすると、営業担当者に通知することができます。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns)
 
@@ -78,7 +85,7 @@ Marketoは、id フィールドによってリードを一意に識別します�
 
 Marketo管理者は、プログラムの作成時にユーザーが選択する必須およびオプションのタグタイプを作成できます。 会社のレポート要件に基づいて、各タグタイプで可能な値を定義します。
 
-例えば、NortheastやSoutheastなどの値を持つカスタムの「Region」タグタイプを作成して、どの地域が最も多くのリードを生み出しているかを分析します。 「所有者」タグのタイプを作成して、リードと機会の作成に最も大きな影響を与えるプログラム所有者（Maria、David、Johnなど）を比較します。 詳細については、「[&#x200B; タグについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)」を参照してください。
+例えば、最も多くのリードを生み出す地域を分析するには、NortheastやSoutheastなどの値を含むカスタムの「Region」タグタイプを作成します。 リードと商談の作成に最も大きな影響を与えるプログラムオーナーを比較するには、「オーナー」タグのタイプを作成します。 詳細については、「[&#x200B; タグについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)」を参照してください。
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/asset)
 
@@ -139,9 +146,9 @@ Marketo カスタムオブジェクトを作成して公開すると、Marketo A
 
 関連 API：[REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects)
 
-## セールス担当者
+## 営業担当者
 
-ネイティブのCRM統合が有効になっていない場合は、Marketoで営業担当者のレコードとそのリードの関係を管理できます。 これらのレコードには、名前、メールアドレス、役職などの情報が含まれます。 営業担当者がリードを所有している場合、この情報をフィルタリングやトークンに使用できます。
+ネイティブ CRM統合が有効になっていない場合は、Marketoで営業担当者のレコードとそのリード関係を管理できます。 これらのレコードには、名前、メールアドレス、役職などの情報が含まれます。 営業担当者がリードを所有している場合、この情報をフィルタリングやトークンに使用できます。
 
 「externalSalesPersonId」フィールドを使用して、リードレベルの営業担当者との関係を管理します。 [&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) APIを使用してこのフィールドを更新します。
 
