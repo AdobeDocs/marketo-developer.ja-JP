@@ -16,7 +16,7 @@ ht-degree: 2%
 >
 
 >[!IMPORTANT]
->2026年7月31日（PT）をもって、SOAP APIは非推奨（廃止予定）となり、使用できなくなります。 新しい開発はすべてMarketo REST APIで行い、サービスの中断を避けるために、その日までに既存のサービスを移行する必要があります。 SOAP APIを使用するサービスがある場合は、移行方法について[SOAP API Migration Guide](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration)を参照してください。
+>2026年7月31日（PT）をもって、SOAP APIは非推奨（廃止予定）となり、使用できなくなります。 新しい開発はすべてMarketo REST APIで行い、サービスの中断を避けるために、その日までに既存のサービスを移行する必要があります。 SOAP APIを使用するサービスがある場合は、移行方法について[SOAP API Migration Guide](https://experienceleague.adobe.com/ja/docs/marketo-developer/marketo/soap/migration)を参照してください。
 >
 
 >[!IMPORTANT]
