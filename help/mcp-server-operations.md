@@ -42,7 +42,7 @@ Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法
 
 ## チャネルとタグ
 
-[ チャネル API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [ タグ API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
+[&#x200B; チャネル API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [&#x200B; タグ API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
 
 - `browse_channels`
 - `browse_tag_types`
