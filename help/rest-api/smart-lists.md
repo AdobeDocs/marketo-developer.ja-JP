@@ -6,35 +6,41 @@ exl-id: 4ba37e57-ee56-48c3-bb2b-b4ec8e907911
 TQID: https://experienceleague.adobe.com/wQ2PQFabw8E5XYP4zJ2RMPcurRkoxA7UecpA-YuQuBc
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
 subfeature_v2:
   - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+    internal-label: Smart Lists
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 15a223e2511f405ebaebbba933acac1429514030
 workflow-type: tm+mt
-source-wordcount: 402
-ht-degree: 11%
-
+source-wordcount: '393'
+ht-degree: 5%
 ---
-
 # スマートリスト
 
 [スマートリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Lists)
 
 スマートリスト REST APIを使用して、スマートリストをクエリ、複製、削除します。
 
-これらのAPIは、ユーザー作成のスマートリストのみをサポートします。 [組み込みスマートリストまたはシステムスマートリスト &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)はサポートされていません。
+>[!NOTE]
+>
+>アプリケーションで、リストのメンバーまたはスマートリストのメンバーに「in」演算子を選択すると、API応答に「is」と表示されます。
+> ![演算子フィールド ](assets/in-operator.png){width=600}内
 
 ## クエリ
 
-ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByIdUsingGET)で[、名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByNameUsingGET)で、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListsUsingGET)でスマートリストをクエリします。
+ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByIdUsingGET)で[、名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByNameUsingGET)で[、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListsUsingGET)でスマートリストをクエリします。
 
 ### ID 別
 
-[IDによるクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByIdUsingGET)は、1つのスマートリスト `id` パスパラメーターを受け取り、一致するレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
+[IDによるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByIdUsingGET)は、1つのスマートリスト `id` パスパラメーターを受け取り、一致するレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
 
 ![スマートリストルール](assets/smartlist-rules.png)
 
@@ -109,7 +115,7 @@ GET /rest/asset/v1/smartList/{id}.json?includeRules=true
 
 ### スマートキャンペーン ID 別
 
-[&#x200B; スマートキャンペーン IDによるクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListBySmartCampaignIdUsingGET)は、1つのスマートキャンペーン `id` パスパラメーターを受け取り、そのスマートリストレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
+[ スマートキャンペーン IDによるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListBySmartCampaignIdUsingGET)は、1つのスマートキャンペーン `id` パスパラメーターを受け取り、そのスマートリストレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
 
 ```http
 GET /rest/asset/v1/smartCampaign/{smartCampaignId}/smartList.json
@@ -140,7 +146,7 @@ GET /rest/asset/v1/smartCampaign/{smartCampaignId}/smartList.json
 
 ### プログラム ID 別
 
-[&#x200B; プログラム ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByProgramIdUsingGET)によるクエリは、1つの電子メールプログラム `id` パスパラメーターを受け取り、そのスマートリストレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
+[ プログラム ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByProgramIdUsingGET)によるクエリは、1つの電子メールプログラム `id` パスパラメーターを受け取り、そのスマートリストレコードを返します。 オプションの`includeRules` ブール値パラメーターを設定して、スマートリストルールを含めます。
 
 ```http
 GET /rest/asset/v1/program/{programId}/smartList.json
@@ -171,7 +177,7 @@ GET /rest/asset/v1/program/{programId}/smartList.json
 
 ### 名前別
 
-[名前によるクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByNameUsingGET)は、スマートリスト `name` パラメーターを使用します。 エンドポイントは、完全一致の名前を実行し、一致するレコードを返します。
+[名前によるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getSmartListByNameUsingGET)は、スマートリスト `name` パラメーターを使用します。 エンドポイントは、完全一致の名前を実行し、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/smartList/byName.json?name=2018 Leads
@@ -257,7 +263,7 @@ GET /rest/asset/v1/smartLists.json?folder={"id":31,"type":"Folder"}
 
 ## 複製
 
-`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートリストの複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSmartListUsingPOST)に送信します。 `id` パス パラメーターは、ソース スマート リストを識別します。
+`application/x-www-form-urlencoded` POST リクエストを[ スマートリストの複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSmartListUsingPOST)に送信します。 `id` パス パラメーターは、ソース スマート リストを識別します。
 
 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。 親はプログラムまたはスマートリストフォルダーである必要があります。 `name`は一意である必要があります。 オプションの`description` パラメーターは、新しいリストを説明します。
 
@@ -297,7 +303,7 @@ folder={"id":31,"type":"Folder"}&name=2018 Leads Qualified
 
 ## 削除
 
-スマートリスト [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteSmartListByIdUsingPOST)を削除するには、その`id`をパスパラメーターとして渡します。
+スマートリスト ](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteSmartListByIdUsingPOST)を[削除するには、その`id`をパスパラメーターとして渡します。
 
 ```http
 POST /rest/asset/v1/smartList/{id}/delete.json
