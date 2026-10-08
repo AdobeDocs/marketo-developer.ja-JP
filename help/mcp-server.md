@@ -32,10 +32,10 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 56fb36ccfa88bb90244f7756b0fba6ac787bfbfe
+source-git-commit: 6bbf9fa5b8192e02d7a465a652346545ae216450
 workflow-type: tm+mt
-source-wordcount: '2085'
-ht-degree: 4%
+source-wordcount: '2209'
+ht-degree: 3%
 ---
 
 # [!DNL Marketo Engage] MCP サーバー
@@ -90,7 +90,7 @@ MCPは、APIの使用状況に応じて、機密性の高いフィールドを�
 
 * REST API アクセスが有効になっている[!DNL Marketo] インスタンス
 * [!DNL Marketo] LaunchPointでAPI資格情報を作成するための管理者アクセス
-* Claude Desktop、Cursor、Codex、Claude Code （CLI）、またはVS Code with GitHub CopilotのいずれかのAI ツール
+* 次のいずれかのAI ツール：Claude Desktop、Cursor、Codex、Claude Code （CLI）、VS Code with GitHub Copilot、またはGemini CLIなどの互換性のあるMCP クライアント
 * MCP サーバーURLへのネットワーク アクセス：`https://marketo-mcp.adobe.io/mcp`
 
 ## Marketo資格情報の取得
@@ -122,6 +122,7 @@ AI ツールによって設定は異なります。 次の節では、一般的�
 * [カーソル](#cursor)
 * [Claude Code CLI](#claude-code)
 * [OpenAI Codex](#codex)
+* [Gemini CLI](#gemini-cli)
 * [VSCodeとGitHub Copilot](#vscode)
 * [Glean](#glean)
 * [他社製品](#other-tools)
@@ -211,6 +212,35 @@ claude mcp add --transport http marketo \
 
 1. 「保存」を選択して、プロセスを完了します。
 
+### Gemini CLI
+
+Marketo Engage MCP サーバーをGemini CLIに追加するには、プロジェクトディレクトリの`.gemini/mcp.json`に次のコードを追加します。
+
+```json
+{
+  "mcpServers": {
+    "marketo": {
+      "httpUrl": "https://marketo-mcp.adobe.io/mcp",
+      "headers": {
+        "X-Marketo-Client-Id": "$MARKETO_CLIENT_ID",
+        "X-Marketo-Client-Secret": "$MARKETO_CLIENT_SECRET",
+        "X-Marketo-Munchkin-Id": "$MARKETO_MUNCHKIN_ID"
+      }
+    }
+  }
+}
+```
+
+またはコマンドラインで：
+
+```bash
+gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp \
+  -H "X-Marketo-Client-Id: $MARKETO_CLIENT_ID" \
+  -H "X-Marketo-Client-Secret: $MARKETO_CLIENT_SECRET" \
+  -H "X-Marketo-Munchkin-Id: $MARKETO_MUNCHKIN_ID"
+```
+
+セッションを再起動して、新しいMCP サーバー設定を選択します。
 
 ### VS CodeとGitHub Copilot {#vscode}
 
@@ -269,6 +299,10 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
 
 ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
+
+>[!NOTE]
+>
+>Gemini CLIは、ストリーミング可能なHTTPおよびカスタム認証ヘッダーでリモート MCP サーバーをサポートします。 [!DNL Marketo] MCP サーバーに接続するには、上記の接続の詳細を使用し、[Gemini CLI MCP設定ドキュメント &#x200B;](https://geminicli.com/docs/tools/mcp-server/){target="_blank"}に従います。 `settings.json`の`mcpServers`の下にサーバーエントリを追加し、`httpUrl`を`https://marketo-mcp.adobe.io/mcp`に設定し、3つのMarketo認証ヘッダーを`headers`に指定します。 Gemini CLIがSSE トランスポートに使用する`url`ではなく`httpUrl`を使用します。 このガイダンスは、Gemini webまたはモバイルアプリではなく、Gemini CLIに適用されます。
 
 ## 使用可能な操作
 
