@@ -48,7 +48,7 @@ APIは、トークンの作成時にこれらのデータタイプのみをサ�
 
 ## クエリ
 
-[ フォルダーIDでトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getTokensByFolderIdUsingGET)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType` パラメーターを使用して、型を指定します。
+[&#x200B; フォルダーIDでトークンを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getTokensByFolderIdUsingGET)は、プログラムまたはフォルダーのIDをパスパラメーターとして受け取ります。 `folderType` パラメーターを使用して、型を指定します。
 
 ```http
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
@@ -81,7 +81,7 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 ## 作成と更新
 
-[ トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/addTokenTOFolderUsingPOST) エンドポイントは、送信された値でトークンを作成するか、既存のトークンを更新します。 トークンはフォルダーまたはプログラムに属します。
+[&#x200B; トークンを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/addTokenTOFolderUsingPOST) エンドポイントは、送信された値でトークンを作成するか、既存のトークンを更新します。 トークンはフォルダーまたはプログラムに属します。
 
 `id` パス パラメーターは、親フォルダーを識別します。 `name`、`type`、`value`および`folderType`のパラメーターが必要です。 データをJSONではなくPOST `x-www-form-urlencoded`として渡します。 トークン `name`は50文字を超えることはできません。
 

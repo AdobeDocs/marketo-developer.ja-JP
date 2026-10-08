@@ -52,7 +52,7 @@ MarketoのクライアントサイドのJavaScriptとの統合により、リー
 
 ## リードトラッキング（Munchkin）
 
-Marketoの[Munchkin JavaScript トラッキングコード ](lead-tracking.md)は、web サイトへの訪問からリードを生成します。 また、個人情報を提供していない訪問者を追跡し、ユーザーのIP アドレスやその他の情報を含む匿名リードを作成します。
+Marketoの[Munchkin JavaScript トラッキングコード &#x200B;](lead-tracking.md)は、web サイトへの訪問からリードを生成します。 また、個人情報を提供していない訪問者を追跡し、ユーザーのIP アドレスやその他の情報を含む匿名リードを作成します。
 
 Marketoの管理画面にあるMunchkin ページでMunchkinを設定します。
 

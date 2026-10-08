@@ -33,7 +33,7 @@ Marketoのファイルストレージは、帯域幅が多いアプリケーシ�
 
 ## クエリ
 
-ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByIdUsingGET)で[、名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByNameUsingGET)で[、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getFilesUsingGET)でファイルをクエリします。
+ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByIdUsingGET)で[、名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByNameUsingGET)で、または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getFilesUsingGET)でファイルをクエリします。
 
 ### ID 別
 
@@ -170,7 +170,7 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 作成と更新
 
-`multipart/form-data` リクエストを使用して、[ ファイルを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createFileUsingPOST)します。 `name`、`folder`および`file` パラメーターが必要です。 `description`および`insertOnly` パラメーターはオプションです。 trueの場合、`insertOnly`は、同じ名前の既存のファイルを更新するリクエストを禁止します。
+`multipart/form-data` リクエストを使用して、[&#x200B; ファイルを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createFileUsingPOST)します。 `name`、`folder`および`file` パラメーターが必要です。 `description`および`insertOnly` パラメーターはオプションです。 trueの場合、`insertOnly`は、同じ名前の既存のファイルを更新するリクエストを禁止します。
 
 `file` パラメーターの場合、`Content-Disposition` ヘッダーに`filename`を含めます。 ファイルの`Content-Type` ヘッダーも含めます。 Marketoは、ファイルを提供する際にこのMIME タイプを使用します。
 
@@ -225,7 +225,7 @@ This is a test file
 }
 ```
 
-[ ファイルを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateContentUsingPOST)するには、そのIDを指定します。 `file` パラメーターの要件は、ファイルの作成と同じです。
+[&#x200B; ファイルを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateContentUsingPOST)するには、そのIDを指定します。 `file` パラメーターの要件は、ファイルの作成と同じです。
 
 ```http
 POST /rest/asset/v1/file/{id}/content.json

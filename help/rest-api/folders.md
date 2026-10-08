@@ -95,7 +95,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 ### 名前別
 
-名前による[ クエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByNameUsingGET) エンドポイントには`name`が必要です。このエンドポイントは、フォルダー名と完全に一致し、一致するすべてのフォルダーを返します。
+名前による[&#x200B; クエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByNameUsingGET) エンドポイントには`name`が必要です。このエンドポイントは、フォルダー名と完全に一致し、一致するすべてのフォルダーを返します。
 
 エンドポイントは、次のオプションのパラメーターも受け入れます。
 
@@ -144,7 +144,7 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 
 ### 参照
 
-また、[ フォルダーを一括で取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderUsingGET)することもできます。 クエリする親フォルダーを指定するには、`root` パラメーターを使用します。 2つのメンバーを持つ埋め込みJSON オブジェクトとして`root`を渡します。
+また、[&#x200B; フォルダーを一括で取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderUsingGET)することもできます。 クエリする親フォルダーを指定するには、`root` パラメーターを使用します。 2つのメンバーを持つ埋め込みJSON オブジェクトとして`root`を渡します。
 
 1. `id`: フォルダーまたはプログラムのID。
 1. `type`: ルートフォルダーのタイプに応じて、`Folder`または`Program`のいずれかです。
@@ -246,7 +246,7 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 作成と更新
 
-フォルダー](https://developer.adobe.com/marketo-apis/api/asset#operation/createFolderUsingPOST)を[作成するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
+フォルダー[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/createFolderUsingPOST)を作成するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
 
 - `name`: フォルダー名を含む必要な文字列。
 - `parent`: `id`と`type`を含む必須の埋め込みJSON オブジェクト。 親に応じて、タイプは`Folder`または`Program`です。

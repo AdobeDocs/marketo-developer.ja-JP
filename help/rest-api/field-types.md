@@ -34,7 +34,7 @@ ht-degree: 76%
 ---
 # フィールドのタイプ
 
-次の表に、Marketoで使用可能なフィールドタイプを示します。 詳しくは、[ カスタムフィールドタイプ用語集](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary)および[ フィールドタイプ別のMarketo フィールドの制限](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)を参照してください。
+次の表に、Marketoで使用可能なフィールドタイプを示します。 詳しくは、[&#x200B; カスタムフィールドタイプ用語集](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary)および[&#x200B; フィールドタイプ別のMarketo フィールドの制限](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)を参照してください。
 
 | フィールドのタイプ | 説明 | 例 |
 | --- | --- | --- |

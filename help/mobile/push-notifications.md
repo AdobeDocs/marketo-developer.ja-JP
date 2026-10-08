@@ -37,7 +37,7 @@ Marketo Mobile SDKを使用するiOSまたはAndroid アプリケーションの
 
 ### Apple Developer アカウントでのプッシュ通知の設定
 
-1. Apple Developer [ メンバーセンター](https://developer.apple.com/membercenter)にログインします。
+1. Apple Developer [&#x200B; メンバーセンター](https://developer.apple.com/membercenter)にログインします。
 1. 「証明書、識別子、プロファイル」を選択します。
 1. 「iOS、tvOS、watchOS」の下にある「証明書 – >すべて」フォルダーを選択します。
 1. 左上隅の証明書の横にある「+」を選択します。![](assets/certificates-plus.png)

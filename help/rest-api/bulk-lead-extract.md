@@ -175,7 +175,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## データの取得
 
-完了したリード書き出しを取得するには、[ リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
+完了したリード書き出しを取得するには、[&#x200B; リードファイルの書き出しの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsFileUsingGET) エンドポイントに`exportId`を呼び出します。
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -194,7 +194,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[ リードジョブのエクスポートをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブまたは不要なジョブをキャンセルするには、[&#x200B; リードジョブのエクスポートをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportLeadsUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json

@@ -45,7 +45,7 @@ ht-degree: 11%
 
 ## ファイルの読み込み
 
-ファイルの最初の行は、各行の値がマップされるREST API フィールド名をリストするヘッダーである必要があります。 これらの名前は、[ リードの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2)および[ プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET) エンドポイントを使用して取得します。
+ファイルの最初の行は、各行の値がマップされるREST API フィールド名をリストするヘッダーである必要があります。 これらの名前は、[&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2)および[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET) エンドポイントを使用して取得します。
 
 レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
 
@@ -60,7 +60,7 @@ test@example.com,John,Doe
 
 ## ジョブの作成
 
-[ プログラムメンバーの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importProgramMemberUsingPOST) エンドポイントは、ファイルからプログラムメンバーレコードを読み取り、指定されたステータスのプログラムに追加します。 レコードには、リードフィールドとカスタムプログラムメンバーフィールドを含めることができます。
+[&#x200B; プログラムメンバーの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importProgramMemberUsingPOST) エンドポイントは、ファイルからプログラムメンバーレコードを読み取り、指定されたステータスのプログラムに追加します。 レコードには、リードフィールドとカスタムプログラムメンバーフィールドを含めることができます。
 
 すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
 

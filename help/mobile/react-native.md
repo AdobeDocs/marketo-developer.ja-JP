@@ -49,7 +49,7 @@ implementation 'com.marketo:MarketoSDK:0.x.x'
 
 **mavencentral リポジトリの追加**
 
-Marketo SDKは、[Maven Central リポジトリ ](https://mvnrepository.com/)で利用できます。 `mavencentral` リポジトリをルート `build.gradle` ファイルに追加します。
+Marketo SDKは、[Maven Central リポジトリ &#x200B;](https://mvnrepository.com/)で利用できます。 `mavencentral` リポジトリをルート `build.gradle` ファイルに追加します。
 
 ```groovy
 build script {

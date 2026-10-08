@@ -40,7 +40,7 @@ ht-degree: 11%
 
 ## クエリ
 
-ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetByIdUsingGET)または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetUsingGET)によって[ スニペットをクエリします。 APIは名前によるクエリのメソッドを提供しません。 両方のエンドポイントは、承認済みまたはドラフトのバージョンを取得するために`status` フィールドを受け入れます。
+ID[&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetByIdUsingGET)または[閲覧](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetUsingGET)によって スニペットをクエリします。 APIは名前によるクエリのメソッドを提供しません。 両方のエンドポイントは、承認済みまたはドラフトのバージョンを取得するために`status` フィールドを受け入れます。
 
 ### ID 別
 
@@ -237,7 +237,7 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[ メタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateSnippetUsingPOST)するには、スニペット IDを指定します。 更新できるのは、名前と説明のみです。
+[&#x200B; メタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateSnippetUsingPOST)するには、スニペット IDを指定します。 更新できるのは、名前と説明のみです。
 
 ```http
 POST /rest/asset/v1/snippet/{id}.json
@@ -428,7 +428,7 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 複製
 
-スニペット ](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSnippetUsingPOST)を[複製するには、名前、ソーススニペット ID、フォルダーを指定します。 説明はオプションです。 ソースに承認済みのバージョンがない場合、エンドポイントはドラフトを複製します。
+スニペット [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSnippetUsingPOST)を複製するには、名前、ソーススニペット ID、フォルダーを指定します。 説明はオプションです。 ソースに承認済みのバージョンがない場合、エンドポイントはドラフトを複製します。
 
 ```http
 POST /rest/asset/v1/snippet/{id}/clone.json
