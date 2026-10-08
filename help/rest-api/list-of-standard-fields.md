@@ -33,7 +33,7 @@ ht-degree: 88%
 
 次の表に、APIを通じて使用可能な標準Marketo フィールドを示します。 各フィールドのREST API名、ラベル、説明が含まれます。
 
-REST [ リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
+REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
 
 | REST API 名 | わかりやすいラベル | 説明 |
 | --- | --- | --- |

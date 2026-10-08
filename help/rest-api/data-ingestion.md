@@ -39,7 +39,7 @@ APIには、次の5つのオブジェクトタイプのインターフェイス�
 - プログラムメンバーは、「挿入または更新」および削除操作をサポートしています。
 - リスト（静的リスト）は、操作の追加と削除をサポートしています。
 
-[Data Ingestion API ドキュメント ](https://developer.adobe.com/marketo-apis/api/data-ingestion)を参照してください。
+[Data Ingestion API ドキュメント &#x200B;](https://developer.adobe.com/marketo-apis/api/data-ingestion)を参照してください。
 
 >[!NOTE]
 >

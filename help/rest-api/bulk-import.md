@@ -63,7 +63,7 @@ RFC 2399ごとにHTTP `multipart/form-data`を使用してファイルをアッ�
 
 ## ジョブの作成
 
-[ リードの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST) エンドポイントを呼び出して、リード読み込みジョブを作成します。 このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。
+[&#x200B; リードの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST) エンドポイントを呼び出して、リード読み込みジョブを作成します。 このエンドポイントは、[コンテンツタイプとして multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) を使用します。
 
 任意の言語のHTTP サポートライブラリを使用して、マルチパートリクエストを作成します。 [curl](https://curl.se/)を使用して開始することもできます。
 

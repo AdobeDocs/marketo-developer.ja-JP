@@ -27,7 +27,7 @@ ht-degree: 5%
 
 Marketoには、結果を確認したり、特定の日付に関連して更新されたデータを取得したりするためのページングトークンが用意されています。
 
-一部の応答では、長いページングトークン文字列が返されるため、HTTP 414 エラーが発生する可能性があります。 これらの[ エラー](error-codes.md)の処理に関する情報を参照してください。
+一部の応答では、長いページングトークン文字列が返されるため、HTTP 414 エラーが発生する可能性があります。 これらの[&#x200B; エラー](error-codes.md)の処理に関する情報を参照してください。
 
 [Paging Token API](https://developer.adobe.com/marketo-apis/api/mapi#operation/getActivitiesPagingTokenUsingGET) ドキュメントを参照してください。
 
@@ -42,7 +42,7 @@ Marketoには、関連する2種類のページングトークンがあります
 
 日付ベースのページングトークンは、日時を表します。 このデータを使用して、アクティビティ、データ値の変更、およびその日付以降に発生した削除されたリードを取得します。
 
-日時を含む[ ページングトークンを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getActivitiesPagingTokenUsingGET) エンドポイントを呼び出して、日付ベースのトークンを生成します。
+日時を含む[&#x200B; ページングトークンを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getActivitiesPagingTokenUsingGET) エンドポイントを呼び出して、日付ベースのトークンを生成します。
 
 ```http
 GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
@@ -74,7 +74,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 `sinceDateTime`はクエリパラメーターであるため、その値をURL エンコードします。
 
-返された`nextPageToken`文字列を[ リード活動の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)、[ リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET)または[削除されたリードの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET)呼び出しに渡します。 呼び出しは、Get Paging Token APIに指定された日時の後に発生するレコードを取得します。
+返された`nextPageToken`文字列を[&#x200B; リード活動の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET)、[&#x200B; リード変更の取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET)または[削除されたリードの取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET)呼び出しに渡します。 呼び出しは、Get Paging Token APIに指定された日時の後に発生するレコードを取得します。
 
 ```http
 GET /rest/v1/activities.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&activityTypeIds=1&activityTypeIds=12

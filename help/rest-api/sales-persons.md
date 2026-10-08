@@ -33,7 +33,7 @@ ht-degree: 16%
 
 externalSalesPersonId属性を対応するエンドポイントに渡すことにより、セールス担当者を他のレコードに関連付けます。
 
-- リードレコード：[ リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)。
+- リードレコード：[&#x200B; リードを同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)。
 - 商談レコード：[商談の同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncOpportunitiesUsingPOST)。
 - 会社レコード：[会社を同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST)。
 

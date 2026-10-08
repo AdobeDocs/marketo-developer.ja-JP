@@ -36,15 +36,15 @@ ht-degree: 28%
 1. アプリマニフェストにスキームを登録します。
 1. ディープリンクイベントを処理し、ユーザーを対応するコンテンツにルーティングするコードを追加します。
 
-IOSについては、[ アプリのカスタム URL スキームの定義](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)に関するAppleのドキュメントを参照してください。
+IOSについては、[&#x200B; アプリのカスタム URL スキームの定義](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)に関するAppleのドキュメントを参照してください。
 
-Androidについては、[ アプリ コンテンツのディープリンクの有効化](https://developer.android.com/training/app-links/deep-linking)に関するGoogleのドキュメントを参照してください。
+Androidについては、[&#x200B; アプリ コンテンツのディープリンクの有効化](https://developer.android.com/training/app-links/deep-linking)に関するGoogleのドキュメントを参照してください。
 
-PhoneGap アプリの場合は、プラグインを使用して、iOSとAndroidのカスタム URL スキームとユニバーサル/アプリリンクに対応するハイブリッド アプリを有効にします。 使用可能な[ ディープリンクプラグイン ](https://cordova.apache.org/plugins/?q=deeplink)を参照してください。
+PhoneGap アプリの場合は、プラグインを使用して、iOSとAndroidのカスタム URL スキームとユニバーサル/アプリリンクに対応するハイブリッド アプリを有効にします。 使用可能な[&#x200B; ディープリンクプラグイン &#x200B;](https://cordova.apache.org/plugins/?q=deeplink)を参照してください。
 
 アプリでディープリンクを有効にした際は、カスタム URI を Marketo ユーザと共有し、Marketo ユーザがプッシュメッセージのタップアクションに挿入できるようにします。
 
-Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。 詳しくは、[ インストールガイド ](installation.md)の「デバイスのテスト」を参照してください。
+Marketo では、テストデバイスを設定する際に、事前定義済みの URI 構造を使用します。 詳しくは、[&#x200B; インストールガイド &#x200B;](installation.md)の「デバイスのテスト」を参照してください。
 
 ## URI 構造を定義するベストプラクティス
 

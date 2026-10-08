@@ -39,7 +39,7 @@ Smart Campaign REST APIを使用して、スマートキャンペーンのクエ
 
 ## クエリ
 
-ID](#by_id)で[、名前](#by_name)で[、または[閲覧](#browse)でスマートキャンペーンをクエリします。
+ID[&#128279;](#by_id)で[、名前](#by_name)で、または[閲覧](#browse)でスマートキャンペーンをクエリします。
 
 ### ID 別
 
@@ -204,7 +204,7 @@ GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:
 
 ## 作成
 
-`application/x-www-form-urlencoded` POST リクエストを[ スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
+`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createSmartCampaignUsingPOST) エンドポイントに送信します。 `name`および`folder` パラメーターが必要です。 `folder`を`id`と`type`を含むJSON オブジェクトとして渡します。
 
 オプションで、`description` パラメーターを使用してスマートキャンペーンを説明することもできます（最大 2,000 文字）。
 
@@ -258,7 +258,7 @@ name=Smart Campaign 02&folder={"type": "folder","id": 640}&description=This is a
 
 ## 更新
 
-`application/x-www-form-urlencoded` POST リクエストを[ スマートキャンペーンの更新](https://developer.adobe.com/marketo-apis/api/asset) エンドポイントに送信します。 スマートキャンペーン `id` パスパラメーターが必要です。 `name`を使用して名前を変更するか、`description`を使用して説明を変更します。
+`application/x-www-form-urlencoded` POST リクエストを[&#x200B; スマートキャンペーンの更新](https://developer.adobe.com/marketo-apis/api/asset) エンドポイントに送信します。 スマートキャンペーン `id` パスパラメーターが必要です。 `name`を使用して名前を変更するか、`description`を使用して説明を変更します。
 
 ```http
 POST /rest/asset/v1/smartCampaign/{id}.json
@@ -390,7 +390,7 @@ POST /rest/asset/v1/smartCampaign/{id}/delete.json
 
 ## スケジュール
 
-[ キャンペーンのスケジュール ](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
+[&#x200B; キャンペーンのスケジュール &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST)を使用して、バッチキャンペーンをスケジュールします。 キャンペーン `id` パス パラメーターが必要です。 オプションの`tokens`、`runAt`および`cloneToProgram` パラメーターをJSON リクエスト本文に渡します。
 
 `tokens`配列は、この実行の既存のプログラムのマイトークンを上書きします。 Marketoは、キャンペーンの実行後にオーバーライドを破棄します。 各項目には名前と値のペアが含まれており、トークン名には`{{my.name}}`形式を使用する必要があります。
 

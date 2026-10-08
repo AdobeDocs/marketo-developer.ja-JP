@@ -31,7 +31,7 @@ ht-degree: 30%
 
 - [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
 - [!DNL Adobe Launch] ポータルのインストール手順に従います。
-- オプション：[ プッシュ通知を設定](push-notifications.md)。
+- オプション：[&#x200B; プッシュ通知を設定](push-notifications.md)。
 
 ## iOS
 
@@ -54,11 +54,11 @@ Swiftの場合、前の手順でブリッジングヘッダーが追加される
 
 ### AppDelegate 内でカスタム URL タイプを処理する
 
-[ カスタム URLの手順](installation.md#ios_test_devices)に従います。
+[&#x200B; カスタム URLの手順](installation.md#ios_test_devices)に従います。
 
 ### iOS でのプッシュ通知の設定
 
-[ プッシュ通知の手順](push-notifications.md)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
+[&#x200B; プッシュ通知の手順](push-notifications.md)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
 
 ## Android
 
@@ -89,4 +89,4 @@ Swiftの場合、前の手順でブリッジングヘッダーが追加される
 
 [Android Firebase Cloud Messagingの手順](installation.md#android_firebase_cloud_messaging_support)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
 
-ユーザープロファイルを設定するには、[ ユーザープロファイルの手順](user-profiles.md)に従います。 カスタムアクションを設定するには、[ カスタムアクションの手順](custom-actions.md#android_custom_action)に従います。 両方の手順で、「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
+ユーザープロファイルを設定するには、[&#x200B; ユーザープロファイルの手順](user-profiles.md)に従います。 カスタムアクションを設定するには、[&#x200B; カスタムアクションの手順](custom-actions.md#android_custom_action)に従います。 両方の手順で、「Marketo」の代わりに「ALMarketo」というクラス名を使用します。

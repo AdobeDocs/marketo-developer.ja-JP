@@ -78,7 +78,7 @@ profile.setLinkedInId("linkedinid")
 profile.setTwitterId("twitterid")
 ```
 
-その他[標準フィールド ](../rest-api/list-of-standard-fields.md)を追加します。
+その他[標準フィールド &#x200B;](../rest-api/list-of-standard-fields.md)を追加します。
 
 >[!BEGINTABS]
 
@@ -148,7 +148,7 @@ marketo.associateLead(profile)
    }
    ```
 
-1. その他[標準フィールド ](../rest-api/list-of-standard-fields.md)を追加します。
+1. その他[標準フィールド &#x200B;](../rest-api/list-of-standard-fields.md)を追加します。
 
    ```java
    // Add other custom fields

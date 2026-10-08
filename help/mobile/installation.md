@@ -36,7 +36,7 @@ Marketo Mobile SDKをインストールして初期化し、プッシュ通知�
 ### 前提条件
 
 1. [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
-1. オプション：[ プッシュ通知を設定](push-notifications.md)。
+1. オプション：[&#x200B; プッシュ通知を設定](push-notifications.md)。
 
 ### CocoaPods 経由のフレームワークのインストール
 
@@ -150,7 +150,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 ### 前提条件
 
 1. [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
-1. オプション：[ プッシュ通知を設定](push-notifications.md#android_setup_push)。
+1. オプション：[&#x200B; プッシュ通知を設定](push-notifications.md#android_setup_push)。
 1. [Android用Marketo SDKのダウンロード](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 
 ### Gradle を使用した Android SDK の設定
@@ -223,7 +223,7 @@ MME SDK for Androidは、Googleの[Firebase Cloud Messaging](https://firebase.go
 
 1. 最新のMarketo Android SDKをAndroid アプリに統合します。 [GitHub](https://github.com/Marketo/android-sdk)の手順を参照してください。
 1. Firebase ConsoleでFirebase アプリを設定します。
-   1. でのプロジェクトの作成/追加 [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
+   1. でのプロジェクトの作成/追加 [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase コンソール。
       1. [Firebase コンソール](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)で、`Add Project` を選択します。
       1. 既存の Google Cloud プロジェクトのリストから GCM プロジェクトを選択し、`Add Firebase` を選択します。
       1. Firebase のスタートアップスクリーンで、`Add Firebase to your Android App` を選択します。

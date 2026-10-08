@@ -376,7 +376,7 @@ GET /rest/asset/v1/form/{id}/usedBy.json
 
 ## 作成と更新
 
-[ フォームを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createLpFormsUsingPOST)するには、次の2つの必須フィールドを指定します。
+[&#x200B; フォームを作成](https://developer.adobe.com/marketo-apis/api/asset#operation/createLpFormsUsingPOST)するには、次の2つの必須フィールドを指定します。
 
 - フォームの親フォルダー。
 - フォーム名。
@@ -441,7 +441,7 @@ name=newForm&description=test&folder={"type": "Folder","id": 293}&language=Frenc
 }
 ```
 
-[ フォームを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFormsUsingPOST)するには、そのIDを渡します。 作成または更新時に、フォームの表示方法を制御する基本スタイル設定パラメーターを設定できます。
+[&#x200B; フォームを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFormsUsingPOST)するには、そのIDを渡します。 作成または更新時に、フォームの表示方法を制御する基本スタイル設定パラメーターを設定できます。
 
 ```http
 POST /rest/asset/v1/form/736.json
@@ -679,7 +679,7 @@ GET /rest/asset/v1/form/programMemberFields.json
 
 各フォームには、フォームの読み込み時にユーザーに表示される編集可能なフィールドのリストがあります。 対応するエンドポイントを使用して、一度に1つのフィールドを追加、更新または削除します。
 
-[ フィールド ](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldToAFormUsingPOST)を追加するには、親フォーム IDとフィールド `fieldId`を指定します。 その他のすべてのプロパティは空であるか、フィールドのデータタイプとメタデータに基づいてデフォルトを使用します。
+[&#x200B; フィールド &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldToAFormUsingPOST)を追加するには、親フォーム IDとフィールド `fieldId`を指定します。 その他のすべてのプロパティは空であるか、フィールドのデータタイプとメタデータに基づいてデフォルトを使用します。
 
 データをJSONではなく`application/x-www-form-urlencoded`を使用したPOSTとして送信します。
 
@@ -845,7 +845,7 @@ values=[{"label":"Select...","value":"","isDefault":true,"selected":true}, {"lab
 
 ### フィールドの並べ替え
 
-[ フォームフィールドの位置を変更](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST) エンドポイントを使用して、すべてのフォームフィールドを1つの単位として並べ替えます。 エンドポイントには、次の3つのメンバーを持つオブジェクトのJSON配列である`positions`が必要です。
+[&#x200B; フォームフィールドの位置を変更](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST) エンドポイントを使用して、すべてのフォームフィールドを1つの単位として並べ替えます。 エンドポイントには、次の3つのメンバーを持つオブジェクトのJSON配列である`positions`が必要です。
 
 - `columnNumber`
 - `rowNumber`
@@ -885,7 +885,7 @@ positions=[{"columnNumber":0,"rowNumber":0,"fieldName":"FirstName"},{"columnNumb
 
 ### リッチテキスト
 
-[個別のエンドポイント ](https://developer.adobe.com/marketo-apis/api/asset#operation/addRichTextFieldUsingPOST)を使用して、リッチテキストフィールドを追加します。 `multipart/form-data` リクエストでコンテンツをHTMLとして渡します。 HTMLには、スクリプト、メタタグまたはリンクタグを含めることはできません。
+[個別のエンドポイント &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/addRichTextFieldUsingPOST)を使用して、リッチテキストフィールドを追加します。 `multipart/form-data` リクエストでコンテンツをHTMLとして渡します。 HTMLには、スクリプト、メタタグまたはリンクタグを含めることはできません。
 
 ```http
 POST /rest/asset/v1/form/{id}/richText.json
@@ -928,7 +928,7 @@ Content-Type: text/html
 
 フィールドはフォーム内で一意である必要があります。 フォームの親フィールドリストと子フィールドセットの両方に同じフィールドを表示することはできません。
 
-[Add Fieldset to Form](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldSetUsingPOST) エンドポイントを使用してフィールドセットを追加します。 次に、フィールドセットがフォーム ](https://developer.adobe.com/marketo-apis/api/asset#operation/getFormFieldByFormVidUsingGET)の応答の[ フィールドを取得に表示されます。 フィールドセットにフィールドを追加するには、[ フィールド位置の更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST)を使用して、フィールドを`fieldList`に移動します。
+[Add Fieldset to Form](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldSetUsingPOST) エンドポイントを使用してフィールドセットを追加します。 次に、フィールドセットがフォーム [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/getFormFieldByFormVidUsingGET)の応答の フィールドを取得に表示されます。 フィールドセットにフィールドを追加するには、[&#x200B; フィールド位置の更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST)を使用して、フィールドを`fieldList`に移動します。
 
 これらのエンドポイントの場合は、JSONではなく`application/x-www-form-urlencoded`を使用してPOSTとしてデータを送信します。
 
@@ -975,7 +975,7 @@ visibilityRule={"ruleType":"show", "rules":[{"subjectField": "LastName", "operat
 }
 ```
 
-演算子の完全なリストについては、[ フォームフィールドの表示ルールの追加](https://developer.adobe.com/marketo-apis/api/asset#operation/addFormFieldVisibilityRuleUsingPOST)を参照してください。
+演算子の完全なリストについては、[&#x200B; フォームフィールドの表示ルールの追加](https://developer.adobe.com/marketo-apis/api/asset#operation/addFormFieldVisibilityRuleUsingPOST)を参照してください。
 
 ## フォローアップ
 

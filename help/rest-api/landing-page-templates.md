@@ -40,7 +40,7 @@ ht-degree: 21%
 
 Marketoには、フリーフォームとガイド付きのランディングページテンプレートが用意されています。 自由形式テンプレートを使用すると、緩やかに構造化された編集体験を提供できます。 ガイド付きテンプレートを使用すると、テンプレートレベルでエレメントの種類と場所を制限できます。
 
-詳細な比較については、[ フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
+詳細な比較については、[&#x200B; フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
 
 ## クエリ
 
@@ -90,11 +90,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-[ ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
+[&#x200B; ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
 
 ### メタデータの更新
 
-[ ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
+[&#x200B; ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
 
 ### コンテンツの更新
 
