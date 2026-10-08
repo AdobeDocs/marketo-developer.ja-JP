@@ -2,7 +2,13 @@
 title: ブログのアーカイブ
 description: Marketo Developer Blog archive 2014-2023 Forms 2.0、Zapier、API アップデート、SOAPの非推奨化、RESTへの移行に関する過去の投稿を紹介します。
 exl-id: d7ae88dd-9938-4957-9798-db43090dab4e
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '65301'
 ht-degree: 2%
@@ -5283,7 +5289,7 @@ MarketoのREST APIは、認証にカスタムサービスを使用し、これ�
 
 ### API 使用量
 
-各 API ユーザは API 使用量レポートで個別に報告されるので、web サービスをユーザごとに分割すると、各統合の使用量を簡単に把握できます。 インスタンスへの API 呼び出しの数が制限を超え、後続の呼び出しが失敗する場合は、この方法を使用すると、各サービスからのボリュームを把握し、問題を解決する方法を評価できます。 管理者 / Web サービスに移動し、過去7日間の通話数をクリックして、使用状況を確認します。
+各 API ユーザーは API 使用量レポートで個別に報告されるので、web サービスをユーザーごとに分割すると、各統合の使用量を簡単に把握できます。 インスタンスへの API 呼び出しの数が制限を超え、後続の呼び出しが失敗する場合は、この方法を使用すると、各サービスからのボリュームを把握し、問題を解決する方法を評価できます。 管理者 / Web サービスに移動し、過去7日間の通話数をクリックして、使用状況を確認します。
 
 ### サービスを無効にする
 

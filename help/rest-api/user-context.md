@@ -1,29 +1,38 @@
 ---
-title: ユーザコンテキスト
+title: ユーザーコンテキスト
 feature: REST API
 description: Marketo RTP User Context APIを有効にして使用する方法を説明します。カスタム変数の設定、訪問時のユーザーデータの読み取り、表示およびクリックされたキャンペーンのトラッキングを行います。
 exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
-TQID: https://experienceleague.adobe.com/Ph0Tw-C9jzWaR4bYyUIXyzzoa2yjHQk2gt6tNA8H2mA
+TQID: 'https://experienceleague.adobe.com/Ph0Tw-C9jzWaR4bYyUIXyzzoa2yjHQk2gt6tNA8H2mA'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
 subfeature_v2:
   - id: a1d50dda-6d94-4e16-8c30-5eb7181c4650
+    internal-label: Segmentation
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+    internal-label: Implementation
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Personalization
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 273
+source-wordcount: '273'
 ht-degree: 34%
-
 ---
-
-# ユーザコンテキスト
+# ユーザーコンテキスト
 
 ユーザーコンテキスト JavaScript APIは、複数のセッションにわたってユーザーレベルおよび訪問者レベルのデータを公開します。 過去の行動やデータを利用して、高度なパーソナライゼーションを実現。
 
@@ -32,13 +41,13 @@ ht-degree: 34%
 - Web Personalizationのお客様で、サイトに[RTP タグがデプロイされている](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)必要があります。
 - Marketo サポートにユーザーコンテキスト APIを有効にするように依頼する必要があります。 イネーブルメントの後、userContext オブジェクトがRTP グローバルオブジェクトの下に表示されます。
 
-## ユーザコンテキスト属性
+## ユーザーコンテキスト属性
 
 | 名前 | タイプ | 説明 |
 | --- | --- | --- |
-| `customVar[1-5]` | 文字列 | ユーザコンテキストに保存されたカスタムデータ。 |
+| `customVar[1-5]` | 文字列 | ユーザーコンテキストに保存されたカスタムデータ。 |
 | `viewedCampaigns` | コンマ区切り文字列としてのキャンペーン ID | 現在または以前の訪問で閲覧したキャンペーン。 |
-| `clickedCampaigns` | コンマ区切り文字列としてのキャンペーン ID | 現在または以前の訪問でクリックスルーされたキャンペーン。 |
+| `clickedCampaigns` | コンマ区切り文字列としてのキャンペーン ID | 現在または以前の訪問でクリックされたキャンペーン。 |
 
 ## カスタム変数の設定
 

@@ -3,18 +3,30 @@ title: データ取り込み
 feature: REST API, Dynamic Content, Static Lists
 description: Marketo Data Ingestion APIを使用すると、ユーザー、カスタムオブジェクト、企業、プログラムメンバー、リストの大量かつ低遅延の取り込みが可能になります。
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
+TQID: 'https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: c56e5f8f-221f-55c2-8170-b1a9e10687cb
+    internal-label: Static Lists
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+  - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+  - id: cdd4e0f6-e87e-453f-88ee-2ee54a7de272
+    internal-label: Dynamic content
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 2151
+source-wordcount: '2153'
 ht-degree: 33%
-
 ---
-
 # Data Ingestion API
 
 Data Ingestion APIは、大量、低遅延、高可用性のサービスです。 最小限の遅延で膨大な個人および人関連データを取り込むことができます。
@@ -71,8 +83,8 @@ Data Ingestionは、Marketo REST API権限モデルを使用します。追加�
 
 | キー | 値 | 必須 | 説明 |
 | --- | --- | --- | --- |
-| `X-Correlation-Id` | 任意の文字列（最大長 255 文字）。 | いいえ | システムを通じてリクエストを追跡するために使用できます。 「Marketo Observability Data Stream」を参照してください |
-| `X-Request-Source` | 任意の文字列（最大長 50 文字）。 | いいえ | システムを通じてリクエストのソースを追跡するために使用できます。 「Marketo Observability Data Stream」を参照してください |
+| `X-Correlation-Id` | 任意の文字列（最大長 255 文字）。 | いいえ | システムを通じてリクエストを追跡するために使用できます。 Marketo Observability データストリームを参照 |
+| `X-Request-Source` | 任意の文字列（最大長 50 文字）。 | いいえ | システムを通じてリクエストのソースを追跡するために使用できます。 Marketo Observability データストリームを参照 |
 
 ### 応答
 
@@ -90,7 +102,7 @@ HTTP POST メソッドを使用してサーバーにデータを送信します�
 
 パスは`/subscriptions/MunchkinId`で始まり、MunchkinIdはMarketo インスタンスに固有です。 Munchkin IDは、Marketo Engage UIの&#x200B;**管理者**/**マイアカウント**/**サポート情報**&#x200B;で確認できます。 パスの残りの部分でリソースを指定します。
 
-ユーザの URL の例：
+人物用の URL 例：
 
 `https://mkto-ingestion-api.adobe.io/subscriptions/556-RJS-213/persons`
 
@@ -193,7 +205,7 @@ Data Ingestion API固有のエラーコードには、Adobe Developer Gatewayか
 | `priority` | 文字列 | いいえ | リクエストの優先度：通常または高 | 通常 |
 | `partitionName` | 文字列 | いいえ | 顧客パーティションの名前 | デフォルト |
 | `dedupeFields` | オブジェクト | いいえ | 重複排除する属性。 1つまたは2つの属性名を使用できます。<br/> AND 操作では、2 つの属性が使用されます。 例えば、`email` と `firstName` の両方が指定されている場合、AND 操作を使用してユーザを検索するために両方が使用されます。 <br/> サポートされる属性：`id`、`email`、`sfdcAccountId`、`sfdcContactId`、`sfdcLeadId`、`sfdcLeadOwnerId`、カスタム属性（「文字列」および「整数」タイプのみ）、`email` |  |
-| `persons` | オブジェクトの配列 | はい | ユーザの属性名と値のペアのリスト | - |
+| `persons` | オブジェクトの配列 | はい | 人物の属性名と値のペアのリスト | - |
 
 必須の権限は `Read-Write Lead` です。
 
@@ -265,7 +277,7 @@ Data Ingestion API固有のエラーコードには、Adobe Developer Gatewayか
 
 必須の権限は `Read-Write Custom Object` です。
 
-リクエストでユーザへのリンクフィールドが指定され、そのユーザが存在しない場合は、複数回の再試行が行われます。 再試行ウィンドウ（65 分）内にそのユーザが追加された場合、更新は成功します。 例えば、リンクフィールドがユーザの `email` であり、ユーザが存在しない場合は再試行が行われます。
+リクエストで人物へのリンクフィールドが指定され、その人物が存在しない場合は、複数回の再試行が行われます。 再試行ウィンドウ（65 分）内にそのユーザが追加された場合、更新は成功します。 例えば、リンクフィールドがユーザの `email` であり、ユーザが存在しない場合は再試行が行われます。
 
 ### カスタムオブジェクトの例
 
@@ -320,7 +332,7 @@ Data Ingestion API固有のエラーコードには、Adobe Developer Gatewayか
 
 | キー | 値 | 必須 |
 | --- | --- | --- |
-| `Content-Type` | application/json | ○ |
+| `Content-Type` | application/json | はい |
 | `X-Mkto-User-Token` | {accessToken} | はい |
 | `X-Correlation-Id` | 任意の文字列（最大長255文字） | いいえ |
 | `X-Request-Source` | 任意の文字列（最大長50文字） | いいえ |
@@ -617,7 +629,7 @@ Data Ingestion API固有のエラーコードには、Adobe Developer Gatewayか
 
 | キー | 値 | 必須 |
 | --- | --- | --- |
-| `Content-Type` | application/json | ○ |
+| `Content-Type` | application/json | はい |
 | `X-Mkto-User-Token` | {accessToken} | はい |
 | `X-Correlation-Id` | 任意の文字列（最大長255文字） | いいえ |
 | `X-Request-Source` | 任意の文字列（最大長50文字） | いいえ |
@@ -697,7 +709,7 @@ Data Ingestion API固有のエラーコードには、Adobe Developer Gatewayか
 
 | キー | 値 | 必須 |
 | --- | --- | --- |
-| `Content-Type` | application/json | ○ |
+| `Content-Type` | application/json | はい |
 | `X-Mkto-User-Token` | {accessToken} | はい |
 | `X-Correlation-Id` | 任意の文字列（最大長255文字） | いいえ |
 | `X-Request-Source` | 任意の文字列（最大長50文字） | いいえ |
@@ -769,7 +781,7 @@ Data Ingestion APIには、次のガードレールがあります。
 
 これらの制限は、個人、カスタムオブジェクト、会社、プログラムメンバー、およびリストに対して一様に適用されます。 プログラムメンバーの場合、「リクエストごとのオブジェクト」は、1回のリクエスト内のすべてのプログラムにわたるリード参照の合計数です。 リストの場合、「リクエストごとのオブジェクト」は、入力配列内のリード参照の数です。
 
-## Data Ingestion API と REST API
+## Data Ingestion API と REST API&#x200B;
 
 Data Ingestion APIは、次の点で他のMarketo REST APIとは異なります。
 

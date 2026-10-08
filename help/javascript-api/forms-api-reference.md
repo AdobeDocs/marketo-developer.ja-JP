@@ -3,20 +3,23 @@ title: Forms API リファレンス
 description: Marketo Forms 2.0 APIの包括的なリファレンス。MktoForms2とフォームのメソッド、パラメーター、コールバック、およびフォームの読み込みとレンダリングの返しの詳細を説明します。
 feature: Forms, Javascript
 exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
-TQID: https://experienceleague.adobe.com/wLuN1H8tDFEihPqcAfoG-Y80d4Kw1BoSskVQu4Bgss0
+TQID: 'https://experienceleague.adobe.com/wLuN1H8tDFEihPqcAfoG-Y80d4Kw1BoSskVQu4Bgss0'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1337
+source-wordcount: '1337'
 ht-degree: 93%
-
 ---
-
 # Forms API リファレンス
 
 Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトがあります。
@@ -42,7 +45,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     <tr>
       <td></td>
       <td></td>
-      <td>munchkinId（文字列）- サブスクリプションのMunchkin ID</td>
+      <td>munchkinId（文字列）- サブスクリプションの Munchkin ID</td>
       <td></td>
     </tr>
     <tr>
@@ -78,7 +81,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     <tr>
           <td></td>
       <td></td>
-      <td>closeBtn（ブーリアン） デフォルト true - ライトボックスダイアログに閉じるボタン（X）を表示するかどうかを制御します。</td>
+      <td>closeBtn（ブーリアン）デフォルト true - ライトボックスダイアログに閉じるボタン（X）を表示するかどうかを制御します。</td>
       <td></td>
     </tr>
     <tr valign="top">
@@ -96,7 +99,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     <tr valign="top">
       <td>.getForm(formId)</td>
       <td>フォーム識別子で以前に作成された Form オブジェクトを取得します</td>
-      <td> formId（数値または文字列）- Form Vid の識別子。</td>
+      <td> formId（数値または文字列）- フォーム Vid 識別子。</td>
       <td>Form オブジェクト</td>
     </tr>
     <tr valign="top">
@@ -113,7 +116,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     </tr>
     <tr valign="top">
       <td>.whenReady(callback)</td>
-      <td>「準備完了」になるページ上の各フォームに対して 1 回だけ呼び出されるコールバックを追加します。 準備完了とは、つまり、フォームが存在し、最初にレンダリングされ、最初のコールバックが呼び出されたことです。 この関数が呼び出された時点で既に準備が整っているフォームがある場合は、渡されたコールバックがすぐに呼び出されます。</td>
+      <td>ページ上の各フォームが「準備完了」になったときに、そのフォームごとに 1 回だけ呼び出されるコールバックを追加します。 準備完了とは、フォームが存在し、最初にレンダリングされ、最初のコールバックが呼び出された状態を意味します。 この関数が呼び出された時点で既に準備が整っているフォームがある場合は、渡されたコールバックがすぐに呼び出されます。</td>
       <td>callback（関数） - コールバックには、Form オブジェクトという単一の引数が渡されます。</td>
       <td>MktoForms2 オブジェクト</td>
     </tr>
@@ -143,7 +146,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     </tr>
     <tr valign="top">
       <td>.render(formElem)</td>
-      <td>Form オブジェクトをレンダリングし、フォームを含むフォーム要素を囲む jQuery オブジェクトを返します。 formElem が渡された場合は、それがフォーム要素として使用され、それ以外の場合は新しい要素が作成されます。</td>
+      <td>Form オブジェクトをレンダリングし、フォームを含むフォーム要素をラップした jQuery オブジェクトを返します。 formElem が渡された場合は、それがフォーム要素として使用され、それ以外の場合は新しい要素が作成されます。</td>
       <td>formElem（オプション）- レンダリング先の jQuery オブジェクトで囲まれたフォーム要素。</td>
       <td> レンダリングされたフォームを含む、jQuery オブジェクトで囲まれたフォーム要素。</td>
     </tr>
@@ -169,31 +172,31 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
       <td>.onValidate(callback)</td>
       <td>検証がトリガーされるたびに呼び出される検証コールバックを追加します。</td>
       <td>callback（関数） - 検証が発生するたびにトリガーされるコールバック。 コールバックには、検証が成功したかどうかを示すブール値である 1 つのパラメーターが渡されます。</td>
-      <td>Form オブジェクト - 連鎖の目的で、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
+      <td>Form オブジェクト - メソッドチェーンのために、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
     </tr>
     <tr valign="top">
       <td>.submit()</td>
-      <td>フォームの送信イベントをトリガーします。 これにより、送信からフローが開始され、検証が実行されると、onSubmit イベントが発生します。フォームが送信され、フォームの送信が成功した場合は onSuccess イベントが発生します。</td>
+      <td>フォームの送信イベントをトリガーします。 これにより、フォーム送信フローが開始され、検証が実行され、onSubmit イベントが発生し、フォームが送信されます。フォームの送信が成功した場合は、onSuccess イベントが発生します。</td>
       <td>該当なし</td>
-      <td>Form オブジェクト - 連鎖の目的で、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
+      <td>Form オブジェクト - メソッドチェーンのために、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
     </tr>
     <tr valign="top">
       <td>.onSubmit(callback)</td>
       <td>フォームを送信した際に呼び出されるコールバックを追加します。 これは、リクエストの成功／失敗がわかる前に、送信を開始した際に発生します。</td>
       <td>callback - フォームを送信した際に呼び出される関数。 このコールバックには、この Form オブジェクトという 1 つの引数が渡されます。</td>
-      <td>Form オブジェクト - 連鎖の目的で、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
+      <td>Form オブジェクト - メソッドチェーンのために、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
     </tr>
     <tr valign="top">
       <td>.onSuccess(callback)</td>
-      <td>フォームを正常に送信したが、リードがフォローアップページに転送される前に呼び出されるコールバックを追加します。 送信が成功した後にリードがフォローアップページに転送されるのを防ぐために使用できます。</td>
-      <td>callback - フォームを正常に送信した際に呼び出される関数。 このコールバックには、2 つの引数が渡されます。 送信した値と、ユーザの転送先となるフォローアップページの文字列 URL を含む JS オブジェクト。フォローアップページを設定していない場合は null または空の文字列になります。 特別な動作：このコールバックが「false」（=== を使用して測定）を返す場合、訪問者はフォローアップページに転送されず、ページはリロードされません。 これにより、実装者はフォローアップ URL に対して追加の処理を実行したり、ページを離れる代わりに JavaScript を使用してページでアクションを実行したりできます。</td>
+      <td>フォームが正常に送信された後、リードがフォローアップページに転送される前に呼び出されるコールバックを追加します。 送信が成功した後にリードがフォローアップページに転送されるのを防ぐために使用できます。</td>
+      <td>callback - フォームを正常に送信した際に呼び出される関数。 このコールバックには、2 つの引数が渡されます。 送信した値と、ユーザーの転送先となるフォローアップページの文字列 URL を含む JS オブジェクト。フォローアップページを設定していない場合は null または空の文字列になります。 特別な動作：このコールバックが「false」（=== を使用して測定）を返す場合、訪問者はフォローアップページに転送されず、ページはリロードされません。 これにより、実装者はフォローアップ URL に対して追加の処理を実行したり、ページを離れる代わりに JavaScript を使用してページでアクションを実行したりできます。</td>
       <td>Form オブジェクト - 連鎖の目的で、メソッドが呼び出されたのと同じ Form オブジェクト。</td>
     </tr>
     <tr valign="top">
       <td>.submittable(canSubmit) <em>次のように使用することも可能：</em><em>.submitable(canSubmit)</em></td>
       <td>フォームを送信できるかどうかを取得または設定します。 引数なしで呼び出された場合は、値を取得します。1つの引数で呼び出された場合は、値を設定します。これは、通常のフォーム以外の条件を満たす必要がある場合に、フォームが送信されないようにするために使用できます。</td>
       <td>canSubmit（オプション）（ブール値）- フォームを送信可能または送信不可能に設定します。</td>
-      <td>ブール値または Form オブジェクト - 引数を指定せずに呼び出した場合、フォームが送信可能かどうかを示すブール値を返します。 1 つの引数を指定して呼び出した場合、この Form オブジェクトを連鎖的に返します。 </td>
+      <td>ブール値または Form オブジェクト - 引数を指定せずに呼び出した場合、フォームが送信可能かどうかを示すブール値を返します。 1 つの引数を指定して呼び出した場合、メソッドチェーンのためにこの Form オブジェクトを返します。 </td>
     </tr>
     <tr valign="top">
       <td>.allFieldsFilled()</td>
@@ -204,7 +207,7 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     <tr valign="top">
       <td>.setValues(vals)</td>
       <td>フォーム内の 1 つ以上のフィールドに値を設定します。</td>
-      <td>vals - JS オブジェクト。 オブジェクト内の各キーと値のペアに対して、キーという名前のフォームフィールドに値が設定されます。</td>
+      <td>vals - JS オブジェクト。 オブジェクト内の各キーと値のペアに対して、キーをフィールド名とするフォームフィールドに値が設定されます。</td>
       <td>未定義</td>
     </tr>
     <tr valign="top">
@@ -215,13 +218,13 @@ Forms 2.0 APIには、主に`MktoForms2`と`Form`の2つのオブジェクトが
     </tr>
     <tr valign="top">
       <td>.addHiddenFields(values)</td>
-      <td>フォームに input type=hidden フィールドを追加します。</td>
+      <td>フォームに input type="hidden" の非表示フィールドを追加します。</td>
       <td>values - フォームに追加する非表示フィールドの名前と値を表すキーと値のペアを含む JS オブジェクト。</td>
       <td>未定義</td>
     </tr>
     <tr valign="top">
       <td>.vals(values)</td>
-      <td>jQuery スタイルの .vals() セッター／ゲッター。 引数を指定せずに呼び出した場合、getValues() の呼び出しと同じになります。 1 つの引数を指定して呼び出した場合、setValues() の呼び出しと同じになります</td>
+      <td>jQuery スタイルの .vals() セッター／ゲッター。 引数を指定せずに呼び出した場合、getValues() の呼び出しと同じになります。 1 つの引数を指定して呼び出した場合、setValues() の呼び出しと同じになります。</td>
       <td>values（オプション）- オブジェクト</td>
       <td>未定義</td>
     </tr>

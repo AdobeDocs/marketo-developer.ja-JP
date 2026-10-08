@@ -3,23 +3,31 @@ title: メールテンプレート
 feature: REST API
 description: Marketoの要件、IDまたは名前によるクエリ、参照フォルダーなど、HTML REST API メールテンプレートを作成および管理する方法について説明します
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
-TQID: https://experienceleague.adobe.com/jKQpibaRP7nAyIsDdjMf8VkNPi5AMFbe7I4Iiy3MGc0
+TQID: 'https://experienceleague.adobe.com/jKQpibaRP7nAyIsDdjMf8VkNPi5AMFbe7I4Iiy3MGc0'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+    internal-label: Metadata
   - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Customer experience
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 543
+source-wordcount: '543'
 ht-degree: 10%
-
 ---
-
 # メールテンプレート
 
 [メールテンプレートエンドポイントの参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates)
@@ -393,7 +401,7 @@ POST /rest/asset/v1/emailTemplate/{id}/approveDraft.json
 }
 ```
 
-### 承認取消
+### 未承認
 
 承認されたテンプレートに対してのみ、承認されないエンドポイントを使用します。
 
@@ -477,7 +485,7 @@ POST /rest/asset/v1/emailTemplate/{id}/delete.json
 }
 ```
 
-## 複製
+## クローン作成
 
 メールテンプレートを[複製](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneTemplateUsingPOST)するには、次のパラメーターを使用して`application/x-www-form-urlencoded` POST リクエストを送信します。
 

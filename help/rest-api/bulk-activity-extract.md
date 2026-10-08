@@ -3,24 +3,33 @@ title: アクティビティの一括抽出
 feature: REST API
 description: Marketo Bulk Activity ETLおよびCRM用の31日間の日付範囲、アクティビティ、主要属性フィルターを使用して、REST APIを抽出して大量のアクティビティデータを書き出します。
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-TQID: https://experienceleague.adobe.com/lIlXNjatN-F77Dv3xsVkQ3hAWwLZ4wlSW0zKNkFJFMA
+TQID: 'https://experienceleague.adobe.com/lIlXNjatN-F77Dv3xsVkQ3hAWwLZ4wlSW0zKNkFJFMA'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Reporting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1212
+source-wordcount: '1212'
 ht-degree: 25%
-
 ---
-
 # アクティビティの一括抽出
 
 [一括アクティビティ抽出エンドポイント リファレンス](https://developer.adobe.com/marketo-apis/api/mapi)
@@ -192,7 +201,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 
 ## ジョブステータスのポーリング
 
-ジョブステータスを取得できるのは、同じ API ユーザによって作成されたジョブのみです。
+ジョブステータスを取得できるのは、同じ API ユーザーによって作成されたジョブのみです。
 
 一括アクティビティ抽出では、ジョブを非同期で処理します。 [Get Export Activity Job Status](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportActivitiesStatusUsingGET) エンドポイントをポーリングして、ジョブがいつ完了したかを判断します。
 

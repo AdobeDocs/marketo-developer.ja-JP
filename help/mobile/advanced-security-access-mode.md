@@ -3,20 +3,24 @@ title: 高度なセキュリティアクセスモード
 feature: Mobile Marketing
 description: HMAC署名の生成、サーバーエンドポイントの設定、デバイス IDの使用、iOSおよびAndroidの例を含む、Marketo Mobile SDKの高度なセキュリティアクセスモードについて説明します
 exl-id: bd4730ff-708b-465e-b494-485a4dbf67ff
-TQID: https://experienceleague.adobe.com/F6lH1aGbCakK-E6IU4wLwYw58BG2-CRE-Ras2bMHeO8
+TQID: 'https://experienceleague.adobe.com/F6lH1aGbCakK-E6IU4wLwYw58BG2-CRE-Ras2bMHeO8'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: d095671a-1355-40aa-8b5f-06c33c68080b
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Security
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 217
+source-wordcount: '217'
 ht-degree: 7%
-
 ---
-
 # 高度なセキュリティアクセスモード
 
 高度なセキュリティアクセスモードでは、セキュリティ署名を取得して設定するためにMarketo SDKが必要です。 SDKには、署名を設定および削除する方法と、デバイス IDを取得するユーティリティ方法が用意されています。

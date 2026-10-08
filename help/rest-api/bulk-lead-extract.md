@@ -3,18 +3,24 @@ title: リードの一括抽出
 feature: REST API
 description: Marketo Bulk Lead Extract REST APIを使用して、日付、リスト、スマートリストのフィルター、カスタムフィールド、CSV/TSV形式でリードを一括エクスポートする方法を説明します。
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
-TQID: https://experienceleague.adobe.com/4eMJR87fHDdccrVid3wHtspvBVQmrBGHYMlIwFCSdEI
+TQID: 'https://experienceleague.adobe.com/4eMJR87fHDdccrVid3wHtspvBVQmrBGHYMlIwFCSdEI'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1017
+source-wordcount: '1017'
 ht-degree: 8%
-
 ---
-
 # リードの一括抽出
 
 [リード抽出の一括処理エンドポイント リファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads)
@@ -160,7 +166,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 `status` フィールドは、次のいずれかの値を返すことができます。
 
-- 作成日
+- 作成済み
 - 待機中
 - 処理中
 - キャンセル済み

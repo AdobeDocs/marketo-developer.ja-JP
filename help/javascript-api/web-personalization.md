@@ -3,26 +3,35 @@ title: Web パーソナライゼーション
 description: Web Personalization JavaScript APIおよびRTP タグのガイド、ページビューイベント、アカウント設定、ボットの除外、コアおよびオンデマンドのスクリプトについて説明します
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-TQID: https://experienceleague.adobe.com/yplunKmgjOJ7gJTA2TDc9cfJXyXbrVWuM-NdVbDMN4A
+TQID: 'https://experienceleague.adobe.com/yplunKmgjOJ7gJTA2TDc9cfJXyXbrVWuM-NdVbDMN4A'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+  - id: 664d862c-1673-5ed4-a3d6-386ac83225e4
+    internal-label: Web Personalization
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 subfeature_v2:
   - id: cdd4e0f6-e87e-453f-88ee-2ee54a7de272
+    internal-label: Dynamic content
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+    internal-label: Implementation
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Personalization
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 435
+source-wordcount: '435'
 ht-degree: 54%
-
 ---
-
 # Web パーソナライゼーション
 
 Web Personalization JavaScript APIは、イベントを追跡し、web ページを動的にカスタマイズします。 プラットフォームの自動パーソナライゼーション機能を拡張します。
@@ -30,7 +39,7 @@ Web Personalization JavaScript APIは、イベントを追跡し、web ページ
 関連する機能には、[&#x200B; カスタムデータイベント &#x200B;](custom-data-events.md)、[動的コンテンツ &#x200B;](web-personalization.md)、[訪問者データを取得](get-visitor-data.md)、および[特定のボットのタグを除外](#exclude_tag_for_specific_bots)が含まれます。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、Account-Based Marketing の重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## タグ設定
 
@@ -82,7 +91,7 @@ var page = 'my-page?param=1';
 rtp('send', 'view', page);
 ```
 
-## 特定のボットのタグを除外（ユーザエージェント）
+## 特定のボットのタグを除外（ユーザーエージェント）
 
 識別されたボットがWeb Personalization プラットフォームにデータを送信しないようにするには、タグスクリプトに次の`if` ステートメントを追加します。
 

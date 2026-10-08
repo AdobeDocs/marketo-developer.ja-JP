@@ -3,20 +3,23 @@ title: 例
 description: Marketo Forms 2.0 JavaScriptの例：送信、設定、読み取り、カスタムエラー、ライトボックス、外部トリガーによる検証で非表示またはリダイレクトを行う
 feature: Javascript
 exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
-TQID: https://experienceleague.adobe.com/dH1yaglpL3odGZfGk-JC8oGljBF2gDpdjdg1BPE6OcQ
+TQID: 'https://experienceleague.adobe.com/dH1yaglpL3odGZfGk-JC8oGljBF2gDpdjdg1BPE6OcQ'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 234
+source-wordcount: '234'
 ht-degree: 28%
-
 ---
-
 # 例
 
 これらの例では、Forms 2.0の一般的なweb フォームワークフローを示します。
@@ -37,7 +40,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 });
 ```
 
-## ユーザ定義 URL に訪問者を移動させる
+## ユーザー定義 URL に訪問者を移動させる
 
 次の使用例は、送信に成功した後、JavaScriptで定義されたURLに訪問者を送信します。 JavaScriptのURLは、設定済みのサンキューページに置き換わります。
 
@@ -82,7 +85,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 });
 ```
 
-## フォームクリック以外のイベントでフォームを送信する
+## フォーム外のクリックイベントでフォームを送信する
 
 次の使用例は、訪問者がフォーム以外の要素を選択したときに、フォームを送信します。
 
@@ -100,7 +103,7 @@ btn.onclick = function() {
 };
 ```
 
-## ユーザによるフォームの送信を防止する
+## ユーザーによるフォームの送信を防止する
 
 この例では、訪問者はフォームの送信ボタンが機能する前に、クリックカウンターボタンを少なくとも3回選択する必要があります。
 

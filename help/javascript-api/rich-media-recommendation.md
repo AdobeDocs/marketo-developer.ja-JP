@@ -3,20 +3,23 @@ title: リッチメディアレコメンデーション
 description: Marketoの予測コンテンツ RTP タグ、template1 template2 template3のdiv、GETを使用した入力、SETを使用したリッチメディアのレコメンデーションを設定してカテゴリを設定します。
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-TQID: https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI
+TQID: 'https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 814
-ht-degree: 48%
-
+source-wordcount: '814'
+ht-degree: 47%
 ---
-
 # リッチメディアレコメンデーション
 
 リッチメディアのレコメンデーションテンプレートを表示するには、必要なタグとAPI呼び出しをページに追加します。
@@ -148,12 +151,12 @@ rtp("set", "rcmd", "richmedia",
 | --- | --- | --- |
 | rcmd.general.font.family | &quot;rcmd.general.font.family&quot; : &quot;arial&quot; | テンプレート内のすべてのテキストのフォントファミリーを変更します。 このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。 ページに存在する場合は、カスタムフォントファミリーを使用できます。 |
 | rcmd.content.background.color | &quot;rcmd.content.background.color&quot; : &quot;black&quot; | テンプレートの内部ボックスの背景色を変更します。 このプロパティは、ブラウザータイプ別のすべての CSS 値をサポートします。 |
-| rcmd.title.text | &quot;rcmd.title.text&quot; : &quot;RECOMMENDED CONTENT&quot; | テンプレートのタイトルを変更します。 |
+| rcmd.title.text | &quot;rcmd.title.text&quot; : &quot;おすすめコンテンツ&quot; | テンプレートのタイトルを変更します。 |
 | rcmd.title.background.color | &quot;rcmd.title.background.color&quot; : &quot;blue&quot; | タイトルボックスの背景色を変更します。 このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
 | rcmd.title.font.size | &quot;rcmd.title.font.size&quot; : &quot;26px&quot; | タイトルのフォントサイズを変更します。 このプロパティは、使用可能なすべてのフォントサイズの CSS 値（px、em など）をサポートします。 |
-| rcmd.title.font.color | &quot;rcmd.title.font.color&quot; : &quot;white&quot; | タイトルのフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
-| rcmd.description.font.color | &quot;rcmd.description.font.color&quot; : &quot;white&quot; | 説明のフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
-| rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;green&quot; | ボタンの背景色を変更します。 このプロパティは、すべての css カラー値（color name、rgb など）をサポートします。 |
+| rcmd.title.font.color | &quot;rcmd.title.font.color&quot; : &quot;white&quot; | タイトルのフォントカラーを変更します。 このプロパティは、すべてのフォントカラーの値（rgb、hex など）をサポートします。 |
+| rcmd.description.font.color | &quot;rcmd.description.font.color&quot; : &quot;white&quot; | 説明のフォントカラーを変更します。 このプロパティは、すべてのフォントカラーの値（rgb、hex など）をサポートします。 |
+| rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;green&quot; | ボタンの背景色を変更します。 このプロパティは、すべての CSS カラーの値（color name、rgb など）をサポートします。 |
 | rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | ボタンのフォントカラーを変更します。 このプロパティは、すべてのフォントカラー値（rgb、hex など）をサポートします |
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;Push&quot; | ボタンのテキストを変更します。 テキストは、すべてのボタンで同じです。 |
 | カテゴリ | &quot;category&quot; : [&quot;one category&quot;] | このテンプレートがサポートするレコメンデーションカテゴリを変更します。 テンプレートには、この設定で指定されたカテゴリの 1 つを持つレコメンデーションのみが表示されます。 |
