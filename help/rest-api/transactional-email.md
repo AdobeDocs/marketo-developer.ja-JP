@@ -59,11 +59,11 @@ ht-degree: 53%
 
 ## API 呼び出しの送信
 
-Javaの例では、[minimal-json パッケージ &#x200B;](https://github.com/ralfstx/minimal-json)を使用してJSON表現を処理します。
+Javaの例では、[minimal-json パッケージ ](https://github.com/ralfstx/minimal-json)を使用してJSON表現を処理します。
 
 メールを送信する前に、メールアドレスにMarketo レコードが存在することを確認し、そのリード IDを取得します。 この例では、メールアドレスが既に存在することを前提としています。
 
-フィルターの種類[&#128279;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)で リードを取得を使用して、IDを取得します。 次のメインメソッドは、キャンペーンをリクエストします。
+フィルターの種類](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)で[ リードを取得を使用して、IDを取得します。 次のメインメソッドは、キャンペーンをリクエストします。
 
 ```java
 package dev.marketo.blog_request_campaign;

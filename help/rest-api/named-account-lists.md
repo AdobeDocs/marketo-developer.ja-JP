@@ -27,7 +27,7 @@ ht-degree: 36%
 
 [名前付きアカウントリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
-[名前付きアカウントリスト &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、Marketoの名前付きアカウントのコレクションです。 分類、データエンリッチメント、スマートキャンペーンのフィルタリングに使用できます。
+[名前付きアカウントリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、Marketoの名前付きアカウントのコレクションです。 分類、データエンリッチメント、スマートキャンペーンのフィルタリングに使用できます。
 
 名前付きアカウントリスト APIを使用すると、リストアセットとそのメンバーシップをリモートで管理できます。
 `Content`

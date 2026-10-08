@@ -73,7 +73,7 @@ type=DynamicContent&value=1001
 }
 ```
 
-[&#x200B; メール動的コンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailDynamicContentUsingPOST) エンドポイントを呼び出して、特定のセクションのセグメントにコンテンツを追加します。
+[ メール動的コンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailDynamicContentUsingPOST) エンドポイントを呼び出して、特定のセクションのセグメントにコンテンツを追加します。
 
 次のリクエストでは、南西セグメントのリードのデフォルトコンテンツではなく、特別なバナーが表示されます。 さらにバリエーションを作成するには、各セグメントとセクションのエンドポイントを呼び出します。
 

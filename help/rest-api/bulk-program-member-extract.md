@@ -38,7 +38,7 @@ API ユーザーには、読み取り専用リード権限、読み取り/書き
 
 ## 説明
 
-[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
+[ プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
 
 ```http
 GET /rest/v1/programs/members/describe.json
@@ -494,7 +494,7 @@ Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブや不要になったジョブをキャンセルするには、[&#x200B; プログラム メンバーのエクスポート ジョブをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブや不要になったジョブをキャンセルするには、[ プログラム メンバーのエクスポート ジョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json

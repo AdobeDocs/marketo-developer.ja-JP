@@ -22,4 +22,4 @@ ht-degree: 9%
 ---
 # 予測コンテンツ
 
-予測コンテンツ JavaScript APIは、[&#x200B; リッチメディアのレコメンデーション &#x200B;](rich-media-recommendation.md)を使用してweb ページを動的にカスタマイズします。 APIを使用して、プラットフォームの予測コンテンツ機能を拡張します。
+予測コンテンツ JavaScript APIは、[ リッチメディアのレコメンデーション ](rich-media-recommendation.md)を使用してweb ページを動的にカスタマイズします。 APIを使用して、プラットフォームの予測コンテンツ機能を拡張します。

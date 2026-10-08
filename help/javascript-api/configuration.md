@@ -29,7 +29,7 @@ ht-degree: 43%
 ---
 # 設定
 
-Munchkinでは、ビヘイビアーをカスタマイズする設定を受け付けています。 設定を[Munchkin.init （） &#x200B;](api-reference.md#munchkin_init)の2番目のパラメーターにJavaScript オブジェクトのプロパティとして渡します。
+Munchkinでは、ビヘイビアーをカスタマイズする設定を受け付けています。 設定を[Munchkin.init （） ](api-reference.md#munchkin_init)の2番目のパラメーターにJavaScript オブジェクトのプロパティとして渡します。
 
 ```json
 Munchkin.init("AAA-BBB-CCC", {

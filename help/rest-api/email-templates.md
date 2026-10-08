@@ -38,7 +38,7 @@ Marketoでは、新しい電子メールはすべてメールテンプレート�
 
 ## クエリ
 
-メールテンプレートは、標準のアセットクエリパターン（[id](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByIdUsingGET)によって、[名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByNameUsingGET)によって、および[&#x200B; フォルダーを参照](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplatesUsingGET)によって）をサポートしています。
+メールテンプレートは、標準のアセットクエリパターン（[id](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByIdUsingGET)によって、[名前](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByNameUsingGET)によって、および[ フォルダーを参照](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplatesUsingGET)によって）をサポートしています。
 
 ### ID 別
 
@@ -283,7 +283,7 @@ Create email template using API
 }
 ```
 
-テンプレートコンテンツを更新するには、メールテンプレート IDで[&#x200B; コンテンツエンドポイント &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)を呼び出します。 リクエスト本文は`content` パラメーターのみを受け入れます。
+テンプレートコンテンツを更新するには、メールテンプレート IDで[ コンテンツエンドポイント ](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)を呼び出します。 リクエスト本文は`content` パラメーターのみを受け入れます。
 
 送信されたコンテンツは、既存のテンプレートコンテンツに完全に置き換わります。 承認済みバージョンを更新すると、新しいドラフトが作成されます。 ドラフトのみのアセットを更新すると、現在のドラフトが置き換えられます。
 
@@ -327,7 +327,7 @@ Content-Type: text/html
 
 ## メタデータの更新
 
-テンプレートのメタデータ [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateUsingPOST)を更新するには、`name`と`description`のパラメーターを含む`application/x-www-form-urlencoded` POST リクエストを送信します。
+テンプレートのメタデータ ](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateUsingPOST)を[更新するには、`name`と`description`のパラメーターを含む`application/x-www-form-urlencoded` POST リクエストを送信します。
 
 ```http
 POST /rest/asset/v1/emailTemplate/{id}.json

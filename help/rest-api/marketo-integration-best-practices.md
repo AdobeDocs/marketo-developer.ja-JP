@@ -50,7 +50,7 @@ Marketo インスタンスの共通API制限に関する統合機能を設計し
 
 - アプリケーションは割り当て量、レート、同時実行リソースを他のアプリケーションと共有するため、保守的な使用制限を設定します。
 - 利用可能な場合は、Marketoの一括方式とバッチ方式を使用します。 必要な場合にのみ、単一レコードまたは単一の結果の呼び出しを使用します。
-- レートまたは同時実行の制限により失敗したAPI呼び出しを再試行するには、[指数的バックオフ &#x200B;](https://en.wikipedia.org/wiki/Exponential_backoff)を使用します。
+- レートまたは同時実行の制限により失敗したAPI呼び出しを再試行するには、[指数的バックオフ ](https://en.wikipedia.org/wiki/Exponential_backoff)を使用します。
 - ユースケースに利益をもたらす場合を除き、同時API呼び出しを避けます。
 
 ## バッチ処理
@@ -75,7 +75,7 @@ API対応の各Marketo インスタンスには、毎日10,000件以上のREST A
 
 キャパシティは、インスタンス内のすべてのAPI サービスとユーザーによって共有されます。 冗長な呼び出しとバッチレコードを排除し、できるだけ少ない呼び出しを実現します。
 
-最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[&#x200B; リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)および[&#x200B; カスタムオブジェクト &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
+最も通話効率の高い読み込み方法は、Marketoの一括読み込みAPIです。[ リード/ユーザー](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)および[ カスタムオブジェクト ](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)で使用できます。 また、Marketo では、[リード](bulk-lead-extract.md)と[アクティビティ](bulk-activity-extract.md)の一括抽出も用意しています。
 
 ### キャッシュ
 
@@ -103,6 +103,6 @@ Marketoでは、処理中で返されていない呼び出しがカウントさ�
 
 ## エラー
 
-まれに、API リクエストはHTTP ステータスコード 200を返します。 ビジネスロジックエラーも200を返しますが、応答本文に詳細が含まれます。 詳しくは、[&#x200B; エラーコード &#x200B;](error-codes.md)を参照してください。
+まれに、API リクエストはHTTP ステータスコード 200を返します。 ビジネスロジックエラーも200を返しますが、応答本文に詳細が含まれます。 詳しくは、[ エラーコード ](error-codes.md)を参照してください。
 
 HTTP理由フレーズはオプションであり、変更される可能性があるため、評価しないでください。

@@ -97,7 +97,7 @@ GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 
 ## 更新
 
-タグ タイプの値を更新するには、[&#x200B; プログラム タグの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) エンドポイントを使用します。 すべてのパラメーターが必要です。
+タグ タイプの値を更新するには、[ プログラム タグの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) エンドポイントを使用します。 すべてのパラメーターが必要です。
 
 - `id` パス パラメーターは、プログラム IDを指定します。
 - `tagType` パス パラメーターは、更新するタグの種類を指定します。
@@ -121,11 +121,11 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-複数のタグを更新するには、[&#x200B; プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) エンドポイントを使用します。 [&#x200B; プログラム更新セクション &#x200B;](programs.md#update)の例を参照してください。
+複数のタグを更新するには、[ プログラムメタデータの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) エンドポイントを使用します。 [ プログラム更新セクション ](programs.md#update)の例を参照してください。
 
 ## 削除
 
-不要なタグタイプを削除するには、[&#x200B; プログラムタグの削除](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteProgramUsingPOST) エンドポイントを使用します。 `id` パス パラメーターはプログラム IDを指定し、`tagType` パス パラメーターは削除するタグ タイプを指定します。
+不要なタグタイプを削除するには、[ プログラムタグの削除](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteProgramUsingPOST) エンドポイントを使用します。 `id` パス パラメーターはプログラム IDを指定し、`tagType` パス パラメーターは削除するタグ タイプを指定します。
 
 ```http
 POST /rest/asset/v1/program/{id}/tag/{tagType}/delete.json

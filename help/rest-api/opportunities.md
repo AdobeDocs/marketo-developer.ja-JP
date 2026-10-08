@@ -107,7 +107,7 @@ GET /rest/v1/opportunities/describe.json
 
 ## クエリ
 
-[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
+[商談のクエリ ](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
 
 カスタム商談フィールドの場合、検索可能なFields配列に表示されるのは、String型またはInteger型のフィールドのみです。
 

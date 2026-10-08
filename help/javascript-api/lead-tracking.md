@@ -132,7 +132,7 @@ MunchkinのCookieは、`example.com`などの各セカンドレベルのドメ�
 
 ## ベータ版
 
-ランディングページのMunchkin ベータ版チャネルにオプトインするには、[管理者/ トレジャーチェスト &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)に移動し、「ランディングページでMunchkin Beta」設定を有効にします。
+ランディングページのMunchkin ベータ版チャネルにオプトインするには、[管理者/ トレジャーチェスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)に移動し、「ランディングページでMunchkin Beta」設定を有効にします。
 
 この設定により、**[!UICONTROL 管理者]** -> **[!UICONTROL Munchkin]** メニューにコードスニペットが追加されます。 これらのスニペットを使用して、外部サイトでベータ版を実行します。
 

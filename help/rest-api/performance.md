@@ -45,7 +45,7 @@ Marketo REST APIは、レスポンス本文を圧縮し、次のヘッダーを�
 Content-Encoding: gzip
 ```
 
-次のcURLの例では、[&#x200B; フィルターの種類](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)でリードを取得エンドポイントを呼び出して、5つのリードを取得します。
+次のcURLの例では、[ フィルターの種類](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)でリードを取得エンドポイントを呼び出して、5つのリードを取得します。
 
 ```bash
 curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'

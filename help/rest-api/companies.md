@@ -30,7 +30,7 @@ ht-degree: 14%
 
 [会社エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
 
-企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[&#x200B; リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)または[&#x200B; リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
+企業は、リードレコードが属する組織を表します。 会社にリードを追加するには、[ リードの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST)または[ リードの一括読み込み](bulk-lead-import.md) エンドポイントを使用して、その`externalCompanyId` フィールドに入力します。
 
 別の会社にリードを追加しない限り、会社からリードを削除することはできません。 会社レコードにリンクされたリードは、そのレコードから値を継承し、その値がリードレコードに存在するかのように処理します。
 

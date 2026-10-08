@@ -29,7 +29,7 @@ ht-degree: 4%
 
 静的リスト REST APIを使用して、静的リストをクエリ、作成、更新、削除します。
 
-リスト メンバーに対するリード データベース操作については、[&#x200B; リスト メンバーシップ &#x200B;](list-membership.md)を参照してください。
+リスト メンバーに対するリード データベース操作については、[ リスト メンバーシップ ](list-membership.md)を参照してください。
 
 ## クエリ
 
@@ -37,7 +37,7 @@ ht-degree: 4%
 
 ### ID 別
 
-[IDによるクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByIdUsingGET)は、1つの静的リスト `id` パス パラメーターを受け取り、一致するレコードを返します。
+[IDによるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByIdUsingGET)は、1つの静的リスト `id` パス パラメーターを受け取り、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/staticList/{id}.json
@@ -66,7 +66,7 @@ GET /rest/asset/v1/staticList/{id}.json
 
 #### 名前別
 
-[名前によるクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByNameUsingGET)は、静的リスト `name` パラメーターを使用します。 エンドポイントは、静的リスト名に対して完全一致を実行し、一致するレコードを返します。
+[名前によるクエリ ](https://developer.adobe.com/marketo-apis/api/asset#operation/getStaticListByNameUsingGET)は、静的リスト `name` パラメーターを使用します。 エンドポイントは、静的リスト名に対して完全一致を実行し、一致するレコードを返します。
 
 ```http
 GET /rest/asset/v1/staticList/byName.json?name=Foundation Seed List
@@ -223,7 +223,7 @@ description=This is a static list used for testing
 
 ## 削除
 
-静的リスト [&#128279;](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteStaticListByIdUsingPOST)を削除するには、その`id`をパスパラメーターとして渡します。 読み込み、書き出し、または別のアセットで使用されているリストは削除できません。
+静的リスト ](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteStaticListByIdUsingPOST)を[削除するには、その`id`をパスパラメーターとして渡します。 読み込み、書き出し、または別のアセットで使用されているリストは削除できません。
 
 ```http
 POST /rest/asset/v1/staticList/{id}/delete.json

@@ -31,7 +31,7 @@ ht-degree: 51%
 
 次の操作は、[!DNL Marketo Engage] MCP サーバーを通じて使用できます。 サーバーは、読み取り専用または非破壊的なエンドポイントを提供します。 AI システムは`Delete`またはその他の破壊的な操作を使用できません。
 
-Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 ## 一括書き出し
 
@@ -45,7 +45,7 @@ Marketo AIおよびMarketo Engage MCP サーバーでのデータの処理方法
 
 ## チャネルとタグ
 
-[&#x200B; チャネル API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [&#x200B; タグ API リファレンス &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
+[ チャネル API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [ タグ API リファレンス ](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
 
 - `browse_channels`
 - `browse_tag_types`

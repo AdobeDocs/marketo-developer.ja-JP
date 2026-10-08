@@ -60,7 +60,7 @@ ht-degree: 47%
 <div class="RTP_RCMD2" data-rtp-template-id="template3"></div>
 ```
 
-[&#x200B; テンプレートの整列の例](#example_of_rich_media_recommendation_template_1)を参照してください。
+[ テンプレートの整列の例](#example_of_rich_media_recommendation_template_1)を参照してください。
 
 ## レコメンデーションの入力
 

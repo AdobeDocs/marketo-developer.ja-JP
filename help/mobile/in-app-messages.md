@@ -27,11 +27,11 @@ Marketoのアプリ内メッセージを使用するには、次の手順を実�
 
 1. [モバイルのインストール](installation.md)の説明に従って、Marketo Mobile SDK をインストールします。
 1. [モバイルアプリの追加](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)の説明に従って、モバイルアプリを Marketo に追加します。
-1. オプション：モバイルアプリにコードを追加して、[&#x200B; カスタムアクション &#x200B;](custom-actions.md)をキャプチャします。
+1. オプション：モバイルアプリにコードを追加して、[ カスタムアクション ](custom-actions.md)をキャプチャします。
 
 Marketo Mobile SDKをインストールしてアプリをMarketoに追加すると、ユーザーがアプリを開いたときに表示されるアプリ内メッセージを送信できます。
 
-デフォルトでは、アプリが開いたときにアプリ内メッセージがトリガーされます。 特定のページの表示や特定のボタンのトリガーなど、別のイベントのメッセージを選択するには、コードにカスタムアクションを追加します。 コードサンプルについては、[&#x200B; カスタムアクション &#x200B;](custom-actions.md)を参照してください。
+デフォルトでは、アプリが開いたときにアプリ内メッセージがトリガーされます。 特定のページの表示や特定のボタンのトリガーなど、別のイベントのメッセージを選択するには、コードにカスタムアクションを追加します。 コードサンプルについては、[ カスタムアクション ](custom-actions.md)を参照してください。
 
 ## トラブルシューティング
 
@@ -47,4 +47,4 @@ Marketoは、Marketo PlatformでMarketo Mobile SDKが初期化された後にの
 
 タップアクティビティを追跡し、タップ数に基づいて表示頻度を設定するには、「却下」以外のアクションをプライマリボタンまたはセカンダリボタンに割り当てます。
 
-詳しくは、製品ドキュメントの[&#x200B; アプリ内メッセージ &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message)を参照してください。
+詳しくは、製品ドキュメントの[ アプリ内メッセージ ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message)を参照してください。
