@@ -3,22 +3,33 @@ title: ランディングページのテンプレート
 feature: REST API, Landing Pages
 description: REST API エンドポイントを使用して、フリーフォームとガイド付きタイプのMarketoランディングページテンプレートを管理し、IDまたは名前によるクエリを実行して、HTMLを作成、更新し、複製、Munchkinを実行できます。
 exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
-TQID: https://experienceleague.adobe.com/U9K1MG-q2gIgJMgfM3lt1S4olETt8ln9seOIKZUncBY
+TQID: 'https://experienceleague.adobe.com/U9K1MG-q2gIgJMgfM3lt1S4olETt8ln9seOIKZUncBY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+  - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
+    internal-label: Assets
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+  - id: edda586e-0147-48f2-b791-992622a00783
+    internal-label: Landing pages
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 499
+source-wordcount: '499'
 ht-degree: 21%
-
 ---
-
 # ランディングページのテンプレート
 
 [ランディングページテンプレートのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates)
@@ -29,7 +40,7 @@ ht-degree: 21%
 
 Marketoには、フリーフォームとガイド付きのランディングページテンプレートが用意されています。 自由形式テンプレートを使用すると、緩やかに構造化された編集体験を提供できます。 ガイド付きテンプレートを使用すると、テンプレートレベルでエレメントの種類と場所を制限できます。
 
-詳細な比較については、[&#x200B; フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
+詳細な比較については、[ フリーフォームとガイド付きランディングページについて](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)を参照してください。
 
 ## クエリ
 
@@ -79,11 +90,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-[&#x200B; ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
+[ ランディングページテンプレートコンテンツの更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) エンドポイントを使用して、テンプレートコンテンツを個別に追加します。
 
 ### メタデータの更新
 
-[&#x200B; ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
+[ ランディングページテンプレートのメタデータを更新](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) エンドポイントを使用して、名前、説明または`enableMunchkin`設定を変更します。
 
 ### コンテンツの更新
 

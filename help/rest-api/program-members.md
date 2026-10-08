@@ -3,37 +3,48 @@ title: プログラムメンバー
 feature: REST API
 description: Marketo REST APIを使用すると、プログラムメンバーの読み取り、作成、更新、削除、標準フィールドとカスタムフィールドの管理、検索可能なフィールドを使用したクエリを実行できます。
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-TQID: https://experienceleague.adobe.com/scEHyXYq9C7cCS1kIX810wG7ahT9fsa448NwIfBmzQM
+TQID: 'https://experienceleague.adobe.com/scEHyXYq9C7cCS1kIX810wG7ahT9fsa448NwIfBmzQM'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+    internal-label: Metadata
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Administration
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1632
+source-wordcount: '1632'
 ht-degree: 21%
-
 ---
-
 # プログラムメンバー
 
 [プログラムメンバーエンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members)
 
 Marketoには、プログラムメンバーレコードの読み取り、作成、更新、削除用のAPIが用意されています。 「リード ID」フィールドは、プログラムメンバーのレコードとリードレコードを関連付けます。
 
-各レコードには標準フィールドが含まれ、最大20個のカスタムフィールドを含めることができます。 これらのフィールドには、フォーム、フィルター、トリガー、フローアクションで使用するためのプログラム固有のメンバーデータが保存されます。 このデータは、Marketo Engage UIのプログラムの[&#x200B; メンバー](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members) タブで確認できます。
+各レコードには標準フィールドが含まれ、最大20個のカスタムフィールドを含めることができます。 これらのフィールドには、フォーム、フィルター、トリガー、フローアクションで使用するためのプログラム固有のメンバーデータが保存されます。 このデータは、Marketo Engage UIのプログラムの[ メンバー](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members) タブで確認できます。
 
 ## 説明
 
-[&#x200B; プログラム メンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントは、リード データベース オブジェクトの標準パターンに従います。
+[ プログラム メンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントは、リード データベース オブジェクトの標準パターンに従います。
 
 - `searchableFields`配列は、クエリに有効なフィールドを識別します。
 - `fields`配列には、REST API名、表示名、フィールドが更新可能かどうかなどのメタデータが含まれています。
@@ -227,7 +238,7 @@ GET /rest/v1/programs/members/describe.json
 
 ## クエリ
 
-プログラムのメンバーを取得するには、[&#x200B; プログラムメンバーを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMembersUsingGET) エンドポイントを使用します。 リクエストには、`programId` パスパラメーターと`filterType`および`filterValues` クエリパラメーターが必要です。
+プログラムのメンバーを取得するには、[ プログラムメンバーを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMembersUsingGET) エンドポイントを使用します。 リクエストには、`programId` パスパラメーターと`filterType`および`filterValues` クエリパラメーターが必要です。
 
 `programId`は、検索するプログラムを指定します。
 
@@ -244,7 +255,7 @@ filterTypeが「leadId」でない場合、リクエストは最大100,000件の
 
 または、`updatedAt`をfilterTypeとして指定し、`startAt`と`endAt`の日時パラメーターを指定して、日付範囲でフィルタリングします。 範囲は 7日以内にする必要があります。 日時の値にミリ秒以外のISO-8601形式を使用します。
 
-オプションの`fields` クエリパラメーターは、[&#x200B; プログラムメンバー](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントによって返されるフィールド API名のコンマ区切りリストを受け入れます。 含まれている場合、各応答レコードには指定されたフィールドが含まれます。 省略すると、デフォルトで`acquiredBy`、`leadId`、`membershipDate`、`programId`および`reachedSuccess`が返されます。
+オプションの`fields` クエリパラメーターは、[ プログラムメンバー](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントによって返されるフィールド API名のコンマ区切りリストを受け入れます。 含まれている場合、各応答レコードには指定されたフィールドが含まれます。 省略すると、デフォルトで`acquiredBy`、`leadId`、`membershipDate`、`programId`および`reachedSuccess`が返されます。
 
 デフォルトでは、エンドポイントは最大300件のレコードを返します。 この数を減らすには、`batchSize` クエリパラメーターを使用します。
 
@@ -373,12 +384,12 @@ GET /rest/v1/programs/{programId}/members.json?filterType=statusName&filterValue
 
 ### プログラムメンバーステータス
 
-[&#x200B; プログラムメンバーステータスの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberStatusUsingPOST) エンドポイントを使用して、1人以上のメンバーのプログラムステータスを作成または更新します。
+[ プログラムメンバーステータスの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberStatusUsingPOST) エンドポイントを使用して、1人以上のメンバーのプログラムステータスを作成または更新します。
 
 必要なパラメーターは次のとおりです。
 
 - `programId`：作成または更新するメンバーを含むプログラムを指定するパスパラメーター。
-- `statusName`: リードのリストに適用するプログラムのステータスを指定します。 statusName は、プログラムのチャネルで使用可能なステータスと一致する必要があります。 [&#x200B; チャネルを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllChannelsUsingGET) エンドポイントを使用して有効なステータスを取得します。 リードのステータスが、指定されたstatusNameよりも大きいステップ値を持つ場合、リクエストはそのリードをスキップします。
+- `statusName`: リードのリストに適用するプログラムのステータスを指定します。 statusName は、プログラムのチャネルで使用可能なステータスと一致する必要があります。 [ チャネルを取得](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllChannelsUsingGET) エンドポイントを使用して有効なステータスを取得します。 リードのステータスが、指定されたstatusNameよりも大きいステップ値を持つ場合、リクエストはそのリードをスキップします。
 - `input`: プログラムメンバーに対応する`leadId`値の配列。 呼び出しごとに、最大 300 個のリード ID を送信できます。
 
 エンドポイントは、各レコードに対してアップサートを実行します。 leadIdがプログラムメンバーに関連付けられている場合、エンドポイントはそのメンバーシップステータスを更新します。 そうでない場合は、プログラムメンバーレコードを作成し、レコードをleadIdに関連付け、メンバーシップステータスを割り当てます。
@@ -443,7 +454,7 @@ Content-Type: application/json
 
 ### プログラムメンバーデータ
 
-[&#x200B; プログラムメンバーデータの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberDataUsingPOST) エンドポイントを使用して、1人以上のメンバーのプログラムメンバーフィールドデータを更新します。 [&#x200B; プログラム メンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントによって「更新可能」とマークされた任意のカスタム フィールドまたは任意の標準フィールドを変更できます。
+[ プログラムメンバーデータの同期](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberDataUsingPOST) エンドポイントを使用して、1人以上のメンバーのプログラムメンバーフィールドデータを更新します。 [ プログラム メンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) エンドポイントによって「更新可能」とマークされた任意のカスタム フィールドまたは任意の標準フィールドを変更できます。
 
 必要なパラメーターは次のとおりです。
 
@@ -635,7 +646,7 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### フィールドの作成
 
-[&#x200B; プログラムメンバーフィールドの作成](https://developer.adobe.com/marketo-apis/api/mapi#operation/createProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトにカスタムフィールドを作成します。 [Marketo Engage UI](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)と同等の機能を提供します。 このエンドポイントを使用して、最大20個のカスタムフィールドを作成できます。
+[ プログラムメンバーフィールドの作成](https://developer.adobe.com/marketo-apis/api/mapi#operation/createProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトにカスタムフィールドを作成します。 [Marketo Engage UI](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)と同等の機能を提供します。 このエンドポイントを使用して、最大20個のカスタムフィールドを作成できます。
 
 実稼動Marketo Engage インスタンスで作成する前に、各フィールドを慎重に検討します。 フィールドを作成した後は、削除できません。[非表示にできるのは](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)のみです。 未使用のフィールドは、インスタンスを混乱させます。
 
@@ -649,7 +660,7 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 - `name`属性は一意で、文字で始まり、文字、数字、アンダースコアのみを含める必要があります。
 - *`isplayName`は一意である必要があり、特殊文字を含めることはできません。
 
-一般的な規則は、[&#x200B; キャメルケース &#x200B;](https://en.wikipedia.org/wiki/Camel_case#)を`displayName`に適用して`name`を生成することです。 例えば、「My Custom Field」の`displayName`は、「myCustomField」の`name`を生成します。
+一般的な規則は、[ キャメルケース ](https://en.wikipedia.org/wiki/Camel_case#)を`displayName`に適用して`name`を生成することです。 例えば、「My Custom Field」の`displayName`は、「myCustomField」の`name`を生成します。
 
 ```http
 POST /rest/v1/programs/members/schema/fields.json
@@ -683,7 +694,7 @@ POST /rest/v1/programs/members/schema/fields.json
 
 ### フィールドの更新
 
-[&#x200B; プログラムメンバーフィールドの更新](https://developer.adobe.com/marketo-apis/api/mapi#operation/updateProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトの1つのカスタムフィールドを更新します。 Marketo Engage UIで利用できるフィールドの更新のほとんどは、APIからも利用できます。 次の表に、その違いをまとめました。
+[ プログラムメンバーフィールドの更新](https://developer.adobe.com/marketo-apis/api/mapi#operation/updateProgramMemberFieldUsingPOST) エンドポイントは、プログラムメンバーオブジェクトの1つのカスタムフィールドを更新します。 Marketo Engage UIで利用できるフィールドの更新のほとんどは、APIからも利用できます。 次の表に、その違いをまとめました。
 
 | 属性 | API で更新可能？ | UI で更新可能？ | API で更新可能？ | UI で更新可能？ |
 | --- | --- | --- | --- | --- |
@@ -733,7 +744,7 @@ POST /rest/v1/programs/members/schema/fields/pMCFCustomField03.json
 
 ## 削除
 
-プログラムメンバーレコードを削除するには、[&#x200B; プログラムメンバーの削除](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteProgramMemberUsingPOST) エンドポイントを使用します。 必須の`programId` パス パラメーターは、削除するメンバーを含むプログラムを指定します。
+プログラムメンバーレコードを削除するには、[ プログラムメンバーの削除](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteProgramMemberUsingPOST) エンドポイントを使用します。 必須の`programId` パス パラメーターは、削除するメンバーを含むプログラムを指定します。
 
 リクエスト本文には、リード IDの`input`配列が含まれています。 各呼び出しでは、最大300個のリード IDを使用できます。
 

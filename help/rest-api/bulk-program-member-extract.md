@@ -3,22 +3,29 @@ title: プログラムメンバーの一括抽出
 feature: REST API
 description: Marketo Bulk Program Member Extract REST APIを使用すると、権限やフィールドメタデータを使用して、ETL、データウェアハウス、アーカイブ用の大規模なメンバーレコードをエクスポートできます。
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-TQID: https://experienceleague.adobe.com/w4qaVTKSe0EORaSiURB6WbJXi29JUdEgfkb2dnfuVFw
+TQID: 'https://experienceleague.adobe.com/w4qaVTKSe0EORaSiURB6WbJXi29JUdEgfkb2dnfuVFw'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1079
+source-wordcount: '1079'
 ht-degree: 30%
-
 ---
-
 # プログラムメンバーの一括抽出
 
 [一括プログラムメンバー抽出エンドポイントリファレンス](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members)
@@ -31,7 +38,7 @@ API ユーザーには、読み取り専用リード権限、読み取り/書き
 
 ## 説明
 
-[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
+[ プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2)を使用して、使用可能なフィールドを決定し、そのメタデータを取得します。 `name`属性にREST API フィールド名が含まれています。
 
 ```http
 GET /rest/v1/programs/members/describe.json
@@ -487,7 +494,7 @@ Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800
 
 ## ジョブのキャンセル
 
-正しく設定されていないジョブや不要になったジョブをキャンセルするには、[&#x200B; プログラム メンバーのエクスポート ジョブをキャンセル &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
+正しく設定されていないジョブや不要になったジョブをキャンセルするには、[ プログラム メンバーのエクスポート ジョブをキャンセル ](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportProgramMembersUsingPOST) エンドポイントを呼び出します。
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json

@@ -3,31 +3,38 @@ title: リダイレクト
 description: RTP リダイレクト APIを実装して、ABM、組織、場所、セグメントなどのフィールドを使用して、ターゲット URLにセグメント化された訪問者を送信します。例とヒントを説明します。
 feature: Javascript
 exl-id: bbf91245-42e5-47ae-a561-e522cc65ff49
-TQID: https://experienceleague.adobe.com/frvGjN7DBJ1RJ3QFvWxo1qGiTNFmvyxi3H6FeynJHLU
+TQID: 'https://experienceleague.adobe.com/frvGjN7DBJ1RJ3QFvWxo1qGiTNFmvyxi3H6FeynJHLU'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+    internal-label: Implementation
   - id: cdd65e7e-8839-44a2-bc21-0e03623b5dd1
+    internal-label: Optimization
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Personalization
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 473
+source-wordcount: '473'
 ht-degree: 52%
-
 ---
-
 # リダイレクト
 
 RTP リダイレクト APIを使用して、セグメント化されたオーディエンスをターゲット URLに送信します。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、アカウントベースマーケティングの重点顧客リストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、Account-Based Marketing の重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## 使用方法
 
@@ -39,7 +46,7 @@ RTP リダイレクト APIを使用して、セグメント化されたオーデ
 | &#39;redirect&#39; | 必須 | 文字列 | メソッド名。 |
 | field_name | 必須 | 文字列 | 照合対象のフィールド名。 例：&#39;abm.name&#39;（以下を参照）。 |
 | values_array | 必須 | 配列 | 照合対象フィールドと一致する値のリスト（大文字と小文字は区別されません）。 |
-| redirect_url | 必須 | 文字列 | 条件に一致した訪問者をリダイレクトするターゲット URL。 |
+| redirect_url | 必須 | 文字列 | 条件に一致した訪問者をリダイレクトするためのターゲット URL。 |
 | redirect_matched_visitors | オプション | ブール値 | true の場合、条件に一致した訪問者がリダイレクトされます。 false の場合、条件に一致しない訪問者がリダイレクトされます。 デフォルト：true。 |
 
 リダイレクト条件では、組織、業界、ABM リスト、所在地、ISP、または一致するセグメントを使用できます。
@@ -96,7 +103,7 @@ rtp('get','campaign');
 <!-- End of RTP tag -->
 ```
 
-## 追跡された訪問者のリダイレクト方法
+## 追跡された訪問者をリダイレクトする方法
 
 1. パラメーターをターゲット URLに追加します（例：&lt;www.marketo.com?rtp=redirect>）。
 1. 「RTPでリダイレクト」という名前のセグメントを作成します。

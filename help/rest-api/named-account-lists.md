@@ -3,25 +3,31 @@ title: 重点顧客リスト
 feature: REST API
 description: クエリ、作成、更新、削除する権限、フィールド、フィルタリング、エンドポイントなど、REST APIを使用してMarketoの名前付きアカウントリストを管理する方法について説明します。
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-TQID: https://experienceleague.adobe.com/18lMhheW21Gz1-3TMHwleHhmLTOqJsZSQ5aqkbbchhM
+TQID: 'https://experienceleague.adobe.com/18lMhheW21Gz1-3TMHwleHhmLTOqJsZSQ5aqkbbchhM'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 686
+source-wordcount: '686'
 ht-degree: 36%
-
 ---
-
 # 重点顧客リスト
 
 [名前付きアカウントリストのエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
-[名前付きアカウントリスト &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、Marketoの名前付きアカウントのコレクションです。 分類、データエンリッチメント、スマートキャンペーンのフィルタリングに使用できます。
+[名前付きアカウントリスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/target-account-management/target/account-lists)は、Marketoの名前付きアカウントのコレクションです。 分類、データエンリッチメント、スマートキャンペーンのフィルタリングに使用できます。
 
 名前付きアカウントリスト APIを使用すると、リストアセットとそのメンバーシップをリモートで管理できます。
 `Content`
@@ -42,11 +48,11 @@ ht-degree: 36%
 
 | 名前 | データタイプ | 更新可能 | メモ |
 | --- | --- | --- | --- |
-| marketoGUID | 文字列 | False | 重点顧客リストの一意の文字列識別子。 このフィールドは、システムで管理され、レコードを作成する際にフィールドとして使用できません。 作成または更新の実行時に &quot;dedupeBy&quot;:&quot;idField&quot; によって使用されるフィールド。 |
+| marketoGUID | 文字列 | False | 重点アカウントリストの一意の文字列識別子。 このフィールドは、システムで管理され、レコードを作成する際にフィールドとして使用できません。 作成または更新の実行時に &quot;dedupeBy&quot;:&quot;idField&quot; によって使用されるフィールド。 |
 | name | 文字列 | True | リストの名前。 作成または更新の実行時に &quot;dedupeBy&quot;:&quot;dedupeFields&quot; によって使用されるフィールド。 |
 | createdAt | 日時 | False | リストの作成日時。 このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
 | updatedAt | 日時 | False | リストの最新の更新日時。 このフィールドは、システムで管理され、レコードを作成または更新する際にフィールドとして使用できません。 |
-| タイプ | 文字列 | False | リストのタイプ。 &quot;default&quot; または &quot;external&quot;のいずれかの値を指定できます。 外部リストは、CRM アカウントビューで作成されたリストです。 |
+| タイプ | 文字列 | False | リストのタイプ。 &quot;default&quot; または &quot;external&quot;のいずれかの値を指定できます。 外部リストは、CRM アカウント表示で作成されたリストです。 |
 
 ## クエリ
 

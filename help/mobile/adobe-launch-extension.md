@@ -1,24 +1,28 @@
 ---
-title: ' [!DNL Adobe Launch] 用 Marketo Mobile 拡張機能'
+title: '[!DNL Adobe Launch] 用 Marketo Mobile 拡張機能'
 feature: Mobile Marketing
 description: プッシュ通知やアプリ内メッセージの設定など、iOSおよびAndroid用のAdobe LaunchにMarketo Mobile SDK拡張機能をインストールして設定します。
 exl-id: 2f8691ff-0442-45a5-aeba-c91c3af5c711
-TQID: https://experienceleague.adobe.com/Bk5GTnQjm6NDosl5Iw6TS-NRjH8owNRUKoE0mZ-H3pY
+TQID: 'https://experienceleague.adobe.com/Bk5GTnQjm6NDosl5Iw6TS-NRjH8owNRUKoE0mZ-H3pY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: d095671a-1355-40aa-8b5f-06c33c68080b
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Security
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 303
+source-wordcount: '303'
 ht-degree: 30%
-
 ---
-
 # [!DNL Adobe Launch] 用 Marketo Mobile 拡張機能
 
 [!DNL Adobe Launch]にMarketo Mobile SDK拡張機能をインストールして、プッシュ通知、アプリ内メッセージ、またはその両方を送信します。
@@ -27,7 +31,7 @@ ht-degree: 30%
 
 - [Marketo Admin](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)でアプリケーションを追加し、アプリケーションの秘密鍵とMunchkin IDを取得します。
 - [!DNL Adobe Launch] ポータルのインストール手順に従います。
-- オプション：[&#x200B; プッシュ通知を設定](push-notifications.md)。
+- オプション：[ プッシュ通知を設定](push-notifications.md)。
 
 ## iOS
 
@@ -48,13 +52,13 @@ Swiftの場合、前の手順でブリッジングヘッダーが追加される
 
 [iOS テストデバイスの追加](installation.md#ios_test_devices)の手順に従います。
 
-### AppDelegate でカスタム URL タイプを処理する
+### AppDelegate 内でカスタム URL タイプを処理する
 
-[&#x200B; カスタム URLの手順](installation.md#ios_test_devices)に従います。
+[ カスタム URLの手順](installation.md#ios_test_devices)に従います。
 
 ### iOS でのプッシュ通知の設定
 
-[&#x200B; プッシュ通知の手順](push-notifications.md)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
+[ プッシュ通知の手順](push-notifications.md)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
 
 ## Android
 
@@ -85,4 +89,4 @@ Swiftの場合、前の手順でブリッジングヘッダーが追加される
 
 [Android Firebase Cloud Messagingの手順](installation.md#android_firebase_cloud_messaging_support)に従います。 「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
 
-ユーザープロファイルを設定するには、[&#x200B; ユーザープロファイルの手順](user-profiles.md)に従います。 カスタムアクションを設定するには、[&#x200B; カスタムアクションの手順](custom-actions.md#android_custom_action)に従います。 両方の手順で、「Marketo」の代わりに「ALMarketo」というクラス名を使用します。
+ユーザープロファイルを設定するには、[ ユーザープロファイルの手順](user-profiles.md)に従います。 カスタムアクションを設定するには、[ カスタムアクションの手順](custom-actions.md#android_custom_action)に従います。 両方の手順で、「Marketo」の代わりに「ALMarketo」というクラス名を使用します。

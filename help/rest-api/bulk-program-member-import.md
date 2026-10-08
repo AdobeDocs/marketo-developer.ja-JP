@@ -3,22 +3,29 @@ title: プログラムメンバーの一括読み込み
 feature: REST API
 description: 10 MB未満のCSV TSVまたはSSV ファイル、キューの制限、必須パラメーター、およびポーリングジョブステータスを使用して、Marketo REST APIを介してプログラムメンバーを一括で読み込む方法について説明します。
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-TQID: https://experienceleague.adobe.com/T1PAzLN1mnp38kJ0jwh6kPv6r1Uvxc7-o9zeTHetIV0
+TQID: 'https://experienceleague.adobe.com/T1PAzLN1mnp38kJ0jwh6kPv6r1Uvxc7-o9zeTHetIV0'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Implementation
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 742
+source-wordcount: '742'
 ht-degree: 11%
-
 ---
-
 # プログラムメンバーの一括読み込み
 
 [一括プログラムメンバー読み込みエンドポイント参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)
@@ -38,7 +45,7 @@ ht-degree: 11%
 
 ## ファイルの読み込み
 
-ファイルの最初の行は、各行の値がマップされるREST API フィールド名をリストするヘッダーである必要があります。 これらの名前は、[&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2)および[&#x200B; プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET) エンドポイントを使用して取得します。
+ファイルの最初の行は、各行の値がマップされるREST API フィールド名をリストするヘッダーである必要があります。 これらの名前は、[ リードの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_2)および[ プログラムメンバーの説明](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET) エンドポイントを使用して取得します。
 
 レコードには、リードフィールド、カスタムリードフィールド、カスタムプログラムメンバーフィールドを含めることができます。
 
@@ -53,7 +60,7 @@ test@example.com,John,Doe
 
 ## ジョブの作成
 
-[&#x200B; プログラムメンバーの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importProgramMemberUsingPOST) エンドポイントは、ファイルからプログラムメンバーレコードを読み取り、指定されたステータスのプログラムに追加します。 レコードには、リードフィールドとカスタムプログラムメンバーフィールドを含めることができます。
+[ プログラムメンバーの読み込み](https://developer.adobe.com/marketo-apis/api/mapi#operation/importProgramMemberUsingPOST) エンドポイントは、ファイルからプログラムメンバーレコードを読み取り、指定されたステータスのプログラムに追加します。 レコードには、リードフィールドとカスタムプログラムメンバーフィールドを含めることができます。
 
 すべてのレコードには、重複排除に使用されるメールフィールドを含める必要があります。
 

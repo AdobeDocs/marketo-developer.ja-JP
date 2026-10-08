@@ -3,22 +3,29 @@ title: 商談
 feature: REST API
 description: Marketo REST APIを使用して、SFDCまたはDynamics syncで商談の記述、クエリ、作成、更新、重複排除および検索可能なフィールド、制限、読み取り専用の動作を実行できます。
 exl-id: 46451285-4125-4857-890a-575069a68288
-TQID: https://experienceleague.adobe.com/rBDJcXWQrN5qyKRWHyzVC-sc9BH2mQFLm7fKUk-NUn8
+TQID: 'https://experienceleague.adobe.com/rBDJcXWQrN5qyKRWHyzVC-sc9BH2mQFLm7fKUk-NUn8'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 702
+source-wordcount: '702'
 ht-degree: 16%
-
 ---
-
 # 商談
 
 [商談エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities)
@@ -100,7 +107,7 @@ GET /rest/v1/opportunities/describe.json
 
 ## クエリ
 
-[商談のクエリ &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
+[商談のクエリ ](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)のパターンは、リード APIに密接に従っています。 ただし、`filterType` パラメーターは、対応するDescribe応答またはdedupeFieldsの`searchableFields`配列にリストされているフィールドのみを受け入れます。
 
 カスタム商談フィールドの場合、検索可能なFields配列に表示されるのは、String型またはInteger型のフィールドのみです。
 
@@ -153,7 +160,7 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 
 リード APIの`lookupField` パラメーターは使用できません。 dedupeBy パラメーターは、アクションがupdateOnlyの場合にのみ有効です。
 
-dedupeByの値は「dedupeFields」と「idField」で、Describeの応答はそれぞれexternalOpportunityIdとmarketoGUIDとして識別されます。 dedupeBy を指定しない場合、デフォルトで dedupeFields モードになります。 「name」フィールドは null にしないでください。
+dedupeByの値は「dedupeFields」と「idField」で、Describeの応答はそれぞれexternalOpportunityIdとmarketoGUIDとして識別されます。 dedupeBy を指定しない場合、デフォルトで dedupeFields モードになります。 「name」フィールドを null にすることはできません。
 
 一度に最大 300 個のレコードを送信できます。
 

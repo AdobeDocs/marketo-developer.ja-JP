@@ -3,26 +3,37 @@ title: 標準フィールド
 feature: REST API, Field Management
 description: REST名、ラベル、説明を含むMarketo標準リードフィールドの完全なリストと、リードの説明APIを使用してそれらのフィールドを取得する方法を参照します。
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
-TQID: https://experienceleague.adobe.com/vu2wGk36XJ243vwavhfLE7Vc9vMIJKGx6vmVqMRgEDA
+TQID: 'https://experienceleague.adobe.com/vu2wGk36XJ243vwavhfLE7Vc9vMIJKGx6vmVqMRgEDA'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+  - id: f5e85a9b-a883-40d0-8759-f3651efb32e9
+    internal-label: Field management
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 688
+source-wordcount: '688'
 ht-degree: 88%
-
 ---
-
 # 標準フィールド
 
 次の表に、APIを通じて使用可能な標準Marketo フィールドを示します。 各フィールドのREST API名、ラベル、説明が含まれます。
 
-REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
+REST [ リードの説明](https://developer.adobe.com/marketo-apis/api/mapi) エンドポイントを使用して、リード レコードでサポートされているすべてのフィールド名を取得します。
 
 | REST API 名 | わかりやすいラベル | 説明 |
 | --- | --- | --- |
@@ -31,7 +42,7 @@ REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/
 | anonymousIP | 匿名 IP | リードの最初の web 訪問時に記録された IP アドレス |
 | billingCity | 請求先住所（市区町村） | リードの請求先住所の市区町村 |
 | billingCountry | 請求先住所（国） | リードの請求先住所の国 |
-| billingPostalCode | 郵便番号 | リードの請求先住所の郵便番号 |
+| billingPostalCode | 郵便番号 | リードの請求先住所の郵便コード |
 | billingState | 請求先住所（都道府県） | リードの請求先住所の都道府県 |
 | billingStreet | 請求先住所 | リードの会社の請求先住所 |
 | city | 市区町村 | リードの市区町村 |
@@ -40,15 +51,15 @@ REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/
 | dateOfBirth | 生年月日 | リードの生年月日 |
 | department | Department | リードの会社の部門 |
 | doNotCall | 電話連絡拒否 | リードの電話連絡拒否の環境設定 |
-| doNotCallReason | 電話連絡拒否の理由 | リードの電話連絡拒否の環境設定の説明 |
-| メール | メールアドレス | リードのメールアドレス。 リードレコードの標準 Marketo キーフィールド |
+| doNotCallReason | 電話連絡拒否の理由 | リードの電話連絡拒否の希望についての説明 |
+| メール | メールアドレス | リードのメールアドレス。 リードレコードの Marketo の標準キーフィールド |
 | fax | FAX 番号 | リードの FAX 番号 |
 | firstName | 名前（名） | リードの名前（名） |
-| industry | 業種 | リードの業界 |
+| industry | 業界 | リードの業界 |
 | inferredCompany | 推測される会社 | リードの最初の web 訪問の逆 IP 検索によって推測される会社名 |
 | inferredCountry | 推測される国 | リードの最初の web 訪問の逆 IP 検索によって推測される国 |
 | lastName | 名前（姓） | リードの名前（姓） |
-| leadRole | Role | リードの会社でのロール |
+| leadRole | Role | リードの会社での役割 |
 | leadScore | リードのスコア | キャンペーンとプログラムのスコアリングによってリードに付与される整数スコア |
 | leadSource | リードのソース | リードの元となるソースを記録するフィールド |
 | leadStatus | リードのステータス | リードの現在のマーケティング／販売ステータスを記録するフィールド |
@@ -75,8 +86,8 @@ REST [&#x200B; リードの説明](https://developer.adobe.com/marketo-apis/api/
 | emailInvalidCause | メール無効の理由 | メール無効ステータスの理由。 メール無効を true に設定されている場合、原因となるバウンスメッセージがこのフィールドに記録されます。 |
 | inferredCity | 推測される市区町村 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市区町村。 |
 | inferredMetropolitanArea | 推測される都市圏 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都市圏。 |
-| inferredPhoneAreaCode | 推測される市外局番 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市外局番。 |
-| inferredPostalCode | 推測される郵便番号 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの郵便番号。 |
+| inferredPhoneAreaCode | 推測される市外局番コード | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの市外局番コード。 |
+| inferredPostalCode | 推測される郵便番号 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの郵便番号コード。 |
 | inferredStateRegion | 推測される都道府県／地域 | リードの最初の web 訪問の逆 IP 検索によって推測されるリードの都道府県／地域。 |
 | isAnonymous | 匿名 | リードレコードの匿名ステータス。 システムが管理します。 |
 | priority | 優先度 | リードのセールスインサイトの優先度。 システムが管理します。 |

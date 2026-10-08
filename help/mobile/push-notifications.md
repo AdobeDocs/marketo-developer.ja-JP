@@ -3,22 +3,26 @@ title: プッシュ通知
 feature: Mobile Marketing
 description: APNs証明書とXcodeの設定からMarketo SDKの統合、トークン登録、処理まで、MarketoでiOS プッシュ通知を有効にする方法をガイドします。
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-TQID: https://experienceleague.adobe.com/ghits-m4w3oid3cZuRTz-foAar8OaqtiQqWu2yRKTwE
+TQID: 'https://experienceleague.adobe.com/ghits-m4w3oid3cZuRTz-foAar8OaqtiQqWu2yRKTwE'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: c1579802-ddd4-4214-8a91-97b2066abe11
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Troubleshooting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1162
+source-wordcount: '1162'
 ht-degree: 23%
-
 ---
-
 # プッシュ通知
 
 Marketo Mobile SDKを使用するiOSまたはAndroid アプリケーションのプッシュ通知を有効にします。
@@ -28,12 +32,12 @@ Marketo Mobile SDKを使用するiOSまたはAndroid アプリケーションの
 プッシュ通知を有効にするには、次の 3 つの手順があります。
 
 1. Apple Developer アカウントでプッシュ通知を設定します。
-1. xCode でプッシュ通知を有効にします。
+1. Xcode でプッシュ通知を有効にします。
 1. Marketo SDKを使用して、アプリでプッシュ通知を有効にします。
 
 ### Apple Developer アカウントでのプッシュ通知の設定
 
-1. Apple Developer [&#x200B; メンバーセンター](https://developer.apple.com/membercenter)にログインします。
+1. Apple Developer [ メンバーセンター](https://developer.apple.com/membercenter)にログインします。
 1. 「証明書、識別子、プロファイル」を選択します。
 1. 「iOS、tvOS、watchOS」の下にある「証明書 – >すべて」フォルダーを選択します。
 1. 左上隅の証明書の横にある「+」を選択します。![](assets/certificates-plus.png)
@@ -45,11 +49,11 @@ Marketo Mobile SDKを使用するiOSまたはAndroid アプリケーションの
 1. 通知を設定するには、Marketo Admin Console を通じてこのファイルをアップロードします。
 1. アプリのプロビジョニングプロファイルを更新します。
 
-### xCode でのプッシュ通知の有効化
+### xCode でプッシュ通知を有効にする
 
 xCode プロジェクトでプッシュ通知機能を有効にします。![](assets/push-xcode.png)
 
-### Marketo SDK を使用したアプリでのプッシュ通知の有効化
+### Marketo SDK を使用したアプリでプッシュ通知を有効にします。
 
 次のコードを`AppDelegate.m` ファイルに追加して、顧客デバイスにプッシュ通知を配信します。
 
@@ -458,13 +462,13 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 アプリが開いていてアクティブかどうかを確認します。 アプリがアクティブな場合、モバイルプッシュメッセージは画面に表示されません。 代わりに、アプリの「ローカル通知」エリアに表示されます。
 
-### Marketo でのアクティビティログの表示
+### Marketo でアクティビティログを表示
 
 Marketo アクティビティログを使用して、メッセージが送信されたことを確認します。
 
 メッセージを受信する必要があるユーザーのアクティビティレコードを確認します。 メッセージが送信された場合、アクティビティログにはレコードが含まれます。 レコードが存在しない場合は、MarketoでiOS証明書またはAndroid API キー設定を確認します。
 
-### 証明書またはキーが無効
+### 証明書またはキーが無効です
 
 サンドボックスまたは実稼動用に正しい証明書が読み込まれていることを確認します。 必要に応じて、iOS証明書またはAndroid キーを再度書き出して、Marketoに再読み込みします。
 
@@ -472,13 +476,13 @@ Marketo アクティビティログを使用して、メッセージが送信さ
 
 証明書をエクスポートする場合は、キーと証明書の両方をエクスポートします。
 
-### プロファイルのプロビジョニングが最新ではない（iOS）
+### プロビジョニングプロファイルが最新ではない（iOS）
 
 デバイスを追加したら、プロビジョニングプロファイルを更新し、新しい証明書を生成します。 Xcode プロジェクトを正しいプロファイルと証明書に指定し、証明書をMarketoにインポートします。
 
 ### iOS 証明書をアップロードできない（iOS）
 
-証明書の書き出しに使用するパスワードにスペースが含まれていないことを確認します。 例えば、次は使用しないでください。
+証明書の書き出しに使用するパスワードにスペースが含まれていないことを確認します。 例えば、次のようにする代わりに：
 
 `Hello World 123`
 
@@ -495,6 +499,6 @@ Marketo アクティビティログを使用して、メッセージが送信さ
 登録トークンは、次のシナリオで無効になる可能性があります。
 
 - クライアントアプリが GCM を登録解除した場合。
-- クライアントアプリが自動的に登録解除される場合。これは、ユーザがアプリケーションをアンインストールした場合に発生することがあります。 例えば、iOS では、APNS フィードバックサービスが APNS トークンを無効として報告した場合です。
+- クライアントアプリが自動的に登録解除される場合。これは、ユーザーがアプリケーションをアンインストールした場合に発生することがあります。 例えば、iOS では、APNS フィードバックサービスが APNS トークンを無効として報告した場合です。
 - 登録トークンが期限切れになった場合。 例えば、Google が登録トークンを更新することを決定した場合や、iOS デバイスの APNS トークンが期限切れになった場合です。
 - クライアントアプリが更新されたが、新しいバージョンがメッセージを受信するように設定されていない場合。

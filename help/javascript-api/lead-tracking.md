@@ -3,26 +3,35 @@ title: リードトラッキング
 description: Marketo Munchkin JavaScriptを埋め込む方法、訪問とクリックを追跡する方法、既知のリードと匿名のリードを管理する方法、クロスドメイン Cookie、スマートキャンペーンをオプトアウトする方法について説明します。
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-TQID: https://experienceleague.adobe.com/nGUcLLgL9X7PBKf2E5IzppDj8e-SyEtxmkQaESd90mE
+TQID: 'https://experienceleague.adobe.com/nGUcLLgL9X7PBKf2E5IzppDj8e-SyEtxmkQaESd90mE'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
+  - id: 1c1a93b2-f024-5627-9905-6faf6fcc22be
+    internal-label: Munchkin Tracking Code
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 subfeature_v2:
   - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+    internal-label: Smart lists
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Administration
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 718
+source-wordcount: '718'
 ht-degree: 14%
-
 ---
-
 # Lead Tracking API
 
 MarketoとMunchkin JavaScriptを使用すれば、Marketoのランディングページと外部web ページにおけるページ訪問とリンククリックを追跡できます。 Marketoは、これらのインタラクションを「Web ページにアクセス」および「Web ページ上のクリック済みリンク」アクティビティとして記録します。
@@ -123,7 +132,7 @@ MunchkinのCookieは、`example.com`などの各セカンドレベルのドメ�
 
 ## ベータ版
 
-ランディングページのMunchkin ベータ版チャネルにオプトインするには、[管理者/ トレジャーチェスト &#x200B;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)に移動し、「ランディングページでMunchkin Beta」設定を有効にします。
+ランディングページのMunchkin ベータ版チャネルにオプトインするには、[管理者/ トレジャーチェスト ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)に移動し、「ランディングページでMunchkin Beta」設定を有効にします。
 
 この設定により、**[!UICONTROL 管理者]** -> **[!UICONTROL Munchkin]** メニューにコードスニペットが追加されます。 これらのスニペットを使用して、外部サイトでベータ版を実行します。
 

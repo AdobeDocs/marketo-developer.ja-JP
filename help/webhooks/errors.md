@@ -3,18 +3,24 @@ title: エラー
 feature: Webhooks
 description: MarketoのWebhook エラーコード、リードフィールドの更新に2xx応答が必要な理由、Webhookでエラーを検出して処理する方法を説明します。
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
-TQID: https://experienceleague.adobe.com/N2jNA4EUMMTUFL9uJHZhOor6Tlz4-EXWciwoXrPml48
+TQID: 'https://experienceleague.adobe.com/N2jNA4EUMMTUFL9uJHZhOor6Tlz4-EXWciwoXrPml48'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
+subfeature_v2:
+  - id: fc9b09fe-b844-4544-887b-e420c3b82065
+    internal-label: Webhooks
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 213
+source-wordcount: '213'
 ht-degree: 22%
-
 ---
-
 # エラー
 
 このページでは、Marketo Webhookのエラー応答コードについて説明し、Webhook エラーの処理方法について説明します。
@@ -25,7 +31,7 @@ Marketoは、web サービスが2xxの応答コードを返す場合にのみ、
 
 | 応答コード | 説明 |
 | --- | --- |
-| 1000 | これは、「Webhook を呼び出し」フローアクションがバッチキャンペーン内に格納されていることを示します。 Webhook はトリガーキャンペーンからのみ起動できます。 |
+| 1000 | これは、「Call Webhook」フローステップがバッチキャンペーン内に格納されていることを示します。 Webhook はトリガーキャンペーンからのみ起動できます。 |
 | 1001 | これは、web サービスが空の応答本文を送信したことを示します。 |
 
 ## Webhook エラーのキャッチ

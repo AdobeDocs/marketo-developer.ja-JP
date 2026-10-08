@@ -3,20 +3,25 @@ title: Munchkin API リファレンス
 description: Munchkin Javascript APIを使用して、init メソッド、createTrackingCookie メソッド、munchkinFunction メソッドを使用して、ページ訪問、リンククリック、カスタムイベントを追跡します。
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
-TQID: https://experienceleague.adobe.com/s97x6wVZijnnxZwS7HMIkQAKlxXkcfPXuSZG4KjXGoc
+TQID: 'https://experienceleague.adobe.com/s97x6wVZijnnxZwS7HMIkQAKlxXkcfPXuSZG4KjXGoc'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: 1c1a93b2-f024-5627-9905-6faf6fcc22be
+    internal-label: Munchkin Tracking Code
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 414
+source-wordcount: '414'
 ht-degree: 66%
-
 ---
-
 # Munchkin API リファレンス
 
 Munchkinには、ブラウザーイベントのトラッキングをカスタマイズするためのJavaScript機能が用意されています。 例えば、リンク以外の要素に対するビデオの再生またはクリックを追跡できます。
@@ -37,7 +42,7 @@ Munchkin APIには、次の関数が含まれています。
 
 | パラメーター名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
-| Munchkin ID | 必須 | 文字列 | Munchkin アカウント ID は、管理／統合／Munchkin メニューにあります。 アクティビティの送信先のターゲットインスタンスを設定します。 |
+| Munchkin ID | 必須 | 文字列 | Munchkin アカウント ID は、管理／統合／Munchkin メニュー内にあります。 アクティビティの送信先のターゲットインスタンスを設定します。 |
 | [設定](configuration.md) | オプション | オブジェクト | Munchkin の代替動作設定を有効にします。 |
 
 ```javascript
@@ -69,7 +74,7 @@ Munchkin.createTrackingCookie(true);
 
 #### visitWebPage
 
-`visitWebPage` で `munchkinFunction()` を呼び出すと、現在のユーザの「訪問」アクティビティが Marketo に送信されます。 2番目の引数のデータオブジェクトを使用して、URLと`querystring`をカスタマイズします。
+`visitWebPage` で `munchkinFunction()` を呼び出すと、現在のユーザーの「訪問」アクティビティが Marketo に送信されます。 2番目の引数のデータオブジェクトを使用して、URLと`querystring`をカスタマイズします。
 
 | データプロパティ名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |
@@ -88,7 +93,7 @@ Munchkin.munchkinFunction('visitWebPage', {
 
 #### clickLink
 
-`clickLink` で `munchkinFunction()` を呼び出すと、現在のユーザのクリックアクティビティが Marketo に送信されます。 データオブジェクトの`href` プロパティを使用して、クリック URLをカスタマイズします。
+`clickLink` で `munchkinFunction()` を呼び出すと、現在のユーザーのクリックアクティビティが Marketo に送信されます。 データオブジェクトの`href` プロパティを使用して、クリック URLをカスタマイズします。
 
 | データプロパティ名 | オプション／必須 | タイプ | 説明 |
 | --- | --- | --- | --- |

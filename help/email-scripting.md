@@ -3,26 +3,34 @@ title: メールスクリプト
 feature: Email Programs
 description: Apache Velocity トークン、変数、Velocity ツールを使用して動的なMarketo メールをスクリプト化し、サンプル送信とメール送信プレビューを使用してテストする方法を説明します。
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-TQID: https://experienceleague.adobe.com/xFDjbGWGoWg4Ik6xqoU4L51FG5-1STZ5a0x0KpmwGd4
+TQID: 'https://experienceleague.adobe.com/xFDjbGWGoWg4Ik6xqoU4L51FG5-1STZ5a0x0KpmwGd4'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
+    internal-label: Assets
+subfeature_v2:
+  - id: c0f0afc1-a5a8-4b01-8b43-cc38f9169499
+    internal-label: Email programs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Administration
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 932
+source-wordcount: '932'
 ht-degree: 43%
-
 ---
-
 # メールスクリプト
 
-Velocity テンプレート言語の動作の詳細な説明については、[Velocity ユーザーガイド &#x200B;](https://velocity.apache.org/engine/devel/user-guide.html)を参照してください。
+Velocity テンプレート言語の動作の詳細な説明については、[Velocity ユーザーガイド ](https://velocity.apache.org/engine/devel/user-guide.html)を参照してください。
 
 [Apache Velocity](https://velocity.apache.org/)は、HTML コンテンツのテンプレート化とスクリプト作成を行うためのJava ベースの言語です。 MarketoのメールスクリプトトークンでVelocityを使用すると、商談やカスタムオブジェクトに保存されているデータにアクセスし、動的なメールコンテンツを作成できます。
 
@@ -63,7 +71,7 @@ $baz ##outputs "$baz"
 $!baz ##outputs nothing
 ```
 
-変数の参照方法について詳しくは、[Apache ユーザガイド](https://velocity.apache.org/engine/devel/user-guide.html#formal-reference-notation)を参照してください。
+変数の参照方法について詳しくは、[Apache ユーザーガイド](https://velocity.apache.org/engine/devel/user-guide.html#formal-reference-notation)を参照してください。
 
 ## Velocity ツール
 
@@ -91,11 +99,11 @@ $date.whenIs($birthday).days ##outputs 1
 
 メールスクリプトトークンを使用して、メールにVelocity スクリプトを追加します。 マーケティングフォルダーまたはプログラム内のマーケティングアクティビティでトークンを作成します。
 
-トークンを使用するには、メールはトークンを所有するプログラムの子であるか、マーケティングフォルダーから継承する必要があります。 フォルダーまたはプログラムに移動し、「[!UICONTROL &#x200B; マイトークン &#x200B;]」タブを選択します。 右側のメニューから「メールスクリプト」オプションをトークンリストにドラッグします。
+トークンを使用するには、メールはトークンを所有するプログラムの子であるか、マーケティングフォルダーから継承する必要があります。 フォルダーまたはプログラムに移動し、「[!UICONTROL  マイトークン ]」タブを選択します。 右側のメニューから「メールスクリプト」オプションをトークンリストにドラッグします。
 
 ![スクリプトトークン](assets/script-token.png)
 
-トークン名を編集し、「[!UICONTROL &#x200B; クリックして編集]」を選択してエディターを開きます。
+トークン名を編集し、「[!UICONTROL  クリックして編集]」を選択してエディターを開きます。
 
 ![スクリプトを編集](assets/script-edit.png)
 
@@ -109,7 +117,7 @@ $date.whenIs($birthday).days ##outputs 1
 
 ![メールスクリプト](assets/email-script-marketo-email.png)
 
-Marketoの電子メールデザイナーで、[!UICONTROL &#x200B; サンプル電子メールを送信] アクションを使用してスクリプトをテストします。 スクリプトが正しく処理されるように、[!UICONTROL &#x200B; リード &#x200B;] フィールドで既存のリードを選択します。
+Marketoの電子メールデザイナーで、[!UICONTROL  サンプル電子メールを送信] アクションを使用してスクリプトをテストします。 スクリプトが正しく処理されるように、[!UICONTROL  リード ] フィールドで既存のリードを選択します。
 
 `$TriggerObject`をテストするときは、[!UICONTROL トリガー] パラメーターを持つトリガーオブジェクトを選択します。 Marketoは、その型の最も最近更新されたオブジェクトを`$TriggerObject`変数として使用します。
 
@@ -124,12 +132,12 @@ Marketoの電子メールデザイナーで、[!UICONTROL &#x200B; サンプル�
 特定のメール内のすべてのメールスクリプトトークンの組み合わせた長さは、100,000 バイトを超えることはできません。 この制限は、トークン文字列自体の合計長に適用されます（トークンを展開した後の合計長ではありません）。
 
 - メールスクリプトで参照される変数は、スクリプトに使用できる Marketo 内のオブジェクトの 1 つに存在している必要があります。
-- ネイティブに統合された CRM から生成され、リードまたは取引先責任者に直接接続された第 1 レベルおよび第 2 レベルのカスタムオブジェクトは参照できますが、第 3 レベルのカスタムオブジェクトは参照できません。 カスタムオブジェクトは、リードまたは会社の親にすることはできません
+- ネイティブに統合された CRM から生成され、リードまたは取引先責任者に直接接続された第 1 レベルおよび第 2 レベルのカスタムオブジェクトは参照できますが、第 3 レベルのカスタムオブジェクトは参照できません。 カスタムオブジェクトは、リードまたは会社の親に設定することはできません。
 - Marketo カスタムオブジェクトの場合、親子関係を持つ第 2 レベルのカスタムオブジェクトを参照できます。 例：`Lead <- Parent <- Child`。 エッジ-ブリッジ関係を持つ第 2 レベルのカスタムオブジェクトを参照することはできません。 例：`Lead <- Bridge -> Edge`
-- リード、取引先責任者またはアカウントに接続されたカスタムオブジェクトは参照できますが、複数のオブジェクトは参照できません。
-- カスタムオブジェクトは、単一の接続、リード、取引先責任者またはアカウントを通じてのみ参照できます
+- リード、取引先責任者またはアカウントのいずれか 1 つに接続されたカスタムオブジェクトは参照できますが、複数の接続先にまたがって参照することはできません。
+- カスタムオブジェクトは、リード、取引先責任者、またはアカウントのいずれか 1 つとの単一の接続を通じてのみ参照できます。
 - 使用しているフィールドのスクリプトエディターのチェックボックスをオンにします。チェックボックスをオンにすると、フィールドは処理されません
-- カスタムオブジェクトごとに、1人/取引先責任者あたり10件の最新の更新レコードを実行時に利用できます。 レコードは、インデックス 0で最近更新されたレコードから、インデックス 9で最も古いレコードに並べ替えられます。 使用可能なレコードの数は、指示[&#128279;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)に従って増加させることができます。
+- カスタムオブジェクトごとに、1人/取引先責任者あたり10件の最新の更新レコードを実行時に利用できます。 レコードは、インデックス 0で最近更新されたレコードから、インデックス 9で最も古いレコードに並べ替えられます。 使用可能なレコードの数は、指示](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)に従って[増加させることができます。
 - メール内に複数のメールスクリプトを含める場合、スクリプトは上から下に向かって実行されます。 最初に実行するスクリプトで定義された変数の範囲は、後続のスクリプトで使用できます。
 - ツール参照：[https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 改行文字「\n」または「\r\n」を含むトークンに関する注意事項。 「サンプルを送信」またはバッチキャンペーン経由でメールを送信すると、トークン内の改行文字はスペースに置き換えられます。 トリガーキャンペーン経由でメールを送信すると、改行文字はそのままになります。
