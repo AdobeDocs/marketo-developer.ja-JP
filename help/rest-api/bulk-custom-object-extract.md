@@ -38,7 +38,7 @@ Bulk Custom Object Extract REST APIは、Marketoから大規模なカスタム�
 
 このAPIは、リードに直接リンクされたファーストレベルのMarketo カスタムオブジェクトレコードを書き出します。 カスタムオブジェクト名とリンクされたリードのリストを指定します。 各リードについて、APIは一致するリンクされたカスタムオブジェクトレコードをエクスポートファイルの行として書き込みます。
 
-カスタムオブジェクトデータは、Marketo UI[&#128279;](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)のリードの詳細ページの「 カスタムオブジェクト」タブで確認できます。
+カスタムオブジェクトデータは、Marketo UI[&#128279;](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)のリードの詳細ページの「 カスタムオブジェクト」タブで確認できます。
 
 ## 権限
 
