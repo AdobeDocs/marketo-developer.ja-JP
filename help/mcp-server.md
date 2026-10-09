@@ -34,9 +34,9 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 5c356507ac2551edfbb1c60dba7b167d7ef0b4c0
 workflow-type: tm+mt
-source-wordcount: '2209'
+source-wordcount: '2137'
 ht-degree: 3%
 ---
 
@@ -46,7 +46,7 @@ ht-degree: 3%
 
 AI ツールがMCP サーバーを呼び出すと、サーバーはそのリクエストの資格情報を使用して、対応するREST API呼び出しを実行します。 サーバーサイドソフトウェアをインストール、デプロイ、または実行する必要はありません。
 
-Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法について詳しくは、[Data Information](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
 
 >[!IMPORTANT]
 >
@@ -56,7 +56,7 @@ Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法につ
 
 ## MCPの基本
 
->MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [&#x200B; モデル コンテキスト プロトコル &#x200B;](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCPでは、AI ツールを複数の外部サービスに同時に接続することができます。 例えば、AI アシスタントは次のことが可能です。
 
@@ -92,7 +92,6 @@ MCPは、APIの使用状況に応じて、機密性の高いフィールドを�
 
 * REST API アクセスが有効になっている[!DNL Marketo] インスタンス
 * [!DNL Marketo] LaunchPointでAPI資格情報を作成するための管理者アクセス
-* 次のいずれかのAI ツール：Claude Desktop、Cursor、Codex、Claude Code （CLI）、VS Code with GitHub Copilot、またはGemini CLIなどの互換性のあるMCP クライアント
 * MCP サーバーURLへのネットワーク アクセス：`https://marketo-mcp.adobe.io/mcp`
 
 ## Marketo資格情報の取得
@@ -118,20 +117,15 @@ MCPは、APIの使用状況に応じて、機密性の高いフィールドを�
 
 ## AI ツールの設定
 
-AI ツールによって設定は異なります。 次の節では、一般的なツールの接続例を示します。
-
-* [Claude Desktop](#claude-desktop)
-* [カーソル](#cursor)
-* [Claude Code CLI](#claude-code)
-* [OpenAI Codex](#codex)
-* [Gemini CLI](#gemini-cli)
-* [VSCodeとGitHub Copilot](#vscode)
-* [Glean](#glean)
-* [他社製品](#other-tools)
+設定は、ツールによって少し異なります。 次に、一般的なツールの接続例を示します。
 
 >[!TIP]
 >
 >複数の[!DNL Marketo] インスタンスに接続するには、MCP設定に一意の名前`marketo-prod`と`marketo-staging`を持つ個別のエントリを追加し、それぞれに対応する資格情報を付けます。
+
+>[!BEGINTABS]
+
+>[!TAB  クラウド デスクトップ ]
 
 ### Claude Desktop {#claude-desktop}
 
@@ -167,10 +161,12 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 
 1. Claude Desktopを再起動します。
 
+>[!TAB  カーソル ]
+
 ### カーソル {#cursor}
 
 カーソル MCP設定に既に他のサーバーが含まれている場合は、`mcpServers`の下に`marketo` エントリを追加します。
-次の例は、プロジェクトディレクトリの&#x200B;**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
+次の例は、プロジェクトディレクトリの**[!UICONTROL Settings]** > **[!UICONTROL MCP]**&#x200B;または`.cursor/mcp.json`の完全な`mcpServers` ブロックを示しています。
 
 ```json
 {
@@ -190,6 +186,8 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 
 カーソルを再起動します。
 
+>[!TAB Claude Code CLI]
+
 ### Claude Code （CLI） {#claude-code}
 
 ターミナルで次のコマンドを実行し、資格情報を代入します。
@@ -202,6 +200,8 @@ claude mcp add --transport http marketo \
   --header "X-Marketo-Munchkin-Id: YOUR-MUNCHKIN-ID"
 ```
 
+>[!TAB OpenAI Codex]
+
 ### OpenAI Codex {#codex}
 
 1. 設定 / MCP サーバー/ サーバーの追加に移動します。
@@ -213,6 +213,8 @@ claude mcp add --transport http marketo \
 * X-Marketo-Munchkin-Id: &quot;YOUR-MUNCHKIN-ID&quot;
 
 1. 「保存」を選択して、プロセスを完了します。
+
+>[!TAB Gemini CLI]
 
 ### Gemini CLI
 
@@ -244,6 +246,8 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 
 セッションを再起動して、新しいMCP サーバー設定を選択します。
 
+>[!TAB VS Code with GitHub Copilot]
+
 ### VS CodeとGitHub Copilot {#vscode}
 
 **[!UICONTROL Ctrl+Shift+P]** （またはmacOSの&#x200B;**[!UICONTROL Cmd+Shift+P]**）を押し、**[!UICONTROL MCP: Open User Configuration]**&#x200B;と入力してEnter キーを押します。 `mcp.json`が開きます。 `servers` オブジェクト内の`marketo` エントリを追加します。
@@ -264,19 +268,70 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 }
 ```
 
->[!NOTE]
->
->セキュリティ上の理由から、資格情報を直接貼り付ける代わりに、環境変数の補間を設定ファイルで使用します。 `${MARKETO_CLIENT_SECRET}`のような構文を使用して変数を参照し、環境に設定できます。 これにより、バージョン管理ファイルに資格情報をプレーンテキストで保存できなくなります。
+>[!TAB  コパイロット スタジオ ]
+
+### Copilot Studio
+
+Copilot Studioの仕組みはちょっと違います。 YAML定義ファイルを作成し、Copilot Studioはそのファイルからコネクタ UIを構築します。 ここでカスタムヘッダーを定義します。
+
+新しいコネクタを作成する際に、「Swagger エディター」を開き、次のコードを貼り付けます。
+
+```yaml
+swagger: '2.0'
+info:
+  title: Marketo MCP Server
+  description: Connect to the Marketo MCP server.
+  version: 1.0.0
+host: marketo-mcp.adobe.io
+basePath: /
+schemes:
+  - https
+paths:
+  /mcp:
+    post:
+      summary: Marketo MCP Server
+      description: Invoke the Marketo MCP server.
+      operationId: InvokeServer
+      x-ms-agentic-protocol: mcp-streamable-1.0
+      parameters:
+        - name: MARKETO_MCP_PROD_CLIENT_ID
+          in: header
+          description: Client ID.
+          type: string
+          required: true
+        - name: MARKETO_MCP_PROD_CLIENT_SECRET
+          in: header
+          description: Client secret.
+          type: string
+          required: true
+        - name: MARKETO_MCP_PROD_MUNCHKIN_ID
+          in: header
+          description: Munchkin ID.
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Immediate Response
+securityDefinitions: {}
+security: []
+```
+
+コネクタを更新し、閉じてから再度開きます。
+接続フローに従って、ヘッダー値を入力できるようになりました。
+
+>[!TAB  グリアン ]
 
 ### Glean {#glean}
 
-GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム &#x200B;](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
+GleanをMarketo Engage MCP Serverに接続するには、[Glean サポートチーム ](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)が次のカスタムヘッダーを設定する必要があります。
 
 | ヘッダー | 値 |
 | ------ | ----- |
 | `X-Marketo-Client-Id` | クライアント ID |
 | `X-Marketo-Client-Secret` | クライアント秘密鍵 |
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
+
+>[!TAB その他のツール ]
 
 ### 他社製品 {#other-tools}
 
@@ -300,15 +355,13 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 | `X-Marketo-Client-Secret` | クライアント秘密鍵 |
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
 
-ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
+ツールがJSON設定を受け入れる場合は、[ カーソル ](#cursor)または[VS コード ](#vscode)の例から始め、ツールのスキーマに合わせてキー（`mcpServers`、`servers`）を調整します。
 
->[!NOTE]
->
->Gemini CLIは、ストリーミング可能なHTTPおよびカスタム認証ヘッダーでリモート MCP サーバーをサポートします。 [!DNL Marketo] MCP サーバーに接続するには、上記の接続の詳細を使用し、[Gemini CLI MCP設定ドキュメント &#x200B;](https://geminicli.com/docs/tools/mcp-server/){target="_blank"}に従います。 `settings.json`の`mcpServers`の下にサーバーエントリを追加し、`httpUrl`を`https://marketo-mcp.adobe.io/mcp`に設定し、3つのMarketo認証ヘッダーを`headers`に指定します。 Gemini CLIがSSE トランスポートに使用する`url`ではなく`httpUrl`を使用します。 このガイダンスは、Gemini webまたはモバイルアプリではなく、Gemini CLIに適用されます。
+>[!ENDTABS]
 
 ## 使用可能な操作
 
-接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 API参照でサポートされている操作の一覧については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 ### フォーム
 
