@@ -28,7 +28,7 @@ ht-degree: 27%
 ---
 # カスタムサービス
 
-カスタムサービスは、Marketoで認証し、Marketo [ID サービス ](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)からアクセストークンを取得するために使用される資格情報を提供します。 各カスタムサービスは、1つのAPIのみのユーザーにスコープが設定され、そのユーザーから権限が取得されます。
+カスタムサービスは、Marketoで認証し、Marketo [ID サービス &#x200B;](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)からアクセストークンを取得するために使用される資格情報を提供します。 各カスタムサービスは、1つのAPIのみのユーザーにスコープが設定され、そのユーザーから権限が取得されます。
 
 ## ロール
 
@@ -50,7 +50,7 @@ API ユーザーには、「Access API」グループの権限のみが適用さ
 
 役割を作成する場合は、アプリケーションが実行する必要があるアクションを特定します。 これらのアクションに必要な最小権限のみを割り当てます。 不必要な権限を設定すると、サブスクリプション内で不要なアクションを実行する統合機能を利用できるようになります。
 
-[権限ツール ](endpoint-reference.md)を使用して、権限の最小セットを決定します。 詳しくは、[権限](#permission_list)の完全なリストを参照してください。
+[権限ツール &#x200B;](endpoint-reference.md)を使用して、権限の最小セットを決定します。 詳しくは、[権限](#permission_list)の完全なリストを参照してください。
 
 ## ユーザ
 
@@ -86,7 +86,7 @@ API ユーザーには、「Access API」グループの権限のみが適用さ
 
 サービスは、「詳細を表示」オプションを使用してLaunchPoint サービスのリストに表示されます。 「詳細を表示」を選択して、クライアント ID、クライアントシークレット、所有ユーザー、トークンを取得オプションにアクセスします。
 
-短期間のテストには、Get Tokenを使用します。 トークンの有効期間は、[ID サービス ](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)から取得したトークンと同じで、作成後3,600秒間有効です。
+短期間のテストには、Get Tokenを使用します。 トークンの有効期間は、[ID サービス &#x200B;](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)から取得したトークンと同じで、作成後3,600秒間有効です。
 
 ![トークンを取得](assets/get-token.png)
 
