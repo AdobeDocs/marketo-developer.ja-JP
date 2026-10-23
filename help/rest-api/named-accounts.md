@@ -280,7 +280,7 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 参照
 
-[重点顧客フィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点顧客オブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、batchSize クエリパラメーターを使用します。
+[重点アカウントフィールドを取得](https://developer.adobe.com/marketo-apis/api/mapi#operation/getNamedAccountFieldByNameUsingGET)エンドポイントでは、重点アカウントオブジェクトのすべてのフィールドのメタデータを取得します。 デフォルトでは、最大300件のレコードが返されます。 この数を減らすには、batchSize クエリパラメーターを使用します。
 
 moreResult属性がtrueの場合、より多くの結果を使用できます。 返されたnextPageTokenでエンドポイントの呼び出しを続行し、moreResultがfalseになるまで呼び出します。
 

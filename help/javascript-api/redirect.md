@@ -34,7 +34,7 @@ ht-degree: 52%
 RTP リダイレクト APIを使用して、セグメント化されたオーディエンスをターゲット URLに送信します。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、Account-Based Marketing の重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、アカウントベースマーケティングの重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## 使用方法
 

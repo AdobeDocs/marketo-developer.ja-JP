@@ -45,7 +45,7 @@ ht-degree: 86%
   - [Phonegap](mobile/phonegap.md)
   - [プッシュ通知](mobile/push-notifications.md)
   - [React Native](mobile/react-native.md)
-  - [ユーザプロファイル](mobile/user-profiles.md)
+  - [ユーザープロファイル](mobile/user-profiles.md)
 - REST{#rest}
   - [REST API の概要](rest-api/rest-api.md)
   - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
@@ -127,7 +127,7 @@ ht-degree: 86%
 - [Marketo オブジェクト](marketo-objects.md)
 - [MCPの操作](mcp-server-operations.md)
 - [MCP サーバー](mcp-server.md)
-- {hide-from-toc}[&#x200B; ライセンス &#x200B;](api-license.md)
+- {hide-from-toc}[ ライセンス ](api-license.md)
 - [パートナーサンドボックス](partner-sandbox.md)
 - [セルフサービスフローステップ](self-service-flow-steps.md)
 - [ブログのアーカイブ](blog.md)

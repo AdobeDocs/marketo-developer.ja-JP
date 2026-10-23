@@ -34,7 +34,7 @@ ht-degree: 48%
 この方法を使用して、訪問者識別データをリアルタイムで取得します。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、Account-Based Marketing の重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、アカウントベースマーケティングの重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 エラーが発生した場合、応答JSONにはエラーメッセージが含まれます。 APIが500 コードを返す場合は、サポートに連絡して、エラーの原因となったリクエストを提供してください。
 
