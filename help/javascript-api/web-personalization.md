@@ -39,7 +39,7 @@ Web Personalization JavaScript APIは、イベントを追跡し、web ページ
 関連する機能には、[&#x200B; カスタムデータイベント &#x200B;](custom-data-events.md)、[動的コンテンツ &#x200B;](web-personalization.md)、[訪問者データを取得](get-visitor-data.md)、および[特定のボットのタグを除外](#exclude_tag_for_specific_bots)が含まれます。
 
 - User Context API を使用する前に、web パーソナライゼーションの顧客になり、サイトに [RTP タグをデプロイ](https://experienceleague.adobe.com/ja/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)する必要があります。
-- RTP は、Account-Based Marketing の重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
+- RTP は、アカウントベースマーケティングの重点アカウントリストをサポートしていません。 ABM リストとコードは、RTP 内で管理されるアップロード済みアカウントリスト（CSV ファイル）にのみ関連しています。
 
 ## タグ設定
 

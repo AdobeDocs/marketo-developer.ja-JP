@@ -45,7 +45,7 @@ ht-degree: 86%
   - [Phonegap](mobile/phonegap.md)
   - [プッシュ通知](mobile/push-notifications.md)
   - [React Native](mobile/react-native.md)
-  - [ユーザプロファイル](mobile/user-profiles.md)
+  - [ユーザープロファイル](mobile/user-profiles.md)
 - REST{#rest}
   - [REST API の概要](rest-api/rest-api.md)
   - [REST API リファレンス](https://developer.adobe.com/marketo-apis/)
