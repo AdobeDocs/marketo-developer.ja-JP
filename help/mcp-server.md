@@ -42,7 +42,7 @@ ht-degree: 3%
 
 # [!DNL Marketo Engage] MCP サーバー
 
-モデルコンテキストプロトコル（MCP）は、AI ツールを外部サービスに接続するオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントを[!DNL Marketo]に接続します。 アセット管理、リードデータ、キャンペーンの自動化など、あらゆる業務をサポートします。 例外と可用性の要件については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+モデルコンテキストプロトコル（MCP）は、AI ツールを外部サービスに接続するオープンスタンダードです。 [!DNL Marketo] MCP サーバーは、AI アシスタントを[!DNL Marketo]に接続します。 アセット管理、リードデータ、キャンペーンの自動化など、あらゆる業務をサポートします。 例外と可用性の要件については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 AI ツールがMCP サーバーを呼び出すと、サーバーはそのリクエストの資格情報を使用して、対応するREST API呼び出しを実行します。 サーバーサイドソフトウェアをインストール、デプロイ、または実行する必要はありません。
 
@@ -56,7 +56,7 @@ Marketo AIとMarketo Engage MCP サーバーでのデータの処理方法につ
 
 ## MCPの基本
 
->MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [ モデル コンテキスト プロトコル ](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCPは、AI アプリケーションのUSB-C ポートのようなものだと考えてください。 USB-Cは、デバイスをさまざまな周辺機器やアクセサリーに接続するための標準化された方法を提供し、MCPは、AI モデルをデータソースやツールに接続するための標準化された方法を提供します。 — [&#x200B; モデル コンテキスト プロトコル &#x200B;](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCPでは、AI ツールを複数の外部サービスに同時に接続することができます。 例えば、AI アシスタントは次のことが可能です。
 
@@ -155,7 +155,7 @@ Claude Desktopに接続するには、[marketo-mcp-bridge.zip](assets/marketo-mc
 
 1. Claude Desktopを再起動します。
 
-Claude DesktopでNode.jsが見つからない場合は、`command`の`node`をNode.js実行可能ファイルへの絶対パスに置き換えます。 詳しくは、[ ローカル MCP サーバーへの接続](https://modelcontextprotocol.io/docs/develop/connect-local-servers){target="_blank"}を参照してください。
+Claude DesktopでNode.jsが見つからない場合は、`command`の`node`をNode.js実行可能ファイルへの絶対パスに置き換えます。 詳しくは、[&#x200B; ローカル MCP サーバーへの接続](https://modelcontextprotocol.io/docs/develop/connect-local-servers){target="_blank"}を参照してください。
 
 >[!TAB  カーソル ]
 
@@ -178,7 +178,7 @@ Claude DesktopでNode.jsが見つからない場合は、`command`の`node`をNo
 }
 ```
 
-カーソルで&#x200B;**[!UICONTROL カスタマイズ]**&#x200B;を開き、サーバーがオンになっていることを確認します。 詳しくは、[ カーソル MCP設定](https://cursor.com/docs/context/mcp){target="_blank"}を参照してください。
+カーソルで&#x200B;**[!UICONTROL カスタマイズ]**&#x200B;を開き、サーバーがオンになっていることを確認します。 詳しくは、[&#x200B; カーソル MCP設定](https://cursor.com/docs/context/mcp){target="_blank"}を参照してください。
 
 >[!TAB Claude Code CLI]
 
@@ -366,7 +366,7 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 | `X-Marketo-Client-Secret` | クライアント秘密鍵 |
 | `X-Marketo-Munchkin-Id` | Munchkin アカウント ID |
 
-ツールがJSON設定を受け入れる場合は、[ カーソル ](#cursor)または[VS コード ](#vscode)の例から始め、ツールのスキーマに合わせてキーと環境変数の構文を調整します。
+ツールがJSON設定を受け入れる場合は、[&#x200B; カーソル &#x200B;](#cursor)または[VS コード &#x200B;](#vscode)の例から始め、ツールのスキーマに合わせてキーと環境変数の構文を調整します。
 
 >[!ENDTABS]
 
@@ -374,7 +374,7 @@ Adobeは[!DNL Marketo] MCP サーバーをホストし、パブリック URLで�
 
 ## 使用可能な操作
 
-接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 例外と可用性の要件については、[ サポートされているMCP操作](mcp-server-operations.md)を参照してください。
+接続が完了したら、AI アシスタントに次のカテゴリにわたる操作を実行するように依頼できます。 例外と可用性の要件については、[&#x200B; サポートされているMCP操作](mcp-server-operations.md)を参照してください。
 
 ### フォーム
 

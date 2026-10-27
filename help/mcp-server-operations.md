@@ -58,4 +58,4 @@ ht-degree: 0%
 
 利用できる操作は、API ユーザーの権限、[!DNL Marketo] インスタンスで有効になっている機能、およびMCP クライアントの制限によって異なります。 データを変更または削除する操作の中には、確認と追加アクセスが必要なものもあります。 カテゴリのサポートは、すべてのREST エンドポイントへのアクセスを意味するものではありません。
 
-接続手順とプロンプトの例については、[MCP サーバー](mcp-server.md#available-operations) ページを参照してください。 [!DNL Marketo] AIおよび[!DNL Marketo Engage] MCP サーバーでのデータの処理方法について詳しくは、[ データ情報](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
+接続手順とプロンプトの例については、[MCP サーバー](mcp-server.md#available-operations) ページを参照してください。 [!DNL Marketo] AIおよび[!DNL Marketo Engage] MCP サーバーでのデータの処理方法について詳しくは、[&#x200B; データ情報](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) ページを参照してください。
