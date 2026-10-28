@@ -21,14 +21,14 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
     internal-label: Metadata
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
 workflow-type: tm+mt
 source-wordcount: '702'
 ht-degree: 16%
 ---
 # 商談
 
-[商談エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities)
+[商談エンドポイントの参照](https://developer.adobe.com/marketo-apis/api/mapi#tag/Oppofrtunities)
 
 Marketoには、商談レコードの読み取り、書き込み、作成、更新のためのAPIが用意されています。 Marketoでは、中間のOpportunity Role オブジェクトは、商談レコードをリードおよび連絡先レコードにリンクします。 商談は、多くの個々のリードにリンクできます。
 

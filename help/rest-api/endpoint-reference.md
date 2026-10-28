@@ -31,7 +31,7 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
     internal-label: Metadata
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
 workflow-type: tm+mt
 source-wordcount: '4807'
 ht-degree: 76%
@@ -41,9 +41,9 @@ ht-degree: 76%
 次の参照を使用して、各Marketo REST API グループのリクエストパラメーター、応答スキーマ、および例を検索します。
 
 - [アセット](https://developer.adobe.com/marketo-apis/api/asset)
-- [ID](https://developer.adobe.com/marketo-apis/api/identity/)
+- [ID](https://developer.adobe.com/marketo-apis/api/identity)
 - [リードデータベース](https://developer.adobe.com/marketo-apis/api/mapi)
-- [ユーザ管理](https://developer.adobe.com/marketo-apis/api/user/)
+- [ユーザ管理](https://developer.adobe.com/marketo-apis/api/user)
 
 ## エンドポイントリスト {#endpoint_list}
 
